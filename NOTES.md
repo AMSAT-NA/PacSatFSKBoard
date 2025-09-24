@@ -9,11 +9,6 @@ some point.
 
 # TODO
 
-The hardware watchdog needs to be able to be physically disabled so
-the board can be programmed without the watchdog getting in the way.
-Probably add a jumper by the JTAG and serial lines to disable the
-watchdog.
-
 Need to get the current requirements for 3.3V and 5V to make sure the
 traces are big enough to avoid a big voltage drop.
 
@@ -438,6 +433,11 @@ correct.  The CAN bus at least needs to be tied in.  Also, it has 3.3V
 run to it on the original power adapter board, but I don't see that in
 any bus diagram I have seen. - Found the current LIHU schematic, ran
 CAN bus.  3.3V wasn't on there, but it was to a N.C. pin.
+
+The hardware watchdog needs to be able to be physically disabled so
+the board can be programmed without the watchdog getting in the way.
+Probably add a jumper by the JTAG and serial lines to disable the
+watchdog.
 
 # Not going to do
 
@@ -1071,3 +1071,14 @@ Added a pull-up resistor to the clock distributor instead of tying
 the enable directly to ground.
 
 Removed a redundant pull up on the HW\_POWER\_OFF\_N line.
+
+## 2025-09-24
+
+Add fiducials for board alignment, per board house specifications.
+
+Convert the solder jumper for watchdog disable to a normal jumper.
+
+Create a ground hold under the RTC crystal and traces and reroute all
+traces that went under it.  According to the datasheet you should not
+have a ground plane (and I'm guessing signals) under the crystal
+traces to avoid added capacitance.
