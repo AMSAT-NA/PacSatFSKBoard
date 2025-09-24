@@ -1,4 +1,4 @@
-136830260480606
+140350481431230
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -73031,6 +73031,13 @@ ESQ-126-39-G-D
 52
 52
 PacSatDev_misc
+CONN_M80-5301042
+
+M80-5301042 
+0
+10
+10
+PacSatDev_misc
 CUBESAT_MOUNT_HOLE
 
 
@@ -73058,6 +73065,13 @@ QPL9547TR7
 0
 9
 9
+PacSatDev_misc
+Fiducial_Square_1mm_Mask2mm
+Fiducial, circular marking, 1mm bare copper, 2mm soldermask opening (Level A)
+fiducial
+0
+1
+0
 PacSatDev_misc
 GE0805C-2_MNC
 
