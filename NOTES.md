@@ -13,11 +13,6 @@ Modify the board1/board2 resistor notes to say that putting in a 40K
 resistor there (basically setting the voltage to 1V) will set the
 board to be simplex.
 
-The hardware watchdog needs to be able to be physically disabled so
-the board can be programmed without the watchdog getting in the way.
-Probably add a jumper by the JTAG and serial lines to disable the
-watchdog.
-
 On the CSKB standard, do we need to be able to operate as board 0?
 That affects board layout.
 
@@ -438,6 +433,11 @@ got an interrupt. - Removed a lot of the connections to the bus as
 they aren't needed.
 
 # Not going to do
+
+The hardware watchdog needs to be able to be physically disabled so
+the board can be programmed without the watchdog getting in the way.
+Probably add a jumper by the JTAG and serial lines to disable the
+watchdog.
 
 Rotate the CPU so that fewer traces need to be routed under the CPU.
 Perhaps replace the CPU with a BGA version to save space, the BGA is
@@ -1080,3 +1080,14 @@ Added a pull-up resistor to the clock distributor instead of tying
 the enable directly to ground.
 
 Removed a redundant pull up on the HW\_POWER\_OFF\_N line.
+
+## 2025-09-24
+
+Add fiducials for board alignment, per board house specifications.
+
+Convert the solder jumper for watchdog disable to a normal jumper.
+
+Create a ground hold under the RTC crystal and traces and reroute all
+traces that went under it.  According to the datasheet you should not
+have a ground plane (and I'm guessing signals) under the crystal
+traces to avoid added capacitance.
