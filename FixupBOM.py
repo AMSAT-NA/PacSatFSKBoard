@@ -184,8 +184,8 @@ value_to_partnum_xlats_2 = {
     ('1uF',		'0805'): ('Murata',	'GCM21BR71E105KA56L'),
     ('4.7uF',		'0805'): ('Murata',	'GCM21BR71C475KA73L'),
     ('10uF',		'0805'): ('Murata',	'GCM21BR71A106KE22K'),
-    ('22uF',		'0805'): ('Murata',	'GCM21BR71A226KE22K'),
     ('10uF 10V',	'1206'): ('Murata',	'GCM31CR71C106KA64L'),
+    ('22uF',		'1206'): ('Murata',	'GCM31CR70J226KE23L'),
     ('47uF 10V',	'1206'): ('Murata',	'GRT31CR61A476KE13L'),
     ('',	''): ('',	''),
 
@@ -231,11 +231,11 @@ value_to_partnum_xlats_2 = {
 
     ('3.32KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF3321X'),
     ('10KΩ 1%', 	'0402'): ('Panasonic',	'ERJ-PA2F1002X'),
-    ('19.6KΩ 1%', 	'0402'): ('Panasonic',	'ERJ-PA2F1962X'),
+    ('19.6KΩ 1%', 	'0402'): ('Yaego',	'AC0402FR-0719K6L'),
     ('45.3KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF4532X'),
     ('47KΩ 1%', 	'0402'): ('Panasonic',	'ERA-2AED473X'),
     ('68KΩ 1%', 	'0402'): ('Panasonic',	'ERA-2AED683X'),
-    ('88.7KΩ 1%', 	'0402'): ('Panasonic',	'ERJ-PA2F8872X'),
+    ('88.7KΩ 1%', 	'0402'): ('Yageo',	'AC0402FR-7D88K7L'),
     ('143KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF1433X'),
     ('330KΩ 1%',	'0402'): ('Panasonic',	'ERJ-PA2F3303X'),
     ('464KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF4643X'),
@@ -246,6 +246,8 @@ value_to_partnum_xlats_2 = {
     ('RED LED', '0603'): ('Rohm', 'CSL0902UT1C'),
     ('YELLOW LED', '0603'): ('Rohm', 'CSL0901YT1C'),
     ('GREEN LED', '0603'): ('Rohm', 'CSL0902ET1C'),
+
+    ('32.768kHz', 'Crystal_SMD_EuroQuartz_EQ161-2Pin_3.2x1.5mm'): ('Abracon', 'ABS07AIG-32.768KHZ-6-1-T'),
 }
 
 other_components = {
@@ -267,7 +269,6 @@ other_components = {
     ('NTCG103JF103FTDS 10KΩ@25C', '0402'): None,
     ('2118718-2', 'TE_2118718-2'): None,
     ('TS-103-G-A', 'CON3_1X3_TU_HTS_SAI'): None,
-    ('32.768kHz', 'Crystal_SMD_EuroQuartz_EQ161-2Pin_3.2x1.5mm'): None,
     ('STWD100NYWY3F', 'SOT-23-5'): None,
     ('AD4PS+1', 'CJ725'): None,
     ('ESQ-126-39-G-D', 'CONN_ESQ-126-39-G-D_SAI'): None,
