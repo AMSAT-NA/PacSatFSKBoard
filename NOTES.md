@@ -1074,8 +1074,6 @@ Removed a redundant pull up on the HW\_POWER\_OFF\_N line.
 
 ## 2025-09-24
 
-Add fiducials for board alignment, per board house specifications.
-
 Convert the solder jumper for watchdog disable to a normal jumper.
 
 Create a ground hold under the RTC crystal and traces and reroute all
