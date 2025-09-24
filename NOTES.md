@@ -432,12 +432,12 @@ could be or-ed together, but you would have to scan all of them if you
 got an interrupt. - Removed a lot of the connections to the bus as
 they aren't needed.
 
-# Not going to do
-
 The hardware watchdog needs to be able to be physically disabled so
 the board can be programmed without the watchdog getting in the way.
 Probably add a jumper by the JTAG and serial lines to disable the
 watchdog.
+
+# Not going to do
 
 Rotate the CPU so that fewer traces need to be routed under the CPU.
 Perhaps replace the CPU with a BGA version to save space, the BGA is
