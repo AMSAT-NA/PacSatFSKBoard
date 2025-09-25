@@ -10,8 +10,8 @@ It uses 5 AX5043 chips for the radio interfaces, four receive channels
 duplex with receive on 144-148MHz and transmit on 430-440MHz.
 
 Though it is designed for packet satellite, the design can be used for
-any sort of full duplex dual band AFSK radio operation with or without
-FM.  The AX5043 supports a large number of AFSK protocols (if you can
+any sort of full duplex dual band FSK radio operation with or without
+FM.  The AX5043 supports a large number of FSK protocols (if you can
 figure out how to program the AX5043).
 
 With some filter redesign it could support a number of different
@@ -30,3 +30,6 @@ connector on the RF to test the receive and transmit chain.
 The board is designed to be able to be used in an active/standby
 configuration where you have two of the same boards and switch the RF
 between the boards depending on which is active.
+
+For more details on the actual design, see the ProcessorPins.md
+document.
