@@ -248,6 +248,8 @@ value_to_partnum_xlats_2 = {
     ('GREEN LED', '0603'): ('Rohm', 'CSL0902ET1C'),
 
     ('32.768kHz', 'Crystal_SMD_EuroQuartz_EQ161-2Pin_3.2x1.5mm'): ('Abracon', 'ABS07AIG-32.768KHZ-6-1-T'),
+
+    ('NTCG103JF103FTDS 10KΩ@25C', '0402'): ('TDK', 'NTCG103JF103FTDS'),
 }
 
 other_components = {
@@ -266,11 +268,11 @@ other_components = {
     ('TQP7M9106', 'QFN24_TQP7M9104_QOR'): None,
     ('CONUFL001-SMD-T', 'CONN1_CONUFL_TEC'): None,
     ('QPC1022TR7', 'QPC1022_QOR'): None,
-    ('NTCG103JF103FTDS 10KΩ@25C', '0402'): None,
     ('2118718-2', 'TE_2118718-2'): None,
+    ('TS-102-G-A', 'CON2_1X2_TU_HTS_SAI'): None,
     ('TS-103-G-A', 'CON3_1X3_TU_HTS_SAI'): None,
     ('STWD100NYWY3F', 'SOT-23-5'): None,
-    ('AD4PS+1', 'CJ725'): None,
+    ('AD4PS-1+', 'CJ725'): None,
     ('ESQ-126-39-G-D', 'CONN_ESQ-126-39-G-D_SAI'): None,
     ('SN74AHC1G02QDCKRQ1', 'DCK5'): None,
     ('TPSM828302ARDSR', 'RDS0009A-MFG'): None,

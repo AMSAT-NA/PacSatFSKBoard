@@ -5683,7 +5683,7 @@
 				)
 			)
 		)
-		(property "Value" "AD4PS+1"
+		(property "Value" "AD4PS-1+"
 			(at 344.17 135.89 0)
 			(effects
 				(font
