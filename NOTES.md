@@ -9,6 +9,8 @@ some point.
 
 # TODO
 
+Add the SAFE\_MODE pin to the board, if necessary.
+
 Modify the board1/board2 resistor notes to say that putting in a 40K
 resistor there (basically setting the voltage to 1V) will set the
 board to be simplex.
