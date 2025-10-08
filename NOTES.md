@@ -9,6 +9,9 @@ some point.
 
 # TODO
 
+Remove the 0 ohm resistor between the LNA and BPF.  You can remove the
+inductor there to disconnect the sections.
+
 Add the SAFE\_MODE pin to the board, if necessary.
 
 Modify the board1/board2 resistor notes to say that putting in a 40K
