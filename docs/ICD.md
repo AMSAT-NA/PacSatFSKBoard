@@ -1,21 +1,21 @@
 PacSat AFSK Board Interface Control Document
 ============================================
 
-Oct 8, 2024
+Oct 10, 2024
 Revision: 0.1
 
 ## Version History
 
-| Revision | Date        | Author(s)         | Change Log |
-|--------- |------------ |--------------	 |----------- |
-| 0.1      | Oct 8, 2024 | C Minyard (AE5KM) | Initial Revision|
+| Revision | Date         | Author(s)         | Change Log |
+|--------- |------------- |--------------	  |----------- |
+| 0.1      | Oct 10, 2024 | C Minyard (AE5KM) | Initial Revision|
 
 # Introduction
 
 This document describes how the PacSat AFSK board interfaces with
-other boards and system.
+other boards and system components of a satellite.
 
-# System Interfaces Description
+# System Description
 
 The figure below show the block diagram of the PacSatAFSK board:
 
@@ -50,7 +50,7 @@ board.  These are:
 * +5VAL - This provides +5V whenever power is applied.  It is used to
   power the batter input for the RTC, the RX/TX switches (so the
   redundant board can access the antenna even if this power is powered
-  off), switches on the dual-board control lines (so the other board
+  off), the switches on the dual-board control lines (so the other board
   can control and access this board even when this board is powered
   off), and the CAN bus transceivers (so they can properly go tristate
   even if the board is off).  This is current limited to 200ma.
@@ -67,7 +67,7 @@ board.  These are:
 * +3.3V - This is the man I/O supply for the CPU and power for the
   MRAMs and the RTC.  It is current limited to 640ma.
   
-* AX5043_3.3V - This is a separately switch power, off by default,
+* AX5043_3.3V - This is a separately switched power, off by default,
   that powers all the AX5043 chips.  The CPU must enable power to
   these through a GPIO.  This is current limited to 200ma.
   
@@ -122,7 +122,7 @@ available time can be kept for a few days.
 A watchdog timer on the board will power-cycle the CPU by disabling
 +1.2V and +3.3V if the CPU does not toggle its FEED line once a
 second.  Powering off the CPU will cause all other power except
-REG_3.3V and +5VAL to be returned to their default, disable, so it
+REG_3.3V and +5VAL to be returned to their default, disabled, so it
 effectively powers off the whole board.
 
 ## RX
@@ -213,8 +213,9 @@ This entire section is optional and may be removed.  Bypass zero-ohm
 resistors are supplied for the few lines that are required for
 operation.
 
-board2 does not have this populated (or has it disabled and bypassed).
-All switching is done on board1.
+board2 does not have the RF portion (TX/RX Switch) of this populated
+(or has it disabled and bypassed).  All TX/RX switching is done on
+board1.
 
 ### TX Switch
 
@@ -230,3 +231,144 @@ The TX switch switches the TX antenna between board1 and board1.  It
 uses the active line for board1 to do this.  The inactive board
 receives the output of it's TX section through a resistor, as
 described above.
+
+# System Interfaces Description
+
+This section defines the interfaces used to interact with the PacSat
+AFSK board.
+
+All connections to the CSKB connectors H1 and H2 can be moved to
+different pins as required.
+
+## Power
+
+The board can run on just external +5V if configured with a 3.3V
+regulator, or it can run on external +5V and +3.3V.  External power
+interfaces have inductors to regulate surge at startup.
+
+The default power pins are the ones defined by the ISIS ICEPS2 power
+supply, and a zero-ohm resistor can choose either the man +5V/+3.3V
+inputs, or one of the three secondary switched inputs, on the Cube Sat
+Kit Bus interface.
+
+A power disable, named HW\_POWER\_OFF1\_N, can be used to disable
+power on the board.  If this is pulled low, all power zones but +5VAL
+will be off.  This is pulled high on the board, so it does not have to
+be driven.  This is part of the dual-board controls, but in a simplex
+situation it can be used to externally control power on the board.
+
+Power requirements are TBD.
+
+## UMBILICAL\_ATTACHED
+
+This signal tells the board that the satellite is in the launch
+vehicle.  High (3V) means attached, ground means it's not in the
+launch vehicle.  The processor can read this line, and if high it will
+disable the RF PA so the board cannot transmit.
+
+And optional pull-down on the line can be populated if the line is not
+externally driven.  This must be low for the board to be able to
+transmit.
+
+## CAN Bus
+
+The board has two CAN busses, CANA and CANB.  These are used for
+external entities to supply control and telemetry and to send messages
+to other entities from the board.
+
+This interface is only capable of CAN 2.0, it cannot do CAN FD or CAN
+XL.  A protocol design to do messaging over the 8-byte CAN 2.0
+packets is described in a later section, CAN Bus Messages, along with
+the messages themselves.
+
+## I2C
+
+An I2C bus is wired to the CSKB.  Termination is provided on the
+PacSat board, though it could be removed if necessary.
+
+The default pins for this are chosen as defined in "Standardization
+Approaches for Efﬁcient Electrical Interfaces of CubeSats" at
+https://www.researchgate.net/publication/354837502_Standardization_Approaches_for_Efficient_Electrical_Interfaces_of_CubeSats?enrichId=rgreq-3c8f3f7a94bf0ca750dcd71e69db6025-XXX&enrichSource=Y292ZXJQYWdlOzM1NDgzNzUwMjtBUzoxMDcxODgzMjE0NjYzNjgxQDE2MzI1NjgyODEyNzE%3D&el=1_x_2&_esc=publicationCoverPdf
+
+## TX/RX connections
+
+These connections provide antenna interfaces to the board.  The are 50
+ohm U.FL connections.  It is expected that the connectors will be
+epoxied down to the board.
+
+On a simplex board, RX Antenna and TX Antenna provide separate
+connections to a 144MHz receive antenna and a 440MHz transmit antenna.
+The RX Board2 and TX Board2 connections are not used in this
+configuration.
+
+In a dual-board configuration, board 1 has the RX Antenna and TX
+Antenna connection to the antennas.  The RX Board2 connection on board
+1 is then wired to the RX Antenna connection on board2.  And the TX
+Board2 connection on board 1 is then wired to the TX Antenna
+connection on board2.  Board 1 will switch the external antenna
+between the two boards depending on the value of the ACTIVE1\_N line.
+See the design document for more details.
+
+## Dual Board Controls
+
+This is considered an internal interface between two PacSat boards,
+used for fault tolerance.  Even though it runs over the CSKB
+connector, it's not exactly and external interface, though it is
+possible for an external entity to control the active/standby
+configuration of the boards.  See the design document for details on
+this.
+
+Some of these, namely FAULT1\_N and PRESENCE1\_N, might be useful for
+monitoring the board.  See the design document for details.
+
+# Programming and Debug Interfaces
+
+The board has two main interfaces for programming and debugging: A
+JTAG interface and a serial port interface.
+
+The JTAG is the primary programming interface, though capability to
+program the device could be done over the serial port.
+
+## JTAG
+
+An ARM standard 10-pin JTAG header is provided on one edge of the
+board, as described at
+https://software-dl.ti.com/ccs/esd/documents/xdsdebugprobes/emu_jtag_connectors.html
+
+To use the JTAG interface, the watchdog timer must be disabled or the
+processor will be continuously reset.  A standard 2.54mm (.1") header
+is provided at J4; when a jumper is installed the watchdog timer will be
+disabled.
+
+## Serial Port
+
+A 3.3V serial port interface is provided on the edge of the board.
+This is a standard 2.54mm (.1") header with three pins: TX, RX, and
+ground.  Remember, when connecting to an external serial port, connect
+TX to RX and RX to TX.
+
+Only connect a 3.3V serial port interface.  Connecting a 5V or
+standard RS-232 connection will likely damage the processor.
+Connecting external TX to TX on the board will likely damage the
+processor, and probably the external serial port, too.
+
+## LP-XDS110 JTAG/Serial Debug Probe
+
+TI sells the "XDS110 LaunchPad Debug Probe", part number LP-XDS110,
+that is an inexpensive programming interface that can do both JTAG and
+the serial port.
+
+A separate ARM 10-pin JTAG cable (1.27mm pitch) will be required
+(FIXME - find a reference for this, something like AdaFruit 1675 or
+Sparkfun 15364) and jumper wires are require for wiring this in.
+
+FIXME - Add pictures and diagrams for how to hook this up.
+
+# Board Configuration
+
+The PacSat board has a large number of configurations that can be
+done.  See "Board Configuration" in the design document
+
+# CAN Bus Messages
+
+TBD

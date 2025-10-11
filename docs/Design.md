@@ -433,7 +433,8 @@ to power on the LNA.
 
 # Board Configuration
 
-The board has a number of resistors for configuration.  These are:
+The board has a number of resistors and optional parts for
+configuration.  These are:
 
   - 1.2V\_INPUT - Determines whether 1.2V is derived from 3.3V or 5V.
 

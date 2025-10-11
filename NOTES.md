@@ -9,6 +9,11 @@ some point.
 
 # TODO
 
+Add 0 ohm resistors for I2C interface, perhaps?
+
+Add 0 ohm resistors to make some of the dual-board lines available if
+the dual-board switching parts are not populated.
+
 Remove the 0 ohm resistor between the LNA and BPF.  You can remove the
 inductor there to disconnect the sections.
 
