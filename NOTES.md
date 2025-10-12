@@ -1101,3 +1101,8 @@ Create a ground hold under the RTC crystal and traces and reroute all
 traces that went under it.  According to the datasheet you should not
 have a ground plane (and I'm guessing signals) under the crystal
 traces to avoid added capacitance.
+
+## 2025-10-12
+
+The board bypass circuitry had an error, the board1 in and antenna
+connections were flipped on the switch.  Put them in the right place.
