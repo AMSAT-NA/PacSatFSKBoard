@@ -9,6 +9,10 @@ some point.
 
 # TODO
 
+The BOARD1\_RF\_BYPASS and BOARD2\_RF\_BYPASS lines can be combined,
+you are only using one of them at a time.  This will simplify the
+design a bit and remove a part.
+
 Add 0 ohm resistors for I2C interface, perhaps?
 
 Add 0 ohm resistors to make some of the dual-board lines available if
