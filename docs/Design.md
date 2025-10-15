@@ -84,7 +84,7 @@ used as a GPIO.
 |68		|VSSAD					|						|  | |
 |69		|VCCAD					|						|  | |
 |70		|AD1IN[09] / AD2IN[09]	|						|  |free adc |
-|71		|AD1IN[01]				|						|  |free adc |
+|71		|AD1IN[01]				|VBATT					|  |Voltage from the battery rail |
 |72		|AD1IN[10] / AD2IN[10]	|PWR\_FLAG\_5VAL		|  |Power flag from the +5VAL current limiter |
 ||||||
 |73		|AD1IN[02]				|REV\_PWR				|  |\*Reverse RF TX Power |
@@ -146,8 +146,8 @@ used as a GPIO.
 |128	|CAN2TX					|CAN\_B\_TX				|OU|CAN bus B transmit |
 |129	|CAN2RX					|CAN\_B\_RX				|IU|CAN bus B receive |
 |130	|MIBSPI1NCS[1]			|\*FEED\_WATCHDOG		|OU|Resets the hardware watchdog timer |
-|131	|LINRX					|UART\_RX2				|IU|PC104 Pin 36 |
-|132	|LINTX					|UART\_TX2				|OU|PC104 Pin 32 |
+|131	|LINRX					|PC104\_RX				|IU|PC104 Pin H2-21 |
+|132	|LINTX					|PC104\_TX				|OU|PC104 Pin H2-22 |
 |133	|GIOB[1]				|ACTIVE\_N				|BD|Local active pin for active/standby |
 |134	|VCCP					|						|  | |
 |135	|VSS					|						|  | |
@@ -155,7 +155,7 @@ used as a GPIO.
 |137	|VCC					|						|  | |
 |138	|VSS					|						|  | |
 |139	|N2HET1[16]				|						| D|free gpio|
-|140	|N2HET1[18]				|						| D|free gpio|
+|140	|N2HET1[18]				|PC104\_ABF0			|ID|PC104 pin H2-50|
 |141	|N2HET1[20]				|AX5043\_PWR\_EN		|OD|Main power enable for all AX5043s |
 |142	|GIOB[2]				|AX5043\_IRQ\_TX		|ID|Interrupt from AX5043 TX |
 |143	|VCC					|						|  | |

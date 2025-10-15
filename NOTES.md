@@ -13,8 +13,6 @@ The BOARD1\_RF\_BYPASS and BOARD2\_RF\_BYPASS lines can be combined,
 you are only using one of them at a time.  This will simplify the
 design a bit and remove a part.
 
-Add 0 ohm resistors for I2C interface, perhaps?
-
 Add 0 ohm resistors to make some of the dual-board lines available if
 the dual-board switching parts are not populated.
 
@@ -1110,3 +1108,13 @@ traces to avoid added capacitance.
 
 The board bypass circuitry had an error, the board1 in and antenna
 connections were flipped on the switch.  Put them in the right place.
+
+## 2025-10-14
+
+Add DNP zero-ohm resistors on the I2C lines to the PC104 so they can
+be disconnected.
+
+Add UART lines to the PC104 connected via DNP zero-ohm resistors.
+
+Add a way to measure battery voltage from the PC104, currently with
+DNP zero ohm resistors.

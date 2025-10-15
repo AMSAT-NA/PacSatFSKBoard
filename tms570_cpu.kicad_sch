@@ -4822,16 +4822,6 @@
 		)
 		(uuid "686904f8-00c4-4599-986f-27dde4e46b19")
 	)
-	(text "Reserved for UART on PC104"
-		(exclude_from_sim no)
-		(at 131.572 154.178 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-		)
-		(uuid "7416e645-c07d-4bc7-9c7c-7fd6fab70b9f")
-	)
 	(text "Thermsistor varies from 534\nohms (125C) to 188.5KΩ (-40C).\nWith a 10KΩ bias this gives a\n.17 to 3.13V range."
 		(exclude_from_sim no)
 		(at 375.412 109.728 0)
@@ -5276,16 +5266,8 @@
 		(uuid "fc00ee93-c1d4-4142-8c29-f0ef87c03d24")
 	)
 	(no_connect
-		(at 281.94 96.52)
-		(uuid "019a67e5-b8d3-44ba-b278-a06776cad51e")
-	)
-	(no_connect
 		(at 281.94 124.46)
 		(uuid "07880c0d-699d-499f-95e6-95229309d935")
-	)
-	(no_connect
-		(at 149.86 154.94)
-		(uuid "0a43ed6c-9c2b-4650-9fb9-8efc22966736")
 	)
 	(no_connect
 		(at 196.85 72.39)
@@ -5298,14 +5280,6 @@
 	(no_connect
 		(at 250.19 204.47)
 		(uuid "20be2340-f2a4-47fb-8618-fa833b959663")
-	)
-	(no_connect
-		(at 149.86 175.26)
-		(uuid "31be67f0-1576-4c6e-860e-4e3ba9725e51")
-	)
-	(no_connect
-		(at 149.86 152.4)
-		(uuid "46ed1a4f-373d-4908-bd7c-d4d3e4b3181d")
 	)
 	(no_connect
 		(at 149.86 142.24)
@@ -5332,10 +5306,6 @@
 		(uuid "748a593b-7c1a-45c5-9b0d-f4bb47726d17")
 	)
 	(no_connect
-		(at 281.94 99.06)
-		(uuid "96e086a1-e37a-4732-a182-2693f532c23d")
-	)
-	(no_connect
 		(at 191.77 72.39)
 		(uuid "a93c9763-6394-4e54-80f5-7a8f6e3dc4d6")
 	)
@@ -5354,6 +5324,10 @@
 	(no_connect
 		(at 217.17 204.47)
 		(uuid "cf5ce3db-dea8-41e3-b08f-4b66074efb90")
+	)
+	(no_connect
+		(at 281.94 99.06)
+		(uuid "e8c6d285-904e-4f12-970e-40d63c74c40c")
 	)
 	(no_connect
 		(at 176.53 72.39)
@@ -6605,6 +6579,16 @@
 	)
 	(wire
 		(pts
+			(xy 281.94 96.52) (xy 288.29 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5fe00fc0-cd21-439e-a903-1c76082fb4cd")
+	)
+	(wire
+		(pts
 			(xy 254 38.1) (xy 254 39.37)
 		)
 		(stroke
@@ -7072,6 +7056,16 @@
 			(type default)
 		)
 		(uuid "84569ad5-1a71-453a-99d7-0a8969a30208")
+	)
+	(wire
+		(pts
+			(xy 125.73 154.94) (xy 149.86 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "84afae65-64af-482d-bc6a-7cf1314581d7")
 	)
 	(wire
 		(pts
@@ -7612,6 +7606,16 @@
 			(type default)
 		)
 		(uuid "acbcaf0d-f53f-44cf-8e91-9c3cff8825d8")
+	)
+	(wire
+		(pts
+			(xy 125.73 152.4) (xy 149.86 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aed3cc79-d9bb-4569-bc47-3495ac7351fb")
 	)
 	(wire
 		(pts
@@ -8485,6 +8489,16 @@
 	)
 	(wire
 		(pts
+			(xy 133.35 175.26) (xy 149.86 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f00311c9-07a1-4a77-b7de-c13b7c29d559")
+	)
+	(wire
+		(pts
 			(xy 281.94 142.24) (xy 293.37 142.24)
 		)
 		(stroke
@@ -8807,6 +8821,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "VBATT"
+		(shape input)
+		(at 288.29 96.52 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0e53fa13-a1c4-42cc-b801-ed31347ace25")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 296.0034 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -9317,6 +9353,28 @@
 			)
 		)
 	)
+	(global_label "PC104_ABF0"
+		(shape input)
+		(at 133.35 175.26 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "57622e28-6ffe-4a9d-986c-a0f9bb48131c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 119.2262 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "OTHER_ACTIVE_N"
 		(shape input)
 		(at 209.55 233.68 270)
@@ -9647,6 +9705,28 @@
 			)
 		)
 	)
+	(global_label "PC104_RX"
+		(shape input)
+		(at 125.73 152.4 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "87cba7e4-e5f2-40ce-91af-4eb04ee8a0b5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 113.7834 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "OTHER_FAULT_N"
 		(shape input)
 		(at 171.45 233.68 270)
@@ -9797,6 +9877,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PC104_TX"
+		(shape input)
+		(at 125.73 154.94 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a4f88a62-e591-4eaf-93d9-ab87897d1803")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 114.0858 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
