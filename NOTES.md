@@ -9,6 +9,16 @@ some point.
 
 # TODO
 
+Convert the power plane to a ground plane in the digital portion, and
+as part of that add ground vias by signal vias to reduce the return
+signal path.
+
+Check that all vias in RF portion have a corresponding ground via to
+give the return signal a minimum path.
+
+Look at possible coupled ground loops in the RF section.  None pop out
+from a cursory glance, but need to look closer.
+
 The BOARD1\_RF\_BYPASS and BOARD2\_RF\_BYPASS lines can be combined,
 you are only using one of them at a time.  This will simplify the
 design a bit and remove a part.

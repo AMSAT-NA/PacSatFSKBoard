@@ -67,7 +67,7 @@ f = open(infn)
 cf = csv.reader(f, delimiter=';')
 line = cf.__next__()
 if len(line) != 7:
-    sys.stderr.write("First line doesn't have 6 values, doesn't appear to be"
+    sys.stderr.write("First line doesn't have 7 values, doesn't appear to be"
                      + " a Kicad BOM output")
     sys.exit(1)
     pass

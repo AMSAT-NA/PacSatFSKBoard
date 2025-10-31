@@ -18,8 +18,8 @@ else:
 cf = csv.reader(f)
 line = cf.__next__()
 if len(line) != 7:
-    sys.stderr.write("First line doesn't have 6 values, doesn't appear to be"
-                     + " a Kicad BOM output")
+    sys.stderr.write("First line doesn't have 7 values, doesn't appear to be"
+                     + " a Kicad POS output")
     sys.exit(1)
     pass
 
