@@ -9,6 +9,8 @@ some point.
 
 # TODO
 
+Rename Processor\_Reset" to "Processor\_Reset\_N" to reflect its polarity.
+
 Convert the power plane to a ground plane in the digital portion, and
 as part of that add ground vias by signal vias to reduce the return
 signal path.
