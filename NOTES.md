@@ -9,6 +9,8 @@ some point.
 
 # TODO
 
+Switch the main RF connectors to MMCX, since that's pretty standard.
+
 Rename Processor\_Reset" to "Processor\_Reset\_N" to reflect its polarity.
 
 Convert the power plane to a ground plane in the digital portion, and
