@@ -9,6 +9,8 @@ some point.
 
 # TODO
 
+Add the pin 1 markers for U24 and U30.
+
 Switch the main RF connectors to MMCX, since that's pretty standard.
 
 Rename Processor\_Reset" to "Processor\_Reset\_N" to reflect its polarity.
