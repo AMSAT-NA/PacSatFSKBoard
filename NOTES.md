@@ -9,6 +9,11 @@ some point.
 
 # TODO
 
+Look at the diode on the RTC. The Nexperia parts are out of stock and
+the Rohm RB520ASA-30FH was suggested as an alternative.  It has better
+reverse current but a higher voltage drop across the junction.  Maybe
+a better diode could be chosen.
+
 Add the pin 1 markers for U24 and U30.
 
 Switch the main RF connectors to MMCX, since that's pretty standard.
