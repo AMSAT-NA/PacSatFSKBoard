@@ -9,6 +9,16 @@ some point.
 
 # TODO
 
+It doesn't look like the transmitter and receiver chips can be coaxed
+to work on the same frequencies if the transmitter is in the 430MHz
+range and the receiver is in the 144MHz range.  This is due to the
+inductors on the AX5043 just not ranging far enough.  Either add a
+switch for the inductor on the transmit AX5043, or just give up on the
+loopback capability.
+
+Possibly switch to a PE42424, or possibly another RF switch to replace
+the Qorvo part.
+
 Look at the diode on the RTC. The Nexperia parts are out of stock and
 the Rohm RB520ASA-30FH was suggested as an alternative.  It has better
 reverse current but a higher voltage drop across the junction.  Maybe
@@ -1120,7 +1130,7 @@ Add fiducials for board alignment, per board house specifications.
 
 Convert the solder jumper for watchdog disable to a normal jumper.
 
-Create a ground hold under the RTC crystal and traces and reroute all
+Create a ground hole under the RTC crystal and traces and reroute all
 traces that went under it.  According to the datasheet you should not
 have a ground plane (and I'm guessing signals) under the crystal
 traces to avoid added capacitance.
