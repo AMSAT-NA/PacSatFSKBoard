@@ -9,6 +9,37 @@ some point.
 
 # TODO
 
+The RTC is not keeping time when the power is off unless it's always
+powered with Vbat.  It appears the RTC is now switching to Vbat on a
+power fail.  But when it comes up PFAIL and OSCF are not set.  I've
+modified it to always run on Vbat and that seems to be ok, but this
+should probably be researched at some point.
+
+MRAM0 is not working, at least on the board I'm working on (board 6).
+The other ones work, I have verified that the chip select is working,
+and I can't find anything wrong.  I'll verify on another board later
+to see if it's an issue with that chip.  Maybe it got blown when the
+various SPI things were messed up.
+
+The 22nH inductors wouldn't range properly on the RX AX5043s, they
+ranged too low.  So we need a smaller inductor.  18nH and 15nH
+ordered, hopefully that works.
+
+The LP-XDS110 debugger works find with the board, document this,
+including how to order a cable.  https://www.adafruit.com/product/1675
+or https://www.digikey.com/en/products/detail/olimex-ltd/ARM-JTAG-20-10/3471401
+
+Fix the watchdog jumper or order the right part.
+
+The debug port and the serial interface are too close together.
+Separate them out a bit.
+
+Change R117 to 18K, output at 2.5V is marginal.
+
+U5, a 74AHC1G09, is an open drain part.  It really needs to be a part
+that drives the output line, like a SN74AHC1G08QDCKRQ1.  Added a
+resistor across the 3.3V and output of the 74AHC1G09 to compensate.
+
 It doesn't look like the transmitter and receiver chips can be coaxed
 to work on the same frequencies if the transmitter is in the 430MHz
 range and the receiver is in the 144MHz range.  This is due to the
@@ -1149,3 +1180,34 @@ Add UART lines to the PC104 connected via DNP zero-ohm resistors.
 
 Add a way to measure battery voltage from the PC104, currently with
 DNP zero ohm resistors.
+
+## 2025-12-1
+
+Got the board, started working on it.  Found some problems:
+
+R117 needs to be a larger value, HW\_POWER\_OFF\_N is just a little to
+low a voltage.
+
+U5, the 74AHC1G09 AND gate, is an open drain output, it needs to be
+a push pull output.  Worked around with a resistor for now.
+
+The debug port and serial port are too close together.
+
+## 2025-12-2
+
+Fixed the software bugs, the MRAM, AX5043s, an RTC are all working.
+
+I put on a 22nh inductor for the RX 5043s, but it wouldn't range
+properly.  It ranged from 128MHz to 142MHz.  From the tables, that
+means around 4-5nH of inductance is being added by the traces and
+such.  This means the inductor will probably need to be 18nH.  Ordered
+a LQW18AS4N3G0CD (and some 15nH ones to boot).  I put on an 83nH
+inductor and turned off the frequency doubling; it was able to range
+properly.
+
+MRAM0 is not working.  The other MRAMs work.  I've check the CS line
+and that's set properly, and the schematics and board all look good,
+so I'm not sure what is going on.
+
+The RTC is not holding time when powered off unless it's powered with
+Vbat all the time.  Not sure why.
