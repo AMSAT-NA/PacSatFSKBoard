@@ -9,6 +9,9 @@ some point.
 
 # TODO
 
+A line needs to be run from the LNA's bias resistor to LNA_VCC so the
+bias actually has bias.
+
 The RTC is not keeping time when the power is off unless it's always
 powered with Vbat.  It appears the RTC is now switching to Vbat on a
 power fail.  But when it comes up PFAIL and OSCF are not set.  I've
@@ -1211,4 +1214,7 @@ and that's set properly, and the schematics and board all look good,
 so I'm not sure what is going on.
 
 The RTC is not holding time when powered off unless it's powered with
-Vbat all the time.  Not sure why.
+Vbat all the time.  Not sure why.  It can just be powered with Vbat.
+
+The power to the LNA bias was not connected, the LNA bias resistor,
+R77, needs to be connected to LNA_VCC.
