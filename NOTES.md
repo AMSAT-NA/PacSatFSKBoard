@@ -34,7 +34,8 @@ Fix the watchdog jumper or order the right part.
 The debug port and the serial interface are too close together.
 Separate them out a bit.
 
-Change R117 to 18K, output at 2.5V is marginal.
+Change R117 to 18K, output at 2.5V is marginal.  Same may be true for
+the ACTIVE\_N line.
 
 U5, a 74AHC1G09, is an open drain part.  It really needs to be a part
 that drives the output line, like a SN74AHC1G08QDCKRQ1.  Added a
