@@ -9,6 +9,9 @@ some point.
 
 # TODO
 
+Use 1% resistors on the voltage dividers for the voltage measurement
+into the ADC.
+
 A line needs to be run from the LNA's bias resistor to LNA_VCC so the
 bias actually has bias.
 
@@ -31,6 +34,8 @@ ordered, hopefully that works.
 The LP-XDS110 debugger works find with the board, document this,
 including how to order a cable.  https://www.adafruit.com/product/1675
 or https://www.digikey.com/en/products/detail/olimex-ltd/ARM-JTAG-20-10/3471401
+Also document that you cannot turn off power when the board is connected
+to the debugger or bad things can happen.
 
 Fix the watchdog jumper or order the right part.
 

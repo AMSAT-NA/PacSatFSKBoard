@@ -72,10 +72,10 @@ used as a GPIO.
 |56		|VSS					|						|  | |
 |57		|VCC					|						|  | |
 |58		|AD1IN[16] / AD2IN[0]	|\*						|  |Thermsistor near the processor |
-|59		|AD1IN[17] / AD2IN[01]	|						|  |free adc |
+|59		|AD1IN[17] / AD2IN[01]	|						|  |Board Number |
 |60		|AD1IN[0]				|						|  |free adc |
 |61		|AD1IN[07]				|PWR\_FLAG\_AX5043		|  |Power flag from the AX5043 current limiter |
-|62		|AD1IN[18] / AD2IN[02]	|						|  |free adc |
+|62		|AD1IN[18] / AD2IN[02]	|						|  |External Control |
 |63		|AD1IN[19] / AD2IN[03]	|						|  |free adc |
 |64		|AD1IN[20] / AD2IN[04]	|VER\_BIT0				|  |Board version number bit 0 |
 |65		|AD1IN[21] / AD2IN[05]	|VER\_BIT1				|  |Board version number bit 1 |
