@@ -7,7 +7,56 @@ be done, and things that have been done.
 The general information will probably make it into another document at
 some point.
 
+# New Board Bring up
+
+Things to do for a new board:
+
+* Add power connector.
+
+* Add watchdog jumper.
+
+* Replace RX AX5043 inductors.
+
+* Add jumper for the LNA bias.
+
+* Replace U6 with the proper part.
+
+* Possibly replace R117 with a 15/18K resistor.
+
+# Current Board Status
+
+## Board 6
+
+* MRAM0 does not work.
+
+* The RF switches have been removed and jumpers places on the RF connections.
+  So this is basically a stand-alone board or a board 2.
+
+* The board 2 resistor has not been added, but should be at some point.
+
 # TODO
+
+The PA input has a direct RF connection to ground.  The spec sheet
+says it needs DC blocking.  The other L network that works uses a 37pF
+capacitor and an 18nH inductor, but that doesn't perform nearly as
+well as the two inductors.  So add a 1nF or so capacitor to block DC.
+
+The Iref input to the PA has the resistor and inductor swapped from
+what's in the datasheet, and there is also a .1uF capacitor from
+between the resistor and inductor to ground.  It should probably
+match the datasheet.
+
+Add a line from the hardware watchdog to the RTC input so a reset
+can tell if the hardware watchdog fired.
+
+The control voltage for the QPC1022 RF switches has a maximum value of
+2.75V, it's being driven with 3.3V, which is too much.  ACTIVE_N can
+be driven with an open drain, which would temporarily solve the
+problem.  On board 6, which I did initial bring up on, the RF switch
+is always on when enabled.  I don't know if there is some issues there
+or if driving it to high messed it up.  This needs to be eventually
+tested on another board.  The RF switches have been removed from
+board 6.
 
 Use 1% resistors on the voltage dividers for the voltage measurement
 into the ADC.
@@ -1223,3 +1272,20 @@ Vbat all the time.  Not sure why.  It can just be powered with Vbat.
 
 The power to the LNA bias was not connected, the LNA bias resistor,
 R77, needs to be connected to LNA_VCC.
+
+## 2025-12-2
+
+The RF switches on Board 6 were not working for some reason.  They
+have been removed from Board 6 completely and zero-ohm resistors
+installed in the proper place.
+
+The RF switches may have been messed up because the ACTIVE1_N line
+was being driven at 3.3V, but the RF switches have a max control
+input of 2.7V.  I've done a workaround in software for this in
+case to avoid destroying some other boards.
+
+Added a bunch of ADC stuff to the software to read the board version,
+voltages, power flags, and RF power measurements.  The RF power
+measurements don't seem to be working.  The voltages are reading
+a little high, but those aren't 1% resistors on the divider so
+that might be the issue.
