@@ -17,11 +17,13 @@ Things to do for a new board:
 
 * Replace RX AX5043 inductors.
 
-* Add jumper for the LNA bias.
+* Add blue wire for the LNA bias.
 
 * Replace U6 with the proper part.
 
 * Possibly replace R117 with a 15/18K resistor.
+
+* Break the trace between L35 and C112 and add a 1nF capacitor there.
 
 # Current Board Status
 
@@ -34,12 +36,28 @@ Things to do for a new board:
 
 * The board 2 resistor has not been added, but should be at some point.
 
+* Added a 1nF capacitor between L35 and the RF PA so it's not DC grounded.
+
+* The board usually goes into a reset loop when cold.  It started
+  doing this after I put too much voltage in.  This is probably a
+  power issue someplace.  Fixing the PA power controller did seem to
+  help.  To get it out, you have to let the board warm up a little
+  then bring the voltage down and back up until it works.
+
 # TODO
+
+The power input pins are a little inconvenient, it would have been
+better if I had used a standard 2-pin connector instead of two
+separate pins.  I guess you could also just use the pins on the PC104
+connector, too.
 
 The PA input has a direct RF connection to ground.  The spec sheet
 says it needs DC blocking.  The other L network that works uses a 37pF
 capacitor and an 18nH inductor, but that doesn't perform nearly as
 well as the two inductors.  So add a 1nF or so capacitor to block DC.
+Adding the capacitor on board 6 between L35 and the PA was almost
+impossible.  For the other rework, break the line between L35 and C112
+and put the capacitor there, that should be much easier
 
 The Iref input to the PA has the resistor and inductor swapped from
 what's in the datasheet, and there is also a .1uF capacitor from
@@ -92,7 +110,8 @@ The debug port and the serial interface are too close together.
 Separate them out a bit.
 
 Change R117 to 18K, output at 2.5V is marginal.  Same may be true for
-the ACTIVE\_N line.
+the ACTIVE\_N line.  Actually, the ACTIVE\_N line has its own issues,
+see above for details.  2.5V is not marginal for inputs to the TMS570.
 
 U5, a 74AHC1G09, is an open drain part.  It really needs to be a part
 that drives the output line, like a SN74AHC1G08QDCKRQ1.  Added a
@@ -1273,7 +1292,7 @@ Vbat all the time.  Not sure why.  It can just be powered with Vbat.
 The power to the LNA bias was not connected, the LNA bias resistor,
 R77, needs to be connected to LNA_VCC.
 
-## 2025-12-2
+## 2025-12-3
 
 The RF switches on Board 6 were not working for some reason.  They
 have been removed from Board 6 completely and zero-ohm resistors
@@ -1289,3 +1308,25 @@ voltages, power flags, and RF power measurements.  The RF power
 measurements don't seem to be working.  The voltages are reading
 a little high, but those aren't 1% resistors on the divider so
 that might be the issue.
+
+## 2025-12-5
+
+I apparently pushed the voltage too high on and burned up the MAX4995
+for the PA.  I replaced that and that part started working fine.  It
+may have also been the lack of a DC block on the RF input to the PA
+(see below entry).  I think there is another problem on the board,
+too, as it's drawing a lot more power than it was earlier when I
+started working on it.
+
+I had changed the L match at the input of the PA to two inductors.
+However, I forgot that the RF input to the PA requires a DC block.  I
+put a capacitor to block DC to RFin and that drastically improved
+things.  I'm not sure if the PA is ok, though.  It's definitely not
+putting out as much power as it should.
+
+The PA always draws 400ma or so when it is on, it appears, even when
+there is no RF input.  I need to test on a different board (see the
+above entry) to be sure, but looking at the data sheet it says the
+quiescent current is 425ma.  This is not a ship-stopper, as the PA is
+only on when transmitting, but it means the output of the AX5043
+cannot be used to control the power use of the amplifier.
