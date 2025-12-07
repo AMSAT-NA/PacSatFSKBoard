@@ -19,17 +19,22 @@ Things to do for a new board:
 
 * Add blue wire for the LNA bias.
 
-* Replace U6 with the proper part.
+* Replace U5 with the proper part.
 
-* Possibly replace R117 with a 15/18K resistor.
+* Possibly replace R117 with a 15/18K resistor. (Not necessary, it
+  appears.)
 
 * Break the trace between L35 and C112 and add a 1nF capacitor there.
 
 # Current Board Status
 
-## Board 6
+## Board 5 - 2nd board I worked on
 
-* MRAM0 does not work.
+* Applied all the board bring up changes.
+
+* It's working well.
+
+## Board 6 - First board I worked on for initial bringup
 
 * The RF switches have been removed and jumpers places on the RF connections.
   So this is basically a stand-alone board or a board 2.
@@ -44,7 +49,15 @@ Things to do for a new board:
   help.  To get it out, you have to let the board warm up a little
   then bring the voltage down and back up until it works.
 
+* The board draws a lot more power than it should.  Something in the
+  power section got messed up, it appears.
+
 # TODO
+
+Change the part number for the MRAM chips.  The ones on the boards now
+are 1.8V chips.  Surprisingly, they work just fine, but we need to get
+the right chips on there eventually.  Right part number is
+AS3016204-0108X0PSAY.
 
 The power input pins are a little inconvenient, it would have been
 better if I had used a standard 2-pin connector instead of two
@@ -88,15 +101,10 @@ power fail.  But when it comes up PFAIL and OSCF are not set.  I've
 modified it to always run on Vbat and that seems to be ok, but this
 should probably be researched at some point.
 
-MRAM0 is not working, at least on the board I'm working on (board 6).
-The other ones work, I have verified that the chip select is working,
-and I can't find anything wrong.  I'll verify on another board later
-to see if it's an issue with that chip.  Maybe it got blown when the
-various SPI things were messed up.
-
 The 22nH inductors wouldn't range properly on the RX AX5043s, they
 ranged too low.  So we need a smaller inductor.  18nH and 15nH
-ordered, hopefully that works.
+ordered, hopefully that works.  UPDATE: They work, need to update the
+schematic.
 
 The LP-XDS110 debugger works find with the board, document this,
 including how to order a cable.  https://www.adafruit.com/product/1675
@@ -134,7 +142,8 @@ a better diode could be chosen.
 
 Add the pin 1 markers for U24 and U30.
 
-Switch the main RF connectors to MMCX, since that's pretty standard.
+Switch the main RF connectors from UFL to MMCX, since that's pretty
+standard.
 
 Rename Processor\_Reset" to "Processor\_Reset\_N" to reflect its polarity.
 
@@ -587,6 +596,12 @@ The hardware watchdog needs to be able to be physically disabled so
 the board can be programmed without the watchdog getting in the way.
 Probably add a jumper by the JTAG and serial lines to disable the
 watchdog.
+
+MRAM0 is not working, at least on the board I'm working on (board 6).
+The other ones work, I have verified that the chip select is working,
+and I can't find anything wrong.  I'll verify on another board later
+to see if it's an issue with that chip.  Maybe it got blown when the
+various SPI things were messed up.
 
 # Not going to do
 
@@ -1330,3 +1345,32 @@ above entry) to be sure, but looking at the data sheet it says the
 quiescent current is 425ma.  This is not a ship-stopper, as the PA is
 only on when transmitting, but it means the output of the AX5043
 cannot be used to control the power use of the amplifier.
+
+## 2025-12-5
+
+Switched board 6 RX AX5043 inductors to 18nH and they all range
+properly now.
+
+Fixed everything on board 5, it came up without issue.  MRAM0 still
+doesn't work, so that's not just a board 6 problem.  It's drawing much
+less current, about 150ma when not transmitting and 300ma when
+transmitting, so something in the power section on board 6 is
+definitely messed up (and the temperature in the power section is
+excessively high), and the PA seems to be messed up, too.  I'm getting
+about the same transmit power, still not moving the needle on my power
+meter and testing with very low power shows about the same values.
+
+The RF switches seem to be working properly on board 5, so I did mess
+up the ones on board 6 with too high a control voltage.
+
+Replacing R117 was not necessary on board 5, though it should still be
+fixed on the next board to be within specs on that signal.
+
+Receiving still works well (especially when I remember to enable the
+IAmActive gpio so it connects the input to the antenna).
+
+Discovered that the MRAM chips are the wrong voltage, they are 1.8V
+instead of 3.3V.  They still work, though.
+
+The MRAM issue was a problem in software, these MRAM chips had a
+different configuration.
