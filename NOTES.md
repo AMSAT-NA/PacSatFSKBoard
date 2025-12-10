@@ -15,16 +15,26 @@ Things to do for a new board:
 
 * Add watchdog jumper.
 
-* Replace RX AX5043 inductors.
+* Replace RX AX5043 inductors.  18nH works well.
 
-* Add blue wire for the LNA bias.
+* Add blue wire for the LNA bias from between R77 and C105 to
+  between L32 and C107/108.
 
 * Replace U5 with the proper part.
 
-* Possibly replace R117 with a 15/18K resistor. (Not necessary, it
-  appears.)
+* Possibly replace R117 with a 15/18K resistor.  The voltage is
+  a little low for the AND gate input.  (Testing shows this is
+  not necessary, so this doesn't have to be done on prototype
+  boards.)
 
 * Break the trace between L35 and C112 and add a 1nF capacitor there.
+  This blocks DC to the PA input, as required by the chip.  The
+  capacitor can be added between L35 and the PA, but that's a lot
+  harder to do.  If the blocking capacitor is between L35 and C112
+  that means you can't effectively use the TX\_PA\_DRV UFL connector
+  (P13) because possibly there will be a DC path to ground through the
+  UFL connector.  So you can only use TX\_PA\_DRV on boards with the
+  capacitor between L35 and the PA.
 
 # Current Board Status
 
@@ -32,7 +42,11 @@ Things to do for a new board:
 
 * Applied all the board bring up changes.
 
-* It's working well.
+* It's working well, except for RF transmit power.
+
+* This board has the capacitor on the PA RF input added between
+  the L35 inductor and the PA, so the TX\_PA\_DRV input/output
+  connector (P13) can be used on this board.
 
 ## Board 6 - First board I worked on for initial bringup
 
@@ -52,7 +66,21 @@ Things to do for a new board:
 * The board draws a lot more power than it should.  Something in the
   power section got messed up, it appears.
 
+## Board 8 - 3rd board I worked on
+
+* Applied all the board bring up changes.
+
+* It's working well, except for RF transmit power.
+
+* Added the 1nF capacitor between L35 and C112, so TX\_PA\_DRV cannot
+  be used on this board.
+
 # TODO
+
+Fix the processor part number.
+
+Move L27 down a bit to give it more space between the inductors around
+it.
 
 Change the part number for the MRAM chips.  The ones on the boards now
 are 1.8V chips.  Surprisingly, they work just fine, but we need to get
@@ -106,16 +134,17 @@ ranged too low.  So we need a smaller inductor.  18nH and 15nH
 ordered, hopefully that works.  UPDATE: They work, need to update the
 schematic.
 
-The LP-XDS110 debugger works find with the board, document this,
+The LP-XDS110 debugger works fine with the board, document this,
 including how to order a cable.  https://www.adafruit.com/product/1675
 or https://www.digikey.com/en/products/detail/olimex-ltd/ARM-JTAG-20-10/3471401
 Also document that you cannot turn off power when the board is connected
-to the debugger or bad things can happen.
-
-Fix the watchdog jumper or order the right part.
+to the debugger or bad things can happen, and that the serial port doesn't
+work if you don't have the JTAG connector in place.
 
 The debug port and the serial interface are too close together.
-Separate them out a bit.
+Separate them out a bit.  Also, make the serial port a right-angle
+connector so it can be used when in the board stack.  The JTAG
+connector appears to have enough room.
 
 Change R117 to 18K, output at 2.5V is marginal.  Same may be true for
 the ACTIVE\_N line.  Actually, the ACTIVE\_N line has its own issues,
@@ -602,6 +631,8 @@ The other ones work, I have verified that the chip select is working,
 and I can't find anything wrong.  I'll verify on another board later
 to see if it's an issue with that chip.  Maybe it got blown when the
 various SPI things were messed up.
+
+Fix the watchdog jumper or order the right part.
 
 # Not going to do
 
@@ -1374,3 +1405,15 @@ instead of 3.3V.  They still work, though.
 
 The MRAM issue was a problem in software, these MRAM chips had a
 different configuration.
+
+## 2025-12-9
+
+Added fixes to board 8 and got it running.  It works the same as board 5.
+
+Got the CAN bus software working, the CAN interface looks fully
+functional.
+
+Started working on the TX power out issue.  I double-checked all the
+parts and they are all correct, as far as I can tell.  I measure the
+Iref current into the PA and got 10.5ma (2.54V across R79).  The
+current into Vbias is 14ma (3.86V across R78).
