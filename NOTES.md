@@ -1417,3 +1417,12 @@ Started working on the TX power out issue.  I double-checked all the
 parts and they are all correct, as far as I can tell.  I measure the
 Iref current into the PA and got 10.5ma (2.54V across R79).  The
 current into Vbias is 14ma (3.86V across R78).
+
+## 2025-12-10
+
+Got a spectrum analyzer, hooked it up to the board.  The PA is
+oscillating pretty badly.  It's amplifying and the output filter is
+working.
+
+On board 8 I modified the Iref input to the PA to match what the
+datasheet says it should be.  No help on the oscillation.
