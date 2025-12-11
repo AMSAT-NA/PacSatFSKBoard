@@ -74,6 +74,12 @@ Things to do for a new board:
 
 * Added the 1nF capacitor between L35 and C112, so TX\_PA\_DRV cannot
   be used on this board.
+  
+* The Iref input is modified to match what the datasheet says it
+  should be.  Except the 68nH inductor got lost, so I put on an 83nH
+  inductor, but that shouldn't matter.  It has Iref going to the
+  inductor, then the 240ohm resistor, and the 0.1uF capacitor from above
+  the inductor to ground.
 
 # TODO
 
