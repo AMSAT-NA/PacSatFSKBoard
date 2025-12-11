@@ -17,6 +17,18 @@
 Rsrc in     vmin1  50
 
 .if (0)
+* This impedance matcher was simulating at around -3dB.  It is what
+* is on board 8, but I don't think it matches the input impedance as
+* well.
+
+* TX PA input matcher
+C1	vmin2	0	47p
+* Q=65 CoilCraft 0603DC
+L1	vmin2	a1a	15n
+Rl1	a1a	a1	.67
+.endif
+
+.if (0)
 * This impedance matcher was simulating at around -3.5dB.
 
 * TX PA input matcher

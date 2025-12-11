@@ -36,6 +36,9 @@ Things to do for a new board:
   UFL connector.  So you can only use TX\_PA\_DRV on boards with the
   capacitor between L35 and the PA.
 
+* Change the PA power input inductor (L37) to a 100nH part to avoid
+  feedback through the power supply.
+
 # Current Board Status
 
 ## Board 5 - 2nd board I worked on
@@ -47,6 +50,8 @@ Things to do for a new board:
 * This board has the capacitor on the PA RF input added between
   the L35 inductor and the PA, so the TX\_PA\_DRV input/output
   connector (P13) can be used on this board.
+
+* The PA power input inductor (L37) has been changed to 100nH.
 
 ## Board 6 - First board I worked on for initial bringup
 
@@ -66,6 +71,10 @@ Things to do for a new board:
 * The board draws a lot more power than it should.  Something in the
   power section got messed up, it appears.
 
+* The PA power input inductor (L37) has *NOT* been changed to 100nH.
+  The PA on this board appears to not be working, anyway, probably
+  destroyed with the lack of DC blocking on the RF input.
+
 ## Board 8 - 3rd board I worked on
 
 * Applied all the board bring up changes.
@@ -73,13 +82,20 @@ Things to do for a new board:
 * It's working well, except for RF transmit power.
 
 * Added the 1nF capacitor between L35 and C112, so TX\_PA\_DRV cannot
-  be used on this board.
-  
+  be used on this board. (Well, not true any more.)
+
 * The Iref input is modified to match what the datasheet says it
   should be.  Except the 68nH inductor got lost, so I put on an 83nH
   inductor, but that shouldn't matter.  It has Iref going to the
   inductor, then the 240ohm resistor, and the 0.1uF capacitor from above
   the inductor to ground.
+
+* Change the L match on the PA input to a 47pf capacitor and a 15nH
+  inductor.  This seems to work ok, though per simulation it has more
+  loss than the two inductor L match.  This does make TX\_PA\_DRV
+  usable.
+
+* The PA power input inductor (L37) has been changed to 100nH.
 
 # TODO
 
@@ -296,7 +312,7 @@ handling.
 
 Move JTAG next to processor.
 
-Replace the 4 512Kx8 MRAM chips with one 2Mx8 like the Avalanche 
+Replace the 4 512Kx8 MRAM chips with one 2Mx8 like the Avalanche
 AS1016204-0108X0PWAY.
 
 Replace the DC/DC converters to ones that have the inductor built in,
@@ -1432,3 +1448,13 @@ working.
 
 On board 8 I modified the Iref input to the PA to match what the
 datasheet says it should be.  No help on the oscillation.
+
+## 2025-12-11
+
+The PA was feeding back through the power supply, probably into the
+AX5043.  Increasing the PA power input inductor to 100nH fixed the
+oscillation.  Still not getting much amplification.
+
+Measuring the power output between the L match on the PA output and
+the filter input, I see no power, even though power is coming out of
+the filter.  Maybe the filter input impedance is too low?
