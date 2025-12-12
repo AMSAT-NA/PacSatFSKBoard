@@ -10,9 +10,9 @@
 
 * Impedance matching network
 C1	in	out	110p
-L1	inx	a3	6.9n
+L1	in	a3	6.9n
 Rl1	a3	0	.34
-Cl1	in	a1	.037p
+Cl1	in	0	.037p
 
 .ENDS
 

@@ -53,6 +53,13 @@ Things to do for a new board:
 
 * The PA power input inductor (L37) has been changed to 100nH.
 
+* U.FL connector P6 got pulled off the board.
+
+* Currently C124, L30, C125, L33 and L38 are not installed.  I pulled
+  them off to measure power out of the PA, and they are pretty much
+  destroyed.  L33 and L38 came off when I was unsoldering the other
+  devices.
+
 ## Board 6 - First board I worked on for initial bringup
 
 * The RF switches have been removed and jumpers places on the RF connections.
@@ -97,7 +104,26 @@ Things to do for a new board:
 
 * The PA power input inductor (L37) has been changed to 100nH.
 
+* The RF power output switch U33 appears to always be connected from
+  RF\_OUT\_SWTICH to the antenna output, no matter the setting of
+  ACTIVE1\_N.  It's not that way on board 5, so it appears to be the
+  switch.  I'm wondering if an over voltage messed it up?  Or maybe
+  transmitted power?  But maybe it's working.  If I have a signal
+  going out, turning the switch on and off give a 35dB difference in
+  power.
+
 # TODO
+
+Replace the RF switches, the packages the Qorvo parts are in are too
+hard to work with and several have failed (probably because of control
+input voltage).  Finding one with temp range looks to be challenging,
+though.
+
+Move parts that are not RF-critical around the PA outside the shield.
+Mostly the capacitors and resistors.
+
+Figure out what inductor to use for the PA power input.  100nH is
+pretty big.  You want something with the smallest series resistance.
 
 Fix the processor part number.
 
@@ -1457,4 +1483,11 @@ oscillation.  Still not getting much amplification.
 
 Measuring the power output between the L match on the PA output and
 the filter input, I see no power, even though power is coming out of
-the filter.  Maybe the filter input impedance is too low?
+the filter.  Maybe the filter input impedance is too low?  It turns
+out to be a build issue.  P14 was installed backwards on board 5.  I
+flipped it around and it works fine now.
+
+I pulled C124, C125, and L30 off of board 5 so I could measure the
+output of the PA directly.  Unfortunately, L38 and L33 came with them.
+I'll have to wait for a new L38 (6.8nH) to be able to test the output
+of the PA directly.
