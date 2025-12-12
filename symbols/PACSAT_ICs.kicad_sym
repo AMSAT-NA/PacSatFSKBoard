@@ -3453,7 +3453,7 @@
 				)
 			)
 		)
-		(property "Value" "AS1016204-0108X0PSAY"
+		(property "Value" "AS3016204-0108X0PSAY"
 			(at 0 8.89 0)
 			(effects
 				(font
@@ -3470,7 +3470,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "AS1016204-0108X0PSAY"
+		(property "Datasheet" "AS3016204-0108X0PSAY"
 			(at -7.62 7.62 0)
 			(effects
 				(font

@@ -1049,30 +1049,30 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PACSAT_DEV_misc:TS-103-G-A_2-UART"
+		(symbol "PACSAT_DEV_misc:TSW-103-08-F-S-RA"
 			(pin_names
 				(offset 0.254)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "J2"
-				(at 8.89 7.62 0)
+			(property "Reference" "J"
+				(at 8.89 6.35 0)
 				(effects
 					(font
 						(size 1.524 1.524)
 					)
 				)
 			)
-			(property "Value" "TS-103-G-A"
-				(at 8.89 5.08 0)
+			(property "Value" "TSW-103-08-F-S-RA"
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.524 1.524)
 					)
 				)
 			)
-			(property "Footprint" "PacSatDev_misc:CON3_1X3_TU_HTS_SAI"
+			(property "Footprint" "PacSatDev_misc:CON3_1X3_TR_TSW_SAI"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1082,7 +1082,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "TS-103-G-A"
+			(property "Datasheet" "TSW-103-08-F-S-RA"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1092,7 +1092,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "1x3 pin UART"
+			(property "Description" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -1101,7 +1101,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "TS-103-G-A"
+			(property "ki_keywords" "TSW-103-08-F-S-RA"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1110,7 +1110,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "CON3_1X3_TU_HTS_SAI"
+			(property "ki_fp_filters" "CON3_1X3_TR_TSW_SAI"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1119,7 +1119,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "TS-103-G-A_2-UART_1_1"
+			(symbol "TSW-103-08-F-S-RA_1_1"
 				(polyline
 					(pts
 						(xy 5.08 2.54) (xy 5.08 -7.62)
@@ -1276,10 +1276,10 @@
 						(type none)
 					)
 				)
-				(pin output line
+				(pin unspecified line
 					(at 0 0 0)
 					(length 5.08)
-					(name "RX"
+					(name "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1294,10 +1294,10 @@
 						)
 					)
 				)
-				(pin input line
+				(pin unspecified line
 					(at 0 -2.54 0)
 					(length 5.08)
-					(name "TX"
+					(name "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1312,10 +1312,10 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin unspecified line
 					(at 0 -5.08 0)
 					(length 5.08)
-					(name "GND"
+					(name "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1331,7 +1331,7 @@
 					)
 				)
 			)
-			(symbol "TS-103-G-A_2-UART_1_2"
+			(symbol "TSW-103-08-F-S-RA_1_2"
 				(polyline
 					(pts
 						(xy 5.08 2.54) (xy 5.08 -7.62)
@@ -1488,7 +1488,7 @@
 						(type none)
 					)
 				)
-				(pin output line
+				(pin unspecified line
 					(at 0 0 0)
 					(length 5.08)
 					(name "1"
@@ -1506,7 +1506,7 @@
 						)
 					)
 				)
-				(pin input line
+				(pin unspecified line
 					(at 0 -2.54 0)
 					(length 5.08)
 					(name "2"
@@ -1524,7 +1524,7 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin unspecified line
 					(at 0 -5.08 0)
 					(length 5.08)
 					(name "3"
@@ -15304,7 +15304,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PACSAT_DEV_misc:TS-103-G-A_2-UART")
+		(lib_id "PACSAT_DEV_misc:TSW-103-08-F-S-RA")
 		(at 300.99 190.5 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -15322,16 +15322,17 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TS-103-G-A"
+		(property "Value" "TSW-103-08-F-S-RA"
 			(at 314.96 194.3099 0)
 			(effects
 				(font
 					(size 1.524 1.524)
 				)
 				(justify left)
+				(hide yes)
 			)
 		)
-		(property "Footprint" "PacSatDev_misc:CON3_1X3_TU_HTS_SAI"
+		(property "Footprint" "PacSatDev_misc:CON3_1X3_TR_TSW_SAI"
 			(at 300.99 190.5 0)
 			(effects
 				(font
@@ -15341,7 +15342,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "TS-103-G-A"
+		(property "Datasheet" "TSW-103-08-F-S-RA"
 			(at 300.99 190.5 0)
 			(effects
 				(font

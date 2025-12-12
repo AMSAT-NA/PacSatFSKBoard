@@ -130,16 +130,6 @@ replace the Qorvo part.
 Figure out what inductor to use for the PA power input.  100nH is
 pretty big.  You want something with the smallest series resistance.
 
-Change the part number for the MRAM chips.  The ones on the boards now
-are 1.8V chips.  Surprisingly, they work just fine, but we need to get
-the right chips on there eventually.  Right part number is
-AS3016204-0108X0PSAY.
-
-The power input pins are a little inconvenient, it would have been
-better if I had used a standard 2-pin connector instead of two
-separate pins.  I guess you could also just use the pins on the PC104
-connector, too.
-
 Add a line from the hardware watchdog to the RTC input so a reset
 can tell if the hardware watchdog fired.
 
@@ -158,11 +148,6 @@ or https://www.digikey.com/en/products/detail/olimex-ltd/ARM-JTAG-20-10/3471401
 Also document that you cannot turn off power when the board is connected
 to the debugger or bad things can happen, and that the serial port doesn't
 work if you don't have the JTAG connector in place.
-
-The debug port and the serial interface are too close together.
-Separate them out a bit.  Also, make the serial port a right-angle
-connector so it can be used when in the board stack.  The JTAG
-connector appears to have enough room.
 
 It doesn't look like the transmitter and receiver chips can be coaxed
 to work on the same frequencies if the transmitter is in the 430MHz
@@ -699,6 +684,24 @@ Mostly the capacitors and resistors.
 
 Move L27 down a bit to give it more space between the inductors around
 it.
+
+Change the part number for the MRAM chips.  The ones on the boards now
+are 1.8V chips.  Surprisingly, they work just fine, but we need to get
+the right chips on there eventually.  Right part number is
+AS3016204-0108X0PSAY.
+
+The power input pins are a little inconvenient, it would have been
+better if I had used a standard 2-pin connector instead of two
+separate pins.  I guess you could also just use the pins on the PC104
+connector, too.
+
+Add an inductor and a new U.FL connector between the PA and the output
+filter so they can be more easily isolated.
+
+The debug port and the serial interface are too close together.
+Separate them out a bit.  Also, make the serial port a right-angle
+connector so it can be used when in the board stack.  The JTAG
+connector appears to have enough room.
 
 # Not going to do
 
