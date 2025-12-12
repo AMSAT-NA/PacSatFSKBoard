@@ -1984,17 +1984,6 @@
 		)
 		(uuid "293f283d-b85f-4c0a-9214-7e05d39330fa")
 	)
-	(text "Shorting jumper\nif no inductor"
-		(exclude_from_sim no)
-		(at 247.015 172.72 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "c98c16fc-a539-4015-a200-bb2d191b1d6a")
-	)
 	(text "RX3+"
 		(exclude_from_sim no)
 		(at 168.402 110.236 0)
@@ -4411,7 +4400,7 @@
 				)
 			)
 		)
-		(property "Value" "0"
+		(property "Value" "18hH 2%"
 			(at 257.81 166.37 90)
 			(effects
 				(font

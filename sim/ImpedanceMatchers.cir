@@ -60,15 +60,15 @@ Rout vmout2 0      1.87
 .SUBCKT ImpMatchPAOut in vmin1 vmin2 vmout1 vmout2
 
 Rsrc in     vmin1  6.23
-* -13.3 ohms at 435MHz
-Csrc vmin2  a1     27.5p
+* -10.4 ohms at 435MHz
+Csrc vmin2  a1     35.1p
 
 * Set the DC bias between two capacitors.
 Rb1  a1     0      1Meg
 
 * Impedance matching network
 * TX PA output matcher
-C1	a1	vmout1	110p
+C1	a1	vmout1	59p
 * Q=55, CoilCraft 0402DC
 L1	vmout1	a3	6.9n
 Rl1	a3	0	.34

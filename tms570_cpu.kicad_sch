@@ -1561,7 +1561,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "TMS5700914APGEQQ1"
+			(property "Value" "TMS570LS0914APGEQQ1"
 				(at -11.43 0 0)
 				(effects
 					(font
@@ -10295,7 +10295,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TMS5700914APGEQQ1"
+		(property "Value" "TMS570LS0914APGEQQ1"
 			(at 204.47 138.43 0)
 			(effects
 				(font

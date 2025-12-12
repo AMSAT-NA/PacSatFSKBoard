@@ -2567,6 +2567,12 @@
 		(uuid "9c25fd10-1818-4a75-be3c-93dc02e9e275")
 	)
 	(junction
+		(at 181.61 121.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9f34af51-2011-4ec1-9670-da9b085d031e")
+	)
+	(junction
 		(at 101.6 143.51)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2876,6 +2882,16 @@
 	)
 	(wire
 		(pts
+			(xy 196.85 121.92) (xy 181.61 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "16991abb-dca4-4cb0-8423-1b1d60ccf08a")
+	)
+	(wire
+		(pts
 			(xy 142.24 143.51) (xy 142.24 148.59)
 		)
 		(stroke
@@ -3033,6 +3049,16 @@
 			(type default)
 		)
 		(uuid "3069f12c-6152-4f5e-be3e-5b9d107c59fc")
+	)
+	(wire
+		(pts
+			(xy 181.61 121.92) (xy 181.61 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "30f9c5cc-5cef-4539-bcd4-93fcf9a85ef0")
 	)
 	(wire
 		(pts
@@ -3696,7 +3722,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 123.19) (xy 167.64 123.19)
+			(xy 165.1 121.92) (xy 167.64 121.92)
 		)
 		(stroke
 			(width 0)
@@ -3926,16 +3952,6 @@
 	)
 	(wire
 		(pts
-			(xy 181.61 124.46) (xy 181.61 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b3dac74c-9d7b-49bd-8f62-32fd69a4b6da")
-	)
-	(wire
-		(pts
 			(xy 234.95 243.84) (xy 234.95 246.38)
 		)
 		(stroke
@@ -4096,7 +4112,7 @@
 	)
 	(wire
 		(pts
-			(xy 181.61 123.19) (xy 175.26 123.19)
+			(xy 181.61 121.92) (xy 175.26 121.92)
 		)
 		(stroke
 			(width 0)
@@ -4266,7 +4282,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 127) (xy 165.1 123.19)
+			(xy 165.1 127) (xy 165.1 121.92)
 		)
 		(stroke
 			(width 0)
@@ -6690,7 +6706,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 171.45 123.19 270)
+		(at 171.45 121.92 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6699,7 +6715,7 @@
 		(fields_autoplaced yes)
 		(uuid "583f878e-b216-4ca3-90fa-1a89ee80e0f3")
 		(property "Reference" "C105"
-			(at 171.45 115.57 90)
+			(at 171.45 114.3 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6707,7 +6723,7 @@
 			)
 		)
 		(property "Value" "100pF"
-			(at 171.45 118.11 90)
+			(at 171.45 116.84 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6715,7 +6731,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 167.64 124.1552 0)
+			(at 167.64 122.8852 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6724,7 +6740,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 171.45 123.19 0)
+			(at 171.45 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6733,7 +6749,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 171.45 123.19 0)
+			(at 171.45 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)

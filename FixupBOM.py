@@ -202,6 +202,7 @@ value_to_partnum_xlats_2 = {
     ('12pF 1% 30V', 	'0402'): ('Murata',	'GCQ1555C1H120FB01D'),
     ('15pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H150FB01D'),
     ('36pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H360FB01D'),
+    ('62pF 1%', 	'0402'): ('Murata',	'GCM1555C1H620FA16D'),
     ('68pF 1%', 	'0402'): ('Murata',	'GCM1555C1H680FA16D'),
     ('110pF 1% 30V',	'0402'): ('Murata',	'GCM1555C1H111FA16D'),
     ('',	''): ('',	    ''),
@@ -218,6 +219,7 @@ value_to_partnum_xlats_2 = {
     ('1KΩ',	'0402'): ('Panasonic',	'ERA-2AED102X'),
     ('4.7KΩ',	'0402'): ('Panasonic',	'ERA-2AEB472X'),
     ('10KΩ',	'0402'): ('Panasonic',	'ERA-2AED103X'),
+    ('18KΩ',	'0402'): ('Panasonic',	'ERA-2AED183X'),
     ('1MΩ',	'0402'): ('Panasonic',	'ERJ-U02J105X'),
 
     ('0',	'0603'): ('Panasonic',	'ERJ-S030R00V'),
@@ -281,7 +283,7 @@ other_components = {
     ('O 16,0-JT22CT-A-P-3,3-LF', 'Oscillator_SMD_SiT_PQFN-4Pin_2.5x2.0mm'): None,
     ('DMP2037U-7', 'SOT-23'): None,
     ('ADL5501AKSZ-R7', 'KS-6_ADI'): None,
-    ('SN74AHC1G09QDCKRQ1', 'DCK5'): None,
+    ('SN74AHC1G08QDCKRQ1', 'DCK5'): None,
     ('BSS138', 'SOT-523'): None,
 }    
 

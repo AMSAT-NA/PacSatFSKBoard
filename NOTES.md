@@ -39,6 +39,11 @@ Things to do for a new board:
 * Change the PA power input inductor (L37) to a 100nH part to avoid
   feedback through the power supply.
 
+* C117 was miscalculated.  It should (in combination with C123) be
+  about 60pf.  Replace with a 68pF cap for now (giving about 64pF when
+  combined with 1nF).  Ideally C117 should be 63pF to combine with C123
+  to give 60pF.
+
 # Current Board Status
 
 ## Board 5 - 2nd board I worked on
@@ -114,18 +119,26 @@ Things to do for a new board:
 
 # TODO
 
+Maybe add smaller decoupling caps on the output of the SPPA power to
+help with feedback.
+
+Figure out a way to split out the PA after the L match and the filter
+so it's easy to isolate those subsystems and add another U.FL
+connector.  Probably have to add another capacitor.
+
+Look at adding the TVS diode on the PA per the datasheet schematics.
+
 Replace the RF switches, the packages the Qorvo parts are in are too
 hard to work with and several have failed (probably because of control
 input voltage).  Finding one with temp range looks to be challenging,
-though.
+though. Possibly switch to a PE42424, or possibly another RF switch to
+replace the Qorvo part.
 
 Move parts that are not RF-critical around the PA outside the shield.
 Mostly the capacitors and resistors.
 
 Figure out what inductor to use for the PA power input.  100nH is
 pretty big.  You want something with the smallest series resistance.
-
-Fix the processor part number.
 
 Move L27 down a bit to give it more space between the inductors around
 it.
@@ -140,47 +153,17 @@ better if I had used a standard 2-pin connector instead of two
 separate pins.  I guess you could also just use the pins on the PC104
 connector, too.
 
-The PA input has a direct RF connection to ground.  The spec sheet
-says it needs DC blocking.  The other L network that works uses a 37pF
-capacitor and an 18nH inductor, but that doesn't perform nearly as
-well as the two inductors.  So add a 1nF or so capacitor to block DC.
-Adding the capacitor on board 6 between L35 and the PA was almost
-impossible.  For the other rework, break the line between L35 and C112
-and put the capacitor there, that should be much easier
-
-The Iref input to the PA has the resistor and inductor swapped from
-what's in the datasheet, and there is also a .1uF capacitor from
-between the resistor and inductor to ground.  It should probably
-match the datasheet.
-
 Add a line from the hardware watchdog to the RTC input so a reset
 can tell if the hardware watchdog fired.
 
-The control voltage for the QPC1022 RF switches has a maximum value of
-2.75V, it's being driven with 3.3V, which is too much.  ACTIVE_N can
-be driven with an open drain, which would temporarily solve the
-problem.  On board 6, which I did initial bring up on, the RF switch
-is always on when enabled.  I don't know if there is some issues there
-or if driving it to high messed it up.  This needs to be eventually
-tested on another board.  The RF switches have been removed from
-board 6.
-
 Use 1% resistors on the voltage dividers for the voltage measurement
 into the ADC.
-
-A line needs to be run from the LNA's bias resistor to LNA_VCC so the
-bias actually has bias.
 
 The RTC is not keeping time when the power is off unless it's always
 powered with Vbat.  It appears the RTC is now switching to Vbat on a
 power fail.  But when it comes up PFAIL and OSCF are not set.  I've
 modified it to always run on Vbat and that seems to be ok, but this
 should probably be researched at some point.
-
-The 22nH inductors wouldn't range properly on the RX AX5043s, they
-ranged too low.  So we need a smaller inductor.  18nH and 15nH
-ordered, hopefully that works.  UPDATE: They work, need to update the
-schematic.
 
 The LP-XDS110 debugger works fine with the board, document this,
 including how to order a cable.  https://www.adafruit.com/product/1675
@@ -194,23 +177,12 @@ Separate them out a bit.  Also, make the serial port a right-angle
 connector so it can be used when in the board stack.  The JTAG
 connector appears to have enough room.
 
-Change R117 to 18K, output at 2.5V is marginal.  Same may be true for
-the ACTIVE\_N line.  Actually, the ACTIVE\_N line has its own issues,
-see above for details.  2.5V is not marginal for inputs to the TMS570.
-
-U5, a 74AHC1G09, is an open drain part.  It really needs to be a part
-that drives the output line, like a SN74AHC1G08QDCKRQ1.  Added a
-resistor across the 3.3V and output of the 74AHC1G09 to compensate.
-
 It doesn't look like the transmitter and receiver chips can be coaxed
 to work on the same frequencies if the transmitter is in the 430MHz
 range and the receiver is in the 144MHz range.  This is due to the
 inductors on the AX5043 just not ranging far enough.  Either add a
 switch for the inductor on the transmit AX5043, or just give up on the
 loopback capability.
-
-Possibly switch to a PE42424, or possibly another RF switch to replace
-the Qorvo part.
 
 Look at the diode on the RTC. The Nexperia parts are out of stock and
 the Rohm RB520ASA-30FH was suggested as an alternative.  It has better
@@ -221,8 +193,6 @@ Add the pin 1 markers for U24 and U30.
 
 Switch the main RF connectors from UFL to MMCX, since that's pretty
 standard.
-
-Rename Processor\_Reset" to "Processor\_Reset\_N" to reflect its polarity.
 
 Convert the power plane to a ground plane in the digital portion, and
 as part of that add ground vias by signal vias to reduce the return
@@ -681,6 +651,54 @@ to see if it's an issue with that chip.  Maybe it got blown when the
 various SPI things were messed up.
 
 Fix the watchdog jumper or order the right part.
+
+The numbers I had for the PA output impedance are wrong, re-doing the
+calculations I get 6.23 - 10.4j, not 6.23 - 13.3j.  That doesn't
+change the inductor at all, but the capacitor changes to 60pF.  Also
+take into account the 1nF capacitor; that changes the value a bit.
+Use a 63pF part.
+
+Fix the processor part number.
+
+The PA input has a direct RF connection to ground.  The spec sheet
+says it needs DC blocking.  The other L network that works uses a 37pF
+capacitor and an 18nH inductor, but that doesn't perform nearly as
+well as the two inductors.  So add a 1nF or so capacitor to block DC.
+Adding the capacitor on board 6 between L35 and the PA was almost
+impossible.  For the other rework, break the line between L35 and C112
+and put the capacitor there, that should be much easier
+
+The Iref input to the PA has the resistor and inductor swapped from
+what's in the datasheet, and there is also a .1uF capacitor from
+between the resistor and inductor to ground.  It should probably
+match the datasheet.
+
+The control voltage for the QPC1022 RF switches has a maximum value of
+2.75V, it's being driven with 3.3V, which is too much.  ACTIVE_N can
+be driven with an open drain, which would temporarily solve the
+problem.  On board 6, which I did initial bring up on, the RF switch
+is always on when enabled.  I don't know if there is some issues there
+or if driving it to high messed it up.  This needs to be eventually
+tested on another board.  The RF switches have been removed from
+board 6.
+
+A line needs to be run from the LNA's bias resistor to LNA_VCC so the
+bias actually has bias.
+
+The 22nH inductors wouldn't range properly on the RX AX5043s, they
+ranged too low.  So we need a smaller inductor.  18nH and 15nH
+ordered, hopefully that works.  UPDATE: They work, need to update the
+schematic.
+
+Change R117 to 18K, output at 2.5V is marginal.  Same may be true for
+the ACTIVE\_N line.  Actually, the ACTIVE\_N line has its own issues,
+see above for details.  2.5V is not marginal for inputs to the TMS570.
+
+U5, a 74AHC1G09, is an open drain part.  It really needs to be a part
+that drives the output line, like a SN74AHC1G08QDCKRQ1.  Added a
+resistor across the 3.3V and output of the 74AHC1G09 to compensate.
+
+Rename Processor\_Reset" to "Processor\_Reset\_N" to reflect its polarity.
 
 # Not going to do
 
@@ -1489,5 +1507,12 @@ flipped it around and it works fine now.
 
 I pulled C124, C125, and L30 off of board 5 so I could measure the
 output of the PA directly.  Unfortunately, L38 and L33 came with them.
-I'll have to wait for a new L38 (6.8nH) to be able to test the output
+I'll have to wait for a new L38 (6.9nH) to be able to test the output
 of the PA directly.
+
+## 2025-12-12
+
+I went over the PA impedance matching calculations again and found I
+made an error.  The output impedance is 6.23 - 10.4j, not 6.23 -
+13.3j.  I don't know how that happened.  That makes the matching
+capacitor 60pF, the inductor stays the same.

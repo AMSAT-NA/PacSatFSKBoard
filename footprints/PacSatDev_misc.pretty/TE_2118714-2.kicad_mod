@@ -50,7 +50,7 @@
 		)
 	)
 	(zone_connect 2)
-	(attr smd)
+	(attr smd allow_missing_courtyard)
 	(fp_poly
 		(pts
 			(xy -6.855 -4) (xy -6.855 -7.33) (xy -4 -7.33) (xy -4 -6.13) (xy -5.655 -6.13) (xy -5.655 -4)

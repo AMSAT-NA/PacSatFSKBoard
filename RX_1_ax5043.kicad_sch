@@ -2016,17 +2016,6 @@
 		)
 		(uuid "c38e1ff9-8b91-49a1-b1ed-9b902538dae4")
 	)
-	(text "Shorting jumper\nif no inductor"
-		(exclude_from_sim no)
-		(at 203.2 181.61 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "c98c16fc-a539-4015-a200-bb2d191b1d6a")
-	)
 	(junction
 		(at 121.92 139.7)
 		(diameter 0)
@@ -4903,7 +4892,7 @@
 				)
 			)
 		)
-		(property "Value" "0"
+		(property "Value" "18hH 2%"
 			(at 212.09 175.26 90)
 			(effects
 				(font
