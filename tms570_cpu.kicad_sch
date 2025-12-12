@@ -9463,7 +9463,7 @@
 			)
 		)
 	)
-	(global_label "Processor_Reset"
+	(global_label "Processor_Reset_N"
 		(shape input)
 		(at 115.57 88.9 180)
 		(fields_autoplaced yes)

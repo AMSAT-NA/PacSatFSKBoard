@@ -119,13 +119,6 @@ Things to do for a new board:
 
 # TODO
 
-Maybe add smaller decoupling caps on the output of the SPPA power to
-help with feedback.
-
-Figure out a way to split out the PA after the L match and the filter
-so it's easy to isolate those subsystems and add another U.FL
-connector.  Probably have to add another capacitor.
-
 Look at adding the TVS diode on the PA per the datasheet schematics.
 
 Replace the RF switches, the packages the Qorvo parts are in are too
@@ -134,14 +127,8 @@ input voltage).  Finding one with temp range looks to be challenging,
 though. Possibly switch to a PE42424, or possibly another RF switch to
 replace the Qorvo part.
 
-Move parts that are not RF-critical around the PA outside the shield.
-Mostly the capacitors and resistors.
-
 Figure out what inductor to use for the PA power input.  100nH is
 pretty big.  You want something with the smallest series resistance.
-
-Move L27 down a bit to give it more space between the inductors around
-it.
 
 Change the part number for the MRAM chips.  The ones on the boards now
 are 1.8V chips.  Surprisingly, they work just fine, but we need to get
@@ -188,8 +175,6 @@ Look at the diode on the RTC. The Nexperia parts are out of stock and
 the Rohm RB520ASA-30FH was suggested as an alternative.  It has better
 reverse current but a higher voltage drop across the junction.  Maybe
 a better diode could be chosen.
-
-Add the pin 1 markers for U24 and U30.
 
 Switch the main RF connectors from UFL to MMCX, since that's pretty
 standard.
@@ -699,6 +684,21 @@ that drives the output line, like a SN74AHC1G08QDCKRQ1.  Added a
 resistor across the 3.3V and output of the 74AHC1G09 to compensate.
 
 Rename Processor\_Reset" to "Processor\_Reset\_N" to reflect its polarity.
+
+Add the pin 1 markers for U24 and U30.
+
+Figure out a way to split out the PA after the L match and the filter
+so it's easy to isolate those subsystems and add another U.FL
+connector.  Probably have to add another capacitor.
+
+Maybe add smaller decoupling caps on the output of the SPPA power to
+help with feedback.
+
+Move parts that are not RF-critical around the PA outside the shield.
+Mostly the capacitors and resistors.
+
+Move L27 down a bit to give it more space between the inductors around
+it.
 
 # Not going to do
 
