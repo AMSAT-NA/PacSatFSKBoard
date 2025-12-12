@@ -124,8 +124,11 @@ Look at adding the TVS diode on the PA per the datasheet schematics.
 Replace the RF switches, the packages the Qorvo parts are in are too
 hard to work with and several have failed (probably because of control
 input voltage).  Finding one with temp range looks to be challenging,
-though. Possibly switch to a PE42424, or possibly another RF switch to
-replace the Qorvo part.
+though. Possibly switch to a PE42359 or PE42424, or possibly another
+RF switch to replace the Qorvo part.  Unfortunately, this is harder
+than it sounds.  It has to be able to be powered by 5V because it has
+to work when the rest of the board is powered down, and that's hard to
+find.
 
 Figure out what inductor to use for the PA power input.  100nH is
 pretty big.  You want something with the smallest series resistance.
@@ -702,6 +705,10 @@ connector appears to have enough room.
 
 Use 1% resistors on the voltage dividers for the voltage measurement
 into the ADC.
+
+The BOARD1\_RF\_BYPASS and BOARD2\_RF\_BYPASS lines can be combined,
+you are only using one of them at a time.  This will simplify the
+design a bit and remove a part.
 
 # Not going to do
 
