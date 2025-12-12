@@ -13683,8 +13683,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
-			(at 234.188 24.892 0)
+		(property "Value" "10KΩ 1%"
+			(at 231.14 24.638 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13871,7 +13871,7 @@
 		(dnp no)
 		(uuid "2a39a00f-558d-4e77-92c5-1828d405ad8c")
 		(property "Reference" "R14"
-			(at 246.38 22.86 0)
+			(at 255.524 23.114 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13879,8 +13879,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
-			(at 246.888 24.892 0)
+		(property "Value" "10KΩ 1%"
+			(at 256.032 25.146 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14011,7 +14011,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10KΩ 1%"
 			(at 256.54 35.56 0)
 			(effects
 				(font
@@ -14796,8 +14796,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
-			(at 221.488 35.052 0)
+		(property "Value" "10KΩ 1%"
+			(at 218.186 35.052 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15397,8 +15397,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
-			(at 221.742 24.892 0)
+		(property "Value" "10KΩ 1%"
+			(at 218.44 24.892 0)
 			(effects
 				(font
 					(size 1.27 1.27)

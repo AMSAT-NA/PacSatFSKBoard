@@ -133,9 +133,6 @@ pretty big.  You want something with the smallest series resistance.
 Add a line from the hardware watchdog to the RTC input so a reset
 can tell if the hardware watchdog fired.
 
-Use 1% resistors on the voltage dividers for the voltage measurement
-into the ADC.
-
 The RTC is not keeping time when the power is off unless it's always
 powered with Vbat.  It appears the RTC is now switching to Vbat on a
 power fail.  But when it comes up PFAIL and OSCF are not set.  I've
@@ -702,6 +699,9 @@ The debug port and the serial interface are too close together.
 Separate them out a bit.  Also, make the serial port a right-angle
 connector so it can be used when in the board stack.  The JTAG
 connector appears to have enough room.
+
+Use 1% resistors on the voltage dividers for the voltage measurement
+into the ADC.
 
 # Not going to do
 

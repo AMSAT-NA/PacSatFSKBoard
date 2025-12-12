@@ -271,8 +271,8 @@ other_components = {
     ('CONUFL001-SMD-T', 'CONN1_CONUFL_TEC'): None,
     ('QPC1022TR7', 'QPC1022_QOR'): None,
     ('2118718-2', 'TE_2118718-2'): None,
-    ('TS-102-G-A', 'CON2_1X2_TU_HTS_SAI'): None,
-    ('TS-103-G-A', 'CON3_1X3_TU_HTS_SAI'): None,
+    ('TSW-103-08-F-S-RA', 'CON3_1X3_TR_TSW_SAI'): None
+    ('HTSW-102-07-G-S', 'CON2_1X2_TU_TSW'): None
     ('STWD100NYWY3F', 'SOT-23-5'): None,
     ('AD4PS-1+', 'CJ725'): None,
     ('ESQ-126-39-G-D', 'CONN_ESQ-126-39-G-D_SAI'): None,
