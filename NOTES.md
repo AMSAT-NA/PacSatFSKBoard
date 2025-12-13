@@ -142,13 +142,6 @@ power fail.  But when it comes up PFAIL and OSCF are not set.  I've
 modified it to always run on Vbat and that seems to be ok, but this
 should probably be researched at some point.
 
-The LP-XDS110 debugger works fine with the board, document this,
-including how to order a cable.  https://www.adafruit.com/product/1675
-or https://www.digikey.com/en/products/detail/olimex-ltd/ARM-JTAG-20-10/3471401
-Also document that you cannot turn off power when the board is connected
-to the debugger or bad things can happen, and that the serial port doesn't
-work if you don't have the JTAG connector in place.
-
 It doesn't look like the transmitter and receiver chips can be coaxed
 to work on the same frequencies if the transmitter is in the 430MHz
 range and the receiver is in the 144MHz range.  This is due to the
@@ -619,13 +612,15 @@ various SPI things were messed up.
 
 Fix the watchdog jumper or order the right part.
 
+---Changes from the Version 1 board start here---
+
 The numbers I had for the PA output impedance are wrong, re-doing the
 calculations I get 6.23 - 10.4j, not 6.23 - 13.3j.  That doesn't
 change the inductor at all, but the capacitor changes to 60pF.  Also
 take into account the 1nF capacitor; that changes the value a bit.
-Use a 63pF part.
+- Use a 62pF part.
 
-Fix the processor part number.
+Fix the processor part number.  It has an "LS" after the TMS570.
 
 The PA input has a direct RF connection to ground.  The spec sheet
 says it needs DC blocking.  The other L network that works uses a 37pF
@@ -633,21 +628,23 @@ capacitor and an 18nH inductor, but that doesn't perform nearly as
 well as the two inductors.  So add a 1nF or so capacitor to block DC.
 Adding the capacitor on board 6 between L35 and the PA was almost
 impossible.  For the other rework, break the line between L35 and C112
-and put the capacitor there, that should be much easier
+and put the capacitor there, that should be much easier - On the
+new version, added a 1nF capacitor between L35 and the PA.
 
 The Iref input to the PA has the resistor and inductor swapped from
 what's in the datasheet, and there is also a .1uF capacitor from
 between the resistor and inductor to ground.  It should probably
-match the datasheet.
+match the datasheet. - Changed to match the datasheet.
 
 The control voltage for the QPC1022 RF switches has a maximum value of
-2.75V, it's being driven with 3.3V, which is too much.  ACTIVE_N can
+2.75V, it's being driven with 3.3V, which is too much.  ACTIVE1\_N can
 be driven with an open drain, which would temporarily solve the
 problem.  On board 6, which I did initial bring up on, the RF switch
 is always on when enabled.  I don't know if there is some issues there
 or if driving it to high messed it up.  This needs to be eventually
 tested on another board.  The RF switches have been removed from
-board 6.
+board 6. - Added a voltage divider on the ACTIVE1\_N line to avoid
+the issue.
 
 A line needs to be run from the LNA's bias resistor to LNA_VCC so the
 bias actually has bias.
@@ -655,29 +652,34 @@ bias actually has bias.
 The 22nH inductors wouldn't range properly on the RX AX5043s, they
 ranged too low.  So we need a smaller inductor.  18nH and 15nH
 ordered, hopefully that works.  UPDATE: They work, need to update the
-schematic.
+schematic. - These have all been changed to 22nH.
 
 Change R117 to 18K, output at 2.5V is marginal.  Same may be true for
 the ACTIVE\_N line.  Actually, the ACTIVE\_N line has its own issues,
 see above for details.  2.5V is not marginal for inputs to the TMS570.
+- Changed R117 and the one for ACTIVE\_N to 18K.
 
 U5, a 74AHC1G09, is an open drain part.  It really needs to be a part
 that drives the output line, like a SN74AHC1G08QDCKRQ1.  Added a
 resistor across the 3.3V and output of the 74AHC1G09 to compensate.
+- On the revision, this is now a SN74AHC1G08QDCKRQ1.
 
 Rename Processor\_Reset" to "Processor\_Reset\_N" to reflect its polarity.
 
-Add the pin 1 markers for U24 and U30.
+Add the pin 1 markers for U24 and U30. - Added courtyards and pin 1
+markers to these part.  Added courtyards to U36 and U4.
 
 Figure out a way to split out the PA after the L match and the filter
 so it's easy to isolate those subsystems and add another U.FL
-connector.  Probably have to add another capacitor.
+connector.  Probably have to add another capacitor. - Added a zero
+ohm resistor and another U.FL connector.
 
 Maybe add smaller decoupling caps on the output of the SPPA power to
-help with feedback.
+help with feedback. - Added a 100pF capacitor there.
 
 Move parts that are not RF-critical around the PA outside the shield.
-Mostly the capacitors and resistors.
+Mostly the capacitors and resistors. - Only moved the big decoupling
+capacitor, everything else is still in the can.
 
 Move L27 down a bit to give it more space between the inductors around
 it.
@@ -690,15 +692,18 @@ AS3016204-0108X0PSAY.
 The power input pins are a little inconvenient, it would have been
 better if I had used a standard 2-pin connector instead of two
 separate pins.  I guess you could also just use the pins on the PC104
-connector, too.
+connector, too. - Replaced these and the one for the watchdog jumper
+with a new version.
 
-Add an inductor and a new U.FL connector between the PA and the output
-filter so they can be more easily isolated.
+Add a capacitor and a new U.FL connector between the PA and the output
+filter so they can be more easily isolated. - Changed the capacitor
+to a zero-ohm resistor.
 
 The debug port and the serial interface are too close together.
 Separate them out a bit.  Also, make the serial port a right-angle
 connector so it can be used when in the board stack.  The JTAG
-connector appears to have enough room.
+connector appears to have enough room. - Switch positions of
+the LEDs and the serial power and used a right-angle connector.
 
 Use 1% resistors on the voltage dividers for the voltage measurement
 into the ADC.
@@ -712,6 +717,13 @@ inductor there to disconnect the sections. - Actually, leave that in
 place and put a U.FL connector on each side so it can be easily
 separated.  Also change the capacitor between the PA and the output
 filter to a 0 ohm resistor.
+
+The LP-XDS110 debugger works fine with the board, document this,
+including how to order a cable.  https://www.adafruit.com/product/1675
+or https://www.digikey.com/en/products/detail/olimex-ltd/ARM-JTAG-20-10/3471401
+Also document that you cannot turn off power when the board is connected
+to the debugger or bad things can happen, and that the serial port doesn't
+work if you don't have the JTAG connector in place.
 
 # Not going to do
 

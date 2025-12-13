@@ -1,3 +1,29 @@
+This document describes design and debugging information for the
+PACSAT AFSK board.
+
+Hooking Up JTAG and a serial port
+=================================
+
+The board uses a standard 10-pin 2x5 1.27mm pitch JTAG connector for a
+debugger hookup.  The standard TI XDS110 debugger should work, though
+I have not tried it.  I am using an LP-XDS110 from TI
+(https://www.ti.com/tool/LP-XDS110).  You will need to get a cable,
+since that doesn't come with the debugger board.  You can get one
+at https://www.adafruit.com/product/1675
+or https://www.digikey.com/en/products/detail/olimex-ltd/ARM-JTAG-20-10/3471401
+
+Besides being a lot cheaper than the standard XDS110, the LP-XDS110
+also has a serial port built in, so you don't have to have a separate
+serial port interface.  Remember, hook TX on one board to RX on the
+other.  Don't hook TX to TX.
+
+There is a problem with the serial port, though.  You cannot use the
+serial port without the JTAG connector hooked up, too.  It starts
+getting phantom characters being type.  I don't know why, but I had
+the same issue with several TI reference boards, so it's not the
+PACSAT board.  So if you just want the serial port hooked up, you will
+need to have another adapter for that.
+
 IO Connections on the PacSat AFSK processor
 ===========================================
 
