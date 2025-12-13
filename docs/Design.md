@@ -239,9 +239,23 @@ At full power out (+33dBm) this will result in about -7dBm of power
 from the coupler.  This was simulated with a transmission line in
 qucs.  The voltage for that can be calculated from the chip manual.
 
+Other IO Connections
+====================
+
+WATCHDOG\_OUT\_N
+----------------
+
+A line is run from the hardware watchdog output to the RTC DIN input.
+That input can be set up to measure transitions and store the
+information.  This way the process can tell if the reset came from the
+hardware watchdog.  The watchdog is negative logic, so a transition
+from high to low will say that the hardware watchdog was triggered.
+
+PC104 Pins
+==========
+
 FIXME - Figure out what all the PC104 pins do.
 
-# PC104 Pins
 
   - HW\_POWER\_OFF[12]\_N - Input to board, pulling this low causes the
     power to be disabled on boardn.  boardn pulls this high with a 10K
@@ -290,13 +304,157 @@ FIXME - Figure out what all the PC104 pins do.
   
   - CAN[AB][+-] - CAN bus signals.
   
-# Active/Standby Configuration
+RF Loopback Test
+================
+
+When in standby mode, the inactive board will have the RF output of
+the transmitter tied in to the RF input of the receiver through a 50
+ohm resistor.  At 440MHz, the input impedance of the first receive
+filter is very low and its gain at 440MHz is <-100dB.  So it should
+be safe for both the transmitter and receiver if the transmitter
+transmits at 440MHz at full power.
+
+If the transmitter transmits at 144.5MHz, the calculated loss in all
+the filters is around -75dB.  There is 20dB of gain in the PA, and the
+AX5043 can send at 16dBm.  Adding all that up, you get -39dBm coming
+out of the transmitter.  If that is sent through the 50 ohm resistor,
+there will be some more loss there, but you should get a signal well
+within readable range for the receive AX5043s.  And though the
+mismatch will be bad for the transmitter, the power is low enough to
+not harm the PA.  So this can be used as a self test of the
+transmitter and receiver while the board is in inactive mode.  If the
+signal too hot, the transmit AX5043 can reduce output power.
+
+If populated with the proper RF switches (the ones hooked to
+BOARD1\_RF\_IN\_BYPASS), this could be done on a simplex board, too.
+It can just deactivate its ACTIVE\_N line and the RF switch will go to
+the bypass.
+
+I am unsure if the TX AX5043 can be coerced into being able to
+transmit at both 144MHz and 440MHz.
+
+Power Control and Sequencing
+============================
+
+The power control on the board is fairly simple.  On power up, power
+comes in through VSYS, goes through and inductor, and goes to +5V,
+which is always powered on.  +5V goes through a current limiter to
++5VAL, which power the circuits on the board that are always on, the
+circuits the handle the board presence/active/etc. and the board1 RF
+switches, and the CAN bus transceivers.  3.3V comes in to REG\_3V3
+from the bus.
+
+The TPSM828302ARDSR will start supplying 1.2V to REG\_1V2.  It will
+also pull the PROCESSOR\_RESET pin low until their power is good, and
+that point they will not pull the reset line low any more (they are
+open drain).  At that point the MP5073GG-P is also holding reset line
+low until it is enabled.  Since the MP5073GG-P is powered by REG\_3V3
+it will not let the reset line go until that power is good.
+
+The STWD100NYWY3F hardware watchdog will power up at that time, but
+the POWER\_ENABLE pin from it will be pulled high and should remain
+high for 1 second.
+
+The MP5073GG-P and MAX4495AAUT current limiting chips will start
+supplying power to the rest of the board once they detect that power
+is good.  However, the MP5073GG-P will wait 50us after it senses the
+1.2V power is good holding the PROCESSOR\_RESET line low, then it will
+let the processor go.
+
+All the chips driving the PROCESSOR\_RESET line have power sensors, if
+any of them sense that the power is bad they will pull that line down
+low.
+
+When the processor is in reset and the default settings on the
+PA\_PWR\_EN, AX5043\_PWR\_EN, and LNA\_ENABLE are pulled low (and
+they have pull downs, too, so that they are disabled even when the
+main power is disabled), so all power to the RF elements will be
+off.
+
+A HW\_POWER\_OFF\_N comes in from the PC104 connector; if that is
+pulled low it will power off everything on the board except for the
+devices on +5VAL.  It does this by disabling the 3.3V and 1.2V
+regulators.  When 3.3V is off, the MAX4995s controlling power to the
+PA, AX5043s, and LNA will be powered off.
+
+There is also a hardware watchdog, as mentioned before.  The processor
+must toggle the FEED\_WATCHDOG line at least once a second.  If it
+fails to do that, the 1.2V and 3.3V current limiters will be disabled
+cutting power to the processor and all digital components.  This will
+result in everything else being powered off (except the devices on
++5VAL).  After 200ms, the watchdog chip will enable power again.
+
+To power up and enable the RF section, the processor must first make
+sure all the AX5043 enable lines are pulled high to disable them.
+This is not the default (some are low and some are high by default),
+but it doesn't matter because they are powered off at the main,
+anyway.  The processor then can drive AX5043\_PWR\_EN high to enable
+the power to all AX5043s.  The processor can then drive the individual
+AX5043 enables low to individually power them on.  Then the processor
+can drive PA\_PWR\_EN high to power on the PA and LNA\_ENABLE high
+to power on the LNA.
+
+Board Configuration
+===================
+
+The board has a number of resistors and optional parts for
+configuration.  These are:
+
+  - 1.2V\_INPUT - Determines whether 1.2V is derived from 3.3V or 5V.
+
+  - BOARD\_NUM - Remove for board 1 or simplex, populate for board 2.
+
+  - EXTERN\_CONTROL - Remove if the board (or board pair) manage their
+    own activity and power state.  Populate if another entity controls
+    power and the active lines on a board pair.  This should generally
+    not be populated on a simplex board, it will always be active and
+    some other entity probably controls its power signal.
+	
+  - 5V\_S[1-3], 5V\_p - One of these should be populated depending on
+    where the board should get its +5V power.
+
+  - 3V3\_S[1-3], 3V3\_p - One of these should be populated depending on
+    where the board should get its +3.3V power.  In addition, there is
+	an optional buck regulator that can be populated to derive 3.3V
+	from 5V.
+
+  - RF\_SWITCH\_EN - Removing the resistor to +5AL will disable all
+    the RF switches into high impedance mode.  Then the zero ohm
+    resistors to bypass the switches can be added.
+
+  - UMIBLICAL\_ATTACHED - If this line is not externally used, the
+    resistor from this to ground must be populated.
+
+In addition, for simplex, or if each board in a two-board set has its
+own antenna connections or antennas, all the chips and resistors on
+the RF Output Switch and RF Input Switch schematic pages can be
+removed, the zero-ohm resistor between RF\_OUT\_SWITCH and "TX ANT
+OUT" can be added, and the zero-ohm resistor between RF\_IN\_SWITCH
+and "RX ANT IN" be added to remove all the RF switching.
+
+To completely remove active-standby, in addition to the previous
+paragraph, all the parts and resistor and the Active Standby Config
+page can be removed and the zero-ohm resistor between
+HW\_POWER\_OFF1\_N and HW\_POWER\_OFF\_N added for external power
+control of the board.
+
+The power output measurement circuitry on the RF\_Power\_AMP\_FET page
+can be removed if output or reflected power measurements are not
+necessary.
+
+Active/Standby
+==============
 
 The boards supports having a mate board that is the same board with
 one resistor difference to differentiate between board 1 and board 2.
 The BOARD\_NUM line is used to tell which board you are.  This also
 selects values coming from the PC104.  The "other" board is the board
-you are not.  The lines on the PC104 are:
+you are not.
+
+PC104 Interface
+---------------
+
+The lines on the PC104 are:
 
 - PRESENCEn\_N - This is used to tell if the other board is present
   (even if it is powered down).  It will be high if not present and
@@ -371,142 +529,8 @@ The inactive board will have all RF powered down and will do minimal
 processing to avoid using very much power.  Basically just handling
 synchronization data.
 
-# RF Loopback Test
-
-When in standby mode, the inactive board will have the RF output of
-the transmitter tied in to the RF input of the receiver through a 50
-ohm resistor.  At 440MHz, the input impedance of the first receive
-filter is very low and its gain at 440MHz is <-100dB.  So it should
-be safe for both the transmitter and receiver if the transmitter
-transmits at 440MHz at full power.
-
-If the transmitter transmits at 144.5MHz, the calculated loss in all
-the filters is around -75dB.  There is 20dB of gain in the PA, and the
-AX5043 can send at 16dBm.  Adding all that up, you get -39dBm coming
-out of the transmitter.  If that is sent through the 50 ohm resistor,
-there will be some more loss there, but you should get a signal well
-within readable range for the receive AX5043s.  And though the
-mismatch will be bad for the transmitter, the power is low enough to
-not harm the PA.  So this can be used as a self test of the
-transmitter and receiver while the board is in inactive mode.  If the
-signal too hot, the transmit AX5043 can reduce output power.
-
-If populated with the proper RF switches (the ones hooked to
-BOARD1\_RF\_IN\_BYPASS), this could be done on a simplex board, too.
-It can just deactivate its ACTIVE\_N line and the RF switch will go to
-the bypass.
-
-I am unsure if the TX AX5043 can be coerced into being able to
-transmit at both 144MHz and 440MHz.
-
-# Power Control and Sequencing
-
-The power control on the board is fairly simple.  On power up, power
-comes in through VSYS, goes through and inductor, and goes to +5V,
-which is always powered on.  +5V goes through a current limiter to
-+5VAL, which power the circuits on the board that are always on, the
-circuits the handle the board presence/active/etc. and the board1 RF
-switches, and the CAN bus transceivers.  3.3V comes in to REG\_3V3
-from the bus.
-
-The TPSM828302ARDSR will start supplying 1.2V to REG\_1V2.  It will
-also pull the PROCESSOR\_RESET pin low until their power is good, and
-that point they will not pull the reset line low any more (they are
-open drain).  At that point the MP5073GG-P is also holding reset line
-low until it is enabled.  Since the MP5073GG-P is powered by REG\_3V3
-it will not let the reset line go until that power is good.
-
-The STWD100NYWY3F hardware watchdog will power up at that time, but
-the POWER\_ENABLE pin from it will be pulled high and should remain
-high for 1 second.
-
-The MP5073GG-P and MAX4495AAUT current limiting chips will start
-supplying power to the rest of the board once they detect that power
-is good.  However, the MP5073GG-P will wait 50us after it senses the
-1.2V power is good holding the PROCESSOR\_RESET line low, then it will
-let the processor go.
-
-All the chips driving the PROCESSOR\_RESET line have power sensors, if
-any of them sense that the power is bad they will pull that line down
-low.
-
-When the processor is in reset and the default settings on the
-PA\_PWR\_EN, AX5043\_PWR\_EN, and LNA\_ENABLE are pulled low (and
-they have pull downs, too, so that they are disabled even when the
-main power is disabled), so all power to the RF elements will be
-off.
-
-A HW\_POWER\_OFF\_N comes in from the PC104 connector; if that is
-pulled low it will power off everything on the board except for the
-devices on +5VAL.  It does this by disabling the 3.3V and 1.2V
-regulators.  When 3.3V is off, the MAX4995s controlling power to the
-PA, AX5043s, and LNA will be powered off.
-
-There is also a hardware watchdog, as mentioned before.  The processor
-must toggle the FEED\_WATCHDOG line at least once a second.  If it
-fails to do that, the 1.2V and 3.3V current limiters will be disabled
-cutting power to the processor and all digital components.  This will
-result in everything else being powered off (except the devices on
-+5VAL).  After 200ms, the watchdog chip will enable power again.
-
-To power up and enable the RF section, the processor must first make
-sure all the AX5043 enable lines are pulled high to disable them.
-This is not the default (some are low and some are high by default),
-but it doesn't matter because they are powered off at the main,
-anyway.  The processor then can drive AX5043\_PWR\_EN high to enable
-the power to all AX5043s.  The processor can then drive the individual
-AX5043 enables low to individually power them on.  Then the processor
-can drive PA\_PWR\_EN high to power on the PA and LNA\_ENABLE high
-to power on the LNA.
-
-# Board Configuration
-
-The board has a number of resistors and optional parts for
-configuration.  These are:
-
-  - 1.2V\_INPUT - Determines whether 1.2V is derived from 3.3V or 5V.
-
-  - BOARD\_NUM - Remove for board 1 or simplex, populate for board 2.
-
-  - EXTERN\_CONTROL - Remove if the board (or board pair) manage their
-    own activity and power state.  Populate if another entity controls
-    power and the active lines on a board pair.  This should generally
-    not be populated on a simplex board, it will always be active and
-    some other entity probably controls its power signal.
-	
-  - 5V\_S[1-3], 5V\_p - One of these should be populated depending on
-    where the board should get its +5V power.
-
-  - 3V3\_S[1-3], 3V3\_p - One of these should be populated depending on
-    where the board should get its +3.3V power.  In addition, there is
-	an optional buck regulator that can be populated to derive 3.3V
-	from 5V.
-
-  - RF\_SWITCH\_EN - Removing the resistor to +5AL will disable all
-    the RF switches into high impedance mode.  Then the zero ohm
-    resistors to bypass the switches can be added.
-
-  - UMIBLICAL\_ATTACHED - If this line is not externally used, the
-    resistor from this to ground must be populated.
-
-In addition, for simplex, or if each board in a two-board set has its
-own antenna connections or antennas, all the chips and resistors on
-the RF Output Switch and RF Input Switch schematic pages can be
-removed, the zero-ohm resistor between RF\_OUT\_SWITCH and "TX ANT
-OUT" can be added, and the zero-ohm resistor between RF\_IN\_SWITCH
-and "RX ANT IN" be added to remove all the RF switching.
-
-To completely remove active-standby, in addition to the previous
-paragraph, all the parts and resistor and the Active Standby Config
-page can be removed and the zero-ohm resistor between
-HW\_POWER\_OFF1\_N and HW\_POWER\_OFF\_N added for external power
-control of the board.
-
-The power output measurement circuitry on the RF\_Power\_AMP\_FET page
-can be removed if output or reflected power measurements are not
-necessary.
-
-# Active/Standby State Machine
+Active/Standby State Machine
+----------------------------
 
 The logic below is for the board being active or not.  For instance,
 if OTHER\_FAULT\_N is low, then it is true.  These are all this way

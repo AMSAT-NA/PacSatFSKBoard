@@ -2330,12 +2330,6 @@
 		(uuid "59be98e6-3a48-48fa-a74c-b8c4ff9e5c45")
 	)
 	(junction
-		(at 156.21 166.37)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5a15fbcd-0bf7-472c-acdb-a792e2240470")
-	)
-	(junction
 		(at 346.71 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3148,16 +3142,6 @@
 			(type default)
 		)
 		(uuid "54352535-4a93-45f8-b5cd-d2878c5c3ae3")
-	)
-	(wire
-		(pts
-			(xy 147.32 166.37) (xy 156.21 166.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "543b32d3-3a0e-4adf-b80c-98d1dd67a4fd")
 	)
 	(wire
 		(pts
@@ -4211,7 +4195,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 158.75) (xy 147.32 166.37)
+			(xy 147.32 158.75) (xy 147.32 170.18)
 		)
 		(stroke
 			(width 0)
@@ -4934,6 +4918,28 @@
 		(uuid "31efa7c0-e26b-447a-9697-68385af21daf")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 54.1221 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "WATCHDOG_OUT_N"
+		(shape input)
+		(at 147.32 170.18 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "3b6c837f-e82c-44a0-b13e-d5253a058f29")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 147.32 193.2242 90)
 			(effects
 				(font
 					(size 1.27 1.27)

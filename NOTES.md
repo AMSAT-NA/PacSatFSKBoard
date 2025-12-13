@@ -119,6 +119,17 @@ Things to do for a new board:
 
 # TODO
 
+The chosen LNA (QPL9547) has very good specs (a NF of .3dB) but draws
+a lot of current (50ma).  Other possible options are Guerrilla RF
+GRF2374, GRF4001, Skyworks LNAs (SKY67150-396LF, SKY67183-396LF,
+SKY65015-70LF), or Qorvo SGL0622Z.  The Qorvo part is very low power,
+simple, but the NF is 1.4db).  The SKY67150-396LF has a similar NF to
+the QPL9547, but draws 85ma.  Looking over the parts, the QPL9547
+seems to be the best part for optimizing for NF, and the SGL0622Z is
+best for optimizing power.  It also has built-in matching, but is 3.3V
+and doesn't have any control over gain.  It does seem that lower NF
+values require higher power.
+
 Look at adding the TVS diode on the PA per the datasheet schematics.
 
 Replace the RF switches, the packages the Qorvo parts are in are too
@@ -132,9 +143,11 @@ find.
 
 Figure out what inductor to use for the PA power input.  100nH is
 pretty big.  You want something with the smallest series resistance.
-
-Add a line from the hardware watchdog to the RTC input so a reset
-can tell if the hardware watchdog fired.
+Can you use inductors intended for power supplies, like the
+LQW18CNR10K series from Murata or a 0603LS-101XJRC from Coilcraft?
+Perhaps one of these or a ferrite bead in addition to a smaller
+inductor right at the PA?  The inductor that is currently there
+(LQW18ASR10G0ZD) is only rated for 400 amps, so it is not sufficient.
 
 The RTC is not keeping time when the power is off unless it's always
 powered with Vbat.  It appears the RTC is now switching to Vbat on a
@@ -724,6 +737,9 @@ or https://www.digikey.com/en/products/detail/olimex-ltd/ARM-JTAG-20-10/3471401
 Also document that you cannot turn off power when the board is connected
 to the debugger or bad things can happen, and that the serial port doesn't
 work if you don't have the JTAG connector in place.
+
+Add a line from the hardware watchdog to the RTC input so a reset
+can tell if the hardware watchdog fired.
 
 # Not going to do
 
