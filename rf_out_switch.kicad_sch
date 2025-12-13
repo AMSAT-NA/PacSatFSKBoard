@@ -977,9 +977,19 @@
 		)
 		(uuid "68f2e65a-2e5a-4cba-81df-d80b14706212")
 	)
+	(text "ACTIVE1_N is a 3.3V signal, but the maximum input\ncontrol voltage to the QPC1022 is 3.0V (and the\nminimum is 1.3V).  Driving it directly with ACTIVE1_N\nappears to have burned up some devices.  Add a voltage\ndivider to bring the voltage to a correct range."
+		(exclude_from_sim no)
+		(at 189.992 131.826 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "8cfc7999-6873-430c-bbd0-071a7cd2c744")
+	)
 	(text "Inductor to bleed off static build\nup on the antenna."
 		(exclude_from_sim no)
-		(at 125.984 156.21 0)
+		(at 125.476 166.116 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -989,7 +999,7 @@
 	)
 	(text "TX ANT OUT"
 		(exclude_from_sim no)
-		(at 160.02 136.652 0)
+		(at 159.766 149.606 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -1052,7 +1062,7 @@
 		(uuid "7a2bf72c-1c4e-4436-bf3a-36fae4ef76c5")
 	)
 	(junction
-		(at 149.86 143.51)
+		(at 148.59 154.94)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8a29bf87-9b93-4556-8b61-a3fd2cf4a799")
@@ -1064,7 +1074,7 @@
 		(uuid "948ac0d2-ec4a-48f5-b01f-2bd59bf5f65b")
 	)
 	(junction
-		(at 166.37 152.4)
+		(at 165.1 163.83)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b530290d-83ad-408e-b822-23f606e513f1")
@@ -1111,7 +1121,7 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 162.56) (xy 149.86 165.1)
+			(xy 148.59 173.99) (xy 148.59 176.53)
 		)
 		(stroke
 			(width 0)
@@ -1241,7 +1251,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 152.4) (xy 167.64 152.4)
+			(xy 165.1 163.83) (xy 166.37 163.83)
 		)
 		(stroke
 			(width 0)
@@ -1251,7 +1261,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 143.51) (xy 130.81 120.65)
+			(xy 130.81 154.94) (xy 130.81 120.65)
 		)
 		(stroke
 			(width 0)
@@ -1281,7 +1291,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 143.51) (xy 149.86 143.51)
+			(xy 130.81 154.94) (xy 148.59 154.94)
 		)
 		(stroke
 			(width 0)
@@ -1291,7 +1301,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 143.51) (xy 149.86 143.51)
+			(xy 161.29 154.94) (xy 148.59 154.94)
 		)
 		(stroke
 			(width 0)
@@ -1431,7 +1441,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 152.4) (xy 166.37 162.56)
+			(xy 165.1 163.83) (xy 165.1 173.99)
 		)
 		(stroke
 			(width 0)
@@ -1471,7 +1481,7 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 152.4) (xy 165.1 152.4)
+			(xy 165.1 163.83) (xy 163.83 163.83)
 		)
 		(stroke
 			(width 0)
@@ -1591,7 +1601,7 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 153.67) (xy 149.86 154.94)
+			(xy 148.59 165.1) (xy 148.59 166.37)
 		)
 		(stroke
 			(width 0)
@@ -1681,7 +1691,7 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 143.51) (xy 149.86 146.05)
+			(xy 148.59 154.94) (xy 148.59 157.48)
 		)
 		(stroke
 			(width 0)
@@ -2256,7 +2266,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 166.37 162.56 0)
+		(at 165.1 173.99 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2266,7 +2276,7 @@
 		(fields_autoplaced yes)
 		(uuid "642180c9-c0f4-45fc-b79f-2494ea9a80f8")
 		(property "Reference" "#PWR0264"
-			(at 166.37 168.91 0)
+			(at 165.1 180.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2275,7 +2285,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 166.37 167.64 0)
+			(at 165.1 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2283,7 +2293,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 166.37 162.56 0)
+			(at 165.1 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2292,7 +2302,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 166.37 162.56 0)
+			(at 165.1 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2301,7 +2311,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 166.37 162.56 0)
+			(at 165.1 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2387,7 +2397,7 @@
 	)
 	(symbol
 		(lib_id "Device:L")
-		(at 149.86 149.86 0)
+		(at 148.59 161.29 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2395,7 +2405,7 @@
 		(dnp no)
 		(uuid "6a8f8228-d97d-4b30-b598-0d10ef922af1")
 		(property "Reference" "L39"
-			(at 147.828 150.114 90)
+			(at 146.558 161.544 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2403,7 +2413,7 @@
 			)
 		)
 		(property "Value" "470nH"
-			(at 152.908 150.368 90)
+			(at 151.638 161.798 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2411,7 +2421,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_0805_2012Metric_Pad1.05x1.20mm_HandSolder"
-			(at 149.86 149.86 0)
+			(at 148.59 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2420,7 +2430,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 149.86 149.86 0)
+			(at 148.59 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2429,7 +2439,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 149.86 149.86 0)
+			(at 148.59 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2679,7 +2689,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 149.86 165.1 0)
+		(at 148.59 176.53 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2689,7 +2699,7 @@
 		(fields_autoplaced yes)
 		(uuid "9a988f1a-b554-46df-8c44-25db0cf7e75b")
 		(property "Reference" "#PWR0292"
-			(at 149.86 171.45 0)
+			(at 148.59 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2698,7 +2708,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 149.86 170.18 0)
+			(at 148.59 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2706,7 +2716,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 149.86 165.1 0)
+			(at 148.59 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2715,7 +2725,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 149.86 165.1 0)
+			(at 148.59 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2724,7 +2734,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 149.86 165.1 0)
+			(at 148.59 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2745,7 +2755,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 149.86 158.75 0)
+		(at 148.59 170.18 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2754,7 +2764,7 @@
 		(dnp no)
 		(uuid "9ac55c55-cfb5-4332-8dde-17b3693f5384")
 		(property "Reference" "R98"
-			(at 147.574 160.528 90)
+			(at 146.304 171.958 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2763,7 +2773,7 @@
 			)
 		)
 		(property "Value" "10KΩ"
-			(at 152.273 161.036 90)
+			(at 151.003 172.466 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2772,7 +2782,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 151.638 158.75 90)
+			(at 150.368 170.18 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2781,7 +2791,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 149.86 158.75 0)
+			(at 148.59 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2789,7 +2799,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 149.86 158.75 0)
+			(at 148.59 170.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3274,7 +3284,7 @@
 	)
 	(symbol
 		(lib_id "PACSAT_DEV_misc:U_FL")
-		(at 166.37 143.51 0)
+		(at 165.1 154.94 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3282,7 +3292,7 @@
 		(dnp no)
 		(uuid "e34921d1-ae88-4107-85ee-86845a943650")
 		(property "Reference" "P15"
-			(at 163.83 139.7 0)
+			(at 162.56 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3291,7 +3301,7 @@
 			)
 		)
 		(property "Value" "CONUFL001-SMD-T"
-			(at 166.37 143.51 0)
+			(at 165.1 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3300,7 +3310,7 @@
 			)
 		)
 		(property "Footprint" "PacSatDev_misc:CONN1_CONUFL_TEC"
-			(at 166.37 143.51 0)
+			(at 165.1 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3309,7 +3319,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 166.37 143.51 0)
+			(at 165.1 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3318,7 +3328,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 166.37 143.51 0)
+			(at 165.1 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -181,9 +181,6 @@ design a bit and remove a part.
 Add 0 ohm resistors to make some of the dual-board lines available if
 the dual-board switching parts are not populated.
 
-Remove the 0 ohm resistor between the LNA and BPF.  You can remove the
-inductor there to disconnect the sections.
-
 Add the SAFE\_MODE pin to the board, if necessary.
 
 Modify the board1/board2 resistor notes to say that putting in a 40K
@@ -709,6 +706,12 @@ into the ADC.
 The BOARD1\_RF\_BYPASS and BOARD2\_RF\_BYPASS lines can be combined,
 you are only using one of them at a time.  This will simplify the
 design a bit and remove a part.
+
+Remove the 0 ohm resistor between the LNA and BPF.  You can remove the
+inductor there to disconnect the sections. - Actually, leave that in
+place and put a U.FL connector on each side so it can be easily
+separated.  Also change the capacitor between the PA and the output
+filter to a 0 ohm resistor.
 
 # Not going to do
 

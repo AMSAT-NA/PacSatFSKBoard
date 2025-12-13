@@ -2369,7 +2369,7 @@
 		(uuid "0431d879-1a55-4875-b26c-a987e3bda3e1")
 	)
 	(junction
-		(at 245.11 162.56)
+		(at 245.11 160.02)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0c73ff19-9037-4a17-89a5-8b90e4b01e2b")
@@ -2657,6 +2657,12 @@
 		(uuid "e5fdf972-68da-4010-8e43-38eadb8aaf01")
 	)
 	(junction
+		(at 232.41 160.02)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e6bc4a51-a369-4f08-9b29-8d1737827566")
+	)
+	(junction
 		(at 172.72 39.37)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2679,6 +2685,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f66f416b-da41-4248-949d-44550bca652c")
+	)
+	(junction
+		(at 227.33 143.51)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ffe85943-643d-462f-a59c-b968e7a0774e")
 	)
 	(wire
 		(pts
@@ -2812,6 +2824,16 @@
 	)
 	(wire
 		(pts
+			(xy 232.41 158.75) (xy 232.41 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e0ec03e-167e-4649-b153-2e9380462c3b")
+	)
+	(wire
+		(pts
 			(xy 172.72 46.99) (xy 177.8 46.99)
 		)
 		(stroke
@@ -2912,6 +2934,16 @@
 	)
 	(wire
 		(pts
+			(xy 232.41 160.02) (xy 232.41 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1834c24f-cc67-4ce1-8b4c-023dc091f993")
+	)
+	(wire
+		(pts
 			(xy 210.82 143.51) (xy 210.82 147.32)
 		)
 		(stroke
@@ -2959,6 +2991,16 @@
 			(type default)
 		)
 		(uuid "206a8fd5-8b58-47d2-9203-ef679e1011f4")
+	)
+	(wire
+		(pts
+			(xy 234.95 158.75) (xy 234.95 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "20eb3e65-30a7-4cc4-aa72-661df5e3e253")
 	)
 	(wire
 		(pts
@@ -3292,7 +3334,7 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 162.56) (xy 245.11 163.83)
+			(xy 245.11 160.02) (xy 245.11 161.29)
 		)
 		(stroke
 			(width 0)
@@ -3542,6 +3584,26 @@
 	)
 	(wire
 		(pts
+			(xy 227.33 143.51) (xy 229.87 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6fe06ffb-8cd4-4756-9172-562d8c7ddc24")
+	)
+	(wire
+		(pts
+			(xy 227.33 149.86) (xy 227.33 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "717a3d22-116c-4deb-b754-515132e5569c")
+	)
+	(wire
+		(pts
 			(xy 255.27 156.21) (xy 255.27 160.02)
 		)
 		(stroke
@@ -3642,7 +3704,7 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 161.29) (xy 245.11 162.56)
+			(xy 245.11 158.75) (xy 245.11 160.02)
 		)
 		(stroke
 			(width 0)
@@ -3779,6 +3841,16 @@
 			(type default)
 		)
 		(uuid "9639a53c-8568-49af-a428-e7e34b796955")
+	)
+	(wire
+		(pts
+			(xy 229.87 149.86) (xy 227.33 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9789cf65-ef0e-47f1-bd4c-03730822277b")
 	)
 	(wire
 		(pts
@@ -4002,7 +4074,7 @@
 	)
 	(wire
 		(pts
-			(xy 247.65 161.29) (xy 247.65 162.56)
+			(xy 247.65 158.75) (xy 247.65 160.02)
 		)
 		(stroke
 			(width 0)
@@ -4029,6 +4101,16 @@
 			(type default)
 		)
 		(uuid "be562323-091a-4b6e-8aa5-32d629810112")
+	)
+	(wire
+		(pts
+			(xy 232.41 160.02) (xy 234.95 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c01735a7-1e14-4dea-9398-95ad89b4f487")
 	)
 	(wire
 		(pts
@@ -4312,7 +4394,7 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 143.51) (xy 229.87 143.51)
+			(xy 222.25 143.51) (xy 227.33 143.51)
 		)
 		(stroke
 			(width 0)
@@ -4322,7 +4404,7 @@
 	)
 	(wire
 		(pts
-			(xy 245.11 162.56) (xy 247.65 162.56)
+			(xy 245.11 160.02) (xy 247.65 160.02)
 		)
 		(stroke
 			(width 0)
@@ -4332,7 +4414,7 @@
 	)
 	(wire
 		(pts
-			(xy 242.57 152.4) (xy 241.3 152.4)
+			(xy 242.57 149.86) (xy 241.3 149.86)
 		)
 		(stroke
 			(width 0)
@@ -4472,7 +4554,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 143.51) (xy 241.3 152.4)
+			(xy 241.3 143.51) (xy 241.3 149.86)
 		)
 		(stroke
 			(width 0)
@@ -5974,6 +6056,70 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 232.41 161.29 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2e1e3c2b-8e54-49c1-b88f-85694fa4dce9")
+		(property "Reference" "#PWR0246"
+			(at 232.41 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 232.41 165.354 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 232.41 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 232.41 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 232.41 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1029eeda-d25c-4a8d-85b4-461b28335daa")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/9af0eacb-5211-4e23-85d7-9c1805bbe6a4"
+					(reference "#PWR0246")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 210.82 158.75 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6104,7 +6250,7 @@
 	)
 	(symbol
 		(lib_id "PACSAT_DEV_misc:U_FL")
-		(at 246.38 152.4 0)
+		(at 246.38 149.86 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6112,7 +6258,7 @@
 		(dnp no)
 		(uuid "328f9429-bef4-405d-b20c-1a0dc10e0f51")
 		(property "Reference" "P20"
-			(at 243.84 148.59 0)
+			(at 243.84 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6121,7 +6267,7 @@
 			)
 		)
 		(property "Value" "CONUFL001-SMD-T"
-			(at 246.38 152.4 0)
+			(at 246.38 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6130,7 +6276,7 @@
 			)
 		)
 		(property "Footprint" "PacSatDev_misc:CONN1_CONUFL_TEC"
-			(at 246.38 152.4 0)
+			(at 246.38 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6139,7 +6285,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 246.38 152.4 0)
+			(at 246.38 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6148,7 +6294,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 246.38 152.4 0)
+			(at 246.38 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8227,6 +8373,77 @@
 		)
 	)
 	(symbol
+		(lib_id "PACSAT_DEV_misc:U_FL")
+		(at 233.68 149.86 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bacd617c-8a77-434f-b033-2ee71401b7ba")
+		(property "Reference" "P22"
+			(at 227.584 151.638 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CONUFL001-SMD-T"
+			(at 233.68 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "PacSatDev_misc:CONN1_CONUFL_TEC"
+			(at 233.68 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 233.68 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 233.68 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bf528acc-f964-4d05-aec5-a345985a628b")
+		)
+		(pin "2"
+			(uuid "e1052231-c78d-4e52-ad51-47e14c46fc61")
+		)
+		(pin "3"
+			(uuid "bbffcb84-08a4-433f-8311-72da2b140a4d")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/9af0eacb-5211-4e23-85d7-9c1805bbe6a4"
+					(reference "P22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 123.19 162.56 0)
 		(unit 1)
@@ -9504,16 +9721,15 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 245.11 163.83 0)
+		(at 245.11 161.29 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "f5e2b7f8-316d-489f-8908-259a50144c06")
 		(property "Reference" "#PWR072"
-			(at 245.11 170.18 0)
+			(at 245.11 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9522,7 +9738,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 245.11 168.91 0)
+			(at 245.364 165.608 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9530,7 +9746,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 245.11 163.83 0)
+			(at 245.11 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9539,7 +9755,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 245.11 163.83 0)
+			(at 245.11 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9548,7 +9764,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 245.11 163.83 0)
+			(at 245.11 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
