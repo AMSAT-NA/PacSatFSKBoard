@@ -15,14 +15,16 @@ or https://www.digikey.com/en/products/detail/olimex-ltd/ARM-JTAG-20-10/3471401
 Besides being a lot cheaper than the standard XDS110, the LP-XDS110
 also has a serial port built in, so you don't have to have a separate
 serial port interface.  Remember, hook TX on one board to RX on the
-other.  Don't hook TX to TX.
+other.  Don't hook TX to TX.  If you don't have the JTAG connected,
+you will need to connect the ground as well.
 
-There is a problem with the serial port, though.  You cannot use the
-serial port without the JTAG connector hooked up, too.  It starts
-getting phantom characters being type.  I don't know why, but I had
-the same issue with several TI reference boards, so it's not the
-PACSAT board.  So if you just want the serial port hooked up, you will
-need to have another adapter for that.
+The jumper on the LP-XDS110 should be set to "XDS"; that decides which
+device powers the level shifters.  If you are just using the serial
+port, the jumper should be set to "XDS".  Otherwise the level shifters
+won't get power and they won't work very well.  If you have the JTAG
+connector hooked up, the jumper should be set to "EXT" (or "TGT").
+Otherwise the LP-XDS110 will be providing power to the device, which
+you don't want.
 
 IO Connections on the PacSat AFSK processor
 ===========================================
