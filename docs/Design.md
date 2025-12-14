@@ -18,13 +18,16 @@ serial port interface.  Remember, hook TX on one board to RX on the
 other.  Don't hook TX to TX.  If you don't have the JTAG connected,
 you will need to connect the ground as well.
 
-The jumper on the LP-XDS110 should be set to "XDS"; that decides which
-device powers the level shifters.  If you are just using the serial
-port, the jumper should be set to "XDS".  Otherwise the level shifters
-won't get power and they won't work very well.  If you have the JTAG
+The reset pin on the LP-XDS110 resets the board.
+
+The jumper on the LP-XDS110 decides which device powers the level
+shifters.  If you are just using the serial port, the jumper should be
+set to "XDS".  Otherwise the level shifters won't get power and they
+won't work very well (you get erratic behavior).  If you have the JTAG
 connector hooked up, the jumper should be set to "EXT" (or "TGT").
 Otherwise the LP-XDS110 will be providing power to the device, which
-you don't want.
+you don't want.  In that case the PacSat board is powering the level
+shifters.
 
 IO Connections on the PacSat AFSK processor
 ===========================================
@@ -256,6 +259,8 @@ PC104 Pins
 
 FIXME - Figure out what all the PC104 pins do.
 
+These pins handle active-standby between to PacSat AFSK board and
+various signals from the control board of the satellite.
 
   - HW\_POWER\_OFF[12]\_N - Input to board, pulling this low causes the
     power to be disabled on boardn.  boardn pulls this high with a 10K
