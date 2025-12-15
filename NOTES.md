@@ -64,6 +64,9 @@ Things to do for a new board:
   them off to measure power out of the PA, and they are pretty much
   destroyed.  L33 and L38 came off when I was unsoldering the other
   devices.
+  
+* Re-added L38, but something is wrong with the PA.  It's not drawing
+  nearly as much Vbias and Iref as it should.
 
 ## Board 6 - First board I worked on for initial bringup
 
@@ -82,10 +85,8 @@ Things to do for a new board:
 
 * The board draws a lot more power than it should.  Something in the
   power section got messed up, it appears.
-
-* The PA power input inductor (L37) has *NOT* been changed to 100nH.
-  The PA on this board appears to not be working, anyway, probably
-  destroyed with the lack of DC blocking on the RF input.
+  
+* The PA power input inductor (L37) has been changed to 100nH.
 
 ## Board 8 - 3rd board I worked on
 
@@ -109,21 +110,26 @@ Things to do for a new board:
 
 * The PA power input inductor (L37) has been changed to 100nH.
 
+### Fixed
+
 * The RF power output switch U33 appears to always be connected from
   RF\_OUT\_SWTICH to the antenna output, no matter the setting of
   ACTIVE1\_N.  It's not that way on board 5, so it appears to be the
   switch.  I'm wondering if an over voltage messed it up?  Or maybe
   transmitted power?  But maybe it's working.  If I have a signal
   going out, turning the switch on and off give a 35dB difference in
-  power.
+  power.  This appears to not be an issue.
 
 # TODO
+
+Make all the U.FL connectors DNP and only add them when they are
+needed.
 
 The chosen LNA (QPL9547) has very good specs (a NF of .3dB) but draws
 a lot of current (50ma).  Other possible options are Guerrilla RF
 GRF2374, GRF4001, Skyworks LNAs (SKY67150-396LF, SKY67183-396LF,
 SKY65015-70LF), or Qorvo SGL0622Z.  The Qorvo part is very low power,
-simple, but the NF is 1.4db).  The SKY67150-396LF has a similar NF to
+simple, but the NF is 1.4db.  The SKY67150-396LF has a similar NF to
 the QPL9547, but draws 85ma.  Looking over the parts, the QPL9547
 seems to be the best part for optimizing for NF, and the SGL0622Z is
 best for optimizing power.  It also has built-in matching, but is 3.3V
