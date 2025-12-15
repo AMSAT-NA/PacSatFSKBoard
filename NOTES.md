@@ -7,175 +7,46 @@ be done, and things that have been done.
 The general information will probably make it into another document at
 some point.
 
-# New Board Bring up
-
-Things to do for a new board:
-
-* Add power connector.
-
-* Add watchdog jumper.
-
-* Replace RX AX5043 inductors.  18nH works well.
-
-* Add blue wire for the LNA bias from between R77 and C105 to
-  between L32 and C107/108.
-
-* Replace U5 with the proper part.
-
-* Possibly replace R117 with a 15/18K resistor.  The voltage is
-  a little low for the AND gate input.  (Testing shows this is
-  not necessary, so this doesn't have to be done on prototype
-  boards.)
-
-* Break the trace between L35 and C112 and add a 1nF capacitor there.
-  This blocks DC to the PA input, as required by the chip.  The
-  capacitor can be added between L35 and the PA, but that's a lot
-  harder to do.  If the blocking capacitor is between L35 and C112
-  that means you can't effectively use the TX\_PA\_DRV UFL connector
-  (P13) because possibly there will be a DC path to ground through the
-  UFL connector.  So you can only use TX\_PA\_DRV on boards with the
-  capacitor between L35 and the PA.
-
-* Change the PA power input inductor (L37) to a 100nH part to avoid
-  feedback through the power supply.
-
-* C117 was miscalculated.  It should (in combination with C123) be
-  about 60pf.  Replace with a 68pF cap for now (giving about 64pF when
-  combined with 1nF).  Ideally C117 should be 63pF to combine with C123
-  to give 60pF.
-
-# Current Board Status
-
-## Board 5 - 2nd board I worked on
-
-* Applied all the board bring up changes.
-
-* It's working well, except for RF transmit power.
-
-* This board has the capacitor on the PA RF input added between
-  the L35 inductor and the PA, so the TX\_PA\_DRV input/output
-  connector (P13) can be used on this board.
-
-* The PA power input inductor (L37) has been changed to 100nH.
-
-* U.FL connector P6 got pulled off the board.
-
-* Currently C124, L30, C125, L33 and L38 are not installed.  I pulled
-  them off to measure power out of the PA, and they are pretty much
-  destroyed.  L33 and L38 came off when I was unsoldering the other
-  devices.
-
-## Board 6 - First board I worked on for initial bringup
-
-* The RF switches have been removed and jumpers places on the RF connections.
-  So this is basically a stand-alone board or a board 2.
-
-* The board 2 resistor has not been added, but should be at some point.
-
-* Added a 1nF capacitor between L35 and the RF PA so it's not DC grounded.
-
-* The board usually goes into a reset loop when cold.  It started
-  doing this after I put too much voltage in.  This is probably a
-  power issue someplace.  Fixing the PA power controller did seem to
-  help.  To get it out, you have to let the board warm up a little
-  then bring the voltage down and back up until it works.
-
-* The board draws a lot more power than it should.  Something in the
-  power section got messed up, it appears.
-
-* The PA power input inductor (L37) has *NOT* been changed to 100nH.
-  The PA on this board appears to not be working, anyway, probably
-  destroyed with the lack of DC blocking on the RF input.
-
-## Board 8 - 3rd board I worked on
-
-* Applied all the board bring up changes.
-
-* It's working well, except for RF transmit power.
-
-* Added the 1nF capacitor between L35 and C112, so TX\_PA\_DRV cannot
-  be used on this board. (Well, not true any more.)
-
-* The Iref input is modified to match what the datasheet says it
-  should be.  Except the 68nH inductor got lost, so I put on an 83nH
-  inductor, but that shouldn't matter.  It has Iref going to the
-  inductor, then the 240ohm resistor, and the 0.1uF capacitor from above
-  the inductor to ground.
-
-* Change the L match on the PA input to a 47pf capacitor and a 15nH
-  inductor.  This seems to work ok, though per simulation it has more
-  loss than the two inductor L match.  This does make TX\_PA\_DRV
-  usable.
-
-* The PA power input inductor (L37) has been changed to 100nH.
-
-* The RF power output switch U33 appears to always be connected from
-  RF\_OUT\_SWTICH to the antenna output, no matter the setting of
-  ACTIVE1\_N.  It's not that way on board 5, so it appears to be the
-  switch.  I'm wondering if an over voltage messed it up?  Or maybe
-  transmitted power?  But maybe it's working.  If I have a signal
-  going out, turning the switch on and off give a 35dB difference in
-  power.
-
 # TODO
 
-Maybe add smaller decoupling caps on the output of the SPPA power to
-help with feedback.
+Make all the U.FL connectors DNP and only add them when they are
+needed.
 
-Figure out a way to split out the PA after the L match and the filter
-so it's easy to isolate those subsystems and add another U.FL
-connector.  Probably have to add another capacitor.
+The chosen LNA (QPL9547) has very good specs (a NF of .3dB) but draws
+a lot of current (50ma).  Other possible options are Guerrilla RF
+GRF2374, GRF4001, Skyworks LNAs (SKY67150-396LF, SKY67183-396LF,
+SKY65015-70LF), or Qorvo SGL0622Z.  The Qorvo part is very low power,
+simple, but the NF is 1.4db.  The SKY67150-396LF has a similar NF to
+the QPL9547, but draws 85ma.  Looking over the parts, the QPL9547
+seems to be the best part for optimizing for NF, and the SGL0622Z is
+best for optimizing power.  It also has built-in matching, but is 3.3V
+and doesn't have any control over gain.  It does seem that lower NF
+values require higher power.
 
 Look at adding the TVS diode on the PA per the datasheet schematics.
 
 Replace the RF switches, the packages the Qorvo parts are in are too
 hard to work with and several have failed (probably because of control
 input voltage).  Finding one with temp range looks to be challenging,
-though. Possibly switch to a PE42424, or possibly another RF switch to
-replace the Qorvo part.
-
-Move parts that are not RF-critical around the PA outside the shield.
-Mostly the capacitors and resistors.
+though. Possibly switch to a PE42359 or PE42424, or possibly another
+RF switch to replace the Qorvo part.  Unfortunately, this is harder
+than it sounds.  It has to be able to be powered by 5V because it has
+to work when the rest of the board is powered down, and that's hard to
+find.
 
 Figure out what inductor to use for the PA power input.  100nH is
 pretty big.  You want something with the smallest series resistance.
-
-Move L27 down a bit to give it more space between the inductors around
-it.
-
-Change the part number for the MRAM chips.  The ones on the boards now
-are 1.8V chips.  Surprisingly, they work just fine, but we need to get
-the right chips on there eventually.  Right part number is
-AS3016204-0108X0PSAY.
-
-The power input pins are a little inconvenient, it would have been
-better if I had used a standard 2-pin connector instead of two
-separate pins.  I guess you could also just use the pins on the PC104
-connector, too.
-
-Add a line from the hardware watchdog to the RTC input so a reset
-can tell if the hardware watchdog fired.
-
-Use 1% resistors on the voltage dividers for the voltage measurement
-into the ADC.
+Can you use inductors intended for power supplies, like the
+LQW18CNR10K series from Murata or a 0603LS-101XJRC from Coilcraft?
+Perhaps one of these or a ferrite bead in addition to a smaller
+inductor right at the PA?  The inductor that is currently there
+(LQW18ASR10G0ZD) is only rated for 400 amps, so it is not sufficient.
 
 The RTC is not keeping time when the power is off unless it's always
 powered with Vbat.  It appears the RTC is now switching to Vbat on a
 power fail.  But when it comes up PFAIL and OSCF are not set.  I've
 modified it to always run on Vbat and that seems to be ok, but this
 should probably be researched at some point.
-
-The LP-XDS110 debugger works fine with the board, document this,
-including how to order a cable.  https://www.adafruit.com/product/1675
-or https://www.digikey.com/en/products/detail/olimex-ltd/ARM-JTAG-20-10/3471401
-Also document that you cannot turn off power when the board is connected
-to the debugger or bad things can happen, and that the serial port doesn't
-work if you don't have the JTAG connector in place.
-
-The debug port and the serial interface are too close together.
-Separate them out a bit.  Also, make the serial port a right-angle
-connector so it can be used when in the board stack.  The JTAG
-connector appears to have enough room.
 
 It doesn't look like the transmitter and receiver chips can be coaxed
 to work on the same frequencies if the transmitter is in the 430MHz
@@ -188,8 +59,6 @@ Look at the diode on the RTC. The Nexperia parts are out of stock and
 the Rohm RB520ASA-30FH was suggested as an alternative.  It has better
 reverse current but a higher voltage drop across the junction.  Maybe
 a better diode could be chosen.
-
-Add the pin 1 markers for U24 and U30.
 
 Switch the main RF connectors from UFL to MMCX, since that's pretty
 standard.
@@ -210,9 +79,6 @@ design a bit and remove a part.
 
 Add 0 ohm resistors to make some of the dual-board lines available if
 the dual-board switching parts are not populated.
-
-Remove the 0 ohm resistor between the LNA and BPF.  You can remove the
-inductor there to disconnect the sections.
 
 Add the SAFE\_MODE pin to the board, if necessary.
 
@@ -652,13 +518,15 @@ various SPI things were messed up.
 
 Fix the watchdog jumper or order the right part.
 
+---Changes from the Version 1 board start here---
+
 The numbers I had for the PA output impedance are wrong, re-doing the
 calculations I get 6.23 - 10.4j, not 6.23 - 13.3j.  That doesn't
 change the inductor at all, but the capacitor changes to 60pF.  Also
 take into account the 1nF capacitor; that changes the value a bit.
-Use a 63pF part.
+- Use a 62pF part.
 
-Fix the processor part number.
+Fix the processor part number.  It has an "LS" after the TMS570.
 
 The PA input has a direct RF connection to ground.  The spec sheet
 says it needs DC blocking.  The other L network that works uses a 37pF
@@ -666,21 +534,23 @@ capacitor and an 18nH inductor, but that doesn't perform nearly as
 well as the two inductors.  So add a 1nF or so capacitor to block DC.
 Adding the capacitor on board 6 between L35 and the PA was almost
 impossible.  For the other rework, break the line between L35 and C112
-and put the capacitor there, that should be much easier
+and put the capacitor there, that should be much easier - On the
+new version, added a 1nF capacitor between L35 and the PA.
 
 The Iref input to the PA has the resistor and inductor swapped from
 what's in the datasheet, and there is also a .1uF capacitor from
 between the resistor and inductor to ground.  It should probably
-match the datasheet.
+match the datasheet. - Changed to match the datasheet.
 
 The control voltage for the QPC1022 RF switches has a maximum value of
-2.75V, it's being driven with 3.3V, which is too much.  ACTIVE_N can
+2.75V, it's being driven with 3.3V, which is too much.  ACTIVE1\_N can
 be driven with an open drain, which would temporarily solve the
 problem.  On board 6, which I did initial bring up on, the RF switch
 is always on when enabled.  I don't know if there is some issues there
 or if driving it to high messed it up.  This needs to be eventually
 tested on another board.  The RF switches have been removed from
-board 6.
+board 6. - Added a voltage divider on the ACTIVE1\_N line to avoid
+the issue.
 
 A line needs to be run from the LNA's bias resistor to LNA_VCC so the
 bias actually has bias.
@@ -688,17 +558,81 @@ bias actually has bias.
 The 22nH inductors wouldn't range properly on the RX AX5043s, they
 ranged too low.  So we need a smaller inductor.  18nH and 15nH
 ordered, hopefully that works.  UPDATE: They work, need to update the
-schematic.
+schematic. - These have all been changed to 22nH.
 
 Change R117 to 18K, output at 2.5V is marginal.  Same may be true for
 the ACTIVE\_N line.  Actually, the ACTIVE\_N line has its own issues,
 see above for details.  2.5V is not marginal for inputs to the TMS570.
+- Changed R117 and the one for ACTIVE\_N to 18K.
 
 U5, a 74AHC1G09, is an open drain part.  It really needs to be a part
 that drives the output line, like a SN74AHC1G08QDCKRQ1.  Added a
 resistor across the 3.3V and output of the 74AHC1G09 to compensate.
+- On the revision, this is now a SN74AHC1G08QDCKRQ1.
 
 Rename Processor\_Reset" to "Processor\_Reset\_N" to reflect its polarity.
+
+Add the pin 1 markers for U24 and U30. - Added courtyards and pin 1
+markers to these part.  Added courtyards to U36 and U4.
+
+Figure out a way to split out the PA after the L match and the filter
+so it's easy to isolate those subsystems and add another U.FL
+connector.  Probably have to add another capacitor. - Added a zero
+ohm resistor and another U.FL connector.
+
+Maybe add smaller decoupling caps on the output of the SPPA power to
+help with feedback. - Added a 100pF capacitor there.
+
+Move parts that are not RF-critical around the PA outside the shield.
+Mostly the capacitors and resistors. - Only moved the big decoupling
+capacitor, everything else is still in the can.
+
+Move L27 down a bit to give it more space between the inductors around
+it.
+
+Change the part number for the MRAM chips.  The ones on the boards now
+are 1.8V chips.  Surprisingly, they work just fine, but we need to get
+the right chips on there eventually.  Right part number is
+AS3016204-0108X0PSAY.
+
+The power input pins are a little inconvenient, it would have been
+better if I had used a standard 2-pin connector instead of two
+separate pins.  I guess you could also just use the pins on the PC104
+connector, too. - Replaced these and the one for the watchdog jumper
+with a new version.
+
+Add a capacitor and a new U.FL connector between the PA and the output
+filter so they can be more easily isolated. - Changed the capacitor
+to a zero-ohm resistor.
+
+The debug port and the serial interface are too close together.
+Separate them out a bit.  Also, make the serial port a right-angle
+connector so it can be used when in the board stack.  The JTAG
+connector appears to have enough room. - Switch positions of
+the LEDs and the serial power and used a right-angle connector.
+
+Use 1% resistors on the voltage dividers for the voltage measurement
+into the ADC.
+
+The BOARD1\_RF\_BYPASS and BOARD2\_RF\_BYPASS lines can be combined,
+you are only using one of them at a time.  This will simplify the
+design a bit and remove a part.
+
+Remove the 0 ohm resistor between the LNA and BPF.  You can remove the
+inductor there to disconnect the sections. - Actually, leave that in
+place and put a U.FL connector on each side so it can be easily
+separated.  Also change the capacitor between the PA and the output
+filter to a 0 ohm resistor.
+
+The LP-XDS110 debugger works fine with the board, document this,
+including how to order a cable.  https://www.adafruit.com/product/1675
+or https://www.digikey.com/en/products/detail/olimex-ltd/ARM-JTAG-20-10/3471401
+Also document that you cannot turn off power when the board is connected
+to the debugger or bad things can happen, and that the serial port doesn't
+work if you don't have the JTAG connector in place.
+
+Add a line from the hardware watchdog to the RTC input so a reset
+can tell if the hardware watchdog fired.
 
 # Not going to do
 
