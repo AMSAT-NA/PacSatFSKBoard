@@ -56,9 +56,6 @@ Things to do for a new board:
   destroyed.  L33 and L38 came off when I was unsoldering the other
   devices.
   
-* Re-added L38, but something is wrong with the PA.  It's not drawing
-  nearly as much Vbias and Iref as it should.
-
 ## Board 6 - First board I worked on for initial bringup
 
 * The RF switches have been removed and jumpers places on the RF connections.
@@ -77,7 +74,16 @@ Things to do for a new board:
 * The board draws a lot more power than it should.  Something in the
   power section got messed up, it appears.
   
+* MITSI replaced the PA with a new chip because the old one was broken.
+
 * The PA power input inductor (L37) has been changed to 100nH.
+
+* PA output match capacitor (C117) was changed to 68pF.
+
+* C112 between the AX5043 and the PA is currently removed for testing.
+
+* L35 was broken off in the process of removing C112 and need to be
+  replaced.  There's a 15nH one there for now.
 
 ## Board 8 - 3rd board I worked on
 
