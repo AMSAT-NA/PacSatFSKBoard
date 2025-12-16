@@ -1450,3 +1450,27 @@ I went over the PA impedance matching calculations again and found I
 made an error.  The output impedance is 6.23 - 10.4j, not 6.23 -
 13.3j.  I don't know how that happened.  That makes the matching
 capacitor 60pF, the inductor stays the same.
+
+## 2025-12-15
+
+Got board 6 back from MITSI with the replaced PA.
+
+The PA started oscillating again.  On board 6 I have separated out the
+AX5043 output and PA input.  The PA oscillates with nothing connected
+on the input, just the L match.
+
+The oscillation appears not as a single frequency but as frequencies
+spaced out about 10MHz apart from 10MHz up over 1GHz, slowly tapering
+off.
+
+Putting a SA on the input and output shows the oscillation in both
+places, on the output amplified about 20dB.
+
+## 2025-12-16
+
+Removing either inductor on the L match causes the oscillation to go
+away.  I moved L27 and rotated it 90 degrees, but that made no
+difference, so it doesn't appear to be inductive coupling.
+
+Adding a 10 ohm resistor in series with the PA output inductor caused
+the problem to go away.
