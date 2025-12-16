@@ -18,14 +18,13 @@ Things to do for a new board:
   not necessary, so this doesn't have to be done on prototype
   boards.)
 
-* Break the trace between L35 and C112 and add a 1nF capacitor there.
-  This blocks DC to the PA input, as required by the chip.  The
-  capacitor can be added between L35 and the PA, but that's a lot
-  harder to do.  If the blocking capacitor is between L35 and C112
-  that means you can't effectively use the TX\_PA\_DRV UFL connector
-  (P13) because possibly there will be a DC path to ground through the
-  UFL connector.  So you can only use TX\_PA\_DRV on boards with the
-  capacitor between L35 and the PA.
+* Replace L27 with a 39pF capacitor and L35 with a 15nH inductor.
+  (Some boards have a blocking capacitor added between L35 and the PA.
+  It's really hard to add there.)  This blocks DC to the PA input, as
+  required by the chip.  This is the equivalent L match to the two
+  inductor solution that was there, but has more loss.  Note that this
+  leaves a possible DC path through TX\_PA\_DRV if something is hooked
+  up there.
 
 * Change the PA power input inductor (L37) to a 100nH part to avoid
   feedback through the power supply.
@@ -48,6 +47,8 @@ Things to do for a new board:
   connector (P13) can be used on this board.
 
 * The PA power input inductor (L37) has been changed to 100nH.
+
+* C117 has not been changed to a 68pF capacitor.
 
 * U.FL connector P6 got pulled off the board.
 
@@ -76,7 +77,10 @@ Things to do for a new board:
   
 * MITSI replaced the PA with a new chip because the old one was broken.
 
-* The PA power input inductor (L37) has been changed to 100nH.
+* C117 has been changed to a 68pF capacitor.
+
+* The PA power input inductor (L37) has been changed to 83nH.  (It was
+  changed to 100nH earlier).
 
 * PA output match capacitor (C117) was changed to 68pF.
 
@@ -84,6 +88,8 @@ Things to do for a new board:
 
 * L35 was broken off in the process of removing C112 and need to be
   replaced.  There's a 15nH one there for now.
+  
+* Currently the MAX4995 for the PA is bypassed for experimenting.
 
 ## Board 8 - 3rd board I worked on
 
@@ -91,19 +97,23 @@ Things to do for a new board:
 
 * It's working well, except for RF transmit power.
 
-* Added the 1nF capacitor between L35 and C112, so TX\_PA\_DRV cannot
-  be used on this board. (Well, not true any more.)
+* Added the 1nF capacitor on the PA input between L35 and C112, so
+  TX\_PA\_DRV cannot be used on this board. (Well, not true any more.)
 
 * The Iref input is modified to match what the datasheet says it
   should be.  Except the 68nH inductor got lost, so I put on an 83nH
   inductor, but that shouldn't matter.  It has Iref going to the
   inductor, then the 240ohm resistor, and the 0.1uF capacitor from above
   the inductor to ground.
+  
+* C117 has been changed to a 68pF capacitor, I believe.
 
 * Change the L match on the PA input to a 47pf capacitor and a 15nH
   inductor.  This seems to work ok, though per simulation it has more
   loss than the two inductor L match.  This does make TX\_PA\_DRV
-  usable.
+  usable.  Note that this is currently wrong on the board, the
+  capacitor and inductor are switched places.  The 15nH should go in
+  L38's place and the capacitor should go in L27's place.
 
 * The PA power input inductor (L37) has been changed to 100nH.
 
