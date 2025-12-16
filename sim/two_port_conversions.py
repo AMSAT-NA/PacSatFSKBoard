@@ -2,6 +2,10 @@
 # Conversions Between S, Z, Y, h, ABCD, and T Parameters which are Valid for Complex Source and Load Impedances
 # Dean A. Frickey, Member, EEE
 
+# Note, the S parameter matrix is input as:
+#
+#  [[ S11, S12 ], [ S21, S22 ]]
+
 # Tables I and II
 
 # This is taken from https://www.rfcafe.com/references/electrical/s-h-y-z.htm
