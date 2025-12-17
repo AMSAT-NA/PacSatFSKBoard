@@ -2196,17 +2196,6 @@
 		)
 		(uuid "687cd5f1-fd90-4763-8932-b15e45023117")
 	)
-	(text "Option Test Cap"
-		(exclude_from_sim no)
-		(at 331.47 119.38 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "765945bc-4128-4daa-a639-ec527244b721")
-	)
 	(text "RX2+"
 		(exclude_from_sim no)
 		(at 381 118.11 0)
@@ -2291,17 +2280,6 @@
 			)
 		)
 		(uuid "d1dfde17-2d88-4be0-b71b-435603fff136")
-	)
-	(text "-2 to -3 dB"
-		(exclude_from_sim no)
-		(at 326.39 124.46 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "d5813209-6088-46f6-b95f-0f03d12ad829")
 	)
 	(text "The input impedance of the QPL9547 is\n142.4-j80.8 ohms.  This adjusts the\nimpedance to 50 ohms at 145MHz."
 		(exclude_from_sim no)
@@ -3104,16 +3082,6 @@
 	)
 	(wire
 		(pts
-			(xy 323.85 116.84) (xy 323.85 143.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "313d592b-7a0e-40d5-8258-63bb4bbdafb9")
-	)
-	(wire
-		(pts
 			(xy 181.61 228.6) (xy 198.12 228.6)
 		)
 		(stroke
@@ -3424,7 +3392,7 @@
 	)
 	(wire
 		(pts
-			(xy 323.85 100.33) (xy 323.85 109.22)
+			(xy 323.85 100.33) (xy 323.85 143.51)
 		)
 		(stroke
 			(width 0)
@@ -5232,9 +5200,9 @@
 		(at 124.46 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "11888d8f-f855-4d3e-8b02-bcd0e4c00001")
 		(property "Reference" "P19"
 			(at 121.92 147.32 0)
@@ -5916,81 +5884,13 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 323.85 113.03 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "29b87d8c-7122-4a18-94aa-b1e3ea283710")
-		(property "Reference" "C111"
-			(at 327.66 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1nF"
-			(at 327.66 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 324.8152 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 323.85 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 323.85 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8e954ac2-8f4f-452d-ad63-5ec02ef870c8")
-		)
-		(pin "2"
-			(uuid "295b55ea-ef61-4811-9e45-a869d297daed")
-		)
-		(instances
-			(project "PacSat_Dev_RevD_240614"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/9af0eacb-5211-4e23-85d7-9c1805bbe6a4"
-					(reference "C111")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "PACSAT_DEV_misc:U_FL")
 		(at 383.54 123.19 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "2c615906-1a1b-4fa5-bd54-fde8293fdb65")
 		(property "Reference" "P11"
 			(at 381 119.38 0)
@@ -6253,9 +6153,9 @@
 		(at 246.38 149.86 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "328f9429-bef4-405d-b20c-1a0dc10e0f51")
 		(property "Reference" "P20"
 			(at 243.84 146.05 0)
@@ -7637,9 +7537,9 @@
 		(at 337.82 100.33 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "8ec76fb0-6106-48f0-822b-0f5fc9fb5d02")
 		(property "Reference" "P8"
 			(at 335.28 96.52 0)
@@ -8306,9 +8206,9 @@
 		(at 364.49 123.19 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "b63c86f3-bfeb-4474-9dee-694b44deb0e4")
 		(property "Reference" "P9"
 			(at 361.95 119.38 0)
@@ -8377,9 +8277,9 @@
 		(at 233.68 149.86 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "bacd617c-8a77-434f-b033-2ee71401b7ba")
 		(property "Reference" "P22"
 			(at 227.584 151.638 0)
@@ -8651,9 +8551,9 @@
 		(at 374.65 123.19 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "c160594d-e9a0-483c-88bb-e17f57a6bf89")
 		(property "Reference" "P10"
 			(at 372.11 119.38 0)
@@ -9788,9 +9688,9 @@
 		(at 392.43 123.19 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "fe564304-1d99-49bb-b942-a711c9a7a302")
 		(property "Reference" "P12"
 			(at 389.89 119.38 0)

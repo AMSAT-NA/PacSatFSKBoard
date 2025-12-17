@@ -1519,5 +1519,18 @@ gain.  The actual parts for matching the input and output are not
 installed yet.  I'm expecting around 17dB of gain.  Hopefully the
 proper parts for the L matches will fix the outputs.
 
-Switch the main RF connectors from UFL to MMCX, since that's pretty
-standard.
+Add MMCX connectors for the main TX/RX, since that's pretty standard.
+Leave U.FL connectors there, too.
+
+Removed C111 (hooked to the U.FL before the RF input signal divider).
+I don't see why it's necessary.
+
+Replace C112 with a zero-ohm resistor.  The capacitor wasn't
+performing any useful function except allowing the sections to be
+isolated.
+
+Make all the UFL connectors DNP except the ones for inter-board
+connections and main TX/RX connections.
+
+Since C111 is gone, move P8 to under the RF power splitter to reduce
+the track length and get it out of the way of other stuff.

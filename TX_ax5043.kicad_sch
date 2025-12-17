@@ -6392,9 +6392,9 @@
 		(at 127 111.76 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "dece9d5d-1183-4ed1-954b-b0a1dbb195fb")
 		(property "Reference" "P6"
 			(at 124.46 107.95 0)

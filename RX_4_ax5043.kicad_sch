@@ -4122,9 +4122,9 @@
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "7b5e4495-8352-456d-9b81-8df3ada67a76")
 		(property "Reference" "P4"
 			(at 111.76 121.92 0)

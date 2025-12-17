@@ -4059,12 +4059,12 @@
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "755214d4-5034-4f10-9a88-b3f818037af1")
 		(property "Reference" "P3"
-			(at 173.736 113.03 0)
+			(at 172.466 114.554 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4078,6 +4078,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "PacSatDev_misc:CONN1_CONUFL_TEC"
