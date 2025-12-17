@@ -63,11 +63,6 @@ loopback capability.  With a 18nH part on the RX AX5043s and setting
 the frequency to 435Mhz, the part says it ranges, but I can't find
 where it's tuned to.
 
-Look at the diode on the RTC. The Nexperia parts are out of stock and
-the Rohm RB520ASA-30FH was suggested as an alternative.  It has better
-reverse current but a higher voltage drop across the junction.  Maybe
-a better diode could be chosen.
-
 Convert the power plane to a ground plane in the digital portion, and
 as part of that add ground vias by signal vias to reduce the return
 signal path.
@@ -635,6 +630,14 @@ design a bit and remove a part.
 
 Switch the main RF connectors from UFL to MMCX, since that's pretty
 standard.
+
+Look at the diode on the RTC. The Nexperia parts are out of stock and
+the Rohm RB520ASA-30FH was suggested as an alternative.  It has better
+reverse current but a higher voltage drop across the junction.  Maybe
+a better diode could be chosen. - Both diodes had way too much reverse
+current leakage, 1uA for the Rohm is still too much.  You can get
+diodes with much less reverse current leakage, like 5nA.  Switch
+to one of those.
 
 # Not going to do
 
@@ -1534,3 +1537,14 @@ connections and main TX/RX connections.
 
 Since C111 is gone, move P8 to under the RF power splitter to reduce
 the track length and get it out of the way of other stuff.
+
+Change the diode on the RTC to a BAV116WSQ-7 from Diodes, Inc. which
+has a reverse leakage current of around 5nA.  The existing diode
+(RB521CS30L,315) has about 10uA reverse leakage, the Rohm
+RB520ASA-30FH it was replaced with due to parts issues has about 1uA.
+At 1uA the discharge time is about 6 minutes.  Experimentation shows
+this is a little low, it would go at least 10 minutes.  This The RTC
+uses about 70nA when other power is not applied.  With 75nA, you will
+have around 4800 minutes of time without power applied before the RTC
+fails.  So, add another 47uF capacitor to get the time to 9600 seconds
+(160 minutes) which should be sufficient.

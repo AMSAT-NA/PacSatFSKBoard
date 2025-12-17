@@ -23,8 +23,13 @@ Cl1	out	0	.037p
 
 * 460MHz Elliptic lowpass filter, simulated from:
 * https://markimicrowave.com/technical-resources/tools/lc-filter-design-tool/
-* 5rd order, shunt first, 460MHz cutoff, .10db ripple in passband, 50
+* 5th order, shunt first, 460MHz cutoff, .10db ripple in passband, 50
 * ohm input, 50 ohm output impedance, 50dB stopband attenuation.
+*
+
+* I looked at using a 3rd order or 4th order filter, but 3rd order
+* only supplies -11dB at the first harmonic.  4th order was -22dB.
+* The 5th order filter here is -50dB at the first harmonic of 435MHz.
 
 * 7.32p
 C1	in	0	7.3p
