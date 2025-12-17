@@ -2507,7 +2507,7 @@
 		)
 		(uuid "aebdefb4-a1ad-476d-83c6-03490e2fc90c")
 	)
-	(text "Input impedance is\n1.87 - 37.7j this\nmatches to 50 ohms\nat 435MHz."
+	(text "Input impedance is\n1.62 - 1.05 this\nmatches to 50 ohms\nat 435MHz."
 		(exclude_from_sim no)
 		(at 66.04 172.72 0)
 		(effects

@@ -67,6 +67,9 @@ Things to do for a new board:
   power issue someplace.  Fixing the PA power controller did seem to
   help.  To get it out, you have to let the board warm up a little
   then bring the voltage down and back up until it works.
+  
+* The hardware watchdog is disabled by a solder bridge.  I couldn't get
+  the wire out of the holes for the jumper.
 
 * The board draws a lot more power than it should.  Something in the
   power section got messed up, it appears.
