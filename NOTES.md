@@ -46,7 +46,7 @@ Can you use inductors intended for power supplies, like the
 LQW18CNR10K series from Murata or a 0603LS-101XJRC from Coilcraft?
 Perhaps one of these or a ferrite bead in addition to a smaller
 inductor right at the PA?  The inductor that is currently there
-(LQW18ASR10G0ZD) is only rated for 400 amps, so it is not sufficient.
+(LQW18ASR10G0ZD) is only rated for 400 ma, so it is not sufficient.
 
 The RTC is not keeping time when the power is off unless it's always
 powered with Vbat.  It appears the RTC is now switching to Vbat on a
@@ -59,7 +59,9 @@ to work on the same frequencies if the transmitter is in the 430MHz
 range and the receiver is in the 144MHz range.  This is due to the
 inductors on the AX5043 just not ranging far enough.  Either add a
 switch for the inductor on the transmit AX5043, or just give up on the
-loopback capability.
+loopback capability.  With a 18nH part on the RX AX5043s and setting
+the frequency to 435Mhz, the part says it ranges, but I can't find
+where it's tuned to.
 
 Look at the diode on the RTC. The Nexperia parts are out of stock and
 the Rohm RB520ASA-30FH was suggested as an alternative.  It has better
@@ -78,10 +80,6 @@ give the return signal a minimum path.
 
 Look at possible coupled ground loops in the RF section.  None pop out
 from a cursory glance, but need to look closer.
-
-The BOARD1\_RF\_BYPASS and BOARD2\_RF\_BYPASS lines can be combined,
-you are only using one of them at a time.  This will simplify the
-design a bit and remove a part.
 
 Add 0 ohm resistors to make some of the dual-board lines available if
 the dual-board switching parts are not populated.
@@ -157,8 +155,6 @@ Is there a reason the ANTP1 output of the AX5043 is connected to a 50
 ohm resistor?  I can't find anything in the datasheet or errata about
 that, it always shows it disconnected when not used. - May or may not
 be necessary.
-
-What UFL connectors can be removed?
 
 Determine current limiter values, probably need to build a board and
 measure.
@@ -635,6 +631,10 @@ work if you don't have the JTAG connector in place.
 
 Add a line from the hardware watchdog to the RTC input so a reset
 can tell if the hardware watchdog fired.
+
+The BOARD1\_RF\_BYPASS and BOARD2\_RF\_BYPASS lines can be combined,
+you are only using one of them at a time.  This will simplify the
+design a bit and remove a part.
 
 # Not going to do
 
