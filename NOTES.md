@@ -68,9 +68,6 @@ the Rohm RB520ASA-30FH was suggested as an alternative.  It has better
 reverse current but a higher voltage drop across the junction.  Maybe
 a better diode could be chosen.
 
-Switch the main RF connectors from UFL to MMCX, since that's pretty
-standard.
-
 Convert the power plane to a ground plane in the digital portion, and
 as part of that add ground vias by signal vias to reduce the return
 signal path.
@@ -635,6 +632,9 @@ can tell if the hardware watchdog fired.
 The BOARD1\_RF\_BYPASS and BOARD2\_RF\_BYPASS lines can be combined,
 you are only using one of them at a time.  This will simplify the
 design a bit and remove a part.
+
+Switch the main RF connectors from UFL to MMCX, since that's pretty
+standard.
 
 # Not going to do
 
@@ -1518,3 +1518,6 @@ the PA, the output is 8.7dBm out of the TX port.  This is 12.6dB of
 gain.  The actual parts for matching the input and output are not
 installed yet.  I'm expecting around 17dB of gain.  Hopefully the
 proper parts for the L matches will fix the outputs.
+
+Switch the main RF connectors from UFL to MMCX, since that's pretty
+standard.
