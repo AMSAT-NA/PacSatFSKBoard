@@ -1508,3 +1508,13 @@ With somewhat close values for the L matches that I had on hand, it's
 now stable with 14dB of gain.  I assume with the right values it will
 reach full amplification.  Replace C117 with 27pF, L38 with 5.8nH, and
 L36 with 47pF.  L27 remains the same.
+
+## 2025-12-16
+
+Cleaned up some tracks and vias to simplify routing.
+
+With a signal generator attached transmitting at about -3.9dBm into
+the PA, the output is 8.7dBm out of the TX port.  This is 12.6dB of
+gain.  The actual parts for matching the input and output are not
+installed yet.  I'm expecting around 17dB of gain.  Hopefully the
+proper parts for the L matches will fix the outputs.
