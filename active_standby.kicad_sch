@@ -1305,12 +1305,6 @@
 		(uuid "acbf3def-a0ea-4247-9563-94010f4145df")
 	)
 	(junction
-		(at 134.62 69.85)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ba80487f-3e23-4682-b2db-ad942a182287")
-	)
-	(junction
 		(at 60.96 46.99)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1469,16 +1463,6 @@
 			(type default)
 		)
 		(uuid "3682843c-8c64-4ec0-a453-b6c1d70e6242")
-	)
-	(wire
-		(pts
-			(xy 134.62 69.85) (xy 142.24 69.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3a35fe05-4700-4edb-975c-99bc6a680c94")
 	)
 	(wire
 		(pts
@@ -1649,16 +1633,6 @@
 			(type default)
 		)
 		(uuid "6e9cd6ed-3531-41d3-964d-c95268231d16")
-	)
-	(wire
-		(pts
-			(xy 134.62 36.83) (xy 134.62 69.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7013d701-ae3d-4ebb-9f43-4cb0f86048fa")
 	)
 	(wire
 		(pts
@@ -2002,7 +1976,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 69.85) (xy 134.62 69.85)
+			(xy 109.22 69.85) (xy 142.24 69.85)
 		)
 		(stroke
 			(width 0)
@@ -2159,16 +2133,6 @@
 			(type default)
 		)
 		(uuid "fa0d9ff5-6924-4acc-8eb0-888167e2c7bf")
-	)
-	(wire
-		(pts
-			(xy 134.62 25.4) (xy 134.62 29.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fd4af32c-bb80-4109-a821-edb9e510d7d3")
 	)
 	(global_label "ACTIVE1_N"
 		(shape input)
@@ -2881,71 +2845,6 @@
 			(project ""
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/4fa888af-703c-49ed-93bb-d56d2f02c470"
 					(reference "Q2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 134.62 25.4 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3c0a3c24-5cb8-42d3-a93e-181fa28c3400")
-		(property "Reference" "#PWR0266"
-			(at 134.62 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 134.62 21.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 134.62 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 134.62 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 134.62 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "c750683a-e437-46e2-a78e-3e3193e514a8")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/4fa888af-703c-49ed-93bb-d56d2f02c470"
-					(reference "#PWR0266")
 					(unit 1)
 				)
 			)
@@ -3704,74 +3603,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/4fa888af-703c-49ed-93bb-d56d2f02c470"
 					(reference "#PWR0285")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 134.62 33.02 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a104b650-d1e1-4485-a8db-938542cb1f1f")
-		(property "Reference" "R102"
-			(at 136.398 31.8516 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1MΩ"
-			(at 136.398 34.163 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 132.842 33.02 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 134.62 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 134.62 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ed2da350-5869-47b3-b161-f24112b6e550")
-		)
-		(pin "2"
-			(uuid "d3a3dfe6-f593-4da2-b6df-a138e3a76e45")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/4fa888af-703c-49ed-93bb-d56d2f02c470"
-					(reference "R102")
 					(unit 1)
 				)
 			)
