@@ -16,61 +16,32 @@
 
 Rsrc in     vmin1  50
 
-.if (0)
-* This impedance matcher was simulating at around -3dB.  It is what
-* is on board 8, but I don't think it matches the input impedance as
-* well.
-
-* TX PA input matcher
-C1	vmin2	0	47p
-* Q=65 CoilCraft 0603DC
-L1	vmin2	a1a	15n
-Rl1	a1a	a1	.67
-.endif
-
-.if (0)
-* This impedance matcher was simulating at around -3.5dB.
-
-* TX PA input matcher
-C1	vmin2	0	40p
-* Q=65 CoilCraft 0603DC
-L1	vmin2	a1a	16n
-Rl1	a1a	a1	.67
-.endif
-
 .if (1)
-* This impedance matcher was simulating at around -2.5dB.
-* Still not great, but better than the other one.
-* Q=65 CoilCraft 0603DC
-L0	vmin2	a0a	3.3n
-Rl0	a0a	0	.13
-* Q=65 CoilCraft 0603DC
-L1	vmin2	a1a	11n
-Rl1	a1a	a1b	.46
-* Add a capacitor to provide DC blocking
-Cl1	a1b	a1	1n
+
+* TX PA input matcher
+* Q=65, Coilcraft 0603DC
+L1	vmin2	a1a	3.3n
+Rl1     a1a	0	.13
+C1	vmin2	a1	47pp
 .endif
 
-* -37.7 ohms at 435MHz
-Cout a1     vmout1 9.6p
-Rout vmout2 0      1.87
+* -1.04 ohms at 435MHz
+Cout a1     vmout1 350p
+Rout vmout2 0      1.36
 
 .ENDS
 
 .SUBCKT ImpMatchPAOut in vmin1 vmin2 vmout1 vmout2
 
-Rsrc in     vmin1  6.23
-* -10.4 ohms at 435MHz
-Csrc vmin2  a1     35.1p
-
-* Set the DC bias between two capacitors.
-Rb1  a1     0      1Meg
+Rsrc in     vmin1  4.63
+* -.508 ohms at 435MHz
+Csrc vmin2  a1     720p
 
 * Impedance matching network
 * TX PA output matcher
-C1	a1	vmout1	59p
+C1	a1	vmout1	27p
 * Q=55, CoilCraft 0402DC
-L1	vmout1	a3	6.9n
+L1	vmout1	a3	5.8n
 Rl1	a3	0	.34
 Cl1	vmout1	a3	.037p
 

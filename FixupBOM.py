@@ -124,7 +124,7 @@ def xlat_footprint(s):
 value_to_partnum_xlats_1 = {
     ('1nH',     	'0402'): ('Coilcraft',	'0402DC-1N0XJRW '),
     ('3.3nH 2%',	'0603'): ('Coilcraft',	'0603DC-3N3XGRW'),
-    ('6.9nH 2%',	'0402'): ('Coilcraft',	'0402DC-6N9XGRW'),
+    ('5.8nH 2%',	'0402'): ('Coilcraft',	'0402DC-5N8XGRW'),
     ('11nH 2%', 	'0603'): ('Coilcraft',	'0603DC-11NXGRW'),
     ('18nH 2%', 	'0603'): ('Coilcraft',	'0603DC-18NXGRW'),
     ('18nH 2%', 	'0402'): ('Coilcraft',	'0402DC-18NXGRW'),
@@ -150,7 +150,7 @@ value_to_partnum_xlats_1 = {
 value_to_partnum_xlats_1b = {
     ('1nH',     	'0402'): ('Murata',	'LQG15WZ1N0B02D'),
     ('3.3nH 2%',	'0603'): ('Murata',	'LQW18AS3N3G0ZD'),
-    ('6.9nH 2%',	'0402'): ('Murata',	'LQW15AN6N9G8Z'),
+    ('5.8nH 2%',	'0402'): ('Murata',	'LQW15AN5N8G8ZD'),
     ('11nH 2%', 	'0603'): ('Murata',	'LQW18AS11NG0ZD'),
     ('18nH 2%', 	'0603'): ('Murata',	'LQW18AS18NG0ZD'),
     ('18nH 2%', 	'0402'): ('Murata',	'LQW15AN18NG8ZD'),
@@ -201,7 +201,9 @@ value_to_partnum_xlats_2 = {
     ('11pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H110FB01D'),
     ('12pF 1% 30V', 	'0402'): ('Murata',	'GCQ1555C1H120FB01D'),
     ('15pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H150FB01D'),
+    ('27pF 1% 30V', 	'0402'): ('Murata',	'GCM1555C1H270FA16D'),
     ('36pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H360FB01D'),
+    ('47pF 1%', 	'0402'): ('Murata',	'GCM1885C2A470FA16D'),
     ('62pF 1%', 	'0402'): ('Murata',	'GCM1555C1H620FA16D'),
     ('68pF 1%', 	'0402'): ('Murata',	'GCM1555C1H680FA16D'),
     ('110pF 1% 30V',	'0402'): ('Murata',	'GCM1555C1H111FA16D'),

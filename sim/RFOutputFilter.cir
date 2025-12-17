@@ -9,10 +9,10 @@
 .SUBCKT ImpMatchPAOut in  out
 
 * Impedance matching network
-C1	in	out	59p
-L1	in	a3	6.9n
+C1	in	out	27p
+L1	out	a3	5.8n
 Rl1	a3	0	.34
-Cl1	in	0	.037p
+Cl1	out	0	.037p
 
 .ENDS
 
@@ -55,12 +55,10 @@ R0	b0	0	12
 
 .ENDS
 
-V1 ina 0 dc 0 AC 1 sin(0 1 435MEG 0 0 0)
+Vin ina 0 dc 0 AC 1 sin(0 1 435MEG 0 0 0)
 
-*Rsrc ina  ina1 6.23
-*Csrc ina1 ina2 35.1p
-Rsrc ina  ina2 50
-
+Csrc ina  ina1 718p
+Rsrc ina1 ina2 4.63
 
 * Not real, used for DC bias at ina2 to avoid warnings
 Rb1  ina2 0    1meg
@@ -68,28 +66,21 @@ Rb1  ina2 0    1meg
 * Used for current measurement.
 Vmin ina2 in AC 0 DC 0
 
-*X1 in  im1 ImpMatchPAOut
-R1 in  im1 .001
+X1 in  im1 ImpMatchPAOut
 
-
-* Used for current measurement.
-Vm1 im1 im2 AC 0 DC 0
-
-X2 im2 out Filt440MHz
+X2 im1 out Filt440MHz
 
 * Used for current measurement.
 Vmout out out2 DC 0 AC 0
 
 Rload out2 0    50
-*Rload out2 out1 6.23
-*Cload out1 0    27p
 
 .control
 *tran 1ns 102000ns 101000ns
 *plot v(in1), v(out)
 
 ac lin 50000 3Meg 1000Meg
-plot db((v(out) * i(Vmout)) / (vm(ina1) * i(V1)))
+plot db((v(out) * i(Vmout)) / (v(ina2) * i(Vmin)))
 plot vr(out) vi(out) vp(out)
 
 .endc

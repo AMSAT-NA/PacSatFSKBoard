@@ -3703,7 +3703,7 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 142.24) (xy 87.63 142.24)
+			(xy 74.93 142.24) (xy 87.63 142.24)
 		)
 		(stroke
 			(width 0)
@@ -4363,16 +4363,6 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 142.24) (xy 73.66 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a7e16c07-3a05-4cbd-936d-c5e887a93911")
-	)
-	(wire
-		(pts
 			(xy 248.92 34.29) (xy 254 34.29)
 		)
 		(stroke
@@ -4773,7 +4763,7 @@
 	)
 	(wire
 		(pts
-			(xy 58.42 142.24) (xy 62.23 142.24)
+			(xy 58.42 142.24) (xy 67.31 142.24)
 		)
 		(stroke
 			(width 0)
@@ -6019,7 +6009,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 77.47 142.24 90)
+		(at 71.12 142.24 90)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6028,23 +6018,23 @@
 		(dnp no)
 		(uuid "35661b8d-4989-419a-b5b7-80fc044cf268")
 		(property "Reference" "C27"
-			(at 77.47 135.89 90)
+			(at 71.12 135.89 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "1nF"
-			(at 77.47 138.43 90)
+		(property "Value" "47pf 1%"
+			(at 71.12 138.43 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 81.28 143.2052 0)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+			(at 74.93 143.2052 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6053,7 +6043,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 77.47 142.24 0)
+			(at 71.12 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6062,7 +6052,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 77.47 142.24 0)
+			(at 71.12 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7170,7 +7160,7 @@
 				)
 			)
 		)
-		(property "Value" "62pF 1% 30V"
+		(property "Value" "27pF 1% 30V"
 			(at 213.36 163.322 90)
 			(effects
 				(font
@@ -7637,7 +7627,7 @@
 				)
 			)
 		)
-		(property "Value" "6.9nH 2%"
+		(property "Value" "5.8nH 2%"
 			(at 223.012 170.18 90)
 			(effects
 				(font
@@ -9613,72 +9603,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
 					(reference "C112")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:L")
-		(at 66.04 142.24 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ef2a1f6f-1977-47f6-9bf2-39eb21eff757")
-		(property "Reference" "L35"
-			(at 66.04 144.018 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "11nH 2%"
-			(at 65.278 139.954 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
-			(at 66.04 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 66.04 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 66.04 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e0d8a35a-35c8-4e77-ad68-fda542f5e9d6")
-		)
-		(pin "2"
-			(uuid "300dbd06-3978-4963-ba13-ab64351653d4")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
-					(reference "L35")
 					(unit 1)
 				)
 			)
