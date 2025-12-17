@@ -82,10 +82,6 @@ the dual-board switching parts are not populated.
 
 Add the SAFE\_MODE pin to the board, if necessary.
 
-Modify the board1/board2 resistor notes to say that putting in a 40K
-resistor there (basically setting the voltage to 1V) will set the
-board to be simplex.
-
 On the CSKB standard, do we need to be able to operate as board 0?
 That affects board layout.
 
@@ -659,6 +655,10 @@ shutdown?  It would seem only one or the other would be necessary.
 The whole transmit shutdown thing has been removes, so this is no
 longer relevant.
 
+Modify the board1/board2 resistor notes to say that putting in a 40K
+resistor there (basically setting the voltage to 1V) will set the
+board to be simplex. -- This is not required, if a board doesn't sense
+another board, it will act as simplex.
 
 # RF Shields
 

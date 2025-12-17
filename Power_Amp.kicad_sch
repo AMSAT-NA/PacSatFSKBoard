@@ -2497,7 +2497,7 @@
 		)
 		(uuid "9dee4eee-de08-4399-a410-db3371da8091")
 	)
-	(text "Input impedance is\n1.87 - 37.7j this\nmatches to 50 ohms\nat 435MHz."
+	(text "Input impedance is\n1.62 - 1.05 this\nmatches to 50 ohms\nat 435MHz."
 		(exclude_from_sim no)
 		(at 66.04 172.72 0)
 		(effects
@@ -2507,7 +2507,7 @@
 		)
 		(uuid "d3602d58-4abf-44b7-9a95-14bf17ca573e")
 	)
-	(text "Output impedance is\n6.23 - j10.4 ohms\nThis converts to 50 ohms\nat 435MHz"
+	(text "Output impedance is 4.63 - j.508 ohms\nThis converts to 50 ohms\nat 435MHz"
 		(exclude_from_sim no)
 		(at 216.916 190.246 0)
 		(effects
