@@ -9,6 +9,12 @@ some point.
 
 # TODO
 
+Think about how to make the board more resilient against overvoltage
+on the input.  The TPS62A02AQDRLRQ1, TCAN1044ADDFRQ1, SN3257,
+MAX31331, and MAX4995 parts have a absolute maximum input voltage of
+6V.  The LNA and PA will take around 7V.  Maybe a zener diode, buck
+regulator?  Maybe it doesn't matter?
+
 Make all the U.FL connectors DNP and only add them when they are
 needed.
 
