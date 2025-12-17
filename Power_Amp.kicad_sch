@@ -2497,6 +2497,16 @@
 		)
 		(uuid "9dee4eee-de08-4399-a410-db3371da8091")
 	)
+	(text "Now a 47pf cap"
+		(exclude_from_sim no)
+		(at 67.056 137.922 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "aebdefb4-a1ad-476d-83c6-03490e2fc90c")
+	)
 	(text "Input impedance is\n1.87 - 37.7j this\nmatches to 50 ohms\nat 435MHz."
 		(exclude_from_sim no)
 		(at 66.04 172.72 0)
@@ -2507,7 +2517,7 @@
 		)
 		(uuid "d3602d58-4abf-44b7-9a95-14bf17ca573e")
 	)
-	(text "Output impedance is\n6.23 - j13.3 ohms\nThis converts to 50 ohms\nat 435MHz"
+	(text "Output impedance is\n4.63 - .508j ohms\nThis converts to 50 ohms\nat 435MHz"
 		(exclude_from_sim no)
 		(at 221.234 192.532 0)
 		(effects
@@ -3641,16 +3651,6 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 142.24) (xy 87.63 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5957109e-036c-43b0-a7cb-5eb6230bf490")
-	)
-	(wire
-		(pts
 			(xy 54.61 123.19) (xy 57.15 123.19)
 		)
 		(stroke
@@ -4301,7 +4301,7 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 142.24) (xy 73.66 142.24)
+			(xy 69.85 142.24) (xy 87.63 142.24)
 		)
 		(stroke
 			(width 0)
@@ -5858,73 +5858,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 77.47 142.24 90)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "35661b8d-4989-419a-b5b7-80fc044cf268")
-		(property "Reference" "C27"
-			(at 77.47 135.89 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1nF"
-			(at 77.47 138.43 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 81.28 143.2052 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 77.47 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 77.47 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "02180f1a-ff4d-4096-a24e-a7e87d7e0f77")
-		)
-		(pin "2"
-			(uuid "ee6bd0d5-9490-4310-9da1-c25ae69cefca")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
-					(reference "C27")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:L")
 		(at 160.02 134.62 180)
 		(unit 1)
@@ -6945,7 +6878,7 @@
 				)
 			)
 		)
-		(property "Value" "62pF 1% 30V"
+		(property "Value" "27pF 1% 30V"
 			(at 220.98 163.322 90)
 			(effects
 				(font
@@ -7412,7 +7345,7 @@
 				)
 			)
 		)
-		(property "Value" "6.9nH 2%"
+		(property "Value" "5.8nH 2%"
 			(at 230.632 170.18 90)
 			(effects
 				(font

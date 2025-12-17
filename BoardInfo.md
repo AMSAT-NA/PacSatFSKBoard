@@ -18,21 +18,17 @@ Things to do for a new board:
   not necessary, so this doesn't have to be done on prototype
   boards.)
 
-* Replace L27 with a 39pF capacitor and L35 with a 15nH inductor.
-  (Some boards have a blocking capacitor added between L35 and the PA.
-  It's really hard to add there.)  This blocks DC to the PA input, as
-  required by the chip.  This is the equivalent L match to the two
-  inductor solution that was there, but has more loss.  Note that this
-  leaves a possible DC path through TX\_PA\_DRV if something is hooked
-  up there.
+* Replace L35 with a 47pF capacitor.  No need to cut traces or
+  anything.
+  
+* Replace C117 with a 27pF capacitor.
+
+* Replace L38 with a 5.8nH inductor.
 
 * Change the PA power input inductor (L37) to a 100nH part to avoid
-  feedback through the power supply.
-
-* C117 was miscalculated.  It should (in combination with C123) be
-  about 60pf.  Replace with a 68pF cap for now (giving about 64pF when
-  combined with 1nF).  Ideally C117 should be 63pF to combine with C123
-  to give 60pF.
+  feedback through the power supply.  (Actually, maybe not, hold off
+  on this until it is tested.  The oscillation problems were an
+  impedance mismatch, not feedback, it appears.)
 
 # Current Board Status
 
@@ -77,8 +73,6 @@ Things to do for a new board:
   
 * MITSI replaced the PA with a new chip because the old one was broken.
 
-* C117 has been changed to a 68pF capacitor.
-
 * The PA power input inductor (L37) has been changed to 83nH.  (It was
   changed to 100nH earlier).
 
@@ -86,11 +80,12 @@ Things to do for a new board:
 
 * C112 between the AX5043 and the PA is currently removed for testing.
 
-* L35 was broken off in the process of removing C112 and need to be
-  replaced.  There's a 15nH one there for now.
-  
-* Currently the MAX4995 for the PA is bypassed for experimenting.
+* C117 has been changed to a 27pF capacitor.  Inductor L38 is not yet
+  changed to 5.8nH, but 6.8nH is close.
 
+* L35 is now a 47pF capacitor for the proper match.  L27 didn't have
+  to change.
+  
 ## Board 8 - 3rd board I worked on
 
 * Applied all the board bring up changes.
