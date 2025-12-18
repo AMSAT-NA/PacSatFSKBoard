@@ -15,9 +15,6 @@ MAX31331, and MAX4995 parts have a absolute maximum input voltage of
 6V.  The LNA and PA will take around 7V.  Maybe a zener diode, buck
 regulator?  Maybe it doesn't matter?
 
-Make all the U.FL connectors DNP and only add them when they are
-needed.
-
 The chosen LNA (QPL9547) has very good specs (a NF of .3dB) but draws
 a lot of current (50ma).  Other possible options are Guerrilla RF
 GRF2374, GRF4001, Skyworks LNAs (SKY67150-396LF, SKY67183-396LF,
@@ -31,24 +28,25 @@ values require higher power.
 
 Look at adding the TVS diode on the PA per the datasheet schematics.
 
-Replace the RF switches, the packages the Qorvo parts are in are too
-hard to work with and several have failed (probably because of control
-input voltage).  Finding one with temp range looks to be challenging,
-though. Possibly switch to a PE42359 or PE42424, or possibly another
-RF switch to replace the Qorvo part.  Unfortunately, this is harder
-than it sounds.  It has to be able to be powered by 5V because it has
-to work when the rest of the board is powered down, and that's hard to
-find.
+Perhaps Replace the RF switches, the packages the Qorvo parts are in
+are too hard to work with and several have failed (probably because of
+control input voltage).  Finding one with temp range looks to be
+challenging, though. Possibly switch to a PE42359 or PE42424, or
+possibly another RF switch to replace the Qorvo part.  Unfortunately,
+this is harder than it sounds.  It has to be able to be powered by 5V
+because it has to work when the rest of the board is powered down, and
+that's hard to find.
 
 Figure out how to adjust the PA output power usage.  Adjusting the
 Iref resistor is supposed to do that, but some experimenting needs to
 be done as Qorvo doesn't document how that works.
 
-Maybe some time needs to be spent looking for a new PA.  It seems to
-be fairly efficient, 425ma at 5V 2.125W for 2W of output, that's 94%
-efficiency.  I was thinking that since the output on this board
-doesn't require a linear amplifier you could switch to a class D
-amplifier, but 94% is going to be had to beat.
+Maybe spend some time needs to be spent looking for a new PA.  It
+seems to be fairly efficient, 425ma at 5V 2.125W for 2W of output,
+that's 94% efficiency, though that seems hard to believe.  I was
+thinking that since the output on this board doesn't require a linear
+amplifier you could switch to a class D amplifier, but 94% is going to
+be had to beat.
 
 Figure out what inductor to use for the PA power input.  100nH is
 pretty big.  You want something with the smallest series resistance.
@@ -59,10 +57,16 @@ inductor right at the PA?  The inductor that is currently there
 (LQW18ASR10G0ZD) is only rated for 400 ma, so it is not sufficient.
 
 The RTC is not keeping time when the power is off unless it's always
-powered with Vbat.  It appears the RTC is now switching to Vbat on a
-power fail.  But when it comes up PFAIL and OSCF are not set.  I've
-modified it to always run on Vbat and that seems to be ok, but this
-should probably be researched at some point.
+powered with Vbat.  It appears the RTC is not switching properly to
+Vbat on a power fail.  But when it comes up PFAIL and OSCF are not
+set.  I've modified the software so it to always run on Vbat and that
+seems to be ok, but this should probably be researched at some point.
+This might be due to Vcc being 3.3V and VBat being 5V.  I researched
+this for a bit and I couldn't find anything in the manual about it, it
+should work.  It wouldn't be a big deal except for using DIN on the
+chip, when configured this way, will always be powered by Vbat, and in
+some scenarios that can result in high leakage on DIN when powered
+off.  See "Battery Leakage Current" in the datasheet.
 
 It doesn't look like the transmitter and receiver chips can be coaxed
 to work on the same frequencies if the transmitter is in the 430MHz
@@ -649,6 +653,9 @@ a better diode could be chosen. - Both diodes had way too much reverse
 current leakage, 1uA for the Rohm is still too much.  You can get
 diodes with much less reverse current leakage, like 5nA.  Switch
 to one of those.
+
+Make all the U.FL connectors DNP and only add them when they are
+needed.
 
 # Not going to do
 
