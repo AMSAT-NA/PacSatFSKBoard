@@ -3136,7 +3136,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "CONUFL001-SMD-T"
+		(property "Value" "MMCX-J-P-H-ST-TH1"
 			(at 153.67 147.32 0)
 			(effects
 				(font
