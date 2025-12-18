@@ -40,6 +40,16 @@ than it sounds.  It has to be able to be powered by 5V because it has
 to work when the rest of the board is powered down, and that's hard to
 find.
 
+Figure out how to adjust the PA output power usage.  Adjusting the
+Iref resistor is supposed to do that, but some experimenting needs to
+be done as Qorvo doesn't document how that works.
+
+Maybe some time needs to be spent looking for a new PA.  It seems to
+be fairly efficient, 425ma at 5V 2.125W for 2W of output, that's 94%
+efficiency.  I was thinking that since the output on this board
+doesn't require a linear amplifier you could switch to a class D
+amplifier, but 94% is going to be had to beat.
+
 Figure out what inductor to use for the PA power input.  100nH is
 pretty big.  You want something with the smallest series resistance.
 Can you use inductors intended for power supplies, like the
@@ -61,7 +71,8 @@ inductors on the AX5043 just not ranging far enough.  Either add a
 switch for the inductor on the transmit AX5043, or just give up on the
 loopback capability.  With a 18nH part on the RX AX5043s and setting
 the frequency to 435Mhz, the part says it ranges, but I can't find
-where it's tuned to.
+where it's tuned to so it doesn't seem to actually be on that
+frequency.
 
 Convert the power plane to a ground plane in the digital portion, and
 as part of that add ground vias by signal vias to reduce the return
