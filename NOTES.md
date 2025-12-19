@@ -56,18 +56,6 @@ Perhaps one of these or a ferrite bead in addition to a smaller
 inductor right at the PA?  The inductor that is currently there
 (LQW18ASR10G0ZD) is only rated for 400 ma, so it is not sufficient.
 
-The RTC is not keeping time when the power is off unless it's always
-powered with Vbat.  It appears the RTC is not switching properly to
-Vbat on a power fail.  But when it comes up PFAIL and OSCF are not
-set.  I've modified the software so it to always run on Vbat and that
-seems to be ok, but this should probably be researched at some point.
-This might be due to Vcc being 3.3V and VBat being 5V.  I researched
-this for a bit and I couldn't find anything in the manual about it, it
-should work.  It wouldn't be a big deal except for using DIN on the
-chip, when configured this way, will always be powered by Vbat, and in
-some scenarios that can result in high leakage on DIN when powered
-off.  See "Battery Leakage Current" in the datasheet.
-
 It doesn't look like the transmitter and receiver chips can be coaxed
 to work on the same frequencies if the transmitter is in the 430MHz
 range and the receiver is in the 144MHz range.  This is due to the
@@ -684,6 +672,27 @@ to one of those.
 
 Make all the U.FL connectors DNP and only add them when they are
 needed.
+
+The RTC is not keeping time when the power is off unless it's always
+powered with Vbat.  It appears the RTC is not switching properly to
+Vbat on a power fail.  But when it comes up PFAIL and OSCF are not
+set.  I've modified the software so it to always run on Vbat and that
+seems to be ok, but this should probably be researched at some point.
+This might be due to Vcc being 3.3V and VBat being 5V.  I researched
+this for a bit and I couldn't find anything in the manual about it, it
+should work.  It wouldn't be a big deal except for using DIN on the
+chip, when configured this way, will always be powered by Vbat, and in
+some scenarios that can result in high leakage on DIN when powered
+off.  See "Battery Leakage Current" in the datasheet. -- I figured
+this out from the Analog forum.  The power at Vcc has to be held a bit
+on power off to give the chip time to switch over.  In the data sheet
+this is Tvccf and it's .5V/ms, meaning that the power can't fall
+faster than .5V/ms or the chip won't switch over in time.  So a bigger
+capacitor and a resistor or something would need to be added to avoid
+the issue.  A resistor would have to be pretty large to avoid the
+issue, and the voltage drop across it might cause issues.  Instead I
+opted for adding a diode between 3.3V and VCC on the chip with a
+1uF capacitor, which should give it plenty of time.
 
 # Not going to do
 
