@@ -148,12 +148,14 @@ but with direct calculation.
 
 \section{Calculations for $Z_{br} > R_a$}
 
-For $Z_{br} > R_a$ we have to work a little different and we flip the
-positions of $X_1$ and $X_2$ as shown in Figure \ref{LMatch2}.  We
-call this L match type 2. Then we move $Z_b$ until it's real impedance
-is $R_a$ and then calculate $X_2$.  And remember that simplification
-for $R_a$ being real?  It no longer applies.  So the match gets more
-complicated.  So lets change $R_a$ to $Z_a$ for a more general case.
+For $Z_{br} > R_a$ we have to work a little different.  If you try to
+plug that into the previous equation, you will get negative values
+inside the square root.  So flip the positions of $X_1$ and $X_2$ as
+shown in Figure \ref{LMatch2}.  We call this L match type 2. Then we
+move $Z_b$ until it's real impedance is $R_a$ and then calculate
+$X_2$.  And remember that simplification for $R_a$ being real?  It no
+longer applies.  So the math gets more complicated.  So lets change
+$R_a$ to $Z_a$ for a more general case.
 
 \begin{figure}[ht]
   \caption{L Match for $Z_{br} > Z_{ar}$}\label{LMatch2}
@@ -256,6 +258,9 @@ and solve for $Z_{1i}$:
 \begin{dmath}
   Z_{1i} = \pm\sqrt{\frac{Z_{1r}Z_{br}^2 - Z_{1r}^2Z_{br}  + Z_{1r}Z_{bi}^2}{Z_{br}}}
 \end{dmath}
+which we can then use to calculate $X_1$.  Again, this is a more
+general formula than the one we did for $Z_{br} < R_a$ and setting
+$Z_{bi}$ to zero results in the same formula.
 
 Then to calculate $X_2$ is again trivial, but it's flipped from the
 type 1 calculation:
@@ -263,5 +268,10 @@ type 1 calculation:
   X_2 =  Z_{ai} - Z_{1i}
 \end{dmath}
 for both possible $Z_{1i}$ values.
+
+You can use this to move from any impedance to any other.  You don't
+have to use the calculations for $Z_{br} < R_a$, you can use this
+instead, you just have to flip $Z_b$ and $Z_a$ since the matching
+network will be flipped.
 
 \end{document}
