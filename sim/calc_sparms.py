@@ -144,7 +144,17 @@ def imp_to_part_string(x, freq):
 # parameter tells which particular match to choose, it can be -1 or 1.
 # This math behind this is documented in Calculating_L_Match in this
 # directory.
-def calc_values(za, zb, freq, m):
+#
+# This returns a tuple with the the impedance and a string value of the
+# component required to move from the higher resistance to the lower,
+# then the same for the component to move to the final value.  The
+# last item in the tuple is the form of the match, type 1 or type 2,
+# per the document.
+def calc_l_match(za, zb, freq, m):
+    # This calculation only works moving from a higher real resistance
+    # to a lower one.  If we have the other way, we have to flip
+    # everything around (including the order of components in the L
+    # match) and calculate a little differently.
     if za.real < zb.real:
         zbr = zb.real
         zbi = zb.imag
@@ -158,59 +168,111 @@ def calc_values(za, zb, freq, m):
         zai = zb.imag
         mtype = 1
         pass
+
+    # Calculate the intermediate value, Z1, between the starting place
+    # and the ending place, just like you do on a Smith Chart.
+
+    # We want the real part of the impedance of the intermediate value
+    # to be the same as the real part of the impedance for the final
+    # value, so we substituted than in above.  Now calculate the
+    # imaginary part.
     z1i = m * math.sqrt((z1r * zbr**2 - z1r**2 * zbr + z1r * zbi**2) / zbr)
+
+    # Now that we have the imaginary value, we can plug in to find the
+    # impedance of the part required to do the move.
     x1 = ((-z1i**2 * zbi + z1i * zbi**2 + zbr**2 * z1i - z1r**2 * zbi) /
           ((z1i - zbi) ** 2 + (zbr - z1r) ** 2))
+
+    # Moving from Z1 to the final value only requires an imaginary
+    # part change, the real part is the same.
     if mtype == 1:
         x2 = -z1i - zai
     else:
         x2 = zai - z1i
+        pass
+
     v1 = imp_to_part_string(x1, freq)
     v2 = imp_to_part_string(x2, freq)
+
     return (x1, v1, x2, v2, mtype)
 
-def print_l_match(mtype, za, zb, v1, v2):
+def print_l_match_out(mtype, za, zb, v1, v2):
     if mtype == 1:
-        print("   %8s  %8s                                         " % (za, v2))
-        print("   +---OOOO---0000--+---------------+                      ")
-        print("   |                |               |                      ")
-        print("   |                O               O                      ")
-        print("  / \\               O %8s      O %5.2f + j%5.2f       " % (v1, zb.real, zb.imag))
-        print("  \\ /               O               O                      ")
-        print("   |                |               |                      ")
-        print("   v                v               v                      ")
+        print("                                %8s                       " % (v2))
+        print("   +--------------------+--------OOOO---------+            ")
+        print("   |                    |         X2          |            ")
+        print("   O Zb                 O X1                  O Za         ")
+        print("   O %-7.2f + j%-7.2f O %-8s            O %-7.2f + j%-7.2f   "
+              % (zb.real, zb.imag, v1, za.real, za.imag))
+        print("   O                    O                     O            ")
+        print("   |                    |                     |            ")
+        print("   v                    v                     v            ")
     else:
-        print("   %8s  %8s                                         " % (za, v2))
-        print("   +---OOOO---+--OOOO---------------+                      ")
-        print("   |          |                     |                      ")
-        print("   |          O                     O                      ")
-        print("  / \\         O %8s            O %5.2f + j%5.2f       " % (v1, zb.real, zb.imag))
-        print("  \\ /         O                     O                      ")
-        print("   |          |                     |                      ")
-        print("   v          v                     v                      ")
+        print("             %8s                                        " % (v2))
+        print("   +----------OOOO----------+---------------+               ")
+        print("   |           X2           |               |               ")
+        print("   O Zb                     O X1            O Za            ")
+        print("   O %-7.2f + j%-7.2f     O %-8s      O %-7.2f + j%-7.2f "
+              % (zb.real, zb.imag, v1, za.real, za.imag))
+        print("   O                        O               O               ")
+        print("   |                        |               |               ")
+        print("   v                        v               v               ")
+        pass
+    return
+
+def print_l_match_in(mtype, za, zb, v1, v2):
+    if mtype == 1:
+        print("   %-7.2f + j%-7.2f   %8s                                    "
+              % (za.real, za.imag, v2))
+        print("   +---OOOO--------------OOOO--+---------------+                  ")
+        print("   |    Za                X2   |               |                  ")
+        print("   |                           O X1            O Zb               ")
+        print("  / \\                          O %-8s      O %5.2f + j%5.2f   " % (v1, zb.real, zb.imag))
+        print("  \\ /                          O               O                  ")
+        print("   |                           |               |                  ")
+        print("   v                           v               v                  ")
+    else:
+        print("   %-7.2f + j%-7.2f        %8s                                  "
+              % (za.real, za.imag, v2))
+        print("   +---OOOO----------+--------OOOO---------+                      ")
+        print("   |    Za           |         X2          |                      ")
+        print("   |                 O X1                  O Zb                   ")
+        print("  / \\                O %-8s            O %5.2f + j%5.2f       "
+              % (v1, zb.real, zb.imag))
+        print("  \\ /                O                     O                      ")
+        print("   |                 |                     |                      ")
+        print("   v                 v                     v                      ")
+        pass
+    return
+
+def print_l_match(mtype, za, zb, v1, v2, out = False):
+    if out:
+        print_l_match_out(mtype, za, zb, v1, v2)
+    else:
+        print_l_match_in(mtype, za, zb, v1, v2)
         pass
     return
 
 print(f' Zin: {zin}')
-(x1, v1, x2, v2, mtype) = calc_values(zl, zin, freq, 1)
+(x1, v1, x2, v2, mtype) = calc_l_match(zl, zin, freq, 1)
 print('  match: type=%d x1=%f v1=%s  x2=%f v2=%s' % (mtype, x1, v1, x2, v2))
 print('')
 print_l_match(mtype, zl, zin, v1, v2)
 print('')
-(x1, v1, x2, v2, mtype) = calc_values(zl, zin, freq, -1)
+(x1, v1, x2, v2, mtype) = calc_l_match(zl, zin, freq, -1)
 print('  match: type=%d x1=%f v1=%s  x2=%f v2=%s' % (mtype, x1, v1, x2, v2))
 print('')
 print_l_match(mtype, zl, zin, v1, v2)
 print('')
 
 print(f' Zout: {zout}')
-(x1, v1, x2, v2, mtype) = calc_values(zs, zout, freq, 1)
+(x1, v1, x2, v2, mtype) = calc_l_match(zs, zout, freq, 1)
 print('  match: type=%d x1=%f v1=%s  x2=%f v2=%s' % (mtype, x1, v1, x2, v2))
 print('')
-print_l_match(mtype, zl, zin, v1, v2)
+print_l_match(mtype, zl, zin, v1, v2, out = True)
 print('')
-(x1, v1, x2, v2, mtype) = calc_values(zs, zout, freq, -1)
+(x1, v1, x2, v2, mtype) = calc_l_match(zs, zout, freq, -1)
 print('  match: type=%d x1=%f v1=%s  x2=%f v2=%s' % (mtype, x1, v1, x2, v2))
 print('')
-print_l_match(mtype, zl, zin, v1, v2)
+print_l_match(mtype, zl, zin, v1, v2, out = True)
 print('')

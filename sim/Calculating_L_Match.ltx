@@ -13,6 +13,8 @@
 Using this method, we calculate from the resistance we are matching to
 (generally $50\Omega$) to the destination impedance.
 
+\section{Calculations for $Z_{br} < R_a$}
+
 \begin{figure}[ht]
   \caption{L Match for $Z_{br} < R_a$}\label{LMatch1}
   \begin{center}
@@ -24,8 +26,8 @@ call this L-Match type 1.  There is a source with resistance $R_a$, a
 matching network consisting of a mix of capacitors or inductors with
 impedances $X_1$ and $X_2$, and a final impedance $Z_b$. $Z_b$ has
 real and imaginary parts $Z_{br}$ and $Z_{bi}$. We assume a
-non-complex source.  The same math can be done for complex sources,
-but it's more complicated.
+non-complex source in this case.  The same math can be done for
+complex sources, but it's more complicated.
 
 To do this calculation, we start at $R_a$ and work our way to $Z_b$.
 We do this in two stages:
@@ -108,7 +110,7 @@ with both values of $Z_{1i}$ to get the two possible values of $X_1$.
 
 Then to calculate $X_2$ in both cases is trivial, it's impedance should be
 \begin{dmath}
-  X_2 = Z_{1i} - Z_{bi}
+  X_2 = - Z_{1i} - Z_{bi}
 \end{dmath}
 for both possible $Z_{1i}$ values.
 
@@ -144,13 +146,17 @@ so we need an capacitor of that results in an impedance of $-30$.
 This is basically the same procedure you would use on a Smith Chart,
 but with direct calculation.
 
+\section{Calculations for $Z_{br} > R_a$}
+
 For $Z_{br} > R_a$ we have to work a little different and we flip the
 positions of $X_1$ and $X_2$ as shown in Figure \ref{LMatch2}.  We
 call this L match type 2. Then we move $Z_b$ until it's real impedance
-is $R_a$ and then calculate $X_2$.
+is $R_a$ and then calculate $X_2$.  And remember that simplification
+for $R_a$ being real?  It no longer applies.  So the match gets more
+complicated.  So lets change $R_a$ to $Z_a$ for a more general case.
 
 \begin{figure}[ht]
-  \caption{L Match for $Z_{br} > R_a$}\label{LMatch2}
+  \caption{L Match for $Z_{br} > Z_{ar}$}\label{LMatch2}
   \begin{center}
   \includesvg[scale=.25]{LMatch2}
   \end{center}
@@ -250,4 +256,12 @@ and solve for $Z_{1i}$:
 \begin{dmath}
   Z_{1i} = \pm\sqrt{\frac{Z_{1r}Z_{br}^2 - Z_{1r}^2Z_{br}  + Z_{1r}Z_{bi}^2}{Z_{br}}}
 \end{dmath}
+
+Then to calculate $X_2$ is again trivial, but it's flipped from the
+type 1 calculation:
+\begin{dmath}
+  X_2 =  Z_{ai} - Z_{1i}
+\end{dmath}
+for both possible $Z_{1i}$ values.
+
 \end{document}
