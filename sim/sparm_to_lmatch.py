@@ -108,6 +108,8 @@ zs = 50
 zin = z_to_zin(z, zl)
 zout = z_to_zout(z, zs)
 
+zin = 37 + 1j * 80
+
 def imp_to_part_string(x, freq):
     if x < 0:
         v = 1. / (2 * math.pi * freq * -x)

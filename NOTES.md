@@ -1558,7 +1558,7 @@ now stable with 14dB of gain.  I assume with the right values it will
 reach full amplification.  Replace C117 with 27pF, L38 with 5.8nH, and
 L36 with 47pF.  L27 remains the same.
 
-## 2025-12-16
+## 2025-12-18
 
 Cleaned up some tracks and vias to simplify routing.
 
@@ -1594,3 +1594,8 @@ uses about 70nA when other power is not applied.  With 75nA, you will
 have around 4800 minutes of time without power applied before the RTC
 fails.  So, add another 47uF capacitor to get the time to 9600 seconds
 (160 minutes) which should be sufficient.
+
+## 2025-12-19
+
+Rearranged the PA in put a bit to move the inductor there further away
+from the other inductors and rotate it to reduce inductive coupling.
