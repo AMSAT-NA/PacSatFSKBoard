@@ -89,6 +89,7 @@
     </dia:attribute>
   </dia:diagramdata>
   <dia:layer name="Background" visible="true" connectable="false"/>
+  <dia:layer name="Background" visible="true" connectable="false"/>
   <dia:layer name="Background" visible="true" connectable="true" active="true">
     <dia:object type="Electronic - source_voltage" version="1" id="O0">
       <dia:attribute name="obj_pos">
@@ -561,12 +562,12 @@
         <dia:point val="13.5,13.5"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="13.5,11.99;15.17,13.915"/>
+        <dia:rectangle val="13.5,11.9419;15.1481,14.0113"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
           <dia:attribute name="string">
-            <dia:string>#Ra#</dia:string>
+            <dia:string>#Za#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
             <dia:font family="sans" style="0" name="Helvetica"/>
