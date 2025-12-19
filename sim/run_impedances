@@ -4,8 +4,8 @@
 # file for the QPL9547.  Note that even thought the file says they
 # are in mag/angle format, it's actually in rectangular format.
 echo "QPL9547:"
-./calc_sparms.py -rect 145e6 QPL9547.s2p
+./sparm_to_lmatch.py -rect 145e6 QPL9547.s2p
 
 # Now for the TQP7M9106.
 echo "TQP7M9106:"
-./calc_sparms.py 435e6 TQP7M9106.s2p
+./sparm_to_lmatch.py 435e6 TQP7M9106.s2p
