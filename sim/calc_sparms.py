@@ -15,6 +15,7 @@
 # if -rect is specified, then the S-parameters are in the form <real> <imag>
 
 import sys
+import math
 import numpy as np
 from two_port_conversions import *
 
@@ -107,5 +108,109 @@ zs = 50
 zin = z_to_zin(z, zl)
 zout = z_to_zout(z, zs)
 
+def imp_to_part_string(x, freq):
+    if x < 0:
+        v = 1. / (2 * math.pi * freq * -x)
+        if v < 1e-12:
+            vs = "%5.2ffF" % (v * 1e15)
+        elif v < 1e-9:
+            vs = "%5.2fpF" % (v * 1e12)
+        elif v < 1e-6:
+            vs = "%5.2fnF" % (v * 1e9)
+        elif v < 1e-3:
+            vs = "%5.2fuF" % (v * 1e6)
+        elif v < 1.:
+            vs = "%5.2fmF" % (v * 1e3)
+        else:
+            vs = "%5.2fF" % (v)
+            pass
+        return vs        
+
+    v = x / (2 * math.pi * freq)
+    if v < 1e-9:
+        vs = "%5.2fpH" % (v * 1e12)
+    elif v < 1e-6:
+        vs = "%5.2fnH" % (v * 1e9)
+    elif v < 1e-3:
+        vs = "%5.2fuH" % (v * 1e6)
+    elif v < 1.:
+        vs = "%5.2fmH" % (v * 1e3)
+    else:
+        vs = "%5.2fH" % (v)
+        pass
+    return vs
+
+# Calculate an L match based upon Ra, Zb, and the frequency.  The "m"
+# parameter tells which particular match to choose, it can be -1 or 1.
+# This math behind this is documented in Calculating_L_Match in this
+# directory.
+def calc_values(za, zb, freq, m):
+    if za.real < zb.real:
+        zbr = zb.real
+        zbi = zb.imag
+        z1r = za.real
+        zai = za.imag
+        mtype = 2
+    else:
+        zbr = za.real
+        zbi = za.imag
+        z1r = zb.real
+        zai = zb.imag
+        mtype = 1
+        pass
+    z1i = m * math.sqrt((z1r * zbr**2 - z1r**2 * zbr + z1r * zbi**2) / zbr)
+    x1 = ((-z1i**2 * zbi + z1i * zbi**2 + zbr**2 * z1i - z1r**2 * zbi) /
+          ((z1i - zbi) ** 2 + (zbr - z1r) ** 2))
+    if mtype == 1:
+        x2 = -z1i - zai
+    else:
+        x2 = zai - z1i
+    v1 = imp_to_part_string(x1, freq)
+    v2 = imp_to_part_string(x2, freq)
+    return (x1, v1, x2, v2, mtype)
+
+def print_l_match(mtype, za, zb, v1, v2):
+    if mtype == 1:
+        print("   %8s  %8s                                         " % (za, v2))
+        print("   +---OOOO---0000--+---------------+                      ")
+        print("   |                |               |                      ")
+        print("   |                O               O                      ")
+        print("  / \\               O %8s      O %5.2f + j%5.2f       " % (v1, zb.real, zb.imag))
+        print("  \\ /               O               O                      ")
+        print("   |                |               |                      ")
+        print("   v                v               v                      ")
+    else:
+        print("   %8s  %8s                                         " % (za, v2))
+        print("   +---OOOO---+--OOOO---------------+                      ")
+        print("   |          |                     |                      ")
+        print("   |          O                     O                      ")
+        print("  / \\         O %8s            O %5.2f + j%5.2f       " % (v1, zb.real, zb.imag))
+        print("  \\ /         O                     O                      ")
+        print("   |          |                     |                      ")
+        print("   v          v                     v                      ")
+        pass
+    return
+
 print(f' Zin: {zin}')
+(x1, v1, x2, v2, mtype) = calc_values(zl, zin, freq, 1)
+print('  match: type=%d x1=%f v1=%s  x2=%f v2=%s' % (mtype, x1, v1, x2, v2))
+print('')
+print_l_match(mtype, zl, zin, v1, v2)
+print('')
+(x1, v1, x2, v2, mtype) = calc_values(zl, zin, freq, -1)
+print('  match: type=%d x1=%f v1=%s  x2=%f v2=%s' % (mtype, x1, v1, x2, v2))
+print('')
+print_l_match(mtype, zl, zin, v1, v2)
+print('')
+
 print(f' Zout: {zout}')
+(x1, v1, x2, v2, mtype) = calc_values(zs, zout, freq, 1)
+print('  match: type=%d x1=%f v1=%s  x2=%f v2=%s' % (mtype, x1, v1, x2, v2))
+print('')
+print_l_match(mtype, zl, zin, v1, v2)
+print('')
+(x1, v1, x2, v2, mtype) = calc_values(zs, zout, freq, -1)
+print('  match: type=%d x1=%f v1=%s  x2=%f v2=%s' % (mtype, x1, v1, x2, v2))
+print('')
+print_l_match(mtype, zl, zin, v1, v2)
+print('')

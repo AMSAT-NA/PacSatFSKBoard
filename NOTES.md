@@ -166,6 +166,34 @@ be necessary.
 Determine current limiter values, probably need to build a board and
 measure.
 
+## Suggestions From Bob
+
+I would suggest sweeping the frequency through the filter bandpass and
+look at final power output to see where the peak is and how it rolls
+off. If you have not already done so you may buy a few more standard
+value inductors around you calculated solution. May get extras if you
+decide to do more testing.
+
+Do the above sweeping test at the lowest power supply voltage required
+and even go down till you see it stop working so you know the
+operating capability. Measure power output and plot that. Also take
+the voltage up as much as you can without exceeding ratings on parts
+and check that side.
+
+You should also do some test with different drive levels from the
+AX5043. See if is linear.
+
+Then do all this with cold (your freezer) and hot. I may be able to
+help with the hot side in a few weeks. I have a PCB being built that
+will provide a regulated heat. If it works I can send you one.
+
+The other interesting thing will be to understand the heat generated
+by on the PCB in normal operation. Maybe some testing in homemade
+chamber with some insulation and a vacuum pump. I have a small vacuum
+pump.  I feel this may turn out to an issue long term.  About all that
+can be done is to limit transmit time or reduce power level. Having
+some data would be needed to understand if there is an issue.
+
 # Done
 
 Figure out how to hold the processor in reset until the power is good.

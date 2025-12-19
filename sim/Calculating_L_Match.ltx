@@ -1,0 +1,253 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{breqn}
+\usepackage{bytefield}
+\usepackage[inkscapeformat=png]{svg}
+\begin{document}
+\title{Calculating L Match for a Given Impedance}
+\author{Corey Minyard - AE5KM}
+\maketitle
+\section{Introduction}
+
+Using this method, we calculate from the resistance we are matching to
+(generally $50\Omega$) to the destination impedance.
+
+\begin{figure}[ht]
+  \caption{L Match for $Z_{br} < R_a$}\label{LMatch1}
+  \begin{center}
+  \includesvg[scale=.25]{LMatch1}
+  \end{center}
+\end{figure}
+Figure \ref{LMatch1} shows the basic L-Match if $Z_{br} < R_a$.  We
+call this L-Match type 1.  There is a source with resistance $R_a$, a
+matching network consisting of a mix of capacitors or inductors with
+impedances $X_1$ and $X_2$, and a final impedance $Z_b$. $Z_b$ has
+real and imaginary parts $Z_{br}$ and $Z_{bi}$. We assume a
+non-complex source.  The same math can be done for complex sources,
+but it's more complicated.
+
+To do this calculation, we start at $R_a$ and work our way to $Z_b$.
+We do this in two stages:
+\begin{itemize}
+\item Calculate the value for $X_1$ so that it has the same real part
+  as $Z_b$.  We call this $Z_1$.  It has a real part $Z_{1r}$ and an
+  imaginary part $Z_{1i}$
+\item Calculate the value of $X_2$ to take $Z_{1i}$ and move to $Z_{bi}$.
+\end{itemize}
+So the impedance value of $Z_1$ will be:
+\begin{dmath}
+  Z_{1r} + j Z_{1i} = \frac{1}{\frac{1}{R_a} + \frac{1}{j X_1}}
+\end{dmath}
+Now lets do a series of transformation to solve for $X_i$:
+\begin{dmath}
+  Z_{1r} + j Z_{1i} = \frac{j R_a X_1}{R_a + j X_1}
+\end{dmath}
+\begin{dmath}
+  (Z_{1r} + j Z_{1i})(R_a + j X_1) = j R_a X_1
+\end{dmath}
+\begin{dmath}
+  R_a Z_{1r} + j X_1 Z_{1r} + j R_a Z_{1i} - Z_{1i} X_1 = j R_a X_1
+\end{dmath}
+Now solve for $X_1$:
+\begin{dmath}
+ j X_1 Z_{1r} - Z_{1i} X_1 - j R_a X_1 = - R_a Z_{1r} - j R_a Z_{1i} 
+\end{dmath}
+\begin{dmath}
+ X_1 = -R_a \frac{Z_{1r} + jZ_{1i}}{j Z_{1r} - Z_{1i} - j R_a}
+\end{dmath}
+\begin{dmath}
+ X_1 = -R_a \frac{Z_{1r} + jZ_{1i}}{-Z_{1i} - j (R_a - Z_{1r})}
+\end{dmath}
+\begin{dmath}
+ X_1 = R_a \frac{Z_{1r} + jZ_{1i}}{Z_{1i} + j (R_a - Z_{1r})}
+\end{dmath}
+Multiply the top and bottom of the right side by $Z_{1i} - j (R_a - Z_{1r})$
+to get:
+\begin{dmath}
+  X_1 = R_a \frac{-Z_{1r}Z_{1i} - Z_{1i}(R_a - Z_{1r})}{Z_{1i}^2 + (R_a - Z_{1r})^2}
+  + j R_a \frac{-Z_{1i}^2 + Z_{1r}(R_a - Z_{1r})}{Z_{1i}^2 + (R_a - Z_{1r})^2}
+\end{dmath}
+Rework that a bit to get the signs in a little nicer place:
+\begin{dmath}
+  X_1 = -R_a \frac{Z_{1r}Z_{1i} + Z_{1i}(R_a - Z_{1r})}{Z_{1i}^2 + (R_a - Z_{1r})^2}
+  - j R_a \frac{Z_{1i}^2 - Z_{1r}(R_a - Z_{1r})}{Z_{1i}^2 + (R_a - Z_{1r})^2}
+\end{dmath}
+\begin{dmath}
+  X_1 = \frac{-R_a Z_{1r}Z_{1i} - R_a Z_{1i}(R_a - Z_{1r})}{Z_{1i}^2 + (R_a - Z_{1r})^2}
+  + j \frac{-R_a Z_{1i}^2 + R_a Z_{1r}(R_a - Z_{1r})}{Z_{1i}^2 + (R_a - Z_{1r})^2}
+\end{dmath}
+\begin{dmath}
+  X_1 = \frac{-R_a Z_{1r}Z_{1i} - R_a^2 Z_{1i} + R_a Z_{1i}Z_{1r}}{Z_{1i}^2 + (R_a - Z_{1r})^2}
+  + j \frac{-R_a Z_{1i}^2 + R_a^2 Z_{1r} - R_a Z_{1r}^2}{Z_{1i}^2 + (R_a - Z_{1r})^2}
+\end{dmath}
+\begin{dmath}
+  X_1 = \frac{- R_a^2 Z_{1i}}{Z_{1i}^2 + (R_a - Z_{1r})^2}
+  - j R_a\frac{Z_{1i}^2 - R_a Z_{1r} - Z_{1r}^2}{Z_{1i}^2 + (R_a - Z_{1r})^2}
+\end{dmath}
+
+The imaginary part of this equation needs to be zero since the result
+should be the real value for the impedance of $X_1$.  So solve that
+for zero:
+\begin{dmath}
+  Z_{1i}^2 - R_a Z_{1r} - Z_{1r}^2 = 0
+\end{dmath}
+\begin{dmath}
+  Z_{1i}^2 - Z_{1r}(R_a - Z_{1r}) = 0
+\end{dmath}
+or
+\begin{dmath}
+  Z_{1i} = \pm\sqrt{Z_{1r}(R_a - Z_{1r})}
+\end{dmath}
+We end up with two values, as we should, as there are two possible
+solutions.  Then we plug into the left side of our main equation:
+\begin{dmath}
+  X_1 = -R_a \frac{Z_{1r}Z_{1i} + Z_{1i}(R_a - Z_{1r})}{Z_{1i}^2 + (R_a - Z_{1r})^2}
+\end{dmath}
+with both values of $Z_{1i}$ to get the two possible values of $X_1$.
+
+Then to calculate $X_2$ in both cases is trivial, it's impedance should be
+\begin{dmath}
+  X_2 = Z_{1i} - Z_{bi}
+\end{dmath}
+for both possible $Z_{1i}$ values.
+
+Let's take an example.  Let's say you have $R_a = 50$ and $Z_b = 40 +
+j 10$.  Plug into our equation:
+\begin{dmath}
+  Z_{1i} = \sqrt{40(50 - 40)}
+\end{dmath}
+So $Z_{1i} = \pm 20$.  Now plug everything into our main equation:
+\begin{dmath}
+  X_1 = -50 \frac{40(20) + 20(50 - 40)}{20^2 + (50 - 40)^2} = -100
+\end{dmath}
+and
+\begin{dmath}
+  X_1 = -50 \frac{-40(-20) - 20(50 - 40)}{20^2 + (50 - 40)^2} = 100
+\end{dmath}
+
+In the first case we get an capacitor of value $X_1 = -100$ and
+$Z_{1i} = 20$.  Now we need to move from $Z_{1i}$ to $Z_{bi}$ to
+calculate $X_2$.  So:
+\begin{dmath}
+  X_2 = Z_{1i} - Z_{bi} = 20 - 10 = 10
+\end{dmath}
+so we need an inductor of that results in an impedance of $10$.
+
+Working the other $Z_{1i} = -20$ value, we have an inductor $X_1 = 100$
+an we do:
+\begin{dmath}
+  X_2 = Z_{1i} - Z_{bi} = -20 - 10 = -30
+\end{dmath}
+so we need an capacitor of that results in an impedance of $-30$.
+
+This is basically the same procedure you would use on a Smith Chart,
+but with direct calculation.
+
+For $Z_{br} > R_a$ we have to work a little different and we flip the
+positions of $X_1$ and $X_2$ as shown in Figure \ref{LMatch2}.  We
+call this L match type 2. Then we move $Z_b$ until it's real impedance
+is $R_a$ and then calculate $X_2$.
+
+\begin{figure}[ht]
+  \caption{L Match for $Z_{br} > R_a$}\label{LMatch2}
+  \begin{center}
+  \includesvg[scale=.25]{LMatch2}
+  \end{center}
+\end{figure}
+
+\begin{dmath}
+  Z_{1r} + j Z_{1i} = \frac{1}{\frac{1}{Z_{br} + j Z_{bi}} + \frac{1}{j X_1}}
+\end{dmath}
+Now lets do a series of transformation to solve for $X_i$:
+\begin{dmath}
+  Z_{1r} + j Z_{1i} = \frac{(Z_{br} + j Z_{bi}) j X_1}{Z_{br} + j Z_{bi} + j X_1}
+\end{dmath}
+\begin{dmath}
+  Z_{1r} + j Z_{1i} = \frac{X_1 (- Z_{bi} + j Z_{br})}{Z_{br} + j(Z_{bi} + X_1)}
+\end{dmath}
+Now solve for $X_1$:
+\begin{dmath}
+  (Z_{1r} + j Z_{1i})(Z_{br} + j(Z_{bi} + X_1)) = X_1 (- Z_{bi} + j Z_{br})
+\end{dmath}
+\begin{dmath}
+  Z_{1r}Z_{br} - Z_{1i}(Z_{bi} + X_1) + j(Z_{br}Z_{1i} + Z_{1r}(Z_{bi} + X_1)) = X_1 (- Z_{bi} + j Z_{br})
+\end{dmath}
+\begin{dmath}
+  Z_{1r}Z_{br} - Z_{1i}X_1 - Z_{1i}Z_{bi} + j Z_{br}Z_{1i} + j Z_{1r}Z_{bi} + j Z_{1r}X_1 = -X_1Z_{bi} + j X_1Z_{br}
+\end{dmath}
+\begin{dmath}
+  X_1(-Z_{1i} + j Z_{1r} + Z_{bi} - j Z_{br}) =
+  - Z_{1r}Z_{br} + Z_{1i}Z_{bi} - j Z_{br}Z_{1i} - j Z_{1r}Z_{bi}
+\end{dmath}
+\begin{dmath}
+  X_1 = -\frac{Z_{1r}Z_{br} - Z_{1i}Z_{bi} + j Z_{br}Z_{1i} + j Z_{1r}Z_{bi}}
+              {-Z_{1i} + j Z_{1r} + Z_{bi} - j Z_{br}}
+\end{dmath}
+\begin{dmath}
+  X_1 = \frac{Z_{1r}Z_{br} - Z_{1i}Z_{bi} + j Z_{br}Z_{1i} + j Z_{1r}Z_{bi}}
+             {Z_{1i} - j Z_{1r} - Z_{bi} + j Z_{br}}
+\end{dmath}
+\begin{dmath}
+  X_1 = \frac{(Z_{1r}Z_{br} - Z_{1i}Z_{bi}) + j(Z_{br}Z_{1i} + Z_{1r}Z_{bi})}
+             {(Z_{1i} - Z_{bi}) + j(Z_{br} - Z_{1r})}
+\end{dmath}
+Multiply by the denominator with the $j$ part sign changed to get the
+$j$ out of the denominator.
+\begin{dmath}
+  X_1 = \frac
+  {\begin{matrix}
+      (Z_{1r}Z_{br} - Z_{1i}Z_{bi})(Z_{1i} - Z_{bi})\\
+      + (Z_{br}Z_{1i} + Z_{1r}Z_{bi})(Z_{br} - Z_{1r})\\
+      + j(Z_{1r}Z_{br} - Z_{1i}Z_{bi})(Z_{br} - Z_{1r})\\
+      - j(Z_{br}Z_{1i} + Z_{1r}Z_{bi})(Z_{1i} - Z_{bi})
+  \end{matrix}}
+  {(Z_{1i} - Z_{bi})^2 + (Z_{br} - Z_{1r})^2}
+\end{dmath}
+\begin{dmath}
+  X_1 = \frac
+  {\begin{matrix}
+      Z_{1r}Z_{1i}Z_{br} - Z_{1r}Z_{br}Z_{bi} - Z_{1i}Z_{1i}Z_{bi} + Z_{1i}Z_{bi}Z_{bi}\\
+      + Z_{br}Z_{br}Z_{1i} - Z_{1r}Z_{1i}Z_{br} + Z_{1r}Z_{br}Z_{bi} - Z_{1r}Z_{1r}Z_{bi})\\
+      + j Z_{1r}Z_{br}Z_{br} - j Z_{1r}Z_{1r}Z_{br} - j Z_{1i}Z_{br}Z_{bi} + j Z_{1r}Z_{1i}Z_{bi}\\
+      - j Z_{1i}Z_{li}Z_{br} + j Z_{1i}Z_{br}Z_{bi} - j Z_{1r}Z_{li}Z_{bi} + j Z_{1r}Z_{bi}Z_{bi}\\
+  \end{matrix}}
+  {(Z_{1i} - Z_{bi})^2 + (Z_{br} - Z_{1r})^2}
+\end{dmath}
+\begin{dmath}
+  X_1 = \frac
+  {\begin{matrix}
+      - Z_{1i}^2Z_{bi} + Z_{1i}Z_{bi}^2\\
+      + Z_{br}^2Z_{1i} - Z_{1r}^2Z_{bi}\\
+      + j Z_{1r}Z_{br}^2 - j Z_{1r}^2Z_{br}\\
+      - j Z_{1i}^2Z_{br} + j Z_{1r}Z_{bi}^2\\
+  \end{matrix}}
+  {(Z_{1i} - Z_{bi})^2 + (Z_{br} - Z_{1r})^2}
+\end{dmath}
+This is actually a more general formula than the one we did for
+$Z_{br} < R_a$.  If you set $Z_{bi} = 0$ and $Z_{br} = R_a$ it will
+reduce to the same formula.  Anyway, now split that into real and imaginary
+parts:
+\begin{dmath}
+  X_{1r} = \frac{- Z_{1i}^2Z_{bi} + Z_{1i}Z_{bi}^2 + Z_{br}^2Z_{1i} - Z_{1r}^2Z_{bi}}
+    {(Z_{1i} - Z_{bi})^2 + (Z_{br} - Z_{1r})^2}
+\end{dmath}
+\begin{dmath}
+  X_{1i} = -j \frac{Z_{1r}Z_{br}^2 - Z_{1r}^2Z_{br} - Z_{1i}^2Z_{br} + Z_{1r}Z_{bi}^2}
+  {(Z_{1i} - Z_{bi})^2 + (Z_{br} - Z_{1r})^2}
+\end{dmath}
+Like before, we want the imaginary part to be zero, so:
+\begin{dmath}
+  Z_{1r}Z_{br}^2 - Z_{1r}^2Z_{br} - Z_{1i}^2Z_{br} + Z_{1r}Z_{bi}^2 = 0
+\end{dmath}
+and solve for $Z_{1i}$:
+\begin{dmath}
+  Z_{1i}^2Z_{br} = Z_{1r}Z_{br}^2 - Z_{1r}^2Z_{br}  + Z_{1r}Z_{bi}^2
+\end{dmath}
+\begin{dmath}
+  Z_{1i}^2 = \frac{Z_{1r}Z_{br}^2 - Z_{1r}^2Z_{br}  + Z_{1r}Z_{bi}^2}{Z_{br}}
+\end{dmath}
+\begin{dmath}
+  Z_{1i} = \pm\sqrt{\frac{Z_{1r}Z_{br}^2 - Z_{1r}^2Z_{br}  + Z_{1r}Z_{bi}^2}{Z_{br}}}
+\end{dmath}
+\end{document}
