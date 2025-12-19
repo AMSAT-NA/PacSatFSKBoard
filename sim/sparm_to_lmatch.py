@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 # This program is run as:
-# ./calc_sparms [-rect] <freq> <sparm file>
+# ./sparms_to_lmatch [-rect] <freq> <sparm file>
 #
 # It parses through the sparm file to find where the given frequency
 # is located then interpolates between the two frequencies around the
@@ -93,7 +93,7 @@ s = matrix_db_degrees_to_rect(sdb)
 # Convert to a Z matrix
 z = s_to_z(s, z0_50)
 
-print(f'{freq} MHz')
+print(f'{freq/1e6} MHz')
 if verbose:
     print(f'Sdb_{p[0]}: \n{p[1]}\n')
     print(f'Sdb_{p[2]}: \n{p[3]}\n')
@@ -197,7 +197,7 @@ def calc_l_match(za, zb, freq, m):
     return (x1, v1, x2, v2, mtype)
 
 def print_l_match_out(mtype, za, zb, v1, v2):
-    if mtype == 1:
+    if mtype == 2:
         print("                                %8s                       " % (v2))
         print("   +--------------------+--------OOOO---------+            ")
         print("   |                    |         X2          |            ")
@@ -221,13 +221,14 @@ def print_l_match_out(mtype, za, zb, v1, v2):
     return
 
 def print_l_match_in(mtype, za, zb, v1, v2):
-    if mtype == 1:
+    if mtype == 2:
         print("   %-7.2f + j%-7.2f   %8s                                    "
               % (za.real, za.imag, v2))
         print("   +---OOOO--------------OOOO--+---------------+                  ")
         print("   |    Za                X2   |               |                  ")
         print("   |                           O X1            O Zb               ")
-        print("  / \\                          O %-8s      O %5.2f + j%5.2f   " % (v1, zb.real, zb.imag))
+        print("  / \\                          O %-8s      O %5.2f + j%5.2f   "
+              % (v1, zb.real, zb.imag))
         print("  \\ /                          O               O                  ")
         print("   |                           |               |                  ")
         print("   v                           v               v                  ")
@@ -269,10 +270,10 @@ print(f' Zout: {zout}')
 (x1, v1, x2, v2, mtype) = calc_l_match(zs, zout, freq, 1)
 print('  match: type=%d x1=%f v1=%s  x2=%f v2=%s' % (mtype, x1, v1, x2, v2))
 print('')
-print_l_match(mtype, zl, zin, v1, v2, out = True)
+print_l_match(mtype, zl, zout, v1, v2, out = True)
 print('')
 (x1, v1, x2, v2, mtype) = calc_l_match(zs, zout, freq, -1)
 print('  match: type=%d x1=%f v1=%s  x2=%f v2=%s' % (mtype, x1, v1, x2, v2))
 print('')
-print_l_match(mtype, zl, zin, v1, v2, out = True)
+print_l_match(mtype, zl, zout, v1, v2, out = True)
 print('')
