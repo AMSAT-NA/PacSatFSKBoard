@@ -9,6 +9,9 @@ some point.
 
 # TODO
 
+Go through all the pins on the CPU and remove any unnecessary pull ups
+and pull downs in the HCG software to save some power.
+
 Think about how to make the board more resilient against overvoltage
 on the input.  The TPS62A02AQDRLRQ1, TCAN1044ADDFRQ1, SN3257,
 MAX31331, and MAX4995 parts have a absolute maximum input voltage of
@@ -1619,8 +1622,35 @@ disabled or allow DIN to be used for something else.
 Pull 0 ohm power supply resistors away from connector.  It's really
 hard to solder them otherwise.
 
-Change the BOARD_NUM pulldown resistor to 18K so the value is
+Change the BOARD\_NUM pulldown resistor to 18K so the value is
 close to 3V when the pullup is installed.
 
 Reroute the I2C lines to the RTC to make some room for routing signals
 below the RTC.
+
+I have looked at all the active/standby handling lines.  They all work
+(after I fixed the values in the software) except for the one that
+powers the other board off.  Well, that works, but it powers off both
+boards.  When board 1 powers off board 2 with HW\_POWER\_OFF2\_N, the
+HW\_POWER\_OFF1\_N line glitches.  But it's not a normal glitch, it
+slopes down at about 45 degrees from 2.7V to 1V, stays at 1V for
+200us, then slopes back up to 2.7V.  I've looked at the input to the
+Q2 MOSFET and it's stable at ground.  +5V and +5VAL are not glitching
+at all.  What appears to be happening is OTHER\_HW\_POWER\_OFF\_N that
+is connected to the CPU is pulled down by default.
+
+From the voltage drop, the pull down in the CPU appears to be 2.9K.  I
+change R27 and R117 to a 100 ohm and 200 ohm resistor, and that
+increased the minimum voltage to 1.23V.  So something else is going on.
+I just cut the OTHER\_HW\_POWER\_OFF\_N between Q2 and the CPU and the
+problem went away.  So it's definitely that signal.  Those signals will
+be cut on version 2 boards, so they cannot be used in an external
+active/standby control configuration.  That's probably not a big deal.
+
+The right way to fix this is probably to add a gate into the mix.
+Just use the AND gate we already have here.  It's added in the
+schematics and next version board.
+
+I received the right parts for the PA match, but changing the PA
+output inductor to a 100nH 1A inductor and L38 to a 5.8nH inductor did
+not change the output at all.

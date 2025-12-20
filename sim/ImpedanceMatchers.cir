@@ -22,7 +22,7 @@ Rsrc in     vmin1  50
 * Q=65, Coilcraft 0603DC
 L1	vmin2	a1a	3.3n
 Rl1     a1a	0	.13
-C1	vmin2	a1	47pp
+C1	vmin2	a1	47p
 .endif
 
 * -1.04 ohms at 435MHz
