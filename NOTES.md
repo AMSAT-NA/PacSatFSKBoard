@@ -1616,3 +1616,11 @@ WATCHDOG\_OUT\_N) so it can be easily disabled.  There is some
 question whether that connection will work, allow it to be easily
 disabled or allow DIN to be used for something else.
 
+Pull 0 ohm power supply resistors away from connector.  It's really
+hard to solder them otherwise.
+
+Change the BOARD_NUM pulldown resistor to 18K so the value is
+close to 3V when the pullup is installed.
+
+Reroute the I2C lines to the RTC to make some room for routing signals
+below the RTC.
