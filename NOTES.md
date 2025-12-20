@@ -1608,3 +1608,10 @@ fails.  So, add another 47uF capacitor to get the time to 9600 seconds
 
 Rearranged the PA in put a bit to move the inductor there further away
 from the other inductors and rotate it to reduce inductive coupling.
+
+## 2025-12-20
+
+Add zero-ohm resistors to the DIN in put of the RTC (from
+WATCHDOG\_OUT\_N) so it can be easily disabled.  There is some
+question whether that connection will work, allow it to be easily
+disabled or allow DIN to be used for something else.

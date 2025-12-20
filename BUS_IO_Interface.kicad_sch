@@ -2178,6 +2178,16 @@
 		)
 		(uuid "55795ac1-363f-4afd-82ef-cc210a771d11")
 	)
+	(text "There is some question whether\nthe DIN pin will work properly\nor draw too much power in standby\nmode.  Allow it to be disabled."
+		(exclude_from_sim no)
+		(at 172.466 184.658 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "56d17ff2-c447-48f0-979d-6d5b5b93b081")
+	)
 	(text "This is here to slow down the\ndrop of voltage into VCC at\npower off. It has to drop less\nthan .5V/ms per the datasheet."
 		(exclude_from_sim no)
 		(at 187.706 133.35 0)
@@ -2368,6 +2378,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "718ca53c-7fad-41c1-ad0e-97a22d4383bd")
+	)
+	(junction
+		(at 160.02 191.77)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7465ac23-f0ec-4e70-b257-4243866f9eab")
 	)
 	(junction
 		(at 341.63 104.14)
@@ -2769,6 +2785,16 @@
 	)
 	(wire
 		(pts
+			(xy 148.59 191.77) (xy 160.02 191.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "24e0d48f-a3ea-4236-87a0-6a4c336927b7")
+	)
+	(wire
+		(pts
 			(xy 130.81 133.35) (xy 130.81 146.05)
 		)
 		(stroke
@@ -2816,6 +2842,16 @@
 			(type default)
 		)
 		(uuid "295835c2-8999-4833-9195-3aabf788438f")
+	)
+	(wire
+		(pts
+			(xy 171.45 191.77) (xy 180.34 191.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "299c94e3-4874-4eb8-93ae-79d307687438")
 	)
 	(wire
 		(pts
@@ -2986,6 +3022,16 @@
 			(type default)
 		)
 		(uuid "38aba300-6c5c-420c-9b4f-8247a8f0d838")
+	)
+	(wire
+		(pts
+			(xy 160.02 191.77) (xy 160.02 194.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3914cd1d-2d50-415d-b9e5-86931386de0b")
 	)
 	(wire
 		(pts
@@ -4309,7 +4355,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 158.75) (xy 147.32 170.18)
+			(xy 148.59 158.75) (xy 148.59 191.77)
 		)
 		(stroke
 			(width 0)
@@ -4559,6 +4605,16 @@
 	)
 	(wire
 		(pts
+			(xy 160.02 191.77) (xy 163.83 191.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e654d787-301d-430c-8b48-acd71f69c7d0")
+	)
+	(wire
+		(pts
 			(xy 204.47 95.25) (xy 204.47 67.31)
 		)
 		(stroke
@@ -4669,7 +4725,7 @@
 	)
 	(wire
 		(pts
-			(xy 127 158.75) (xy 147.32 158.75)
+			(xy 127 158.75) (xy 148.59 158.75)
 		)
 		(stroke
 			(width 0)
@@ -4796,6 +4852,16 @@
 			(type default)
 		)
 		(uuid "fee7fbe1-cc25-494c-8e4c-2308c915e212")
+	)
+	(wire
+		(pts
+			(xy 160.02 201.93) (xy 160.02 204.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ffe1f4c3-dba6-456e-ada3-5ec7ecb21cfd")
 	)
 	(global_label "MRAM_NCS0"
 		(shape input)
@@ -5061,28 +5127,6 @@
 			)
 		)
 	)
-	(global_label "WATCHDOG_OUT_N"
-		(shape input)
-		(at 147.32 170.18 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify right)
-		)
-		(uuid "3b6c837f-e82c-44a0-b13e-d5253a058f29")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 147.32 193.2242 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "MRAM_NCS3"
 		(shape input)
 		(at 162.56 90.17 180)
@@ -5189,6 +5233,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "WATCHDOG_OUT_N"
+		(shape input)
+		(at 180.34 191.77 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left)
+		)
+		(uuid "8fddc9e0-24ff-41a7-9856-c68af262a34a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 203.3842 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -5844,6 +5910,73 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/aff81ec5-748c-4fc9-b1e8-df12a16f6289"
 					(reference "#PWR0118")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 160.02 198.12 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp yes)
+		(uuid "1484b564-f1b5-4299-94f8-335f67109522")
+		(property "Reference" "R131"
+			(at 162.306 195.326 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0"
+			(at 157.734 197.358 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 161.798 198.12 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 160.02 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 160.02 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2b966481-ca62-403b-a831-9b3cb7f63198")
+		)
+		(pin "2"
+			(uuid "9eb61bed-4fe4-4e48-b62c-d6f1703722b9")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/aff81ec5-748c-4fc9-b1e8-df12a16f6289"
+					(reference "R131")
 					(unit 1)
 				)
 			)
@@ -9314,6 +9447,70 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 160.02 204.47 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c58bfd7d-6bf0-49e2-bfd7-8231f4ec5822")
+		(property "Reference" "#PWR0266"
+			(at 160.02 210.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 160.147 208.8642 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 160.02 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 160.02 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 160.02 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "89e98ab1-036c-4958-a909-57ce6b2728aa")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/aff81ec5-748c-4fc9-b1e8-df12a16f6289"
+					(reference "#PWR0266")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 54.61 104.14 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10607,6 +10804,73 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/aff81ec5-748c-4fc9-b1e8-df12a16f6289"
 					(reference "U20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 167.64 191.77 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f1c07a9d-96d1-4ad6-920a-0db2ac5d52ef")
+		(property "Reference" "R130"
+			(at 170.434 194.056 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0"
+			(at 168.402 189.484 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 167.64 193.548 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 167.64 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 167.64 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e39db081-4e7b-4da0-b36e-a2f8bf0131a8")
+		)
+		(pin "2"
+			(uuid "bb450e99-5127-40d2-888b-57a7deca8ad3")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/aff81ec5-748c-4fc9-b1e8-df12a16f6289"
+					(reference "R130")
 					(unit 1)
 				)
 			)
