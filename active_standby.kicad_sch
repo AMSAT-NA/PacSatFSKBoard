@@ -2785,7 +2785,7 @@
 		(dnp no)
 		(uuid "2fde8402-06b5-4044-9c0c-9d42fd35ac0e")
 		(property "Reference" "Q2"
-			(at 139.954 162.56 0)
+			(at 134.112 163.068 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2794,7 +2794,7 @@
 			)
 		)
 		(property "Value" "BSS138"
-			(at 139.954 165.1 0)
+			(at 138.938 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3691,7 +3691,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "18KΩ"
 			(at 240.538 90.043 0)
 			(effects
 				(font

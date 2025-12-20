@@ -1615,3 +1615,4 @@ Add zero-ohm resistors to the DIN in put of the RTC (from
 WATCHDOG\_OUT\_N) so it can be easily disabled.  There is some
 question whether that connection will work, allow it to be easily
 disabled or allow DIN to be used for something else.
+
