@@ -1654,3 +1654,10 @@ schematics and next version board.
 I received the right parts for the PA match, but changing the PA
 output inductor to a 100nH 1A inductor and L38 to a 5.8nH inductor did
 not change the output at all.
+
+Like the OTHER\_HW\_POWER\_OFF\_N above, the ACTIVE\_N line was pulled
+low when the CPU was in reset, which could mess up fault tolerance
+because ACTIVE1 controls the RF output switch.  Add a transistor
+there and switch it to positive logic, ACTIVE instead.  FAULT doesn't
+seem to have the issue and the rest of the lines shouldn't matter
+as they are only outputs from the other board.

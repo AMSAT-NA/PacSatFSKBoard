@@ -179,7 +179,7 @@ used as a GPIO.
 |130	|MIBSPI1NCS[1]			|\*FEED\_WATCHDOG		|OU|Resets the hardware watchdog timer |
 |131	|LINRX					|PC104\_RX				|IU|PC104 Pin H2-21 |
 |132	|LINTX					|PC104\_TX				|OU|PC104 Pin H2-22 |
-|133	|GIOB[1]				|ACTIVE\_N				|BD|Local active pin for active/standby |
+|133	|GIOB[1]				|ACTIVE					|BD|Local active pin for active/standby |
 |134	|VCCP					|						|  | |
 |135	|VSS					|						|  | |
 |136	|VCCIO					|						|  | |
