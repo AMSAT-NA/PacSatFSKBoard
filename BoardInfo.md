@@ -25,12 +25,34 @@ Things to do for a new board:
 
 * Replace L38 with a 5.8nH inductor.
 
-* Change the PA power input inductor (L37) to a 100nH part to avoid
-  feedback through the power supply.  (Actually, maybe not, hold off
-  on this until it is tested.  The oscillation problems were an
-  impedance mismatch, not feedback, it appears.)
+* Change the PA power input inductor (L37) to a 100nH part with low
+  DCR.
+  
+* Add R112 so the boards can supply/get power from the PC104.
 
+* Cut the OTHER\_HW\_POWER\_OFF\_N line between Q2 and the CPU.  It
+  was causing issues.
+  
+* Replace the serial port connector with a 90 degree one.
+  
 # Current Board Status
+
+## Issues that apply to all boards
+
+* The RTC will only keep time when off for about 10 minutes.  This is
+  due to a diode with high leakage and insufficient capacitance.  This
+  has been fixed for the next revision of the board, but is not
+  currently planned to be fixed for these boards.
+  
+* The OTHER\_HW\_POWER\_OFF\_N line is cut as it was causing issues
+  when resetting another board, it appeared to be pulling down the
+  signal when the CPU was off.  So it is not possible to read that
+  line.  It's really only valuable for external control, so version
+  2 boards are not able to do external control.
+
+* Like the previous entry, the ACTIVE\_N line will be driven low when
+  the CPU is in reset.  This will probably not be fixed; I can't think
+  of an easy way.
 
 ## Board 5 - 2nd board I worked on
 
@@ -53,12 +75,16 @@ Things to do for a new board:
   destroyed.  L33 and L38 came off when I was unsoldering the other
   devices.
   
+* The OTHER\_HW\_POWER\_OFF\_N line is not cut between Q2 and the CPU,
+  so until that is done the board cannot be used for active/standby.
+  
 ## Board 6 - First board I worked on for initial bringup
 
 * The RF switches have been removed and jumpers places on the RF connections.
   So this is basically a stand-alone board or a board 2.
 
-* The board 2 resistor has not been added, but should be at some point.
+* The board 2 resistor (R91) is added on this board, so it is a board
+  2 board.
 
 * Added a 1nF capacitor between L35 and the RF PA so it's not DC grounded.
 
@@ -114,6 +140,10 @@ Things to do for a new board:
   L38's place and the capacitor should go in L27's place.
 
 * The PA power input inductor (L37) has been changed to 100nH.
+
+* R27 and R117 are changed to a 100 ohm and 200 ohm resistor as an
+  experiment trying to fix a problem.  It didn't fix the problem, but
+  that's not going to hurt anything, so those are left on for now.
 
 ### Fixed
 
