@@ -21,19 +21,25 @@ Things to do for a new board:
 * Replace L35 with a 47pF capacitor.  No need to cut traces or
   anything.
   
+* Replace L27 with a 2.7nH inductor.
+
 * Replace C117 with a 27pF capacitor.
 
-* Replace L38 with a 5.8nH inductor.
+* Replace L38 with a 5.8nH inductor. (Maybe 5.0nH)
 
 * Change the PA power input inductor (L37) to a 100nH part with low
   DCR.
   
+* Change L30 to a 20nH inductor.
+
+* Change L33 to a 16nH inductor.
+
+* Remove C125.
+
 * Add R112 so the boards can supply/get power from the PC104.
 
 * Cut the OTHER\_HW\_POWER\_OFF\_N line between Q2 and the CPU.  It
   was causing issues.
-  
-* Replace the serial port connector with a 90 degree one.
   
 # Current Board Status
 
@@ -115,6 +121,15 @@ Things to do for a new board:
 * L35 is now a 47pF capacitor for the proper match.  L27 didn't have
   to change.
   
+* The serial port connector broke on this as I was trying to replace
+  it with a right-angle one.  The part that is there is a TS-103-G-A
+  and the pins soldered into the board are not standard size, so the
+  replacement didn't work, and the holes are so small you can't
+  unsolder them.  That's been fixed on new boards.  I don't see any
+  right-angle version of those parts.  I've put on a TS-102-G-A that I
+  had, but it doesn't have a ground so the ground had to be handled
+  elsewhere.
+
 ## Board 8 - 3rd board I worked on
 
 * Applied all the board bring up changes.
