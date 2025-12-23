@@ -35,21 +35,23 @@ Cl1	out	0	.037p
 C1	in	0	7.3p
 
 * 21.71n
-L2	in	a1	22n
+* Coilcraft 0402DC-20NX_RW Q=48@435MHz
+L2	in	a1	20n
 Rl2	a1	a2	1.1
 Cl2	in	a2	.046p
 * 767.6f
-C2	in	a2	.75p
+*C2	in	a2	.75p
 
 * 11.84p
 C3	a2	0	12p
 
 * 17.96n
-L4	a2	a3	18n
+* Coilcraft 0402DC-16NX_RW Q=48@435MHz
+L4	a2	a3	16n
 Rl4	a3	out	.89
 Cl4	a2	out	.045p
 * 2.16p
-C4	a2	out	2.2p
+C4	a2	out	2.0p
 
 * 6.2p
 C5	out	0	6.2p

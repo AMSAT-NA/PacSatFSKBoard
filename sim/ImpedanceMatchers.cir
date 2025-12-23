@@ -20,9 +20,10 @@ Rsrc in     vmin1  50
 
 * TX PA input matcher
 * Q=65, Coilcraft 0603DC
-L1	vmin2	a1a	3.3n
+C0	vmin2   a1b     1n
+L1	a1b	a1a	4.3n
 Rl1     a1a	0	.13
-C1	vmin2	a1	47p
+C1	vmin2	a1	37p
 .endif
 
 * -1.04 ohms at 435MHz
@@ -39,7 +40,7 @@ Csrc vmin2  a1     720p
 
 * Impedance matching network
 * TX PA output matcher
-C1	a1	vmout1	27p
+C1	a1	vmout1	22p
 * Q=55, CoilCraft 0402DC
 L1	vmout1	a3	5.8n
 Rl1	a3	0	.34

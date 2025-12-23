@@ -2466,6 +2466,16 @@
 		)
 		(uuid "72981b7f-fa0c-42ff-9460-112a1d210be6")
 	)
+	(text "C125 is DNP because parasitic capacitance is enough\nto do what is required here.  And the simulation\nbears this out, it's not necessary.  Leave the pads\nin place in case it needs to be added."
+		(exclude_from_sim no)
+		(at 269.24 203.962 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "7511a5d5-bf5d-426f-8238-dae8c8a15e10")
+	)
 	(text "2W (33dBm) into 50 ohms is 10V RMS, ~14.3V peak\nto peak on the right side of the impedance converter.\nPick appropriate devices."
 		(exclude_from_sim no)
 		(at 245.872 219.71 0)
@@ -5563,7 +5573,7 @@
 				)
 			)
 		)
-		(property "Value" "18nH 2%"
+		(property "Value" "16nH 2%"
 			(at 274.32 150.622 90)
 			(effects
 				(font
@@ -6833,7 +6843,7 @@
 				)
 			)
 		)
-		(property "Value" "22nH 2%"
+		(property "Value" "20nH 2%"
 			(at 255.27 150.622 90)
 			(effects
 				(font
@@ -7228,7 +7238,7 @@
 				)
 			)
 		)
-		(property "Value" "27pF 1% 30V"
+		(property "Value" "22pF 1% 30V"
 			(at 213.36 163.322 90)
 			(effects
 				(font
@@ -7954,9 +7964,9 @@
 		(at 255.27 160.02 90)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "8c0f3814-478a-4dd7-98de-462836f863e3")
 		(property "Reference" "C125"
 			(at 255.524 153.924 90)
@@ -8835,7 +8845,7 @@
 				)
 			)
 		)
-		(property "Value" "2.2pF ±.05 30V"
+		(property "Value" "2pF ±.05 30V"
 			(at 274.574 156.464 90)
 			(effects
 				(font

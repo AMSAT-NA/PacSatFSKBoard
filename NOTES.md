@@ -1661,3 +1661,67 @@ because ACTIVE1 controls the RF output switch.  Add a transistor
 there and switch it to positive logic, ACTIVE instead.  FAULT doesn't
 seem to have the issue and the rest of the lines shouldn't matter
 as they are only outputs from the other board.
+
+## 2025-12-22
+
+I've been playing around with the different capacitor values on the PA
+and output filter.  With a signal generator (SG) and a spectrum
+analyzer (SA) I was able to get about 3dB more power out of the board.
+I changed the PA input capacitor (C27) to 33pF, the PA output
+capacitor (C117) to 22pF, removed C125, the .75pF capacitor in the
+filter, and changed C127 to 2pf.  Each change gained about 1dB.
+
+I've done some more simulation.  On the input filter, I suspect that
+parasitic inductance and mutual inductance is causing issues with the
+inductor value and it's too high.  It's already moved to avoid mutual
+inductance, but it should be decreased to avoid parasitic, as it'
+small enough (3.3nH) that parasitics are a big deal.  However, that's
+not that critical as the AX5043 can drive more power than is
+necessary.  It should probably be decreased some, though.
+
+On the output filter, I suspect some parasitics are at work there,
+too.  Its 5.8, and I suspect parasitics are playing a role there, too.
+It probably needs to be decreased.
+
+I switched to driving it with an AX5043, after I had characterized it:
+
+  5%: -4.8 dBm
+  12%: 2.7 dBm
+  25%: 9 dBm
+  50%: 13 dBm
+  100%: 15.3 dBm
+
+So it's not exactly linear, but it's not logarithmic.
+
+The SA was showing about 28dBm output from the filter, which is about
+3dB lower than I expect.  The PA should be putting out about 33dBm and
+the output match and filter subtract about 2dBm, so it should be about
+31dBm.  I measure it with a RF power meter and it was showing around
+1.3W, about what I expected.  After a lot of finagling, I realized
+that the output of the AX5043 was not a single frequency, it was an FM
+signal, and the power will be spread out on the SA.  So it's likely
+putting out the power I expected, the SA just doesn't show it.
+
+Looking at harmonics, the first harmonic is at -47dB from the
+transmitted signal, and the second is around -53dB down.
+
+I did some measuring to see where the AX5043 power stopped increasing
+the transmitted power.  That was at around 60% power.  That's about
+what was expected.  The maximum output of the PA is 33dBm, the PA's
+gain is around 20.8dB.  So the maximum input power before clipping
+would be around 12.2dBm.
+
+There is a thermsistor right beside the PA, and at 25C ambient, at
+full power output it's at around 52C.  If you have the PA on without
+any power, it increases to around 58C because it's just dissipating
+power and not sending any to the output.  So heat is definitely a
+consideration.
+
+The power measurement on the output is not working very well.  I can
+see a small increase when transmitting at full power, but it's not
+much, so the coupling isn't matching what I simulated.  It's also
+giving strange readings when there's no RF power, one is quite a bit
+higher than the other.  I realized the ground plane is still there,
+and it's possible that is messing up the measurements.  It might be
+possible to move the coupled line to below the main signal.  Not sure,
+I could use some expertise with this.
