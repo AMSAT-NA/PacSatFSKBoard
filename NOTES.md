@@ -9,6 +9,9 @@ some point.
 
 # TODO
 
+The RF input pins to the RF power measurement chips say they are 50
+ohms, so there is no need for the 50 ohm resistors there.
+
 Go through all the pins on the CPU and remove any unnecessary pull ups
 and pull downs in the HCG software to save some power.
 

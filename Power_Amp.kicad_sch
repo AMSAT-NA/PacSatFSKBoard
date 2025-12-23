@@ -2392,6 +2392,16 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "Was L35"
+		(exclude_from_sim no)
+		(at 70.866 146.558 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "2947dd99-0065-40c6-abf7-9c149b7c180f")
+	)
 	(text "Place by the PA."
 		(exclude_from_sim no)
 		(at 165.354 237.744 0)
