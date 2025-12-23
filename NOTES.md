@@ -1671,6 +1671,10 @@ I changed the PA input capacitor (C27) to 33pF, the PA output
 capacitor (C117) to 22pF, removed C125, the .75pF capacitor in the
 filter, and changed C127 to 2pf.  Each change gained about 1dB.
 
+I've also changed inductors L30 and L33 from 22nH to 20nH and 18nH to
+16nH, respectively.  This raises the frequency of the output filter a
+bit to better accommodate the higher frequency side of the UHF band.
+
 I've done some more simulation.  On the input filter, I suspect that
 parasitic inductance and mutual inductance is causing issues with the
 inductor value and it's too high.  It's already moved to avoid mutual
