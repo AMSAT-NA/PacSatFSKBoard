@@ -1759,3 +1759,28 @@ signal, even before going through the match, so it's not necessary.
 Changed L27 to a 0402 part and reworked the layout a little more
 there.  Also changed it to a 3nH part to adjust for parasitic
 inductance in the circuit.
+
+## 2025-12-24
+
+Looking at the RF signal chain a little bit.  I injected a -34dBm
+signal into the RX port.  The reading from the AX5043 say -27dBm.  I
+plugged the spectrum analyzer into the input port of AX5043 0 and it
+said -17dBm.  I put in another -20dB attenuator, the output showed
+-35dBm from a -54dBm input.
+
+I don't put a lot of credence into the AX5043 measurements; I assume
+it's not terribly accurate.  According to the S-Parameters, the LNA
+should have 29dB of gain on the input signal, and I expect in the 10dB
+range of loss in the filters and splitter.  That's -35dBm.  Perfect.
+
+Then I remembered: -27dBm is the maximum value the AX5043 can read.
+Anything above that reads as -27dBm.  So add another 10dB attenuator.
+This time AX5043 showed -41dBm and the SA shows -45dBm.  As I don't
+thing the AX5043 is that accurate, and at these levels the AX5043 may
+be picking up extraneous radiation from the dinky signal generator I'm
+using.  I think the filters and amplifier are good.  I'm getting less
+loss in the filters than expected, it appears.  Which is no surprise,
+those are worst case numbers.
+
+This may be too sensitive.  But 20dB of gain out of the RF input chain
+isn't out of the ordinary, I think.

@@ -97,6 +97,7 @@ print(f'{freq/1e6} MHz')
 if verbose:
     print(f'Sdb_{p[0]}: \n{p[1]}\n')
     print(f'Sdb_{p[2]}: \n{p[3]}\n')
+    print(f'Sdb_{freq}: \n{sdb}\n')
     print(f'S_{freq}: \n{s}\n')
     print(f'Z_{freq}: \n{z}\n')
     pass
