@@ -5409,7 +5409,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 226.06) (xy 146.05 218.44)
+			(xy 142.24 226.06) (xy 142.24 218.44)
 		)
 		(stroke
 			(width 0)
@@ -5969,7 +5969,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 218.44) (xy 152.4 218.44)
+			(xy 142.24 218.44) (xy 152.4 218.44)
 		)
 		(stroke
 			(width 0)
@@ -6129,7 +6129,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 237.49) (xy 152.4 237.49)
+			(xy 142.24 237.49) (xy 152.4 237.49)
 		)
 		(stroke
 			(width 0)
@@ -6469,7 +6469,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 233.68) (xy 146.05 237.49)
+			(xy 142.24 233.68) (xy 142.24 237.49)
 		)
 		(stroke
 			(width 0)
@@ -9529,7 +9529,7 @@
 			)
 		)
 	)
-	(global_label "OTHER_HW_POWER_OFF_N"
+	(global_label "OTHER_HW_POWER_ST"
 		(shape input)
 		(at 184.15 233.68 270)
 		(fields_autoplaced yes)
@@ -9541,7 +9541,7 @@
 		)
 		(uuid "76497e5a-8be1-4f51-8243-7f7fd4ecc1f9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 184.15 265.2877 90)
+			(at 184.15 260.9333 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9727,7 +9727,7 @@
 			)
 		)
 	)
-	(global_label "OTHER_FAULT_N"
+	(global_label "OTHER_FAULT"
 		(shape input)
 		(at 171.45 233.68 270)
 		(fields_autoplaced yes)
@@ -9739,7 +9739,7 @@
 		)
 		(uuid "8f40ce3b-f649-423c-a27d-4cfeda21eb59")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 171.45 254.2568 90)
+			(at 171.45 251.4991 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13151,7 +13151,7 @@
 		(dnp no)
 		(uuid "03112a1d-1a03-4e02-8725-d636553c9078")
 		(property "Reference" "C8"
-			(at 111.252 226.314 90)
+			(at 109.474 229.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13159,7 +13159,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 111.506 233.934 90)
+			(at 116.332 230.124 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14137,7 +14137,7 @@
 		(dnp no)
 		(uuid "3c50716e-c487-4087-b469-ffa0028f1455")
 		(property "Reference" "C13"
-			(at 150.622 226.314 90)
+			(at 149.098 229.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14145,7 +14145,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 150.876 233.934 90)
+			(at 156.21 229.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14723,7 +14723,7 @@
 		(dnp no)
 		(uuid "58ad3ac3-1c24-41ac-bd73-7417916cd755")
 		(property "Reference" "C5"
-			(at 101.092 226.314 90)
+			(at 99.568 229.616 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14731,7 +14731,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 101.346 233.934 90)
+			(at 106.426 229.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16359,7 +16359,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 146.05 229.87 0)
+		(at 142.24 229.87 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -16367,7 +16367,7 @@
 		(dnp no)
 		(uuid "db7fe754-8329-4987-9e26-18e46fe1be0b")
 		(property "Reference" "C11"
-			(at 144.272 226.314 90)
+			(at 138.938 229.87 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16375,7 +16375,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 144.526 233.934 90)
+			(at 145.542 229.616 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16383,7 +16383,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 147.0152 233.68 0)
+			(at 143.2052 233.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16392,7 +16392,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 146.05 229.87 0)
+			(at 142.24 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16400,7 +16400,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 146.05 229.87 0)
+			(at 142.24 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)

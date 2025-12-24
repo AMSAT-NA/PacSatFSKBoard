@@ -44,12 +44,12 @@ used as a GPIO.
 
 |Pin3	|CPU Pin Name			|Schematic Name			|G |Description |
 |----	|------------			|--------------			|--|----------- |
-|1		|GIOB[3]				|OTHER\_FAULT\_N		|ID|Fault line from other board |
+|1		|GIOB[3]				|OTHER\_FAULT			|ID|Fault line from other board |
 |2		|GIOA[0]				|						| D|free gpio|
 |3		|MIBSPI3NCS[3]			|I2C\_SCL				|OU|RTC control (MAX31331TETB+) |
 |4		|MIBSPI3NCS[2]			|I2C\_SDA				|BU|RTC control (MAX31331TETB+) |
 |5		|GIOA[1]				|AX5043\_IRQ\_RX1		|ID|Interrupt from AX5043 RX1 |
-|6		|N2HET1[11]				|OTHER\_HW\_POWER\_OFF\_N|ID|Power off state for the other board |
+|6		|N2HET1[11]				|OTHER\_HW\_POWER\_ST   |ID|Power off state for the other board |
 |7		|FLTP1					|						|  | |
 |8		|FLTP2					|						|  | |
 |9		|GIOA[2]				|OTHER\_PRESENCE\_N		|ID|Presence line from other board |
@@ -277,7 +277,8 @@ various signals from the control board of the satellite.
 	external active/standby control, this is an input that another
 	entity must pull low to cause the board to go active.
 	
-  - FAULT[12]\_N - Output from boardn, the processor is reporting an error.
+  - FAULT[12] - Output from boardn, the processor is reporting an error.
+    Positive logic (high is fault).
 
   - UMBILICAL\_ATTACHED - Input to the board, if high the satellite is in
     the launch vehicle.  This inhibits transmit in hardware and causes
@@ -465,7 +466,7 @@ The lines on the PC104 are:
   (even if it is powered down).  It will be high if not present and
   low if present.
   
-- FAULTn\_N - This is used to tell if the other board has had a fault
+- FAULTn - This is used to tell if the other board has had a fault
   and is failing.  This board can take over processing at that point.
   
 - ACTIVEn\_N - Used to tell which board is active.  The board that is
@@ -477,8 +478,8 @@ The lines on the PC104 are:
   other board.
 
 The lines from the other board become OTHER\_PRESENCE\_N,
-OTHER\_FAULT\_N, OTHER\_ACTIVE\_N, and OTHER\_HW\_POWER\_OFF\_N on a
-board.  The lines for this board become PRESENCE\_N, FAULT\_N,
+OTHER\_FAULT, OTHER\_ACTIVE\_N, and OTHER\_HW\_POWER\_OFF on a
+board.  The lines for this board become PRESENCE\_N, FAULT,
 ACTIVE\_N, and HW\_POWER\_OFF\_N.
 
 The active board may also be externally controlled.  If the
@@ -538,7 +539,7 @@ Active/Standby State Machine
 ----------------------------
 
 The logic below is for the board being active or not.  For instance,
-if OTHER\_FAULT\_N is low, then it is true.  These are all this way
+if OTHER\_FAULT is low, then it is true.  These are all this way
 since they are all negative logic.  This is only used if the active
 state is not externally controlled.
 
@@ -553,14 +554,14 @@ The boards will switch activity periodically to test the other board.
       - start timer
 
   - Inactive:
-    - OTHER\_FAULT\_N -> ActiveOtherBoardPresent
+    - OTHER\_FAULT -> ActiveOtherBoardPresent
       - power cycle other board.
     - !OTHER\_ACTIVE\_N -> ActiveOtherBoardPresent
     - !OTHER\_PRESENCE\_N -> ActiveOtherBoardNotPresent
       - log presence issue
 
   - InactiveWaitActivate:
-    - OTHER\_FAULT\_N -> ActiveOtherBoardPresent
+    - OTHER\_FAULT -> ActiveOtherBoardPresent
       - stop timer
       - power cycle other board.
     - OTHER\_ACTIVE\_N -> Inactive
@@ -571,7 +572,7 @@ The boards will switch activity periodically to test the other board.
       - log presence issue
 
   - ActiveOtherBoardPresent:
-    - OTHER\_FAULT\_N -> ActiveOtherBoardPresent
+    - OTHER\_FAULT -> ActiveOtherBoardPresent
       - power cycle other board.
     - OTHER\_ACTIVE\_N -> Inactive
     - !OTHER\_PRESENCE\_N -> ActiveOtherBoardNotPresent

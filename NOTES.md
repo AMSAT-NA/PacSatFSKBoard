@@ -1732,3 +1732,22 @@ higher than the other.  I realized the ground plane is still there,
 and it's possible that is messing up the measurements.  It might be
 possible to move the coupled line to below the main signal.  Not sure,
 I could use some expertise with this.
+
+## 2025-12-23
+
+To prevent signal latch-up on the signals between the two processors,
+what was there was not enough.  Putting a buffer there just moves the
+problem back one level, the buffer might latch up.  Use MOSFETs to
+handle the signals.  All signals will a MOSFET driving them and are
+pulled high by default.  The MOSFET buffers the signal.  I'm not 100%
+sure latch ups are happening, but I know when a processor is powered
+off on these lines the signal will be pulled low by the processors.
+These MOSFETs should fix the problem in either case.
+
+The required changing some lines from positive to negative logic.  The
+ACTIVE driver from the CPU was already changed.  Change
+OTHER\_HW\_POWER\_OFF\_N to OTHER\_HW\_POWER\_ST to better reflect its
+function and to change it to positive logic.  And change the FAULT_N
+lines to FAULT.  Changing FAULT to positive logic also makes the FAULT
+line assert when the board is powered off, which is probably a good
+thing.
