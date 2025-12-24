@@ -123,7 +123,7 @@ def xlat_footprint(s):
 # somewhat higher Q values than the Murata parts.
 value_to_partnum_xlats_1 = {
     ('1nH',     	'0402'): ('Coilcraft',	'0402DC-1N0XJRW '),
-    ('3.3nH 2%',	'0603'): ('Coilcraft',	'0603DC-3N3XGRW'),
+    ('3.0nH 2%',	'0603'): ('Coilcraft',	'0603DC-3N0XGRW'),
     ('5.8nH 2%',	'0402'): ('Coilcraft',	'0402DC-5N8XGRW'),
     ('11nH 2%', 	'0603'): ('Coilcraft',	'0603DC-11NXGRW'),
     ('16nH 2%', 	'0402'): ('Coilcraft',	'0402DC-16NXGRW'),
@@ -152,7 +152,7 @@ value_to_partnum_xlats_1 = {
 # certified.
 value_to_partnum_xlats_1b = {
     ('1nH',     	'0402'): ('Murata',	'LQG15WZ1N0B02D'),
-    ('3.3nH 2%',	'0603'): ('Murata',	'LQW18AS3N3G0ZD'),
+    ('3.0nH 2%',	'0402'): ('Murata',	'LQW15AS3N0G8ZD'),
     ('5.8nH 2%',	'0402'): ('Murata',	'LQW15AN5N8G8ZD'),
     ('11nH 2%', 	'0603'): ('Murata',	'LQW18AS11NG0ZD'),
     ('18nH 2%', 	'0603'): ('Murata',	'LQW18AS18NG0ZD'),

@@ -2392,16 +2392,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "Was L35"
-		(exclude_from_sim no)
-		(at 70.866 146.558 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-		)
-		(uuid "2947dd99-0065-40c6-abf7-9c149b7c180f")
-	)
 	(text "Place by the PA."
 		(exclude_from_sim no)
 		(at 165.354 237.744 0)
@@ -5986,7 +5976,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+		(property "Footprint" "Inductor_SMD:L_0402_1005Metric_Pad0.77x0.64mm_HandSolder"
 			(at 58.42 152.4 0)
 			(effects
 				(font

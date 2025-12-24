@@ -1986,7 +1986,7 @@
 	)
 	(text "16 dBm Max Power Out @ 430 MHz\nIf the PA works as expected,\nThe maximum output here should\nbe limited in the AX5043 to 13dBm\nto avoid overdriving the PA."
 		(exclude_from_sim no)
-		(at 110.49 179.07 0)
+		(at 84.328 183.896 0)
 		(effects
 			(font
 				(size 1.524 1.524)

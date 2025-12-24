@@ -1751,3 +1751,11 @@ function and to change it to positive logic.  And change the FAULT_N
 lines to FAULT.  Changing FAULT to positive logic also makes the FAULT
 line assert when the board is powered off, which is probably a good
 thing.
+
+I looked at putting a filter at the output of the AX5043 to reduce
+harmonics there.  However, the harmonics were 36dB down from the main
+signal, even before going through the match, so it's not necessary.
+
+Changed L27 to a 0402 part and reworked the layout a little more
+there.  Also changed it to a 3nH part to adjust for parasitic
+inductance in the circuit.
