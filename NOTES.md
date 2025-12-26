@@ -1788,5 +1788,5 @@ isn't out of the ordinary, I think.
 I also measured across 144MHz to 148MHz, it was fairly even, less than
 1dB of difference.
 
-Head from the LNA doesn't appear to be a concern.  It is drawing 50ma,
+Heat from the LNA doesn't appear to be a concern.  It is drawing 50ma,
 but that appears to be dissipated pretty well.
