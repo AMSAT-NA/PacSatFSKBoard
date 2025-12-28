@@ -89,8 +89,9 @@ Rework that a bit to get the signs in a little nicer place:
 \end{dmath}
 
 The imaginary part of this equation needs to be zero since the result
-should be the real value for the impedance of $X_1$.  So solve that
-for zero:
+should be the real value for the impedance of $X_1$.  (Well, if it was
+imaginary here, it would result in resistance when multiplying by $j$,
+but we don't really want that either).  So solve that for zero:
 \begin{dmath}
   Z_{1i}^2 - R_a Z_{1r} - Z_{1r}^2 = 0
 \end{dmath}
@@ -150,12 +151,14 @@ but with direct calculation.
 
 For $Z_{br} > R_a$ we have to work a little different.  If you try to
 plug that into the previous equation, you will get negative values
-inside the square root.  So flip the positions of $X_1$ and $X_2$ as
-shown in Figure \ref{LMatch2}.  We call this L match type 2. Then we
-move $Z_b$ until it's real impedance is $R_a$ and then calculate
-$X_2$.  And remember that simplification for $R_a$ being real?  It no
-longer applies.  So the math gets more complicated.  So lets change
-$R_a$ to $Z_a$ for a more general case.
+inside the square root.  You might be able to use that to calculate
+the imaginary part first, but I haven't looked at that.  It's easier
+to flip the positions of $X_1$ and $X_2$ as shown in Figure
+\ref{LMatch2}.  We call this L match type 2. Then we move $Z_b$ until
+it's real impedance is $R_a$ and then calculate $X_2$.  And remember
+that simplification for $R_a$ being real?  It no longer applies.  So
+the math gets more complicated.  So lets change $R_a$ to $Z_a$ for a
+more general case.
 
 \begin{figure}[ht]
   \caption{L Match for $Z_{br} > Z_{ar}$}\label{LMatch2}
