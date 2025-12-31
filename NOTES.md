@@ -9,6 +9,10 @@ some point.
 
 # TODO
 
+Add a back side heat sink for the PA, as specified in the manual.
+Also fix the ground via layout per specification and move the ground
+plan under the chip.
+
 The RF input pins to the RF power measurement chips say they are 50
 ohms, so there is no need for the 50 ohm resistors there.
 
@@ -1790,3 +1794,82 @@ I also measured across 144MHz to 148MHz, it was fairly even, less than
 
 Heat from the LNA doesn't appear to be a concern.  It is drawing 50ma,
 but that appears to be dissipated pretty well.
+
+## 2025-12-29
+
+After receiving all the proper inductors, replaced L27 with 2.7nH, L38
+with 5.0nH, L30 with 20nH, and L33 with 16nH.  The PA started behaving
+strangely, when pushed up close to maximum power it would shut down,
+and periodically try to start and shut down again.  I changed C27 (was
+L35) to a 47pF capacitor like it was supposed to be and it improved,
+but not like it was.  I can get about 1W out of the far end (input
+power around 50% of the AX5043's max) before it shuts down.  I put
+everything back like it was before and it still has an issue.  In fact
+it's worse, I can't even get .5W out.
+
+Lowering the voltage to 4V causes the problem to go away, but it's
+only putting out about .5W in that case.
+
+And I realized that it might be the current limiter for the PA.  And
+it was, it's drawing more current than it will allow.  So it's drawing
+more current than it was before, but why?
+
+I had recently replaced L37 with a 100nH part (ferrite), maybe that
+was it?  But replacing that with a 47nH ceramic part didn't make any
+difference.  I put the 100nH part back.
+
+Measured the voltage drop across R79 (2.34V) and R78 (2.9V).  The R79
+value is pretty close to my previous measurement (2.54V, 9ma) but R78
+is different (before 3.86V, 14ma).  I double checked the resistances
+and they are correct.
+
+I checked the RF input for shorts, nothing.
+
+## 2025-12-29
+
+For R78 as mentioned yesterday, I realized that this is bias voltage.
+It should be in the 2.5V range, not 3.86V.  I probably did the
+previous measurement when the amp wasn't working at all.
+
+I also realized I hadn't put everything back yet.  I had put back in
+C125, which was removed before.
+
+I measure the quiescent power to the PA, and it's now 500ma, not 400ma
+like it was (board 6).  Nothing changed that should affect the
+quiescent current, so maybe the chip got damaged?  The only think I
+can think of is heat.  It did get to about 60C on the thermsistor.  I
+wouldn't think that would be an issue, though, it's supposed to be
+good to 85C.
+
+After re-reading the TQP7M9106 manual, there is some reference to a
+back side heat sink in the PCB Mounting Pattern section.  That needs
+to be done.
+
+Switched to working on board 5 (I had been working on board 6).  I
+replaced the PA input and output match, the PA output filter is
+unpopulated enough to disable it.  I put the power meter at the output
+of the PA I was able to get just shy of 2W out of it at 435MHz.  At
+440MHz it was around 1W.  Looking at simulations, the match on the
+input side of the PA is fairly narrow.  And looking at the
+measurements and comparing to simulation, there are likely some
+not-so-great layout issues adding around 1nH to the PA input on the
+version 2 board.  This should be fixed in version 3 with the new
+layout.
+
+Anyway, the current match works from about 410MHz to 436MHz 1dB
+points, which maps pretty well to simulation with a 47pF cap and a
+3.7nH inductor (really 2.7nH, but with 1nH parasitics).  From
+simulation this should probably be around 42pF.
+
+Leaving board 5 with the output filter disconnected so I can continue
+to use it for that.  Switching to board 8.
+
+On board 8, I had the same problem with board 5.  I did all the part
+changes on the PA input and output matches, including removing C125.
+It was drawing 500ma quiescent.  On a whim, I removed C124 and L30 to
+isolate the PA.  It then drew 600ma.  I realized I hadn't plugged in a
+terminator, so I did that and it went back to 400ma.  It was able to
+put out 1.5W.  So somehow the input impedance to the output filter is
+not correct.  So, the PAs on boards 6 and 8 are not bad, it appears.
+I didn't think the impedance match could affect the quiescent current,
+but here we are.

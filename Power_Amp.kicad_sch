@@ -2537,6 +2537,16 @@
 		)
 		(uuid "ef979d90-e852-490c-a0be-ddbebb8c6dae")
 	)
+	(text "Really 3.3nH, but account\nfor parasitic inductance."
+		(exclude_from_sim no)
+		(at 39.37 153.67 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "fceb2ca6-b40c-4d7e-9280-0e68004c0cf2")
+	)
 	(junction
 		(at 143.51 160.02)
 		(diameter 0)
@@ -3963,7 +3973,7 @@
 	)
 	(wire
 		(pts
-			(xy 68.58 115.57) (xy 68.58 121.92)
+			(xy 68.58 115.57) (xy 68.58 116.84)
 		)
 		(stroke
 			(width 0)
@@ -5968,7 +5978,7 @@
 				)
 			)
 		)
-		(property "Value" "3.3nH 2%"
+		(property "Value" "3.0nH 2%"
 			(at 56.134 153.162 90)
 			(effects
 				(font
@@ -7023,7 +7033,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 68.58 125.73 0)
+		(at 68.58 120.65 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7032,7 +7042,7 @@
 		(dnp no)
 		(uuid "63db147d-1e1e-4e3c-bb2d-2ffb343e37d3")
 		(property "Reference" "C113"
-			(at 74.93 123.19 0)
+			(at 74.676 121.412 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7040,7 +7050,7 @@
 			)
 		)
 		(property "Value" "100pF"
-			(at 74.93 120.65 0)
+			(at 74.676 118.872 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7048,7 +7058,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 67.6148 129.54 0)
+			(at 67.6148 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7057,7 +7067,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 68.58 125.73 0)
+			(at 68.58 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7066,7 +7076,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 68.58 125.73 0)
+			(at 68.58 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7705,7 +7715,7 @@
 				)
 			)
 		)
-		(property "Value" "5.8nH 2%"
+		(property "Value" "5.0nH 2%"
 			(at 223.012 170.18 90)
 			(effects
 				(font
@@ -8765,7 +8775,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 68.58 129.54 0)
+		(at 68.58 124.46 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8774,7 +8784,7 @@
 		(dnp no)
 		(uuid "bbc29ae9-8940-4af7-b58f-4152c2499d3c")
 		(property "Reference" "#PWR0221"
-			(at 68.58 135.89 0)
+			(at 68.58 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8783,7 +8793,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 68.453 133.9342 0)
+			(at 68.453 128.8542 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8791,7 +8801,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 68.58 129.54 0)
+			(at 68.58 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8800,7 +8810,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 68.58 129.54 0)
+			(at 68.58 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8809,7 +8819,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 68.58 129.54 0)
+			(at 68.58 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)

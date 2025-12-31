@@ -16,15 +16,12 @@
 
 Rsrc in     vmin1  50
 
-.if (1)
-
 * TX PA input matcher
 * Q=65, Coilcraft 0603DC
 C0	vmin2   a1b     1n
-L1	a1b	a1a	4.3n
+L1	a1b	a1a	3.3n
 Rl1     a1a	0	.13
-C1	vmin2	a1	37p
-.endif
+C1	vmin2	a1	47p
 
 * -1.04 ohms at 435MHz
 Cout a1     vmout1 350p
