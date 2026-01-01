@@ -1825,7 +1825,7 @@ and they are correct.
 
 I checked the RF input for shorts, nothing.
 
-## 2025-12-29
+## 2025-12-30
 
 For R78 as mentioned yesterday, I realized that this is bias voltage.
 It should be in the 2.5V range, not 3.86V.  I probably did the
@@ -1873,3 +1873,14 @@ put out 1.5W.  So somehow the input impedance to the output filter is
 not correct.  So, the PAs on boards 6 and 8 are not bad, it appears.
 I didn't think the impedance match could affect the quiescent current,
 but here we are.
+
+## 2025-12-31
+
+Re-added C124, C125, and L30 (20nH) on board 8.  C125 is required for
+impedance matching.  Now it's not passing much power at all through
+the filter.
+
+Reworked the RF output filter a bit to move the frequency up a bit and
+hopefully improve performance.  Some of the inductors and capacitors are
+changed and the simulation is adjust and modified to calculate input and
+output impedance.

@@ -5779,7 +5779,7 @@
 				)
 			)
 		)
-		(property "Value" "6.2pF ±.1 30V"
+		(property "Value" "6.0pF ±.1 30V"
 			(at 286.512 169.926 90)
 			(effects
 				(font
@@ -6718,7 +6718,7 @@
 				)
 			)
 		)
-		(property "Value" "12pF 1% 30V"
+		(property "Value" "11pF 1% 30V"
 			(at 267.462 169.926 90)
 			(effects
 				(font
@@ -7974,9 +7974,9 @@
 		(at 255.27 160.02 90)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "8c0f3814-478a-4dd7-98de-462836f863e3")
 		(property "Reference" "C125"
 			(at 255.524 153.924 90)
@@ -8453,6 +8453,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" ""
@@ -8855,7 +8856,7 @@
 				)
 			)
 		)
-		(property "Value" "2pF ±.05 30V"
+		(property "Value" "2.0pF ±.05 30V"
 			(at 274.574 156.464 90)
 			(effects
 				(font
