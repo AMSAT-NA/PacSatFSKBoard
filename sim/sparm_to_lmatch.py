@@ -21,6 +21,7 @@ from two_port_conversions import *
 
 rect = False
 verbose = False
+read_sparm = True
 
 def get_complex(i, n):
     return float(i[n]) + 1j * float(i[n+1])
@@ -66,48 +67,59 @@ while len(args) > 1:
         rect = True
     elif args[0] == "-verbose":
         verbose = True
+    elif args[0] == "-z":
+        read_sparm = False
     else:
         raise Exception("Invalid parameter: " + args[0])
     del(args[0])
     pass
 
-if len(args) < 2:
+if read_sparm and len(args) < 2:
     print("Two parameters: [-rect] <freq> <file>")
+    raise Exception("Not enough parameters")
+elif not read_sparm and len(args) < 5:
+    print("-z <freq> <in real> <in imag> <out real> <out imag>")
     raise Exception("Not enough parameters")
 
 freq = float(args[0])
+del(args[0])
 
-p = get_sparms(freq, args[1])
+if read_sparm:
+    p = get_sparms(freq, args[0])
 
-if rect:
-    p[1] = rect_to_db_degrees(p[1])
-    p[3] = rect_to_db_degrees(p[3])
-    pass
+    if rect:
+        p[1] = rect_to_db_degrees(p[1])
+        p[3] = rect_to_db_degrees(p[3])
+        pass
 
-# Interpolate those to the frequency
-sdb = interp_matrix(p[1], p[0], p[3], p[2], freq)
+    # Interpolate those to the frequency
+    sdb = interp_matrix(p[1], p[0], p[3], p[2], freq)
 
-# Now convert those to rectangular coordinates for use in the conversions
-s = matrix_db_degrees_to_rect(sdb)
+    # Now convert those to rectangular coordinates for use in the conversions
+    s = matrix_db_degrees_to_rect(sdb)
 
-# Convert to a Z matrix
-z = s_to_z(s, z0_50)
+    # Convert to a Z matrix
+    z = s_to_z(s, z0_50)
 
-print(f'{freq/1e6} MHz')
-if verbose:
-    print(f'Sdb_{p[0]}: \n{p[1]}\n')
-    print(f'Sdb_{p[2]}: \n{p[3]}\n')
-    print(f'Sdb_{freq}: \n{sdb}\n')
-    print(f'S_{freq}: \n{s}\n')
-    print(f'Z_{freq}: \n{z}\n')
+    print(f'{freq/1e6} MHz')
+    if verbose:
+        print(f'Sdb_{p[0]}: \n{p[1]}\n')
+        print(f'Sdb_{p[2]}: \n{p[3]}\n')
+        print(f'Sdb_{freq}: \n{sdb}\n')
+        print(f'S_{freq}: \n{s}\n')
+        print(f'Z_{freq}: \n{z}\n')
+        pass
+
+    # Now calculate zin and zout from the z matrix.
+    zin = z_to_zin(z, zl)
+    zout = z_to_zout(z, zs)
+else:
+    zin = float(args[0]) + 1j * float(args[1])
+    zout = float(args[2]) + 1j * float(args[3])
     pass
 
 zl = 50
 zs = 50
-
-# Now calculate zin and zout from the z matrix.
-zin = z_to_zin(z, zl)
-zout = z_to_zout(z, zs)
 
 def imp_to_part_string(x, freq):
     if x < 0:

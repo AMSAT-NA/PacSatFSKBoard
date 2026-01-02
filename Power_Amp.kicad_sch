@@ -5583,12 +5583,13 @@
 				)
 			)
 		)
-		(property "Value" "16nH 2%"
+		(property "Value" "17nH 2%"
 			(at 274.32 150.622 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_0402_1005Metric_Pad0.77x0.64mm_HandSolder"
@@ -5779,7 +5780,7 @@
 				)
 			)
 		)
-		(property "Value" "6.0pF 1% 30V"
+		(property "Value" "5.4pF ±.05 30V"
 			(at 286.512 169.926 90)
 			(effects
 				(font
@@ -7248,7 +7249,7 @@
 				)
 			)
 		)
-		(property "Value" "22pF 1% 30V"
+		(property "Value" "18pF 1% 30V"
 			(at 213.36 163.322 90)
 			(effects
 				(font
@@ -7715,7 +7716,7 @@
 				)
 			)
 		)
-		(property "Value" "5.0nH 2%"
+		(property "Value" "5.8nH 2%"
 			(at 223.012 170.18 90)
 			(effects
 				(font
@@ -9050,7 +9051,7 @@
 				)
 			)
 		)
-		(property "Value" "6.8pF 1% 30V"
+		(property "Value" "6.4pF ±.1 30V"
 			(at 248.412 169.926 90)
 			(effects
 				(font

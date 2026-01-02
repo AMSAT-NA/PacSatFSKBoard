@@ -1884,3 +1884,13 @@ Reworked the RF output filter a bit to move the frequency up a bit and
 hopefully improve performance.  Some of the inductors and capacitors are
 changed and the simulation is adjust and modified to calculate input and
 output impedance.
+
+## 2026-01-02
+
+Discussed with Bob over email about various things.
+
+I found a calculator at
+https://wcalc.sourceforge.net/cgi-bin/coplanar.cgi that let me
+calculate inductance and capacitance for traces.  After calculating
+the output of the PA to the input of the match, I'm seeing some pretty
+significant numbers there, enough to throw things off a log.

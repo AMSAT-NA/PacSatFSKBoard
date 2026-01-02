@@ -9,8 +9,10 @@
 .SUBCKT ImpMatchPAOut in  out
 
 * Impedance matching network
-C1	in	out	27p
-L1	out	a3	5.8n
+C1	in	out	18p
+* Coilcraft 0402DC-5N8XGRW 5.8nH
+* Add .2nH 
+L1	out	a3	6.0n
 Rl1	a3	0	.34
 Cl1	out	0	.037p
 
@@ -33,15 +35,15 @@ Cl1	out	0	.037p
 * The 5th order filter here is -50dB at the first harmonic of 435MHz.
 
 * 7.01p
-* Use a 6.8p cap, add .6p for parasitics
-C1	in	0	7.4p
+* Use a 6.4p cap, add .6p for parasitics
+C1	in	0	7.0p
 
 * 20.8n
-* Coilcraft 0402DC-20NX_RW Q=48@435MHz
+* Coilcraft 0402DC-20NX_RW Q=48@435MHz SRF=5.11
 * Add .4nH for parasitics
 L2	in	a1	20.4n
-Rl2	a1	a2	1.1
-Cl2	in	a2	.046p
+Rl2	a1	a2	1.13
+Cl2	in	a2	.048p
 * 735f
 C2	in	a2	.75p
 
@@ -50,17 +52,17 @@ C2	in	a2	.75p
 C3	a2	0	11.6p
 
 * 17.22n
-* Coilcraft 0402DC-16NX_RW Q=48@435MHz
+* Murata LQW15AN17NG8ZD 17nF, Q=46@439MHz, SRF=5G
 * Add .4nH for parasitics
-L4	a2	a3	16.4n
-Rl4	a3	out	.89
-Cl4	a2	out	.045p
+L4	a2	a3	17.4n
+Rl4	a3	out	1.01
+Cl4	a2	out	.059p
 * 2.07p
-C4	a2	out	2.0p
+C4	a2	out	2.1p
 
 * 5.94p
-* Use a 6p cap, add .6p for parasitics
-C5	out	0	6.6p
+* Use a 5.4p cap, add .6p for parasitics
+C5	out	0	6.0p
 
 * This is the inductor used to bleed off static from the antenna
 L0	out	b0	470n
@@ -85,7 +87,14 @@ Vmin ina2 in AC 0 DC 0
 * Inductor on the PA output.
 Lpa  in  0 100n
 
-X1 in  im1 ImpMatchPAOut
+* 7mm of trace, coplanar .225mm with .5mm spacing, .109mm over ground
+* Calculated from https://wcalc.sourceforge.net/cgi-bin/coplanar.cgi
+* .31uH/mm, .134pF/mm
+Lp1  in  in1 2.1n
+Cp1  in1 0   .93p
+* Output impedance of this is 4.8 + .82j
+
+X1 in1 im1 ImpMatchPAOut
 
 X2 im1 out Filt440MHz
 
@@ -117,6 +126,23 @@ Rin in 0 50
 
 .endif
 
+* Now just the filter
+.if (m == 4)
+Vin ina 0 dc 0 AC 1 sin(0 1 435MEG 0 0 0)
+
+Rsrc ina ina1 50
+
+* Used for current measurement.
+Vmin ina1 in AC 0 DC 0
+
+X1 in out Filt440MHz
+
+* Used for current measurement.
+Vmout out out2 DC 0 AC 0
+
+Rload out2 0    50
+.endif
+
 .control
 *tran 1ns 102000ns 101000ns
 *plot v(in1), v(out)
@@ -136,6 +162,12 @@ alterparam m = 3
 reset
 ac lin 50000 3Meg 1000Meg
 plot title "Filter Only Output Impedance" v(out) vi(out)
+
+alterparam m = 4
+reset
+ac lin 50000 3Meg 1000Meg
+plot title "Filter Loss" db((v(out) * i(Vmout)) / (v(ina1) * i(Vmin)))
+*plot vr(out) vi(out) vp(out)
 
 .endc
 
