@@ -33,7 +33,8 @@ Cl1	out	0	.037p
 * The 5th order filter here is -50dB at the first harmonic of 435MHz.
 
 * 7.01p
-C1	in	0	7.3p
+* Use a 6.8p cap, add .6p for parasitics
+C1	in	0	7.4p
 
 * 20.8n
 * Coilcraft 0402DC-20NX_RW Q=48@435MHz
@@ -45,7 +46,8 @@ Cl2	in	a2	.046p
 C2	in	a2	.75p
 
 * 11.35p
-C3	a2	0	11p
+* Use a 11p cap, add .6p for parasitics
+C3	a2	0	11.6p
 
 * 17.22n
 * Coilcraft 0402DC-16NX_RW Q=48@435MHz
@@ -53,11 +55,12 @@ C3	a2	0	11p
 L4	a2	a3	16.4n
 Rl4	a3	out	.89
 Cl4	a2	out	.045p
-* 2.16p
+* 2.07p
 C4	a2	out	2.0p
 
 * 5.94p
-C5	out	0	6.0p
+* Use a 6p cap, add .6p for parasitics
+C5	out	0	6.6p
 
 * This is the inductor used to bleed off static from the antenna
 L0	out	b0	470n

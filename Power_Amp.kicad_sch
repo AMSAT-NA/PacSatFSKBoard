@@ -5779,7 +5779,7 @@
 				)
 			)
 		)
-		(property "Value" "6.0pF ±.1 30V"
+		(property "Value" "6.0pF 1% 30V"
 			(at 286.512 169.926 90)
 			(effects
 				(font
@@ -9050,7 +9050,7 @@
 				)
 			)
 		)
-		(property "Value" "7.3pF ±.1 30V"
+		(property "Value" "6.8pF 1% 30V"
 			(at 248.412 169.926 90)
 			(effects
 				(font
