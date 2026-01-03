@@ -9,9 +9,8 @@ some point.
 
 # TODO
 
-Add a back side heat sink for the PA, as specified in the manual.
-Also fix the ground via layout per specification and move the ground
-plan under the chip.
+Figure out how to mount a heat sink under the PA, what holes are
+required, etc.  The copper pad is already exposed.
 
 Go through all the pins on the CPU and remove any unnecessary pull ups
 and pull downs in the HCG software to save some power.
@@ -26,7 +25,7 @@ The chosen LNA (QPL9547) has very good specs (a NF of .3dB) but draws
 a lot of current (50ma).  Other possible options are Guerrilla RF
 GRF2374, GRF4001, Skyworks LNAs (SKY67150-396LF, SKY67183-396LF,
 SKY65015-70LF), or Qorvo SGL0622Z.  The Qorvo part is very low power,
-simple, but the NF is 1.4db.  The SKY67150-396LF has a similar NF to
+simple, but the NF is 1.4dB.  The SKY67150-396LF has a similar NF to
 the QPL9547, but draws 85ma.  Looking over the parts, the QPL9547
 seems to be the best part for optimizing for NF, and the SGL0622Z is
 best for optimizing power.  It also has built-in matching, but is 3.3V
@@ -704,6 +703,10 @@ opted for adding a diode between 3.3V and VCC on the chip with a
 The RF input pins to the RF power measurement chips say they are 50
 ohms, so there is no need for the 50 ohm resistors there.  Resistors
 are removed.
+
+Add a back side heat sink for the PA, as specified in the manual.
+Also fix the ground via layout per specification and move the ground
+plan under the chip.
 
 # Not going to do
 
@@ -1907,3 +1910,6 @@ tried it as 450MHz, and it puts out about 1.1W.  As expected.
 The RF input pins to the RF power measurement chips say they are 50
 ohms, so there is no need for the 50 ohm resistors there, so remove
 those resistors.
+
+Rework under the PA to expose the copper there for a heat sink and
+put the proper vias.
