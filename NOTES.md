@@ -13,9 +13,6 @@ Add a back side heat sink for the PA, as specified in the manual.
 Also fix the ground via layout per specification and move the ground
 plan under the chip.
 
-The RF input pins to the RF power measurement chips say they are 50
-ohms, so there is no need for the 50 ohm resistors there.
-
 Go through all the pins on the CPU and remove any unnecessary pull ups
 and pull downs in the HCG software to save some power.
 
@@ -703,6 +700,10 @@ the issue.  A resistor would have to be pretty large to avoid the
 issue, and the voltage drop across it might cause issues.  Instead I
 opted for adding a diode between 3.3V and VCC on the chip with a
 1uF capacitor, which should give it plenty of time.
+
+The RF input pins to the RF power measurement chips say they are 50
+ohms, so there is no need for the 50 ohm resistors there.  Resistors
+are removed.
 
 # Not going to do
 
@@ -1893,4 +1894,16 @@ I found a calculator at
 https://wcalc.sourceforge.net/cgi-bin/coplanar.cgi that let me
 calculate inductance and capacitance for traces.  After calculating
 the output of the PA to the input of the match, I'm seeing some pretty
-significant numbers there, enough to throw things off a log.
+significant numbers there, enough to throw things off a lot.
+
+So everything is recalculated, and I've modified the filter a bit, too.
+
+I don't have the proper changes for the filter itself, but I have the
+right parts for the L-match.  And with that fixed, I was able to get
+1.7W out of the filter.  The filter issue has to be with the frequency
+being too low, so that makes sense.  It should work ok at 435MHz.  I
+tried it as 450MHz, and it puts out about 1.1W.  As expected.
+
+The RF input pins to the RF power measurement chips say they are 50
+ohms, so there is no need for the 50 ohm resistors there, so remove
+those resistors.

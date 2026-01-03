@@ -2466,16 +2466,6 @@
 		)
 		(uuid "72981b7f-fa0c-42ff-9460-112a1d210be6")
 	)
-	(text "C125 is DNP because parasitic capacitance is enough\nto do what is required here.  And the simulation\nbears this out, it's not necessary.  Leave the pads\nin place in case it needs to be added."
-		(exclude_from_sim no)
-		(at 269.24 203.962 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-		)
-		(uuid "7511a5d5-bf5d-426f-8238-dae8c8a15e10")
-	)
 	(text "2W (33dBm) into 50 ohms is 10V RMS, ~14.3V peak\nto peak on the right side of the impedance converter.\nPick appropriate devices."
 		(exclude_from_sim no)
 		(at 245.872 219.71 0)
@@ -2486,7 +2476,7 @@
 		)
 		(uuid "7921cee6-3643-4410-a3a7-84417ea57323")
 	)
-	(text "5th order Elliptic low pass 460MHz cutoff,\n.1dB ripple in passband, 50dB stopband\nattenuation."
+	(text "5th order Elliptic low pass 480MHz cutoff,\n.1dB ripple in passband, 50dB stopband\nattenuation."
 		(exclude_from_sim no)
 		(at 264.414 191.77 0)
 		(effects
@@ -2517,9 +2507,9 @@
 		)
 		(uuid "d3602d58-4abf-44b7-9a95-14bf17ca573e")
 	)
-	(text "Output impedance is 4.63 - j.508 ohms\nThis converts to 50 ohms\nat 435MHz"
+	(text "Output impedance if the PA is\n4.63 - j.508 ohms.  The 7mm trace\nbetween the PA and the match is\n2.2nH with .91pF, converting the\nimpedance to 4.8 + j .82 ohms.\nThis L-match converts to 50 ohms\nat 435MHz"
 		(exclude_from_sim no)
-		(at 216.916 190.246 0)
+		(at 210.82 191.77 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2558,12 +2548,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "01c0fd4e-4546-4cb0-a322-9871a6ccec97")
-	)
-	(junction
-		(at 316.23 138.43)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0db95bd0-9c42-4739-83c6-7f1ed23d41bd")
 	)
 	(junction
 		(at 354.33 90.17)
@@ -2618,12 +2602,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4012eb43-5229-4797-8f49-9095a1dd7474")
-	)
-	(junction
-		(at 369.57 138.43)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "466edf4a-d545-4d0a-b9e5-89017de7b42d")
 	)
 	(junction
 		(at 124.46 45.72)
@@ -3253,16 +3231,6 @@
 	)
 	(wire
 		(pts
-			(xy 369.57 149.86) (xy 369.57 152.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "25b96dc1-4426-4300-956a-5c996d4504c2")
-	)
-	(wire
-		(pts
 			(xy 248.92 31.75) (xy 254 31.75)
 		)
 		(stroke
@@ -3863,16 +3831,6 @@
 	)
 	(wire
 		(pts
-			(xy 316.23 149.86) (xy 316.23 152.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "64df4a09-ae3f-4ac3-9d3c-b3aee6b8dc82")
-	)
-	(wire
-		(pts
 			(xy 83.82 147.32) (xy 83.82 139.7)
 		)
 		(stroke
@@ -3890,16 +3848,6 @@
 			(type default)
 		)
 		(uuid "66c2e5f3-593d-4ab9-bd7e-5334cdca8fc9")
-	)
-	(wire
-		(pts
-			(xy 378.46 138.43) (xy 369.57 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "67831b39-b097-4289-b336-3be29f38e8d7")
 	)
 	(wire
 		(pts
@@ -4073,16 +4021,6 @@
 	)
 	(wire
 		(pts
-			(xy 316.23 138.43) (xy 325.12 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7a6e8fdb-2017-4ee6-bfcf-a82b573c74bd")
-	)
-	(wire
-		(pts
 			(xy 354.33 90.17) (xy 354.33 97.79)
 		)
 		(stroke
@@ -4213,16 +4151,6 @@
 	)
 	(wire
 		(pts
-			(xy 316.23 138.43) (xy 316.23 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8e10e12e-e82c-4f18-9fff-12e41db90f63")
-	)
-	(wire
-		(pts
 			(xy 124.46 40.64) (xy 124.46 38.1)
 		)
 		(stroke
@@ -4300,16 +4228,6 @@
 			(type default)
 		)
 		(uuid "a0e07b26-2780-4446-8121-41b1b66df5e2")
-	)
-	(wire
-		(pts
-			(xy 369.57 138.43) (xy 369.57 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a15485a9-3ed7-424e-92cc-bf160b2cfd2d")
 	)
 	(wire
 		(pts
@@ -4533,7 +4451,7 @@
 	)
 	(wire
 		(pts
-			(xy 369.57 138.43) (xy 354.33 138.43)
+			(xy 354.33 138.43) (xy 378.46 138.43)
 		)
 		(stroke
 			(width 0)
@@ -4763,7 +4681,7 @@
 	)
 	(wire
 		(pts
-			(xy 290.83 138.43) (xy 316.23 138.43)
+			(xy 290.83 138.43) (xy 325.12 138.43)
 		)
 		(stroke
 			(width 0)
@@ -5496,70 +5414,6 @@
 			(project "PacSat_Dev_RevD_240614"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
 					(reference "P13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 369.57 152.4 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0e6697b1-d233-4f77-8f11-3465c3729669")
-		(property "Reference" "#PWR0245"
-			(at 369.57 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 369.697 156.7942 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 369.57 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 369.57 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 369.57 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "90279ab3-92dd-4bdd-abcc-aa7849c877cc")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
-					(reference "#PWR0245")
 					(unit 1)
 				)
 			)
@@ -7499,73 +7353,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 369.57 146.05 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "83259e4e-0b12-41c0-b808-4c6f71c54068")
-		(property "Reference" "R82"
-			(at 367.03 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "50Ω"
-			(at 371.856 147.828 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 367.792 146.05 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 369.57 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 369.57 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a83e2045-2a7a-4b12-a135-5ff127b993d2")
-		)
-		(pin "2"
-			(uuid "eef26f89-44a9-4c7a-bd7b-2b367b83d0d6")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
-					(reference "R82")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 347.98 95.25 0)
 		(mirror x)
@@ -8295,70 +8082,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
 					(reference "#PWR0230")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 316.23 152.4 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a0145f9a-6c0c-4e56-b82d-367ba771d3df")
-		(property "Reference" "#PWR0244"
-			(at 316.23 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 316.357 156.7942 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 316.23 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 316.23 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 316.23 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a0eb291a-51d9-432c-8d28-1086474a9c2e")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
-					(reference "#PWR0244")
 					(unit 1)
 				)
 			)
@@ -9626,73 +9349,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
 					(reference "#PWR0243")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 316.23 146.05 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f663e64b-3613-4a89-b50f-aafe186e268e")
-		(property "Reference" "R80"
-			(at 313.69 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "50Ω"
-			(at 318.516 147.828 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 314.452 146.05 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 316.23 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 316.23 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8d7fe75d-ff49-4241-98c1-08b6fec807af")
-		)
-		(pin "2"
-			(uuid "58f41b47-e27d-46c2-8b05-f923db31166f")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
-					(reference "R80")
 					(unit 1)
 				)
 			)
