@@ -9,10 +9,10 @@
 .SUBCKT ImpMatchPAOut in  out
 
 * Impedance matching network
-C1	in	out	18p
-* Coilcraft 0402DC-5N8XGRW 5.8nH
+C1	in	out	20p
+* Coilcraft 0402DC-6N0XGRW 6.0nH
 * Add .2nH 
-L1	out	a3	6.0n
+L1	out	a3	6.2n
 Rl1	a3	0	.34
 Cl1	out	0	.037p
 
@@ -87,12 +87,12 @@ Vmin ina2 in AC 0 DC 0
 * Inductor on the PA output.
 Lpa  in  0 100n
 
-* 7mm of trace, coplanar .225mm with .5mm spacing, .109mm over ground
+* 7mm of trace, coplanar .5mm with .5mm spacing, .109mm over ground
 * Calculated from https://wcalc.sourceforge.net/cgi-bin/coplanar.cgi
-* .31uH/mm, .134pF/mm
-Lp1  in  in1 2.1n
-Cp1  in1 0   .93p
-* Output impedance of this is 4.8 + .82j
+* .19uH/mm, .24pF/mm
+Lp1  in  in1 1.26n
+Cp1  in1 0   1.68p
+* Output impedance of this is 4.8 + 2.8j
 
 X1 in1 im1 ImpMatchPAOut
 

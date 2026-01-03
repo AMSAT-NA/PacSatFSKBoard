@@ -2507,7 +2507,7 @@
 		)
 		(uuid "d3602d58-4abf-44b7-9a95-14bf17ca573e")
 	)
-	(text "Output impedance if the PA is\n4.63 - j.508 ohms.  The 7mm trace\nbetween the PA and the match is\n2.2nH with .91pF, converting the\nimpedance to 4.8 + j .82 ohms.\nThis L-match converts to 50 ohms\nat 435MHz"
+	(text "Output impedance if the PA is\n4.63 - j.508 ohms.  The 7mm trace\nbetween the PA and the match is\n0.5mm wide, which results in\n1.26nH with 1.68pF, converting the\nimpedance to 4.8 + j 2.8 ohms.\nThis L-match converts to 50 ohms\nat 435MHz"
 		(exclude_from_sim no)
 		(at 210.82 191.77 0)
 		(effects
@@ -4999,6 +4999,16 @@
 		)
 		(uuid "fe6590ca-9baa-4dc2-aaea-c1644235c83e")
 	)
+	(label "PA In"
+		(at 76.2 142.24 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "86c8d39f-d8ae-4078-b49b-0aba712d3e29")
+	)
 	(global_label "POW_MEAS_EN"
 		(shape input)
 		(at 326.39 74.93 180)
@@ -7102,7 +7112,7 @@
 				)
 			)
 		)
-		(property "Value" "18pF 1% 30V"
+		(property "Value" "20pF 1% 30V"
 			(at 213.36 163.322 90)
 			(effects
 				(font
@@ -7502,7 +7512,7 @@
 				)
 			)
 		)
-		(property "Value" "5.8nH 2%"
+		(property "Value" "6.0nH 2%"
 			(at 223.012 170.18 90)
 			(effects
 				(font

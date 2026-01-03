@@ -9,11 +9,6 @@ some point.
 
 # TODO
 
-The output impedance of the PA is low, and that means a lot of current
-will be flowing in that trace until it does the impedance match.
-Increasing the width of that trace might be good, it will lower the
-impedance and lower the inductance.
-
 Figure out how to mount a heat sink under the PA, what holes are
 required, etc.  The copper pad is already exposed.
 
@@ -712,6 +707,13 @@ are removed.
 Add a back side heat sink for the PA, as specified in the manual.
 Also fix the ground via layout per specification and move the ground
 plan under the chip.
+
+Taper track ends to avoid reflections on the tracks.
+
+The output impedance of the PA is low, and that means a lot of current
+will be flowing in that trace until it does the impedance match.
+Increasing the width of that trace might be good, it will lower the
+impedance and lower the inductance.
 
 # Not going to do
 
@@ -1920,7 +1922,12 @@ Rework under the PA to expose the copper there for a heat sink and
 put the proper vias.
 
 I realized where the 500ma quiescent current on the PA came from.  I
-changed the inductor feeding power from ones having 350-350mOhms of
+changed the inductor feeding power from ones having 350-450mOhms of
 resistance to one with 100mOhms of resistance.  That's going to make a
 big difference.  I also suspect the PA is putting out closer to 2.4W
 now with a proper match, but I'd need to measure.
+
+Add teardrops on all RF tracks.
+
+Rework the output of the PA.  Use a bigger trace for the current
+involved, which required reworking the L match.
