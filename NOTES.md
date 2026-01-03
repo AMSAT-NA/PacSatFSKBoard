@@ -9,6 +9,11 @@ some point.
 
 # TODO
 
+The output impedance of the PA is low, and that means a lot of current
+will be flowing in that trace until it does the impedance match.
+Increasing the width of that trace might be good, it will lower the
+impedance and lower the inductance.
+
 Figure out how to mount a heat sink under the PA, what holes are
 required, etc.  The copper pad is already exposed.
 
@@ -1913,3 +1918,9 @@ those resistors.
 
 Rework under the PA to expose the copper there for a heat sink and
 put the proper vias.
+
+I realized where the 500ma quiescent current on the PA came from.  I
+changed the inductor feeding power from ones having 350-350mOhms of
+resistance to one with 100mOhms of resistance.  That's going to make a
+big difference.  I also suspect the PA is putting out closer to 2.4W
+now with a proper match, but I'd need to measure.
