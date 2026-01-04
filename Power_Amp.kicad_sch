@@ -2517,7 +2517,7 @@
 		)
 		(uuid "dc2d3d9e-dbeb-49f3-bde7-e113b8416228")
 	)
-	(text "Directional coupler 4mm long\ntrack width .1524mm with .127mm\nseparation.\n\nThis is optional and may be removed\nif power measurements aren't required."
+	(text "Directional coupler 4mm long\ntrack width .1524mm with .109mm\nseparation.  The coupler is on the ground\nlayer below the signal and all ground and\nsignals are removed from the area.\n\nThis is optional and may be removed\nif power measurements aren't required."
 		(exclude_from_sim no)
 		(at 354.076 178.562 0)
 		(effects
