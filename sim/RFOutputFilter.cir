@@ -36,33 +36,33 @@ Cl1	out	0	.037p
 
 * 7.01p
 * Use a 6.4p cap, add .6p for parasitics
-C1	in	0	7.0p
+C1	in	0	9.6p
 
 * 20.8n
 * Coilcraft 0402DC-20NX_RW Q=48@435MHz SRF=5.11
 * Add .4nH for parasitics
-L2	in	a1	20.4n
+L2	in	a1	16.4n
 Rl2	a1	a2	1.13
 Cl2	in	a2	.048p
 * 735f
-C2	in	a2	.75p
+C2	in	a2	1.0p
 
 * 11.35p
 * Use a 11p cap, add .6p for parasitics
-C3	a2	0	11.6p
+C3	a2	0	12.6p
 
 * 17.22n
 * Murata LQW15AN17NG8ZD 17nF, Q=46@439MHz, SRF=5G
 * Add .4nH for parasitics
-L4	a2	a3	17.4n
+L4	a2	a3	13.4n
 Rl4	a3	out	1.01
 Cl4	a2	out	.059p
 * 2.07p
-C4	a2	out	2.1p
+C4	a2	out	3.0p
 
 * 5.94p
 * Use a 5.4p cap, add .6p for parasitics
-C5	out	0	6.0p
+C5	out	0	8.0p
 
 * This is the inductor used to bleed off static from the antenna
 L0	out	b0	470n

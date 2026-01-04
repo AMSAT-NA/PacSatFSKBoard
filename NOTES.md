@@ -715,6 +715,8 @@ will be flowing in that trace until it does the impedance match.
 Increasing the width of that trace might be good, it will lower the
 impedance and lower the inductance.
 
+Rework the RF forward/reverse coupler to improve performance.
+
 # Not going to do
 
 Rotate the CPU so that fewer traces need to be routed under the CPU.
@@ -1931,3 +1933,9 @@ Add teardrops on all RF tracks.
 
 Rework the output of the PA.  Use a bigger trace for the current
 involved, which required reworking the L match.
+
+## 2026-01-04
+
+Rework the RF coupler to hopefully improve performance.  The coupled
+section is now right below the line and all signals and zones are
+removed from the area.
