@@ -9,6 +9,11 @@ some point.
 
 # TODO
 
+Add a DAC to the input of the Iref pin on the PA.  Probably a
+DAC5311IDCKT, which seems to be able to supply the required current.
+There is a DAC output on the AX5043, but it would unfortunately only
+go to 3.3V.
+
 Figure out how to mount a heat sink under the PA, what holes are
 required, etc.  The copper pad is already exposed.
 
@@ -1939,3 +1944,51 @@ involved, which required reworking the L match.
 Rework the RF coupler to hopefully improve performance.  The coupled
 section is now right below the line and all signals and zones are
 removed from the area.
+
+Looking at the current RF coupler, the power measurements are strange.
+When a terminator is connected, the forward power is about half the
+reverse power (260mV vs 460mV board 8, 250mV vs 450mV board 5, 260mV
+vs 490mV board 6).  So they are all fairly consistent.  One board 6,
+when transmitting at full power, forward power goes to 567mV, so
+there's definitely a difference, though not much.  It's also very
+steady, when no power is applied it varies by ~10mV.  Reverse power
+goes to 573mV, again steady where it was bouncing around before.  I
+don't know what is causing the difference between the forward and
+reverse power.
+
+## 2026-01-04
+
+Voltage at Iref (with 240ohm resistor) vs quiescent current drawn:
+
+2V     0
+2.5V   50mA
+3V     150mA
+3.5V   200mA
+4V     300mA
+4.5V   400mA
+5.0V   500mA
+
+Output power, however, does not seem to be very much dependent on
+quiescent current.  If the AX5043 is generating full power, I get full
+output for all Iref voltages, even down to 0V.  Odd.
+
+Anyway, I tried reducing the voltage and the power from the ax5043:
+
+TX power at 3.5V:
+    35        .5W     300mA
+    50         1W     400mA
+   100       1.8W     550mA
+
+TX power at 5V:
+    35        .5W     550mA
+    50         1W     550mA
+   100       1.8W     600mA
+
+So it does appear that the power can be reduced using this technique,
+but it's not linear.  It would take some time playing with this.  It's
+hard to do, as I had to set an inductor vertical on the pad and solder
+a wire to the other end of the inductor to control the voltage.  It's
+not very stable.
+
+It might be worth putting a DAC into the input of the Iref instead of
++5V.  That way the power usage could be controlled.
