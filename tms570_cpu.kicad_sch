@@ -5274,10 +5274,6 @@
 		(uuid "0d11f1d8-2bf0-48c4-80a8-991ca0ab311c")
 	)
 	(no_connect
-		(at 173.99 72.39)
-		(uuid "18e32db4-ae72-486b-a42a-376bea834cbb")
-	)
-	(no_connect
 		(at 250.19 204.47)
 		(uuid "20be2340-f2a4-47fb-8618-fa833b959663")
 	)
@@ -8737,6 +8733,16 @@
 		)
 		(uuid "fe32e814-5616-4add-ad1d-d93331277d4f")
 	)
+	(wire
+		(pts
+			(xy 173.99 60.96) (xy 173.99 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "febe468b-5213-4fbf-9a92-df7a57030988")
+	)
 	(global_label "AX5043_EN_RX1_N"
 		(shape input)
 		(at 260.35 215.9 270)
@@ -10136,6 +10142,28 @@
 		(uuid "e4c15121-fa11-4709-a177-e28496f8c387")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 255.27 49.1644 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PA_DAC_SEL_N"
+		(shape input)
+		(at 173.99 60.96 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left)
+		)
+		(uuid "e6f51af2-d534-427a-a002-c16d72030256")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 173.99 41.8347 90)
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -29,6 +29,22 @@ Otherwise the LP-XDS110 will be providing power to the device, which
 you don't want.  In that case the PacSat board is powering the level
 shifters.
 
+Differences between the Version 2 and Version 3 board
+=====================================================
+
+* The ACTIVE\_N is now ACTIVE, changed to positive logic.
+
+* The OTHER\_FAULT\_N is now OTHER\_FAULT, changed to positive
+  logic.
+  
+* The OTHER\_HW\_POWER\_OFF\_N is changed to OTHER\_HW\_POWER\_ST.  It
+  is now positive logic, and the name has been changed to reflect that
+  it is measuring the other power off state.
+  
+* A DAC has been added to the AX5043 SPI bus to control the quiescent
+  current into the PA.  This should allow the power usage of the PA to
+  be directly controlled.
+
 IO Connections on the PacSat AFSK processor
 ===========================================
 
@@ -152,7 +168,7 @@ used as a GPIO.
 |104	|VCCIO					|						|  | |
 |105	|MIBSPI1NCS[0]			|CAN\_B\_EN\_N			|OU|CAN bus B transceiver enable |
 |106	|N2HET1[08]				|						| D|free gpio|
-|107	|N2HET1[28]				|						| D|free gpio|
+|107	|N2HET1[28]				|PA\_DAC\_SEL\_N		|OD|Select pin for the PA DAC Iref, on the AC5043 SPI bus |
 |108	|TMS					|JTAG pin				|  | |
 ||||||
 |109	|TRST					|JTAG pin				|  | |

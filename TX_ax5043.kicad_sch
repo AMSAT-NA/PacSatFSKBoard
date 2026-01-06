@@ -2088,6 +2088,12 @@
 		(uuid "369f8b81-b225-402a-ae33-a9bace07cf27")
 	)
 	(junction
+		(at 293.37 144.78)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "37e141cd-bcda-436f-a442-5efcbe279bcd")
+	)
+	(junction
 		(at 289.56 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2725,6 +2731,16 @@
 	)
 	(wire
 		(pts
+			(xy 304.8 157.48) (xy 293.37 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "752c543d-f26a-46d4-8dfb-1b3add9a4f4a")
+	)
+	(wire
+		(pts
 			(xy 176.53 139.7) (xy 184.15 139.7)
 		)
 		(stroke
@@ -2742,6 +2758,16 @@
 			(type default)
 		)
 		(uuid "78f1f221-74ac-4da8-9c2d-c0076973fab9")
+	)
+	(wire
+		(pts
+			(xy 293.37 144.78) (xy 297.18 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7d94e7da-e5bf-424e-a949-d066e2768206")
 	)
 	(wire
 		(pts
@@ -3065,6 +3091,16 @@
 	)
 	(wire
 		(pts
+			(xy 293.37 157.48) (xy 293.37 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bffcca2e-3d87-4134-8216-de1da8951af0")
+	)
+	(wire
+		(pts
 			(xy 242.57 176.53) (xy 248.92 176.53)
 		)
 		(stroke
@@ -3105,7 +3141,7 @@
 	)
 	(wire
 		(pts
-			(xy 289.56 144.78) (xy 297.18 144.78)
+			(xy 289.56 144.78) (xy 293.37 144.78)
 		)
 		(stroke
 			(width 0)
@@ -3517,6 +3553,28 @@
 					(size 1.524 1.524)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "AX5043_TCLK"
+		(shape input)
+		(at 304.8 157.48 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left)
+		)
+		(uuid "61525e87-d389-4dd8-9035-f8150398ce9e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 322.764 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -5926,7 +5984,7 @@
 		(dnp no)
 		(uuid "c45dbb83-0693-46d0-afa5-0c89aa9e549b")
 		(property "Reference" "U23"
-			(at 292.1 153.67 0)
+			(at 283.21 160.02 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -5934,7 +5992,7 @@
 			)
 		)
 		(property "Value" "AX5043"
-			(at 293.37 156.21 0)
+			(at 284.48 162.56 0)
 			(effects
 				(font
 					(size 1.524 1.524)

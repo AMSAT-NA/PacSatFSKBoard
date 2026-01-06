@@ -9,11 +9,6 @@ some point.
 
 # TODO
 
-Add a DAC to the input of the Iref pin on the PA.  Probably a
-DAC5311IDCKT, which seems to be able to supply the required current.
-There is a DAC output on the AX5043, but it would unfortunately only
-go to 3.3V.
-
 Figure out how to mount a heat sink under the PA, what holes are
 required, etc.  The copper pad is already exposed.
 
@@ -721,6 +716,11 @@ Increasing the width of that trace might be good, it will lower the
 impedance and lower the inductance.
 
 Rework the RF forward/reverse coupler to improve performance.
+
+Add a DAC to the input of the Iref pin on the PA.  Probably a
+DAC5311IDCKT, which seems to be able to supply the required current.
+There is a DAC output on the AX5043, but it would unfortunately only
+go to 3.3V.
 
 # Not going to do
 
@@ -1956,7 +1956,7 @@ goes to 573mV, again steady where it was bouncing around before.  I
 don't know what is causing the difference between the forward and
 reverse power.
 
-## 2026-01-04
+## 2026-01-05
 
 Voltage at Iref (with 240ohm resistor) vs quiescent current drawn:
 
@@ -1992,3 +1992,34 @@ not very stable.
 
 It might be worth putting a DAC into the input of the Iref instead of
 +5V.  That way the power usage could be controlled.
+
+## 2026-01-06
+
+This is from a discussion a while ago with Qorvo about what the Iref
+and Vbias does:
+
+    > Yes, but there is a 280 ohm resistor going to Vbias.  What does 
+	> do?  Can the gain be tuned by changing that value?
+
+    R6 is for ruggedness improvement, R=280 ohm was the best value for
+    ruggedness improvement, too high value could start to impact P1dB, too
+    lower will not have enough protection.  Customers do not need to
+    change this value
+
+    > For Iref, there is a 240 ohm resistor, a bypass capacitor, and an
+    > inductor.  Why 240 ohms?  What does changing it do?  I assume the
+    > inductor and capacitor are for noise reduction, but what do the values
+    > need to be?  Does it depend on frequency?  It says typical current is
+    > 8.9ma, but how do I calculate what will do that?
+
+    R7 = 240 ohm is for Icq adjustment, Increase R7, Icq will drop, decrease
+	R7, Icq will increase.
+
+    R1=68 nH  inductor, it is for video band signal block between Vbias and
+	Iref. Change to small value could impact OIP3 test data, customer do not
+	need to change.
+
+Just to capture that information.
+
+A DAC controller has been added to drive the Iref line, along with a
+DNP resistor in case a fixed value is desired.
