@@ -34,7 +34,7 @@ values require higher power.
 
 Look at adding the TVS diode on the PA per the datasheet schematics.
 
-Perhaps Replace the RF switches, the packages the Qorvo parts are in
+Perhaps replace the RF switches, the packages the Qorvo parts are in
 are too hard to work with and several have failed (probably because of
 control input voltage).  Finding one with temp range looks to be
 challenging, though. Possibly switch to a PE42359 or PE42424, or
@@ -43,24 +43,9 @@ this is harder than it sounds.  It has to be able to be powered by 5V
 because it has to work when the rest of the board is powered down, and
 that's hard to find.
 
-Figure out how to adjust the PA output power usage.  Adjusting the
-Iref resistor is supposed to do that, but some experimenting needs to
-be done as Qorvo doesn't document how that works.
-
 Maybe spend some time needs to be spent looking for a new PA.  It
-seems to be fairly efficient, 425ma at 5V 2.125W for 2W of output,
-that's 94% efficiency, though that seems hard to believe.  I was
-thinking that since the output on this board doesn't require a linear
-amplifier you could switch to a class D amplifier, but 94% is going to
-be had to beat.
-
-Figure out what inductor to use for the PA power input.  100nH is
-pretty big.  You want something with the smallest series resistance.
-Can you use inductors intended for power supplies, like the
-LQW18CNR10K series from Murata or a 0603LS-101XJRC from Coilcraft?
-Perhaps one of these or a ferrite bead in addition to a smaller
-inductor right at the PA?  The inductor that is currently there
-(LQW18ASR10G0ZD) is only rated for 400 ma, so it is not sufficient.
+seems to be fairly efficient, 500ma at 5V 2.5W for 2W of output,
+that's 80% efficiency.
 
 It doesn't look like the transmitter and receiver chips can be coaxed
 to work on the same frequencies if the transmitter is in the 430MHz
@@ -717,10 +702,26 @@ impedance and lower the inductance.
 
 Rework the RF forward/reverse coupler to improve performance.
 
+Figure out how to adjust the PA output power usage.  Adjusting the
+Iref resistor is supposed to do that, but some experimenting needs to
+be done as Qorvo doesn't document how that works.
+
 Add a DAC to the input of the Iref pin on the PA.  Probably a
 DAC5311IDCKT, which seems to be able to supply the required current.
 There is a DAC output on the AX5043, but it would unfortunately only
 go to 3.3V.
+
+Figure out what inductor to use for the PA power input.  100nH is
+pretty big.  You want something with the smallest series resistance.
+Can you use inductors intended for power supplies, like the
+LQW18CNR10K series from Murata or a 0603LS-101XJRC from Coilcraft?
+Perhaps one of these or a ferrite bead in addition to a smaller
+inductor right at the PA?  The inductor that is currently there
+(LQW18ASR10G0ZD) is only rated for 400 ma, so it is not sufficient.  A
+LQW18CNR10K0ZD was chosen, it has 100mOhms DCR, and it's ferrite
+based, so that's a little different, but it seems to work well.  The
+quiescent current went up to 500mA and the maximum output power went
+to 2.4W.
 
 # Not going to do
 
