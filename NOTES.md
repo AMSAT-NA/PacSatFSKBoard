@@ -1974,12 +1974,12 @@ output for all Iref voltages, even down to 0V.  Odd.
 
 Anyway, I tried reducing the voltage and the power from the ax5043:
 
-TX power at 3.5V:
+TX power and draw current verses input power at 3.5V:
     35        .5W     300mA
     50         1W     400mA
    100       1.8W     550mA
 
-TX power at 5V:
+TX power and draw current verses input power at 5V:
     35        .5W     550mA
     50         1W     550mA
    100       1.8W     600mA
@@ -2023,3 +2023,5 @@ Just to capture that information.
 
 A DAC controller has been added to drive the Iref line, along with a
 DNP resistor in case a fixed value is desired.
+
+Updated the UFL and MMCX footprints to use teardrops.

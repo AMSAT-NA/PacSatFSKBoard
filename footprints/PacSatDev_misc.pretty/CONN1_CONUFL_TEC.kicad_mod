@@ -182,6 +182,17 @@
 		(size 1.0414 1.0922)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(clearance 0.154)
+		(teardrops
+			(best_length_ratio 0.5)
+			(max_length 1)
+			(best_width_ratio 1)
+			(max_width 2)
+			(curved_edges no)
+			(filter_ratio 0.9)
+			(enabled yes)
+			(allow_two_segments yes)
+			(prefer_zone_connections yes)
+		)
 		(uuid "2a2612dd-72d1-484a-9395-e318afcb5b70")
 	)
 	(pad "2" smd rect
