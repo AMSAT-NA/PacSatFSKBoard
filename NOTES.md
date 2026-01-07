@@ -1963,15 +1963,16 @@ Voltage at Iref (with 240ohm resistor) vs quiescent current drawn and
 voltage drop across R79, current across R79, and calculated internal
 resistance in the Iref pin:
 
-2V       0mA	0V
-2.5V    50mA	.33V	1.4mA	1550
-3V     150mA	.76V	3.2mA	700
-3.5V   200mA	1.2V	5.0mA	460
-4V     300mA	1.6V	6.7mA	358
-4.5V   400mA	2.0V	8.3mA	301
-5.0V   500mA	2.5V	10.4mA	240
+    2V       0mA	0V
+    2.5V    50mA	.33V	1.4mA	1550
+    3V     150mA	.76V	3.2mA	700
+    3.5V   200mA	1.2V	5.0mA	460
+    4V     300mA	1.6V	6.7mA	358
+    4.5V   400mA	2.0V	8.3mA	301
+    5.0V   500mA	2.5V	10.4mA	240
 
-So what's inside the Iref pin is not just a straight resistance.
+So what's inside the Iref pin is not just a straight resistance.  Not
+a surprise.
 
 Output power, however, does not seem to be very much dependent on
 quiescent current.  If the AX5043 is generating full power, I get full
@@ -1980,14 +1981,16 @@ output for all Iref voltages, even down to 0V.  Odd.
 Anyway, I tried reducing the voltage and the power from the ax5043:
 
 TX power and draw current verses input power at 3.5V:
+
     35        .5W     300mA
     50         1W     400mA
-   100       1.8W     550mA
+    100       1.8W     550mA
 
 TX power and draw current verses input power at 5V:
+
     35        .5W     550mA
     50         1W     550mA
-   100       1.8W     600mA
+    100       1.8W     600mA
 
 So it does appear that the power can be reduced using this technique,
 but it's not linear.  It would take some time playing with this.  It's
@@ -2031,14 +2034,14 @@ DNP resistor in case a fixed value is desired.
 
 Updated the UFL and MMCX footprints to use teardrops.
 
-## 2026-01-06
+## 2026-01-07
 
-More measurements:
+More measurements on the TQP7M9106:
 
-Removed L36 (Iref inductor).  
+Removed L36 (Iref inductor):
 
-100		1.1W		400mA
-95      1W          200mA
+    100		1.1W		400mA
+    95      1W          200mA
 
 Maximum output is 1.1W, and I get weird changes based upon RF input
 power.  Looking at the output on the SA, it doesn't look good.  All
@@ -2052,57 +2055,69 @@ probably doesn't matter much, the power supply should filter.
 In this case, it went back to the behavior I experienced before.
 Looking at harmonics, I can see some 2nd and 3rd harmonics at around
 50dB down (when coming out of the filter).  This is not markedly
-different than before.
+different when running with Iref normal.
 
 Let's take some more measurements, first is the AX5043 output setting,
-second is the measured power, third is the calculated PA output power,
-and 4th is the current draw.  Efficiency is after that.
+second is the measured power after the filter, third is the calculated
+PA output power, and 4th is the current draw.  Efficiency is after
+that on some lines.
 
 Iref V=0V:
-100    1.5W		450mA
-80     1.42     450mA
-70     0        0
+
+    100    1.5W		2.1W	450mA
+    80     1.42     2.0W	450mA
+    70     0        0
 
 Anything below 70 results in no output.
 
 Iref V=1.0V:
-100    1.8W     2.5W	600mA
-50     1.5W		2.1W    550mA
-35     1.4W		2.0W    550mA
 
-Setting the value below 40 is unstable, sometimes
-it doesn't work.
+    100    1.8W     2.5W	600mA
+    50     1.5W		2.1W    550mA
+    35     1.4W		2.0W    550mA
+
+Setting the input value below 40 is unstable, sometimes it doesn't
+work.
 
 Iref V=1.5V:
-100    1.8W     2.5W	600mA	83%
-50     1.5W		2.1W    550mA	76%
-35     1.2W		1.7W    500mA	68%
+
+    100    1.8W     2.5W	600mA	83%
+    50     1.5W		2.1W    550mA	76%
+    35     1.2W		1.7W    500mA	68%
 
 Iref V=2.0V:
-100    1.8W     2.5W	600mA	83%
-50     1.2W		1.7W    500mA	76%
-35      .8W		1.1W    300mA	73%
+
+    100    1.8W     2.5W	600mA	83%
+    50     1.2W		1.7W    500mA	76%
+    35      .8W		1.1W    300mA	73%
 
 Iref V=2.5V:
-100    1.7W		2.4W    600mA	80%
-50      .8W		1.1W	400mA	55%
-40      .5W		 .7W    350mA	40%
-35      .3W		 .4W    250mA	20%
+
+    100    1.7W		2.4W    600mA	80%
+    50      .8W		1.1W	400mA	55%
+    40      .5W		 .7W    350mA	40%
+    35      .3W		 .4W    250mA	20%
 
 Iref V=3V:
-100    1.8W		2.5W	600mA	83%
-50      .9W		1.3W	450mA	57%
-35      .4W		 .6W	350mA	34%
+
+    100    1.8W		2.5W	600mA	83%
+    50      .9W		1.3W	450mA	57%
+    35      .4W		 .6W	350mA	34%
 
 Iref V=3.5V:
-100    1.8W		2.5W	600mA	83%
-50     1.0W		1.4W	450mA	62%
-35      .5W		 .7W	350mA	40%
+
+    100    1.8W		2.5W	600mA	83%
+    50     1.0W		1.4W	450mA	62%
+    35      .5W		 .7W	350mA	40%
 
 Iref V=4.5V:
-100    1.8W		2.5W	600mA	83%
-50     1.0W		1.4W	500mA	56%
-35      .5W		 .7W	450mA	31%
+
+    100    1.8W		2.5W	600mA	83%
+    50     1.0W		1.4W	500mA	56%
+    35      .5W		 .7W	450mA	31%
+
+All these numbers are pretty rough, read off of power supply meters
+and SWR meters.
 
 There is an inflection at around 2.0V.  Just above that (maybe 2.1V)
 is where the quiescent current drops to zero.  At that point and
@@ -2113,3 +2128,16 @@ It would seem that the PA is really only designed for maximum power
 output.  With Iref voltage=2.0V, it seems possible to achieve
 reasonable class C operation.  Achieving efficient lower power output
 at class AB operations doesn't seem to be feasible.
+
+I've looked at other devices.  Not a lot of suitable ones are
+available.  The efficiency of most of the ones I have seen are worse
+than what I've found above.  NXP (formerly NEC, I think) has a bunch
+of possible transistors that operate in the 4W range.  The Guerrilla
+RF GRF5504, for instance.  But if you look at the efficiency curves,
+they are really designed to be maximally efficient at their operating
+point and get less efficient with lower output.
+
+The NXP AFIC901N has a max output at a little above 1W and might be a
+possibility for 1W operation.  But that's using 7.5V, not 5V.  And
+it's actually two amplifiers in one, and the documentation isn't
+great.
