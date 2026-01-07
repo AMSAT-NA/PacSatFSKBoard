@@ -1959,15 +1959,19 @@ reverse power.
 
 ## 2026-01-05
 
-Voltage at Iref (with 240ohm resistor) vs quiescent current drawn:
+Voltage at Iref (with 240ohm resistor) vs quiescent current drawn and
+voltage drop across R79, current across R79, and calculated internal
+resistance in the Iref pin:
 
-2V     0
-2.5V   50mA
-3V     150mA
-3.5V   200mA
-4V     300mA
-4.5V   400mA
-5.0V   500mA
+2V       0mA	0V
+2.5V    50mA	.33V	1.4mA	1550
+3V     150mA	.76V	3.2mA	700
+3.5V   200mA	1.2V	5.0mA	460
+4V     300mA	1.6V	6.7mA	358
+4.5V   400mA	2.0V	8.3mA	301
+5.0V   500mA	2.5V	10.4mA	240
+
+So what's inside the Iref pin is not just a straight resistance.
 
 Output power, however, does not seem to be very much dependent on
 quiescent current.  If the AX5043 is generating full power, I get full
@@ -2026,3 +2030,86 @@ A DAC controller has been added to drive the Iref line, along with a
 DNP resistor in case a fixed value is desired.
 
 Updated the UFL and MMCX footprints to use teardrops.
+
+## 2026-01-06
+
+More measurements:
+
+Removed L36 (Iref inductor).  
+
+100		1.1W		400mA
+95      1W          200mA
+
+Maximum output is 1.1W, and I get weird changes based upon RF input
+power.  Looking at the output on the SA, it doesn't look good.  All
+kinds of issues, broad signal, spikes in strange places.  So this is
+not something that will work without any connection.
+
+Removed the inductor and soldered a wire from the second output of the
+power supply directly to the board.  In this situation the inductor
+probably doesn't matter much, the power supply should filter.
+
+In this case, it went back to the behavior I experienced before.
+Looking at harmonics, I can see some 2nd and 3rd harmonics at around
+50dB down (when coming out of the filter).  This is not markedly
+different than before.
+
+Let's take some more measurements, first is the AX5043 output setting,
+second is the measured power, third is the calculated PA output power,
+and 4th is the current draw.  Efficiency is after that.
+
+Iref V=0V:
+100    1.5W		450mA
+80     1.42     450mA
+70     0        0
+
+Anything below 70 results in no output.
+
+Iref V=1.0V:
+100    1.8W     2.5W	600mA
+50     1.5W		2.1W    550mA
+35     1.4W		2.0W    550mA
+
+Setting the value below 40 is unstable, sometimes
+it doesn't work.
+
+Iref V=1.5V:
+100    1.8W     2.5W	600mA	83%
+50     1.5W		2.1W    550mA	76%
+35     1.2W		1.7W    500mA	68%
+
+Iref V=2.0V:
+100    1.8W     2.5W	600mA	83%
+50     1.2W		1.7W    500mA	76%
+35      .8W		1.1W    300mA	73%
+
+Iref V=2.5V:
+100    1.7W		2.4W    600mA	80%
+50      .8W		1.1W	400mA	55%
+40      .5W		 .7W    350mA	40%
+35      .3W		 .4W    250mA	20%
+
+Iref V=3V:
+100    1.8W		2.5W	600mA	83%
+50      .9W		1.3W	450mA	57%
+35      .4W		 .6W	350mA	34%
+
+Iref V=3.5V:
+100    1.8W		2.5W	600mA	83%
+50     1.0W		1.4W	450mA	62%
+35      .5W		 .7W	350mA	40%
+
+Iref V=4.5V:
+100    1.8W		2.5W	600mA	83%
+50     1.0W		1.4W	500mA	56%
+35      .5W		 .7W	450mA	31%
+
+There is an inflection at around 2.0V.  Just above that (maybe 2.1V)
+is where the quiescent current drops to zero.  At that point and
+below, the output power and current usage goes up with *decreased*
+voltage.  I assume it's transitioning into class C operation.
+
+It would seem that the PA is really only designed for maximum power
+output.  With Iref voltage=2.0V, it seems possible to achieve
+reasonable class C operation.  Achieving efficient lower power output
+at class AB operations doesn't seem to be feasible.
