@@ -2248,3 +2248,22 @@ reality pretty well now, too.
 
 I put in an 18pF part for simulation, and the impedance was pretty
 low, so hopefully that's why the part was drawing too much current.
+
+## 2026-01-19
+
+I matched the input using the 2.7nH inductor that was there and a 22pF
+capacitor.  Match was pretty good.
+
+Then I re-measured the output impedance.  It changed, I'm assuming due
+to the input impedance changing.  It looks like the capacitance
+increased a lot.  It required changing to a 18pF capacitor.  Match
+isn't quite as nice as before, the resistance is a bit low at peak (46
+ohms), but it's close.
+
+Then, of course, the input impedance changed.  It's a little high,
+around 80 ohms peak, but it's close enough for the input, I think.
+The AX5043 can drive more than enough power.
+
+Update the impedance matcher simulation to calculate impedance.
+
+Add a few missing tear drops on RF lines on the circuit board.

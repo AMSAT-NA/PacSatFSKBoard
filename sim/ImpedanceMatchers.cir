@@ -16,30 +16,34 @@
 
 Rsrc in     vmin1  50
 
+* Decoupling cap
+C0     vmin2   a1b     1n
+
 * TX PA input matcher
 * Q=65, Coilcraft 0603DC
-C0	vmin2   a1b     1n
-L1	a1b	a1a	3.3n
-Rl1     a1a	0	.13
-C1	vmin2	a1	47p
+L1     a1b     a1a     3.0n
+Rl1    a1a     0       .13
+C1     a1b     a1      47p
 
 * -1.04 ohms at 435MHz
 Cout a1     vmout1 350p
-Rout vmout2 0      1.36
+Rout vmout2 0      1.63
 
 .ENDS
 
 .SUBCKT ImpMatchPAOut in vmin1 vmin2 vmout1 vmout2
 
 Rsrc in     vmin1  4.63
-* -.508 ohms at 435MHz
-Csrc vmin2  a1     720p
+Csrc vmin2  a1     700p
+
+* Trace inductance.
+Lp1  a1  a2 1.4n
 
 * Impedance matching network
 * TX PA output matcher
-C1	a1	vmout1	25p
+C1	a2	vmout1	20p
 * Q=55, CoilCraft 0402DC
-L1	vmout1	a3	5.8n
+L1	vmout1	a3	6.0n
 Rl1	a3	0	.34
 Cl1	vmout1	a3	.037p
 
@@ -84,7 +88,9 @@ Rout vmout2 0      50
 .ENDS
 
 .param m = 0
+.param measimp = 0
 
+.if (measimp == 0)
 .if (m == 1)
 X1 in vmin1 vmin2 vmout1 vmout2 ImpMatchPAIn
 .endif
@@ -105,32 +111,78 @@ Vmin  vmin1  vmin2  dc 0 ac 0
 
 * For current measurement
 Vmout vmout1 vmout2 dc 0 ac 0
+.endif
+
+.if (measimp == 1)
+.if (m == 1)
+I1  0 vmin2  dc 0 ac 1
+Rin    in 0 .0001
+Rvmin1 vmin1 0 .0001
+Rvmout vmout1 vmout2 .0001
+X1 in vmin1 vmin2 vmout1 vmout2 ImpMatchPAIn
+.endif
+.if (m == 2)
+I1  0 vmout1  dc 0 ac 1
+Rin    in 0 .0001
+Rvmout2 vmout2 0 .0001
+Rvmin vmin1 vmin2 .0001
+X1 in vmin1 vmin2 vmout1 vmout2 ImpMatchPAOut
+.endif
+.if (m == 3)
+I1  0 vmin2  dc 0 ac 1
+Rin    in 0 .0001
+Rvmin1 vmin1 0 .0001
+Rvmout vmout1 vmout2 .0001
+X1 in vmin1 vmin2 vmout1 vmout2 ImpMatchLNAIn
+.endif
+.if (m == 4)
+I1  0 vmout1  dc 0 ac 1
+Rin    in 0 .0001
+Rvmout2 vmout2 0 .0001
+Rvmin vmin1 vmin2 .0001
+X1 in vmin1 vmin2 vmout1 vmout2 ImpMatchLNAOut
+.endif
 
 .control
 
 alterparam m = 1
 reset
 ac lin 5000 1Meg 1000meg
-plot title "PA Input" db((v(vmout1) * i(Vmout)) / (v(vmin1) * i(Vmin)))
-plot title "PA Input" vi(vmin1)
+plot title "PA Input Loss" db((v(vmout1) * i(Vmout)) / (v(vmin1) * i(Vmin)))
+alterparam measimp = 1
+reset
+ac lin 5000 400Meg 500meg
+plot title "PA Input Impedance" v(vmin2) vi(vmin2)
 
+alterparam measimp = 0
 alterparam m = 2
 reset
 ac lin 5000 1Meg 1000meg
-plot title "PA Output" db((v(vmout1) * i(Vmout)) / (v(vmin1) * i(Vmin)))
-plot title "PA Output" vi(vmin1)
+plot title "PA Output Loss" db((v(vmout1) * i(Vmout)) / (v(vmin1) * i(Vmin)))
+alterparam measimp = 1
+reset
+ac lin 5000 400Meg 500meg
+plot title "PA Output Impedance" v(vmout1) vi(vmout1)
 
+alterparam measimp = 0
 alterparam m = 3
 reset
 ac lin 5000 1Meg 400meg
-plot title "LNA Input" db((v(vmout1) * i(Vmout)) / (v(vmin1) * i(Vmin)))
-plot title "LNA Input" vi(vmin1)
+plot title "LNA Input Loss" db((v(vmout1) * i(Vmout)) / (v(vmin1) * i(Vmin)))
+alterparam measimp = 1
+reset
+ac lin 5000 1Meg 400meg
+plot title "LNA Input Impedance" v(vmin2) vi(vmin2)
 
+alterparam measimp = 0
 alterparam m = 4
 reset
 ac lin 5000 1Meg 400meg
-plot title "LNA Output" db((v(vmout1) * i(Vmout)) / (v(vmin1) * i(Vmin)))
-plot title "LNA Output" vi(vmin1)
+plot title "LNA Output Loss" db((v(vmout1) * i(Vmout)) / (v(vmin1) * i(Vmin)))
+alterparam measimp = 1
+reset
+ac lin 5000 1Meg 400meg
+plot title "LNA Output Impedance" v(vmout1) vi(vmout1)
 
 .endc
 
