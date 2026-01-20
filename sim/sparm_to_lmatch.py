@@ -84,6 +84,9 @@ elif not read_sparm and len(args) < 5:
 freq = float(args[0])
 del(args[0])
 
+zl = 50
+zs = 50
+
 if read_sparm:
     p = get_sparms(freq, args[0])
 
@@ -117,9 +120,6 @@ else:
     zin = float(args[0]) + 1j * float(args[1])
     zout = float(args[2]) + 1j * float(args[3])
     pass
-
-zl = 50
-zs = 50
 
 def imp_to_part_string(x, freq):
     if x < 0:

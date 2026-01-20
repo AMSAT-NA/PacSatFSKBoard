@@ -3523,7 +3523,7 @@
 		)
 		(uuid "df31b3a4-22c0-4d54-bac3-8ba773c3bb7e")
 	)
-	(text "= 641mA limit"
+	(text "= 608mA limit"
 		(exclude_from_sim no)
 		(at 291.465 199.39 0)
 		(effects

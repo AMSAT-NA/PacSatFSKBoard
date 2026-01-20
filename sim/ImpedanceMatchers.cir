@@ -37,7 +37,7 @@ Csrc vmin2  a1     720p
 
 * Impedance matching network
 * TX PA output matcher
-C1	a1	vmout1	22p
+C1	a1	vmout1	25p
 * Q=55, CoilCraft 0402DC
 L1	vmout1	a3	5.8n
 Rl1	a3	0	.34

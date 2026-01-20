@@ -2141,3 +2141,110 @@ The NXP AFIC901N has a max output at a little above 1W and might be a
 possibility for 1W operation.  But that's using 7.5V, not 5V.  And
 it's actually two amplifiers in one, and the documentation isn't
 great.
+
+Also the GRF5710, GRF5112, and others.
+
+## 2026-01-08
+
+Changed the capacitors and L33 on the RF output filter to the ones
+calculated, and it appears to be working properly.
+
+The debug connector came off board 6, so I'm retiring that.  Maybe it
+could be used for some specific things.  You can probably hold the
+debug connector down on the pad and program it, if necessary.
+
+Switched to board 5, since it doesn't have the input components to the
+RF output filter, I can try looking directly after the L match there.
+Oddly enough, the power coming out of the PA there is 1.8W at 600mA
+with 60% power from the AX5043.  Going above that causes the power
+limiter to trip, so it's really at 600mA.
+
+## 2026-01-08
+
+I tried putting all the proper components into board 5, and it's still
+not working well.  Did the same on board 6 with the same results.
+It's tripping the power limiter (600ma) at around a setting of 40% on
+the AX5043 output, and not putting out much power at all.
+
+I did the C117 and L38 changes to board 8, it's doing the same thing
+as board 5.  I didn't change the filter, I left that as-is.
+
+I've been all over things and can't figure this out.  Replaced C117 on
+board 5 with the same one that's in board 6 (a 5% part), rechecked all
+the solder connections.
+
+On board 8 I disabled the RF switches by removing R105 and added a
+zero ohm to R107.  Still no change.
+
+## 2026-01-16
+
+To try to figure out the PA situation, I disconnected the filter and
+the AX5043 from the output and input of the PA and measured with a
+VNA.  It wasn't even close.
+
+So I removed the L match and bypassed it with zero-ohm resistors.  I
+didn't get anything very close to the S-Parameters from Qorvo.  So
+something is off there.  Here's what I got at 435MHz:
+
+    435MHz:
+    S11: -.84 + j.049
+    S21: 2.53 - j1.1
+    S22: -.73 + j .12
+    S12: 0 + j0
+
+    Zin 4.14 + j1.26
+    Zout 7.72 + j4.12
+
+Converting to polar coordinate with dB, at least the S21 parameters
+had the same gain as the S-Parameters from Qorvo.  I guess that's
+promising that this is right.
+
+## 2026-01-17
+
+Using the S-parameters I obtained from the VNA, I put the ones I
+calculated would match.  It was a lot better.  It could still be tuned
+some more, though.
+
+I spent some time messing with simulation, and I was unable to make
+things match up with reality.  The resistance in reality is higher
+than what simulation says it should be.  Simulation says it should be
+in the mid-40 ohm range.  In reality it's around 80 ohms with a 4.5nH
+inductor, 100 ohms with a 5.0nH inductor.
+
+I also measured S11 with the L-Match installed on the output, and it
+has changed slightly.  Not a huge amount, but enough that it needs to
+be tuned.
+
+I'm going to need to get some more parts.
+
+I realized I needed to calibrate the VNA with the cable all the way to
+the end.  So, I bought a U.FL board that has the short, open, load,
+and through connections.  Have to wait for it to arrive.
+
+## 2026-01-19
+
+Got the U.FL, board, calibrated the VNA.  At 435Mhz with the L-Match
+removed and zero-ohm resistors in place, I get:
+
+    S11: -.842 + .347j
+	S21: -.401 + 2.85j
+    S22: -.704 + 0.354j
+	S12: 0 + 0j
+	
+	Zin: 2.43 + 9.87j
+	Zout: 6.26 + 11.7j
+
+So I installed the parts to make the output match.  But it still
+wasn't very close.  I measured the capacitor in the match, and it was
+shorted.  I measured the previous one and it was an open circuit.  I
+think I'm leaving the soldering iron on it to long.
+
+Putting yet another part in and it was in the ballpark, but not as
+close as I liked.  Some calculations and a few other tried and I have
+a good match now, it appears.  My calculated inductor (5.8nH) was
+good, the capacitance was a little too high (18pf), lowered that to
+15pf.  The match is almost perfect now.  I have simulation matching
+reality pretty well now, too.
+
+I put in an 18pF part for simulation, and the impedance was pretty
+low, so hopefully that's why the part was drawing too much current.
