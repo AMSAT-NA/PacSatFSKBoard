@@ -2249,7 +2249,7 @@ reality pretty well now, too.
 I put in an 18pF part for simulation, and the impedance was pretty
 low, so hopefully that's why the part was drawing too much current.
 
-## 2026-01-19
+## 2026-01-20
 
 I matched the input using the 2.7nH inductor that was there and a 22pF
 capacitor.  Match was pretty good.
@@ -2267,3 +2267,42 @@ The AX5043 can drive more than enough power.
 Update the impedance matcher simulation to calculate impedance.
 
 Add a few missing tear drops on RF lines on the circuit board.
+
+Actually put power into a load on the PA output.  It wasn't quite
+right, it was peaking at too high a frequency.  Changed the capacitor
+to 20pF and that's better.  It's a little low now, maybe 19pF would be
+ideal.  Or changing the inductor to be a bit larger.
+
+## 2026-01-21
+
+Put the RF output filter on board 8.  I'm getting about 1.2W out of
+the output now, so it seems to be working well.  It looks like I'm
+getting about 2dB of loss at the center (435MHz) and around 3dB of
+loss at the edges (420MHz and 450MHz) through the output match and
+filter.
+
+I tried enabling the QPC1022 switches to control the output.  It looks
+like the switch is grounding the RF connection that is not enabled.
+That's how it's behaving, at least, there's a proper connection to the
+antenna, but the PA is behaving like the output is shorted, or at
+least low impedance.  The QPC1022 web side says it has reflective
+inputs, but I can't find any information in the datasheet about this.
+I've sent an email to Qorvo to see what the deal is.  Fortunately,
+when disabled with the EN line, the chip does seem to be high
+impedance on the inputs.
+
+Put antennas on the input and output and listened to a nearby gateway
+(N5COR-10).  It's able to receive those with a signal strength of
+-40dBm.
+
+## 2026-01-22
+
+I put the receive and transmit antenna side-by-side and transmitted a
+continuous signal on 435MHz.  I was able to receive packets without
+issue from local and distance sources.  So the input filter is doing
+its job and the transmitter is not desensing the receiver.
+
+I tried listening to a BBS that's not terribly far away, N5CXX-1.
+It's seeing a signal with plenty of strength (-60dBm), but it's not
+receiving any packets that come from the BBS.  So I'm not sure what's
+up with that.
