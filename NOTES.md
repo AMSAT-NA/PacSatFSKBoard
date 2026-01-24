@@ -34,28 +34,9 @@ values require higher power.
 
 Look at adding the TVS diode on the PA per the datasheet schematics.
 
-Perhaps replace the RF switches, the packages the Qorvo parts are in
-are too hard to work with and several have failed (probably because of
-control input voltage).  Finding one with temp range looks to be
-challenging, though. Possibly switch to a PE42359 or PE42424, or
-possibly another RF switch to replace the Qorvo part.  Unfortunately,
-this is harder than it sounds.  It has to be able to be powered by 5V
-because it has to work when the rest of the board is powered down, and
-that's hard to find.
-
 Maybe spend some time needs to be spent looking for a new PA.  It
 seems to be fairly efficient, 500ma at 5V 2.5W for 2W of output,
 that's 80% efficiency.
-
-It doesn't look like the transmitter and receiver chips can be coaxed
-to work on the same frequencies if the transmitter is in the 430MHz
-range and the receiver is in the 144MHz range.  This is due to the
-inductors on the AX5043 just not ranging far enough.  Either add a
-switch for the inductor on the transmit AX5043, or just give up on the
-loopback capability.  With a 18nH part on the RX AX5043s and setting
-the frequency to 435Mhz, the part says it ranges, but I can't find
-where it's tuned to so it doesn't seem to actually be on that
-frequency.
 
 Convert the power plane to a ground plane in the digital portion, and
 as part of that add ground vias by signal vias to reduce the return
@@ -722,6 +703,32 @@ LQW18CNR10K0ZD was chosen, it has 100mOhms DCR, and it's ferrite
 based, so that's a little different, but it seems to work well.  The
 quiescent current went up to 500mA and the maximum output power went
 to 2.4W.
+
+Replace the RF switches.  The QPC1022 does a short to ground on the
+disconnected port.  No good.  Perhaps the QPC1217Q if it will work at
+lower frequencies than specified and handle the power.  There's the
+BGSX22G5A10 but it's not automotive qualified and it needs 3.3V.
+Replaced with a QPC8010Q
+
+Perhaps replace the RF switches, the packages the Qorvo parts are in
+are too hard to work with and several have failed (probably because of
+control input voltage).  Finding one with temp range looks to be
+challenging, though. Possibly switch to a PE42359 or PE42424, or
+possibly another RF switch to replace the Qorvo part.  Unfortunately,
+this is harder than it sounds.  It has to be able to be powered by 5V
+because it has to work when the rest of the board is powered down, and
+that's hard to find. - Replaced with a QPC8010Q
+
+It doesn't look like the transmitter and receiver chips can be coaxed
+to work on the same frequencies if the transmitter is in the 430MHz
+range and the receiver is in the 144MHz range.  This is due to the
+inductors on the AX5043 just not ranging far enough.  Either add a
+switch for the inductor on the transmit AX5043, or just give up on the
+loopback capability.  With a 18nH part on the RX AX5043s and setting
+the frequency to 435Mhz, the part says it ranges, but I can't find
+where it's tuned to so it doesn't seem to actually be on that
+frequency. - Just eliminated the loopback.  It was too hard to get
+working.
 
 # Not going to do
 
@@ -2293,7 +2300,9 @@ impedance on the inputs.
 
 Put antennas on the input and output and listened to a nearby gateway
 (N5COR-10).  It's able to receive those with a signal strength of
--40dBm.
+-40dBm from the AX5043's point of view.  I hooked up a signal analyzer
+and measure the power coming from the antenna, and it was around
+-60dBm.  So it's getting 20dBm of amplification, as expected.
 
 ## 2026-01-22
 
@@ -2305,4 +2314,31 @@ its job and the transmitter is not desensing the receiver.
 I tried listening to a BBS that's not terribly far away, N5CXX-1.
 It's seeing a signal with plenty of strength (-60dBm), but it's not
 receiving any packets that come from the BBS.  So I'm not sure what's
-up with that.
+up with that.  I put in 60dB of attenuation (which should put it at
+-100dBm into the AX5043, -120dBm into the antenna port) and received
+from N5COR-10 without any issue.  I'm not sure what's up with N5CXX-1.
+
+## 2026-01-23
+
+Actually listening to the output of N5CXX-1, the audio volume is very
+low.  I've tried a few other systems and some have problems with it.
+
+I measured, and it appears the QPC1022 does connect the disabled input
+to ground.  The "reflective" designation on a switch doesn't mean it's
+open, necessarily, I think it just means it doesn't go through 50
+ohms.  So that part will need to change.  I've found a QPC1217Q, which
+has similar characteristics but actually can replace two QPC1022s.  I
+wish I had seen that earlier.  But it's minimum frequency is about
+700MHz.
+
+## 2026-01-23
+
+Got board 5 set up and transmitting and receiving properly.
+
+After spending some time looking at RF switches, there's just nothing
+suitable for doing a loopback.  With the added issue of the difficulty
+transmitting at 144MHz, the loopback is just not going to be doable.
+There are options for switching the antenna between board 1 and board
+2, so the fault tolerance can still be achieved.  The QPC8010Q appears
+to be ideal for the job, except it doesn't work with 5V power.  So
+rework the board for those changes.

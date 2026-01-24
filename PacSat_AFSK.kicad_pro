@@ -1025,6 +1025,10 @@
     [
       "64a91b23-a882-4658-bea9-c6c8274e2ac4",
       "RF Input Switch"
+    ],
+    [
+      "c3879c9c-e3de-4d40-a3e3-f7fd281b7d00",
+      "Power Limiters"
     ]
   ],
   "text_variables": {}
