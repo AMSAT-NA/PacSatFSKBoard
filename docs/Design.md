@@ -326,35 +326,6 @@ various signals from the control board of the satellite.
   
   - CAN[AB][+-] - CAN bus signals.
   
-RF Loopback Test
-================
-
-When in standby mode, the inactive board will have the RF output of
-the transmitter tied in to the RF input of the receiver through a 50
-ohm resistor.  At 440MHz, the input impedance of the first receive
-filter is very low and its gain at 440MHz is <-100dB.  So it should
-be safe for both the transmitter and receiver if the transmitter
-transmits at 440MHz at full power.
-
-If the transmitter transmits at 144.5MHz, the calculated loss in all
-the filters is around -75dB.  There is 20dB of gain in the PA, and the
-AX5043 can send at 16dBm.  Adding all that up, you get -39dBm coming
-out of the transmitter.  If that is sent through the 50 ohm resistor,
-there will be some more loss there, but you should get a signal well
-within readable range for the receive AX5043s.  And though the
-mismatch will be bad for the transmitter, the power is low enough to
-not harm the PA.  So this can be used as a self test of the
-transmitter and receiver while the board is in inactive mode.  If the
-signal too hot, the transmit AX5043 can reduce output power.
-
-If populated with the proper RF switches (the ones hooked to
-BOARD1\_RF\_IN\_BYPASS), this could be done on a simplex board, too.
-It can just deactivate its ACTIVE\_N line and the RF switch will go to
-the bypass.
-
-I am unsure if the TX AX5043 can be coerced into being able to
-transmit at both 144MHz and 440MHz.
-
 Power Control and Sequencing
 ============================
 
@@ -507,21 +478,18 @@ that line to know if it should be active or not.
 The ACTIVE1\_N line also controls several RF switches on board 1.
 There is a second set of SMA connectors that connect from board 1 to
 board 2 to carry the RF to board 2.  If board 1 is active, the RF is
-switched to board 1 and the RF to/from board 2 is shunted to a 50 ohm
-resistor between transmit and receive.  Likewise, when board 1 is
-inactive, it connects the RF to the board 2 connectors and shunts the
-board 1 RF between transmit and receive through a 50 ohm resistor.
-(For the reason for this shunt, see the section on RF Loopback Test)
+switched to board 1 and the RF to/from board 2 is not active (tied to
+50 ohms in the QPC8010Q part).
 
-On board 2, the RF switches are not populated and the RF goes through
-a zero ohm resistor to connect it, bypassing the switch connections.
-On board 1 these resistors must not be populated.  If the board is
-configured for simplex, then the RF switches are also not connected
-and the zero ohm resistors are populated.
+On board 2, the RF switches are not populated (or are disabled) and
+the RF goes through a zero ohm resistor to connect it, bypassing the
+switch connections.  On board 1 these resistors must not be populated.
+If the board is configured for simplex, then the RF switches are also
+not populated or are disabled and the zero ohm resistors are populated.
 
 It is also possible to have separate antennas for each board.  Then
 the RF switches and second set of SMAs are not relevant and can be
-removed or just set up for loopback testing.
+removed.
 
 All the board switch circuitry is powered with +5V so it works even if
 the board is powered down.  Care must be taken to not drive any I/O

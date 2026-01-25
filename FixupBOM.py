@@ -290,7 +290,6 @@ other_components = {
     ('TQP7M9106', 'QFN24_TQP7M9104_QOR'): None,
     ('CONUFL001-SMD-T', 'CONN1_CONUFL_TEC'): None,
     ('MMCX-J-P-H-ST-TH1', 'COAX4_MMCX-J-P-H-ST-TH1_SAI'): None,
-    ('QPC1022TR7', 'QPC1022_QOR'): None,
     ('2118718-2', 'TE_2118718-2'): None,
     ('TSW-103-08-F-S-RA', 'CON3_1X3_TR_TSW_SAI'): None,
     ('HTSW-102-07-G-S', 'CON2_1X2_TU_TSW'): None,
@@ -306,7 +305,9 @@ other_components = {
     ('ADL5501AKSZ-R7', 'KS-6_ADI'): None,
     ('SN74AHC1G08QDCKRQ1', 'DCK5'): None,
     ('BSS138', 'SOT-523'): None,
-}    
+    ('MCP1799T-3302HTT', 'SOT-23'): None,
+    ('QPC8010QTR7', 'QFN50P200X200X60-13N-D'): None,
+}
 
 def xlat_value_to_partnum(s, footprint):
     v = (s, footprint)

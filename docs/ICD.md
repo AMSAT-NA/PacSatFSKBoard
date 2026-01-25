@@ -221,16 +221,13 @@ board1.
 
 The TX switch switches the TX antenna between board1 and board2.  It
 uses the active line for board1 to do this.  The inactive board has
-its TX output routed through a resistor to the RX side of the same
-board; this can be used for loopback testing of the board, even in
-simplex configurations if properly populated.
+its TX send to 50 ohms.
 
 ### RX Switch
 
 The TX switch switches the TX antenna between board1 and board1.  It
-uses the active line for board1 to do this.  The inactive board
-receives the output of it's TX section through a resistor, as
-described above.
+uses the active line for board1 to do this.  The inactive board has
+it's RX sent to 50 ohms.
 
 # System Interfaces Description
 
