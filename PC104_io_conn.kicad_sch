@@ -2256,7 +2256,7 @@
 	)
 	(wire
 		(pts
-			(xy 265.43 121.92) (xy 269.24 121.92)
+			(xy 283.21 121.92) (xy 287.02 121.92)
 		)
 		(stroke
 			(width 0)
@@ -2306,7 +2306,7 @@
 	)
 	(wire
 		(pts
-			(xy 255.27 121.92) (xy 257.81 121.92)
+			(xy 255.27 121.92) (xy 275.59 121.92)
 		)
 		(stroke
 			(width 0)
@@ -2386,7 +2386,7 @@
 	)
 	(wire
 		(pts
-			(xy 240.03 121.92) (xy 242.57 121.92)
+			(xy 224.79 121.92) (xy 242.57 121.92)
 		)
 		(stroke
 			(width 0)
@@ -2436,7 +2436,7 @@
 	)
 	(wire
 		(pts
-			(xy 229.87 121.92) (xy 232.41 121.92)
+			(xy 214.63 121.92) (xy 217.17 121.92)
 		)
 		(stroke
 			(width 0)
@@ -2546,7 +2546,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 147.32) (xy 138.43 147.32)
+			(xy 107.95 147.32) (xy 138.43 147.32)
 		)
 		(stroke
 			(width 0)
@@ -2626,7 +2626,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 149.86) (xy 138.43 149.86)
+			(xy 107.95 149.86) (xy 138.43 149.86)
 		)
 		(stroke
 			(width 0)
@@ -2726,7 +2726,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 149.86) (xy 118.11 149.86)
+			(xy 96.52 149.86) (xy 100.33 149.86)
 		)
 		(stroke
 			(width 0)
@@ -2816,7 +2816,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 147.32) (xy 118.11 147.32)
+			(xy 96.52 147.32) (xy 100.33 147.32)
 		)
 		(stroke
 			(width 0)
@@ -2874,6 +2874,16 @@
 		)
 		(uuid "14f5380d-4075-44e7-828a-197021b102d1")
 	)
+	(label "PC104_I2C_SCL"
+		(at 113.03 149.86 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "1565ca65-1465-4859-ab68-4881e81d4069")
+	)
 	(label "5V_p"
 		(at 267.97 127 180)
 		(effects
@@ -2914,6 +2924,16 @@
 		)
 		(uuid "3dfe3758-b13d-48b4-8d15-eaa267683213")
 	)
+	(label "PC104_TX2"
+		(at 227.33 121.92 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "497f4e68-4360-4be4-a03b-b09763944766")
+	)
 	(label "VBATT_p"
 		(at 267.97 152.4 180)
 		(effects
@@ -2944,6 +2964,16 @@
 		)
 		(uuid "543b98d8-8b25-4031-bca7-544c562c7da8")
 	)
+	(label "PC104_I2C_SDA"
+		(at 113.03 147.32 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "54cad284-2387-4269-8278-bf889a8fccd1")
+	)
 	(label "3V3_S1"
 		(at 154.94 154.94 0)
 		(effects
@@ -2963,6 +2993,16 @@
 			(justify left bottom)
 		)
 		(uuid "64b3c5e5-72d0-474b-a125-f2c7c42c1565")
+	)
+	(label "PC104_RX2"
+		(at 259.08 121.92 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "7d059798-183c-4468-b4e6-7beefa52e717")
 	)
 	(label "5V_S3"
 		(at 124.46 160.02 0)
@@ -3006,7 +3046,7 @@
 	)
 	(global_label "I2C_SCL"
 		(shape input)
-		(at 109.22 149.86 180)
+		(at 96.52 149.86 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3016,7 +3056,7 @@
 		)
 		(uuid "18252120-79d5-4f49-ae57-e137660779b6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 97.3519 149.86 0)
+			(at 84.6519 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3138,7 +3178,7 @@
 	)
 	(global_label "PC104_RX"
 		(shape input)
-		(at 269.24 121.92 0)
+		(at 287.02 121.92 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3148,7 +3188,7 @@
 		)
 		(uuid "4ea79b89-a405-4e4f-8bc0-da439729b91d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 281.1866 121.92 0)
+			(at 298.9666 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3270,7 +3310,7 @@
 	)
 	(global_label "I2C_SDA"
 		(shape input)
-		(at 109.22 147.32 180)
+		(at 96.52 147.32 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3280,7 +3320,7 @@
 		)
 		(uuid "8776cd47-660e-4208-ab19-ed979338a3f1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 97.2793 147.32 0)
+			(at 84.5793 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3292,7 +3332,7 @@
 	)
 	(global_label "PC104_TX"
 		(shape input)
-		(at 229.87 121.92 180)
+		(at 214.63 121.92 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3302,7 +3342,7 @@
 		)
 		(uuid "9631aa09-29c5-412c-8ea0-0fdfe1ac6e14")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 218.2258 121.92 0)
+			(at 202.9858 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3468,7 +3508,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 121.92 149.86 270)
+		(at 104.14 149.86 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3476,7 +3516,7 @@
 		(dnp yes)
 		(uuid "04235119-1654-42c4-8e73-cf172b64ccdd")
 		(property "Reference" "R122"
-			(at 124.714 151.13 90)
+			(at 106.934 151.13 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3485,7 +3525,7 @@
 			)
 		)
 		(property "Value" "0Ω"
-			(at 116.332 151.13 90)
+			(at 98.552 151.13 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3494,7 +3534,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 121.92 148.082 90)
+			(at 104.14 148.082 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3503,7 +3543,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 121.92 149.86 0)
+			(at 104.14 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3512,7 +3552,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 121.92 149.86 0)
+			(at 104.14 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3603,7 +3643,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 236.22 121.92 270)
+		(at 220.98 121.92 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3611,7 +3651,7 @@
 		(dnp yes)
 		(uuid "11569b5c-bdee-435d-b53f-784714895d3f")
 		(property "Reference" "R123"
-			(at 236.982 119.634 90)
+			(at 221.742 119.634 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3620,7 +3660,7 @@
 			)
 		)
 		(property "Value" "0Ω"
-			(at 233.172 119.634 90)
+			(at 217.932 119.634 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3629,7 +3669,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 236.22 120.142 90)
+			(at 220.98 120.142 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3638,7 +3678,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 236.22 121.92 0)
+			(at 220.98 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3647,7 +3687,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 236.22 121.92 0)
+			(at 220.98 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3738,7 +3778,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 261.62 121.92 270)
+		(at 279.4 121.92 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -3746,7 +3786,7 @@
 		(dnp yes)
 		(uuid "1d629d7d-7d2f-4653-81ad-fb3db0233a82")
 		(property "Reference" "R124"
-			(at 262.382 119.634 90)
+			(at 280.162 119.634 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3755,7 +3795,7 @@
 			)
 		)
 		(property "Value" "0Ω"
-			(at 258.572 119.634 90)
+			(at 276.352 119.634 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3764,7 +3804,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 261.62 120.142 90)
+			(at 279.4 120.142 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3773,7 +3813,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 261.62 121.92 0)
+			(at 279.4 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3782,7 +3822,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 261.62 121.92 0)
+			(at 279.4 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4137,7 +4177,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 121.92 147.32 270)
+		(at 104.14 147.32 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4145,7 +4185,7 @@
 		(dnp yes)
 		(uuid "7c885d11-0da4-46cc-a45a-c015c4f4c41c")
 		(property "Reference" "R113"
-			(at 122.682 145.034 90)
+			(at 104.902 145.034 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4154,7 +4194,7 @@
 			)
 		)
 		(property "Value" "0Ω"
-			(at 118.872 145.034 90)
+			(at 101.092 145.034 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4163,7 +4203,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 121.92 145.542 90)
+			(at 104.14 145.542 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4172,7 +4212,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 121.92 147.32 0)
+			(at 104.14 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4181,7 +4221,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 121.92 147.32 0)
+			(at 104.14 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
