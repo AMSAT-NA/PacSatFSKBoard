@@ -2009,6 +2009,10 @@
 		(uuid "5a5b526d-1539-4b7b-80d2-d7c13ca92dba")
 	)
 	(no_connect
+		(at 138.43 124.46)
+		(uuid "5f51e09c-9074-42d9-a108-989969d12883")
+	)
+	(no_connect
 		(at 138.43 139.7)
 		(uuid "62d0cd9e-23b6-4d23-8dfb-dbd9efb941d4")
 	)
@@ -2023,10 +2027,6 @@
 	(no_connect
 		(at 138.43 127)
 		(uuid "63b8cab6-51aa-4c8f-9d33-40f86a521384")
-	)
-	(no_connect
-		(at 138.43 96.52)
-		(uuid "665cfbb7-659e-412c-aed4-4397f08526fe")
 	)
 	(no_connect
 		(at 151.13 96.52)
@@ -2173,12 +2173,12 @@
 		(uuid "eec7218f-f61a-4572-ac10-bc829c36558f")
 	)
 	(no_connect
-		(at 138.43 101.6)
-		(uuid "ef7fedfb-4a6d-4582-88b1-9313991b2634")
-	)
-	(no_connect
 		(at 255.27 139.7)
 		(uuid "f12a8523-07cc-4064-98c2-00390613ea57")
+	)
+	(no_connect
+		(at 151.13 124.46)
+		(uuid "f3ce33c8-52a1-4773-8dda-9f829547f934")
 	)
 	(no_connect
 		(at 138.43 129.54)
@@ -2326,16 +2326,6 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 124.46) (xy 165.1 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "45e1bbde-9794-4b99-aa93-4f1726113724")
-	)
-	(wire
-		(pts
 			(xy 267.97 133.35) (xy 267.97 132.08)
 		)
 		(stroke
@@ -2383,6 +2373,16 @@
 			(type default)
 		)
 		(uuid "57121568-9b64-4b44-b374-1b32570ab613")
+	)
+	(wire
+		(pts
+			(xy 138.43 96.52) (xy 125.73 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "59094c1c-2b9a-4730-8295-4a705a610f20")
 	)
 	(wire
 		(pts
@@ -2473,6 +2473,16 @@
 			(type default)
 		)
 		(uuid "751a9dca-74da-4e87-98e2-565d3000ad60")
+	)
+	(wire
+		(pts
+			(xy 125.73 101.6) (xy 138.43 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7641d2ae-710c-4664-a162-233c62ac1dd4")
 	)
 	(wire
 		(pts
@@ -2683,16 +2693,6 @@
 			(type default)
 		)
 		(uuid "d5f24237-4ea5-4104-baed-0db9d64faf58")
-	)
-	(wire
-		(pts
-			(xy 125.73 124.46) (xy 138.43 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d68ea326-ecd2-4f70-b122-124e99580850")
 	)
 	(wire
 		(pts
@@ -3004,28 +3004,6 @@
 		)
 		(uuid "c6b069a9-e89f-4c01-abd1-8b09c5b3c2f8")
 	)
-	(global_label "CANA+"
-		(shape input)
-		(at 125.73 124.46 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify right)
-		)
-		(uuid "0fae6161-7d83-44e5-8d3d-bd0f2fa7fd97")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 115.3131 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "I2C_SCL"
 		(shape input)
 		(at 109.22 149.86 180)
@@ -3110,6 +3088,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "CANA+"
+		(shape input)
+		(at 125.73 101.6 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "315a8831-721a-43b4-9bad-73c038cf162e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 115.3131 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -3268,28 +3268,6 @@
 			)
 		)
 	)
-	(global_label "CANA-"
-		(shape input)
-		(at 165.1 124.46 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left)
-		)
-		(uuid "7c9c6414-c96f-4a6e-9a11-cdf244c9c7ba")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 175.5169 124.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "I2C_SDA"
 		(shape input)
 		(at 109.22 147.32 180)
@@ -3369,6 +3347,28 @@
 		(uuid "9e148f93-edcc-4787-a78a-a62ad20cef6f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 115.0954 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "CANA-"
+		(shape input)
+		(at 125.73 96.52 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "a0ac16fc-ac08-4ca9-88b0-8e09e398a0d8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 115.3131 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)

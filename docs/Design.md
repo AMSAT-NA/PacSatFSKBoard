@@ -67,7 +67,7 @@ CAN Bus
 =======
 
 Two CAN buses are routed to the PC104 and they are on by default.  CAN
-A is on H1 (J1) pins 23 (the +) and 24 (the -).  CAN B is on H1 (J1)
+A is on H1 (J1) pins 5 (the +) and 1 (the -).  CAN B is on H1 (J1)
 pins 33 (the +) and 34 (the -).  These are not standard.  CAN A can be
 disabled by removing U14 and R50 and R51.  CAN B can be disabled by
 removing U22 and R89 and R90.
@@ -102,6 +102,12 @@ Differences between the Version 2 and Version 3 board
   
 * The serial RX and TX lines on the PC104 were backwards on the
   version 2 board.  They are fixed on the version 3 board.
+  
+* Unfortunately, CAN A was moved on the PC104 from pins 23 (+) and 24
+  (-) to pins 5 (+) and 1 (-).  This matches the NanoMind
+  configuration, which is the only thing I found with a CAN bus.  Pins
+  23 and 24 are already used on the power supply for ground and
+  alternate I2C, so they could not be used for CAN.
 
 IO Connections on the PacSat AFSK processor
 ===========================================

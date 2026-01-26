@@ -9,6 +9,15 @@ some point.
 
 # TODO
 
+I'm still not 100% sure the H1/H2 connectors are correct.  They seem
+to match the power supply configuration I have, but the CSK PCB
+specifications show two different H1/H2 configurations on slot 0 and
+slot 1. is at https://www.pumpkinspace.com/supporting-documents.html
+looking at the PDF file.  Slot 0 shows H1 on the bottom and H2 on top.
+Slot 1 shows H1 on top and H2 on the bottom.  They can't both be
+right.  The power supply board shows H1 on the bottom and H2 on top,
+but it's not 100% clear.
+
 Figure out how to mount a heat sink under the PA, what holes are
 required, etc.  The copper pad is already exposed.
 
