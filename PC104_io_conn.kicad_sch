@@ -3136,7 +3136,7 @@
 			)
 		)
 	)
-	(global_label "PC104_TX"
+	(global_label "PC104_RX"
 		(shape input)
 		(at 269.24 121.92 0)
 		(fields_autoplaced yes)
@@ -3148,7 +3148,7 @@
 		)
 		(uuid "4ea79b89-a405-4e4f-8bc0-da439729b91d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 280.8842 121.92 0)
+			(at 281.1866 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3312,7 +3312,7 @@
 			)
 		)
 	)
-	(global_label "PC104_RX"
+	(global_label "PC104_TX"
 		(shape input)
 		(at 229.87 121.92 180)
 		(fields_autoplaced yes)
@@ -3324,7 +3324,7 @@
 		)
 		(uuid "9631aa09-29c5-412c-8ea0-0fdfe1ac6e14")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 217.9234 121.92 0)
+			(at 218.2258 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)

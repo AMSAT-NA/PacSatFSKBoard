@@ -76,8 +76,11 @@ PC104 Serial Port
 =================
 
 The second serial port from the processor is run to PC104 J2 (H2) pins
-21 (RX) and 22 (TX).  You need to install R123 and R124 to make this
+22 (RX) and 21 (TX).  You need to install R123 and R124 to make this
 connection.
+
+On version 2 boards RX and TX are backwards and special jumpering on
+R123 and R124 will be required to make it work.
 
 Differences between the Version 2 and Version 3 board
 =====================================================
@@ -96,6 +99,9 @@ Differences between the Version 2 and Version 3 board
   current into the PA.  This should allow the power usage of the PA to
   be directly controlled.  There is also a uninstalled resistor that
   can be installed (and the DAC removed) as a build option.
+  
+* The serial RX and TX lines on the PC104 were backwards on the
+  version 2 board.  They are fixed on the version 3 board.
 
 IO Connections on the PacSat AFSK processor
 ===========================================
