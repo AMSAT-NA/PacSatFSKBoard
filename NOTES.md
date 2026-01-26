@@ -77,7 +77,7 @@ Parts that are not automotive rated listed below.
 | TQP7M9106					| PA | ? |
 | QPL9547					| LNA | ? |
 | AD4PS-1+					| RF power splitter | Environmental Specs seem good, probably ok. |
-| QPC1022TR7				| RF switch | ? |
+| ADL5501AKSZ-R7			| RF power measurement | No power measurement devices are rated. |
 | ?							| PC104 connector | Unknown if AEC |
 
 Part that are automotive listed below.
@@ -87,8 +87,9 @@ Part that are automotive listed below.
 | STWD100NYWY3F				| Hardware watchdog |
 | TCAN1044ADDFRQ1			| CAN bus interface |
 | TMS570LS0914PGE			| CPU |
-| TPS62A02AQDRLRQ1			| 1.2V power converter |
-| TPS7A52-Q1				| 3.3V power converter |
+| TPS62A02AQDRLRQ1			| 1.2V and 3.3V power converter |
+| QPC8010Q					| RF switch |
+| SN3257QDYYRQ1				| Active/Standby switches |
 
 I'm assuming that most ICs won't be a problem from the vibration point
 of view.  The power modules are probably good to get certified, though.
@@ -101,7 +102,9 @@ lines.  But there are advantages to a completely passive solution.
 You could use one of the receive AX5043s ANTP1 port as an alternate
 transmitter.  You could use the same PA or a different PA, either way
 a QPC1022 RF switch could handle the choice.  You could even have
-separate antennas.
+separate antennas.  I have tested, and with an 18nH inductor
+installed, if you disable the external inductor the AX5043 will range
+at 420-450MHz.
 
 Figure out temperature ratings on all parts and get as many to be 105C
 or better as possible.  The outliers at the moment are:
@@ -113,6 +116,8 @@ or better as possible.  The outliers at the moment are:
 	  could be used.
 	* TQP7M9106 - RF PA.  Could use a discrete device, but the parms
 	  are pretty good.
+	* ADL5501AKSZ-R7 - RF Power Measurement.  Suitable devices don't
+	  seem to be available.  This is an optional feature.
 
 The RX input filter can probably do the impedance adjustment for the
 LNA, but I'm not sure how to calculate that.  There's an impedance
