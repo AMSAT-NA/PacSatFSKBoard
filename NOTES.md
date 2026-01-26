@@ -2331,7 +2331,7 @@ has similar characteristics but actually can replace two QPC1022s.  I
 wish I had seen that earlier.  But it's minimum frequency is about
 700MHz.
 
-## 2026-01-23
+## 2026-01-24
 
 Got board 5 set up and transmitting and receiving properly.
 
@@ -2342,3 +2342,17 @@ There are options for switching the antenna between board 1 and board
 2, so the fault tolerance can still be achieved.  The QPC8010Q appears
 to be ideal for the job, except it doesn't work with 5V power.  So
 rework the board for those changes.
+
+## 2026-01-25
+
+Got board 7 working.
+
+I realized when trying to run the receivers at 440MHz that I hadn't
+set the transmit power.  Setting the transmit power reveals that yes,
+it will range in the 440MHz area without issue with an 18nH inductor
+installed.  So a loopback might be possible after all, if there
+weren't other issues.  It might be a bad idea in general, anyway, that
+much power locally might desense the receiver.  It would be hard to
+know without testing.  But unless a proper RF switch can be found,
+it's a moot point.
+

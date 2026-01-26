@@ -14,11 +14,13 @@ or https://www.digikey.com/en/products/detail/olimex-ltd/ARM-JTAG-20-10/3471401
 
 Besides being a lot cheaper than the standard XDS110, the LP-XDS110
 also has a serial port built in, so you don't have to have a separate
-serial port interface.  Remember, hook TX on one board to RX on the
-other.  Don't hook TX to TX.  If you don't have the JTAG connected,
-you will need to connect the ground as well.
+serial port interface.  Jumper J12 on the PacSat board is the serial
+interface (3.3V) and the TX and RX lines are labeled under the pins.
+The unlabeled pin is ground.  Remember, hook TX on one board to RX on
+the other.  Don't hook TX to TX.  If you don't have the JTAG
+connected, you will need to connect the ground as well.
 
-The reset pin on the LP-XDS110 resets the board.
+The reset button on the LP-XDS110 resets the board.
 
 The jumper on the LP-XDS110 decides which device powers the level
 shifters.  If you are just using the serial port, the jumper should be
@@ -29,21 +31,71 @@ Otherwise the LP-XDS110 will be providing power to the device, which
 you don't want.  In that case the PacSat board is powering the level
 shifters.
 
+Hooking Up Power
+================
+
+The normal board build only takes 5V.  There is a build option (or
+some solder work) to remove the 3.3V regulator and supply 3.3V through
+an external interface.
+
+To hook up 5V, you can use jumper J5 (which is right by the PC104).
+The 5V pin is labeled on the board.  Or you can use PC104 connector J2
+(H2) pin 25 or 26 for 5V.
+
+3.3V comes in jumper J6.  This could also be done from the PC104 J2
+(H2) pin 27 or 28, but you would need to add resistor R111, which is
+not installed by default.
+
+There are also other pins on the PC104 which can supply 5V and 3.3V,
+matching some power supplies, but certain resistors need to be
+installed to do this.  They are not installed by default.
+
+Hardware Watchdog
+=================
+
+Jumper J4 disables the hardware watchdog when installed.  When
+programming and debugging you need to install this jumper.
+
+I2C
+===
+
+I2C can be run to the PC104, but resistors R113 and R122 need to be
+installed.  These are on J1 (H1) pins 41 and 43, which is
+semi-standard.
+
+CAN Bus
+=======
+
+Two CAN buses are routed to the PC104 and they are on by default.  CAN
+A is on H1 (J1) pins 23 (the +) and 24 (the -).  CAN B is on H1 (J1)
+pins 33 (the +) and 34 (the -).  These are not standard.  CAN A can be
+disabled by removing U14 and R50 and R51.  CAN B can be disabled by
+removing U22 and R89 and R90.
+
+PC104 Serial Port
+=================
+
+The second serial port from the processor is run to PC104 J2 (H2) pins
+21 (RX) and 22 (TX).  You need to install R123 and R124 to make this
+connection.
+
 Differences between the Version 2 and Version 3 board
 =====================================================
 
-* The ACTIVE\_N is now ACTIVE, changed to positive logic.
+* The ACTIVE\_N GPIO is now ACTIVE, changed to positive logic.
 
-* The OTHER\_FAULT\_N is now OTHER\_FAULT, changed to positive
+* The OTHER\_FAULT\_N GPIO is now OTHER\_FAULT, changed to positive
   logic.
   
-* The OTHER\_HW\_POWER\_OFF\_N is changed to OTHER\_HW\_POWER\_ST.  It
-  is now positive logic, and the name has been changed to reflect that
-  it is measuring the other power off state.
+* The OTHER\_HW\_POWER\_OFF\_N GPIO is changed to
+  OTHER\_HW\_POWER\_ST.  It is now positive logic, and the name has
+  been changed to reflect that it is measuring the other power off
+  state.
   
 * A DAC has been added to the AX5043 SPI bus to control the quiescent
   current into the PA.  This should allow the power usage of the PA to
-  be directly controlled.
+  be directly controlled.  There is also a uninstalled resistor that
+  can be installed (and the DAC removed) as a build option.
 
 IO Connections on the PacSat AFSK processor
 ===========================================
