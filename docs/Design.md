@@ -95,6 +95,8 @@ Differences between the Version 2 and Version 3 board
   been changed to reflect that it is measuring the other power off
   state.
   
+* OTHER\_ACTIVE\_N has changed to positive logic, OTHER\_ACTIVE now.
+  
 * A DAC has been added to the AX5043 SPI bus to control the quiescent
   current into the PA.  This should allow the power usage of the PA to
   be directly controlled.  There is also a uninstalled resistor that
@@ -139,7 +141,7 @@ used as a GPIO.
 |13		|CAN3TX					|CAN\_A\_TX				|OU|CAN bus transceiver |
 |14		|GIOA[5]				|AX5043\_IRQ\_RX4		|ID|Interrupt from AX5043 RX4 |
 |15		|N2HET1[22]				|						| D|free gpio|
-|16		|GIOA[6]				|OTHER\_ACTIVE\_N		|ID|Active line from other board |
+|16		|GIOA[6]				|OTHER\_ACTIVE			|ID|Active line from other board |
 |17		|VCC					|						|  | |
 |18		|OSCIN					|						|  | |
 |19		|Kelvin\_GND			|						|  | |
@@ -529,9 +531,9 @@ The lines on the PC104 are:
   other board.
 
 The lines from the other board become OTHER\_PRESENCE\_N,
-OTHER\_FAULT, OTHER\_ACTIVE\_N, and OTHER\_HW\_POWER\_OFF on a
+OTHER\_FAULT, OTHER\_ACTIVE, and OTHER\_HW\_POWER\_OFF on a
 board.  The lines for this board become PRESENCE\_N, FAULT,
-ACTIVE\_N, and HW\_POWER\_OFF\_N.
+ACTIVE, and HW\_POWER\_OFF\_N.
 
 The active board may also be externally controlled.  If the
 EXTERN\_CONTROL line is pulled high, the board will assume that some
@@ -596,15 +598,15 @@ The boards will switch activity periodically to test the other board.
   - PowerUp:
 
     - !OTHER\_PRESENCE\_N -> ActiveOtherBoardNotPresent
-    - OTHER\_PRESENCE\_N && OTHER\_ACTIVE\_N -> Inactive
-    - OTHER\_PRESENCE\_N && !OTHER\_ACTIVE\_N && !IAmBoard2 -> ActiveOtherBoardPresent
-    - OTHER\_PRESENCE\_N && !OTHER\_ACTIVE\_N && IAmBoard2 -> InactiveWaitActivate
+    - OTHER\_PRESENCE\_N && OTHER\_ACTIVE -> Inactive
+    - OTHER\_PRESENCE\_N && !OTHER\_ACTIVE && !IAmBoard2 -> ActiveOtherBoardPresent
+    - OTHER\_PRESENCE\_N && !OTHER\_ACTIVE && IAmBoard2 -> InactiveWaitActivate
       - start timer
 
   - Inactive:
     - OTHER\_FAULT -> ActiveOtherBoardPresent
       - power cycle other board.
-    - !OTHER\_ACTIVE\_N -> ActiveOtherBoardPresent
+    - !OTHER\_ACTIVE -> ActiveOtherBoardPresent
     - !OTHER\_PRESENCE\_N -> ActiveOtherBoardNotPresent
       - log presence issue
 
@@ -612,9 +614,9 @@ The boards will switch activity periodically to test the other board.
     - OTHER\_FAULT -> ActiveOtherBoardPresent
       - stop timer
       - power cycle other board.
-    - OTHER\_ACTIVE\_N -> Inactive
+    - OTHER\_ACTIVE -> Inactive
       - stop timer
-    - !OTHER\_ACTIVE\_N && timeout -> ActiveOtherBoardPresent
+    - !OTHER\_ACTIVE && timeout -> ActiveOtherBoardPresent
     - !OTHER\_PRESENCE\_N -> ActiveOtherBoardNotPresent
       - stop timer
       - log presence issue
@@ -622,7 +624,7 @@ The boards will switch activity periodically to test the other board.
   - ActiveOtherBoardPresent:
     - OTHER\_FAULT -> ActiveOtherBoardPresent
       - power cycle other board.
-    - OTHER\_ACTIVE\_N -> Inactive
+    - OTHER\_ACTIVE -> Inactive
     - !OTHER\_PRESENCE\_N -> ActiveOtherBoardNotPresent
       - log presence issue
   

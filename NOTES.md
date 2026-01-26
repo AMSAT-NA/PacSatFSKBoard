@@ -9,6 +9,11 @@ some point.
 
 # TODO
 
+Switch the 1.2V current limiter to a MPQ5072-AEC1.  There's currently
+a 700mA limit on the limiter, so 2A is not needed.  It's likely less
+than 500mA of actual current.  The MPQ5072-AEC1 is 1A max automotive
+grade and has exactly the same pinout.
+
 I'm still not 100% sure the H1/H2 connectors are correct.  They seem
 to match the power supply configuration I have, but the CSK PCB
 specifications show two different H1/H2 configurations on slot 0 and
@@ -82,7 +87,7 @@ Parts that are not automotive rated listed below.
 | O 16,0-JT22CT-A-P-3,3-LF	| oscillator | There don't appear to be any that are automotive and temp certified with 2.5ppm stability.  This one is temp, which is probably more important. There is one from TXC at 16.389MHz. |
 | AS1016204-0108X0PWAY		| MRAM | No suitable devices available. |
 | MAX31331					| RTC | No suitable devices available. |
-| MP5073GG-P				| 1.2V current limiter | No suitable devices appear to be available. There is an MP5072 part that is AEC rated, basically the same chip but it's 1A instead of 2A. |
+| MP5073GG-P				| 1.2V current limiter | No suitable devices appear to be available. There is an MPQ5072 part that is AEC rated, basically the same chip but it's 1A instead of 2A. |
 | MAX4995A					| 3.3V and 5V current limiter | Some devices are available from TI, like TPS2561-Q1 (dual channel) or TPS2557-Q1 (single channel). The MAX part may already be flight proven, though. |
 | AX5043					| radio | No other option. |
 | TQP7M9106					| PA | ? |
@@ -1198,7 +1203,7 @@ Change transmit power dissipation resistors to 2W.
 
 Moved ACTIVE\_N to a normal GPIO so it can be interrupt driven.
 
-Add OTHER\_HW\_POWER\_N to a GPIO so in the externally driven
+Add OTHER>\_HW\_POWER\_N to a GPIO so in the externally driven
 active/standby case the other power state can be monitored.
 
 Added a test mode using the RF switches to shunt power from the
@@ -2372,7 +2377,11 @@ much power locally might desense the receiver.  It would be hard to
 know without testing.  But unless a proper RF switch can be found,
 it's a moot point.
 
-## 2026-01-25
+## 2026-01-26
 
 Move the CAN A pins on the PC104 to avoid a conflict with the power
 supply.
+
+OTHER\_ACTIVE\_N can possibly suffer from latch-up and mess up the
+active lines (and thus the chosen RF board).  Add a MOSFET to avoid
+the issue.

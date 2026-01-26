@@ -9381,7 +9381,7 @@
 			)
 		)
 	)
-	(global_label "OTHER_ACTIVE_N"
+	(global_label "OTHER_ACTIVE"
 		(shape input)
 		(at 209.55 233.68 270)
 		(fields_autoplaced yes)
@@ -9393,7 +9393,7 @@
 		)
 		(uuid "591ad35b-986e-45c6-a2cd-65bcf90438e1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 209.55 255.0551 90)
+			(at 209.55 252.2974 90)
 			(effects
 				(font
 					(size 1.27 1.27)
