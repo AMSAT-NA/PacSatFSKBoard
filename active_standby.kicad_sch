@@ -1210,7 +1210,7 @@
 		)
 		(uuid "5de932f1-443a-4eed-8da7-d41bcfd89597")
 	)
-	(text "Prevent signal latch up on the inputs and outputs\ngoing to the other board.  It appears when the board\nis powered down, signals can go into latchup.  For\ninstance, OTHER_HW_POWER_OFF_N can be pulled to\nground and mess things up.  Prevent latch up using\nthese MOSFETs."
+	(text "Prevent signal latch up on the inputs and outputs\ngoing to the other board.  It appears when the board\nis powered down, signals can go into latchup.  For\ninstance, OTHER_HW_POWER_ST can be pulled to\nground and mess things up.  Prevent latch up from\ncausing problems using these MOSFETs."
 		(exclude_from_sim no)
 		(at 241.808 154.686 0)
 		(effects

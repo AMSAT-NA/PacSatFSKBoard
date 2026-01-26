@@ -33,6 +33,8 @@ and doesn't have any control over gain.  It does seem that lower NF
 values require higher power.
 
 Look at adding the TVS diode on the PA per the datasheet schematics.
+This seems to be for static electricity handling, so probably not
+necessary.
 
 Maybe spend some time needs to be spent looking for a new PA.  It
 seems to be fairly efficient, 500ma at 5V 2.5W for 2W of output,
@@ -123,7 +125,7 @@ The RX input filter can probably do the impedance adjustment for the
 LNA, but I'm not sure how to calculate that.  There's an impedance
 matching circuit in there now, removing it would save two parts.
 
-Is there a reason the ANTP1 output of the AX5043 is connected to a 50
+Is there a reason the ANTP1 output of the AX5043s are connected to a 50
 ohm resistor?  I can't find anything in the datasheet or errata about
 that, it always shows it disconnected when not used. - May or may not
 be necessary.
