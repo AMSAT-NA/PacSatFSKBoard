@@ -2372,3 +2372,7 @@ much power locally might desense the receiver.  It would be hard to
 know without testing.  But unless a proper RF switch can be found,
 it's a moot point.
 
+## 2026-01-25
+
+Move the CAN A pins on the PC104 to avoid a conflict with the power
+supply.
