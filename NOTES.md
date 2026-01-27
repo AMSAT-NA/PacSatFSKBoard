@@ -2385,3 +2385,8 @@ supply.
 OTHER\_ACTIVE\_N can possibly suffer from latch-up and mess up the
 active lines (and thus the chosen RF board).  Add a MOSFET to avoid
 the issue.
+
+Add switches on the I2C and serial lines to the PC104 to allow them to
+be dynamically connected/disconnected.  Add PC104\_I2C\_EN\_N and
+PC104\_SER\_EN\_N control lines from the CPU for controlling these.
+
