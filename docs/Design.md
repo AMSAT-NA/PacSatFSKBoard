@@ -53,6 +53,42 @@ installed to do this.  They are not installed by default.
 You obviously must hook up ground.  On the PC104 this is J2 (H2) pins
 29, 30, and 32.  The other power pins have an associated ground.
 
+Heat Sink for the Power Amplifier
+=================================
+
+The power amplifier has heat sink (or spreader) mounting on the bottom
+of the board.  The PA is designed to transfer the heat that way,
+according to the data sheet.
+
+There is space and mounting holes for a 26mm by 12mm heat sink.
+Mounting holes are M1.6 sized PTH centered 2.25mm from each edge.
+The idea is to have a flat copper plat of that size.
+
+The mounting hole centers are 21.5mm apart horizontally and 7.5mm
+apart vertically.
+
+Near the center of the plate there is a small block of copper to
+extend down to the circuit board under the PA.  The PA has an open
+copper area for this.  This area is 2.75mm x 2.75mm.  It's right edge
+is located 14.10mm from the right side of the plate and the left edge
+is located 9.16mm from the left side of the plate.  The top of the
+area is 4.75mm from the top of the plate and 4.50mm from the bottom of
+the plate.
+
+It is unknown if the heat sink is required or what duty cycle on the
+PA can be supported with and without it.  There is already a large
+ground area on the bottom of the board for cooling.  But the provision
+is there.  At worst case it needs to dissipate around 2W of heat. (The
+PA is powered but no signal is transmitted.  When a signal is being
+transmitted at full power, most of the power is being sent and only
+around .5W is being dissipated by the PA.  It may also be possible to
+reduce the quiescent current drawn by the PA by modifying the Iref
+current.
+
+It would also be possible to connect the top of the chip via some type
+of riser to the shield to provide additional radiation surfaces for
+the PA.
+
 RF Connections
 ==============
 

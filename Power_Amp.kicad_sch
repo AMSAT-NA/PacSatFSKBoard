@@ -857,6 +857,113 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Mechanical:MountingHole_Pad"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole_Pad"
+				(at 0 4.445 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mounting Hole with connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*Pad*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHole_Pad_0_1"
+				(circle
+					(center 0 1.27)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "MountingHole_Pad_1_1"
+				(pin input line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "PACSAT_DEV_misc:2118714-2"
 			(pin_names
 				(offset 1.016)
@@ -2718,6 +2825,16 @@
 		)
 		(uuid "dc2d3d9e-dbeb-49f3-bde7-e113b8416228")
 	)
+	(text "Holes for the PA heat sink."
+		(exclude_from_sim no)
+		(at 315.468 21.336 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "ddfdfd6d-3596-4256-9f7a-ebc5b532bdb7")
+	)
 	(text "Directional coupler 4mm long\ntrack width .1524mm with .109mm\nseparation.  The coupler is on the ground\nlayer below the signal and all ground and\nsignals are removed from the area.\n\nThis is optional and may be removed\nif power measurements aren't required."
 		(exclude_from_sim no)
 		(at 354.076 178.562 0)
@@ -2773,6 +2890,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1541e16f-dde6-47fc-ba8f-b748d54e0924")
+	)
+	(junction
+		(at 314.96 33.02)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1e103087-de23-485b-b263-7d2f8a24f4b6")
 	)
 	(junction
 		(at 248.92 39.37)
@@ -3087,6 +3210,12 @@
 		(uuid "e5083ee5-3e61-430b-88a1-d1d45f458214")
 	)
 	(junction
+		(at 314.96 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ebf9cfdb-52c2-467e-b815-3d97313e0dae")
+	)
+	(junction
 		(at 38.1 26.67)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3133,6 +3262,16 @@
 			(type default)
 		)
 		(uuid "0106c54d-f391-4e56-847f-310b758f0e6d")
+	)
+	(wire
+		(pts
+			(xy 309.88 40.64) (xy 309.88 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "014db02d-4228-42d7-9e58-c0d5967df3aa")
 	)
 	(wire
 		(pts
@@ -3376,6 +3515,16 @@
 	)
 	(wire
 		(pts
+			(xy 309.88 30.48) (xy 309.88 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19bafc20-129e-4bd2-a728-c45a77cfab1c")
+	)
+	(wire
+		(pts
 			(xy 38.1 31.75) (xy 43.18 31.75)
 		)
 		(stroke
@@ -3433,6 +3582,16 @@
 			(type default)
 		)
 		(uuid "1d64a659-2def-486c-aa4d-260caab3ce2b")
+	)
+	(wire
+		(pts
+			(xy 309.88 43.18) (xy 314.96 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ebd1a77-afde-4033-8523-e15eec5758ab")
 	)
 	(wire
 		(pts
@@ -4326,6 +4485,16 @@
 	)
 	(wire
 		(pts
+			(xy 314.96 33.02) (xy 314.96 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "797b7ec5-f922-49a9-9b69-fc5ef7ef960a")
+	)
+	(wire
+		(pts
 			(xy 283.21 160.02) (xy 283.21 166.37)
 		)
 		(stroke
@@ -4353,6 +4522,16 @@
 			(type default)
 		)
 		(uuid "7eb2f908-4c2b-4d1f-95ae-1d1c39649238")
+	)
+	(wire
+		(pts
+			(xy 314.96 43.18) (xy 320.04 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "81a7fc28-727b-4d96-a52e-48939b3cb088")
 	)
 	(wire
 		(pts
@@ -4423,6 +4602,16 @@
 			(type default)
 		)
 		(uuid "872ce565-3dba-4bae-bcc7-6f9bac2d0ccb")
+	)
+	(wire
+		(pts
+			(xy 320.04 33.02) (xy 314.96 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "877fa254-6f62-40b3-95fe-9b8e9330c9dc")
 	)
 	(wire
 		(pts
@@ -4726,6 +4915,16 @@
 	)
 	(wire
 		(pts
+			(xy 320.04 30.48) (xy 320.04 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b43c571c-3f22-4b72-b4c1-8fea737db07a")
+	)
+	(wire
+		(pts
 			(xy 284.48 100.33) (xy 284.48 99.06)
 		)
 		(stroke
@@ -4873,6 +5072,16 @@
 			(type default)
 		)
 		(uuid "c044c108-070a-4888-b829-a19978a9e914")
+	)
+	(wire
+		(pts
+			(xy 314.96 45.72) (xy 314.96 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c08a0016-3e40-474a-8fe9-802d35d1cd14")
 	)
 	(wire
 		(pts
@@ -5156,6 +5365,16 @@
 	)
 	(wire
 		(pts
+			(xy 320.04 43.18) (xy 320.04 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e43910c0-19f2-4aad-a9b4-1fd44a542cc3")
+	)
+	(wire
+		(pts
 			(xy 378.46 165.1) (xy 378.46 138.43)
 		)
 		(stroke
@@ -5313,6 +5532,16 @@
 			(type default)
 		)
 		(uuid "f609acab-a07f-4996-8018-7cc1a606abdc")
+	)
+	(wire
+		(pts
+			(xy 309.88 33.02) (xy 314.96 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7a4ede3-b333-4d55-83dd-ec569cf55dd5")
 	)
 	(wire
 		(pts
@@ -7996,6 +8225,74 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 320.04 27.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "81315c02-a57c-46e5-bdf9-ef8772f5f28e")
+		(property "Reference" "H8"
+			(at 322.58 25.3999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 322.58 27.9399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Loop_D2.60mm_Drill1.6mm_Beaded"
+			(at 320.04 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 320.04 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 320.04 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b2bbcaac-c869-43a3-9270-0ba68c067d6a")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
+					(reference "H8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 214.63 125.73 0)
 		(unit 1)
@@ -8056,6 +8353,73 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
 					(reference "C116")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 309.88 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "84016ab2-7abf-4b9c-834e-9ede67efaefd")
+		(property "Reference" "H7"
+			(at 304.546 35.052 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 312.42 38.0999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Loop_D2.60mm_Drill1.6mm_Beaded"
+			(at 309.88 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 309.88 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 309.88 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "15496859-04d3-44cd-aebd-c1653ebe833c")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
+					(reference "H7")
 					(unit 1)
 				)
 			)
@@ -8856,6 +9220,74 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
 					(reference "#PWR068")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 309.88 27.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a6b7d96f-8c4c-4ef5-a711-a6dcaf0fff61")
+		(property "Reference" "H6"
+			(at 312.42 25.3999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 312.42 27.9399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Loop_D2.60mm_Drill1.6mm_Beaded"
+			(at 309.88 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 309.88 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 309.88 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "04e38f37-177a-454f-8dc0-9a577128986b")
+		)
+		(instances
+			(project ""
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
+					(reference "H6")
 					(unit 1)
 				)
 			)
@@ -10269,6 +10701,139 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
 					(reference "#PWR0243")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 314.96 45.72 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e7b4a767-25f2-4832-9f06-6181cec1d79b")
+		(property "Reference" "#PWR0313"
+			(at 314.96 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 314.96 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 314.96 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 314.96 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 314.96 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c22a588b-6480-4cc4-9cb5-e3bcacd8caf4")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
+					(reference "#PWR0313")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 320.04 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ec7b8aa7-a478-4e40-bfcc-7232eeba9ad3")
+		(property "Reference" "H9"
+			(at 322.58 35.5599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 322.58 38.0999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Loop_D2.60mm_Drill1.6mm_Beaded"
+			(at 320.04 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 320.04 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 320.04 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "be59a4e5-3e64-4d63-8d85-fd934beb5d93")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
+					(reference "H9")
 					(unit 1)
 				)
 			)

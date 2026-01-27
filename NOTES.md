@@ -18,9 +18,6 @@ Slot 1 shows H1 on top and H2 on the bottom.  They can't both be
 right.  The power supply board shows H1 on the bottom and H2 on top,
 but it's not 100% clear.
 
-Figure out how to mount a heat sink under the PA, what holes are
-required, etc.  The copper pad is already exposed.
-
 Go through all the pins on the CPU and remove any unnecessary pull ups
 and pull downs in the HCG software to save some power.
 
@@ -40,10 +37,6 @@ seems to be the best part for optimizing for NF, and the SGL0622Z is
 best for optimizing power.  It also has built-in matching, but is 3.3V
 and doesn't have any control over gain.  It does seem that lower NF
 values require higher power.
-
-Look at adding the TVS diode on the PA per the datasheet schematics.
-This seems to be for static electricity handling, so probably not
-necessary.
 
 Maybe spend some time needs to be spent looking for a new PA.  It
 seems to be fairly efficient, 500ma at 5V 2.5W for 2W of output,
@@ -752,6 +745,9 @@ a 700mA limit on the limiter, so 2A is not needed.  It's likely less
 than 500mA of actual current.  The MPQ5072-AEC1 is 1A max automotive
 grade and has exactly the same pinout.
 
+Figure out how to mount a heat sink under the PA, what holes are
+required, etc.  The copper pad is already exposed.
+
 # Not going to do
 
 Rotate the CPU so that fewer traces need to be routed under the CPU.
@@ -781,6 +777,10 @@ Modify the board1/board2 resistor notes to say that putting in a 40K
 resistor there (basically setting the voltage to 1V) will set the
 board to be simplex. -- This is not required, if a board doesn't sense
 another board, it will act as simplex.
+
+Look at adding the TVS diode on the PA per the datasheet schematics.
+This seems to be for static electricity handling, so probably not
+necessary.
 
 # RF Shields
 
@@ -2398,3 +2398,5 @@ automotive certified and the 2A of the previous one is not needed.
 
 Move the U.FL connectors on the PA output around to make more room
 for a heat sink.
+
+Add heat sink area and mounting holes.
