@@ -2391,3 +2391,10 @@ Add switches on the I2C and serial lines to the PC104 to allow them to
 be dynamically connected/disconnected.  Add PC104\_I2C\_EN\_N and
 PC104\_SER\_EN\_N control lines from the CPU for controlling these.
 
+## 2026-01-26
+
+Change the 1.2V power limiter to a MPQ5072GG-AEC1, since it's
+automotive certified and the 2A of the previous one is not needed.
+
+Move the U.FL connectors on the PA output around to make more room
+for a heat sink.
