@@ -5278,14 +5278,6 @@
 		(uuid "20be2340-f2a4-47fb-8618-fa833b959663")
 	)
 	(no_connect
-		(at 149.86 142.24)
-		(uuid "47990f1e-4974-41d6-87fd-ca3ec4c3a50b")
-	)
-	(no_connect
-		(at 149.86 172.72)
-		(uuid "4c2838b3-6532-46b3-b6c9-2103a4a1c55c")
-	)
-	(no_connect
 		(at 207.01 204.47)
 		(uuid "52e74069-a96d-4300-ba65-235a5cc7c4d8")
 	)
@@ -7125,6 +7117,16 @@
 	)
 	(wire
 		(pts
+			(xy 127 142.24) (xy 149.86 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "882c6be5-7029-4a38-be70-97b6f4dc31f0")
+	)
+	(wire
+		(pts
 			(xy 229.87 68.58) (xy 229.87 72.39)
 		)
 		(stroke
@@ -7712,6 +7714,16 @@
 			(type default)
 		)
 		(uuid "b80ada14-d092-40c7-bac0-5f77a270f503")
+	)
+	(wire
+		(pts
+			(xy 133.35 172.72) (xy 149.86 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b80b99b5-7c7e-400e-9d21-132ab18a2ba9")
 	)
 	(wire
 		(pts
@@ -9491,6 +9503,28 @@
 			)
 		)
 	)
+	(global_label "PC104_SER_EN_N"
+		(shape input)
+		(at 127 142.24 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "6ebf79ea-f422-47fa-9f76-216798121b43")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 104.3913 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "AX5043_IRQ_RX3"
 		(shape input)
 		(at 224.79 226.06 270)
@@ -10037,6 +10071,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PC104_I2C_EN_N"
+		(shape input)
+		(at 133.35 172.72 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "c96330c7-0d22-4d09-9439-cdc92f00bad4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 111.3945 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)

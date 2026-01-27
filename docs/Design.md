@@ -59,9 +59,14 @@ programming and debugging you need to install this jumper.
 I2C
 ===
 
-I2C can be run to the PC104, but resistors R113 and R122 need to be
-installed.  These are on J1 (H1) pins 41 and 43, which is
-semi-standard.
+I2C can be run to the PC104.  These are on J1 (H1) pins 41 and 43,
+which is semi-standard.
+
+On version 3 and later boards, U32 and U38 must be installed (the
+default) and then the PC104\_I2C\_EN\_N line must be enabled to turn
+on access to this.
+
+On version 2 boards, resistors R113 and R122 need to be installed.
 
 CAN Bus
 =======
@@ -76,10 +81,14 @@ PC104 Serial Port
 =================
 
 The second serial port from the processor is run to PC104 J2 (H2) pins
-22 (RX) and 21 (TX).  You need to install R123 and R124 to make this
-connection.
+22 (RX) and 21 (TX).
 
-On version 2 boards RX and TX are backwards and special jumpering on
+On version 3 and later boards, U39 and U40 must be installed (the
+default) and then the PC104\_SER\_EN\_N line must be enabled to turn
+on access to this.
+
+On version 2 boards, You need to install R123 and R124 to make this
+connection.  However, RX and TX are backwards so special jumpering on
 R123 and R124 will be required to make it work.
 
 Differences between the Version 2 and Version 3 board
@@ -255,7 +264,7 @@ used as a GPIO.
 |124	|H2HET1[12]				|POW\_MEAS\_EN			|OD|\*TX power measurement enable |
 |125	|H2HET1[14]				|PA\_PWR\_ON			|OD|Enable PA power |
 |126	|GIOB[0]				|AX5043\_IRQ\_RX2		|ID|Interrupt from AX5043 RX2 |
-|127	|N2HET1[30]				|						| D|free gpio|
+|127	|N2HET1[30]				|PC104\_SER\_EN\_N		|OD|Connect the 2nd serial port to the PC104|
 |128	|CAN2TX					|CAN\_B\_TX				|OU|CAN bus B transmit |
 |129	|CAN2RX					|CAN\_B\_RX				|IU|CAN bus B receive |
 |130	|MIBSPI1NCS[1]			|\*FEED\_WATCHDOG		|OU|Resets the hardware watchdog timer |
@@ -267,7 +276,7 @@ used as a GPIO.
 |136	|VCCIO					|						|  | |
 |137	|VCC					|						|  | |
 |138	|VSS					|						|  | |
-|139	|N2HET1[16]				|						| D|free gpio|
+|139	|N2HET1[16]				|PC104\_I2C\_EN\_N		|OD|Connect the I2C bus to the PC104|
 |140	|N2HET1[18]				|PC104\_ABF0			|ID|PC104 pin H2-50|
 |141	|N2HET1[20]				|AX5043\_PWR\_EN		|OD|Main power enable for all AX5043s |
 |142	|GIOB[2]				|AX5043\_IRQ\_TX		|ID|Interrupt from AX5043 TX |
