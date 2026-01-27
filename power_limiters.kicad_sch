@@ -268,7 +268,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PACSAT_DEV_misc:MP5073GG-P"
+		(symbol "PACSAT_DEV_misc:MPQ5072GG-AEC1"
 			(pin_names
 				(offset 0.254)
 			)
@@ -283,7 +283,7 @@
 					)
 				)
 			)
-			(property "Value" "MP5073GG-P"
+			(property "Value" "MPQ5072GG-AEC1"
 				(at 20.32 7.62 0)
 				(effects
 					(font
@@ -301,7 +301,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://www.monolithicpower.com/en/documentview/productdocument/index/version/2/document_type/Datasheet/lang/en/sku/MP5073GG-Z"
+			(property "Datasheet" "https://www.monolithicpower.com/en/documentview/productdocument/index/version/2/document_type/Datasheet/lang/en/sku/MPQ5072GG-AEC1"
 				(at 0 0 0)
 				(effects
 					(font
@@ -320,7 +320,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "MP5073GG-P"
+			(property "ki_keywords" "MPQ5072GG-AEC1"
 				(at 0 0 0)
 				(effects
 					(font
@@ -338,7 +338,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "MP5073GG-P_0_1"
+			(symbol "MPQ5072GG-AEC1_0_1"
 				(polyline
 					(pts
 						(xy 7.62 5.08) (xy 7.62 -20.32)
@@ -7377,7 +7377,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PACSAT_DEV_misc:MP5073GG-P")
+		(lib_id "PACSAT_DEV_misc:MPQ5072GG-AEC1")
 		(at 53.34 49.53 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7394,7 +7394,7 @@
 				)
 			)
 		)
-		(property "Value" "MP5073GG-P"
+		(property "Value" "MPQ5072GG-AEC1"
 			(at 73.66 41.91 0)
 			(effects
 				(font
@@ -7412,7 +7412,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.monolithicpower.com/en/documentview/productdocument/index/version/2/document_type/Datasheet/lang/en/sku/MP5073GG-Z"
+		(property "Datasheet" "https://www.monolithicpower.com/en/documentview/productdocument/index/version/2/document_type/Datasheet/lang/en/sku/MPQ5072GG-AEC1"
 			(at 53.34 49.53 0)
 			(effects
 				(font

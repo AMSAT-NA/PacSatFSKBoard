@@ -9,11 +9,6 @@ some point.
 
 # TODO
 
-Switch the 1.2V current limiter to a MPQ5072-AEC1.  There's currently
-a 700mA limit on the limiter, so 2A is not needed.  It's likely less
-than 500mA of actual current.  The MPQ5072-AEC1 is 1A max automotive
-grade and has exactly the same pinout.
-
 I'm still not 100% sure the H1/H2 connectors are correct.  They seem
 to match the power supply configuration I have, but the CSK PCB
 specifications show two different H1/H2 configurations on slot 0 and
@@ -87,7 +82,6 @@ Parts that are not automotive rated listed below.
 | O 16,0-JT22CT-A-P-3,3-LF	| oscillator | There don't appear to be any that are automotive and temp certified with 2.5ppm stability.  This one is temp, which is probably more important. There is one from TXC at 16.389MHz. |
 | AS1016204-0108X0PWAY		| MRAM | No suitable devices available. |
 | MAX31331					| RTC | No suitable devices available. |
-| MP5073GG-P				| 1.2V current limiter | No suitable devices appear to be available. There is an MPQ5072 part that is AEC rated, basically the same chip but it's 1A instead of 2A. |
 | MAX4995A					| 3.3V and 5V current limiter | Some devices are available from TI, like TPS2561-Q1 (dual channel) or TPS2557-Q1 (single channel). The MAX part may already be flight proven, though. |
 | AX5043					| radio | No other option. |
 | TQP7M9106					| PA | ? |
@@ -106,6 +100,8 @@ Part that are automotive listed below.
 | TPS62A02AQDRLRQ1			| 1.2V and 3.3V power converter |
 | QPC8010Q					| RF switch |
 | SN3257QDYYRQ1				| Active/Standby switches |
+| MPQ5072GG-AEC1			| 1.2V current limiter |
+| 74CBTLV1G125DBVRQ1		| Analog SPST switch |
 
 I'm assuming that most ICs won't be a problem from the vibration point
 of view.  The power modules are probably good to get certified, though.
@@ -750,6 +746,11 @@ the frequency to 435Mhz, the part says it ranges, but I can't find
 where it's tuned to so it doesn't seem to actually be on that
 frequency. - Just eliminated the loopback.  It was too hard to get
 working.
+
+Switch the 1.2V current limiter to a MPQ5072-AEC1.  There's currently
+a 700mA limit on the limiter, so 2A is not needed.  It's likely less
+than 500mA of actual current.  The MPQ5072-AEC1 is 1A max automotive
+grade and has exactly the same pinout.
 
 # Not going to do
 
