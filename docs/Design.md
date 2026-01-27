@@ -50,6 +50,43 @@ There are also other pins on the PC104 which can supply 5V and 3.3V,
 matching some power supplies, but certain resistors need to be
 installed to do this.  They are not installed by default.
 
+You obviously must hook up ground.  On the PC104 this is J2 (H2) pins
+29, 30, and 32.  The other power pins have an associated ground.
+
+RF Connections
+==============
+
+The Version 3 and later boards have an MMCX connector, P15 for
+transmit and P17 for receive for connecting to the antennas.  The
+receiver has significant filtering above 160MHz; you can connect these
+to the same antenna without damage or desensing.
+
+Version 3 boards also two U.FL connectors, P23 for transmit and P24
+for receive (not populated by default), that can also be used for
+antenna connections.  These could also be connected together to share
+an antenna on one MMCX connector.
+
+Version 2 boards have two U.FL connectors, P15 for transmit and P17
+for receive, for antenna connections.
+
+All boards have various U.FL connectors (not necessarily populated on
+Version 3 and later boards) on the bottom of the board.  These are
+mostly used for isolating and testing circuits.  However, they could
+be used for bringing out or injecting signals.  For instance:
+
+* If you wanted to be able to receive on 160MHz or below, you could
+  disable or remove one of the AX5043s and route it's RF splitter
+  output to another board.  There are obvious places for doing this.
+
+* If you wanted to bring in your own receive signal, there are obvious
+  places for that.  This could be used, for instance, if you have an
+  external downconverter to hook to the board and you didn't need the
+  filtering and/or LNA.
+
+* If you wanted to route the output of the AX5043, or the direct
+  output of the PA, to another board.  This could be used for an
+  external amplifier or and external upconverter.
+
 Hardware Watchdog
 =================
 
@@ -64,7 +101,9 @@ which is semi-standard.
 
 On version 3 and later boards, U32 and U38 must be installed (the
 default) and then the PC104\_I2C\_EN\_N line must be enabled to turn
-on access to this.
+on access to this.  To permanently add a connection, U32 and U38 can
+be removed and a 0402 zero-ohm resistor connected between pins 2 and 4
+on both devices.
 
 On version 2 boards, resistors R113 and R122 need to be installed.
 
@@ -73,9 +112,13 @@ CAN Bus
 
 Two CAN buses are routed to the PC104 and they are on by default.  CAN
 A is on H1 (J1) pins 5 (the +) and 1 (the -).  CAN B is on H1 (J1)
-pins 33 (the +) and 34 (the -).  These are not standard.  CAN A can be
-disabled by removing U14 and R50 and R51.  CAN B can be disabled by
-removing U22 and R89 and R90.
+pins 33 (the +) and 34 (the -).
+
+These are not standard, except a NanoMind device specifies a CAN bus
+on H2 pins 1 and 5.
+
+CAN A can be disabled by removing U14 and R50 and R51.  CAN B can be
+disabled by removing U22 and R89 and R90.
 
 PC104 Serial Port
 =================
@@ -85,7 +128,9 @@ The second serial port from the processor is run to PC104 J2 (H2) pins
 
 On version 3 and later boards, U39 and U40 must be installed (the
 default) and then the PC104\_SER\_EN\_N line must be enabled to turn
-on access to this.
+on access to this.  To permanently add a connection, U39 and U40 can
+be removed and a 0402 zero-ohm resistor connected between pins 2 and 4
+on both devices.
 
 On version 2 boards, You need to install R123 and R124 to make this
 connection.  However, RX and TX are backwards so special jumpering on
@@ -98,22 +143,22 @@ Differences between the Version 2 and Version 3 board
 
 * The OTHER\_FAULT\_N GPIO is now OTHER\_FAULT, changed to positive
   logic.
-  
+
 * The OTHER\_HW\_POWER\_OFF\_N GPIO is changed to
   OTHER\_HW\_POWER\_ST.  It is now positive logic, and the name has
   been changed to reflect that it is measuring the other power off
   state.
-  
+
 * OTHER\_ACTIVE\_N has changed to positive logic, OTHER\_ACTIVE now.
-  
+
 * A DAC has been added to the AX5043 SPI bus to control the quiescent
   current into the PA.  This should allow the power usage of the PA to
   be directly controlled.  There is also a uninstalled resistor that
   can be installed (and the DAC removed) as a build option.
-  
+
 * The serial RX and TX lines on the PC104 were backwards on the
   version 2 board.  They are fixed on the version 3 board.
-  
+
 * Unfortunately, CAN A was moved on the PC104 from pins 23 (+) and 24
   (-) to pins 5 (+) and 1 (-).  This matches the NanoMind
   configuration, which is the only thing I found with a CAN bus.  Pins
@@ -385,15 +430,15 @@ various signals from the control board of the satellite.
   - 5V_p - +5V that is always present when the satellite is powered.
     The board has a 0 ohm resistor that must be populated to get power
 	from these pins.
-  
+
   - 3V3_p - +3.3V that is always present when the satellite is powered.
     The board has a 0 ohm resistor that must be populated to get power
 	from these pins.
-  
+
   - 5V_S[1-3] - Switched +5V power from the power supply.  The board
     has 0 ohm resistors, one of which must be populated to get power
     from these pins.
-  
+
   - 3V3_S[1-3] - Switched +3.3V power from the power supply.    The
 	board has a 0 ohm resistor that must be populated to get power
 	from these pins.
@@ -401,9 +446,9 @@ various signals from the control board of the satellite.
   - I2C\_SDA, I2C\_SCL - I2C bus pins
 
   - GND
-  
+
   - CAN[AB][+-] - CAN bus signals.
-  
+
 Power Control and Sequencing
 ============================
 
@@ -530,14 +575,14 @@ The lines on the PC104 are:
 - PRESENCEn\_N - This is used to tell if the other board is present
   (even if it is powered down).  It will be high if not present and
   low if present.
-  
+
 - FAULTn - This is used to tell if the other board has had a fault
   and is failing.  This board can take over processing at that point.
-  
+
 - ACTIVEn\_N - Used to tell which board is active.  The board that is
   asserting its line thinks it is active.  If both boards assert this,
   board 1 will be active and board 2 must deactivate.
-  
+
 - HW\_POWER\_OFFn\_N - Used to power the other board off.  It this
   board thinks the other board is misbehaving, it can power off the
   other board.
@@ -639,7 +684,7 @@ The boards will switch activity periodically to test the other board.
     - OTHER\_ACTIVE -> Inactive
     - !OTHER\_PRESENCE\_N -> ActiveOtherBoardNotPresent
       - log presence issue
-  
+
   - ActiveOtherBoardNotPresent:
     - OTHER\_PRESENCE\_N -> ActiveOtherBoardPresent
       - log presence issue
