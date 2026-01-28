@@ -51,6 +51,17 @@ X1 in out ImpMatchLNAOut
 X0 out x1 x1 0 LNAOutImpedance
 .endif
 
+* Loss of the L match
+.if (m == 7)
+Vin ina 0 dc 0 AC 1 sin(0 1 435MEG 0 0 0)
+X0 ina in in1 a1 LNAOutImpedance
+Vmin in in1 dc 0 ac 0
+X1 a1 out ImpMatchLNAOut
+* Used for current measurement.
+Vmout out out2 DC 0 AC 0
+Rload out2 0 50
+.endif
+
 * Measure the full chain input impedance
 .if (m == 6)
 I1  0  in  dc 0 ac 1
@@ -88,6 +99,11 @@ alterparam m = 5
 reset
 ac lin 50000 100Meg 500Meg
 plot title "L Match Input Impedance" v(in) vi(in)
+
+alterparam m = 7
+reset
+ac lin 50000 3Meg 1000Meg
+plot title "L Match only Loss" db((v(out) * i(Vmout)) / (v(in) * i(Vmin)))
 
 alterparam m = 6
 reset

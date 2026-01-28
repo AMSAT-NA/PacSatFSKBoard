@@ -28,8 +28,8 @@
 * The 5th order filter here is -50dB at the first harmonic of 435MHz.
 
 * 7.01p
-* Use a 6.4p cap, add .6p for parasitics
-C1	in	0	7.0p
+* Use a 6.4p cap, add .4p for parasitics
+C1	in	0	6.8p
 
 * 20.8n
 * Coilcraft 0402DC-20NX_RW Q=48@435MHz SRF=5.11
@@ -38,11 +38,12 @@ L2	in	a1	20.4n
 Rl2	a1	a2	1.13
 Cl2	in	a2	.048p
 * 735f
+* .75pF, add .25 for parasitics
 C2	in	a2	1.0p
 
 * 11.35p
-* Use a 11p cap, add .6p for parasitics
-C3	a2	0	11.6p
+* Use a 11p cap, add .4p for parasitics
+C3	a2	0	11p
 
 * 17.22n
 * Murata LQW15AN17NG8ZD 17nF, Q=46@439MHz, SRF=5G
@@ -51,15 +52,40 @@ L4	a2	a3	17.4n
 Rl4	a3	out	1.01
 Cl4	a2	out	.059p
 * 2.07p
+* 2.0p, add .2p for parasitics
 C4	a2	out	2.2p
 
 * 5.94p
-* Use a 5.4p cap, add .6p for parasitics
-C5	out	0	6.0p
+* Use a 5.4p cap, add .4p for parasitics
+C5	out	0	5.8p
 
 * This is the inductor used to bleed off static from the antenna
 L0	out	b0	470n
 R0	b0	0	12
+
+.if (0)
+* This is a 3rd-order Chebyshev followed by a 3rd order elliptic.
+* It performs very similar to the above filter.  Not quite as much
+* stop band, though.  Interesting experiment.
+C1	in	0	6.8p
+
+L2	in	a1	19n
+Rl2	a1	a2	1.13
+Cl2	in	a2	.048p
+* 735f
+C2	in	a2	1.0p
+
+C3a	a2	0	6.8p
+
+C3b	a2	0	6.7p
+
+L4	a2	a3	18.5n
+Rl4	a3	out	1.01
+Cl4	a2	out	.059p
+C4	a2	out	1.18p
+
+C5	out	0	6.7p
+.endif
 
 .ENDS
 
@@ -81,7 +107,7 @@ C1	in	0	36p
 * 1.203p
 C2	in	out	1p
 * 43.03n
-L1	in	b1	43n
+L1	in	b1	47n
 Rl1	b1	out	1.15
 Cl1	in	out	.18p
 

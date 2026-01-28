@@ -7160,7 +7160,7 @@
 				)
 			)
 		)
-		(property "Value" "43nH 2%"
+		(property "Value" "47nH 2%"
 			(at 85.852 140.462 90)
 			(effects
 				(font
@@ -7168,7 +7168,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_0805_2012Metric"
+		(property "Footprint" "Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
 			(at 86.36 143.51 0)
 			(effects
 				(font

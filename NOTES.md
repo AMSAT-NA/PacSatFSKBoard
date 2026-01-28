@@ -2422,4 +2422,13 @@ Add heat sink area and mounting holes.
 
 Rework all the filter and simulations to be consistent and measure
 everything on all filters and matches.  It appears there are things
-that could be improved.
+that could be improved on the input chain.  Nothing bad, but a couple
+of dB might be added by tweaking.
+
+I looked at using a Chebyshev filter on the PA output to do the match
+instead of using an L match then a filter.  The loss in the filter is
+horrendous.  I'm guessing that filtering at low impedances 4.63 ohms,
+in this case) is just not a good thing.
+
+Tweak the RF input filter a bit to improve the match.
+

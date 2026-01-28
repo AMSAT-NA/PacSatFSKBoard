@@ -114,9 +114,10 @@ Version 3 and later boards) on the bottom of the board.  These are
 mostly used for isolating and testing circuits.  However, they could
 be used for bringing out or injecting signals.  For instance:
 
-* If you wanted to be able to receive on 160MHz or below, you could
-  disable or remove one of the AX5043s and route it's RF splitter
-  output to another board.  There are obvious places for doing this.
+* If you wanted to be able to receive 160MHz or below on an external
+  board, you could disable or remove one of the AX5043s and route it's
+  RF splitter output to another board.  There are obvious places for
+  doing this.
 
 * If you wanted to bring in your own receive signal, there are obvious
   places for that.  This could be used, for instance, if you have an
