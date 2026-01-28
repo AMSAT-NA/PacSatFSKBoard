@@ -94,8 +94,12 @@ RF Connections
 
 The Version 3 and later boards have an MMCX connector, P15 for
 transmit and P17 for receive for connecting to the antennas.  The
-receiver has significant filtering above 160MHz; you can connect these
-to the same antenna without damage or desensing.
+receiver has significant filtering above 160MHz; you can transmit and
+receive simultaneously with nearby antennas without issues.
+
+It is not possible at the moment to use the same antenna for transmit
+and receive.  From simulation it looks like it could be done, but that
+would require modifying the various filters.
 
 Version 3 boards also two U.FL connectors, P23 for transmit and P24
 for receive (not populated by default), that can also be used for

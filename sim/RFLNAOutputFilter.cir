@@ -1,161 +1,99 @@
-* Impedance match and filter on the output of the LNA
+* RF LNA out filter from the LNA to the splitter
 
-* Unless otherwise mentioned, assume all inductors have a Q of around 35
-* at 144MHz.  This is a pretty good assumption for the Coilcraft 0603DC
-* inductors.
+.include ImpedanceMatchers.cir
+.include Filters.cir
 
-.SUBCKT ImpMatchLNAOut in out
+.param m = 0
 
-* TX LNA output matcher
-C1	in	0	11p
-L1	in	a1	47n
-Rl1	a1	out	1.27
-Cl1	in	out	.186p
-
-.ENDS
-
-*                    input
-*                    |   output
-*                    |   |
-.SUBCKT Filt144MHz in  out
-
-* Comments above are the exact values from the filter tool.
-* Value used are available inductors and capacitors.
-
-.if (1)
-* 123-173MHz Chebychev bandpass filter, simulated from:
-* https://markimicrowave.com/technical-resources/tools/lc-filter-design-tool/
-* 3rd order, conventional shunt first, 123MHz low cutoff, 173MHz high
-* cutoff, .10db ripple in passband, 50 ohm input, 50 ohm output
-* impedance.
-
-* 65.57p
-C1	in	0	68p
-* 18.13n
-L1	in	b1	18n
-R1      b1	0	.5
-
-* 6.519p
-C2	in	a1	6.5p
-* 182.6 - This is a CoilCraft 0805CS series, Q around 50 at 150MHz
-L2	a1	a2	180n
-R2	a2	out	3.39
-
-C3	out	0	68p
-L3	out	b2	18n
-R3      b2	0	.5
-.endif
-
-.if (0)
-* 140-150MHz Elliptic bandpass filter, simulated from:
-* https://markimicrowave.com/technical-resources/tools/lc-filter-design-tool/
-* 3rd order, conventional shunt first, 140 low cutoff, 150 high
-* cutoff, .10db ripple in passband, 50 ohm input, 50 ohm output
-* impedance, 50.42dB stopband attenuation
-
-* Note that almost all of the loss is in R1 and R4.  R2 and R3 make
-* very little contribution to the loss.  If inductors could be found
-* that have lower series resistance it would greatly improve the loss
-* in the filter.  Using two larger inductors in parallel results in
-* lowering the series resistance from 46m to 26.5m, making about 2dB
-* improvement.
-
-* 322.4p
-C1	in	0	320p
-* 3.742n * 2% Q=68 0402DC-3N7XGRW
-L1	in	b1	3.7n
-R1	b1	0	.1
-* 7.5n 2% Q=88 0603DC-7N5XGRW
-*L1a	in	b1a	7.5n
-*R1a	b1a	0	.2
-*L1b	in	b1b	7.5n
-*R1b	b1b	0	.2
-
-* 13.25p
-C2	in	a1	13p
-* 60.45n * 62n 2% Q=70 LQW2BAN62NG00L 0805
-L2	in	a2	62n
-R2	a2	a1	.120
-
-* 19.95p
-C3	a1	out	20p
-* 91.06n * 91n 2% Q=70 LQW2BAN91NG00L 0805
-L3	a1	a4	91n
-R3	a4	out	.210
-
-* Same as first values above.
-C4	out	0	320p
-L4	out	b2	3.7n
-R4	b2	0	.1
-*L4a	out	b2a	7.5n
-*R4a	b2a	0	.2
-*L4b	out	b2b	7.5n
-*R4b	b2b	0	.2
-.endif
-
-.if (0)
-* This is a 3rd order Chebychev bandpass filter direct coupled, shunt
-* capacitor, 140 to 150MHz .1dB ripple in the passband, 50 ohms input
-* and output impedance.  The direct coupled inductor is 91nH.
-*
-* This has slightly less loss than the Elliptic filter, but not as
-* good performance.  The nice thing is you pick a single inductor
-* value, so dealing with the inductor isn't so hard.  Performance
-* is more important than loss at this point.
-
-* 
-C1	in	0	62.13p
-*
-C2	in	a1	17.69p
-* 
-L1	a1	a2	91n
-R1	a2	a3	.210
-*
-C3	a3	0	208.7p
-*
-C4	a3	a4	15.14p
-*
-L2	a4	a5	91n
-R2	a5	a6	.210
-*
-C5	a6	0	208.7p
-*
-C6	a6	a7	17.69p
-* 
-L3	a7	a8	91n
-R3	a8	out	.210
-*
-C7	out	0	62.13p
-.endif
-
-.ENDS
-
-V1 in 0 dc 0 AC 1 sin(0 1 146MEG 0 0 0)
-
-* LNA output impedance and measurement voltage source
-Rsrc in     in0  86.6
-* Used for current measurement
-Vm1  in0  in1  DC 0 AC 0
-* -1.88 ohms at 145MHz
-Csrc in1    in2  583p
-
-X1 in2 im1 ImpMatchLNAOut
-
-Vm2  im1  im2  DC 0 AC 0
-
-X2 im2 out Filt144MHz
-
+* Measure the full filter chain loss.
+.if (m == 1)
+Vin in1 0 dc 0 AC 1 sin(0 1 146MEG 0 0 0)
+X0 in1 in in2 in3 LNAOutImpedance
 * Used for current measurement.
-Vload out out2 DC 0 AC 0
+Vmin in in2 dc 0 ac 0
+X1 in3  a1 ImpMatchLNAOut
+X2 a1 out1 Filt144MHzLNAOut
+* Used for current measurement.
+Vmout out1 out DC 0 AC 0
+Rload out 0    50
+.endif
 
-* Input impedance of the LNA
-Rload out2 0   50
+* Measure the input impedance
+.if (m == 2)
+I1 0    in  dc 0 ac 1
+X1 in out Filt144MHzLNAOut
+Rout out 0 50
+.endif
+
+* Now the output impedance
+.if (m == 3)
+I1 0  out  dc 0 ac 1
+X1 in out Filt144MHzLNAOut
+Rin in 0 50
+.endif
+
+* Now just the filter
+.if (m == 4)
+Vin ina 0 dc 0 AC 1 sin(0 1 146MEG 0 0 0)
+Rsrc ina in 50
+* Used for current measurement.
+Vmin in in1 AC 0 DC 0
+X1 in1 out Filt144MHzLNAOut
+* Used for current measurement.
+Vmout out out2 DC 0 AC 0
+Rload out2 0    50
+.endif
+
+* Input impedance of the L match
+.if (m == 5)
+I1  0  in  dc 0 ac 1
+X1 in out ImpMatchLNAOut
+X0 out x1 x1 0 LNAOutImpedance
+.endif
+
+* Measure the full chain input impedance
+.if (m == 6)
+I1  0  in  dc 0 ac 1
+X1 in a1 Filt144MHzLNAOut
+X2 a1 out ImpMatchLNAOut
+X3 out x1 x1 0 LNAOutImpedance
+.endif
 
 .control
 *tran 1ns 102000ns 101000ns
 *plot v(in1), v(out)
+
+alterparam m = 1
+reset
 ac lin 50000 1Meg 500Meg
-plot db((v(out) * i(Vload)) / (v(in0) * i(Vm1)))
+plot title "Full Chain Filter Loss" db((v(out) * i(Vmout)) / (vm(in) * i(Vmin)))
+
+alterparam m = 2
+reset
+ac lin 50000 3Meg 500Meg
+plot title "Filter Only Input Impedance" v(in) vi(in)
+
+alterparam m = 3
+reset
+ac lin 50000 3Meg 500Meg
+plot title "Filter Only Output Impedance" v(out) vi(out)
+
+alterparam m = 4
+reset
+ac lin 50000 3Meg 500Meg
+plot title "Filter Loss" db((v(out) * i(Vmout)) / (v(in) * i(Vmin)))
+*plot vr(out) vi(out) vp(out)
+
+alterparam m = 5
+reset
+ac lin 50000 100Meg 500Meg
+plot title "L Match Input Impedance" v(in) vi(in)
+
+alterparam m = 6
+reset
+ac lin 50000 100Meg 500Meg
+plot title "Full Chain Input Impedance" v(in) vi(in)
+
 .endc
 
 .end

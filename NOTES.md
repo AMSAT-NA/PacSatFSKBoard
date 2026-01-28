@@ -9,6 +9,13 @@ some point.
 
 # TODO
 
+Loot at how to hook the receiver and transmitter to the same antenna.
+It looks like it could be done, perhaps, but it would require changes
+in the filtering and matching and would result in some loss.
+
+Improved simulation shows that the RF input chain could be tweaked to
+improve performance.  Look at that.
+
 I'm still not 100% sure the H1/H2 connectors are correct.  They seem
 to match the power supply configuration I have, but the CSK PCB
 specifications show two different H1/H2 configurations on slot 0 and
@@ -42,16 +49,6 @@ Maybe spend some time needs to be spent looking for a new PA.  It
 seems to be fairly efficient, 500ma at 5V 2.5W for 2W of output,
 that's 80% efficiency.
 
-Convert the power plane to a ground plane in the digital portion, and
-as part of that add ground vias by signal vias to reduce the return
-signal path.
-
-Check that all vias in RF portion have a corresponding ground via to
-give the return signal a minimum path.
-
-Look at possible coupled ground loops in the RF section.  None pop out
-from a cursory glance, but need to look closer.
-
 Add 0 ohm resistors to make some of the dual-board lines available if
 the dual-board switching parts are not populated.
 
@@ -66,6 +63,15 @@ is so they can handle the shaking of the flight to space.  The
 passives can all be certified for this, I'm pretty sure.  The only
 connector you have to worry about is the PC104.  The chips and modules
 are a different story.
+
+Possible outgassing issues:
+
+|Part						|Function				| Info |
+|----						|--------				|----- |
+| AD4PS-1+					| RF power splitter		| Made of a different kind of plastic than ICs |
+| FTSH-105-01-L-DV-K		| JTAG connector		||
+| TSW-103-08-F-S-RA			| Serial port connector ||
+| HTSW-102-07-G-S			| Watchdog Jumper		||
 
 Parts that are not automotive rated listed below.
 
@@ -748,6 +754,12 @@ grade and has exactly the same pinout.
 Figure out how to mount a heat sink under the PA, what holes are
 required, etc.  The copper pad is already exposed.
 
+Check that all vias in RF portion have a corresponding ground via to
+give the return signal a minimum path. - Didn't see anything
+
+Look at possible coupled ground loops in the RF section.  None pop out
+from a cursory glance, but need to look closer. - Didn't see anything
+
 # Not going to do
 
 Rotate the CPU so that fewer traces need to be routed under the CPU.
@@ -781,6 +793,11 @@ another board, it will act as simplex.
 Look at adding the TVS diode on the PA per the datasheet schematics.
 This seems to be for static electricity handling, so probably not
 necessary.
+
+Convert the power plane to a ground plane in the digital portion, and
+as part of that add ground vias by signal vias to reduce the return
+signal path. - This doesn't seem necessary.  It might help a little
+bit, but everything is working well as it is.
 
 # RF Shields
 
@@ -2391,7 +2408,7 @@ Add switches on the I2C and serial lines to the PC104 to allow them to
 be dynamically connected/disconnected.  Add PC104\_I2C\_EN\_N and
 PC104\_SER\_EN\_N control lines from the CPU for controlling these.
 
-## 2026-01-26
+## 2026-01-27
 
 Change the 1.2V power limiter to a MPQ5072GG-AEC1, since it's
 automotive certified and the 2A of the previous one is not needed.
@@ -2400,3 +2417,9 @@ Move the U.FL connectors on the PA output around to make more room
 for a heat sink.
 
 Add heat sink area and mounting holes.
+
+## 2026-01-28
+
+Rework all the filter and simulations to be consistent and measure
+everything on all filters and matches.  It appears there are things
+that could be improved.

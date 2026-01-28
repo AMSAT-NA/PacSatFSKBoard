@@ -8,182 +8,98 @@
 * is looking into the PA/LNA device.  So it's backwards.
 *
 
-*.option rseries = 1.0e-4
+* Comments above are the exact values from the generation tool.
+* Value used are available inductors and capacitors.
 
-.param pa_in=0
+* Unless otherwise mentioned, assume all inductors have a Q of around 35
+* at 144MHz.  This is a pretty good assumption for the Coilcraft 0603DC
+* inductors.
 
-.SUBCKT ImpMatchPAIn in vmin1 vmin2 vmout1 vmout2
+* Unless otherwise mentioned, assume all inductors have a Q of around 55
+* at 435MHz.  This is a pretty good assumption for the Coilcraft 0402DC
+* inductors.
 
-Rsrc in     vmin1  50
+.SUBCKT PAInImpedance in measure1 measure2 out
 
-* Decoupling cap
-C0     vmin2   a1b     1n
+* -1.04 ohms at 435MHz
+Cout in       measure1  350p
+Rout measure2 out       1.63
+
+.ENDS
+
+.SUBCKT ImpMatchPAIn in out
 
 * TX PA input matcher
 * Q=65, Coilcraft 0603DC
-L1     a1b     a1a     3.0n
+L1     in      a1a     3.0n
 Rl1    a1a     0       .13
-C1     a1b     a1      47p
-
-* -1.04 ohms at 435MHz
-Cout a1     vmout1 350p
-Rout vmout2 0      1.63
+C1     in      out     47p
 
 .ENDS
 
-.SUBCKT ImpMatchPAOut in vmin1 vmin2 vmout1 vmout2
+.SUBCKT PAOutImpedance in measure1 measure2 out
 
-Rsrc in     vmin1  4.63
-Csrc vmin2  a1     700p
+Rsrc in       measure1  4.63
+Csrc measure2 out       718p
+
+.ENDS
+
+.SUBCKT ImpMatchPAOut in out
+
+* Inductor on the PA output.
+Lpa  in  0 100n
 
 * Trace inductance.
-Lp1  a1  a2 1.4n
+Lp1  in  a2 1.4n
 
 * Impedance matching network
 * TX PA output matcher
-C1	a2	vmout1	20p
+C1	a2	out	20p
 * Q=55, CoilCraft 0402DC
-L1	vmout1	a3	6.0n
+L1	out	a3	6.0n
 Rl1	a3	0	.34
-Cl1	vmout1	a3	.037p
-
-Rout vmout2 0      50
+Cl1	out	0	.037p
 
 .ENDS
 
-.SUBCKT ImpMatchLNAIn in vmin1 vmin2 vmout1 vmout2
+.SUBCKT LNAInImpedance in measure1 measure2 out
 
-Rsrc in     vmin1  50
+* -80.8 ohms at 145MHz
+Cout in       measure1 13.6p
+Rout measure2 out      142.4
+
+.ENDS
+
+.SUBCKT ImpMatchLNAIn in out
 
 * TX LNA input matcher
 * Coilcraft 0805CS series has a Q of around 50
-L1   vmin2  a2   91n
-R1   a2     a1   2.45
-C1   a1     0    6.5p
-
-* -80.8 ohms at 145MHz
-Cout a1     vmout1 13.6p
-Rout vmout2 0      142.4
+L1   in     a1   91n
+R1   a1     out  2.45
+C1   out    0    6.5p
 
 .ENDS
 
-.SUBCKT ImpMatchLNAOut in vmin1 vmin2 vmout1 vmout2
+.SUBCKT LNAOutImpedance in measure1 measure2 out
 
-Rsrc in     vmin1  86.6
+Rsrc in        measure1  86.6
 * -1.88 ohms at 145MHz
-Csrc vmin2  a1     583p
+Csrc measure2  out       583p
+
+.ENDS
+
+.SUBCKT ImpMatchLNAOut in out
 
 * Set the DC bias between two capacitors.
 Rb1  a1     0      1Meg
 
 * TX LNA output matcher
-C1	a1	0	11p
+C1	in	0	11p
 * Coilcraft 0603DC series has a Q of around 35
-L1	a1	a2	47n
-Rl1	a2	vmout1	1.27
-Cl1	a1	a2	.186p
-
-Rout vmout2 0      50
+L1	in	a2	47n
+Rl1	a2	out	1.27
+Cl1	in	out	.186p
 
 .ENDS
-
-.param m = 0
-.param measimp = 0
-
-.if (measimp == 0)
-.if (m == 1)
-X1 in vmin1 vmin2 vmout1 vmout2 ImpMatchPAIn
-.endif
-.if (m == 2)
-X1 in vmin1 vmin2 vmout1 vmout2 ImpMatchPAOut
-.endif
-.if (m == 3)
-X1 in vmin1 vmin2 vmout1 vmout2 ImpMatchLNAIn
-.endif
-.if (m == 4)
-X1 in vmin1 vmin2 vmout1 vmout2 ImpMatchLNAOut
-.endif
-
-V1 in 0 dc 0 AC 1 sin(1 0 435MEG 0 0 0)
-
-* For current measurement
-Vmin  vmin1  vmin2  dc 0 ac 0
-
-* For current measurement
-Vmout vmout1 vmout2 dc 0 ac 0
-.endif
-
-.if (measimp == 1)
-.if (m == 1)
-I1  0 vmin2  dc 0 ac 1
-Rin    in 0 .0001
-Rvmin1 vmin1 0 .0001
-Rvmout vmout1 vmout2 .0001
-X1 in vmin1 vmin2 vmout1 vmout2 ImpMatchPAIn
-.endif
-.if (m == 2)
-I1  0 vmout1  dc 0 ac 1
-Rin    in 0 .0001
-Rvmout2 vmout2 0 .0001
-Rvmin vmin1 vmin2 .0001
-X1 in vmin1 vmin2 vmout1 vmout2 ImpMatchPAOut
-.endif
-.if (m == 3)
-I1  0 vmin2  dc 0 ac 1
-Rin    in 0 .0001
-Rvmin1 vmin1 0 .0001
-Rvmout vmout1 vmout2 .0001
-X1 in vmin1 vmin2 vmout1 vmout2 ImpMatchLNAIn
-.endif
-.if (m == 4)
-I1  0 vmout1  dc 0 ac 1
-Rin    in 0 .0001
-Rvmout2 vmout2 0 .0001
-Rvmin vmin1 vmin2 .0001
-X1 in vmin1 vmin2 vmout1 vmout2 ImpMatchLNAOut
-.endif
-
-.control
-
-alterparam m = 1
-reset
-ac lin 5000 1Meg 1000meg
-plot title "PA Input Loss" db((v(vmout1) * i(Vmout)) / (v(vmin1) * i(Vmin)))
-alterparam measimp = 1
-reset
-ac lin 5000 400Meg 500meg
-plot title "PA Input Impedance" v(vmin2) vi(vmin2)
-
-alterparam measimp = 0
-alterparam m = 2
-reset
-ac lin 5000 1Meg 1000meg
-plot title "PA Output Loss" db((v(vmout1) * i(Vmout)) / (v(vmin1) * i(Vmin)))
-alterparam measimp = 1
-reset
-ac lin 5000 400Meg 500meg
-plot title "PA Output Impedance" v(vmout1) vi(vmout1)
-
-alterparam measimp = 0
-alterparam m = 3
-reset
-ac lin 5000 1Meg 400meg
-plot title "LNA Input Loss" db((v(vmout1) * i(Vmout)) / (v(vmin1) * i(Vmin)))
-alterparam measimp = 1
-reset
-ac lin 5000 1Meg 400meg
-plot title "LNA Input Impedance" v(vmin2) vi(vmin2)
-
-alterparam measimp = 0
-alterparam m = 4
-reset
-ac lin 5000 1Meg 400meg
-plot title "LNA Output Loss" db((v(vmout1) * i(Vmout)) / (v(vmin1) * i(Vmin)))
-alterparam measimp = 1
-reset
-ac lin 5000 1Meg 400meg
-plot title "LNA Output Impedance" v(vmout1) vi(vmout1)
-
-.endc
 
 .end
