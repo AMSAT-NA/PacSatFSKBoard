@@ -4401,7 +4401,7 @@
 				)
 			)
 		)
-		(property "Value" "18hH 2%"
+		(property "Value" "18nH 2%"
 			(at 257.81 166.37 90)
 			(effects
 				(font

@@ -123,7 +123,7 @@ def xlat_footprint(s):
 # somewhat higher Q values than the Murata parts.
 value_to_partnum_xlats_1 = {
     ('1nH',     	'0402'): ('Coilcraft',	'0402DC-1N0XJRW '),
-    ('3.0nH 2%',	'0603'): ('Coilcraft',	'0603DC-3N0XGRW'),
+    ('3.0nH 2%',	'0402'): ('Coilcraft',	'0402DC-3N0XGRW'),
     ('5.8nH 2%',	'0402'): ('Coilcraft',	'0402DC-5N8XGRW'),
     ('6.0nH 2%',	'0402'): ('Coilcraft',	'0402DC-6N0XGRW'),
     ('11nH 2%', 	'0603'): ('Coilcraft',	'0603DC-11NXGRW'),
@@ -205,7 +205,7 @@ value_to_partnum_xlats_2 = {
     ('2.2pF ±.05 30V',	'0402'): ('Murata',	'GCQ1555C1H2R2WB01D'),
     ('4.3pF 1%',	'0402'): ('Murata',	'GCQ1555C1H4R3BB01D'),
     ('5.1pF ±.1',	'0402'): ('Murata',	'GCQ1555C1H5R1BB01D'),
-    ('5.4pF ±.1 30V',	'0402'): ('Murata',	'GCQ1555C1H5R4BB01D'),
+    ('5.4pF ±.05 30V',	'0402'): ('Murata',	'GCQ1555C1H5R4BB01D'),
     ('5.6pF ±.1',	'0402'): ('Murata',	'GCQ1555C1H5R6BB01D'),
     ('6.2pF ±.1 30V',	'0402'): ('Murata',	'GCQ1555C1H6R2BB01D'),
     ('6.4pF ±.1 30V',	'0402'): ('Murata',	'GCQ1555C1H6R4BB01D'),
@@ -215,6 +215,7 @@ value_to_partnum_xlats_2 = {
     ('11pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H110FB01D'),
     ('11pF 1% 30V', 	'0402'): ('Murata',	'GCQ1555C1H110FB01D'),
     ('12pF 1% 30V', 	'0402'): ('Murata',	'GCQ1555C1H120FB01D'),
+    ('12pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H120FB01D'),
     ('15pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H150FB01D'),
     ('18pF 1% 30V', 	'0402'): ('Murata',	'GCQ1555C1H180FB01D'),
     ('20pF 1% 30V', 	'0402'): ('Murata',	'GCQ1555C1H200FB01D'),
@@ -298,6 +299,7 @@ other_components = {
     ('AD4PS-1+', 'CJ725'): None,
     ('ESQ-126-39-G-D', 'CONN_ESQ-126-39-G-D_SAI'): None,
     ('SN74AHC1G02QDCKRQ1', 'DCK5'): None,
+    ('74CBTLV1G125DBVRQ1', 'DBV5'): None,
     ('TPSM828302ARDSR', 'RDS0009A-MFG'): None,
     ('TPS62A02AQDRLRQ1', 'DRL0006A-MFG'): None,
     ('MP5073GG-P', 'QFN-12_MP5073_MNP'): None,
@@ -308,6 +310,9 @@ other_components = {
     ('BSS138', 'SOT-523'): None,
     ('MCP1799T-3302HTT', 'SOT-23'): None,
     ('QPC8010QTR7', 'QFN50P200X200X60-13N-D'): None,
+    ('MPQ5072GG-AEC1', 'QFN-12_MP5073_MNP'): None,
+    ('DAC5311IDCK', 'SOT-363_SC-70-6'): None,
+    ('', ''): None,
 }
 
 def xlat_value_to_partnum(s, footprint):
