@@ -35,7 +35,7 @@ C1	in	0	6.8p
 * Coilcraft 0402DC-20NX_RW Q=48@435MHz SRF=5.11
 * Add .4nH for parasitics
 L2	in	a1	20.4n
-Rl2	a1	a2	1.13
+Rl2	a1	a2	0.99
 Cl2	in	a2	.048p
 * 735f
 * .75pF, add .25 for parasitics
@@ -101,14 +101,14 @@ C5	out	0	6.7p
 L0	in	b0	470n
 R0	b0	0	10k
 
-* 35.62
+* 38.0
 C1	in	0	36p
 
-* 1.203p
+* 1.28p
 C2	in	out	1p
-* 43.03n
+* 45.9n
 L1	in	b1	47n
-Rl1	b1	out	1.27
+Rl1	b1	out	0.86
 Cl1	in	out	.186p
 
 C3	out	0	36p
@@ -155,17 +155,18 @@ R3      b2	0	.5
 C1	in	0	68p
 * 18.13n
 L1	in	b1	18n
-R1      b1	0	.5
+R1      b1	0	.33
 
 * 6.519p
 C2	in	a1	6.5p
 * 182.6 - This is a CoilCraft 0805CS series, Q around 50 at 150MHz
 L2	a1	a2	180n
-R2	a2	out	3.39
+R2	a2	out	3.3
 
 C3	out	0	68p
 L3	out	b2	18n
-R3      b2	0	.5
+R3      b2	0	.33
+
 .endif
 
 .if (0)

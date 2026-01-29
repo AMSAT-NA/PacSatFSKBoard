@@ -63,7 +63,7 @@ Cp1 a2 0  2p
 C1	a2	out	18p
 * Q=55, CoilCraft 0402DC
 L1	out	a3	6.0n
-Rl1	a3	0	.34
+Rl1	a3	0	.30
 Cl1	out	0	.037p
 
 .ENDS
@@ -81,7 +81,7 @@ Rout measure2 out      142.4
 * TX LNA input matcher
 * Coilcraft 0805CS series has a Q of around 50
 L1   in     a1   91n
-R1   a1     out  2.45
+R1   a1     out  1.67
 C1   out    0    6.5p
 
 .ENDS
@@ -106,7 +106,7 @@ C0      in      in1	1n
 C1	in1	0	12p
 * Coilcraft 0603DC series has a Q of around 35
 L1	in	a2	43n
-Rl1	a2	out	1.27
+Rl1	a2	out	1.12
 Cl1	in	out	.186p
 
 .ENDS
