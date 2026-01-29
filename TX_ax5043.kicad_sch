@@ -2028,9 +2028,9 @@
 		)
 		(uuid "c331634d-7bc3-4e62-adf8-968bd2be2f1c")
 	)
-	(text "Shorting jumper\nif no inductor"
+	(text "With an 18nH inductor installed\nthis can range at 440MHz and\n145MHz.  So you can do a loopback\ntest."
 		(exclude_from_sim no)
-		(at 244.475 184.785 0)
+		(at 225.806 190.246 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -5647,72 +5647,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:L")
-		(at 252.73 176.53 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8dd4b9e6-2489-4e35-b431-9e25760e4c36")
-		(property "Reference" "L26"
-			(at 252.73 173.99 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "0"
-			(at 252.73 179.07 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
-			(at 252.73 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 252.73 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 252.73 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d3fc438f-362c-4d03-b44f-cc4d56511c12")
-		)
-		(pin "2"
-			(uuid "25c5133b-70f8-4abe-b4f5-91e2ead289b0")
-		)
-		(instances
-			(project "PacSat_Dev_RevD_240614"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/d9a83ee4-3280-49b9-88b8-54d26cbd8ed1/2fc9a4ba-520e-46cf-be0c-1f13bbb64152"
-					(reference "L26")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 300.99 144.78 90)
 		(unit 1)
@@ -6648,6 +6582,72 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/d9a83ee4-3280-49b9-88b8-54d26cbd8ed1/2fc9a4ba-520e-46cf-be0c-1f13bbb64152"
 					(reference "Q7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:L")
+		(at 252.73 176.53 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "faae83b3-25f6-435d-94b2-22234c44d4fc")
+		(property "Reference" "L26"
+			(at 252.73 173.99 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "18nH 2%"
+			(at 252.73 179.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+			(at 252.73 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 252.73 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 252.73 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "73926ba9-3726-4082-b1d1-b7a63a8f7ba9")
+		)
+		(pin "2"
+			(uuid "f82e1c4b-8e34-47d0-a48a-72ebb6650aa2")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/d9a83ee4-3280-49b9-88b8-54d26cbd8ed1/2fc9a4ba-520e-46cf-be0c-1f13bbb64152"
+					(reference "L26")
 					(unit 1)
 				)
 			)

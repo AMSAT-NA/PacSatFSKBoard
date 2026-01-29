@@ -131,6 +131,25 @@ be used for bringing out or injecting signals.  For instance:
   output of the PA, to another board.  This could be used for an
   external amplifier or and external upconverter.
 
+RF Loopback Testing
+===================
+
+The Transmit AX5043 has an 18nH inductor installed for its PLL.  This
+doesn't seem to affect ranging at 435MHz, but it allows it to range in
+the 145MHz area, too.
+
+You can use this to do a loopback test, transmit out in the 145MHz
+area and receive there, too.  The receiver will pick up stray output
+from the transmitter on the board, but the power will be very low.
+(This was tested without shields, shields might eliminate that.)  When
+going out the antenna port to a nearby antenna and then back in, the
+power will be much stronger.
+
+This should work through the diplexer, if that is installed, but you
+can't test the actual antennas in that case.
+
+With this, it is possible to test the entire RF chain.
+
 Hardware Watchdog
 =================
 
