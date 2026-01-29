@@ -11,15 +11,15 @@
 
 * Full chain loss
 .if (m == 1)
-V1 0 in dc 0 AC 1 sin(0 1 146MEG 0 0 0)
-Rsrc in in1 50
+Vin 0 in1 dc 0 AC 1 sin(0 1 146MEG 0 0 0)
+Rsrc in1 in 50
 
-X1 in1 a1   Filt144MHzLNAIn
+X1 in a1   Filt144MHzLNAIn
 X2 a1  out1 ImpMatchLNAIn
 
 *.model tline50_TX ltra rel=1 r=.01 g=0
 *+ l=2.62e-10 c=1.05e-13 len=100
-*OTX in1 0 n1 0 tline50_TX
+*OTX in 0 n1 0 tline50_TX
 *X3 n1 b1 Filt440MHz
 *Rm b1 0 50
 
@@ -84,12 +84,12 @@ X3 out x1 x1 0 LNAInImpedance
 
 .control
 *tran 1ns 102000ns 101000ns
-*plot v(in1), v(out)
+*plot v(in), v(out)
 
 alterparam m = 1
 reset
 ac lin 50000 1Meg 500Meg
-plot title "Full Chain Filter Loss" db((v(out) * i(Vmout)) / (vm(in1) * i(V1)))
+plot title "Full Chain Filter Loss" db((v(out) * i(Vmout)) / (vm(in) * i(Vin)))
 
 alterparam m = 2
 reset
