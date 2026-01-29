@@ -17,6 +17,11 @@
 *                   |   |
 .SUBCKT Filt440MHz in  out
 
+* This is the inductor used to bleed off static from the antenna
+L0	out	b0	470n
+R0	b0	0	12
+
+.if (1)
 * 480MHz Elliptic lowpass filter, simulated from:
 * https://markimicrowave.com/technical-resources/tools/lc-filter-design-tool/
 * 5th order, shunt first, 480MHz cutoff, .10db ripple in passband, 50
@@ -58,10 +63,45 @@ C4	a2	out	2.2p
 * 5.94p
 * Use a 5.4p cap, add .4p for parasitics
 C5	out	0	5.8p
+.endif
 
-* This is the inductor used to bleed off static from the antenna
-L0	out	b0	470n
-R0	b0	0	12
+.if (0)
+* 480MHz lowpass filter as above, but series first.
+L1	in	a1a	18n
+Rl1	a1a	a1	1.13
+
+C1	a1	a1b	8p
+L2	a1b	0	1.8n
+
+L3	a1	a2a	28n
+Rl3	a2a	a2	2
+
+C2	a2	a2b	7p
+L4	a2b	0	5n
+
+L5	a2	out1	15n
+Rl5	out1	out	1
+.endif
+
+.if (0)
+* 400-480MHz bandpass filter 3rd order, series first.
+* This might supply a high input impedance at 145MHz, but it's extremely sensitive
+* to the C1 and C4 values.  It does perform as well, maybe better, than the normal
+* filter.
+C1	in	a1	1.3pf
+L1	a1	a1a	100n
+Rl1	a1a	a2	1.6
+
+C2	a2	a2a	14p
+L2	a2a	0	3.5n
+
+C3	a2	a2b	38p
+L3	a2b	0	10n
+
+C4	a2	a3	1.3pf
+L4	a3	a3a	100n
+Rl4	a3a	out	1.6
+.endif
 
 .if (0)
 * This is a 3rd-order Chebyshev followed by a 3rd order elliptic.
@@ -94,12 +134,13 @@ C5	out	0	6.7p
 *                       |   |
 .SUBCKT Filt144MHzLNAIn in  out
 
-* 176MHz Elliptic lowpass filter, shunt first, with 50dB stopband
-* attenuation and 1dB ripple in the passband.  50ohm input and output.
-
 * This is the inductor used to bleed off static from the antenna
 L0	in	b0	470n
 R0	b0	0	10k
+
+.if (1)
+* 165MHz Elliptic lowpass filter, shunt first, with 50dB stopband
+* attenuation and 1dB ripple in the passband.  50ohm input and output.
 
 * 38.0
 C1	in	0	36p
@@ -113,6 +154,23 @@ Rl1	b1	out	0.78
 Cl1	in	out	.186p
 
 C3	out	0	36p
+.endif
+
+.if (0)
+* 165MHz Elliptic lowpass filter, serieis first, with 50dB stopband
+* attenuation and 1dB ripple in the passband.  50ohm input and output.
+* This has a high input impedance outside the passband and similar
+* loss to the above filter.  It unfortunately required 3 inductors.
+
+L1	in	b1a	95n
+R1a	b1a	b1	1.58
+
+C1	b1	b2	18p
+L2	b2	0	3.2n
+
+L3	b1	b1b	95n
+R3a	b1b	out	1.58
+.endif
 
 .if (0)
 * 123-173MHz Chebychev bandpass filter, simulated from:
