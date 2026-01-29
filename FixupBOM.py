@@ -141,7 +141,7 @@ value_to_partnum_xlats_1 = {
     ('68nH',    	'0603'): ('Coilcraft',	'0603DC-68NXJRW'),
     ('78nH 2%', 	'0603'): ('Murata',	'LQW18AN78NG8ZD'),
     ('91nH 2%', 	'0805'): ('Coilcraft',	'0805CS-910XGRC'),
-    ('100nH',   	'0603'): ('Coilcraft',	'0603CS-R10XJRW'),
+    ('100nH',   	'0603'): ('Murata',	'LQW18CNR10K0ZD'),
     ('100nH I>1A',   	'0603'): ('Murata',	'LQW18CNR10K0ZD'),
     ('180nH 2%',	'0805'): ('Coilcraft',	'0805CS-181XGRC'),
     ('470nH 2%',        '0603'): ('Murata',     'LQW18ANR47G0ZD'),

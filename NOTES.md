@@ -2438,3 +2438,5 @@ Tweak the RF LNA output filter to improve the match.
 ## 2026-01-29
 
 Added a diplexer and separate shared antenna input.
+
+Use the same 100nH part on the TX AX5043 as used in the PA output.
