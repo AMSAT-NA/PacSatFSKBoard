@@ -96,13 +96,16 @@ Csrc measure2  out       583p
 
 .SUBCKT ImpMatchLNAOut in out
 
-* Set the DC bias between two capacitors.
-Rb1  a1     0      1Meg
+* LNA output inductor
+Llna    in      0       470n
+
+* Decoupling cap to remove DC bias
+C0      in      in1	1n
 
 * TX LNA output matcher
-C1	in	0	11p
+C1	in1	0	12p
 * Coilcraft 0603DC series has a Q of around 35
-L1	in	a2	47n
+L1	in	a2	43n
 Rl1	a2	out	1.27
 Cl1	in	out	.186p
 

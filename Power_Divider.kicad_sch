@@ -6899,7 +6899,7 @@
 				)
 			)
 		)
-		(property "Value" "180nH 2%"
+		(property "Value" "470nH 2%"
 			(at 194.818 132.08 90)
 			(effects
 				(font
@@ -7622,7 +7622,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "11pF 1%"
+		(property "Value" "12pF 1%"
 			(at 214.63 152.3999 0)
 			(effects
 				(font
@@ -7821,7 +7821,7 @@
 				)
 			)
 		)
-		(property "Value" "47nH 2%"
+		(property "Value" "43nH 2%"
 			(at 217.932 140.462 90)
 			(effects
 				(font

@@ -108,8 +108,8 @@ C1	in	0	36p
 C2	in	out	1p
 * 43.03n
 L1	in	b1	47n
-Rl1	b1	out	1.15
-Cl1	in	out	.18p
+Rl1	b1	out	1.27
+Cl1	in	out	.186p
 
 C3	out	0	36p
 
