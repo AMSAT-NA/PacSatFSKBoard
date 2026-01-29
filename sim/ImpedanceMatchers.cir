@@ -54,7 +54,7 @@ Lpa  in  0 100n
 * end of the match capacitor is 10mm, .5mm thick coplanar
 * with .5mm spacing, 1 oz (.0348mm) thickness. Calculating
 * at https://wcalc.sourceforge.net/cgi-bin/coplanar.cgi
-* I get .19uH/mm and .2pF/mm, so 1.9uH and 2pF.
+* I get .19nH/mm and .2pF/mm, so 1.9nH and 2pF.
 Lp1 in a2 1.9n
 Cp1 a2 0  2p
 
@@ -106,8 +106,16 @@ C0      in      in1	1n
 C1	in1	0	12p
 * Coilcraft 0603DC series has a Q of around 35
 L1	in	a2	43n
-Rl1	a2	out	1.12
-Cl1	in	out	.186p
+Rl1	a2	out2	1.12
+Cl1	in	out2	.186p
+
+* Trace inductance.  The trace from the filter input to the
+* end of the match inductor is 7mm, .225mm thick coplanar
+* with .5mm spacing, 1 oz (.0348mm) thickness. Calculating
+* at https://wcalc.sourceforge.net/cgi-bin/coplanar.cgi
+* I get .32nH/mm and .13pF/mm, so 2.2nH and .91pF.
+Lt	out2	out	2.2n
+Ct	out	0	.91p
 
 .ENDS
 
