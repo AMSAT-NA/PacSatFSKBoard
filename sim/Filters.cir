@@ -107,8 +107,9 @@ C1	in	0	36p
 * 1.28p
 C2	in	out	1p
 * 45.9n
+* Coilcrage 0805CS, Q=55 at 150MHz
 L1	in	b1	47n
-Rl1	b1	out	0.86
+Rl1	b1	out	0.78
 Cl1	in	out	.186p
 
 C3	out	0	36p
@@ -128,9 +129,10 @@ R1      b1	0	.5
 
 * 6.519p
 C2	in	a1	6.5p
-* 182.6 * Coilcraft 0805CS series has a Q of around 50
+* 182.6
+* Coilcraft 0805CS, Q of around 55 at 150MHz
 L2	a1	a2	180n
-R2	a2	out	3.39
+R2	a2	out	3.00
 
 C3	out	0	68p
 L3	out	b2	18n
@@ -159,9 +161,10 @@ R1      b1	0	.33
 
 * 6.519p
 C2	in	a1	6.5p
-* 182.6 - This is a CoilCraft 0805CS series, Q around 50 at 150MHz
+* 182.6
+* CoilCraft 0805CS, Q=55 at 150MHz
 L2	a1	a2	180n
-R2	a2	out	3.3
+R2	a2	out	3.00
 
 C3	out	0	68p
 L3	out	b2	18n
