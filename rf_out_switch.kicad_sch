@@ -2918,6 +2918,16 @@
 	)
 	(wire
 		(pts
+			(xy 133.35 154.94) (xy 148.59 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cab57ccd-b967-4d59-8583-badfc6f9e8e7")
+	)
+	(wire
+		(pts
 			(xy 151.13 59.69) (xy 224.79 59.69)
 		)
 		(stroke
@@ -3128,6 +3138,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "RF Out"
+		(shape input)
+		(at 133.35 154.94 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "e7b3e8cc-20a4-45f1-9b47-3e9f9e2eda7d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 122.7154 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)

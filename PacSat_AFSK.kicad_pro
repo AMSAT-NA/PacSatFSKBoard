@@ -38,7 +38,7 @@
         "other_text_upright": false,
         "pads": {
           "drill": 0.0,
-          "height": 0.95,
+          "height": 1.2,
           "width": 1.05
         },
         "silk_line_width": 0.15,
@@ -1029,6 +1029,10 @@
     [
       "c3879c9c-e3de-4d40-a3e3-f7fd281b7d00",
       "Power Limiters"
+    ],
+    [
+      "38e3adf3-4e99-4cef-9f41-04ced85d0b69",
+      "Diplexer"
     ]
   ],
   "text_variables": {}

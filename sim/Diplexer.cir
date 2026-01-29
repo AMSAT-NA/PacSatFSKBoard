@@ -1,0 +1,79 @@
+* Diplexer on antenna, single antenna with UHF and VHF split
+
+*                       input
+*                       |   lower freq output
+*                       |   |     higher freq output
+*                       |   |     |
+.SUBCKT Diplexer144x435 in  outlo outhi
+
+.if (1)
+* Narrow bandpass filters to allow 435 and 145 through
+L1	in	in1a	220n
+Rl1	in1a	in1b	3.36
+C1	in1b	outlo	6p
+
+L2	in	in2a	27n
+Rl2	in2a	in2b	.6
+C2	in2b	outhi	5p
+.endif
+
+.if (0)
+* Narrow notch filters to block 435 and 145
+* Use this diplexer, as it has DC connections through to
+* allow static to bleed off.
+
+L1	in	in1a	220n
+Rl1	in1a	outhi	3.36
+C1	in	outhi	14p
+
+L2	in	in2a	27n
+Rl2	in2a	outlo	.6
+C2	in	outlo	5p
+.endif
+
+.ends
+
+.include Filters.cir
+
+.param m = 0
+
+* Measure impedance
+.if (m == 1)
+I1  0  in dc 0 ac 1
+.endif
+
+* Measure loss
+.if (m == 2)
+Vin ina 0 dc 0 AC 1 sin(0 1 146MEG 0 0 0)
+Rin ina inb 50
+Vmin inb in dc 0 ac 0
+.endif
+
+X1 in inlo inhi Diplexer144x435
+X2 inlo outlo Filt144MHzLNAIn
+X3 inhi outhi Filt440MHz
+
+Vmoutlo outlo outlo1 dc 0 ac 0
+Rlo outlo1 0 50
+Vmouthi outhi outhi1 dc 0 ac 0
+Rhi outhi1 0 50
+
+.control
+*tran 1ns 102000ns 101000ns
+*plot v(in1), v(out)
+
+alterparam m = 1
+reset
+ac lin 50000 1Meg 500Meg
+plot title "Input Impedance" v(in) vi(in)
+reset
+ac lin 50000 140Meg 150Meg
+plot title "Input Impedance 145" v(in) vi(in)
+reset
+ac lin 50000 400Meg 500Meg
+plot title "Input Impedance 435" v(in) vi(in)
+
+alterparam m = 2
+reset
+ac lin 50000 1Meg 1000Meg
+plot title "Loss" db((v(outlo) * i(Vmoutlo)) / (vm(in) * i(Vin))) db((v(outhi) * i(Vmouthi)) / (vm(in) * i(Vin)))

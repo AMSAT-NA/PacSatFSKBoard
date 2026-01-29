@@ -9,10 +9,6 @@ some point.
 
 # TODO
 
-Loot at how to hook the receiver and transmitter to the same antenna.
-It looks like it could be done, perhaps, but it would require changes
-in the filtering and matching and would result in some loss.
-
 I'm still not 100% sure the H1/H2 connectors are correct.  They seem
 to match the power supply configuration I have, but the CSK PCB
 specifications show two different H1/H2 configurations on slot 0 and
@@ -760,6 +756,10 @@ from a cursory glance, but need to look closer. - Didn't see anything
 Improved simulation shows that the RF input chain could be tweaked to
 improve performance.  Look at that.  Re-calculated and some values
 tweaked.
+
+Loot at how to hook the receiver and transmitter to the same antenna.
+It looks like it could be done, perhaps, but it would require changes
+in the filtering and matching and would result in some loss.
 
 # Not going to do
 
@@ -2434,3 +2434,7 @@ in this case) is just not a good thing.
 Tweak the RF input filter a bit to improve the match.
 
 Tweak the RF LNA output filter to improve the match.
+
+## 2026-01-29
+
+Added a diplexer and separate shared antenna input.
