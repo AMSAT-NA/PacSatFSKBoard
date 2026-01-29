@@ -230,6 +230,9 @@ Differences between the Version 2 and Version 3 board
 
 * PC104\_I2C\_EN\_N and PC104\_SER\_EN\_N for connecting the I2C and
   serial lines to the PC104.
+  
+* There is a thermsistor added by the oscillator for frequency tuning,
+  and for general power measurement.  This goes into AD1IN[09].
 
 IO Connections on the PacSat AFSK processor
 ===========================================
@@ -316,7 +319,7 @@ used as a GPIO.
 |67		|ADREFLO				|						|  | |
 |68		|VSSAD					|						|  | |
 |69		|VCCAD					|						|  | |
-|70		|AD1IN[09] / AD2IN[09]	|						|  |free adc |
+|70		|AD1IN[09] / AD2IN[09]	|						|  |Thermsistor by the oscillator |
 |71		|AD1IN[01]				|VBATT					|  |Voltage from the battery rail |
 |72		|AD1IN[10] / AD2IN[10]	|PWR\_FLAG\_5VAL		|  |Power flag from the +5VAL current limiter |
 ||||||
@@ -412,7 +415,7 @@ Thermsistors are connected to ADC pins on the processor to measure
 temperatures on the board.  Resistance varies from 534 ohms (125C) to
 188.5K (-40C).  There is a 10K bias, so this gives this gives a .17V
 (125C) to 3.13V (-40C) voltage range.  It is supposed to be fairly
-linear.
+linear, but does require compensation by software.
 
 Notes on Processor\_Reset
 ------------------------

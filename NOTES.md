@@ -2444,3 +2444,6 @@ Use the same 100nH part on the TX AX5043 as used in the PA output.
 The Transmit AX5043 has an 18nH inductor installed for its PLL.  This
 doesn't seem to affect ranging at 435MHz, but it allows it to range in
 the 145MHz area, too.  This can be used for a loopback test.
+
+Added a thermsistor by the oscillator for general temperature
+measurement and for tuning the frequencies.

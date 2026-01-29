@@ -5314,10 +5314,6 @@
 		(uuid "cf5ce3db-dea8-41e3-b08f-4b66074efb90")
 	)
 	(no_connect
-		(at 281.94 99.06)
-		(uuid "e8c6d285-904e-4f12-970e-40d63c74c40c")
-	)
-	(no_connect
 		(at 176.53 72.39)
 		(uuid "eae9841a-9617-46f4-b619-c3d367dcc93f")
 	)
@@ -5354,6 +5350,16 @@
 			(type default)
 		)
 		(uuid "02b4538c-3768-475c-8542-79ccf0c73687")
+	)
+	(wire
+		(pts
+			(xy 281.94 99.06) (xy 288.29 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "053ddff3-8caa-4b42-8286-097d8eb3048f")
 	)
 	(wire
 		(pts
@@ -9653,6 +9659,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "OSC_TEMP"
+		(shape input)
+		(at 288.29 99.06 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left)
+		)
+		(uuid "7d3fccb2-53a2-4d9d-a1c0-2d523596d5ad")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 302.6256 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
