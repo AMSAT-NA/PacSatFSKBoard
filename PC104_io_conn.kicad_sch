@@ -2214,12 +2214,6 @@
 		(uuid "0e4335bd-59f3-46b7-9aee-c782582abcbe")
 	)
 	(junction
-		(at 102.87 172.72)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0fcb4cf8-ecf6-4d49-affc-c645f0594666")
-	)
-	(junction
 		(at 241.3 203.2)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2945,16 +2939,6 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 172.72) (xy 118.11 172.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6bdac1b4-754f-4399-baa8-b86a08ccc522")
-	)
-	(wire
-		(pts
 			(xy 241.3 191.77) (xy 241.3 193.04)
 		)
 		(stroke
@@ -3385,16 +3369,6 @@
 	)
 	(wire
 		(pts
-			(xy 110.49 172.72) (xy 102.87 172.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e4231be2-063d-4c74-8380-80b5d8eeccff")
-	)
-	(wire
-		(pts
 			(xy 391.16 119.38) (xy 396.24 119.38)
 		)
 		(stroke
@@ -3583,26 +3557,6 @@
 		)
 		(uuid "1565ca65-1465-4859-ab68-4881e81d4069")
 	)
-	(label "5V_p"
-		(at 312.42 127 180)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify right bottom)
-		)
-		(uuid "306d31f6-e1ee-4329-91f3-67a41a60e045")
-	)
-	(label "5V_p"
-		(at 132.08 172.72 180)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify right bottom)
-		)
-		(uuid "30f3818e-2088-45f8-b928-90efe1113bf3")
-	)
 	(label "3V3_S3"
 		(at 154.94 160.02 0)
 		(effects
@@ -3652,16 +3606,6 @@
 			(justify left bottom)
 		)
 		(uuid "51bb0575-ca5b-4251-a2d1-97b264a968ba")
-	)
-	(label "5V_p"
-		(at 273.05 127 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "543b98d8-8b25-4031-bca7-544c562c7da8")
 	)
 	(label "PC104_I2C_SDA"
 		(at 113.03 147.32 0)
@@ -4051,6 +3995,28 @@
 			)
 		)
 	)
+	(global_label "5V_p"
+		(shape input)
+		(at 273.05 127 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "7de0c452-038f-4835-aaa0-4c88444d6237")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 264.9555 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "PRESENCE1_N"
 		(shape input)
 		(at 125.73 116.84 180)
@@ -4195,7 +4161,7 @@
 		)
 		(uuid "cfe89daf-4913-445c-8438-4213a13ee0ec")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 89.1875 172.72 0)
+			(at 91.2921 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4240,6 +4206,28 @@
 		(uuid "e7a1d782-6b5c-4df8-aab3-c180fbacbd4c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 418.8487 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "5V_p"
+		(shape input)
+		(at 312.42 127 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left)
+		)
+		(uuid "ea60265f-661a-47b9-b3df-927b22b87e59")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 320.5145 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5858,73 +5846,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/163b95be-82a7-4cd3-9077-48a01f79e25c"
 					(reference "#PWR0307")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 114.3 172.72 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(uuid "bd40cf12-0690-42e0-8a8e-b5d4edb873bf")
-		(property "Reference" "R112"
-			(at 119.126 171.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "0Ω"
-			(at 110.49 171.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 114.3 174.498 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 114.3 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 114.3 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "eaded9ea-f818-48fd-8bfd-01e2021f1d7e")
-		)
-		(pin "1"
-			(uuid "575ac389-1aee-47aa-95ca-39f501a2b1da")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/163b95be-82a7-4cd3-9077-48a01f79e25c"
-					(reference "R112")
 					(unit 1)
 				)
 			)

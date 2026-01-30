@@ -21,12 +21,6 @@ but it's not 100% clear.
 Go through all the pins on the CPU and remove any unnecessary pull ups
 and pull downs in the HCG software to save some power.
 
-Think about how to make the board more resilient against overvoltage
-on the input.  The TPS62A02AQDRLRQ1, TCAN1044ADDFRQ1, SN3257,
-MAX31331, and MAX4995 parts have a absolute maximum input voltage of
-6V.  The LNA and PA will take around 7V.  Maybe a zener diode, buck
-regulator?  Maybe it doesn't matter?
-
 The chosen LNA (QPL9547) has very good specs (a NF of .3dB) but draws
 a lot of current (50ma).  Other possible options are Guerrilla RF
 GRF2374, GRF4001, Skyworks LNAs (SKY67150-396LF, SKY67183-396LF,
@@ -807,6 +801,14 @@ Convert the power plane to a ground plane in the digital portion, and
 as part of that add ground vias by signal vias to reduce the return
 signal path. - This doesn't seem necessary.  It might help a little
 bit, but everything is working well as it is.
+
+Think about how to make the board more resilient against overvoltage
+on the input.  The TPS62A02AQDRLRQ1, TCAN1044ADDFRQ1, SN3257,
+MAX31331, and MAX4995 parts have a absolute maximum input voltage of
+6V.  The LNA and PA will take around 7V.  Maybe a zener diode, buck
+regulator?  Maybe it doesn't matter? - I think it doesn't matter.  If
+one is necessary, a TPS61379-Q1 buck regulator can be added where the
+power comes in; I have left plenty of room on the board for it.
 
 # RF Shields
 
@@ -2455,3 +2457,14 @@ the 145MHz area, too.  This can be used for a loopback test.
 
 Added a thermsistor by the oscillator for general temperature
 measurement and for tuning the frequencies.
+
+## 2026-01-29
+
+Lots of cleanups, make space for a regulator by the PC104.
+
+Looked at some different regulators.  Ideally, a boost-buck regulator
+could take any kind of power and convert it.  However, they are large;
+none could be found that really fit well.  There are too many
+variables and options here to put it on for now, we will just trust
+for now that 5V is good and leave a space for something to be added if
+necessary.

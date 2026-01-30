@@ -181,6 +181,7 @@ value_to_partnum_xlats_1b = {
     ('470nH',   	'0805'): ('Murata',	'LQW21FTR47M0HL'),
     ('1uH',   'L_Murata_DFE201610P'): ('Murata',	'DFE201612PD-1R0M'),
     ('3.3uH', '1210'):                ('Murata',	'DFE322520FD-3R3M'),
+    ('4.7uH', '1210'):                ('Murata',	'DFE322520FD-4R7M'),
     ('',	''): ('',	''),
 }
 
@@ -255,13 +256,16 @@ value_to_partnum_xlats_2 = {
     
     ('50Ω >=2W',        '1206'): ('Rohm',	'ESR18EZPF49R9'),
 
+    ('25mΩ 1%', 	'0402'): ('Yaego',	'PE0402FRF470R025L'),
     ('3.32KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF3321X'),
     ('10KΩ 1%', 	'0402'): ('Panasonic',	'ERJ-PA2F1002X'),
     ('19.6KΩ 1%', 	'0402'): ('Yaego',	'AC0402FR-0719K6L'),
+    ('30.9KΩ 1%', 	'0402'): ('Panasonic',	'ERJ-2RKF3092X'),
     ('45.3KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF4532X'),
     ('47KΩ 1%', 	'0402'): ('Panasonic',	'ERA-2AED473X'),
     ('68KΩ 1%', 	'0402'): ('Panasonic',	'ERA-2AED683X'),
     ('88.7KΩ 1%', 	'0402'): ('Yageo',	'AC0402FR-7D88K7L'),
+    ('100KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF1003X'),
     ('143KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF1433X'),
     ('330KΩ 1%',	'0402'): ('Panasonic',	'ERJ-PA2F3303X'),
     ('464KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF4643X'),

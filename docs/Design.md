@@ -42,9 +42,11 @@ To hook up 5V, you can use jumper J5 (which is right by the PC104).
 The 5V pin is labeled on the board.  Or you can use PC104 connector J2
 (H2) pin 25 or 26 for 5V.
 
-3.3V comes in jumper J6.  This could also be done from the PC104 J2
-(H2) pin 27 or 28, but you would need to add resistor R111, which is
-not installed by default.
+For external 3.3V, remove U4, R119, and R120.  Then 3.3V comes in
+jumper J6.  This could also be done from the PC104 J2 (H2) pin 27 or
+28, but you would need to add resistor R111, which is not installed by
+default, or one of the other 3.3V entry points on the PC104, also not
+installed by default.
 
 There are also other pins on the PC104 which can supply 5V and 3.3V,
 matching some power supplies, but certain resistors need to be
@@ -52,6 +54,11 @@ installed to do this.  They are not installed by default.
 
 You obviously must hook up ground.  On the PC104 this is J2 (H2) pins
 29, 30, and 32.  The other power pins have an associated ground.
+
+If power cannot be trusted to be quality, there is space to add a buck
+regulator like a TPS61379-Q1 by the PC104 connector.  Or a buck-boost
+or other options.  Currently this assumes that incoming power is
+stable.
 
 Heat Sink for the Power Amplifier
 =================================
