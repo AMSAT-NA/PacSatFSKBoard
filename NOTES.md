@@ -59,8 +59,8 @@ are a different story.
 
 Possible outgassing issues:
 
-|Part						|Function				| Info |
-|----						|--------				|----- |
+|Part						|Function				|Info |
+|----						|--------				|---- |
 | AD4PS-1+					| RF power splitter		| Made of a different kind of plastic than ICs |
 | FTSH-105-01-L-DV-K		| JTAG connector		||
 | TSW-103-08-F-S-RA			| Serial port connector ||
@@ -68,8 +68,8 @@ Possible outgassing issues:
 
 Parts that are not automotive rated listed below.
 
-|Part						|Function			  | Info |
-|----						|--------			  |----- |
+|Part						|Function			  |Info |
+|----						|--------			  |---- |
 | LMK1C1106A				| clock distributor   | Suitable devices with 6 output not available.  Could use 4 output device (LMK00804B-Q1). Could use op amps (see https://www.analog.com/en/resources/analog-dialogue/articles/high-speed-amplifiers-make-clock-buffers.html). |
 | O 16,0-JT22CT-A-P-3,3-LF	| oscillator | There don't appear to be any that are automotive and temp certified with 2.5ppm stability.  This one is temp, which is probably more important. There is one from TXC at 16.389MHz. |
 | AS1016204-0108X0PWAY		| MRAM | No suitable devices available. |
@@ -84,8 +84,8 @@ Parts that are not automotive rated listed below.
 
 Part that are automotive listed below.
 
-|Part						|Function			  | Info |
-|----						|--------			  |----- |
+|Part						|Function			  |Info |
+|----						|--------			  |---- |
 | STWD100NYWY3F				| Hardware watchdog |
 | TCAN1044ADDFRQ1			| CAN bus interface |
 | TMS570LS0914PGE			| CPU |
@@ -108,7 +108,12 @@ transmitter.  You could use the same PA or a different PA, either way
 a QPC1022 RF switch could handle the choice.  You could even have
 separate antennas.  I have tested, and with an 18nH inductor
 installed, if you disable the external inductor the AX5043 will range
-at 420-450MHz.
+at 420-450MHz.  This is probably not going to be feasible.  You could
+switch the output of the 4th AX5043 into the top of the PA.  That
+wouldn't be too bad.  But the most likely thing to fail is the PA,
+really, not the AX5043.  Having a duplicate PA would take up too much
+space, especially with the heat sink.  I'll leave this here for now,
+but if you want redundancy you would be better off with two boards.
 
 Figure out temperature ratings on all parts and get as many to be 105C
 or better as possible.  The outliers at the moment are:
@@ -122,10 +127,6 @@ or better as possible.  The outliers at the moment are:
 	  are pretty good.
 	* ADL5501AKSZ-R7 - RF Power Measurement.  Suitable devices don't
 	  seem to be available.  This is an optional feature.
-
-The RX input filter can probably do the impedance adjustment for the
-LNA, but I'm not sure how to calculate that.  There's an impedance
-matching circuit in there now, removing it would save two parts.
 
 Is there a reason the ANTP1 output of the AX5043s are connected to a 50
 ohm resistor?  I can't find anything in the datasheet or errata about
@@ -754,12 +755,19 @@ Look at possible coupled ground loops in the RF section.  None pop out
 from a cursory glance, but need to look closer. - Didn't see anything
 
 Improved simulation shows that the RF input chain could be tweaked to
-improve performance.  Look at that.  Re-calculated and some values
+improve performance.  Look at that. - Re-calculated and some values
 tweaked.
 
 Loot at how to hook the receiver and transmitter to the same antenna.
 It looks like it could be done, perhaps, but it would require changes
-in the filtering and matching and would result in some loss.
+in the filtering and matching and would result in some loss. - A
+diplexer is now in place.
+
+The RX input filter can probably do the impedance adjustment for the
+LNA, but I'm not sure how to calculate that.  There's an impedance
+matching circuit in there now, removing it would save two parts.
+- It's much better to impedance match and then filter.  Filtering
+directly has a lot of loss.
 
 # Not going to do
 

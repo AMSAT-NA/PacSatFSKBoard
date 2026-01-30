@@ -97,9 +97,10 @@ might be a tad too thick.  It could be sanded a bit.
 
 You would probably want a 1/8" thick bar for the heat sink on the
 bottom.  You could use a 2.75mm square piece of it to place on the PA
-pad then put a 12mm x 26mm piece on top of that, drill 2mm holes, and
-screw it down.  There's a little bit of slack on the large piece
-dimensions, 1/2" width would be fine.
+pad then put a 12mm x 26mm (.47" x 1") piece on top of that, drill 2mm
+holes, and screw it down.  There's a little bit of slack on the large
+piece dimensions, 1/2" width would be fine, adding a bit to the length
+would be ok, too.
 
 The board is ~1.6mm thick, 1/4" is 6.32mm, so that's 7.92mm.  You can
 find M1.6 x 10mm stainless steel screws on Amazon along with nuts that
