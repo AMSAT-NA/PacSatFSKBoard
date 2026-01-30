@@ -5513,9 +5513,9 @@
 		(at 207.01 170.18 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "70603ec3-4539-4153-9220-3b45ab1d7912")
 		(property "Reference" "P7"
 			(at 196.85 170.18 0)

@@ -3499,9 +3499,9 @@
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "31f53721-fa89-46cf-bb40-741037dfda4a")
 		(property "Reference" "P16"
 			(at 105.41 93.98 0)
