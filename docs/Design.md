@@ -89,6 +89,23 @@ It would also be possible to connect the top of the chip via some type
 of riser to the shield to provide additional radiation surfaces for
 the PA.
 
+On Amazon you can search for "copper flat bar" to find suitable
+material.  The PA is .85mm tall, the shield is 2.54mm, leaving 1.69mm
+(.067") of space between the shield and the PA.  A 1/16" (.0625) will
+probably work for a connection from the PA to the shield, though it
+might be a tad too thick.  It could be sanded a bit.
+
+You would probably want a 1/8" thick bar for the heat sink on the
+bottom.  You could use a 2.75mm square piece of it to place on the PA
+pad then put a 12mm x 26mm piece on top of that, drill 2mm holes, and
+screw it down.  There's a little bit of slack on the large piece
+dimensions, 1/2" width would be fine.
+
+The board is ~1.6mm thick, 1/4" is 6.32mm, so that's 7.92mm.  You can
+find M1.6 x 10mm stainless steel screws on Amazon along with nuts that
+should work to fasten down the heat sink.  You would also need a space
+grade thermal adhesive or paste.
+
 RF Connections
 ==============
 
