@@ -2468,3 +2468,16 @@ none could be found that really fit well.  There are too many
 variables and options here to put it on for now, we will just trust
 for now that 5V is good and leave a space for something to be added if
 necessary.
+
+## 2026-02-01
+
+Remove the pull ups and voltage dividers on a number of lines and use
+the pull ups in the CPU instead.  These are:
+
+    FAULT / OTHER\_FAULT - pull up
+	OTHER\_PRESENCE\_N - pull up
+	OTHER\_ACTIVE - pull up
+	OTHER\_HW\_POWER\_ST - pull up
+
+Change the weak pull-downs on OTHER\_ACTIVE\_N and
+OTHER\_HW\_POWER\_OFF\_N to weak pull ups.  You want them off by default.

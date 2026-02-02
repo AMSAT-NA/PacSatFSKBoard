@@ -1,4 +1,4 @@
-155405381193341
+164254663963576
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -73549,6 +73549,34 @@ RGY_R-PVQFN-N20
 21
 21
 PacSatDev_ti
+RTE0016K-IPC_A
+
+TPS61379QWRTERQ1 
+0
+17
+17
+PacSatDev_ti
+RTE0016K-IPC_B
+
+TPS61379QWRTERQ1 
+0
+17
+17
+PacSatDev_ti
+RTE0016K-IPC_C
+
+TPS61379QWRTERQ1 
+0
+17
+17
+PacSatDev_ti
+RTE0016K-MFG
+
+TPS61379QWRTERQ1 
+0
+22
+22
+PacSatDev_ti
 SIP0009B
 
 TPS8268120SIPT 
@@ -73562,6 +73590,13 @@ QFP 0.5
 0
 144
 144
+PacSatDev_ti
+VQFN21_RYQ_TEX
+
+TPS552872QWRYQRQ1 
+0
+21
+21
 Package_BGA
 Alliance_TFBGA-36_6x8mm_Layout6x8_P0.75mm
 Alliance TFBGA-36, NSMD, 6.0x8.0mm, 36 Ball, 6x8 Layout, 0.75mm Pitch, generated with kicad-footprint-generator ipc_bga_generator.py, https://www.alliancememory.com/wp-content/uploads/pdf/AS6C1008_Mar_2023V1.2.pdf#page=13
