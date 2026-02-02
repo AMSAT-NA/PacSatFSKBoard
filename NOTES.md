@@ -2481,3 +2481,14 @@ the pull ups in the CPU instead.  These are:
 
 Change the weak pull-downs on OTHER\_ACTIVE\_N and
 OTHER\_HW\_POWER\_OFF\_N to weak pull ups.  You want them off by default.
+
+I powered everything off except the CPU on a board and it drew 84ma.
+The only thing really using power at that point was the clock
+circuitry, 5ma for the oscillator and 20ma for the clock distribution,
+so the CPU is drawing about 60ma from 5V, which means that 1.2V is
+less than 200ma taking into account loss in the voltage converter and
+some draw on 3.3V for the CPU.
+
+I tried using the WFI (wait for interrupt) to put the processor into
+standby when the software is idle.  It reduced power consumption
+around 10ma on 5V.
