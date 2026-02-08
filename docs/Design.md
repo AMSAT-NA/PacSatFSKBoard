@@ -253,8 +253,9 @@ Differences between the Version 2 and Version 3 board
   23 and 24 are already used on the power supply for ground and
   alternate I2C, so they could not be used for CAN.
 
-* PC104\_I2C\_EN\_N and PC104\_SER\_EN\_N for connecting the I2C and
-  serial lines to the PC104.
+* Switches were added for connecting the I2C and serial lines to the
+  PC104.  They are controlled by PC104\_I2C\_EN\_N and
+  PC104\_SER\_EN\_N.
   
 * There is a thermsistor added by the oscillator for frequency tuning,
   and for general power measurement.  This goes into AD1IN[09].
