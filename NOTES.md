@@ -2492,3 +2492,8 @@ some draw on 3.3V for the CPU.
 I tried using the WFI (wait for interrupt) to put the processor into
 standby when the software is idle.  It reduced power consumption
 around 10ma on 5V.
+
+## 2026-02-12
+
+Double the capacitors on the RTC.  Just to give some more time.  This
+should give 320 minutes of run time without power applied.

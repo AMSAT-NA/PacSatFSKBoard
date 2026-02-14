@@ -258,7 +258,7 @@ Differences between the Version 2 and Version 3 board
   PC104\_SER\_EN\_N.
   
 * There is a thermsistor added by the oscillator for frequency tuning,
-  and for general power measurement.  This goes into AD1IN[09].
+  and for general temperature measurement.  This goes into AD1IN[09].
 
 IO Connections on the PacSat AFSK processor
 ===========================================
