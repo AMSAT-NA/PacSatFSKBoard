@@ -122,12 +122,13 @@ transmit and P17 for receive for connecting to the antennas.  The
 receiver has significant filtering above 160MHz; you can transmit and
 receive simultaneously with nearby antennas without issues.
 
-There is a shared antenna input (P25) and associated diplexer that can
-be used for a shared receive/transmit antenna, not installed by
-default.  The parts on the diplexer page will need to be populated.
-The RF input and RF output connectors can be removed in that case as
-well as the bleed-off inductors on the RF input and output.  This
-option costs about 1dB on both transmit and receive.
+There is a shared antenna input (P25 for MMCX, P26 for U.FL) and
+associated diplexer that can be used for a shared receive/transmit
+antenna, not installed by default.  The parts on the diplexer page
+will need to be populated.  The RF input and RF output connectors can
+be removed in that case as well as the bleed-off inductors on the RF
+input and output.  This option costs about 1dB on both transmit and
+receive.
 
 Version 3 boards also two U.FL connectors, P23 for transmit and P24
 for receive (not populated by default), that can also be used for

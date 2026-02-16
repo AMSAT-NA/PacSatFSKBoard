@@ -9,6 +9,9 @@ some point.
 
 # TODO
 
+Switch to a TMS570LS2134 CPU.  This has double the FLASH and RAM and
+has the same pinout as the TMS570LS0914.
+
 I'm still not 100% sure the H1/H2 connectors are correct.  They seem
 to match the power supply configuration I have, but the CSK PCB
 specifications show two different H1/H2 configurations on slot 0 and
