@@ -2291,7 +2291,7 @@
 		)
 		(uuid "d981e3e3-6e0f-4915-84af-22023610165c")
 	)
-	(text "Pull down so defalts to LNA PWR off."
+	(text "Pull down so defaults to LNA PWR off."
 		(exclude_from_sim no)
 		(at 210.566 255.778 0)
 		(effects

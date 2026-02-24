@@ -203,6 +203,9 @@ Two CAN buses are routed to the PC104 and they are on by default.  CAN
 A is on H1 (J1) pins 5 (the +) and 1 (the -).  CAN B is on H1 (J1)
 pins 33 (the +) and 34 (the -).
 
+CAN A is routed to CAN3 on the CPU, and CAN B is routed to CAN2 on the
+CPU.  That is a bit confusing.
+
 These are not standard, except a NanoMind device specifies a CAN bus
 on H2 pins 1 and 5.
 
