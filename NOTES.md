@@ -2500,3 +2500,8 @@ around 10ma on 5V.
 
 Double the capacitors on the RTC.  Just to give some more time.  This
 should give 320 minutes of run time without power applied.
+
+## 2026-02-24
+
+I measured the radiation at 16MHz above the board.  At 1cm it's about
+-60dBm, at 30cm it drops down into the noise.  So that looks good.
