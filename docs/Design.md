@@ -245,7 +245,7 @@ Differences between the Version 2 and Version 3 board
 
 * A DAC has been added to the AX5043 SPI bus to control the quiescent
   current into the PA.  This should allow the power usage of the PA to
-  be directly controlled.  There is also a uninstalled resistor that
+  be directly controlled.  There is also an uninstalled resistor that
   can be installed (and the DAC removed) as a build option.
 
 * The serial RX and TX lines on the PC104 were backwards on the
@@ -263,6 +263,16 @@ Differences between the Version 2 and Version 3 board
   
 * There is a thermsistor added by the oscillator for frequency tuning,
   and for general temperature measurement.  This goes into AD1IN[09].
+
+* The RTC has been redesigned so it works better when not powered.
+  The version 2 RTC had a diode with too much leakage and insufficient
+  capacitance.  The main power to the RTC also dropped too fast for it
+  to take over from battery power.  The main power has a diode and
+  capacitance added to slow the voltage drop there, and the diode has
+  been replaced with a low leakage one and the capacitance has been
+  increased.  In Version 2 the software sets up the RTC to be powered
+  only by battery to avoid the main power drop issue, this will no
+  longer be required on Version 3.
 
 IO Connections on the PacSat AFSK processor
 ===========================================
