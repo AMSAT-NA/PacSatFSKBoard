@@ -2690,9 +2690,19 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "The trace between the PA and the\nL match is wider, .5mm with .508mm\nclearance on the ground plane.  The\noutput of the PA is low impedance\nand thus will be high current, so\nthe extra width is required, and\nthe lower impedance from the extra\nwidth helps a bit.\n\nAfter the L match the current will\ndecrease and the voltage will\nincrease, so the normal traces are\nok."
+		(exclude_from_sim no)
+		(at 161.036 196.342 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "07be56a0-0566-440a-a8be-d4eb1b5d995c")
+	)
 	(text "Place by the PA."
 		(exclude_from_sim no)
-		(at 165.354 237.744 0)
+		(at 90.424 236.474 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2723,7 +2733,7 @@
 	)
 	(text "See comment on TH2."
 		(exclude_from_sim no)
-		(at 142.494 205.232 0)
+		(at 67.564 203.962 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2982,7 +2992,7 @@
 		(uuid "589d722b-931e-44c6-bf60-d27ce1b70c6d")
 	)
 	(junction
-		(at 163.83 217.17)
+		(at 88.9 215.9)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "58fe0a66-913f-4fd1-8244-4930f4ce637e")
@@ -3855,7 +3865,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 217.17) (xy 163.83 219.71)
+			(xy 88.9 215.9) (xy 88.9 218.44)
 		)
 		(stroke
 			(width 0)
@@ -4265,7 +4275,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 217.17) (xy 163.83 217.17)
+			(xy 78.74 215.9) (xy 88.9 215.9)
 		)
 		(stroke
 			(width 0)
@@ -4515,7 +4525,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 204.47) (xy 163.83 207.01)
+			(xy 88.9 203.2) (xy 88.9 205.74)
 		)
 		(stroke
 			(width 0)
@@ -5335,7 +5345,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 227.33) (xy 163.83 228.6)
+			(xy 88.9 226.06) (xy 88.9 227.33)
 		)
 		(stroke
 			(width 0)
@@ -5385,7 +5395,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 214.63) (xy 163.83 217.17)
+			(xy 88.9 213.36) (xy 88.9 215.9)
 		)
 		(stroke
 			(width 0)
@@ -5743,7 +5753,7 @@
 	)
 	(global_label "PA_TEMP"
 		(shape input)
-		(at 153.67 217.17 180)
+		(at 78.74 215.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5753,7 +5763,7 @@
 		)
 		(uuid "852cd642-4829-4a52-ab3d-f8fdd6c14ceb")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 141.0761 217.17 0)
+			(at 66.1461 215.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5897,7 +5907,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 163.83 228.6 0)
+		(at 88.9 227.33 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5906,7 +5916,7 @@
 		(fields_autoplaced yes)
 		(uuid "090babc9-9519-46e2-8c0f-7caa613b55ac")
 		(property "Reference" "#PWR0232"
-			(at 163.83 234.95 0)
+			(at 88.9 233.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5915,7 +5925,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 163.83 233.68 0)
+			(at 88.9 232.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5923,7 +5933,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 163.83 228.6 0)
+			(at 88.9 227.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5932,7 +5942,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 163.83 228.6 0)
+			(at 88.9 227.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5941,7 +5951,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 163.83 228.6 0)
+			(at 88.9 227.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6027,7 +6037,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 163.83 204.47 0)
+		(at 88.9 203.2 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6036,7 +6046,7 @@
 		(fields_autoplaced yes)
 		(uuid "0d6417f9-4362-432e-9340-ca119a8e61b5")
 		(property "Reference" "#PWR0231"
-			(at 163.83 208.28 0)
+			(at 88.9 207.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6045,7 +6055,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 163.83 200.66 0)
+			(at 88.9 199.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6053,7 +6063,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 163.83 204.47 0)
+			(at 88.9 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6062,7 +6072,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 163.83 204.47 0)
+			(at 88.9 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6071,7 +6081,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 163.83 204.47 0)
+			(at 88.9 203.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9361,7 +9371,7 @@
 	)
 	(symbol
 		(lib_id "Device:Thermistor_NTC")
-		(at 163.83 223.52 0)
+		(at 88.9 222.25 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9369,7 +9379,7 @@
 		(dnp no)
 		(uuid "b0f7e39d-1016-4113-b670-e6f05e9d99a6")
 		(property "Reference" "TH4"
-			(at 166.624 225.552 90)
+			(at 91.694 224.282 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9378,7 +9388,7 @@
 			)
 		)
 		(property "Value" "NTCG103JF103FTDS 10KΩ@25C"
-			(at 171.196 231.394 90)
+			(at 96.266 230.124 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9387,7 +9397,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 163.83 222.25 0)
+			(at 88.9 220.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9396,7 +9406,7 @@
 			)
 		)
 		(property "Datasheet" "NCU15XH103F60RC"
-			(at 163.83 222.25 0)
+			(at 88.9 220.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9405,7 +9415,7 @@
 			)
 		)
 		(property "Description" "Temperature dependent resistor, negative temperature coefficient"
-			(at 163.83 223.52 0)
+			(at 88.9 222.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10168,7 +10178,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 163.83 210.82 0)
+		(at 88.9 209.55 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10176,7 +10186,7 @@
 		(dnp no)
 		(uuid "ce714525-cf0e-482f-9e40-d97749b56e86")
 		(property "Reference" "R81"
-			(at 156.21 209.55 0)
+			(at 81.28 208.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10185,7 +10195,7 @@
 			)
 		)
 		(property "Value" "10KΩ 1%"
-			(at 153.924 211.582 0)
+			(at 78.994 210.312 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10194,7 +10204,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 162.052 210.82 90)
+			(at 87.122 209.55 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10203,7 +10213,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 163.83 210.82 0)
+			(at 88.9 209.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10211,7 +10221,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 163.83 210.82 0)
+			(at 88.9 209.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)

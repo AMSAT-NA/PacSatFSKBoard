@@ -2123,6 +2123,16 @@
 		)
 		(uuid "19dbc172-0130-484e-8fc7-f95f67a824f8")
 	)
+	(text "Unless otherwise noted, all\nRF traces are .225mm with .508mm\nclearance on the ground around\nthe trace and .109mm above the\nground plane.  All RF traces are\ncoplanar.  This gives around\n48.5 ohm nominal impedance."
+		(exclude_from_sim no)
+		(at 65.532 46.736 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "295d4a69-bfa6-4844-88b7-373db6a1e0f7")
+	)
 	(text "RX3+"
 		(exclude_from_sim no)
 		(at 361.95 118.11 0)
