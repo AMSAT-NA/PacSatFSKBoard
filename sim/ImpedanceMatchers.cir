@@ -21,19 +21,31 @@
 
 .SUBCKT PAInImpedance in measure1 measure2 out
 
+* These are the values I measured with the VNA
+* +9.87 ohms
+Lout in       measure1  3.6n
+Rout measure2 out       2.43
+* These are the values from the provided S-Parameters.
 * -1.04 ohms at 435MHz
-Cout in       measure1  350p
-Rout measure2 out       1.63
+*Cout in       measure1  350p
+*Rout measure2 out       1.63
 
 .ENDS
 
 .SUBCKT ImpMatchPAIn in out
 
 * TX PA input matcher
+* This is what is currently installed
 * Q=65, Coilcraft 0603DC
-L1     in      a1a     3.0n
+L1     in      a1a     3.3n
 Rl1    a1a     0       .13
-C1     in      out     47p
+C1     in      out     22p
+
+* Assuming the input impedance is correct, this would be a better
+* match.
+*L1     in      a1a     4.3n
+*Rl1    a1a     0       .13
+*C1     in      out     17p
 
 .ENDS
 
