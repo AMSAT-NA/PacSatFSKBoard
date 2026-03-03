@@ -76,10 +76,10 @@ apart vertically.
 
 Near the center of the plate there is a small block of copper to
 extend down to the circuit board under the PA.  The PA has an open
-copper area for this.  This area is 2.75mm x 2.75mm.  It's right edge
-is located 14.10mm from the right side of the plate and the left edge
-is located 9.16mm from the left side of the plate.  The top of the
-area is 4.75mm from the top of the plate and 4.50mm from the bottom of
+copper area for this.  This area is 3.5mm x 3.5mm.  It's right edge
+is located 13.60mm from the right side of the plate and the left edge
+is located 8.7mm from the left side of the plate.  The top of the
+area is 4.35mm from the top of the plate and 4.15mm from the bottom of
 the plate.
 
 It is unknown if the heat sink is required or what duty cycle on the
