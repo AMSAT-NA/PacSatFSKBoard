@@ -2175,9 +2175,9 @@
 		)
 		(uuid "68f2e65a-2e5a-4cba-81df-d80b14706212")
 	)
-	(text "ACTIVE1_N is a 3.3V signal, but the maximum input\ncontrol voltage to the QPC8010Q is 3.0V (and the\nminimum is 1.3V).  Driving it directly with ACTIVE1_N\nappears to have burned up some devices.  Add a voltage\ndivider to bring the voltage to a correct range."
+	(text "ACTIVE1_N is a 3.3V signal, but the maximum input\ncontrol voltage to the QPC8010Q is 2.7V (and the\nminimum is 1.3V).  Driving it directly with ACTIVE1_N\nappears to have burned up some devices.  Add a voltage\ndivider to bring the voltage to a correct range.\n\nWith this in place, the voltage on ACTIVE_N should be\n3.08V when high, and the voltage to the control line\nhere shold be 2.04V."
 		(exclude_from_sim no)
-		(at 237.744 93.726 0)
+		(at 236.22 28.448 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -3377,7 +3377,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "18KΩ"
+		(property "Value" "100KΩ"
 			(at 226.568 72.263 0)
 			(effects
 				(font
@@ -4185,7 +4185,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "47KΩ"
 			(at 226.568 49.403 0)
 			(effects
 				(font

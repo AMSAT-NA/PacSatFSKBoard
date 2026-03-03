@@ -2505,3 +2505,8 @@ should give 320 minutes of run time without power applied.
 
 I measured the radiation at 16MHz above the board.  At 1cm it's about
 -60dBm, at 30cm it drops down into the noise.  So that looks good.
+
+## 2026-03-02
+
+Change the resistors on the RF switches to avoid pulling down the
+ACTIVE_N line too much.
