@@ -2201,6 +2201,16 @@
 		)
 		(uuid "747abccd-52b4-4027-8d37-43084c2cb215")
 	)
+	(text "Populate this resistor to power\ndirectly with 5V from the standard\nPC104 connection."
+		(exclude_from_sim no)
+		(at 123.19 173.228 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "b6f174e3-03ec-48ab-aae3-756fe71663ff")
+	)
 	(junction
 		(at 181.61 160.02)
 		(diameter 0)
@@ -2218,6 +2228,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "24611e8b-99df-44ab-a133-b77727901555")
+	)
+	(junction
+		(at 102.87 166.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2ac24de8-0d0d-461d-912c-5c8e54f9ec8d")
 	)
 	(junction
 		(at 210.82 119.38)
@@ -2324,10 +2340,6 @@
 	(no_connect
 		(at 151.13 129.54)
 		(uuid "220cd3a4-ae4a-4e49-b34b-9b31db103456")
-	)
-	(no_connect
-		(at 287.02 160.02)
-		(uuid "2366e011-1133-492e-8b4a-a3c31584cc48")
 	)
 	(no_connect
 		(at 299.72 149.86)
@@ -2569,6 +2581,16 @@
 	)
 	(wire
 		(pts
+			(xy 132.08 166.37) (xy 120.65 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "091a368e-e484-4f20-a93b-3ebec1628ce6")
+	)
+	(wire
+		(pts
 			(xy 181.61 172.72) (xy 187.96 172.72)
 		)
 		(stroke
@@ -2759,6 +2781,16 @@
 	)
 	(wire
 		(pts
+			(xy 287.02 160.02) (xy 284.48 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "471b561a-bc26-48eb-8258-3c5ac867ad17")
+	)
+	(wire
+		(pts
 			(xy 35.56 134.62) (xy 38.1 134.62)
 		)
 		(stroke
@@ -2929,6 +2961,16 @@
 	)
 	(wire
 		(pts
+			(xy 276.86 160.02) (xy 271.78 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66ede3f7-599e-4959-9950-ba52de0a0f52")
+	)
+	(wire
+		(pts
 			(xy 99.06 142.24) (xy 99.06 147.32)
 		)
 		(stroke
@@ -3089,6 +3131,16 @@
 	)
 	(wire
 		(pts
+			(xy 102.87 166.37) (xy 102.87 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8dacb877-e873-4f0d-8103-9855e6c519fb")
+	)
+	(wire
+		(pts
 			(xy 254 124.46) (xy 257.81 124.46)
 		)
 		(stroke
@@ -3149,7 +3201,17 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 172.72) (xy 102.87 160.02)
+			(xy 102.87 166.37) (xy 113.03 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a57a4b63-ad05-40ad-9220-e01c42ec17fa")
+	)
+	(wire
+		(pts
+			(xy 102.87 172.72) (xy 102.87 166.37)
 		)
 		(stroke
 			(width 0)
@@ -3667,6 +3729,16 @@
 		)
 		(uuid "911c0351-c070-42d4-8b60-551984cbd78a")
 	)
+	(label "5V_p"
+		(at 273.05 127 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "913f9704-0584-4b33-9ebf-bfaa14383ee3")
+	)
 	(label "3V3_S2"
 		(at 154.94 157.48 0)
 		(effects
@@ -3677,6 +3749,16 @@
 		)
 		(uuid "a27b2cee-119c-4410-a468-b91500e15caa")
 	)
+	(label "5V_p"
+		(at 132.08 166.37 180)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right bottom)
+		)
+		(uuid "a6313226-89e8-4023-8b4f-17e6228d5203")
+	)
 	(label "5V_S1"
 		(at 124.46 154.94 0)
 		(effects
@@ -3686,6 +3768,16 @@
 			(justify left bottom)
 		)
 		(uuid "c6b069a9-e89f-4c01-abd1-8b09c5b3c2f8")
+	)
+	(label "5V_p"
+		(at 312.42 127 180)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right bottom)
+		)
+		(uuid "ca7ca39e-ac3d-4499-abf1-f3780de4974d")
 	)
 	(global_label "UMBILICAL_ATTACHED"
 		(shape input)
@@ -3995,28 +4087,6 @@
 			)
 		)
 	)
-	(global_label "5V_p"
-		(shape input)
-		(at 273.05 127 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify right)
-		)
-		(uuid "7de0c452-038f-4835-aaa0-4c88444d6237")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 264.9555 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "PRESENCE1_N"
 		(shape input)
 		(at 125.73 116.84 180)
@@ -4074,6 +4144,28 @@
 		(uuid "9e9935af-66f4-4056-8bea-3d9a665439e3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 197.9058 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PC104_ABF1"
+		(shape input)
+		(at 271.78 160.02 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9f6e423a-73fe-4d4f-89aa-f7d1e4fb39c5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 257.6562 160.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4206,28 +4298,6 @@
 		(uuid "e7a1d782-6b5c-4df8-aab3-c180fbacbd4c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 418.8487 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "5V_p"
-		(shape input)
-		(at 312.42 127 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left)
-		)
-		(uuid "ea60265f-661a-47b9-b3df-927b22b87e59")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 320.5145 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5355,6 +5425,75 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 280.67 160.02 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp yes)
+		(uuid "9a6ac826-8bf2-4b4f-aaf3-e2d718d14aa6")
+		(property "Reference" "R134"
+			(at 279.908 157.734 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0Ω"
+			(at 283.718 157.734 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 280.67 158.242 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 280.67 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 280.67 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9b8ad0e1-0247-4a4b-8390-1c8bbe763f6c")
+		)
+		(pin "2"
+			(uuid "862da9e7-755f-44ac-bd74-3b94b793c83f")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/163b95be-82a7-4cd3-9077-48a01f79e25c"
+					(reference "R134")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PACSAT_ICs:74CBTLV1G125DBVRQ1")
 		(at 391.16 119.38 0)
 		(mirror y)
@@ -5846,6 +5985,73 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/163b95be-82a7-4cd3-9077-48a01f79e25c"
 					(reference "#PWR0307")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 116.84 166.37 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bd40cf12-0690-42e0-8a8e-b5d4edb873bf")
+		(property "Reference" "R112"
+			(at 121.666 165.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "0Ω"
+			(at 113.03 165.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 116.84 168.148 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 116.84 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 116.84 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "eaded9ea-f818-48fd-8bfd-01e2021f1d7e")
+		)
+		(pin "1"
+			(uuid "575ac389-1aee-47aa-95ca-39f501a2b1da")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/163b95be-82a7-4cd3-9077-48a01f79e25c"
+					(reference "R112")
 					(unit 1)
 				)
 			)

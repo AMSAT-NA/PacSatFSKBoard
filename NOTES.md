@@ -9,6 +9,9 @@ some point.
 
 # TODO
 
+Add pads for the unused GPIOs (DNP zero-ohm resistors) to make it
+easier to get to GPIO lines if necessary later.
+
 Switch to a TMS570LS2134 CPU.  This has double the FLASH and RAM and
 has the same pinout as the TMS570LS0914.
 
@@ -2510,3 +2513,9 @@ I measured the radiation at 16MHz above the board.  At 1cm it's about
 
 Change the resistors on the RF switches to avoid pulling down the
 ACTIVE_N line too much.
+
+## 2026-03-05
+
+Add a connection to the PC104 secondary ABF line.
+
+Move the 5V_p line in the schematic to a more logical location.

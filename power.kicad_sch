@@ -2523,16 +2523,6 @@
 		)
 		(uuid "c79d4c47-53a0-4ebc-ac49-4e23e11cf2fe")
 	)
-	(text "Populate this resistor to power\ndirectly with 5V."
-		(exclude_from_sim no)
-		(at 119.38 47.498 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-		)
-		(uuid "dcd9ae3f-6d02-4905-8ffe-2de1e3e5b4e6")
-	)
 	(text "POWER"
 		(exclude_from_sim no)
 		(at 334.01 245.11 0)
@@ -2599,12 +2589,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "46fae129-287f-41fa-a8f9-dd5010fc813b")
-	)
-	(junction
-		(at 204.47 71.12)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "74dd50f2-70a8-4ee4-8a42-b852ecfe095d")
 	)
 	(junction
 		(at 165.1 166.37)
@@ -3002,16 +2986,6 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 53.34) (xy 121.92 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3558fc45-d6ee-4f3a-87c7-ebeece9888da")
-	)
-	(wire
-		(pts
 			(xy 353.06 119.38) (xy 353.06 118.11)
 		)
 		(stroke
@@ -3402,16 +3376,6 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 71.12) (xy 204.47 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "913e1398-1600-4f66-a1db-6b48130423f7")
-	)
-	(wire
-		(pts
 			(xy 275.59 114.3) (xy 285.75 114.3)
 		)
 		(stroke
@@ -3632,16 +3596,6 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 71.12) (xy 208.28 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c5c42d5c-e4cd-40b8-a94a-dbb462f75d20")
-	)
-	(wire
-		(pts
 			(xy 58.42 185.42) (xy 99.06 185.42)
 		)
 		(stroke
@@ -3722,23 +3676,13 @@
 	)
 	(wire
 		(pts
-			(xy 200.66 71.12) (xy 204.47 71.12)
+			(xy 200.66 71.12) (xy 208.28 71.12)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "d0191d8a-6810-458d-b8d3-8420fbc11c18")
-	)
-	(wire
-		(pts
-			(xy 25.4 53.34) (xy 114.3 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d4ed99c7-e021-418a-a2ff-3edddfc1ef63")
 	)
 	(wire
 		(pts
@@ -4268,28 +4212,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "5V_p"
-		(shape input)
-		(at 25.4 53.34 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify right)
-		)
-		(uuid "af1843b7-d5a1-4799-9c59-5e8daaf3898e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 17.3055 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -7327,74 +7249,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/00000000-0000-0000-0000-00005a0ea76a"
 					(reference "#PWR03")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 118.11 53.34 270)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "bd40cf12-0690-42e0-8a8e-b5d4edb873bf")
-		(property "Reference" "R112"
-			(at 113.284 52.07 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "0Ω"
-			(at 121.92 52.07 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 118.11 55.118 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 118.11 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 118.11 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "eaded9ea-f818-48fd-8bfd-01e2021f1d7e")
-		)
-		(pin "1"
-			(uuid "575ac389-1aee-47aa-95ca-39f501a2b1da")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/00000000-0000-0000-0000-00005a0ea76a"
-					(reference "R112")
 					(unit 1)
 				)
 			)

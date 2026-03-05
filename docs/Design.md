@@ -303,7 +303,7 @@ used as a GPIO.
 |12		|CAN3RX					|CAN\_A\_RX				|IU|CAN bus transceiver |
 |13		|CAN3TX					|CAN\_A\_TX				|OU|CAN bus transceiver |
 |14		|GIOA[5]				|AX5043\_IRQ\_RX4		|ID|Interrupt from AX5043 RX4 |
-|15		|N2HET1[22]				|						| D|free gpio|
+|15		|N2HET1[22]				|PC104_ABF1				|ID|PC104 pin H2-50|
 |16		|GIOA[6]				|OTHER\_ACTIVE			|ID|Active line from other board |
 |17		|VCC					|						|  | |
 |18		|OSCIN					|						|  | |
