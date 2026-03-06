@@ -290,7 +290,7 @@ used as a GPIO.
 |Pin3	|CPU Pin Name			|Schematic Name			|G |Description |
 |----	|------------			|--------------			|--|----------- |
 |1		|GIOB[3]				|OTHER\_FAULT			|ID|Fault line from other board |
-|2		|GIOA[0]				|						| D|free gpio|
+|2		|GIOA[0]				|EXT\_GPIO1				| D|Unused GPIO run to PC104 H2-11|
 |3		|MIBSPI3NCS[3]			|I2C\_SCL				|OU|RTC control (MAX31331TETB+) |
 |4		|MIBSPI3NCS[2]			|I2C\_SDA				|BU|RTC control (MAX31331TETB+) |
 |5		|GIOA[1]				|AX5043\_IRQ\_RX1		|ID|Interrupt from AX5043 RX1 |
@@ -320,7 +320,7 @@ used as a GPIO.
 |29		|VCC					|						|  | |
 |30		|N2HET1[02]				|						|OD|Green LED |
 |31		|N2HET1[05]				|LNA\_ENABLE			|OD|Used to enable the LNA |
-|32		|MIBSPI5NCS[0]			|						| U|free gpio (Save for extra SPI if possible) |
+|32		|MIBSPI5NCS[0]			|EXT\_SPI\_CS			| U|Run to PC104 H2-12 (can be used for GPIO)|
 |33		|N2HET1[07]				|AX5043\_EN\_RX3\_N		|OD|Power enable for AX5043 RX 3 |
 |34		|TEST					|					    |  | |
 |35		|N2HET1[09]				|AX5043\_EN\_RX2\_N		|OD|Power enable for AX5043 RX 2 |
@@ -349,10 +349,10 @@ used as a GPIO.
 |57		|VCC					|						|  | |
 |58		|AD1IN[16] / AD2IN[0]	|\*						|  |Thermsistor near the processor |
 |59		|AD1IN[17] / AD2IN[01]	|						|  |Board Number |
-|60		|AD1IN[0]				|						|  |free adc |
+|60		|AD1IN[0]				|EXT\_ADC2				|  |ADC to PC104 H2-08|
 |61		|AD1IN[07]				|PWR\_FLAG\_AX5043		|  |Power flag from the AX5043 current limiter |
 |62		|AD1IN[18] / AD2IN[02]	|						|  |External Control |
-|63		|AD1IN[19] / AD2IN[03]	|						|  |free adc |
+|63		|AD1IN[19] / AD2IN[03]	|EXT\_ADC1				|  |ADC to PC104 H2-07 |
 |64		|AD1IN[20] / AD2IN[04]	|VER\_BIT0				|  |Board version number bit 0 |
 |65		|AD1IN[21] / AD2IN[05]	|VER\_BIT1				|  |Board version number bit 1 |
 |66		|ADREFHI				|						|  | |
@@ -368,15 +368,15 @@ used as a GPIO.
 |75		|AD1IN[11] / AD2IN[11]	|PWR\_FLAG\_LNA			|  |Power flag from the LNA current limiter |
 |76		|AD1IN[04]				|PWR\_FLAG\_SSPA		|  |Power flag from the PA current limiter |
 |77		|AD1IN[12] / AD2IN[12]	|						|  |+5V power measure, linear from 0-2.5V |
-|78		|AD1IN[05]				|						|  |free adc |
+|78		|AD1IN[05]				|						|  |free adc (run to DNP R146) |
 |79		|AD1IN[13] / AD2IN[13]	|						|  |+1.2V power measure, 0-1.2V |
 |80		|AD1IN[06]				|						|  |+3.3V power measure, 0-1.65V |
-|81		|AD1IN[22] / AD2IN[06]	|						|  |free adc |
+|81		|AD1IN[22] / AD2IN[06]	|						|  |free adc (run to DNP R145) |
 |82		|AD1IN[14] / AD2IN[14]	|						|  | Board version number bit 2 |
 |83		|AD1IN[08] / AD2IN[08]	|\*POWER\_TEMP			|  |Thermsistor in power conversion section |
 |84		|AD1IN[23] / AD2IN[07]	|\*PA\_TEMP				|  |Thermsistor near the PA |
 |85		|AD1IN[15] / AD2IN[15]	|						|  |Board version number bit 3 |
-|86		|AD1EVT					|						| D|free gpio |
+|86		|AD1EVT					|						| D|free gpio (run do DNP R144) |
 |87		|VCC					|						|  | |
 |88		|VSS					|						|  | |
 |89		|CAN1TX					|AX5043\_EN\_TX\_N		|OU|Power enable for AX5043 TX |
@@ -388,15 +388,15 @@ used as a GPIO.
 |95		|MIBSPI1CLK				|AX5043\_CLK			|OU|SPI clock for all AX5043s |
 |96		|MIBSPI1NENA			|AX5043\_SEL4\_N		|OU|SPI chip select for AX5043 RX4 |
 |97		|MIBSPI5NENA			|AX5043\_SEL\_TX\_N		|OU|SPI chip select for AX5043 TX |
-|98		|MIBSPI5SOMI[0]			|						| U|free gpio (Save for extra SPI if possible) |
-|99		|MIBSPI5SIMO[0]			|						| U|free gpio (Save for extra SPI if possible) |
-|100	|MIBSPI5CLK				|						| U|free gpio (Save for extra SPI if possible) |
+|98		|MIBSPI5SOMI[0]			|EXT\_SPI\_SOMI			| U|Run to PC104 H2-09 (can be used for GPIO) |
+|99		|MIBSPI5SIMO[0]			|EXT\_SPI\_SIMO			| U|Run to PC104 H2-11 (can be used for GPIO) |
+|100	|MIBSPI5CLK				|EXT\_SPI\_CLK			| U|Run to PC104 H2-10 (can be used for GPIO) |
 |101	|VCC					|						|  | |
 |102	|VSS					|						|  | |
 |103	|VSS					|						|  | |
 |104	|VCCIO					|						|  | |
 |105	|MIBSPI1NCS[0]			|CAN\_B\_EN\_N			|OU|CAN bus B transceiver enable |
-|106	|N2HET1[08]				|						| D|free gpio|
+|106	|N2HET1[08]				|						| D|free gpio (run to DNP R147)|
 |107	|N2HET1[28]				|PA\_DAC\_SEL\_N		|OD|Select pin for the PA DAC Iref, on the AC5043 SPI bus |
 |108	|TMS					|JTAG pin				|  | |
 ||||||
