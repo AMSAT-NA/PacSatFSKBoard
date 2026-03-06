@@ -2519,3 +2519,11 @@ ACTIVE_N line too much.
 Add a connection to the PC104 secondary ABF line.
 
 Move the 5V_p line in the schematic to a more logical location.
+
+## 2026-03-06
+
+Run some to PC104 pins, including the last SPI and the last GPIO that
+is interrupt capable.  All these go through DNP resistors.
+    
+Run the rest of the unused CPU pins to DNP resistors on the board to
+make it easier to use them.
