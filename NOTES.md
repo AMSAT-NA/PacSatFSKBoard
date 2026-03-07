@@ -2512,13 +2512,13 @@ I measured the radiation at 16MHz above the board.  At 1cm it's about
 ## 2026-03-02
 
 Change the resistors on the RF switches to avoid pulling down the
-ACTIVE_N line too much.
+ACTIVE\_N line too much.
 
 ## 2026-03-05
 
 Add a connection to the PC104 secondary ABF line.
 
-Move the 5V_p line in the schematic to a more logical location.
+Move the 5V\_p line in the schematic to a more logical location.
 
 ## 2026-03-06
 
@@ -2527,3 +2527,5 @@ is interrupt capable.  All these go through DNP resistors.
     
 Run the rest of the unused CPU pins to DNP resistors on the board to
 make it easier to use them.
+
+Add a capacitor in RESET\_N, just in case.

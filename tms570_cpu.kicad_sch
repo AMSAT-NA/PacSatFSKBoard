@@ -5260,6 +5260,12 @@
 		(uuid "f9a5253c-ef7c-4aaa-9ced-b873c4b4b669")
 	)
 	(junction
+		(at 87.63 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fad4fe66-e7dd-4262-a313-bac7fda7bb71")
+	)
+	(junction
 		(at 254 29.21)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6429,6 +6435,16 @@
 		)
 		(uuid "5156be90-e4fd-4273-bc18-25f2837dce40")
 	)
+	(wire
+		(pts
+			(xy 87.63 88.9) (xy 127 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "51ca9a00-8cab-4471-99a5-9a3c00a415da")
+	)
 	(polyline
 		(pts
 			(xy 303.53 66.04) (xy 340.36 66.04)
@@ -7271,6 +7287,16 @@
 	)
 	(wire
 		(pts
+			(xy 87.63 88.9) (xy 87.63 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8d9ae9fa-823c-4574-a71c-8ec495d6e940")
+	)
+	(wire
+		(pts
 			(xy 186.69 64.77) (xy 186.69 72.39)
 		)
 		(stroke
@@ -7278,6 +7304,16 @@
 			(type default)
 		)
 		(uuid "8e631380-72c0-47ee-bcd9-0b89c7547afa")
+	)
+	(wire
+		(pts
+			(xy 87.63 100.33) (xy 87.63 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8f851c65-8877-4a36-8a53-49f6e566bc08")
 	)
 	(wire
 		(pts
@@ -8691,7 +8727,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 88.9) (xy 127 88.9)
+			(xy 81.28 88.9) (xy 87.63 88.9)
 		)
 		(stroke
 			(width 0)
@@ -9705,7 +9741,7 @@
 	)
 	(global_label "Processor_Reset_N"
 		(shape input)
-		(at 115.57 88.9 180)
+		(at 81.28 88.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9715,7 +9751,7 @@
 		)
 		(uuid "6d21f814-79a4-4cb5-8365-69917d5fb05d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 94.1223 88.9 0)
+			(at 59.8323 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15794,6 +15830,70 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 87.63 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "818da260-c2b4-4bb3-8b1e-7291cb304670")
+		(property "Reference" "#PWR0301"
+			(at 87.63 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 87.757 107.2642 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 87.63 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 87.63 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 87.63 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "544a8c57-55d0-4250-9a20-30234fee9792")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
+					(reference "#PWR0301")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 254 19.05 0)
 		(unit 1)
@@ -17562,6 +17662,71 @@
 			(project "PacSat_Dev_RevD_240614"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
 					(reference "#PWR029")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 87.63 96.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f6e68831-db53-40d5-8fb6-b069ab899070")
+		(property "Reference" "C136"
+			(at 85.852 92.964 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100nF"
+			(at 86.106 100.584 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+			(at 88.5952 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 87.63 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 87.63 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "860a9a39-e6f0-4e76-8353-16e461374240")
+		)
+		(pin "2"
+			(uuid "4af26eae-6b80-4bda-b699-c53c82af47da")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
+					(reference "C136")
 					(unit 1)
 				)
 			)
