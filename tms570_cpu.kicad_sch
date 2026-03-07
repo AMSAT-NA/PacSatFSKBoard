@@ -5284,6 +5284,14 @@
 		(uuid "6b9ea174-3311-4157-8e0d-f4ccdcc41e86")
 	)
 	(no_connect
+		(at 207.01 204.47)
+		(uuid "6df4cdc1-bc30-491a-8637-085156cd6af8")
+	)
+	(no_connect
+		(at 149.86 175.26)
+		(uuid "7cba5499-2486-4348-a387-96c0d971d79e")
+	)
+	(no_connect
 		(at 247.65 52.07)
 		(uuid "c00b9dde-7172-4e68-ad44-50dffc638bda")
 	)
@@ -8107,16 +8115,6 @@
 	)
 	(wire
 		(pts
-			(xy 207.01 204.47) (xy 207.01 223.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cac24309-cd60-4a25-ba08-ab6f00d0b2b8")
-	)
-	(wire
-		(pts
 			(xy 140.97 170.18) (xy 140.97 185.42)
 		)
 		(stroke
@@ -8654,16 +8652,6 @@
 			(type default)
 		)
 		(uuid "eeef5b83-bff2-4cc6-ba8e-024f3e5c00ab")
-	)
-	(wire
-		(pts
-			(xy 133.35 175.26) (xy 149.86 175.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f00311c9-07a1-4a77-b7de-c13b7c29d559")
 	)
 	(wire
 		(pts
@@ -9233,7 +9221,7 @@
 			)
 		)
 	)
-	(global_label "UMBILICAL_ATTACHED"
+	(global_label "EXT_GPIO2"
 		(shape input)
 		(at 125.73 121.92 180)
 		(fields_autoplaced yes)
@@ -9245,7 +9233,7 @@
 		)
 		(uuid "22b333af-caba-484e-9428-1f50b6d343c1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 99.2024 121.92 0)
+			(at 110.959 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9519,7 +9507,7 @@
 			)
 		)
 	)
-	(global_label "PA_PWR_EN_N"
+	(global_label "PA_PWR_EN"
 		(shape input)
 		(at 121.92 137.16 180)
 		(fields_autoplaced yes)
@@ -9576,28 +9564,6 @@
 		(uuid "57389fb0-55e0-437d-8aae-88eba3c6eb94")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 81.9169 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "PC104_ABF0"
-		(shape input)
-		(at 133.35 175.26 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "57622e28-6ffe-4a9d-986c-a0f9bb48131c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 119.2262 175.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10571,28 +10537,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "PC104_ABF1"
-		(shape input)
-		(at 207.01 223.52 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "e9e134cd-e734-4d7c-891e-2f1eaa0d9a4a")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.01 237.6438 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)

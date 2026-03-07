@@ -799,7 +799,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PACSAT_ICs:SN74AHC1G02QDCKRQ1"
+		(symbol "PACSAT_ICs:SN74AHC1G08QDCKRQ1"
 			(pin_names
 				(offset 0.254)
 			)
@@ -807,15 +807,15 @@
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "U"
-				(at 30.48 10.922 0)
+				(at 25.4 8.382 0)
 				(effects
 					(font
 						(size 1.524 1.524)
 					)
 				)
 			)
-			(property "Value" "SN74AHC1G02QDCKRQ1"
-				(at 30.48 8.382 0)
+			(property "Value" "SN74AHC1G08QDCKRQ1"
+				(at 25.4 5.842 0)
 				(effects
 					(font
 						(size 1.524 1.524)
@@ -823,7 +823,7 @@
 				)
 			)
 			(property "Footprint" "PacSatDev_ti:DCK5"
-				(at 0 0 0)
+				(at 24.384 -15.24 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -832,8 +832,8 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://www.ti.com/lit/gpn/sn74ahc1g09-q1"
-				(at 0 0 0)
+			(property "Datasheet" "https://www.ti.com/lit/gpn/sn74ahc1g08-q1"
+				(at 26.67 -12.7 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -851,7 +851,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "SN74AHC1G02QDCKRQ1"
+			(property "ki_keywords" "SN74AHC1G08QDCKRQ1"
 				(at 0 0 0)
 				(effects
 					(font
@@ -869,13 +869,13 @@
 					(hide yes)
 				)
 			)
-			(symbol "SN74AHC1G02QDCKRQ1_0_1"
-				(arc
-					(start 11.43 4.826)
-					(mid 13.2469 -0.127)
-					(end 11.43 -5.08)
+			(symbol "SN74AHC1G08QDCKRQ1_0_1"
+				(polyline
+					(pts
+						(xy 7.62 3.81) (xy 7.62 -6.35)
+					)
 					(stroke
-						(width 0)
+						(width 0.127)
 						(type default)
 					)
 					(fill
@@ -884,7 +884,19 @@
 				)
 				(polyline
 					(pts
-						(xy 11.43 -5.08) (xy 17.78 -5.08)
+						(xy 7.62 -6.35) (xy 13.97 -6.35)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 13.97 3.81) (xy 7.62 3.81)
 					)
 					(stroke
 						(width 0.127)
@@ -895,35 +907,11 @@
 					)
 				)
 				(arc
-					(start 22.86 0)
-					(mid 20.779 -2.999)
-					(end 17.78 -5.08)
+					(start 13.97 3.81)
+					(mid 19.05 -1.27)
+					(end 13.97 -6.35)
 					(stroke
 						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 17.78 5.08)
-					(mid 20.779 2.999)
-					(end 22.86 0)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 17.78 5.08) (xy 11.43 5.08)
-					)
-					(stroke
-						(width 0.127)
 						(type default)
 					)
 					(fill
@@ -931,7 +919,7 @@
 					)
 				)
 				(pin input line
-					(at 5.08 2.54 0)
+					(at 0 1.27 0)
 					(length 7.62)
 					(name "A"
 						(effects
@@ -949,7 +937,7 @@
 					)
 				)
 				(pin input line
-					(at 5.08 -2.54 0)
+					(at 0 -3.81 0)
 					(length 7.62)
 					(name "B"
 						(effects
@@ -967,7 +955,7 @@
 					)
 				)
 				(pin power_in line
-					(at 16.51 12.7 270)
+					(at 11.43 11.43 270)
 					(length 7.62)
 					(name "VCC"
 						(effects
@@ -985,7 +973,7 @@
 					)
 				)
 				(pin power_in line
-					(at 16.51 -12.7 90)
+					(at 11.43 -13.97 90)
 					(length 7.62)
 					(name "GND"
 						(effects
@@ -1002,8 +990,8 @@
 						)
 					)
 				)
-				(pin output inverted
-					(at 30.48 0 180)
+				(pin output line
+					(at 26.67 -1.27 180)
 					(length 7.62)
 					(name "Y"
 						(effects
@@ -1623,9 +1611,9 @@
 		)
 		(uuid "29401c0c-7bdf-4b89-911e-de5c94d14029")
 	)
-	(text "If UMBILICAL_ATTACHED is high, do not power the PA.\nOtherwise use the PA power line from the processor.\nThe 10K resistor above is for bench testing or for\nif the line is not used."
+	(text "If PC104_ABF0 is low, do not power the PA.\nOtherwise use the PA power line from the\nprocessor.\nThe 10K resistor on PC104_ABF0 is for bench\ntesting or for if the line is not used."
 		(exclude_from_sim no)
-		(at 91.694 136.906 0)
+		(at 50.546 122.682 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -1643,6 +1631,16 @@
 			(justify left bottom)
 		)
 		(uuid "488baee7-12c6-4fc6-82ac-f937e479299c")
+	)
+	(text "PC104_ABF1 will disable the +5VAL power when low.\nIf that pin is not used, install the resistor on\non the line."
+		(exclude_from_sim no)
+		(at 108.458 183.134 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "4aad880b-7344-4fd4-b880-d1ab18d620cd")
 	)
 	(text "Pull down so defalts to PA PWR off."
 		(exclude_from_sim no)
@@ -1667,7 +1665,7 @@
 	)
 	(text "+5 Volts always available even when board\nis powered off by HW_POWER_OFF_N."
 		(exclude_from_sim no)
-		(at 96.774 190.5 0)
+		(at 95.25 150.114 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -1766,12 +1764,6 @@
 		(uuid "11ed78f6-d76d-42f2-8f95-0bba8bc4a052")
 	)
 	(junction
-		(at 73.66 111.76)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "17cabbe3-1809-4d2e-b3a8-6d1338508da8")
-	)
-	(junction
 		(at 162.56 116.84)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1820,6 +1812,12 @@
 		(uuid "5040587c-8da0-4fcd-9b4a-7f05d4f4e6e5")
 	)
 	(junction
+		(at 115.57 167.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "565a296f-f58c-4e21-ad62-1f730d60717f")
+	)
+	(junction
 		(at 99.06 64.77)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1848,6 +1846,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6a171678-d0f7-4934-8017-2c8872e4a90d")
+	)
+	(junction
+		(at 81.28 106.68)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "83e627d3-fc7f-4cbe-98cc-4da655cb6a2a")
 	)
 	(junction
 		(at 60.96 162.56)
@@ -1886,16 +1890,16 @@
 		(uuid "c247d1e8-a023-40fa-95f5-e7175b9f8313")
 	)
 	(junction
-		(at 73.66 106.68)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ca2b8739-78e6-4984-83d8-28f14153705b")
-	)
-	(junction
 		(at 256.54 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e96d2fd4-15a6-4e65-8e65-2423bd3c1bae")
+	)
+	(junction
+		(at 73.66 111.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "eb1f95b2-e18e-430b-bd51-2fa0939b06bc")
 	)
 	(junction
 		(at 162.56 130.81)
@@ -2141,6 +2145,16 @@
 	)
 	(wire
 		(pts
+			(xy 73.66 91.44) (xy 99.06 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "27f1a197-f980-4b13-ba50-106a62ab0051")
+	)
+	(wire
+		(pts
 			(xy 170.18 40.64) (xy 170.18 48.26)
 		)
 		(stroke
@@ -2198,6 +2212,16 @@
 			(type default)
 		)
 		(uuid "2e20ceec-476f-4b14-98b4-4d4086130785")
+	)
+	(wire
+		(pts
+			(xy 115.57 176.53) (xy 115.57 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e378ca1-0b3d-4bfb-ba4c-3c5f9f793fb7")
 	)
 	(wire
 		(pts
@@ -2318,16 +2342,6 @@
 			(type default)
 		)
 		(uuid "439c9b7f-b401-4f87-b4d4-3c0f5c054bea")
-	)
-	(wire
-		(pts
-			(xy 73.66 91.44) (xy 99.06 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "45f4ec3e-9e1e-4411-9e25-9e7a44a3dd9f")
 	)
 	(wire
 		(pts
@@ -2491,7 +2505,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 123.19) (xy 73.66 125.73)
+			(xy 81.28 123.19) (xy 81.28 125.73)
 		)
 		(stroke
 			(width 0)
@@ -2561,13 +2575,23 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 111.76) (xy 73.66 115.57)
+			(xy 73.66 111.76) (xy 87.63 111.76)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6c9901f0-d4e9-4943-9811-ae382d80807d")
+		(uuid "6b8da147-ec86-4782-aacb-6643231daf19")
+	)
+	(wire
+		(pts
+			(xy 115.57 167.64) (xy 118.11 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6db8c33e-d819-4b8f-a54a-9a2951df832c")
 	)
 	(wire
 		(pts
@@ -2671,16 +2695,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 102.87) (xy 73.66 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "86b48e76-6a1c-4d6f-8922-4fb16599da8b")
-	)
-	(wire
-		(pts
 			(xy 93.98 62.23) (xy 99.06 62.23)
 		)
 		(stroke
@@ -2691,16 +2705,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 111.76) (xy 87.63 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "886d5897-e5bd-47de-be67-b61f339e17f3")
-	)
-	(wire
-		(pts
 			(xy 93.98 54.61) (xy 100.33 54.61)
 		)
 		(stroke
@@ -2708,6 +2712,16 @@
 			(type default)
 		)
 		(uuid "889664a7-9abe-4236-93bf-507af5e85129")
+	)
+	(wire
+		(pts
+			(xy 81.28 106.68) (xy 81.28 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8aaa19d7-5a3b-418f-8d44-e3485156a9f9")
 	)
 	(wire
 		(pts
@@ -2841,16 +2855,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 106.68) (xy 87.63 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a13e0b0f-5890-4f6f-be0d-fd9e2d84d06a")
-	)
-	(wire
-		(pts
 			(xy 246.38 119.38) (xy 256.54 119.38)
 		)
 		(stroke
@@ -2891,7 +2895,7 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 167.64) (xy 118.11 167.64)
+			(xy 113.03 167.64) (xy 115.57 167.64)
 		)
 		(stroke
 			(width 0)
@@ -2908,6 +2912,16 @@
 			(type default)
 		)
 		(uuid "a95fef00-f6b2-4b3b-b60b-8992781020fb")
+	)
+	(wire
+		(pts
+			(xy 73.66 102.87) (xy 73.66 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac854819-70f8-47a2-90e5-12e7703d0c08")
 	)
 	(wire
 		(pts
@@ -3061,17 +3075,17 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 109.22) (xy 134.62 109.22)
+			(xy 113.03 176.53) (xy 115.57 176.53)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "be5e034b-c4ae-4677-b47e-9d752a01b55d")
+		(uuid "c4cd7bfc-1639-41b2-9083-1048f8dfad1d")
 	)
 	(wire
 		(pts
-			(xy 63.5 106.68) (xy 73.66 106.68)
+			(xy 63.5 106.68) (xy 81.28 106.68)
 		)
 		(stroke
 			(width 0)
@@ -3168,6 +3182,16 @@
 			(type default)
 		)
 		(uuid "e236048f-9f53-4e89-a350-62b301139d5f")
+	)
+	(wire
+		(pts
+			(xy 81.28 106.68) (xy 87.63 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e243c5f6-d63f-4c61-a785-88b056bda729")
 	)
 	(wire
 		(pts
@@ -3331,6 +3355,16 @@
 	)
 	(wire
 		(pts
+			(xy 114.3 109.22) (xy 135.89 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7228c8d-f1ed-4d97-addc-45dcfda13ec0")
+	)
+	(wire
+		(pts
 			(xy 162.56 109.22) (xy 162.56 116.84)
 		)
 		(stroke
@@ -3380,7 +3414,7 @@
 		(uuid "0d56b79f-74ad-442f-892b-3a01079c6a8f")
 	)
 	(label "PA_POWER_ON"
-		(at 134.62 109.22 180)
+		(at 135.89 109.22 180)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -3543,7 +3577,7 @@
 			)
 		)
 	)
-	(global_label "UMBILICAL_ATTACHED"
+	(global_label "PC104_ABF0"
 		(shape input)
 		(at 63.5 111.76 180)
 		(fields_autoplaced yes)
@@ -3555,7 +3589,7 @@
 		)
 		(uuid "49d089e8-d0c7-446f-b343-1aae9b50d07d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 36.9724 111.76 0)
+			(at 46.5519 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3627,6 +3661,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PC104_ABF1"
+		(shape input)
+		(at 113.03 176.53 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d1cb8f22-edb4-4123-8a3f-68d74de64994")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 98.9062 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -3719,7 +3775,7 @@
 			)
 		)
 	)
-	(global_label "PA_PWR_EN_N"
+	(global_label "PA_PWR_EN"
 		(shape input)
 		(at 63.5 106.68 180)
 		(fields_autoplaced yes)
@@ -5896,7 +5952,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 73.66 125.73 0)
+		(at 81.28 125.73 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5904,7 +5960,7 @@
 		(dnp no)
 		(uuid "2a20974c-e3b9-4e1e-b89f-35e0d7fd3c9a")
 		(property "Reference" "#PWR064"
-			(at 73.66 132.08 0)
+			(at 81.28 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5913,7 +5969,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 73.787 130.1242 0)
+			(at 81.407 130.1242 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5921,7 +5977,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 73.66 125.73 0)
+			(at 81.28 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5930,7 +5986,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 73.66 125.73 0)
+			(at 81.28 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5939,7 +5995,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 73.66 125.73 0)
+			(at 81.28 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6460,6 +6516,85 @@
 		)
 	)
 	(symbol
+		(lib_id "PACSAT_ICs:SN74AHC1G08QDCKRQ1")
+		(at 87.63 107.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "509fcbae-e77b-45cc-bcf2-28638c1357e5")
+		(property "Reference" "U26"
+			(at 121.92 102.7998 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "SN74AHC1G08QDCKRQ1"
+			(at 121.92 105.3398 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "PacSatDev_ti:DCK5"
+			(at 112.014 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/gpn/sn74ahc1g08-q1"
+			(at 114.3 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 87.63 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "d17e338b-6ae5-42c6-8f63-c389efccf6ce")
+		)
+		(pin "2"
+			(uuid "ee00c866-9a52-490a-a589-2942e718b1a7")
+		)
+		(pin "3"
+			(uuid "7b8b3c7b-da31-4594-97d4-62a144da80a7")
+		)
+		(pin "4"
+			(uuid "72454164-dac2-4665-bd87-a6b2659c11c8")
+		)
+		(pin "1"
+			(uuid "6008b5f3-a270-48bd-813c-51cca4f8390d")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/00000000-0000-0000-0000-00005a0ea76a/c3879c9c-e3de-4d40-a3e3-f7fd281b7d00"
+					(reference "U26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 121.92 167.64 90)
 		(unit 1)
@@ -6788,7 +6923,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 73.66 99.06 0)
+		(at 81.28 119.38 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6796,7 +6931,7 @@
 		(dnp no)
 		(uuid "884211d3-1585-4971-a2fd-379ab4a5fa63")
 		(property "Reference" "R26"
-			(at 75.438 97.917 0)
+			(at 83.058 118.237 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6805,7 +6940,7 @@
 			)
 		)
 		(property "Value" "10KΩ"
-			(at 75.438 99.822 0)
+			(at 83.058 120.142 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6814,7 +6949,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 71.882 99.06 90)
+			(at 79.502 119.38 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6823,7 +6958,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 73.66 99.06 0)
+			(at 81.28 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6831,7 +6966,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 73.66 99.06 0)
+			(at 81.28 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7886,85 +8021,6 @@
 		)
 	)
 	(symbol
-		(lib_id "PACSAT_ICs:SN74AHC1G02QDCKRQ1")
-		(at 82.55 109.22 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "df718567-bdf4-4f98-97ae-9f1da90fed1c")
-		(property "Reference" "U26"
-			(at 120.65 102.7998 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Value" "SN74AHC1G02QDCKRQ1"
-			(at 120.65 105.3398 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Footprint" "PacSatDev_ti:DCK5"
-			(at 82.55 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.ti.com/lit/gpn/sn74ahc1g09-q1"
-			(at 82.55 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 82.55 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9646f42c-c948-4a57-a6ad-a214a17afa95")
-		)
-		(pin "2"
-			(uuid "0a7ce9c5-ec6e-45eb-b18a-5fbebacac823")
-		)
-		(pin "4"
-			(uuid "6f16085c-cc59-4fdf-9afb-c9b6563f819b")
-		)
-		(pin "3"
-			(uuid "4674f564-603d-42c0-bec8-b6383bf7b24b")
-		)
-		(pin "5"
-			(uuid "cfa75a4f-31f6-4a90-afd0-5cfbd9d37532")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/00000000-0000-0000-0000-00005a0ea76a/c3879c9c-e3de-4d40-a3e3-f7fd281b7d00"
-					(reference "U26")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+1V2")
 		(at 125.73 63.5 0)
 		(mirror y)
@@ -8358,7 +8414,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 73.66 119.38 0)
+		(at 73.66 99.06 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8366,7 +8422,7 @@
 		(dnp no)
 		(uuid "ffc40fd3-f677-4b70-93e3-d6474a6bf729")
 		(property "Reference" "R64"
-			(at 75.438 118.237 0)
+			(at 75.438 97.917 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8375,7 +8431,7 @@
 			)
 		)
 		(property "Value" "10KΩ"
-			(at 75.438 120.142 0)
+			(at 75.438 99.822 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8384,7 +8440,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 71.882 119.38 90)
+			(at 71.882 99.06 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8393,7 +8449,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 73.66 119.38 0)
+			(at 73.66 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8401,7 +8457,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 73.66 119.38 0)
+			(at 73.66 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)

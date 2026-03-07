@@ -273,6 +273,8 @@ Differences between the Version 2 and Version 3 board
   increased.  In Version 2 the software sets up the RTC to be powered
   only by battery to avoid the main power drop issue, this will no
   longer be required on Version 3.
+  
+* PA\_PWR\_EN is now positive logic to account for the ABF changes.
 
 IO Connections on the PacSat AFSK processor
 ===========================================
@@ -289,7 +291,7 @@ used as a GPIO.
 
 |Pin3	|CPU Pin Name			|Schematic Name			|G |Description |
 |----	|------------			|--------------			|--|----------- |
-|1		|GIOB[3]				|OTHER\_FAULT			|ID|Fault line from other board |
+|1		|GIOB[3]				|OTHER\_FAULT			|ID|Fault line from other board|
 |2		|GIOA[0]				|EXT\_GPIO1				| D|Unused GPIO run to PC104 H2-11|
 |3		|MIBSPI3NCS[3]			|I2C\_SCL				|OU|RTC control (MAX31331TETB+) |
 |4		|MIBSPI3NCS[2]			|I2C\_SDA				|BU|RTC control (MAX31331TETB+) |
@@ -303,7 +305,7 @@ used as a GPIO.
 |12		|CAN3RX					|CAN\_A\_RX				|IU|CAN bus transceiver |
 |13		|CAN3TX					|CAN\_A\_TX				|OU|CAN bus transceiver |
 |14		|GIOA[5]				|AX5043\_IRQ\_RX4		|ID|Interrupt from AX5043 RX4 |
-|15		|N2HET1[22]				|PC104_ABF1				|ID|PC104 pin H2-50|
+|15		|N2HET1[22]				|						| D|free gpio|
 |16		|GIOA[6]				|OTHER\_ACTIVE			|ID|Active line from other board |
 |17		|VCC					|						|  | |
 |18		|OSCIN					|						|  | |
@@ -408,9 +410,9 @@ used as a GPIO.
 |114	|VCC					|						|  | |
 |115	|VSS					|						|  | |
 |116	|nRST					|\*Processor\_Reset		|  |Main reset pin for the processor |
-|117	|nERROR					|FAULT\_N				|  |Output ERROR line from the processor |
+|117	|nERROR					|FAULT\_N				|  |Output ERROR line from the processor|
 |118	|N2HET1[10]				|OTHER\_HW\_POWER\_OFF  |OD|Power off the other board |
-|119	|ECLK					|UMBILICAL\_ATTACHED	|ID|PC104 pin |
+|119	|ECLK					|EXT\_GPIO2				|ID|PC104 pin H2-18 |
 |120	|VCCIO					|						|  | |
 |121	|VSS					|						|  | |
 |122	|VSS					|						|  | |
@@ -431,7 +433,7 @@ used as a GPIO.
 |137	|VCC					|						|  | |
 |138	|VSS					|						|  | |
 |139	|N2HET1[16]				|PC104\_I2C\_EN\_N		|OD|Connect the I2C bus to the PC104|
-|140	|N2HET1[18]				|PC104\_ABF0			|ID|PC104 pin H2-50|
+|140	|N2HET1[18]				|						| D|free gpio|
 |141	|N2HET1[20]				|AX5043\_PWR\_EN		|OD|Main power enable for all AX5043s |
 |142	|GIOB[2]				|AX5043\_IRQ\_TX		|ID|Interrupt from AX5043 TX |
 |143	|VCC					|						|  | |
@@ -523,29 +525,29 @@ various signals from the control board of the satellite.
 	entity must pull low to cause the board to go active.
 	
   - FAULT[12] - Output from boardn, the processor is reporting an error.
-    Positive logic (high is fault).
+    Positive logic (high is fault), open drain.
 
-  - UMBILICAL\_ATTACHED - Input to the board, if high the satellite is in
-    the launch vehicle.  This inhibits transmit in hardware and causes
-	the software to behave differently.  If this line is not used make
-	sure to populate the resistor pulling it down.
+  - PC104\_ABF[0-2] - Input to the board, if high the satellite is in
+    the launch vehicle.  This turns off all power except the RTC
+	and in addition inhibits transmit in hardware.  See the section
+	on Board Inhibit for detail on this.
 	
   - SAFE\_MODE\_N - Connected to the processor so a controlling system
     can tell it to go into a safe mode.  What it does depends on context.
 
-  - 5V_p - +5V that is always present when the satellite is powered.
+  - 5V\_p - +5V that is always present when the satellite is powered.
     The board has a 0 ohm resistor that must be populated to get power
 	from these pins.
 
-  - 3V3_p - +3.3V that is always present when the satellite is powered.
+  - 3V3\_p - +3.3V that is always present when the satellite is powered.
     The board has a 0 ohm resistor that must be populated to get power
 	from these pins.
 
-  - 5V_S[1-3] - Switched +5V power from the power supply.  The board
+  - 5V\_S[1-3] - Switched +5V power from the power supply.  The board
     has 0 ohm resistors, one of which must be populated to get power
     from these pins.
 
-  - 3V3_S[1-3] - Switched +3.3V power from the power supply.    The
+  - 3V3\_S[1-3] - Switched +3.3V power from the power supply.    The
 	board has a 0 ohm resistor that must be populated to get power
 	from these pins.
 
@@ -554,6 +556,83 @@ various signals from the control board of the satellite.
   - GND
 
   - CAN[AB][+-] - CAN bus signals.
+
+Board Inhibit
+=============
+
+The PC104\_ABF[0-2] lines come from the power supply and deal with the
+umbilical attachment.  When the umbilical is attached (the satellite
+is in the launch vehicle) these will be pulled low and that will
+disable all power to the board except to the RTC battery input.
+
+ABF0 is used to inhibit the RF power amplifier.  If this is low the
+power amplifier will not receive power from +5V.
+
+ABF1 inhibits +5VAL, which normally supplies power to some parts on
+the board even when the board is disabled.  If this is powered off,
+the RF switch on the RF output will be disabled and thus disconnected
+from the antenna.
+
+ABF2 inhibits power to the rest of the system.  Disabling this will
+cause all things on the board to be powered off except the RTC.
+
+This provides three separate inhibits for RF transmission.
+
+If lab testing, either provide pull ups to an external +3.3V line, or
+make the following changes to the board:
+
+Install R64 to pull up ABF0.
+
+Install R54 to pull up ABF1.
+
+Remove U41 to disable ABF2.
+
+Note that if you do external pull ups, you must also supply 3.3V_p to
+power the logic gate used to do this.
+
+PC104 Line Usage
+================
+
+Almost all lines on the PC104s can be disconnected for functions that
+are not used.
+
+FAULT1, FAULT2, PRESENCE1\_N, PRESENCE2\_N - Remove U24
+
+ACTIVE1\_N, ACTIVE2\_N, HW\_POWER\_OFF1\_N, HW\_POWER\_OFF2\_N - Remove U30
+
+CANB+, CANB- - Remove U22, R89, and R90
+
+CANA+, CANA- - Remove U14, R50, and R51
+
+EXT\_SPI\_SOMI - Remove R140
+
+EXT\_SPI\_SIMO - Remove R137
+
+EXT\_SPI\_CLK - Remove R135
+
+EXT\_SPI\_CS - Remove R136
+
+PC104\_I2C\_SDA - Remove U32
+
+PC104\_I2C\_SCL - Remove U38
+
+EXT\_ADC1 - Remove R141
+
+EXT\_ADC2 - Remove R143
+
+EXT\_GPIO1 - Remove R142
+
+EXT\_GPIO2 - Remove R149
+
+PC104\_TX2 - Remove U39
+
+PC104\_RX2 - Remove U40
+
+PC104_ABF0 - Remove R125
+
+PC104_ABF1 - Remove R134
+
+PC104_ABF2 - Remove U41
 
 Power Control and Sequencing
 ============================
@@ -684,6 +763,7 @@ The lines on the PC104 are:
 
 - FAULTn - This is used to tell if the other board has had a fault
   and is failing.  This board can take over processing at that point.
+  Open drain.
 
 - ACTIVEn\_N - Used to tell which board is active.  The board that is
   asserting its line thinks it is active.  If both boards assert this,
@@ -691,7 +771,7 @@ The lines on the PC104 are:
 
 - HW\_POWER\_OFFn\_N - Used to power the other board off.  It this
   board thinks the other board is misbehaving, it can power off the
-  other board.
+  other board.  Open drain
 
 The lines from the other board become OTHER\_PRESENCE\_N,
 OTHER\_FAULT, OTHER\_ACTIVE, and OTHER\_HW\_POWER\_OFF on a
