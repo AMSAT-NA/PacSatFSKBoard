@@ -587,8 +587,12 @@ Install R54 to pull up ABF1.
 
 Remove U41 to disable ABF2.
 
-Note that if you do external pull ups, you must also supply 3.3V_p to
-power the logic gate used to do this.
+You may also need to remove the resistors connecting ABF0 and ABF1 to
+the PC104 if those pins perform other functions.  These are resistors
+R125 and R134.
+
+Note that if you use external pull ups, you must also supply 3.3V_p to
+power the logic gate for ABF2.
 
 PC104 Line Usage
 ================
