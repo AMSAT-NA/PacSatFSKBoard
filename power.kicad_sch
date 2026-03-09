@@ -845,7 +845,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "*NTC* *Thermistor* PIN?ARRAY* bornier* *Terminal?Block* R_*"
+			(property "ki_fp_filters" "R_* RV_*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2837,6 +2837,12 @@
 		(uuid "46fae129-287f-41fa-a8f9-dd5010fc813b")
 	)
 	(junction
+		(at 43.18 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "62ed66ac-e8e1-47e8-b8cc-56fe7064ae6e")
+	)
+	(junction
 		(at 165.1 166.37)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4175,6 +4181,16 @@
 			(type default)
 		)
 		(uuid "f781d8f3-1ece-4fae-bbf5-166234b687d9")
+	)
+	(wire
+		(pts
+			(xy 43.18 99.06) (xy 43.18 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f78ccda0-3da6-43f7-bafd-7928761b99fa")
 	)
 	(wire
 		(pts
@@ -7205,6 +7221,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 43.18 99.06 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "96a7f3a7-6711-4d1e-a19b-791ada5fe5da")
+		(property "Reference" "#FLG019"
+			(at 43.18 97.155 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 43.18 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 43.18 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 43.18 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 43.18 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1ad3f582-52a4-432d-a894-70545a8e4dcc")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/00000000-0000-0000-0000-00005a0ea76a"
+					(reference "#FLG019")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:Thermistor_NTC")
 		(at 232.41 237.49 0)
 		(unit 1)
@@ -7240,7 +7321,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "NCU15XH103F60RC"
+		(property "Datasheet" "~"
 			(at 232.41 236.22 0)
 			(effects
 				(font

@@ -2564,10 +2564,6 @@
 		(uuid "4b69438c-d0b6-4b53-bb83-87f6787a745e")
 	)
 	(no_connect
-		(at 138.43 132.08)
-		(uuid "554c3e44-8065-4b53-a0c5-b337d942c052")
-	)
-	(no_connect
 		(at 287.02 149.86)
 		(uuid "5a5b526d-1539-4b7b-80d2-d7c13ca92dba")
 	)
@@ -2586,10 +2582,6 @@
 	(no_connect
 		(at 299.72 96.52)
 		(uuid "63aa3118-4812-4b37-9add-acfa5d403844")
-	)
-	(no_connect
-		(at 138.43 127)
-		(uuid "63b8cab6-51aa-4c8f-9d33-40f86a521384")
 	)
 	(no_connect
 		(at 151.13 96.52)
@@ -2746,6 +2738,16 @@
 			(type default)
 		)
 		(uuid "091a368e-e484-4f20-a93b-3ebec1628ce6")
+	)
+	(wire
+		(pts
+			(xy 129.54 132.08) (xy 138.43 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "13cdd575-7205-4192-ab8f-7253267da627")
 	)
 	(wire
 		(pts
@@ -2989,6 +2991,16 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 127) (xy 138.43 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "45734f7e-acb6-4a7a-a92e-7dce434a61e4")
+	)
+	(wire
+		(pts
 			(xy 287.02 160.02) (xy 284.48 160.02)
 		)
 		(stroke
@@ -3036,6 +3048,16 @@
 			(type default)
 		)
 		(uuid "4ba56d4d-64d8-4954-8e6d-97882601ffc1")
+	)
+	(wire
+		(pts
+			(xy 114.3 127) (xy 121.92 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c8abd44-63c9-4588-a190-1e854666d192")
 	)
 	(wire
 		(pts
@@ -3819,6 +3841,16 @@
 	)
 	(wire
 		(pts
+			(xy 114.3 132.08) (xy 121.92 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6295130-30b0-47f2-be89-6cb733749662")
+	)
+	(wire
+		(pts
 			(xy 308.61 132.08) (xy 308.61 134.62)
 		)
 		(stroke
@@ -4067,6 +4099,28 @@
 		)
 		(uuid "ca7ca39e-ac3d-4499-abf1-f3780de4974d")
 	)
+	(global_label "EXT_GPIO3"
+		(shape input)
+		(at 114.3 127 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "088642a1-683e-4390-967b-a2fdbc1d186f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 99.529 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "EXT_GPIO1"
 		(shape input)
 		(at 262.89 109.22 180)
@@ -4278,6 +4332,28 @@
 		(uuid "42f55f2a-a2eb-4813-82e7-6eabb853839f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 22.3493 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "EXT_GPIO4"
+		(shape input)
+		(at 114.3 132.08 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "48c853d6-07ce-4c1f-808b-75cc95e3b554")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 99.529 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5536,6 +5612,74 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 125.73 132.08 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp yes)
+		(uuid "4b655974-618c-4251-973c-0f97c07c9443")
+		(property "Reference" "R150"
+			(at 129.032 131.318 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0Ω"
+			(at 119.888 131.064 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 125.73 130.302 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 125.73 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 125.73 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "09ae7435-1019-4626-add0-7dfaf624858f")
+		)
+		(pin "2"
+			(uuid "b6de45dd-5ec6-42b0-877a-85df7a28de7f")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/163b95be-82a7-4cd3-9077-48a01f79e25c"
+					(reference "R150")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PACSAT_ICs:74CBTLV1G125DBVRQ1")
 		(at 214.63 119.38 0)
 		(unit 1)
@@ -5873,6 +6017,74 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/163b95be-82a7-4cd3-9077-48a01f79e25c"
 					(reference "R127")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 125.73 127 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp yes)
+		(uuid "78c4a3c3-233b-4cbe-b5a0-f70dae39a36f")
+		(property "Reference" "R148"
+			(at 129.032 126.238 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0Ω"
+			(at 119.888 125.984 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 125.73 125.222 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 125.73 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 125.73 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "681a135a-241c-422b-bc04-ee5b25f96dcb")
+		)
+		(pin "2"
+			(uuid "7c82a682-0c7d-48a8-97c8-d1e82f301826")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/163b95be-82a7-4cd3-9077-48a01f79e25c"
+					(reference "R148")
 					(unit 1)
 				)
 			)

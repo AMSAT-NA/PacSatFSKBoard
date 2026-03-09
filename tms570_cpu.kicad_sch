@@ -337,7 +337,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "*NTC* *Thermistor* PIN?ARRAY* bornier* *Terminal?Block* R_*"
+			(property "ki_fp_filters" "R_* RV_*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -5284,14 +5284,6 @@
 		(uuid "6b9ea174-3311-4157-8e0d-f4ccdcc41e86")
 	)
 	(no_connect
-		(at 207.01 204.47)
-		(uuid "6df4cdc1-bc30-491a-8637-085156cd6af8")
-	)
-	(no_connect
-		(at 149.86 175.26)
-		(uuid "7cba5499-2486-4348-a387-96c0d971d79e")
-	)
-	(no_connect
 		(at 247.65 52.07)
 		(uuid "c00b9dde-7172-4e68-ad44-50dffc638bda")
 	)
@@ -5300,7 +5292,7 @@
 		(uuid "cf5ce3db-dea8-41e3-b08f-4b66074efb90")
 	)
 	(no_connect
-		(at 240.7391 52.1795)
+		(at 240.03 48.26)
 		(uuid "d743fae4-e60d-479a-ba90-219c1d40f2ed")
 	)
 	(wire
@@ -6005,6 +5997,16 @@
 	)
 	(wire
 		(pts
+			(xy 133.35 175.26) (xy 149.86 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31f060c4-d0a5-4aa0-99a1-9e7d2b8f47ce")
+	)
+	(wire
+		(pts
 			(xy 99.06 116.84) (xy 149.86 116.84)
 		)
 		(stroke
@@ -6022,16 +6024,6 @@
 			(type default)
 		)
 		(uuid "3453a241-7ca7-4c1a-9759-fde927c2ee5b")
-	)
-	(wire
-		(pts
-			(xy 240.7391 63.5) (xy 240.7391 59.7995)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "34b3a8e6-f991-40b1-8f6a-adf838efed8c")
 	)
 	(wire
 		(pts
@@ -7315,6 +7307,16 @@
 	)
 	(wire
 		(pts
+			(xy 207.01 204.47) (xy 207.01 226.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8f6a0e2f-e766-446d-8aac-2b196240a9e0")
+	)
+	(wire
+		(pts
 			(xy 87.63 100.33) (xy 87.63 102.87)
 		)
 		(stroke
@@ -7705,7 +7707,7 @@
 	)
 	(wire
 		(pts
-			(xy 240.03 63.5) (xy 240.03 72.39)
+			(xy 240.03 55.88) (xy 240.03 72.39)
 		)
 		(stroke
 			(width 0)
@@ -8172,16 +8174,6 @@
 			(type default)
 		)
 		(uuid "d32093ff-1466-49c6-93d4-46e3f7799c7c")
-	)
-	(wire
-		(pts
-			(xy 240.03 63.5) (xy 240.7391 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d33ea00a-01b5-48f3-9bf7-27c8e7476cda")
 	)
 	(wire
 		(pts
@@ -9793,6 +9785,28 @@
 			)
 		)
 	)
+	(global_label "EXT_GPIO3"
+		(shape input)
+		(at 207.01 226.06 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "74b9a354-ae44-488d-9005-420bcfbceca7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 207.01 240.831 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "OTHER_HW_POWER_ST"
 		(shape input)
 		(at 184.15 233.68 270)
@@ -10491,6 +10505,28 @@
 			(effects
 				(font
 					(size 1.524 1.524)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "EXT_GPIO4"
+		(shape input)
+		(at 133.35 175.26 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "d5a27243-a5a8-42a0-8455-4209539ca22d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 118.579 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 				(justify right)
 				(hide yes)
@@ -13638,7 +13674,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "NCU15XH103F60RC"
+		(property "Datasheet" "~"
 			(at 393.7 128.27 0)
 			(effects
 				(font
@@ -14982,7 +15018,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 240.7391 55.9895 0)
+		(at 240.03 52.07 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -14990,7 +15026,7 @@
 		(dnp yes)
 		(uuid "4f19a527-33a1-479c-9d25-e8ed2ed62c0e")
 		(property "Reference" "R145"
-			(at 239.9771 52.6875 90)
+			(at 237.998 53.848 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14999,7 +15035,7 @@
 			)
 		)
 		(property "Value" "0Ω"
-			(at 239.7231 61.8315 90)
+			(at 241.046 57.658 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15008,7 +15044,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 238.9611 55.9895 90)
+			(at 238.252 52.07 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15017,7 +15053,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 240.7391 55.9895 0)
+			(at 240.03 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15026,7 +15062,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 240.7391 55.9895 0)
+			(at 240.03 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)

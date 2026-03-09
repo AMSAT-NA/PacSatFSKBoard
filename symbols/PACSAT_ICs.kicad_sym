@@ -1369,7 +1369,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "DAC5311IDCK"
+		(property "Value" "DAC5311IDCKRQ1"
 			(at 7.62 -11.43 0)
 			(effects
 				(font
@@ -1377,7 +1377,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
+		(property "Footprint" "PacSatDev_ti:DCK6"
 			(at 0 0 0)
 			(effects
 				(font
@@ -1413,7 +1413,7 @@
 				(hide yes)
 			)
 		)
-		(property "ki_fp_filters" "SOT?363*"
+		(property "ki_fp_filters" "DCK6*"
 			(at 0 0 0)
 			(effects
 				(font

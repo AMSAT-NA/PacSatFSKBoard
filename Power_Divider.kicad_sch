@@ -2133,17 +2133,6 @@
 		)
 		(uuid "295d4a69-bfa6-4844-88b7-373db6a1e0f7")
 	)
-	(text "RX3+"
-		(exclude_from_sim no)
-		(at 361.95 118.11 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "37823c82-f669-459e-ad66-7187fed9bcdd")
-	)
 	(text "The calculated capacitance is 1.2pF, but the\ninductor SRF is 1.8GHz working out to a series\ncapacitance of .18pF."
 		(exclude_from_sim no)
 		(at 121.92 130.81 0)
@@ -2206,28 +2195,6 @@
 		)
 		(uuid "687cd5f1-fd90-4763-8932-b15e45023117")
 	)
-	(text "RX2+"
-		(exclude_from_sim no)
-		(at 381 118.11 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "816a1ad5-0811-43bb-a98e-7958c8cf0441")
-	)
-	(text "RX1+"
-		(exclude_from_sim no)
-		(at 372.11 118.11 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "8175730b-687c-41cf-8f1b-ef288858f569")
-	)
 	(text "The output impedance of the QPL9547 is\n86.8-j1.88 ohms.  This adjusts the\nimpedance to 50 ohms at 145MHz."
 		(exclude_from_sim no)
 		(at 218.186 171.958 0)
@@ -2237,17 +2204,6 @@
 			)
 		)
 		(uuid "81cdeab2-de19-44fe-994a-ce9b4a136fae")
-	)
-	(text "RX4+"
-		(exclude_from_sim no)
-		(at 389.89 118.11 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "9d096fbb-2354-42c0-8468-b696582bd672")
 	)
 	(text "RX INPUT POWER DIVIDER"
 		(exclude_from_sim no)
@@ -4580,16 +4536,6 @@
 		)
 		(uuid "fe291076-85ca-4ce7-84a9-e7d8d0ef4280")
 	)
-	(label "S+"
-		(at 325.12 143.51 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "0066dc97-ea54-44e7-8da0-a88f39fd8fac")
-	)
 	(global_label "RF_IN_SWITCH"
 		(shape input)
 		(at 45.72 143.51 180)
@@ -4612,7 +4558,7 @@
 			)
 		)
 	)
-	(global_label "Port1_P"
+	(global_label "RX_PORT1"
 		(shape input)
 		(at 359.41 114.3 90)
 		(fields_autoplaced yes)
@@ -4624,7 +4570,7 @@
 		)
 		(uuid "4df087b8-0f64-4cba-b5e4-0bf999310fab")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 359.41 102.6495 90)
+			(at 359.41 100.1096 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4634,7 +4580,7 @@
 			)
 		)
 	)
-	(global_label "Port4_P"
+	(global_label "RX_PORT4"
 		(shape input)
 		(at 387.35 114.3 90)
 		(fields_autoplaced yes)
@@ -4646,7 +4592,7 @@
 		)
 		(uuid "6d7564e7-3700-401e-9c36-8db065436ba8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 387.35 102.6495 90)
+			(at 387.35 100.1096 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4656,7 +4602,7 @@
 			)
 		)
 	)
-	(global_label "Port2_P"
+	(global_label "RX_PORT2"
 		(shape input)
 		(at 368.3 114.3 90)
 		(fields_autoplaced yes)
@@ -4668,7 +4614,7 @@
 		)
 		(uuid "7866bc3b-35ba-4b0f-8f5f-78cd175d7db5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 368.3 102.6495 90)
+			(at 368.3 100.1096 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4722,7 +4668,7 @@
 			)
 		)
 	)
-	(global_label "Port3_P"
+	(global_label "RX_PORT3"
 		(shape input)
 		(at 379.73 114.3 90)
 		(fields_autoplaced yes)
@@ -4734,7 +4680,7 @@
 		)
 		(uuid "b648e15b-44fd-4d3f-9efd-3ae5d8769751")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 379.73 102.6495 90)
+			(at 379.73 100.1096 90)
 			(effects
 				(font
 					(size 1.27 1.27)

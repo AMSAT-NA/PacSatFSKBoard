@@ -662,7 +662,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "*NTC* *Thermistor* PIN?ARRAY* bornier* *Terminal?Block* R_*"
+			(property "ki_fp_filters" "R_* RV_*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1612,7 +1612,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "DAC5311IDCK"
+			(property "Value" "DAC5311IDCKRQ1"
 				(at 7.62 -11.43 0)
 				(effects
 					(font
@@ -1620,7 +1620,7 @@
 					)
 				)
 			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
+			(property "Footprint" "PacSatDev_ti:DCK6"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1656,7 +1656,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "SOT?363*"
+			(property "ki_fp_filters" "DCK6*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -9405,7 +9405,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "NCU15XH103F60RC"
+		(property "Datasheet" "~"
 			(at 88.9 220.98 0)
 			(effects
 				(font
@@ -10335,7 +10335,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
+		(property "Footprint" "PacSatDev_ti:DCK6"
 			(at 120.65 73.66 0)
 			(effects
 				(font

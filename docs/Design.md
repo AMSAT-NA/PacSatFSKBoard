@@ -305,7 +305,7 @@ used as a GPIO.
 |12		|CAN3RX					|CAN\_A\_RX				|IU|CAN bus transceiver |
 |13		|CAN3TX					|CAN\_A\_TX				|OU|CAN bus transceiver |
 |14		|GIOA[5]				|AX5043\_IRQ\_RX4		|ID|Interrupt from AX5043 RX4 |
-|15		|N2HET1[22]				|						| D|free gpio|
+|15		|N2HET1[22]				|						| D|PC104 Pin H1-27|
 |16		|GIOA[6]				|OTHER\_ACTIVE			|ID|Active line from other board |
 |17		|VCC					|						|  | |
 |18		|OSCIN					|						|  | |
@@ -433,7 +433,7 @@ used as a GPIO.
 |137	|VCC					|						|  | |
 |138	|VSS					|						|  | |
 |139	|N2HET1[16]				|PC104\_I2C\_EN\_N		|OD|Connect the I2C bus to the PC104|
-|140	|N2HET1[18]				|						| D|free gpio|
+|140	|N2HET1[18]				|						| D|PC104 Pin H1-27 |
 |141	|N2HET1[20]				|AX5043\_PWR\_EN		|OD|Main power enable for all AX5043s |
 |142	|GIOB[2]				|AX5043\_IRQ\_TX		|ID|Interrupt from AX5043 TX |
 |143	|VCC					|						|  | |

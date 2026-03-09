@@ -3206,7 +3206,7 @@
 			)
 		)
 	)
-	(global_label "Port1_P"
+	(global_label "RX_PORT1"
 		(shape input)
 		(at 133.35 107.95 90)
 		(fields_autoplaced yes)
@@ -3218,7 +3218,7 @@
 		)
 		(uuid "af5014b4-9dc0-49bc-b2ca-78b35282cb8e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 133.35 96.2995 90)
+			(at 133.35 93.7596 90)
 			(effects
 				(font
 					(size 1.27 1.27)
