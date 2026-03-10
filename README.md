@@ -1,4 +1,5 @@
 # PacSatAFSKBoard
+
 Hardware design for the PacSat AX5043 based board
 
 This repository contains a board design for use in satellites for
@@ -31,5 +32,8 @@ The board is designed to be able to be used in an active/standby
 configuration where you have two of the same boards and switch the RF
 between the boards depending on which is active.
 
-For more details on the actual design, see the ProcessorPins.md
+For information on the interfaces to the board, software and hardware,
+see the docs/ICD.md document.
+
+For more details on the actual design, see the docs/Design.md
 document.

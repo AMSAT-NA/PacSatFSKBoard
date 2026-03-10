@@ -1,8 +1,10 @@
 This document describes design and debugging information for the
 PACSAT AFSK board.
 
-Hooking Up JTAG and a serial port
-=================================
+This document mostly describes internals to the board.  For information
+on external connections, see the ICD document.
+
+# Hooking Up JTAG and a serial port
 
 The board uses a standard 10-pin 2x5 1.27mm pitch JTAG connector for a
 debugger hookup.  The standard TI XDS110 debugger should work, though
@@ -31,8 +33,7 @@ Otherwise the LP-XDS110 will be providing power to the device, which
 you don't want.  In that case the PacSat board is powering the level
 shifters.
 
-Hooking Up Power
-================
+# Hooking Up Power
 
 The normal board build only takes 5V.  There is a build option (or
 some solder work) to remove the 3.3V regulator and supply 3.3V through
@@ -60,8 +61,7 @@ regulator like a TPS61379-Q1 by the PC104 connector.  Or a buck-boost
 or other options.  Currently this assumes that incoming power is
 stable.
 
-Heat Sink for the Power Amplifier
-=================================
+# Heat Sink for the Power Amplifier
 
 The power amplifier has heat sink (or spreader) mounting on the bottom
 of the board.  The PA is designed to transfer the heat that way,
@@ -90,11 +90,12 @@ PA is powered but no signal is transmitted.  When a signal is being
 transmitted at full power, most of the power is being sent and only
 around .5W is being dissipated by the PA.  It may also be possible to
 reduce the quiescent current drawn by the PA by modifying the Iref
-current.
+current using the DAC on a Version 3 or later board.
 
 It would also be possible to connect the top of the chip via some type
 of riser to the shield to provide additional radiation surfaces for
-the PA.
+the PA.  Experience has shown that most of the head goes to the bottom
+of the chip and not to the top, but it could help a little.
 
 On Amazon you can search for "copper flat bar" to find suitable
 material.  The PA is .85mm tall, the shield is 2.54mm, leaving 1.69mm
@@ -114,51 +115,11 @@ find M1.6 x 10mm stainless steel screws on Amazon along with nuts that
 should work to fasten down the heat sink.  You would also need a space
 grade thermal adhesive or paste.
 
-RF Connections
-==============
+# RF Connections
 
-The Version 3 and later boards have an MMCX connector, P15 for
-transmit and P17 for receive for connecting to the antennas.  The
-receiver has significant filtering above 160MHz; you can transmit and
-receive simultaneously with nearby antennas without issues.
+See the ICD document.
 
-There is a shared antenna input (P25 for MMCX, P26 for U.FL) and
-associated diplexer that can be used for a shared receive/transmit
-antenna, not installed by default.  The parts on the diplexer page
-will need to be populated.  The RF input and RF output connectors can
-be removed in that case as well as the bleed-off inductors on the RF
-input and output.  This option costs about 1dB on both transmit and
-receive.
-
-Version 3 boards also two U.FL connectors, P23 for transmit and P24
-for receive (not populated by default), that can also be used for
-antenna connections.  These could also be connected together to share
-an antenna on one MMCX connector.
-
-Version 2 boards have two U.FL connectors, P15 for transmit and P17
-for receive, for antenna connections.
-
-All boards have various U.FL connectors (not necessarily populated on
-Version 3 and later boards) on the bottom of the board.  These are
-mostly used for isolating and testing circuits.  However, they could
-be used for bringing out or injecting signals.  For instance:
-
-* If you wanted to be able to receive 160MHz or below on an external
-  board, you could disable or remove one of the AX5043s and route it's
-  RF splitter output to another board.  There are obvious places for
-  doing this.
-
-* If you wanted to bring in your own receive signal, there are obvious
-  places for that.  This could be used, for instance, if you have an
-  external downconverter to hook to the board and you didn't need the
-  filtering and/or LNA.
-
-* If you wanted to route the output of the AX5043, or the direct
-  output of the PA, to another board.  This could be used for an
-  external amplifier or and external upconverter.
-
-RF Loopback Testing
-===================
+# RF Loopback Testing
 
 The Transmit AX5043 has an 18nH inductor installed for its PLL.  This
 doesn't seem to affect ranging at 435MHz, but it allows it to range in
@@ -176,14 +137,12 @@ can't test the actual antennas in that case.
 
 With this, it is possible to test the entire RF chain.
 
-Hardware Watchdog
-=================
+# Hardware Watchdog
 
 Jumper J4 disables the hardware watchdog when installed.  When
 programming and debugging you need to install this jumper.
 
-I2C
-===
+# I2C
 
 I2C can be run to the PC104.  These are on J1 (H1) pins 41 and 43,
 which is semi-standard.
@@ -196,8 +155,19 @@ on both devices.
 
 On version 2 boards, resistors R113 and R122 need to be installed.
 
-CAN Bus
-=======
+# SPI
+
+SPI can be run to the PC104.  These are to on J1 pins 9-12, This is
+only on Version 3 boards and later.
+
+U42-U45 must be installed (the default) to switch the SPI interface on
+and off the bus and then PC104\_SPI\_EN\_N must be enabled to turn on
+the access.  This allow a dual-board configuration to enable and
+disable the SPI when they are active/inactive.  To permanently add a
+connection, U42-U45 can be removed and a 0402 zero-ohm resistor
+connected between pins 2 and 4 on all devices.
+
+# CAN Bus
 
 Two CAN buses are routed to the PC104 and they are on by default.  CAN
 A is on H1 (J1) pins 5 (the +) and 1 (the -).  CAN B is on H1 (J1)
@@ -212,8 +182,7 @@ on H2 pins 1 and 5.
 CAN A can be disabled by removing U14 and R50 and R51.  CAN B can be
 disabled by removing U22 and R89 and R90.
 
-PC104 Serial Port
-=================
+# PC104 Serial Port
 
 The second serial port from the processor is run to PC104 J2 (H2) pins
 22 (RX) and 21 (TX).
@@ -228,8 +197,7 @@ On version 2 boards, You need to install R123 and R124 to make this
 connection.  However, RX and TX are backwards so special jumpering on
 R123 and R124 will be required to make it work.
 
-Differences between the Version 2 and Version 3 board
-=====================================================
+# Differences between the Version 2 and Version 3 board
 
 * The ACTIVE\_N GPIO is now ACTIVE, changed to positive logic.
 
@@ -276,8 +244,11 @@ Differences between the Version 2 and Version 3 board
   
 * PA\_PWR\_EN is now positive logic to account for the ABF changes.
 
-IO Connections on the PacSat AFSK processor
-===========================================
+* SPI 5 from the processor is run to the PC104 connector and an enable
+  and switches were added to allow PC102\_SPI\_EN\_N to turn on the
+  connection to the bus.
+
+# IO Connections on the PacSat AFSK processor
 
 These are the pins on the TMS570 processor, where they go, what they
 do and some notes at the end with some more details.
@@ -398,7 +369,7 @@ used as a GPIO.
 |103	|VSS					|						|  | |
 |104	|VCCIO					|						|  | |
 |105	|MIBSPI1NCS[0]			|CAN\_B\_EN\_N			|OU|CAN bus B transceiver enable |
-|106	|N2HET1[08]				|						| D|free gpio (run to DNP R147)|
+|106	|N2HET1[08]				|PC104\_SPI\_EN\_N		|OD|Enable the SPI interface on the PC104|
 |107	|N2HET1[28]				|PA\_DAC\_SEL\_N		|OD|Select pin for the PA DAC Iref, on the AC5043 SPI bus |
 |108	|TMS					|JTAG pin				|  | |
 ||||||
@@ -442,16 +413,14 @@ used as a GPIO.
 
 \*Notes below
 
-Interrupts and GPIOs
---------------------
+# Interrupts and GPIOs
 
 On the TMS570, most normal pins can also be used at GPIOs, but they
 are not capable of generating interrupts.  Only the GIOx[n] pins can
 generate interrupts, and they are all used for that purpose.
 
 
-Notes on thermsistors
----------------------
+## Notes on thermsistors
 
 Thermsistors are connected to ADC pins on the processor to measure
 temperatures on the board.  Resistance varies from 534 ohms (125C) to
@@ -459,8 +428,7 @@ temperatures on the board.  Resistance varies from 534 ohms (125C) to
 (125C) to 3.13V (-40C) voltage range.  It is supposed to be fairly
 linear, but does require compensation by software.
 
-Notes on Processor\_Reset
-------------------------
+## Notes on Processor\_Reset
 
 The 3.3V and 1.2V power converts have power good output pins, and the
 1.2V current limiter has a power good pin, all open collector.  These
@@ -470,15 +438,13 @@ current limiter turns on (which takes a little bit of time, it is
 inrush limited) it will wait 50us and before releasing the reset pin,
 so reset should happen automatically on any power up or power problem.
 
-Notes on FEED\_WATCHDOG
------------------------
+## Notes on FEED\_WATCHDOG
 
 This must be toggled at least once a second.  If it isn't, the
 hardware watchdog will power off the board for 200ms and power it back
 on.
 
-Notes on TX Power Measurement
------------------------------
+## Notes on TX Power Measurement
 
 A directional coupler and power measurement chips (ADL5501AK) feed
 into the ADCs (Forward power to pin 74 AD1IN[3] and reverse to pin 73
@@ -489,11 +455,9 @@ At full power out (+33dBm) this will result in about -7dBm of power
 from the coupler.  This was simulated with a transmission line in
 qucs.  The voltage for that can be calculated from the chip manual.
 
-Other IO Connections
-====================
+# Other IO Connections
 
-WATCHDOG\_OUT\_N
-----------------
+## WATCHDOG\_OUT\_N
 
 A line is run from the hardware watchdog output to the RTC DIN input.
 That input can be set up to measure transitions and store the
@@ -501,145 +465,11 @@ information.  This way the process can tell if the reset came from the
 hardware watchdog.  The watchdog is negative logic, so a transition
 from high to low will say that the hardware watchdog was triggered.
 
-PC104 Pins
-==========
+## PC104 Pins
 
-FIXME - Figure out what all the PC104 pins do.
+See the ICD for details.
 
-These pins handle active-standby between to PacSat AFSK board and
-various signals from the control board of the satellite.
-
-  - HW\_POWER\_OFF[12]\_N - Input to board, pulling this low causes the
-    power to be disabled on boardn.  boardn pulls this high with a 10K
-	resistor.  If driven, it should be open drain or open collector.
-	Be careful not to glitch this line.
-
-  - PRESENCE[12]\_N - The board is physically present.  This must be
-	pulled high by a 1M resistor on entity reading this value, it is
-	pulled low by a 10K resistor on boardn.
-	
-  - ACTIVE[12]\_N - boardn is asserting that it is active.  This is
-	pulled high on boardn and will be driven low by boardn when it is
-	active and not under external active/standby control.  When under
-	external active/standby control, this is an input that another
-	entity must pull low to cause the board to go active.
-	
-  - FAULT[12] - Output from boardn, the processor is reporting an error.
-    Positive logic (high is fault), open drain.
-
-  - PC104\_ABF[0-2] - Input to the board, if high the satellite is in
-    the launch vehicle.  This turns off all power except the RTC
-	and in addition inhibits transmit in hardware.  See the section
-	on Board Inhibit for detail on this.
-	
-  - SAFE\_MODE\_N - Connected to the processor so a controlling system
-    can tell it to go into a safe mode.  What it does depends on context.
-
-  - 5V\_p - +5V that is always present when the satellite is powered.
-    The board has a 0 ohm resistor that must be populated to get power
-	from these pins.
-
-  - 3V3\_p - +3.3V that is always present when the satellite is powered.
-    The board has a 0 ohm resistor that must be populated to get power
-	from these pins.
-
-  - 5V\_S[1-3] - Switched +5V power from the power supply.  The board
-    has 0 ohm resistors, one of which must be populated to get power
-    from these pins.
-
-  - 3V3\_S[1-3] - Switched +3.3V power from the power supply.    The
-	board has a 0 ohm resistor that must be populated to get power
-	from these pins.
-
-  - I2C\_SDA, I2C\_SCL - I2C bus pins
-
-  - GND
-
-  - CAN[AB][+-] - CAN bus signals.
-
-Board Inhibit
-=============
-
-The PC104\_ABF[0-2] lines come from the power supply and deal with the
-umbilical attachment.  When the umbilical is attached (the satellite
-is in the launch vehicle) these will be pulled low and that will
-disable all power to the board except to the RTC battery input.
-
-ABF0 is used to inhibit the RF power amplifier.  If this is low the
-power amplifier will not receive power from +5V.
-
-ABF1 inhibits +5VAL, which normally supplies power to some parts on
-the board even when the board is disabled.  If this is powered off,
-the RF switch on the RF output will be disabled and thus disconnected
-from the antenna.
-
-ABF2 inhibits power to the rest of the system.  Disabling this will
-cause all things on the board to be powered off except the RTC.
-
-This provides three separate inhibits for RF transmission.
-
-If lab testing, either provide pull ups to an external +3.3V line, or
-make the following changes to the board:
-
-Install R64 to pull up ABF0.
-
-Install R54 to pull up ABF1.
-
-Remove U41 to disable ABF2.
-
-You may also need to remove the resistors connecting ABF0 and ABF1 to
-the PC104 if those pins perform other functions.  These are resistors
-R125 and R134.
-
-Note that if you use external pull ups, you must also supply 3.3V_p to
-power the logic gate for ABF2.
-
-PC104 Line Usage
-================
-
-Almost all lines on the PC104s can be disconnected for functions that
-are not used.
-
-FAULT1, FAULT2, PRESENCE1\_N, PRESENCE2\_N - Remove U24
-
-ACTIVE1\_N, ACTIVE2\_N, HW\_POWER\_OFF1\_N, HW\_POWER\_OFF2\_N - Remove U30
-
-CANB+, CANB- - Remove U22, R89, and R90
-
-CANA+, CANA- - Remove U14, R50, and R51
-
-EXT\_SPI\_SOMI - Remove R140
-
-EXT\_SPI\_SIMO - Remove R137
-
-EXT\_SPI\_CLK - Remove R135
-
-EXT\_SPI\_CS - Remove R136
-
-PC104\_I2C\_SDA - Remove U32
-
-PC104\_I2C\_SCL - Remove U38
-
-EXT\_ADC1 - Remove R141
-
-EXT\_ADC2 - Remove R143
-
-EXT\_GPIO1 - Remove R142
-
-EXT\_GPIO2 - Remove R149
-
-PC104\_TX2 - Remove U39
-
-PC104\_RX2 - Remove U40
-
-PC104_ABF0 - Remove R125
-
-PC104_ABF1 - Remove R134
-
-PC104_ABF2 - Remove U41
-
-Power Control and Sequencing
-============================
+# Power Control and Sequencing
 
 The power control on the board is fairly simple.  On power up, power
 comes in through VSYS, goes through and inductor, and goes to +5V,
@@ -699,21 +529,23 @@ AX5043 enables low to individually power them on.  Then the processor
 can drive PA\_PWR\_EN high to power on the PA and LNA\_ENABLE high
 to power on the LNA.
 
-Board Configuration
-===================
+# Board Configuration
 
 The board has a number of resistors and optional parts for
 configuration.  These are:
 
-  - 1.2V\_INPUT - Determines whether 1.2V is derived from 3.3V or 5V.
+  - 1.2V\_INPUT - Determines whether 1.2V is derived from +3.3V or
+    +5V.  Add resistor R29 to power from +5V, add resistor R68 to
+    power from +3.3V.
 
-  - BOARD\_NUM - Remove for board 1 or simplex, populate for board 2.
+  - BOARD\_NUM - Remove resistor R91 for board 1 or simplex, populate
+    for board 2.
 
-  - EXTERN\_CONTROL - Remove if the board (or board pair) manage their
-    own activity and power state.  Populate if another entity controls
-    power and the active lines on a board pair.  This should generally
-    not be populated on a simplex board, it will always be active and
-    some other entity probably controls its power signal.
+  - EXTERN\_CONTROL - Remove resistor R94 if the board pair manage
+    their own activity and power state.  Populate if another entity
+    controls power and the active lines on a board pair.  This should
+    generally not be populated on a simplex board, it will always be
+    active and some other entity controls its power signal.
 	
   - 5V\_S[1-3], 5V\_p - One of these should be populated depending on
     where the board should get its +5V power.
@@ -721,14 +553,12 @@ configuration.  These are:
   - 3V3\_S[1-3], 3V3\_p - One of these should be populated depending on
     where the board should get its +3.3V power.  In addition, there is
 	an optional buck regulator that can be populated to derive 3.3V
-	from 5V.
+	from 5V.  In that case none of these should be populated.
 
-  - RF\_SWITCH\_EN - Removing the resistor to +5AL will disable all
-    the RF switches into high impedance mode.  Then the zero ohm
-    resistors to bypass the switches can be added.
-
-  - UMIBLICAL\_ATTACHED - If this line is not externally used, the
-    resistor from this to ground must be populated.
+  - RF\_SWITCH\_EN - Removing the resistor R105 to +3.3VAL will
+    disable all the RF switches into high impedance mode.  Then the
+    zero ohm resistors to bypass the switches, R107 and R96 must be
+    added.
 
 In addition, for simplex, or if each board in a two-board set has its
 own antenna connections or antennas, all the chips and resistors on
@@ -747,8 +577,7 @@ The power output measurement circuitry on the RF\_Power\_AMP\_FET page
 can be removed if output or reflected power measurements are not
 necessary.
 
-Active/Standby
-==============
+# Active/Standby
 
 The boards supports having a mate board that is the same board with
 one resistor difference to differentiate between board 1 and board 2.
@@ -756,8 +585,7 @@ The BOARD\_NUM line is used to tell which board you are.  This also
 selects values coming from the PC104.  The "other" board is the board
 you are not.
 
-PC104 Interface
----------------
+## PC104 Interface
 
 The lines on the PC104 are:
 
@@ -832,8 +660,7 @@ The inactive board will have all RF powered down and will do minimal
 processing to avoid using very much power.  Basically just handling
 synchronization data.
 
-Active/Standby State Machine
-----------------------------
+## Active/Standby State Machine
 
 The logic below is for the board being active or not.  For instance,
 if OTHER\_FAULT is low, then it is true.  These are all this way
