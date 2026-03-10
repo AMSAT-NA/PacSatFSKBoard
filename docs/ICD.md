@@ -320,6 +320,14 @@ high on the board, so it does not have to be driven.  This is part of
 the dual-board controls, but in a simplex situation it can be used to
 externally control power on the board.
 
+### VBATT
+
+Though not used for power, the VBATT\_p lines are run onto the board
+and through a resistor divider so the CPU can monitor the voltage on
+the battery bus on the power supply.  R126 must be populated to do
+this.  This is run through a 18:1 resistor divider, so 52V on the
+input should result in around 2.9V into the VBATT CPU ADC.
+
 ### Umbilical Attachment
 
 The ABF[0-2] signals tell the board that the satellite is in the

@@ -2199,17 +2199,6 @@
 		)
 		(uuid "165cc65a-c955-4ff8-887f-24ac187db650")
 	)
-	(text "Samtec Q Series Connectors\nQSS mates with QTS\nThis cinnector accomidates stacking PCBs"
-		(exclude_from_sim no)
-		(at 312.42 215.9 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "1adb9dd4-4681-492a-9b7e-b46fedbb6f9e")
-	)
 	(text "GND on ISIS PS"
 		(exclude_from_sim no)
 		(at 277.368 149.86 0)
@@ -4351,6 +4340,16 @@
 		)
 		(uuid "11a0a5e4-5184-4737-b9c8-78fca0a75613")
 	)
+	(label "PC104_SPI_SOMI"
+		(at 114.3 106.68 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "11e6a50e-ae88-409e-bb55-73756f317f4a")
+	)
 	(label "PC104_I2C_SCL"
 		(at 113.03 149.86 0)
 		(effects
@@ -4360,6 +4359,16 @@
 			(justify left bottom)
 		)
 		(uuid "1565ca65-1465-4859-ab68-4881e81d4069")
+	)
+	(label "PC104_SPI_CS"
+		(at 157.48 109.22 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "23ea2fde-a1e6-4dc7-8f5c-3af747962736")
 	)
 	(label "3V3_S3"
 		(at 154.94 160.02 0)
@@ -4461,6 +4470,16 @@
 		)
 		(uuid "913f9704-0584-4b33-9ebf-bfaa14383ee3")
 	)
+	(label "PC104_SPI_CLK"
+		(at 157.48 106.68 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "97e73084-6063-4b4a-9b69-1abeea1a739a")
+	)
 	(label "3V3_S2"
 		(at 154.94 157.48 0)
 		(effects
@@ -4500,6 +4519,16 @@
 			(justify right bottom)
 		)
 		(uuid "ca7ca39e-ac3d-4499-abf1-f3780de4974d")
+	)
+	(label "PC104_SPI_SIMO"
+		(at 114.3 109.22 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "dd146f1a-1211-408d-83b0-0c8c720b10e1")
 	)
 	(global_label "EXT_GPIO3"
 		(shape input)
@@ -6649,12 +6678,12 @@
 		(at 241.3 209.55 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "748c577d-bb49-45bb-aeff-be35767018b8")
 		(property "Reference" "R127"
-			(at 239.014 208.788 90)
+			(at 238.76 211.836 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6662,8 +6691,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0Ω"
-			(at 239.014 212.598 90)
+		(property "Value" "1KΩ"
+			(at 243.586 211.328 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6931,12 +6960,12 @@
 		(at 241.3 196.85 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "8326fefd-2d47-42f4-b7c8-7ead860cd5c6")
 		(property "Reference" "R126"
-			(at 239.014 196.088 90)
+			(at 239.014 198.882 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6944,8 +6973,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0Ω"
-			(at 239.014 199.898 90)
+		(property "Value" "17KΩ"
+			(at 243.586 199.644 90)
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -9,20 +9,9 @@ some point.
 
 # TODO
 
-Rework how the umbilical attachment and the power management works.
-From what I can tell, the ABF pins go low when the spacecraft is in
-the launcher, and when it is released they will be pulled high to
-3.3V.  They need to make sure the power is off.
-
-* There is a missing ABF pin, ABF2 is on pin H1-45.
-* An ABF pin needs to disable +5VAL.
-* The RTC battery power needs to be powered directly off of 5V\_IN.
-* The UMBILICAL\_ATTACHED line doesn't actually go anywhere and
-  needs to be removed.
-* An ABF pin needs to disable main power.  Since it is pulled up to
-  3.3V, it could be tied to HW\_POWER\_OFF\_N and the two resistors
-  setting the voltage on that line can be removed.
-* An ABF pin needs to disable PA power.
+Add a M0L1228QRGERQ1 microcontroller for doing SPI to I2C conversion
+for the antenna control connection, and it could do other things on
+the system, too.
 
 Switch to a TMS570LS2134 CPU.  This has double the FLASH and RAM and
 has the same pinout as the TMS570LS0914.
@@ -783,6 +772,21 @@ directly has a lot of loss.
 
 Add pads for the unused GPIOs (DNP zero-ohm resistors) to make it
 easier to get to GPIO lines if necessary later.
+
+Rework how the umbilical attachment and the power management works.
+From what I can tell, the ABF pins go low when the spacecraft is in
+the launcher, and when it is released they will be pulled high to
+3.3V.  They need to make sure the power is off.
+
+* There is a missing ABF pin, ABF2 is on pin H1-45.
+* An ABF pin needs to disable +5VAL.
+* The RTC battery power needs to be powered directly off of 5V\_IN.
+* The UMBILICAL\_ATTACHED line doesn't actually go anywhere and
+  needs to be removed.
+* An ABF pin needs to disable main power.  Since it is pulled up to
+  3.3V, it could be tied to HW\_POWER\_OFF\_N and the two resistors
+  setting the voltage on that line can be removed.
+* An ABF pin needs to disable PA power.
 
 # Not going to do
 
@@ -2544,3 +2548,7 @@ Run the rest of the unused CPU pins to DNP resistors on the board to
 make it easier to use them.
 
 Add a capacitor in RESET\_N, just in case.
+
+## 2026-03-10
+
+Add switches on the PC104 SPI connections.
