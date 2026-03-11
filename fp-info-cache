@@ -1,4 +1,4 @@
-170176224163504
+173722788470795
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -73933,6 +73933,20 @@ fiducial
 0
 1
 0
+PacSatDev_misc
+G125-MH11005L1P
+G125-MH11005L1P
+Connector
+0
+10
+10
+PacSatDev_misc
+G125-MH11005M4P_1
+G125-MH11005M4P_1
+Connector
+0
+10
+10
 PacSatDev_misc
 GE0805C-2_MNC
 
