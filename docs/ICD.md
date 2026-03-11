@@ -122,6 +122,10 @@ The CAN bus is an automotive communication bus designed for harsh
 environments.  It is used to communicate off the board.  Two CAN
 busses are available.
 
+The CAN bus devices are only capable of CAN 2.0A and CAN 2.0B,
+generally they are used with CAN2.0B for the 29-bit address.  They
+cannot do CAN-FD, and are thus limited to 8-byte data messages.
+
 ### MRAM
 
 2MB of MRAM is available on one of the SPI busses for storage of state
@@ -374,10 +378,9 @@ The board has two CAN busses, CANA and CAN.  External entities use
 these to supply control and telemetry information.  The board can send
 control information to other boards over this.
 
-This interface is only capable of CAN 2.0, it cannot do CAN FD or CAN
-XL.  A protocol design to do messaging over the 8-byte CAN 2.0
-packets is described in a later section, CAN Bus Messages, along with
-the messages themselves.  The pins are:
+This interface is only capable of CAN 2.0A and CAN 2.0B, it cannot do
+CAN FD or CAN XL.  It is thus limited to 8 byte data packets, though
+protocols exists to do multi-packet messages.  The pins are:
 
   - CAN[AB][+-] - CAN bus signals.
 
