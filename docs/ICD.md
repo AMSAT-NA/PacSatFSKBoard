@@ -282,8 +282,10 @@ a 2.4mm Tefzel ETFE zip tie to provide strain relief for the wires.
 
 The I2C pullup is done in the processor, but this can be disabled in
 software if the termination if the other end pulls up the signal.  In
-addition, DNP resistors are in place to add terminations if the
-internal pullups are insufficient.
+addition, DNP resistors (R147, R151, R152, and R152) are in place to
+add terminations if the internal pullups are insufficient.  See
+https://www.ti.com/lit/an/slva689/slva689.pdf for details on setting
+these resistors.
 
 Pinout is:
 
