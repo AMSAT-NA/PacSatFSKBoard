@@ -155,17 +155,8 @@ on both devices.
 
 On version 2 boards, resistors R113 and R122 need to be installed.
 
-# SPI
-
-SPI can be run to the PC104.  These are to on J1 pins 9-12, This is
-only on Version 3 boards and later.
-
-U42-U45 must be installed (the default) to switch the SPI interface on
-and off the bus and then PC104\_SPI\_EN\_N must be enabled to turn on
-the access.  This allow a dual-board configuration to enable and
-disable the SPI when they are active/inactive.  To permanently add a
-connection, U42-U45 can be removed and a 0402 zero-ohm resistor
-connected between pins 2 and 4 on all devices.
+The TMS570 processor provides pull ups for the I2C lines, so external
+ones are not necessary.
 
 # CAN Bus
 
@@ -244,7 +235,7 @@ R123 and R124 will be required to make it work.
   
 * PA\_PWR\_EN is now positive logic to account for the ABF changes.
 
-* SPI 5 from the processor is run to the PC104 connector and an enable
+* SPI 5 from the processor is run to an antenna controller
   and switches were added to allow PC102\_SPI\_EN\_N to turn on the
   connection to the bus.
 
@@ -293,7 +284,7 @@ used as a GPIO.
 |29		|VCC					|						|  | |
 |30		|N2HET1[02]				|						|OD|Green LED |
 |31		|N2HET1[05]				|LNA\_ENABLE			|OD|Used to enable the LNA |
-|32		|MIBSPI5NCS[0]			|EXT\_SPI\_CS			| U|Run to PC104 H2-12 (can be used for GPIO)|
+|32		|MIBSPI5NCS[0]			|ANT\_SPI\_CS			| U|SPI for the antenna controller) |
 |33		|N2HET1[07]				|AX5043\_EN\_RX3\_N		|OD|Power enable for AX5043 RX 3 |
 |34		|TEST					|					    |  | |
 |35		|N2HET1[09]				|AX5043\_EN\_RX2\_N		|OD|Power enable for AX5043 RX 2 |
@@ -361,15 +352,15 @@ used as a GPIO.
 |95		|MIBSPI1CLK				|AX5043\_CLK			|OU|SPI clock for all AX5043s |
 |96		|MIBSPI1NENA			|AX5043\_SEL4\_N		|OU|SPI chip select for AX5043 RX4 |
 |97		|MIBSPI5NENA			|AX5043\_SEL\_TX\_N		|OU|SPI chip select for AX5043 TX |
-|98		|MIBSPI5SOMI[0]			|EXT\_SPI\_SOMI			| U|Run to PC104 H2-09 (can be used for GPIO) |
-|99		|MIBSPI5SIMO[0]			|EXT\_SPI\_SIMO			| U|Run to PC104 H2-11 (can be used for GPIO) |
-|100	|MIBSPI5CLK				|EXT\_SPI\_CLK			| U|Run to PC104 H2-10 (can be used for GPIO) |
+|98		|MIBSPI5SOMI[0]			|ANT\_SPI\_SOMI			| U|SPI for the antenna controller |
+|99		|MIBSPI5SIMO[0]			|ANT\_SPI\_SIMO			| U|SPI for the antenna controller) |
+|100	|MIBSPI5CLK				|ANT\_SPI\_CLK			| U|SPI for the antenna controller) |
 |101	|VCC					|						|  | |
 |102	|VSS					|						|  | |
 |103	|VSS					|						|  | |
 |104	|VCCIO					|						|  | |
 |105	|MIBSPI1NCS[0]			|CAN\_B\_EN\_N			|OU|CAN bus B transceiver enable |
-|106	|N2HET1[08]				|PC104\_SPI\_EN\_N		|OD|Enable the SPI interface on the PC104|
+|106	|N2HET1[08]				|ANT\_EN\_N				|OD|Power control for the antenna chip|
 |107	|N2HET1[28]				|PA\_DAC\_SEL\_N		|OD|Select pin for the PA DAC Iref, on the AC5043 SPI bus |
 |108	|TMS					|JTAG pin				|  | |
 ||||||
@@ -456,6 +447,40 @@ from the coupler.  This was simulated with a transmission line in
 qucs.  The voltage for that can be calculated from the chip manual.
 
 # Other IO Connections
+
+## Antenna Control
+
+A small M0L1228QRGERQ1 microprocessor sits on SPI 5 from the main CPU.
+It's main job is to provide SPI to I2C conversion, as the TMS570 CPU
+only has one I2C bus and that goes to the RTC and the PC104 connector.
+The I2C busses go to the external antenna control board.  See the ICD
+for pinout information.
+
+No suitable SPI to I2C converters could be found, and even the ones
+that could be found were single I2C units and would have been bigger
+and cost more than this small processor.
+
+The small processor has its own JTAG debug connector J9 near the
+bottom of the board.  This processor must be independently programmed
+and a protocol between the main CPU and this processor must be created
+to control the processor.
+
+The small processor may be power controlled with the ANT\_EN\_N line,
+which will automatically power down the external antenna control
+board, too.  As well, the external antenna control board has an
+independent power controlled by the small processor on its pin 18.
+
+On the small processor, I2C1 is connected to I2CA on the connector,
+and I2C2 is connected to I2CB on the connector.
+
+Power to the external antenna control board comes from 3.3V_p.  Normal
+power is very low, but it draws a lot of power when burning the
+release cables, so a fairly large power line runs to it.  Make sure to
+read the antenna documentation for the exact requirements.
+
+This processor could be extended to add more GPIOs, another I2C
+interface, or a SPI interface for use by other things.  It has a few
+extra pins.
 
 ## WATCHDOG\_OUT\_N
 

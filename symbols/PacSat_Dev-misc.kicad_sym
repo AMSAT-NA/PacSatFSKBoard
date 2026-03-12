@@ -4893,7 +4893,7 @@
 				(justify left top)
 			)
 		)
-		(property "Footprint" "G125-MH11005L1P"
+		(property "Footprint" "PacSatDev_misc:G125-MH11005L1P"
 			(at 19.05 -94.92 0)
 			(effects
 				(font

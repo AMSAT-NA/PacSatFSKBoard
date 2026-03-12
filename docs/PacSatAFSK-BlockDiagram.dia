@@ -89,6 +89,7 @@
     </dia:attribute>
   </dia:diagramdata>
   <dia:layer name="Background" visible="true" connectable="false"/>
+  <dia:layer name="Background" visible="true" connectable="false"/>
   <dia:layer name="Background" visible="true" connectable="true" active="true">
     <dia:object type="Standard - Box" version="0" id="O0">
       <dia:attribute name="obj_pos">
@@ -992,7 +993,7 @@ ABF[0-2]#</dia:string>
         <dia:point val="19.0938,27.5"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="19.0437,27.45;22.4563,29.5"/>
+        <dia:rectangle val="19.0438,27.45;22.4563,29.5"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
         <dia:point val="19.0938,27.5"/>
@@ -1021,7 +1022,7 @@ ABF[0-2]#</dia:string>
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="20.75,28.76"/>
+            <dia:point val="20.7501,28.76"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000ff"/>
@@ -1303,7 +1304,7 @@ Switch#</dia:string>
         <dia:point val="27.2812,25.5"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="27.2312,25.45;30.7688,27.5"/>
+        <dia:rectangle val="27.2312,25.45;30.7687,27.5"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
         <dia:point val="27.2812,25.5"/>
@@ -1332,7 +1333,7 @@ Switch#</dia:string>
             <dia:real val="0.80000000000000004"/>
           </dia:attribute>
           <dia:attribute name="pos">
-            <dia:point val="29,26.76"/>
+            <dia:point val="28.9999,26.76"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000ff"/>
@@ -2302,6 +2303,135 @@ Bias#</dia:string>
           </dia:attribute>
           <dia:attribute name="pos">
             <dia:point val="15.53,8.325"/>
+          </dia:attribute>
+          <dia:attribute name="color">
+            <dia:color val="#000000ff"/>
+          </dia:attribute>
+          <dia:attribute name="alignment">
+            <dia:enum val="0"/>
+          </dia:attribute>
+        </dia:composite>
+      </dia:attribute>
+      <dia:attribute name="valign">
+        <dia:enum val="3"/>
+      </dia:attribute>
+    </dia:object>
+    <dia:object type="Flowchart - Box" version="0" id="O75">
+      <dia:attribute name="obj_pos">
+        <dia:point val="9.2375,32.215"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="9.1875,32.165;12.9325,34.965"/>
+      </dia:attribute>
+      <dia:attribute name="elem_corner">
+        <dia:point val="9.2375,32.215"/>
+      </dia:attribute>
+      <dia:attribute name="elem_width">
+        <dia:real val="3.645"/>
+      </dia:attribute>
+      <dia:attribute name="elem_height">
+        <dia:real val="2.7000000000000002"/>
+      </dia:attribute>
+      <dia:attribute name="show_background">
+        <dia:boolean val="true"/>
+      </dia:attribute>
+      <dia:attribute name="padding">
+        <dia:real val="0.5"/>
+      </dia:attribute>
+      <dia:attribute name="text">
+        <dia:composite type="text">
+          <dia:attribute name="string">
+            <dia:string>#Antenna
+Control#</dia:string>
+          </dia:attribute>
+          <dia:attribute name="font">
+            <dia:font family="sans" style="0" name="Helvetica"/>
+          </dia:attribute>
+          <dia:attribute name="height">
+            <dia:real val="0.80000000000000004"/>
+          </dia:attribute>
+          <dia:attribute name="pos">
+            <dia:point val="11.06,33.45"/>
+          </dia:attribute>
+          <dia:attribute name="color">
+            <dia:color val="#000000ff"/>
+          </dia:attribute>
+          <dia:attribute name="alignment">
+            <dia:enum val="1"/>
+          </dia:attribute>
+        </dia:composite>
+      </dia:attribute>
+    </dia:object>
+    <dia:object type="Standard - ZigZagLine" version="1" id="O76">
+      <dia:attribute name="obj_pos">
+        <dia:point val="11.06,32.215"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="11.01,15.9;14.55,32.265"/>
+      </dia:attribute>
+      <dia:attribute name="orth_points">
+        <dia:point val="11.06,32.215"/>
+        <dia:point val="11.06,15.95"/>
+        <dia:point val="14.5,15.95"/>
+        <dia:point val="14.5,15.95"/>
+      </dia:attribute>
+      <dia:attribute name="orth_orient">
+        <dia:enum val="1"/>
+        <dia:enum val="0"/>
+        <dia:enum val="1"/>
+      </dia:attribute>
+      <dia:attribute name="autorouting">
+        <dia:boolean val="false"/>
+      </dia:attribute>
+      <dia:connections>
+        <dia:connection handle="0" to="O75" connection="2"/>
+      </dia:connections>
+    </dia:object>
+    <dia:object type="Standard - ZigZagLine" version="1" id="O77">
+      <dia:attribute name="obj_pos">
+        <dia:point val="12.8825,33.565"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="12.8322,33.5147;14.9,34.8"/>
+      </dia:attribute>
+      <dia:attribute name="orth_points">
+        <dia:point val="12.8825,33.565"/>
+        <dia:point val="14.45,33.575"/>
+        <dia:point val="14.85,33.575"/>
+        <dia:point val="14.85,34.75"/>
+      </dia:attribute>
+      <dia:attribute name="orth_orient">
+        <dia:enum val="1"/>
+        <dia:enum val="0"/>
+        <dia:enum val="1"/>
+      </dia:attribute>
+      <dia:attribute name="autorouting">
+        <dia:boolean val="false"/>
+      </dia:attribute>
+      <dia:connections>
+        <dia:connection handle="0" to="O75" connection="8"/>
+      </dia:connections>
+    </dia:object>
+    <dia:object type="Standard - Text" version="1" id="O78">
+      <dia:attribute name="obj_pos">
+        <dia:point val="12.89,35.355"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="12.89,34.67;17.825,35.545"/>
+      </dia:attribute>
+      <dia:attribute name="text">
+        <dia:composite type="text">
+          <dia:attribute name="string">
+            <dia:string>#Antenna Control#</dia:string>
+          </dia:attribute>
+          <dia:attribute name="font">
+            <dia:font family="sans" style="0" name="Helvetica"/>
+          </dia:attribute>
+          <dia:attribute name="height">
+            <dia:real val="0.80000000000000004"/>
+          </dia:attribute>
+          <dia:attribute name="pos">
+            <dia:point val="12.89,35.355"/>
           </dia:attribute>
           <dia:attribute name="color">
             <dia:color val="#000000ff"/>

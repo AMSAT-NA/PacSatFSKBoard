@@ -263,6 +263,41 @@ it's RX sent to 50 ohms.  The ACTIVE1\_N lines controls the switch, so
 that the antenna hooks to board 1 when active, and board 2 when
 inactive.
 
+### Antenna Control
+
+A small microprocessor sits on the SPI bus connected to the main CPU
+that does antenna control.  It has two I2C busses that come out of J7,
+along with power and ground.  The power for the external antenna board
+is powered from 3.3V_p and may be turned on and off.
+
+The antenna connector is a G125-MH11005L1P 10-pin connector.
+
+It is possible to not use the connector and instead just solder wires
+directly to the PCB.  In that case, two holes are provided to allow
+a 2.4mm Tefzel ETFE zip tie to provide strain relief for the wires.
+
+Pinout is:
+
+* 1 - +3.3V to the antenna controller
+
+* 2 - I2CA SDA
+
+* 3 - Ground
+
+* 4 - I2CB SDA
+
+* 5 - Ground
+
+* 6 - +3.3V to the antenna controller
+
+* 7 - I2CA SCL
+
+* 8 - I2CB SCL
+
+* 9 - Ground
+
+* 10 - No connection
+
 # System Interfaces Description
 
 This section defines the interfaces used to interact with the PacSat
@@ -394,23 +429,11 @@ Approaches for Efficient Electrical Interfaces of CubeSats" at
 https://www.researchgate.net/publication/354837502_Standardization_Approaches_for_Efficient_Electrical_Interfaces_of_CubeSats?enrichId=rgreq-3c8f3f7a94bf0ca750dcd71e69db6025-XXX&enrichSource=Y292ZXJQYWdlOzM1NDgzNzUwMjtBUzoxMDcxODgzMjE0NjYzNjgxQDE2MzI1NjgyODEyNzE%3D&el=1_x_2&_esc=publicationCoverPdf
 
 These can be electrically removed from the bus by a signal from the
-processor (PC104\_SPI\_EN\_N), so that in a dual-board situation only
+processor (PC104\_I2C\_EN\_N), so that in a dual-board situation only
 one device drives the bus.  See the design document for details.  The
 pins are
 
   - PC104\_I2C\_SDA, PC104\_I2C\_SCL
-
-### SPI
-
-A standard four-line SPI bus runs to the PC104 connector from the
-processor.
-
-These can be electrically removed from the bus by a signal from the
-processor (PC104\_SPI\_EN\_N), so that in a dual-board situation only
-one device drives the bus.  See the design document for details.  The
-pins are
-
-  - PC104\_SPI\_CLK, PC104\_SPI\_CS, PC104\_SPI\_SIMO, PC104\_SPI\_SOMI
 
 ### GPIOs and ADC
 
@@ -475,14 +498,6 @@ ACTIVE1\_N, ACTIVE2\_N, HW\_POWER\_OFF1\_N, HW\_POWER\_OFF2\_N - Remove U30
 CANB+, CANB- - Remove U22, R89, and R90
 
 CANA+, CANA- - Remove U14, R50, and R51
-
-EXT\_SPI\_SOMI - Remove U42
-
-EXT\_SPI\_SIMO - Remove U43
-
-EXT\_SPI\_CLK - Remove U44
-
-EXT\_SPI\_CS - Remove U45
 
 PC104\_I2C\_SDA - Remove U32
 

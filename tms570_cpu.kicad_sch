@@ -9153,7 +9153,7 @@
 			)
 		)
 	)
-	(global_label "EXT_SPI_SIMO"
+	(global_label "ANT_SPI_SIMO"
 		(shape input)
 		(at 194.31 59.69 90)
 		(fields_autoplaced yes)
@@ -9165,7 +9165,7 @@
 		)
 		(uuid "1f50aaff-20f2-4daf-a4c7-64fcb7e06603")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 194.31 41.3631 90)
+			(at 194.31 41.2905 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9615,7 +9615,7 @@
 			)
 		)
 	)
-	(global_label "PC104_SPI_EN_N"
+	(global_label "ANT_EN_N"
 		(shape input)
 		(at 176.53 60.96 90)
 		(fields_autoplaced yes)
@@ -9627,7 +9627,7 @@
 		)
 		(uuid "5eb1b977-df16-48de-bec8-a4afd31fb03f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 176.53 39.0045 90)
+			(at 176.53 47.2049 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9659,7 +9659,7 @@
 			)
 		)
 	)
-	(global_label "EXT_SPI_CLK"
+	(global_label "ANT_SPI_CLK"
 		(shape input)
 		(at 191.77 40.64 90)
 		(fields_autoplaced yes)
@@ -9671,7 +9671,7 @@
 		)
 		(uuid "61068b61-b6ae-464c-8c19-5e35aeafb947")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 191.77 23.5468 90)
+			(at 191.77 23.4742 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9703,7 +9703,7 @@
 			)
 		)
 	)
-	(global_label "EXT_SPI_CS"
+	(global_label "ANT_SPI_CS"
 		(shape input)
 		(at 250.19 215.9 270)
 		(fields_autoplaced yes)
@@ -9715,7 +9715,7 @@
 		)
 		(uuid "6729ebf2-9e96-4740-8208-4c6b33fbf8e5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 250.19 231.6869 90)
+			(at 250.19 231.7595 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10033,7 +10033,7 @@
 			)
 		)
 	)
-	(global_label "EXT_SPI_SOMI"
+	(global_label "ANT_SPI_SOMI"
 		(shape input)
 		(at 196.85 59.69 90)
 		(fields_autoplaced yes)
@@ -10045,7 +10045,7 @@
 		)
 		(uuid "8765cb8e-939d-449f-bc42-292de81fa605")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 196.85 41.3631 90)
+			(at 196.85 41.2905 90)
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -1904,6 +1904,56 @@
 		)
 	)
 	(sheet
+		(at 113.03 97.79)
+		(size 50.8 15.24)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "75b01062-9747-4556-85bc-485f2c3c99d3")
+		(property "Sheetname" "Antenna Control"
+			(at 113.03 97.0784 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "antenna_control.kicad_sch"
+			(at 113.03 113.6146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Field2" ""
+			(at 113.03 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38"
+					(page "20")
+				)
+			)
+		)
+	)
+	(sheet
 		(at 175.26 27.94)
 		(size 52.07 15.24)
 		(exclude_from_sim no)

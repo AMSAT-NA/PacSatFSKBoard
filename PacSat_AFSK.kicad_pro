@@ -1037,6 +1037,10 @@
     [
       "38e3adf3-4e99-4cef-9f41-04ced85d0b69",
       "Diplexer"
+    ],
+    [
+      "75b01062-9747-4556-85bc-485f2c3c99d3",
+      "Antenna Control"
     ]
   ],
   "text_variables": {}
