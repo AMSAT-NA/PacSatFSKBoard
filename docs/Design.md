@@ -478,6 +478,9 @@ power is very low, but it draws a lot of power when burning the
 release cables, so a fairly large power line runs to it.  Make sure to
 read the antenna documentation for the exact requirements.
 
+The I2C pullup is done in the processor, but this can be disabled in
+software if the termination is on the other end.
+
 This processor could be extended to add more GPIOs, another I2C
 interface, or a SPI interface for use by other things.  It has a few
 extra pins.

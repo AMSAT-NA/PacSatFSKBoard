@@ -2552,3 +2552,18 @@ Add a capacitor in RESET\_N, just in case.
 ## 2026-03-10
 
 Add switches on the PC104 SPI connections.
+
+## 2026-03-11
+
+Remove the SPI to the PC104 that was just added and instead use it to
+control a small microprocessor for doing SPI to I2C conversion for the
+antenna control output.
+
+Add a connector for controlling an external antenna, along with the
+microprocessor to do it.
+
+## 2026-03-12
+
+Clean up the external antenna control, ground pin 10, move the
+processor a little to give more room for routing, add DNP pullups on
+the I2C lines.
