@@ -9,10 +9,6 @@ some point.
 
 # TODO
 
-The antenna controller interface chips doesn't have an interrupt line
-back to the main processor.  That could be useful, but it will be hard
-to add with the limited GPIO lines that can do interrupts.
-
 Switch to a TMS570LS2134 CPU.  This has double the FLASH and RAM and
 has the same pinout as the TMS570LS0914.
 
@@ -792,6 +788,10 @@ Add a M0L1228QRGERQ1 microcontroller for doing SPI to I2C conversion
 for the antenna control connection, and it could do other things on
 the system, too.
 
+The antenna controller interface chips doesn't have an interrupt line
+back to the main processor.  That could be useful, but it will be hard
+to add with the limited GPIO lines that can do interrupts.
+<
 # Not going to do
 
 Rotate the CPU so that fewer traces need to be routed under the CPU.
@@ -2582,7 +2582,7 @@ they do.
 Switch ACTIVE and PC104\_GPIO4, as ACTIVE didn't need to be
 interruptible, and PC104\_GPIO4 might.
 
-## 2026-03-12
+## 2026-03-13
 
 More cleanups, remove DNP from some parts getting ready for an
 operational board.
@@ -2591,3 +2591,12 @@ Put a pull up on PC104\_UMBILICAL2\_N to make it easier to set up for
 lab testing.
 
 DNP the 3.3V power converter and resistors.
+
+The CANB connections to the PC104 connector were not on the partial
+PC104 connector.  Move them to be on that connector in case this
+interfaces to a board with a partial PC104.  Move them from H1-33 and
+H1-34 to H1-29 and H1-30.  This required moving PC104\_GPIO4 from
+H1-33 to H1-30.
+
+Move CANA to side-by-side pins.  They are differential, they need to
+be together.

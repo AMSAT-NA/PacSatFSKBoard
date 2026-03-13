@@ -250,6 +250,12 @@ R123 and R124 will be required to make it work.
   and if we need another interrupt input into the main CPU from
   something else PC104\_GPIO4 could be used for that.
 
+* The CANB connections to the PC104 connector were not on the partial
+  PC104 connector.  Move them to be on that connector in case this
+  interfaces to a board with a partial PC104.  This moves them from
+  H1-33 and H1-34 to H1-29 and H1-30.
+
+
 # IO Connections on the PacSat AFSK processor
 
 These are the pins on the TMS570 processor, where they go, what they

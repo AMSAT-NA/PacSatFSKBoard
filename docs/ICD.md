@@ -265,7 +265,7 @@ inactive.
 
 ### Antenna Control
 
-A small microprocessor sits on the SPI bus connected to the main CPU
+A small microprocessor sits on a SPI bus connected to the main CPU
 that does antenna control.  It has two I2C busses that come out of J7,
 along with power and ground.  The power for the external antenna board
 is powered from 3.3V_p and may be turned on and off.
