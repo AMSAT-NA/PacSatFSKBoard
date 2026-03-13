@@ -7519,7 +7519,7 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 157.48) (xy 120.65 157.48)
+			(xy 149.86 157.48) (xy 125.73 157.48)
 		)
 		(stroke
 			(width 0)
@@ -9435,6 +9435,28 @@
 			)
 		)
 	)
+	(global_label "ACTIVE"
+		(shape input)
+		(at 133.35 175.26 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "46aa8b18-ddca-42c1-8ec2-0da97b4853f3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 120.3932 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "POW_MEAS_EN"
 		(shape input)
 		(at 121.92 134.62 180)
@@ -9756,6 +9778,28 @@
 		(uuid "6d21f814-79a4-4cb5-8365-69917d5fb05d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 59.8323 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PC104_GPIO4"
+		(shape input)
+		(at 125.73 157.48 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "6e93855f-17ba-4925-a18f-b0684d10f020")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 110.959 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10491,28 +10535,6 @@
 			)
 		)
 	)
-	(global_label "ACTIVE"
-		(shape input)
-		(at 120.65 157.48 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify right)
-		)
-		(uuid "ce9df69e-867f-4ec5-b4f3-a0b155a4af69")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 107.6932 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "Clock_CPU"
 		(shape input)
 		(at 214.63 223.52 270)
@@ -10529,28 +10551,6 @@
 			(effects
 				(font
 					(size 1.524 1.524)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "PC104_GPIO4"
-		(shape input)
-		(at 133.35 175.26 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify right)
-		)
-		(uuid "d5a27243-a5a8-42a0-8455-4209539ca22d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 118.579 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
 				)
 				(justify right)
 				(hide yes)

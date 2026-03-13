@@ -2578,3 +2578,6 @@ up a pin with interrupts and using GIOA[2] for ANT\_IRQ\_N.
 
 Rename the remaining EXT\_ lines to PC104\_ to make it more clear what
 they do.
+
+Switch ACTIVE and PC104\_GPIO4, as ACTIVE didn't need to be
+interruptible, and PC104\_GPIO4 might.

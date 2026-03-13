@@ -243,6 +243,12 @@ R123 and R124 will be required to make it work.
   OTHER\_PRESENCE\_N didn't need to be on a line with an interrupt,
   and ANT\_IRQ\_N obviously does.  OTHER\_PRESENCE\_N is moved to
   pin 86, AD1EVT.
+  
+* PC104\_GPIO4 and ACTIVE are switched.  PC104\_GPIO4 is now pin 133
+  (GIOB[1]) and ACTIVE is not N2HET1\_18.  ACTIVE would not need to be
+  used as an interrupt as it is output only, but PC104\_GPIO4 could,
+  and if we need another interrupt input into the main CPU from
+  something else PC104\_GPIO4 could be used for that.
 
 # IO Connections on the PacSat AFSK processor
 
