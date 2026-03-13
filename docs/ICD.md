@@ -434,10 +434,9 @@ protocols exists to do multi-packet messages.  The pins are:
 
 ### I2C
 
-An I2C bus is wired to the CSKB.  Termination is provided on the
-PacSat board, though it could be removed if necessary.  There are pull
-ups in the processor, but there are also external DNP resistors in
-case these need to be adjusted.
+An I2C bus is wired to the CSKB.  By default the main processor is
+hooked to this, and there are pull ups in the processor, but there are
+also external DNP resistors in case these need to be adjusted.
 
 The default pins for this are chosen as defined in "Standardization
 Approaches for Efficient Electrical Interfaces of CubeSats" at
@@ -446,9 +445,18 @@ https://www.researchgate.net/publication/354837502_Standardization_Approaches_fo
 These can be electrically removed from the bus by a signal from the
 processor (PC104\_I2C\_EN\_N), so that in a dual-board situation only
 one device drives the bus.  See the design document for details.  The
-pins are
+pins are:
 
   - PC104\_I2C\_SDA, PC104\_I2C\_SCL
+  
+That same I2C bus is wired I2C0 of the antenna control processor, too,
+through two DNP resistors, R156 and R157.  There is some question
+whether sharing the RTC on the I2C bus like this will work.  If it
+doesn't, U32 and U38 can be removed and R156 and R157 installed to
+hook the antenna control processor to the I2C.  Pull ups (0603) can be
+installed across pins 4 and 5 of the U32 and U38 pads, if necessary.
+The main CPU will have to communicate with the antenna control
+processor for I2C, but it's do-able.
 
 ### GPIOs and ADC
 

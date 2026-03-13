@@ -2602,3 +2602,8 @@ Move CANA to side-by-side pins.  They are differential, they need to
 be together.
 
 Add pull ups on the PC104 I2C bus so it can be adjusted if necessary.
+
+Add a way to wire the third antenna controller I2C to the PC104 I2C
+bus and disconnect the processor from that.  This way, if there are
+problems sharing that bus with the RTC, we can use the antenna
+controller I2C instead.

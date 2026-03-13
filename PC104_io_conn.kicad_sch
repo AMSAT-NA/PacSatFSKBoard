@@ -2467,6 +2467,12 @@
 		(uuid "b5be0dc9-e16e-4f35-96e0-cf6c061dd8c3")
 	)
 	(junction
+		(at 87.63 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e861a2f3-45e9-47f8-bb15-83d13ebaea7e")
+	)
+	(junction
 		(at 102.87 157.48)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2483,6 +2489,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fc0f2ef1-6e5f-4246-8bd5-a08157cf9857")
+	)
+	(junction
+		(at 87.63 161.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fd2cf434-66a4-4d18-8644-270950308a4e")
 	)
 	(no_connect
 		(at 299.72 160.02)
@@ -2802,13 +2814,23 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 147.32) (xy 138.43 147.32)
+			(xy 87.63 147.32) (xy 138.43 147.32)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "1e5aa652-e02e-4554-8608-f05cd34b81bd")
+	)
+	(wire
+		(pts
+			(xy 87.63 142.24) (xy 90.17 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "20be72f9-ae2f-4ac8-93a8-67a6a638570b")
 	)
 	(wire
 		(pts
@@ -3232,13 +3254,23 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 142.24) (xy 99.06 147.32)
+			(xy 87.63 142.24) (xy 87.63 147.32)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "6713dab3-af89-4922-a0b4-a9721ae86c7a")
+	)
+	(wire
+		(pts
+			(xy 87.63 177.8) (xy 87.63 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c4f5c9c-34c0-4bde-9047-e29ff5c84247")
 	)
 	(wire
 		(pts
@@ -3702,7 +3734,7 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 142.24) (xy 99.06 142.24)
+			(xy 81.28 142.24) (xy 87.63 142.24)
 		)
 		(stroke
 			(width 0)
@@ -3809,6 +3841,16 @@
 			(type default)
 		)
 		(uuid "e9cf2d8f-f696-4bdb-be50-b78eb5375544")
+	)
+	(wire
+		(pts
+			(xy 91.44 177.8) (xy 87.63 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eda50117-a4c2-4081-9a44-87f658c407f1")
 	)
 	(wire
 		(pts
@@ -3970,16 +4012,6 @@
 		)
 		(uuid "11a0a5e4-5184-4737-b9c8-78fca0a75613")
 	)
-	(label "PC104_I2C_SCL"
-		(at 113.03 149.86 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "1565ca65-1465-4859-ab68-4881e81d4069")
-	)
 	(label "3V3_S3"
 		(at 154.94 160.02 0)
 		(effects
@@ -4019,16 +4051,6 @@
 			(justify left bottom)
 		)
 		(uuid "51bb0575-ca5b-4251-a2d1-97b264a968ba")
-	)
-	(label "PC104_I2C_SDA"
-		(at 113.03 147.32 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "54cad284-2387-4269-8278-bf889a8fccd1")
 	)
 	(label "3V3_S1"
 		(at 154.94 154.94 0)
@@ -4710,6 +4732,50 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PC104_I2C_SCL"
+		(shape input)
+		(at 91.44 177.8 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left)
+		)
+		(uuid "b590ee20-79e6-4ab8-a9ff-7fbfe571375e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 111.8714 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PC104_I2C_SDA"
+		(shape input)
+		(at 90.17 142.24 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left)
+		)
+		(uuid "b758066e-43e5-42d6-934a-ce2a05d327f8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 110.674 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)

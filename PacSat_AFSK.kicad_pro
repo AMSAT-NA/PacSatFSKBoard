@@ -277,7 +277,12 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [],
+    "erc_exclusions": [
+      [
+        "pin_not_driven|3581400|1028700|b749e2f2-3fed-4e5a-9519-2f456e1a1557|00000000-0000-0000-0000-000000000000|/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d|/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d|",
+        ""
+      ]
+    ],
     "meta": {
       "version": 0
     },
