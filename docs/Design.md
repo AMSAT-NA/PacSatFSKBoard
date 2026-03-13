@@ -161,14 +161,15 @@ ones are not necessary.
 # CAN Bus
 
 Two CAN buses are routed to the PC104 and they are on by default.  CAN
-A is on H1 (J1) pins 5 (the +) and 1 (the -).  CAN B is on H1 (J1)
+A is on H1 (J1) pins 5 (the +) and 6 (the -).  CAN B is on H1 (J1)
 pins 33 (the +) and 34 (the -).
 
 CAN A is routed to CAN3 on the CPU, and CAN B is routed to CAN2 on the
 CPU.  That is a bit confusing.
 
-These are not standard, except a NanoMind device specifies a CAN bus
-on H2 pins 1 and 5.
+These are not standard.  I found the NanoMind device specifies a CAN
+bus on H2 pins 1 and 5, but they are differential and need to be
+beside one another.
 
 CAN A can be disabled by removing U14 and R50 and R51.  CAN B can be
 disabled by removing U22 and R89 and R90.
@@ -211,10 +212,9 @@ R123 and R124 will be required to make it work.
   version 2 board.  They are fixed on the version 3 board.
 
 * Unfortunately, CAN A was moved on the PC104 from pins 23 (+) and 24
-  (-) to pins 5 (+) and 1 (-).  This matches the NanoMind
-  configuration, which is the only thing I found with a CAN bus.  Pins
-  23 and 24 are already used on the power supply for ground and
-  alternate I2C, so they could not be used for CAN.
+  (-) to pins 5 (+) and 6 (-).  Pins 23 and 24 are already used on the
+  power supply for ground and alternate I2C, so they could not be used
+  for CAN.
 
 * Switches were added for connecting the I2C and serial lines to the
   PC104.  They are controlled by PC104\_I2C\_EN\_N and
