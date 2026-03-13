@@ -435,7 +435,9 @@ protocols exists to do multi-packet messages.  The pins are:
 ### I2C
 
 An I2C bus is wired to the CSKB.  Termination is provided on the
-PacSat board, though it could be removed if necessary.
+PacSat board, though it could be removed if necessary.  There are pull
+ups in the processor, but there are also external DNP resistors in
+case these need to be adjusted.
 
 The default pins for this are chosen as defined in "Standardization
 Approaches for Efficient Electrical Interfaces of CubeSats" at

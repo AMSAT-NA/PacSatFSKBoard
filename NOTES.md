@@ -2600,3 +2600,5 @@ H1-33 to H1-30.
 
 Move CANA to side-by-side pins.  They are differential, they need to
 be together.
+
+Add pull ups on the PC104 I2C bus so it can be adjusted if necessary.

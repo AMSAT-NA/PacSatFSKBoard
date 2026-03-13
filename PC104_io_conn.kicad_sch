@@ -2340,6 +2340,16 @@
 		)
 		(uuid "bcef4ded-e989-49ec-96e6-957a578d8fe5")
 	)
+	(text "Optional pull ups for the\nI2C bus, in case it needs\nadjustment."
+		(exclude_from_sim no)
+		(at 71.628 193.802 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "c7c5a6ae-2208-473c-ab46-92b69624a49e")
+	)
 	(text "Possible  GND on PS"
 		(exclude_from_sim no)
 		(at 125.476 134.874 0)
@@ -2467,6 +2477,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f2b8918c-f3bb-4cf1-957f-26ed7b101e03")
+	)
+	(junction
+		(at 49.53 182.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fc0f2ef1-6e5f-4246-8bd5-a08157cf9857")
 	)
 	(no_connect
 		(at 299.72 160.02)
@@ -2806,6 +2822,16 @@
 	)
 	(wire
 		(pts
+			(xy 44.45 184.15) (xy 44.45 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2299ef21-365a-43b1-a867-6c751c5cdb2b")
+	)
+	(wire
+		(pts
 			(xy 262.89 104.14) (xy 270.51 104.14)
 		)
 		(stroke
@@ -3076,6 +3102,16 @@
 	)
 	(wire
 		(pts
+			(xy 44.45 182.88) (xy 49.53 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "515ec73c-482b-43ef-8642-c11156e7d279")
+	)
+	(wire
+		(pts
 			(xy 181.61 167.64) (xy 181.61 172.72)
 		)
 		(stroke
@@ -3123,6 +3159,16 @@
 			(type default)
 		)
 		(uuid "57121568-9b64-4b44-b374-1b32570ab613")
+	)
+	(wire
+		(pts
+			(xy 49.53 204.47) (xy 49.53 191.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5bd8df40-eda6-4428-91e4-25240948fa47")
 	)
 	(wire
 		(pts
@@ -3193,6 +3239,16 @@
 			(type default)
 		)
 		(uuid "6713dab3-af89-4922-a0b4-a9721ae86c7a")
+	)
+	(wire
+		(pts
+			(xy 44.45 195.58) (xy 44.45 191.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6cfc098e-3a05-45d0-bf6e-8f70e3d13262")
 	)
 	(wire
 		(pts
@@ -3293,6 +3349,16 @@
 			(type default)
 		)
 		(uuid "7a42af03-4825-42a0-8548-971e09f65295")
+	)
+	(wire
+		(pts
+			(xy 36.83 195.58) (xy 44.45 195.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e68dfd8-4a88-430b-b352-1db2bbb0c964")
 	)
 	(wire
 		(pts
@@ -3506,6 +3572,16 @@
 	)
 	(wire
 		(pts
+			(xy 49.53 182.88) (xy 49.53 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b22e0f53-71a4-40f9-842f-9b9947e16b70")
+	)
+	(wire
+		(pts
 			(xy 210.82 111.76) (xy 210.82 119.38)
 		)
 		(stroke
@@ -3543,6 +3619,16 @@
 			(type default)
 		)
 		(uuid "c063916c-5797-4057-b4b4-8532a5b2c46a")
+	)
+	(wire
+		(pts
+			(xy 36.83 204.47) (xy 49.53 204.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c661da69-2e51-47e8-bf03-ccf40713e2a2")
 	)
 	(wire
 		(pts
@@ -3823,6 +3909,16 @@
 			(type default)
 		)
 		(uuid "fa236386-65c9-4d72-8998-837c20e5ab16")
+	)
+	(wire
+		(pts
+			(xy 49.53 181.61) (xy 49.53 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fac60d26-00a6-4137-9c0e-ccd424297f49")
 	)
 	(wire
 		(pts
@@ -4310,6 +4406,28 @@
 			)
 		)
 	)
+	(global_label "I2C_SCL"
+		(shape input)
+		(at 36.83 204.47 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "540ac1c1-bef3-433c-9155-ff2796e2892a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 24.9619 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "PC104_UMBILICAL0_N"
 		(shape input)
 		(at 314.96 157.48 0)
@@ -4416,6 +4534,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "I2C_SDA"
+		(shape input)
+		(at 36.83 195.58 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "6b03bc9a-6d20-4d67-a4a0-c4d5ef74e833")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 24.8893 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -5313,6 +5453,139 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3.3V")
+		(at 49.53 181.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "37223b45-7de4-4d96-8063-1e000b74fb09")
+		(property "Reference" "#PWR0328"
+			(at 49.53 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 49.53 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 49.53 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 49.53 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d25e64a9-5979-41ff-8a4f-a02f99b47102")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/163b95be-82a7-4cd3-9077-48a01f79e25c"
+					(reference "#PWR0328")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 44.45 187.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp yes)
+		(uuid "3ee43283-9ac7-4b9a-a943-e523e00eef68")
+		(property "Reference" "R155"
+			(at 38.1 186.9186 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2KΩ"
+			(at 38.1 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 42.672 187.96 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 44.45 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 44.45 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "20784b6a-9187-47d4-b8e2-13be60f623fd")
+		)
+		(pin "2"
+			(uuid "c531697b-caa5-4887-9a4f-414ed798f5f3")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/163b95be-82a7-4cd3-9077-48a01f79e25c"
+					(reference "R155")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 306.07 157.48 270)
 		(unit 1)
@@ -5444,6 +5717,74 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/163b95be-82a7-4cd3-9077-48a01f79e25c"
 					(reference "R150")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 49.53 187.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp yes)
+		(uuid "4fe6062a-db5d-441b-8274-934d13aa9643")
+		(property "Reference" "R154"
+			(at 51.308 186.7916 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2KΩ"
+			(at 51.308 189.103 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 47.752 187.96 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 49.53 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 49.53 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "61cdc8e1-22ac-49c9-816f-3eb136ba0d36")
+		)
+		(pin "2"
+			(uuid "7988355d-d7ae-4762-87c8-907eadc61a8b")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/163b95be-82a7-4cd3-9077-48a01f79e25c"
+					(reference "R154")
 					(unit 1)
 				)
 			)

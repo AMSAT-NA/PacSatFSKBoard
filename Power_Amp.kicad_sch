@@ -10320,15 +10320,15 @@
 		(fields_autoplaced yes)
 		(uuid "cf3d0b5f-cfaf-4557-abe7-7fcd9a4d283b")
 		(property "Reference" "U37"
-			(at 135.89 67.2398 0)
+			(at 138.43 67.2398 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "DAC5311IDCK"
-			(at 135.89 69.7798 0)
+		(property "Value" "DAC5311IDCKRQ1"
+			(at 138.43 69.7798 0)
 			(effects
 				(font
 					(size 1.27 1.27)
