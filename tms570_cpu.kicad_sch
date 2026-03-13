@@ -5272,10 +5272,6 @@
 		(uuid "fc00ee93-c1d4-4142-8c29-f0ef87c03d24")
 	)
 	(no_connect
-		(at 226.06 52.07)
-		(uuid "123ffc5b-c14b-4d12-8897-4ed40b864e0d")
-	)
-	(no_connect
 		(at 219.71 204.47)
 		(uuid "695902df-c8f4-4b75-8e67-77b62550cd85")
 	)
@@ -5873,7 +5869,7 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 72.39) (xy 227.33 60.96)
+			(xy 224.79 62.23) (xy 224.79 60.96)
 		)
 		(stroke
 			(width 0)
@@ -6720,16 +6716,6 @@
 			(type default)
 		)
 		(uuid "6914f8d9-368d-4760-80e8-cfe9a1cb6642")
-	)
-	(wire
-		(pts
-			(xy 227.33 60.96) (xy 226.06 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6a202cc3-bafd-423b-b837-f96e5e5148a7")
 	)
 	(wire
 		(pts
@@ -8163,6 +8149,16 @@
 	)
 	(wire
 		(pts
+			(xy 227.33 62.23) (xy 227.33 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d20ea39c-9117-4820-957a-36acdd1919bd")
+	)
+	(wire
+		(pts
 			(xy 194.31 59.69) (xy 194.31 72.39)
 		)
 		(stroke
@@ -8290,16 +8286,6 @@
 			(type default)
 		)
 		(uuid "d98b4e92-3669-491b-bf06-bf8717ad8e70")
-	)
-	(wire
-		(pts
-			(xy 226.06 60.96) (xy 226.06 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d9c06c34-422a-47d9-b286-dc6dda09fa42")
 	)
 	(wire
 		(pts
@@ -8680,6 +8666,16 @@
 			(type default)
 		)
 		(uuid "f2637dd0-8ba4-4072-8e72-953eb0ffdde9")
+	)
+	(wire
+		(pts
+			(xy 224.79 62.23) (xy 227.33 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f304fb5a-1efb-4d96-abe6-4a068e7a6d44")
 	)
 	(wire
 		(pts
@@ -9087,7 +9083,29 @@
 			)
 		)
 	)
-	(global_label "EXT_ADC2"
+	(global_label "OTHER_HW_POWER_ST"
+		(shape input)
+		(at 184.15 233.68 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "16b51e37-e9c0-4aab-b967-78c2667efe42")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 184.15 260.9333 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PC104_ADC2"
 		(shape input)
 		(at 288.29 124.46 0)
 		(fields_autoplaced yes)
@@ -9219,7 +9237,7 @@
 			)
 		)
 	)
-	(global_label "EXT_GPIO2"
+	(global_label "PC104_GPIO2"
 		(shape input)
 		(at 125.73 121.92 180)
 		(fields_autoplaced yes)
@@ -9505,6 +9523,28 @@
 			)
 		)
 	)
+	(global_label "ANT_IRQ_N"
+		(shape input)
+		(at 191.77 233.68 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "53cf5121-c4f6-473b-9ca2-ba1b349f34a8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 191.77 248.3059 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "PA_PWR_EN"
 		(shape input)
 		(at 121.92 137.16 180)
@@ -9584,28 +9624,6 @@
 		(uuid "591ad35b-986e-45c6-a2cd-65bcf90438e1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 209.55 252.2974 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "OTHER_PRESENCE_N"
-		(shape input)
-		(at 191.77 233.68 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify right)
-		)
-		(uuid "5c953b31-7443-4a36-85c4-986fcb7ba0a3")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 191.77 259.4095 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9813,7 +9831,7 @@
 			)
 		)
 	)
-	(global_label "EXT_GPIO3"
+	(global_label "PC104_GPIO3"
 		(shape input)
 		(at 207.01 226.06 270)
 		(fields_autoplaced yes)
@@ -9826,28 +9844,6 @@
 		(uuid "74b9a354-ae44-488d-9005-420bcfbceca7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 207.01 240.831 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "OTHER_HW_POWER_ST"
-		(shape input)
-		(at 184.15 233.68 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify right)
-		)
-		(uuid "76497e5a-8be1-4f51-8243-7f7fd4ecc1f9")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 184.15 260.9333 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10231,7 +10227,7 @@
 			)
 		)
 	)
-	(global_label "EXT_GPIO1"
+	(global_label "PC104_GPIO1"
 		(shape input)
 		(at 173.99 224.79 270)
 		(fields_autoplaced yes)
@@ -10253,7 +10249,7 @@
 			)
 		)
 	)
-	(global_label "EXT_ADC1"
+	(global_label "PC104_ADC1"
 		(shape input)
 		(at 288.29 116.84 0)
 		(fields_autoplaced yes)
@@ -10539,7 +10535,7 @@
 			)
 		)
 	)
-	(global_label "EXT_GPIO4"
+	(global_label "PC104_GPIO4"
 		(shape input)
 		(at 133.35 175.26 180)
 		(fields_autoplaced yes)
@@ -10706,6 +10702,28 @@
 		(uuid "fc7b73da-34c9-440b-acbc-0327603400f9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 204.47 12.4071 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "OTHER_PRESENCE_N"
+		(shape input)
+		(at 224.79 60.96 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left)
+		)
+		(uuid "fcb39337-ec9f-4f2e-9f19-fd4662504bfc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 224.79 35.2305 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16426,74 +16444,6 @@
 			(project "PacSat_Dev_RevD_240614"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
 					(reference "#PWR013")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 226.06 55.88 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(uuid "b5b0d623-1a42-4175-a56c-fab81e3a16d5")
-		(property "Reference" "R144"
-			(at 225.298 52.578 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0Ω"
-			(at 225.044 61.722 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 224.282 55.88 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 226.06 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 226.06 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "cbfc5bac-f47a-4df7-85bb-2b76e8235570")
-		)
-		(pin "2"
-			(uuid "e55b853d-8b5f-4ed2-959b-73580e8de891")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
-					(reference "R144")
 					(unit 1)
 				)
 			)

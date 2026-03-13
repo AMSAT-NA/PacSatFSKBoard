@@ -9,6 +9,10 @@ some point.
 
 # TODO
 
+The antenna controller interface chips doesn't have an interrupt line
+back to the main processor.  That could be useful, but it will be hard
+to add with the limited GPIO lines that can do interrupts.
+
 Switch to a TMS570LS2134 CPU.  This has double the FLASH and RAM and
 has the same pinout as the TMS570LS0914.
 
@@ -2567,3 +2571,10 @@ microprocessor to do it.
 Clean up the external antenna control, ground pin 10, move the
 processor a little to give more room for routing, add DNP pullups on
 the I2C lines.
+
+Add an interrupt line from the antenna controller to the main CPU.
+This required moving OTHER\_PRESENCE\_N from GIOA[2] to AD1EVT to free
+up a pin with interrupts and using GIOA[2] for ANT\_IRQ\_N.
+
+Rename the remaining EXT\_ lines to PC104\_ to make it more clear what
+they do.

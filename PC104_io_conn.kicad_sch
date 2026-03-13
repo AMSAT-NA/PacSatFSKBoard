@@ -4024,7 +4024,7 @@
 		)
 		(uuid "ca7ca39e-ac3d-4499-abf1-f3780de4974d")
 	)
-	(global_label "EXT_GPIO3"
+	(global_label "PC104_GPIO3"
 		(shape input)
 		(at 114.3 127 180)
 		(fields_autoplaced yes)
@@ -4046,7 +4046,7 @@
 			)
 		)
 	)
-	(global_label "EXT_GPIO1"
+	(global_label "PC104_GPIO1"
 		(shape input)
 		(at 262.89 109.22 180)
 		(fields_autoplaced yes)
@@ -4068,7 +4068,7 @@
 			)
 		)
 	)
-	(global_label "EXT_GPIO2"
+	(global_label "PC104_GPIO2"
 		(shape input)
 		(at 321.31 116.84 0)
 		(fields_autoplaced yes)
@@ -4244,7 +4244,7 @@
 			)
 		)
 	)
-	(global_label "EXT_GPIO4"
+	(global_label "PC104_GPIO4"
 		(shape input)
 		(at 114.3 132.08 180)
 		(fields_autoplaced yes)
@@ -4354,7 +4354,7 @@
 			)
 		)
 	)
-	(global_label "EXT_ADC1"
+	(global_label "PC104_ADC1"
 		(shape input)
 		(at 262.89 104.14 180)
 		(fields_autoplaced yes)
@@ -4376,7 +4376,7 @@
 			)
 		)
 	)
-	(global_label "EXT_ADC2"
+	(global_label "PC104_ADC2"
 		(shape input)
 		(at 321.31 104.14 0)
 		(fields_autoplaced yes)

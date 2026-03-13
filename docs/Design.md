@@ -238,6 +238,11 @@ R123 and R124 will be required to make it work.
 * SPI 5 from the processor is run to an antenna controller
   and switches were added to allow PC102\_SPI\_EN\_N to turn on the
   connection to the bus.
+  
+* Pin 9, GIOA[2} was changed from OTHER\_PRESENCE\_N to ANT\_IRQ\_N.
+  OTHER\_PRESENCE\_N didn't need to be on a line with an interrupt,
+  and ANT\_IRQ\_N obviously does.  OTHER\_PRESENCE\_N is moved to
+  pin 86, AD1EVT.
 
 # IO Connections on the PacSat AFSK processor
 
@@ -254,20 +259,20 @@ used as a GPIO.
 |Pin3	|CPU Pin Name			|Schematic Name			|G |Description |
 |----	|------------			|--------------			|--|----------- |
 |1		|GIOB[3]				|OTHER\_FAULT			|ID|Fault line from other board|
-|2		|GIOA[0]				|EXT\_GPIO1				| D|Unused GPIO run to PC104 H2-11|
+|2		|GIOA[0]				|PC104\_GPIO1			| D|PC104 pin H2-11|
 |3		|MIBSPI3NCS[3]			|I2C\_SCL				|OU|RTC control (MAX31331TETB+) |
 |4		|MIBSPI3NCS[2]			|I2C\_SDA				|BU|RTC control (MAX31331TETB+) |
 |5		|GIOA[1]				|AX5043\_IRQ\_RX1		|ID|Interrupt from AX5043 RX1 |
 |6		|N2HET1[11]				|OTHER\_HW\_POWER\_ST   |ID|Power off state for the other board |
 |7		|FLTP1					|						|  | |
 |8		|FLTP2					|						|  | |
-|9		|GIOA[2]				|OTHER\_PRESENCE\_N		|ID|Presence line from other board |
+|9		|GIOA[2]				|ANT\_IRQ\_N			|ID|Interrupt from the antenna control chip |
 |10		|VCCIO					|						|  | |
 |11		|VSS					|						|  | |
 |12		|CAN3RX					|CAN\_A\_RX				|IU|CAN bus transceiver |
 |13		|CAN3TX					|CAN\_A\_TX				|OU|CAN bus transceiver |
 |14		|GIOA[5]				|AX5043\_IRQ\_RX4		|ID|Interrupt from AX5043 RX4 |
-|15		|N2HET1[22]				|						| D|PC104 Pin H1-27|
+|15		|N2HET1[22]				|PC104\_GPIO4			| D|PC104 Pin H1-27|
 |16		|GIOA[6]				|OTHER\_ACTIVE			|ID|Active line from other board |
 |17		|VCC					|						|  | |
 |18		|OSCIN					|						|  | |
@@ -313,10 +318,10 @@ used as a GPIO.
 |57		|VCC					|						|  | |
 |58		|AD1IN[16] / AD2IN[0]	|\*						|  |Thermsistor near the processor |
 |59		|AD1IN[17] / AD2IN[01]	|						|  |Board Number |
-|60		|AD1IN[0]				|EXT\_ADC2				|  |ADC to PC104 H2-08|
+|60		|AD1IN[0]				|PC104\_ADC2			|  |ADC to PC104 H2-08|
 |61		|AD1IN[07]				|PWR\_FLAG\_AX5043		|  |Power flag from the AX5043 current limiter |
 |62		|AD1IN[18] / AD2IN[02]	|						|  |External Control |
-|63		|AD1IN[19] / AD2IN[03]	|EXT\_ADC1				|  |ADC to PC104 H2-07 |
+|63		|AD1IN[19] / AD2IN[03]	|PC104\_ADC1			|  |ADC to PC104 H2-07 |
 |64		|AD1IN[20] / AD2IN[04]	|VER\_BIT0				|  |Board version number bit 0 |
 |65		|AD1IN[21] / AD2IN[05]	|VER\_BIT1				|  |Board version number bit 1 |
 |66		|ADREFHI				|						|  | |
@@ -340,7 +345,7 @@ used as a GPIO.
 |83		|AD1IN[08] / AD2IN[08]	|\*POWER\_TEMP			|  |Thermsistor in power conversion section |
 |84		|AD1IN[23] / AD2IN[07]	|\*PA\_TEMP				|  |Thermsistor near the PA |
 |85		|AD1IN[15] / AD2IN[15]	|						|  |Board version number bit 3 |
-|86		|AD1EVT					|						| D|free gpio (run do DNP R144) |
+|86		|AD1EVT					|OTHER\_PRESENCE\_N		|ID|Presence line from other board |
 |87		|VCC					|						|  | |
 |88		|VSS					|						|  | |
 |89		|CAN1TX					|AX5043\_EN\_TX\_N		|OU|Power enable for AX5043 TX |
@@ -374,7 +379,7 @@ used as a GPIO.
 |116	|nRST					|\*Processor\_Reset		|  |Main reset pin for the processor |
 |117	|nERROR					|FAULT\_N				|  |Output ERROR line from the processor|
 |118	|N2HET1[10]				|OTHER\_HW\_POWER\_OFF  |OD|Power off the other board |
-|119	|ECLK					|EXT\_GPIO2				|ID|PC104 pin H2-18 |
+|119	|ECLK					|PC104\_GPIO2			|ID|PC104 pin H2-18 |
 |120	|VCCIO					|						|  | |
 |121	|VSS					|						|  | |
 |122	|VSS					|						|  | |
@@ -388,14 +393,14 @@ used as a GPIO.
 |130	|MIBSPI1NCS[1]			|\*FEED\_WATCHDOG		|OU|Resets the hardware watchdog timer |
 |131	|LINRX					|PC104\_RX				|IU|PC104 Pin H2-21 |
 |132	|LINTX					|PC104\_TX				|OU|PC104 Pin H2-22 |
-|133	|GIOB[1]				|ACTIVE					|BD|Local active pin for active/standby |
+|133	|GIOB[1]				|ACTIVE					|OD|Local active output pin for active/standby |
 |134	|VCCP					|						|  | |
 |135	|VSS					|						|  | |
 |136	|VCCIO					|						|  | |
 |137	|VCC					|						|  | |
 |138	|VSS					|						|  | |
 |139	|N2HET1[16]				|PC104\_I2C\_EN\_N		|OD|Connect the I2C bus to the PC104|
-|140	|N2HET1[18]				|						| D|PC104 Pin H1-27 |
+|140	|N2HET1[18]				|PC104\_GPIO4			| D|PC104 Pin H1-27 |
 |141	|N2HET1[20]				|AX5043\_PWR\_EN		|OD|Main power enable for all AX5043s |
 |142	|GIOB[2]				|AX5043\_IRQ\_TX		|ID|Interrupt from AX5043 TX |
 |143	|VCC					|						|  | |
