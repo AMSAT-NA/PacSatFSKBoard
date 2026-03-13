@@ -399,14 +399,14 @@ used as a GPIO.
 |130	|MIBSPI1NCS[1]			|\*FEED\_WATCHDOG		|OU|Resets the hardware watchdog timer |
 |131	|LINRX					|PC104\_RX				|IU|PC104 Pin H2-21 |
 |132	|LINTX					|PC104\_TX				|OU|PC104 Pin H2-22 |
-|133	|GIOB[1]				|ACTIVE					|OD|Local active output pin for active/standby |
+|133	|GIOB[1]				|PC104\_GPIO4			|OD|Local active output pin for active/standby |
 |134	|VCCP					|						|  | |
 |135	|VSS					|						|  | |
 |136	|VCCIO					|						|  | |
 |137	|VCC					|						|  | |
 |138	|VSS					|						|  | |
 |139	|N2HET1[16]				|PC104\_I2C\_EN\_N		|OD|Connect the I2C bus to the PC104|
-|140	|N2HET1[18]				|PC104\_GPIO4			| D|PC104 Pin H1-27 |
+|140	|N2HET1[18]				|ACTIVE					| D|PC104 Pin H1-27 |
 |141	|N2HET1[20]				|AX5043\_PWR\_EN		|OD|Main power enable for all AX5043s |
 |142	|GIOB[2]				|AX5043\_IRQ\_TX		|ID|Interrupt from AX5043 TX |
 |143	|VCC					|						|  | |
