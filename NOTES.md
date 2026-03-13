@@ -9,10 +9,6 @@ some point.
 
 # TODO
 
-Add a M0L1228QRGERQ1 microcontroller for doing SPI to I2C conversion
-for the antenna control connection, and it could do other things on
-the system, too.
-
 Switch to a TMS570LS2134 CPU.  This has double the FLASH and RAM and
 has the same pinout as the TMS570LS0914.
 
@@ -787,6 +783,10 @@ the launcher, and when it is released they will be pulled high to
   3.3V, it could be tied to HW\_POWER\_OFF\_N and the two resistors
   setting the voltage on that line can be removed.
 * An ABF pin needs to disable PA power.
+
+Add a M0L1228QRGERQ1 microcontroller for doing SPI to I2C conversion
+for the antenna control connection, and it could do other things on
+the system, too.
 
 # Not going to do
 

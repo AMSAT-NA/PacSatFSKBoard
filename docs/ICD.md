@@ -271,10 +271,10 @@ along with power and ground.  The power for the external antenna board
 is powered from 3.3V_p and may be turned on and off.
 
 The antenna connector is a Harwin G125-MH11005L1P 10-pin connector, a
-1.25mm pitch latch connector.  It would mate with a G125-2041096L0
-housing, with something like a G125-FC11005L0-0150F cable, or
-equivalent.  Harwin has several cable assemblies with 5+5 Pos. Female
-DIL latch connections.
+1.25mm maile pitch latch connector.  It would mate with a
+G125-2041096L0 housing, with something like a G125-FC11005L0-0150F
+cable, or equivalent.  Harwin has several cable assemblies with 5+5
+position female DIL latch connections.
 
 It is possible to not use the connector and instead just solder wires
 directly to the PCB.  In that case, two holes are provided to allow
