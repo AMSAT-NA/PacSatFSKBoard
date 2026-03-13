@@ -2169,9 +2169,9 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "GND on ISIS PS"
+	(text "Possible  GND on PS"
 		(exclude_from_sim no)
-		(at 309.626 147.574 0)
+		(at 312.928 147.574 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2179,9 +2179,9 @@
 		)
 		(uuid "00ad1df7-110c-4bca-af33-2ea9a2a2b691")
 	)
-	(text "GND on ISIS PS"
+	(text "Possible  GND on PS"
 		(exclude_from_sim no)
-		(at 277.114 134.874 0)
+		(at 274.066 135.128 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2189,9 +2189,9 @@
 		)
 		(uuid "0a8ad2aa-5af5-4eb3-bf94-505e18dd06b3")
 	)
-	(text "GND on ISIS PS"
+	(text "Possible  GND on PS"
 		(exclude_from_sim no)
-		(at 160.782 145.034 0)
+		(at 164.084 145.288 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2199,9 +2199,9 @@
 		)
 		(uuid "165cc65a-c955-4ff8-887f-24ac187db650")
 	)
-	(text "GND on ISIS PS"
+	(text "Possible  GND on PS"
 		(exclude_from_sim no)
-		(at 277.368 149.86 0)
+		(at 273.812 149.86 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2219,9 +2219,9 @@
 		)
 		(uuid "2c695b07-749e-42a9-9c00-dcd02a9e78b6")
 	)
-	(text "GND on ISIS PS"
+	(text "Possible  GND on PS"
 		(exclude_from_sim no)
-		(at 309.372 149.606 0)
+		(at 312.928 149.86 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2229,9 +2229,9 @@
 		)
 		(uuid "3b20326a-35ee-4c24-951e-b900942315a4")
 	)
-	(text "GND on ISIS PS"
+	(text "Possible  GND on PS"
 		(exclude_from_sim no)
-		(at 277.368 145.034 0)
+		(at 274.066 145.034 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2239,9 +2239,9 @@
 		)
 		(uuid "54f1c82f-b73c-4c36-ab7c-a94dba8d9d6f")
 	)
-	(text "GND on ISIS PS"
+	(text "Possible  GND on PS"
 		(exclude_from_sim no)
-		(at 128.27 144.78 0)
+		(at 125.222 144.78 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2249,9 +2249,9 @@
 		)
 		(uuid "5641fcc7-465c-4786-b6fb-eb27b832f9ec")
 	)
-	(text "GND on ISIS PS"
+	(text "Possible  GND on PS"
 		(exclude_from_sim no)
-		(at 161.036 124.968 0)
+		(at 163.576 124.968 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2269,9 +2269,9 @@
 		)
 		(uuid "62c8ecde-d2cf-41a3-91bd-03994cefc444")
 	)
-	(text "GND on ISIS PS"
+	(text "Possible  GND on PS"
 		(exclude_from_sim no)
-		(at 309.88 145.034 0)
+		(at 312.674 145.034 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2290,9 +2290,9 @@
 		)
 		(uuid "747abccd-52b4-4027-8d37-43084c2cb215")
 	)
-	(text "GND on ISIS PS"
+	(text "Possible  GND on PS"
 		(exclude_from_sim no)
-		(at 161.29 130.048 0)
+		(at 164.084 130.048 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2300,9 +2300,9 @@
 		)
 		(uuid "7e0d2dda-d25a-45dc-a196-12835b08adee")
 	)
-	(text "I2C Alt on ISIS PS"
+	(text "Possible I2C Alt on PS"
 		(exclude_from_sim no)
-		(at 126.746 124.714 0)
+		(at 124.46 124.968 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2310,9 +2310,9 @@
 		)
 		(uuid "9b307510-3444-45aa-a9cf-34bff65a2b4d")
 	)
-	(text "I2C Alt on ISIS PS"
+	(text "Possible I2C Alt on PS"
 		(exclude_from_sim no)
-		(at 126.746 122.174 0)
+		(at 124.46 122.428 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2330,9 +2330,9 @@
 		)
 		(uuid "b6f174e3-03ec-48ab-aae3-756fe71663ff")
 	)
-	(text "GND on ISIS PS"
+	(text "Possible  GND on PS"
 		(exclude_from_sim no)
-		(at 161.29 122.174 0)
+		(at 163.576 122.174 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2340,9 +2340,9 @@
 		)
 		(uuid "bcef4ded-e989-49ec-96e6-957a578d8fe5")
 	)
-	(text "GND on ISIS PS"
+	(text "Possible  GND on PS"
 		(exclude_from_sim no)
-		(at 128.524 134.874 0)
+		(at 125.476 134.874 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2350,9 +2350,9 @@
 		)
 		(uuid "cfb3e0e2-81e7-4dc0-a729-8167c887860f")
 	)
-	(text "GND on ISIS PS"
+	(text "Possible  GND on PS"
 		(exclude_from_sim no)
-		(at 277.368 147.574 0)
+		(at 274.066 147.574 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2360,9 +2360,9 @@
 		)
 		(uuid "d3488531-e7fc-4675-b782-efdb500d887b")
 	)
-	(text "GND on ISIS PS"
+	(text "Possible  GND on PS"
 		(exclude_from_sim no)
-		(at 160.782 134.874 0)
+		(at 164.084 134.874 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2370,9 +2370,9 @@
 		)
 		(uuid "e051a65c-76d1-4749-8c71-4991761efdc6")
 	)
-	(text "GND on ISIS PS"
+	(text "Possible  GND on PS"
 		(exclude_from_sim no)
-		(at 128.27 130.048 0)
+		(at 125.476 130.048 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2380,9 +2380,9 @@
 		)
 		(uuid "e8474d73-b1b2-404c-a751-ab35cabd38f5")
 	)
-	(text "GND on ISIS PS"
+	(text "Possible  GND on PS"
 		(exclude_from_sim no)
-		(at 161.036 147.828 0)
+		(at 164.084 147.828 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -3406,7 +3406,7 @@
 	)
 	(wire
 		(pts
-			(xy 102.87 152.4) (xy 138.43 152.4)
+			(xy 110.49 152.4) (xy 138.43 152.4)
 		)
 		(stroke
 			(width 0)
@@ -4288,7 +4288,7 @@
 			)
 		)
 	)
-	(global_label "PC104_ABF0"
+	(global_label "PC104_UMBILICAL0_N"
 		(shape input)
 		(at 314.96 157.48 0)
 		(fields_autoplaced yes)
@@ -4300,7 +4300,7 @@
 		)
 		(uuid "5aab00d9-9ad1-4d03-9c70-84e9fdd94d06")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 329.0838 157.48 0)
+			(at 337.611 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4508,7 +4508,7 @@
 			)
 		)
 	)
-	(global_label "PC104_ABF1"
+	(global_label "PC104_UMBILICAL1_N"
 		(shape input)
 		(at 271.78 160.02 180)
 		(fields_autoplaced yes)
@@ -4520,7 +4520,7 @@
 		)
 		(uuid "9f6e423a-73fe-4d4f-89aa-f7d1e4fb39c5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 257.6562 160.02 0)
+			(at 249.129 160.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4706,9 +4706,9 @@
 			)
 		)
 	)
-	(global_label "PC104_ABF2"
+	(global_label "PC104_UMBILICAL2_N"
 		(shape input)
-		(at 102.87 152.4 180)
+		(at 110.49 152.4 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4718,7 +4718,7 @@
 		)
 		(uuid "e1a05bc9-8923-4427-80af-7d41d4a9b1ef")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 88.7462 152.4 0)
+			(at 87.839 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)

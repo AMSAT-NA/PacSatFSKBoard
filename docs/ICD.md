@@ -51,9 +51,9 @@ An external power disable line, HW\_POWER\_OFF[12]\_N, allows an
 external device to power down all parts of the board except for +5VAL,
 as described below.
 
-Three different umbilical attached lines, call ABF[0-2], come in to
-the board.  They shut down power to other parts of the system.  See
-the Umbilical Attachment section for details.
+Three different umbilical attached lines, called PC104\_UMBILICAL[0-2]\_N,
+come in to the board.  They shut down power to other parts of the
+system.  See the Umbilical Attachment section for details.
 
 The power supply has separate power zones for different parts of the
 board.  These are:
@@ -90,8 +90,8 @@ board.  These are:
   
 * SPPA_VCC - This is +5V to the PA.  This is off by default and the
   CPU must enable it with a GPIO before it can transmit.  In addition,
-  as mentioned before, ABF0 line will disable this.  This is current
-  limited to 640ma.
+  as mentioned before, PC104\_UMBILICAL0\_N line will disable this.
+  This is current limited to 640ma.
   
 * LNA_VCC - This is +5V to the LNA.  This is off by default and the
   CPU must enable it with a GPIO before it can receive.  This is
@@ -339,10 +339,10 @@ The board can run on just external +5V if configured with a 3.3V
 regulator, or it can run on external +5V and +3.3V.  External power
 interfaces have inductors to regulate surge at startup.
 
-The default power pins are the ones defined by the ISIS ICEPS2 power
-supply, and a zero-ohm resistor can choose either the man +5V/+3.3V
-inputs, or one of the three secondary switched inputs, on the Cube Sat
-Kit Bus interface.
+The default power pins are the ones defined by the CubeSat KitBus
+standard, and a zero-ohm resistors can choose either the default
++5V/+3.3V inputs, 5V\_p and 3.3V\_p, or one of the three secondary
+switched inputs on the PC104 connector.
 
   - 5V\_p - +5V that is always present when the satellite is powered.
     The board has a 0 ohm resistor that must be populated to get power
@@ -380,43 +380,44 @@ input should result in around 2.9V into the VBATT CPU ADC.
 
 ### Umbilical Attachment
 
-The ABF[0-2] signals tell the board that the satellite is in the
-launch vehicle.  An external module (generally the power supply)
-asserts to ground when in the launch vehicle; otherwise resistors pull
-them high when not in the launch vehicle.
+The PC104\_UMBILICAL[0-2]\_N signals tell the board that the satellite
+is in the launch vehicle.  An external module (generally the power
+supply) asserts to ground when in the launch vehicle; otherwise
+resistors pull them high when not in the launch vehicle.
 
-ABF0 inhibits the RF power amplifier.  If this is low the power
-amplifier will not receive power from +5V.
+PC104\_UMBILICAL0\_N inhibits the RF power amplifier.  If this is low
+the power amplifier will not receive power from +5V.
 
-ABF1 inhibits +5VAL, which normally supplies power to some parts on
-the board even when the board is disabled.  If this is powered off,
-the RF switch on the RF output will be disabled and thus disconnected
-from the antenna.
+PC104\_UMBILICAL1\_N inhibits +5VAL, which normally supplies power to
+some parts on the board even when the board is disabled.  If this is
+powered off, the RF switch on the RF output will be disabled and thus
+disconnected from the antenna.
 
-ABF2 inhibits power to the rest of the system.  Disabling this will
-cause all things on the board to be powered off except the RTC.
+PC104\_UMBILICAL2\_N inhibits power to the rest of the system.
+Disabling this will cause all things on the board to be powered off
+except the RTC.
 
 This provides three separate inhibits for RF transmission.
 
 If lab testing, either provide pull ups to an external +3.3V line, or
 make the following changes to the board:
 
-Install R64 to pull up ABF0.
+Install R64 to pull up PC104\_UMBILICAL0\_N.
 
-Install R54 to pull up ABF1.
+Install R54 to pull up PC104\_UMBILICAL1\_N.
 
-Remove U41 to disable ABF2.
+Remove U41 to disable PC104\_UMBILICAL2\_N.
 
-You may also need to remove the resistors connecting ABF0 and ABF1 to
-the PC104 if those pins perform other functions.  These are resistors
-R125 and R134.
+You may also need to remove the resistors connecting
+PC104\_UMBILICAL0\_N and PC104\_UMBILICAL1\_N to the PC104 if those
+pins perform other functions.  These are resistors R125 and R134.
 
-Note that if you use the ABF lines, you must also supply 3.3V_p to
-power the logic gate for ABF2.
+Note that if you use the umbilical lines, you must also supply 3.3V_p
+to power the logic gate for PC104\_UMBILICAL2\_N.
 
-  - PC104\_ABF[0-2] - Input to the board, if high the satellite is in
-    the launch vehicle.  This turns off all power except the RTC
-	and in addition inhibits transmit in hardware.
+  - PC104\_UMBILICAL[0-2]\_N - Input to the board, if high the satellite
+    is in the launch vehicle.  This turns off all power except the RTC
+    and in addition inhibits transmit in hardware.
 	
 ### CAN Bus
 
@@ -530,11 +531,11 @@ PC104\_TX2 - Remove U39
 
 PC104\_RX2 - Remove U40
 
-PC104_ABF0 - Remove R125
+PC104\_UMBILICAL0\_N - Remove R125
 
-PC104_ABF1 - Remove R134
+PC104_UMBILICAL1\_N - Remove R134
 
-PC104_ABF2 - Remove U41
+PC104_UNBILICAL2\_N - Remove U41
 
 ## RF Connections
 

@@ -233,7 +233,7 @@ R123 and R124 will be required to make it work.
   only by battery to avoid the main power drop issue, this will no
   longer be required on Version 3.
   
-* PA\_PWR\_EN is now positive logic to account for the ABF changes.
+* PA\_PWR\_EN is now positive logic to account for the umbilical changes.
 
 * SPI 5 from the processor is run to an antenna controller
   and switches were added to allow PC102\_SPI\_EN\_N to turn on the

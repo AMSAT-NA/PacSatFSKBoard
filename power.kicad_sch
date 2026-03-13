@@ -2728,9 +2728,9 @@
 		)
 		(uuid "544e8a0a-5b11-4585-9719-ec051bb26f43")
 	)
-	(text "PC104_ABF2, if driven low, will\npower off the board.  It is pulled\nup to 3.3v when used.  If not using\nPC104_ABF2, remove this part."
+	(text "PC104_UMBILICAL2_N, if driven low, will\npower off the board.  It is pulled\nup to 3.3v when used.  If not using\nPC104_UMBILICAL2_N, remove this part."
 		(exclude_from_sim no)
-		(at 69.85 130.81 0)
+		(at 88.9 130.81 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2837,7 +2837,7 @@
 		(uuid "46fae129-287f-41fa-a8f9-dd5010fc813b")
 	)
 	(junction
-		(at 43.18 101.6)
+		(at 62.23 101.6)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "62ed66ac-e8e1-47e8-b8cc-56fe7064ae6e")
@@ -2927,7 +2927,7 @@
 		(uuid "f107e1bb-8b4c-4085-84fe-969379ba5cf5")
 	)
 	(junction
-		(at 30.48 119.38)
+		(at 49.53 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f924eaf3-70a0-4de1-aae0-7ad8cbad8bdc")
@@ -3064,7 +3064,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 101.6) (xy 43.18 106.68)
+			(xy 62.23 101.6) (xy 62.23 106.68)
 		)
 		(stroke
 			(width 0)
@@ -3444,7 +3444,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 132.08) (xy 43.18 134.62)
+			(xy 62.23 132.08) (xy 62.23 134.62)
 		)
 		(stroke
 			(width 0)
@@ -3474,7 +3474,7 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 116.84) (xy 31.75 116.84)
+			(xy 49.53 116.84) (xy 50.8 116.84)
 		)
 		(stroke
 			(width 0)
@@ -3484,7 +3484,7 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 121.92) (xy 30.48 121.92)
+			(xy 50.8 121.92) (xy 49.53 121.92)
 		)
 		(stroke
 			(width 0)
@@ -3664,7 +3664,7 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 119.38) (xy 30.48 116.84)
+			(xy 49.53 119.38) (xy 49.53 116.84)
 		)
 		(stroke
 			(width 0)
@@ -3674,7 +3674,7 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 119.38) (xy 30.48 119.38)
+			(xy 46.99 119.38) (xy 49.53 119.38)
 		)
 		(stroke
 			(width 0)
@@ -3694,7 +3694,7 @@
 	)
 	(wire
 		(pts
-			(xy 58.42 119.38) (xy 66.04 119.38)
+			(xy 77.47 119.38) (xy 85.09 119.38)
 		)
 		(stroke
 			(width 0)
@@ -3724,7 +3724,7 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 121.92) (xy 30.48 119.38)
+			(xy 49.53 121.92) (xy 49.53 119.38)
 		)
 		(stroke
 			(width 0)
@@ -3924,7 +3924,7 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 101.6) (xy 43.18 101.6)
+			(xy 55.88 101.6) (xy 62.23 101.6)
 		)
 		(stroke
 			(width 0)
@@ -4184,7 +4184,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 99.06) (xy 43.18 101.6)
+			(xy 62.23 99.06) (xy 62.23 101.6)
 		)
 		(stroke
 			(width 0)
@@ -4574,9 +4574,9 @@
 			)
 		)
 	)
-	(global_label "PC104_ABF2"
+	(global_label "PC104_UMBILICAL2_N"
 		(shape input)
-		(at 27.94 119.38 180)
+		(at 46.99 119.38 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4586,7 +4586,7 @@
 		)
 		(uuid "7d33f0ab-4224-4f46-a302-dfa4d82a531f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 13.8162 119.38 0)
+			(at 24.339 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4598,7 +4598,7 @@
 	)
 	(global_label "3.3V_p"
 		(shape input)
-		(at 36.83 101.6 180)
+		(at 55.88 101.6 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4608,7 +4608,7 @@
 		)
 		(uuid "afcc7426-b1ca-49e7-b053-e812180132e6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 26.5584 101.6 0)
+			(at 45.6084 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4642,7 +4642,7 @@
 	)
 	(global_label "HW_POWER_OFF_N"
 		(shape input)
-		(at 66.04 119.38 0)
+		(at 85.09 119.38 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4652,7 +4652,7 @@
 		)
 		(uuid "c0856e0e-2bf7-4f13-b824-023889ca3a6f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 89.134 119.38 0)
+			(at 108.184 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7222,7 +7222,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 43.18 99.06 0)
+		(at 62.23 99.06 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7231,7 +7231,7 @@
 		(fields_autoplaced yes)
 		(uuid "96a7f3a7-6711-4d1e-a19b-791ada5fe5da")
 		(property "Reference" "#FLG019"
-			(at 43.18 97.155 0)
+			(at 62.23 97.155 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7240,7 +7240,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 43.18 95.25 0)
+			(at 62.23 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7248,7 +7248,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 43.18 99.06 0)
+			(at 62.23 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7257,7 +7257,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 43.18 99.06 0)
+			(at 62.23 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7266,7 +7266,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 43.18 99.06 0)
+			(at 62.23 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7617,7 +7617,7 @@
 	)
 	(symbol
 		(lib_id "PACSAT_ICs:SN74AHC1G09QDCKRQ1")
-		(at 31.75 118.11 0)
+		(at 50.8 118.11 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -7626,7 +7626,7 @@
 		(fields_autoplaced yes)
 		(uuid "af4aa069-3ffd-461e-b831-236847498784")
 		(property "Reference" "U41"
-			(at 66.04 112.9598 0)
+			(at 85.09 112.9598 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -7634,7 +7634,7 @@
 			)
 		)
 		(property "Value" "SN74AHC1G09QDCKRQ1"
-			(at 66.04 115.4998 0)
+			(at 85.09 115.4998 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -7642,7 +7642,7 @@
 			)
 		)
 		(property "Footprint" "PacSatDev_ti:DCK5"
-			(at 56.134 133.35 0)
+			(at 75.184 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7652,7 +7652,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.ti.com/lit/gpn/sn74ahc1g09-q1"
-			(at 58.42 130.81 0)
+			(at 77.47 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7662,7 +7662,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 31.75 118.11 0)
+			(at 50.8 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8100,7 +8100,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 43.18 134.62 0)
+		(at 62.23 134.62 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8108,7 +8108,7 @@
 		(dnp no)
 		(uuid "f492321a-8b61-4c05-8484-0a7366024d1f")
 		(property "Reference" "#PWR0319"
-			(at 43.18 140.97 0)
+			(at 62.23 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8117,7 +8117,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 43.307 139.0142 0)
+			(at 62.357 139.0142 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8125,7 +8125,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 43.18 134.62 0)
+			(at 62.23 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8134,7 +8134,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 43.18 134.62 0)
+			(at 62.23 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8143,7 +8143,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 43.18 134.62 0)
+			(at 62.23 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
