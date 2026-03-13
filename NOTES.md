@@ -2581,3 +2581,13 @@ they do.
 
 Switch ACTIVE and PC104\_GPIO4, as ACTIVE didn't need to be
 interruptible, and PC104\_GPIO4 might.
+
+## 2026-03-12
+
+More cleanups, remove DNP from some parts getting ready for an
+operational board.
+
+Put a pull up on PC104\_UMBILICAL2\_N to make it easier to set up for
+lab testing.
+
+DNP the 3.3V power converter and resistors.

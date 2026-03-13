@@ -3141,7 +3141,7 @@
 			)
 		)
 	)
-	(global_label "AX5043_CLK"
+	(global_label "AX5043_SPI_CLK"
 		(shape input)
 		(at 317.5 132.08 0)
 		(fields_autoplaced yes)

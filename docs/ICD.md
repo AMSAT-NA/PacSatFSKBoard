@@ -406,7 +406,7 @@ Install R64 to pull up PC104\_UMBILICAL0\_N.
 
 Install R54 to pull up PC104\_UMBILICAL1\_N.
 
-Remove U41 to disable PC104\_UMBILICAL2\_N.
+Install R144 to pull up PC104\_UMBILICAL2\_N.
 
 You may also need to remove the resistors connecting
 PC104\_UMBILICAL0\_N and PC104\_UMBILICAL1\_N to the PC104 if those

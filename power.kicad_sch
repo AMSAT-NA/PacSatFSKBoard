@@ -2748,6 +2748,16 @@
 		)
 		(uuid "564cc931-b01b-4ad9-989a-43725529ad19")
 	)
+	(text "The 1.2V regulator can be powered\nfrom 5V or 3.3V, per these\nresistors."
+		(exclude_from_sim no)
+		(at 44.704 154.432 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "74af90c7-9e5e-4c88-a3d0-86bd54f286ee")
+	)
 	(text "HARDWARE WATCHDOG"
 		(exclude_from_sim no)
 		(at 51.435 212.725 0)
@@ -2819,6 +2829,12 @@
 		(uuid "1a3e2e25-6504-4a0a-9020-9f2a57819dc9")
 	)
 	(junction
+		(at 62.23 105.41)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1e608bce-a05f-405c-a869-86c063eab5c3")
+	)
+	(junction
 		(at 334.01 129.54)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2859,6 +2875,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8c68f287-322a-4c15-8478-cae4d8285ae6")
+	)
+	(junction
+		(at 41.91 119.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8f339a68-f18d-4592-9715-c3cdee9b14b0")
 	)
 	(junction
 		(at 152.4 189.23)
@@ -3064,7 +3086,7 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 101.6) (xy 62.23 106.68)
+			(xy 62.23 101.6) (xy 62.23 105.41)
 		)
 		(stroke
 			(width 0)
@@ -3151,6 +3173,16 @@
 			(type default)
 		)
 		(uuid "1d8fec91-d2ad-466e-af25-fd92f021ed37")
+	)
+	(wire
+		(pts
+			(xy 41.91 119.38) (xy 49.53 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e2cdb49-69a3-4a66-9dfd-9a46b6aaa898")
 	)
 	(wire
 		(pts
@@ -3664,6 +3696,16 @@
 	)
 	(wire
 		(pts
+			(xy 41.91 105.41) (xy 62.23 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87afaf9c-bd22-475a-8eeb-178689198854")
+	)
+	(wire
+		(pts
 			(xy 49.53 119.38) (xy 49.53 116.84)
 		)
 		(stroke
@@ -3674,7 +3716,7 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 119.38) (xy 49.53 119.38)
+			(xy 36.83 119.38) (xy 41.91 119.38)
 		)
 		(stroke
 			(width 0)
@@ -3954,6 +3996,16 @@
 	)
 	(wire
 		(pts
+			(xy 41.91 107.95) (xy 41.91 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c62ad69c-ef06-4944-95df-bcc2e237b36f")
+	)
+	(wire
+		(pts
 			(xy 83.82 232.41) (xy 83.82 234.95)
 		)
 		(stroke
@@ -4084,6 +4136,16 @@
 	)
 	(wire
 		(pts
+			(xy 62.23 105.41) (xy 62.23 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e2cc1617-7647-40f7-9e39-426b82aaf930")
+	)
+	(wire
+		(pts
 			(xy 336.55 186.69) (xy 350.52 186.69)
 		)
 		(stroke
@@ -4211,6 +4273,16 @@
 			(type default)
 		)
 		(uuid "fb7c1508-51f1-4781-8ddf-76c16afbf18e")
+	)
+	(wire
+		(pts
+			(xy 41.91 115.57) (xy 41.91 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe0d1ef6-ee87-433f-80cc-09b5b45eac9a")
 	)
 	(label "1.2V_INPUT"
 		(at 91.44 166.37 0)
@@ -4576,7 +4648,7 @@
 	)
 	(global_label "PC104_UMBILICAL2_N"
 		(shape input)
-		(at 46.99 119.38 180)
+		(at 36.83 119.38 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4586,7 +4658,7 @@
 		)
 		(uuid "7d33f0ab-4224-4f46-a302-dfa4d82a531f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 24.339 119.38 0)
+			(at 14.179 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6499,9 +6571,9 @@
 		(at 353.06 114.3 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "627fb2f3-374c-4064-b7da-004d2bb9460e")
 		(property "Reference" "R119"
 			(at 350.52 113.03 90)
@@ -7155,6 +7227,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 41.91 111.76 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp yes)
+		(uuid "8d02da68-ba5a-484a-ab8d-1d1cd51adfdb")
+		(property "Reference" "R144"
+			(at 43.688 110.617 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10KΩ"
+			(at 43.688 112.522 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 40.132 111.76 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 41.91 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 41.91 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bca15bf1-fdd9-47e7-86b5-f46b4d535a56")
+		)
+		(pin "2"
+			(uuid "3df7c557-2af6-49d1-bf56-82359bfa8dbf")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/00000000-0000-0000-0000-00005a0ea76a"
+					(reference "R144")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 232.41 242.57 0)
 		(unit 1)
@@ -7620,9 +7759,9 @@
 		(at 50.8 118.11 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "af4aa069-3ffd-461e-b831-236847498784")
 		(property "Reference" "U41"
@@ -7963,9 +8102,9 @@
 		(at 353.06 124.46 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "ebb22d21-dd16-4a54-b2c2-8a8740cf66dc")
 		(property "Reference" "R120"
 			(at 350.52 123.19 90)
@@ -8167,9 +8306,9 @@
 		(at 285.75 114.3 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "f8f74585-855a-4aa2-9a30-53e3daf64119")
 		(property "Reference" "U4"

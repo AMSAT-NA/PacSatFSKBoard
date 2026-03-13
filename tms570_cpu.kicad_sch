@@ -5569,7 +5569,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 72.39) (xy 204.47 38.1)
+			(xy 204.47 72.39) (xy 204.47 43.18)
 		)
 		(stroke
 			(width 0)
@@ -8459,7 +8459,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 30.48) (xy 204.47 29.21)
+			(xy 204.47 35.56) (xy 204.47 34.29)
 		)
 		(stroke
 			(width 0)
@@ -10689,9 +10689,9 @@
 			)
 		)
 	)
-	(global_label "AX5043_CLK"
+	(global_label "AX5043_SPI_CLK"
 		(shape input)
-		(at 204.47 29.21 90)
+		(at 204.47 34.29 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10701,7 +10701,7 @@
 		)
 		(uuid "fc7b73da-34c9-440b-acbc-0327603400f9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 204.47 12.4071 90)
+			(at 204.47 17.4871 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17167,7 +17167,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 204.47 34.29 0)
+		(at 204.47 39.37 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -17175,7 +17175,7 @@
 		(dnp no)
 		(uuid "e4f6416e-4496-4a64-99cb-be6fcabc091a")
 		(property "Reference" "R10"
-			(at 199.263 32.893 0)
+			(at 206.248 37.846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17184,7 +17184,7 @@
 			)
 		)
 		(property "Value" "33Ω"
-			(at 198.882 34.798 0)
+			(at 205.867 39.751 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17193,7 +17193,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 202.692 34.29 90)
+			(at 202.692 39.37 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17202,7 +17202,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 204.47 34.29 0)
+			(at 204.47 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17210,7 +17210,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 204.47 34.29 0)
+			(at 204.47 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
