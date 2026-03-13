@@ -2259,15 +2259,15 @@
 		)
 		(uuid "62a649bb-3707-4b67-8735-6f976e99ce85")
 	)
-	(text "ISIS power supply is on pins 21-32 and 39-52\non both connectors.  Check there before using\nany of those pins."
+	(text "A 19:1 resistor divider, so 52V on the\ninput should result in around 2.7V into\nthe VBATT CPU ADC, and should be safe up\nto 62V."
 		(exclude_from_sim no)
-		(at 234.95 175.768 0)
+		(at 243.078 229.616 0)
 		(effects
 			(font
 				(size 1.524 1.524)
 			)
 		)
-		(uuid "62c8ecde-d2cf-41a3-91bd-03994cefc444")
+		(uuid "693b2d1d-bcb8-492a-89e8-88e571fc412f")
 	)
 	(text "Possible  GND on PS"
 		(exclude_from_sim no)
@@ -5876,7 +5876,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "17KΩ"
+		(property "Value" "18KΩ"
 			(at 243.586 199.644 90)
 			(effects
 				(font

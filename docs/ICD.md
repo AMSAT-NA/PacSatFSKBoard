@@ -375,8 +375,9 @@ externally control power on the board.
 Though not used for power, the VBATT\_p lines are run onto the board
 and through a resistor divider so the CPU can monitor the voltage on
 the battery bus on the power supply.  R126 must be populated to do
-this.  This is run through a 18:1 resistor divider, so 52V on the
-input should result in around 2.9V into the VBATT CPU ADC.
+this.  This is run through a 19:1 resistor divider, so 52V on the
+input should result in around 2.7V into the VBATT CPU ADC, and should
+be safe up to 62V.
 
 ### Umbilical Attachment
 

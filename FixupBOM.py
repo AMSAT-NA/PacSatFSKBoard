@@ -194,6 +194,7 @@ value_to_partnum_xlats_2 = {
     ('4.7nF',		'0402'): ('Kyocera',	'04025C472J4T2A'),
     ('10nF',		'0402'): ('Murata',	'GCM155R71H103KA55D'),
     ('100nF',		'0402'): ('Murata',	'GCM155R71C104KA55D'),
+    ('.47uF',           '0603'): ('Murata',     'GCM188R71E474KA64J'),
     ('1uF',		'0603'): ('Murata',	'GCM188R71C105KA64J'),
     ('1uF',		'0805'): ('Murata',	'GCM21BR71E105KA56L'),
     ('4.7uF',		'0805'): ('Murata',	'GCM21BR71C475KA73L'),
@@ -316,11 +317,14 @@ other_components = {
     ('DMP2037U-7', 'SOT-23'): None,
     ('ADL5501AKSZ-R7', 'KS-6_ADI'): None,
     ('SN74AHC1G08QDCKRQ1', 'DCK5'): None,
+    ('SN74AHC1G09QDCKRQ1', 'DCK5'): None,
     ('BSS138', 'SOT-523'): None,
     ('MCP1799T-3302HTT', 'SOT-23'): None,
     ('QPC8010QTR7', 'QFN50P200X200X60-13N-D'): None,
     ('MPQ5072GG-AEC1', 'QFN-12_MP5073_MNP'): None,
-    ('DAC5311IDCK', 'SOT-363_SC-70-6'): None,
+    ('DAC5311IDCK', 'DCK6'): None,
+    ('M0L1228QRGERQ1', 'VQFN24_4P1X4P1_TEX'): None,
+    ('G125-MH11005L1P', 'G125-MH11005L1P'): None,
     ('', ''): None,
 }
 
