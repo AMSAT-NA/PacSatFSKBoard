@@ -14,6 +14,7 @@ infn = None
 outfn = None
 do_stage2_xlat = False
 use_murata = False
+value_in_comment = False
 
 unknown_components = []
 
@@ -26,6 +27,8 @@ for i in sys.argv[1:]:
             do_stage2_xlat = True
         elif i == '-murata':
             use_murata = True
+        elif i == '-value-in-comment':
+            value_in_comment = True
         else:
             sys.stderr.write("Unknown flag: " + i)
             sys.exit(1)
@@ -322,7 +325,7 @@ other_components = {
     ('MCP1799T-3302HTT', 'SOT-23'): None,
     ('QPC8010QTR7', 'QFN50P200X200X60-13N-D'): None,
     ('MPQ5072GG-AEC1', 'QFN-12_MP5073_MNP'): None,
-    ('DAC5311IDCK', 'DCK6'): None,
+    ('DAC5311IDCKRQ1', 'DCK6'): None,
     ('M0L1228QRGERQ1', 'VQFN24_4P1X4P1_TEX'): None,
     ('G125-MH11005L1P', 'G125-MH11005L1P'): None,
     ('', ''): None,
@@ -331,14 +334,23 @@ other_components = {
 def xlat_value_to_partnum(s, footprint):
     v = (s, footprint)
     if use_murata and v in value_to_partnum_xlats_1b:
-        return value_to_partnum_xlats_1b[v]
-    if v in value_to_partnum_xlats_1:
-        return value_to_partnum_xlats_1[v]
-    if do_stage2_xlat and v in value_to_partnum_xlats_2:
-        return value_to_partnum_xlats_2[v]
-    if v not in value_to_partnum_xlats_2 and v not in other_components:
-        unknown_components.append(s + "; " + footprint)
-    return ('', s)
+        v = value_to_partnum_xlats_1b[v]
+    elif v in value_to_partnum_xlats_1:
+        v = value_to_partnum_xlats_1[v]
+    elif do_stage2_xlat and v in value_to_partnum_xlats_2:
+        v = value_to_partnum_xlats_2[v]
+    else:
+        if v not in other_components:
+            unknown_components.append("('" + s + "', '" + footprint + "'): ('', '')")
+            pass
+        v = ('', s)
+        pass
+    v = [v[0], v[1]]
+    if value_in_comment:
+        v[1] = v[1] + " " + s
+        pass
+    v[1] = v[1].replace(' ', ',')
+    return v
 
 if do_xls:
     # Output in Excel format
@@ -362,11 +374,11 @@ if do_xls:
         designator = line[1]
         footprint = xlat_footprint(line[2]).strip('"')
         (mfg, partnum) = xlat_value_to_partnum(line[4], footprint)
-        partnum = partnum.replace(' ', ',')
         ws.cell(lineno, 1, partnum)
         ws.cell(lineno, 2, designator)
         ws.cell(lineno, 3, footprint)
         ws.cell(lineno, 4, line[4])
+        ws.cell(lineno, 5, mfg)
         pass
 
     wb.save(outfn)
@@ -388,7 +400,6 @@ else:
         designator = line[1]
         footprint = xlat_footprint(line[2]).strip('"')
         (mfg, partnum) = xlat_value_to_partnum(line[4], footprint)
-        partnum = partnum.replace(' ', ',')
         #comment = comment.replace('Ω', 'ohm')
         ocf.writerow((partnum, designator, footprint, line[4], mfg))
         pass
