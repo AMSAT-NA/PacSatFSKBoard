@@ -9,7 +9,7 @@ Revision: 0.2
 | Revision | Date         | Author(s)         | Change Log |
 |--------- |------------- |--------------	  |----------- |
 | 0.1      | 2024-10-10   | C Minyard (AE5KM) | Initial Revision|
-| 0.2      | 2026-03-10   | C Minyard (AE5KM) | Rework for Version 3|
+| 0.2      | 2026-03-13   | C Minyard (AE5KM) | Rework for Version 3|
 
 # Introduction
 
@@ -370,13 +370,17 @@ high on the board, so it does not have to be driven.  This is part of
 the dual-board controls, but in a simplex situation it can be used to
 externally control power on the board.
 
-### VBATT
+If 3.3V is not supplied from the PC104 connector, then U4, R119, and
+R120 must be installed, and you should generally remove the 3.3V
+resistors to the PC104.
 
-Though not used for power, the VBATT\_p lines are run onto the board
+### VBAT
+
+Though not used for power, the VBAT\_p lines are run onto the board
 and through a resistor divider so the CPU can monitor the voltage on
 the battery bus on the power supply.  R126 must be populated to do
 this.  This is run through a 19:1 resistor divider, so 52V on the
-input should result in around 2.7V into the VBATT CPU ADC, and should
+input should result in around 2.7V into the VBAT CPU ADC, and should
 be safe up to 62V.
 
 ### Umbilical Attachment
@@ -467,15 +471,20 @@ Two ADC inputs can be used to measure analog values.
 
 The pins are:
 
-  - EXT\_GPIO1 - This pin can cause an interrupt to the CPU.  The rest
-    of the pins cannot cause interrupts.
+  - PC104\_GPIO[1,4] - These pin can cause an interrupt to the CPU.  The
+    rest of the pins cannot cause interrupts.
 	
-  - EXT\_GPIO[2-4] - General purpose I/O lines.
+  - PC104\_GPIO[2-3] - General purpose I/O lines.
   
-  - EXT\_ADC[1-2] - Analog to Digital controller inputs.
+  - PC104\_ADC[1-2] - Analog to Digital controller inputs.
   
 The board does not have a dedicated safe mode input or output, but one
 of the GPIO pins can be assigned to that function.
+
+In addition, four GPIOs run from the antenna controller to the PC104
+connector.  These are PC104\_GPIO[5-8].  These can be used as a UART
+or a number of other functions.  Their disconnect resistors are not
+installed by default.
 
 ### Dual Board Controls
 
@@ -526,17 +535,25 @@ PC104\_I2C\_SDA - Remove U32
 
 PC104\_I2C\_SCL - Remove U38
 
-EXT\_ADC1 - Remove R141
+PC104\_ADC1 - Remove R141
 
-EXT\_ADC2 - Remove R143
+PC104\_ADC2 - Remove R143
 
-EXT\_GPIO1 - Remove R142
+PC104\_GPIO1 - Remove R142
 
-EXT\_GPIO2 - Remove R149
+PC104\_GPIO2 - Remove R149
 
-EXT\_GPIO3 - Remove R148
+PC104\_GPIO3 - Remove R148
 
-EXT\_GPIO4 - Remove R150
+PC104\_GPIO4 - Remove R150
+
+PC104\_GPIO5 - Remove R161
+
+PC104\_GPIO6 - Remove R158
+
+PC104\_GPIO7 - Remove R160
+
+PC104\_GPIO8 - Remove R159
 
 PC104\_TX2 - Remove U39
 
@@ -544,9 +561,11 @@ PC104\_RX2 - Remove U40
 
 PC104\_UMBILICAL0\_N - Remove R125
 
-PC104_UMBILICAL1\_N - Remove R134
+PC104\_UMBILICAL1\_N - Remove R134
 
-PC104_UNBILICAL2\_N - Remove U41
+PC104\_UNBILICAL2\_N - Remove U41
+
+VBAT\_p - Remove R126
 
 ## RF Connections
 

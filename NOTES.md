@@ -2607,3 +2607,7 @@ Add a way to wire the third antenna controller I2C to the PC104 I2C
 bus and disconnect the processor from that.  This way, if there are
 problems sharing that bus with the RTC, we can use the antenna
 controller I2C instead.
+
+Add a few GPIO lines from the antenna controller to the PC104, just
+for good measure.  These are both UART lines, but can be used for a
+lot of other things.

@@ -341,7 +341,7 @@ used as a GPIO.
 |68		|VSSAD					|						|  | |
 |69		|VCCAD					|						|  | |
 |70		|AD1IN[09] / AD2IN[09]	|						|  |Thermsistor by the oscillator |
-|71		|AD1IN[01]				|VBATT					|  |Voltage from the battery rail divided by 18 |
+|71		|AD1IN[01]				|VBAT					|  |Voltage from the battery rail divided by 19 |
 |72		|AD1IN[10] / AD2IN[10]	|PWR\_FLAG\_5VAL		|  |Power flag from the +5VAL current limiter |
 ||||||
 |73		|AD1IN[02]				|REV\_PWR				|  |\*Reverse RF TX Power |

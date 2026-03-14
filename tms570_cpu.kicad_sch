@@ -8995,7 +8995,7 @@
 			)
 		)
 	)
-	(global_label "VBATT"
+	(global_label "VBAT"
 		(shape input)
 		(at 288.29 96.52 0)
 		(fields_autoplaced yes)
