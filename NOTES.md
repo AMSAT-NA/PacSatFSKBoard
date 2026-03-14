@@ -2610,4 +2610,5 @@ controller I2C instead.
 
 Add a few GPIO lines from the antenna controller to the PC104, just
 for good measure.  These are both UART lines, but can be used for a
-lot of other things.
+lot of other things.  Stick some DNP resistors on the final antenna
+controller GPIO lines to make them easily available.
