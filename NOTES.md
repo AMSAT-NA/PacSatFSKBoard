@@ -9,6 +9,19 @@ some point.
 
 # TODO
 
+Thermal analysis - I don't have the skills to do thermal analysis.
+The version 2 design is definitely insufficient.  I have improved the
+thermal handling in the board itself.  I also did a heat spreader/sink
+design, but I have no idea if it's necessary or sufficient.
+
+Shake and bake - I also have no experience in this sort of thing.  I
+don't have a huge concern, except for perhaps the RF splitter on the
+receiver, but I would like someone with experience to look it over.
+
+I'd really like to be 100% sure I have the PC104 pins correctly placed
+and the holes and slots all in the right place.  I've done the best I
+can, but I'm not sure. 
+
 Switch to a TMS570LS2134 CPU.  This has double the FLASH and RAM and
 has the same pinout as the TMS570LS0914.
 
@@ -2612,3 +2625,14 @@ Add a few GPIO lines from the antenna controller to the PC104, just
 for good measure.  These are both UART lines, but can be used for a
 lot of other things.  Stick some DNP resistors on the final antenna
 controller GPIO lines to make them easily available.
+
+## 2026-03-15
+
+Re-verified the board dimensions.  The slot at the bottom of the board
+was .01mm too high.  It wouldn't have mattered, but I fixed it anyway.
+I also locked all the edge cuts, the PC104 connector, and the holes.
+
+Verified that in KiCad, the board edge is in the *middle* of the edge
+cut line, per
+https://forum.kicad.info/t/how-to-define-the-board-outline-pcb-edge/32166.
+Important detail.
