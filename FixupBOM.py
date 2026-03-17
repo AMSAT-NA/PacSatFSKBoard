@@ -332,15 +332,15 @@ other_components = {
 }
 
 def xlat_value_to_partnum(s, footprint):
-    v = (s, footprint)
-    if use_murata and v in value_to_partnum_xlats_1b:
-        v = value_to_partnum_xlats_1b[v]
-    elif v in value_to_partnum_xlats_1:
-        v = value_to_partnum_xlats_1[v]
-    elif do_stage2_xlat and v in value_to_partnum_xlats_2:
-        v = value_to_partnum_xlats_2[v]
+    pf = (s, footprint)
+    if use_murata and pf in value_to_partnum_xlats_1b:
+        v = value_to_partnum_xlats_1b[pf]
+    elif pf in value_to_partnum_xlats_1:
+        v = value_to_partnum_xlats_1[pf]
+    elif do_stage2_xlat and pf in value_to_partnum_xlats_2:
+        v = value_to_partnum_xlats_2[pf]
     else:
-        if v not in other_components:
+        if pf not in other_components:
             unknown_components.append("('" + s + "', '" + footprint + "'): ('', '')")
             pass
         v = ('', s)

@@ -9,6 +9,9 @@ some point.
 
 # TODO
 
+Are the vertical MMCX connectors ok, or do they need to be right
+angle?
+
 Thermal analysis - I don't have the skills to do thermal analysis.
 The version 2 design is definitely insufficient.  I have improved the
 thermal handling in the board itself.  I also did a heat spreader/sink
@@ -20,19 +23,17 @@ receiver, but I would like someone with experience to look it over.
 
 I'd really like to be 100% sure I have the PC104 pins correctly placed
 and the holes and slots all in the right place.  I've done the best I
-can, but I'm not sure. 
+can, but I'm not sure.  They seem to match the power supply
+configuration information I have, but the CSK PCB specifications show
+two different H1/H2 configurations on slot 0 and slot 1. is at
+https://www.pumpkinspace.com/supporting-documents.html looking at the
+PDF file.  Slot 0 shows H1 on the bottom and H2 on top.  Slot 1 shows
+H1 on top and H2 on the bottom.  They can't both be right.  The power
+supply board shows H1 on the bottom and H2 on top, but it's not 100%
+clear.
 
 Switch to a TMS570LS2134 CPU.  This has double the FLASH and RAM and
 has the same pinout as the TMS570LS0914.
-
-I'm still not 100% sure the H1/H2 connectors are correct.  They seem
-to match the power supply configuration I have, but the CSK PCB
-specifications show two different H1/H2 configurations on slot 0 and
-slot 1. is at https://www.pumpkinspace.com/supporting-documents.html
-looking at the PDF file.  Slot 0 shows H1 on the bottom and H2 on top.
-Slot 1 shows H1 on top and H2 on the bottom.  They can't both be
-right.  The power supply board shows H1 on the bottom and H2 on top,
-but it's not 100% clear.
 
 Go through all the pins on the CPU and remove any unnecessary pull ups
 and pull downs in the HCG software to save some power.
