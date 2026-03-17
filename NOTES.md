@@ -9,9 +9,6 @@ some point.
 
 # TODO
 
-Are the vertical MMCX connectors ok, or do they need to be right
-angle?
-
 Thermal analysis - I don't have the skills to do thermal analysis.
 The version 2 design is definitely insufficient.  I have improved the
 thermal handling in the board itself.  I also did a heat spreader/sink
@@ -805,7 +802,10 @@ the system, too.
 The antenna controller interface chips doesn't have an interrupt line
 back to the main processor.  That could be useful, but it will be hard
 to add with the limited GPIO lines that can do interrupts.
-<
+
+Are the vertical MMCX connectors ok, or do they need to be right
+angle?  Yes, they do, change done.
+
 # Not going to do
 
 Rotate the CPU so that fewer traces need to be routed under the CPU.
@@ -2637,3 +2637,13 @@ Verified that in KiCad, the board edge is in the *middle* of the edge
 cut line, per
 https://forum.kicad.info/t/how-to-define-the-board-outline-pcb-edge/32166.
 Important detail.
+
+## 2026-03-17
+
+In a meeting it came up that the thermsistors needs to be looked at
+from a current point of view.  The maximum permissible current on the
+device is .31ma.  The lowest resistance is 534 ohms at 125C and the
+highest is 188.4K at -40C.  The companion resistor in the divider is
+10K, at 3.3V that gives .17V at the minimum and 3.13V at the maximum.
+At the lowest resistance we have 10.534K, giving .31mA.  Maybe I
+designed it that way, I don't remember.

@@ -304,7 +304,7 @@ other_components = {
     ('MAX4995AAUT+T', 'SOT-23-6_Handsoldering'): None,
     ('TQP7M9106', 'QFN24_TQP7M9104_QOR'): None,
     ('CONUFL001-SMD-T', 'CONN1_CONUFL_TEC'): None,
-    ('MMCX-J-P-H-ST-TH1', 'COAX4_MMCX-J-P-H-ST-TH1_SAI'): None,
+    ('MMCX-J-P-H-RA-TH1', 'COAX4_MMCX-J-P-H-RA-TH1_SAI'): None,
     ('2118718-2', 'TE_2118718-2'): None,
     ('TSW-103-08-F-S-RA', 'CON3_1X3_TR_TSW_SAI'): None,
     ('HTSW-102-07-G-S', 'CON2_1X2_TU_TSW'): None,

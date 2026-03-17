@@ -430,7 +430,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PACSAT_DEV_misc:MMCX-J-P-H-ST-TH1"
+		(symbol "PACSAT_DEV_misc:MMCX-J-P-H-RA-TH1"
 			(pin_names
 				(offset 0.254)
 			)
@@ -445,7 +445,7 @@
 					)
 				)
 			)
-			(property "Value" "MMCX-J-P-H-ST-TH1"
+			(property "Value" "MMCX-J-P-H-RA-TH1"
 				(at 6.858 -14.732 0)
 				(effects
 					(font
@@ -453,7 +453,7 @@
 					)
 				)
 			)
-			(property "Footprint" "PacSatDev_misc:COAX4_MMCX-J-P-H-ST-TH1_SAI"
+			(property "Footprint" "PacSatDev_misc:COAX4_MMCX-J-P-H-RA-TH1_SAI"
 				(at 0 0 0)
 				(effects
 					(font
@@ -463,7 +463,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "MMCX-J-P-H-ST-TH1"
+			(property "Datasheet" "MMCX-J-P-H-RA-TH1"
 				(at 0 0 0)
 				(effects
 					(font
@@ -482,7 +482,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "MMCX-J-P-H-ST-TH1"
+			(property "ki_keywords" "MMCX-J-P-H-RA-TH1"
 				(at 0 0 0)
 				(effects
 					(font
@@ -500,7 +500,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "MMCX-J-P-H-ST-TH1_1_1"
+			(symbol "MMCX-J-P-H-RA-TH1_1_1"
 				(polyline
 					(pts
 						(xy 5.08 2.54) (xy 5.08 -12.7)
@@ -876,7 +876,7 @@
 					)
 				)
 			)
-			(symbol "MMCX-J-P-H-ST-TH1_1_2"
+			(symbol "MMCX-J-P-H-RA-TH1_1_2"
 				(polyline
 					(pts
 						(xy 5.08 2.54) (xy 5.08 -12.7)
@@ -2519,11 +2519,11 @@
 		)
 	)
 	(symbol
-		(lib_id "PACSAT_DEV_misc:MMCX-J-P-H-ST-TH1")
+		(lib_id "PACSAT_DEV_misc:MMCX-J-P-H-RA-TH1")
 		(at 133.35 109.22 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(dnp yes)
 		(uuid "c47bb0b3-1458-4d33-a42a-9bb67c65aab5")
@@ -2536,7 +2536,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "MMCX-J-P-H-ST-TH1"
+		(property "Value" "MMCX-J-P-H-RA-TH1"
 			(at 133.35 109.22 0)
 			(effects
 				(font
@@ -2545,7 +2545,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "PacSatDev_misc:COAX4_MMCX-J-P-H-ST-TH1_SAI"
+		(property "Footprint" "PacSatDev_misc:COAX4_MMCX-J-P-H-RA-TH1_SAI"
 			(at 133.35 109.22 0)
 			(effects
 				(font
@@ -2555,7 +2555,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "MMCX-J-P-H-ST-TH1"
+		(property "Datasheet" "MMCX-J-P-H-RA-TH1"
 			(at 133.35 109.22 0)
 			(effects
 				(font
