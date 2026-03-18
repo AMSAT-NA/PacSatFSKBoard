@@ -5276,16 +5276,8 @@
 		(uuid "695902df-c8f4-4b75-8e67-77b62550cd85")
 	)
 	(no_connect
-		(at 247.65 52.07)
-		(uuid "c00b9dde-7172-4e68-ad44-50dffc638bda")
-	)
-	(no_connect
 		(at 217.17 204.47)
 		(uuid "cf5ce3db-dea8-41e3-b08f-4b66074efb90")
-	)
-	(no_connect
-		(at 240.03 48.26)
-		(uuid "d743fae4-e60d-479a-ba90-219c1d40f2ed")
 	)
 	(wire
 		(pts
@@ -6669,7 +6661,7 @@
 	)
 	(wire
 		(pts
-			(xy 247.65 59.69) (xy 247.65 72.39)
+			(xy 247.65 68.58) (xy 247.65 72.39)
 		)
 		(stroke
 			(width 0)
@@ -7699,7 +7691,7 @@
 	)
 	(wire
 		(pts
-			(xy 240.03 55.88) (xy 240.03 72.39)
+			(xy 240.03 68.58) (xy 240.03 72.39)
 		)
 		(stroke
 			(width 0)
@@ -9633,6 +9625,28 @@
 			)
 		)
 	)
+	(global_label "PC104_ADC3"
+		(shape input)
+		(at 240.03 68.58 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left)
+		)
+		(uuid "57b939da-4bb7-4245-ac0a-82bd6e630ab6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 240.03 51.4142 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "OTHER_ACTIVE"
 		(shape input)
 		(at 209.55 233.68 270)
@@ -9651,6 +9665,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PC104_ADC4"
+		(shape input)
+		(at 247.65 68.58 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left)
+		)
+		(uuid "5e7d0e4e-8b2e-4f11-a09f-1c469238c336")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 247.65 51.4142 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -15057,142 +15093,6 @@
 			(project "PacSat_Dev_RevD_240614"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
 					(reference "#PWR043")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 240.03 52.07 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(uuid "4f19a527-33a1-479c-9d25-e8ed2ed62c0e")
-		(property "Reference" "R145"
-			(at 237.998 53.848 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0Ω"
-			(at 241.046 57.658 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 238.252 52.07 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 240.03 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 240.03 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f0c75cfb-2c94-4b57-8435-11a5131de1bf")
-		)
-		(pin "2"
-			(uuid "3bcf1d1d-9ea7-4739-ad91-89f47a36b904")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
-					(reference "R145")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 247.65 55.88 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(uuid "50719d11-e40f-4396-b6ae-ed12c92ffcae")
-		(property "Reference" "R146"
-			(at 246.888 52.578 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0Ω"
-			(at 246.634 61.722 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 245.872 55.88 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 247.65 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 247.65 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "5a29c019-3893-4e5f-8cf4-43a0027e1629")
-		)
-		(pin "2"
-			(uuid "ad3c0bd3-db20-4ef4-947f-c2eca6c3368e")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
-					(reference "R146")
 					(unit 1)
 				)
 			)

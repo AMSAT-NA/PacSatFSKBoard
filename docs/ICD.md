@@ -476,15 +476,20 @@ The pins are:
 	
   - PC104\_GPIO[2-3] - General purpose I/O lines.
   
-  - PC104\_ADC[1-2] - Analog to Digital controller inputs.
+  - PC104\_ADC[1-4] - Analog to Digital controller inputs.
   
 The board does not have a dedicated safe mode input or output, but one
 of the GPIO pins can be assigned to that function.
 
 In addition, four GPIOs run from the antenna controller to the PC104
-connector.  These are PC104\_GPIO[5-8].  These can be used as a UART
-or a number of other functions.  Their disconnect resistors are not
-installed by default.
+connector.  These are
+
+  - PC104\_GPIO[5-6] - GPIO or UART RX/TX
+  
+  - PC104\_GPIO[7-8] - GPIO or UART RX/TX or ADC.
+
+See the schematics for the antenna controller for details on how these
+are wired.
 
 ### Dual Board Controls
 
