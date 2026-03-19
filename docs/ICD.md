@@ -453,8 +453,8 @@ pins are:
 
   - PC104\_I2C\_SDA, PC104\_I2C\_SCL
   
-That same I2C bus is wired I2C0 of the antenna control processor, too,
-through two DNP resistors, R156 and R157.  There is some question
+That same I2C bus is wired to I2C0 of the antenna control processor,
+too, through two DNP resistors, R156 and R157.  There is some question
 whether sharing the RTC on the I2C bus like this will work.  If it
 doesn't, U32 and U38 can be removed and R156 and R157 installed to
 hook the antenna control processor to the I2C.  Pull ups (0603) can be
@@ -467,7 +467,7 @@ processor for I2C, but it's do-able.
 Four GPIOs rum from the CPU to the PC104 connectors.  They can all be
 either inputs or outputs; they are tristate by default.
 
-Two ADC inputs can be used to measure analog values.
+Four ADC inputs can be used to measure analog values.
 
 The pins are:
 

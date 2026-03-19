@@ -2647,3 +2647,10 @@ highest is 188.4K at -40C.  The companion resistor in the divider is
 10K, at 3.3V that gives .17V at the minimum and 3.13V at the maximum.
 At the lowest resistance we have 10.534K, giving .31mA.  Maybe I
 designed it that way, I don't remember.
+
+Change the MMCX connectors to right-angle ones to avoid conflicting
+with the board above this.
+
+Wired the last two ADC pins from the TMS570 to the PC104, so 4 ADC
+lines are available there.  As well, 2 ADC capable lines come from the
+antenna control interface.

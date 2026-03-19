@@ -349,11 +349,11 @@ used as a GPIO.
 |75		|AD1IN[11] / AD2IN[11]	|PWR\_FLAG\_LNA			|  |Power flag from the LNA current limiter |
 |76		|AD1IN[04]				|PWR\_FLAG\_SSPA		|  |Power flag from the PA current limiter |
 |77		|AD1IN[12] / AD2IN[12]	|						|  |+5V power measure, linear from 0-2.5V |
-|78		|AD1IN[05]				|						|  |free adc (run to DNP R146) |
+|78		|AD1IN[05]				|						|  |ADC to PC104 H1-10|
 |79		|AD1IN[13] / AD2IN[13]	|						|  |+1.2V power measure, 0-1.2V |
 |80		|AD1IN[06]				|						|  |+3.3V power measure, 0-1.65V |
-|81		|AD1IN[22] / AD2IN[06]	|						|  |free adc (run to DNP R145) |
-|82		|AD1IN[14] / AD2IN[14]	|						|  | Board version number bit 2 |
+|81		|AD1IN[22] / AD2IN[06]	|						|  |ADC to PC104 H1-09|
+|82		|AD1IN[14] / AD2IN[14]	|						|  |Board version number bit 2 |
 |83		|AD1IN[08] / AD2IN[08]	|\*POWER\_TEMP			|  |Thermsistor in power conversion section |
 |84		|AD1IN[23] / AD2IN[07]	|\*PA\_TEMP				|  |Thermsistor near the PA |
 |85		|AD1IN[15] / AD2IN[15]	|						|  |Board version number bit 3 |
