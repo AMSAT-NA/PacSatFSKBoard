@@ -1644,7 +1644,7 @@
 	)
 	(text "Pull down so defalts to PA PWR off."
 		(exclude_from_sim no)
-		(at 254 127 0)
+		(at 197.612 142.494 0)
 		(effects
 			(font
 				(size 1.524 1.524)
