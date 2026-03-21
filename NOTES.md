@@ -2654,3 +2654,13 @@ with the board above this.
 Wired the last two ADC pins from the TMS570 to the PC104, so 4 ADC
 lines are available there.  As well, 2 ADC capable lines come from the
 antenna control interface.
+
+Change board version resistors to version 3.
+
+## 2026-03-20
+
+Ground via clean up, make them neat and add more for better cooling
+for the ax5043s and the LNA.
+
+Run another pin to the antenna control connector (to pin 10).  Just
+for good measure.

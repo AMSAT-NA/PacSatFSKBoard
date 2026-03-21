@@ -265,10 +265,11 @@ inactive.
 
 ### Antenna Control
 
-A small microprocessor sits on a SPI bus connected to the main CPU
-that does antenna control.  It has two I2C busses that come out of J7,
-along with power and ground.  The power for the external antenna board
-is powered from 3.3V_p and may be turned on and off.
+A small microprocessor, the antenna control processor (ACP), sits on a
+SPI bus connected to the main CPU that does antenna control.  It has
+two I2C busses that come out of J7, along with power and ground.  The
+power for the external antenna board is powered from 3.3V_p and may be
+turned on and off.
 
 The antenna connector is a Harwin G125-MH11005L1P 10-pin connector, a
 1.25mm maile pitch latch connector.  It would mate with a
@@ -280,7 +281,7 @@ It is possible to not use the connector and instead just solder wires
 directly to the PCB.  In that case, two holes are provided to allow
 a 2.4mm Tefzel ETFE zip tie to provide strain relief for the wires.
 
-The I2C pullup is done in the processor, but this can be disabled in
+The I2C pullup is done in the ACP, but this can be disabled in
 software if the termination if the other end pulls up the signal.  In
 addition, DNP resistors (R147, R151, R152, and R152) are in place to
 add terminations if the internal pullups are insufficient.  See
@@ -291,23 +292,23 @@ Pinout is:
 
 * 1 - +3.3V to the antenna controller
 
-* 2 - I2CA SDA
+* 2 - I2CA SDA (ACP pin 12)
 
 * 3 - Ground
 
-* 4 - I2CB SDA
+* 4 - I2CB SDA (ACP pin 20)
 
 * 5 - Ground
 
 * 6 - +3.3V to the antenna controller
 
-* 7 - I2CA SCL
+* 7 - I2CA SCL (ACP pin 13)
 
-* 8 - I2CB SCL
+* 8 - I2CB SCL (ACP pin 19)
 
 * 9 - Ground
 
-* 10 - Ground
+* 10 - Unused, add R162 to connect to ACP pin 11.
 
 # System Interfaces Description
 
