@@ -2664,3 +2664,19 @@ for the ax5043s and the LNA.
 
 Run another pin to the antenna control connector (to pin 10).  Just
 for good measure.
+
+## 2026-03-20
+
+Change PC104 connectors to ESQ-126-38-G-D.  The ones that were there
+(ESQ-126-39-G-D) left around 3mm of exposed pin and 15.24mm between
+the boards.  The new ones will leave no exposed pin and the connector
+will go right to the board.  The connector is 11.05mm tall, it looks
+like the spacers will need to be 11.11mm (.438") which are fairly
+common.
+
+Move the 3.3V power to the antenna controller to 3.3V\_IN from
+3.3V\_p.  This will allow it to be powered from various sources, not
+just 3.3V\_p.
+
+Move the PC104\_UMBILICAL2\_N driver power to +5V.  Since it's open
+drain the drive power doesn't matter and +5V is easier to deal with.

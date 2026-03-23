@@ -2437,7 +2437,7 @@
 		(uuid "3d72c8dc-9ee3-4b46-871e-43a08bc447e0")
 	)
 	(junction
-		(at 181.61 167.64)
+		(at 181.61 166.37)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "699bec02-75c4-4a34-bd4b-786ce6a867a5")
@@ -2830,7 +2830,7 @@
 	)
 	(wire
 		(pts
-			(xy 157.48 167.64) (xy 170.18 167.64)
+			(xy 157.48 166.37) (xy 170.18 166.37)
 		)
 		(stroke
 			(width 0)
@@ -3140,7 +3140,7 @@
 	)
 	(wire
 		(pts
-			(xy 181.61 167.64) (xy 181.61 172.72)
+			(xy 181.61 166.37) (xy 181.61 172.72)
 		)
 		(stroke
 			(width 0)
@@ -3600,7 +3600,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 167.64) (xy 181.61 167.64)
+			(xy 177.8 166.37) (xy 181.61 166.37)
 		)
 		(stroke
 			(width 0)
@@ -4070,7 +4070,7 @@
 	)
 	(wire
 		(pts
-			(xy 181.61 167.64) (xy 181.61 160.02)
+			(xy 181.61 166.37) (xy 181.61 160.02)
 		)
 		(stroke
 			(width 0)
@@ -4117,6 +4117,16 @@
 			(justify left bottom)
 		)
 		(uuid "3c66277e-c704-46db-a0fc-e8803e1daa31")
+	)
+	(label "3.3V_p"
+		(at 157.48 166.37 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "42acfc65-919a-43ac-873f-21d2f497e596")
 	)
 	(label "PC104_TX2"
 		(at 271.78 121.92 0)
@@ -4218,6 +4228,16 @@
 		)
 		(uuid "a6313226-89e8-4023-8b4f-17e6228d5203")
 	)
+	(label "3.3V_p"
+		(at 312.42 129.54 180)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right bottom)
+		)
+		(uuid "c462a827-1846-4f1d-a48b-6dac7c7058ad")
+	)
 	(label "5V_S1"
 		(at 124.46 154.94 0)
 		(effects
@@ -4237,6 +4257,16 @@
 			(justify right bottom)
 		)
 		(uuid "ca7ca39e-ac3d-4499-abf1-f3780de4974d")
+	)
+	(label "3.3V_p"
+		(at 273.05 129.54 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "fa5da635-83a4-4166-8737-372b670036ab")
 	)
 	(global_label "PC104_GPIO3"
 		(shape input)
@@ -4986,50 +5016,6 @@
 			)
 		)
 	)
-	(global_label "3.3V_p"
-		(shape input)
-		(at 312.42 129.54 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left)
-		)
-		(uuid "c0e9c583-b36e-46c9-b840-82e690467c5c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 322.6916 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "3.3V_p"
-		(shape input)
-		(at 273.05 129.54 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify right)
-		)
-		(uuid "c6e09df0-67bf-414f-b8e6-09180f45d0c9")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 262.7784 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "PC104_RX"
 		(shape input)
 		(at 396.24 121.92 0)
@@ -5065,28 +5051,6 @@
 		(uuid "cfe89daf-4913-445c-8438-4213a13ee0ec")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 91.2921 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "3.3V_p"
-		(shape input)
-		(at 157.48 167.64 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify right)
-		)
-		(uuid "d751a047-ffbd-40d8-973b-19c51086a759")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 147.2084 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5408,7 +5372,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 173.99 167.64 90)
+		(at 173.99 166.37 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5416,7 +5380,7 @@
 		(dnp no)
 		(uuid "18b6bb9a-f6af-4f80-86ec-fdd67f31cd79")
 		(property "Reference" "R111"
-			(at 178.816 166.37 90)
+			(at 178.816 165.1 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5424,7 +5388,7 @@
 			)
 		)
 		(property "Value" "0Ω"
-			(at 170.18 166.37 90)
+			(at 170.18 165.1 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5432,7 +5396,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 173.99 169.418 90)
+			(at 173.99 168.148 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5441,7 +5405,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 173.99 167.64 0)
+			(at 173.99 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5450,7 +5414,7 @@
 			)
 		)
 		(property "Description" "Resistor"
-			(at 173.99 167.64 0)
+			(at 173.99 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)

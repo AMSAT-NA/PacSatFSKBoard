@@ -3256,6 +3256,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 97.79) (xy 50.8 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "30449f80-6d2b-4a3d-9543-7d18147c75c9")
+	)
+	(wire
+		(pts
 			(xy 161.29 166.37) (xy 165.1 166.37)
 		)
 		(stroke
@@ -3964,16 +3974,6 @@
 		)
 		(uuid "c02241da-24e4-49d0-b7ba-b301a9a84329")
 	)
-	(wire
-		(pts
-			(xy 55.88 101.6) (xy 62.23 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c131ed2e-b1d7-4636-ac08-aa49f8cc5802")
-	)
 	(polyline
 		(pts
 			(xy 167.64 208.28) (xy 167.64 262.89)
@@ -3983,6 +3983,16 @@
 			(type default)
 		)
 		(uuid "c3b1e50b-4880-4324-8c5f-f7747b4bf3b9")
+	)
+	(wire
+		(pts
+			(xy 50.8 101.6) (xy 62.23 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c45cc93d-63db-4bf5-bd0e-2699ba299867")
 	)
 	(wire
 		(pts
@@ -4659,28 +4669,6 @@
 		(uuid "7d33f0ab-4224-4f46-a302-dfa4d82a531f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 14.179 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "3.3V_p"
-		(shape input)
-		(at 55.88 101.6 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify right)
-		)
-		(uuid "afcc7426-b1ca-49e7-b053-e812180132e6")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 45.6084 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7828,6 +7816,71 @@
 			(project ""
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/00000000-0000-0000-0000-00005a0ea76a"
 					(reference "U41")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 50.8 97.79 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "afcb1906-1cf8-4603-a304-1f09acb1bdfa")
+		(property "Reference" "#PWR0329"
+			(at 50.8 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 50.8 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 50.8 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 50.8 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "284e25ce-73e6-4bd3-88d8-b7497fcc2dfc")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/00000000-0000-0000-0000-00005a0ea76a"
+					(reference "#PWR0329")
 					(unit 1)
 				)
 			)
