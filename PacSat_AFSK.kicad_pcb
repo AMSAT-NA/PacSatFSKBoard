@@ -125402,6 +125402,14 @@
 		(uuid "317a1fbd-3bcd-4aad-b01e-f96fa6dab9f1")
 	)
 	(segment
+		(start 78.3539 -28.2439)
+		(end 80.2039 -28.2439)
+		(width 0.381)
+		(layer "F.Cu")
+		(net 1)
+		(uuid "337e4dab-bc4d-44bc-b944-cb2c9aa5ff06")
+	)
+	(segment
 		(start 53.31 -33.675)
 		(end 53.31 -34.2575)
 		(width 0.2032)
@@ -125786,6 +125794,14 @@
 		(uuid "4f56efe9-3bc9-4ae7-a2ff-fa55ad8a9f19")
 	)
 	(segment
+		(start 71.2823 -31.0877)
+		(end 70.68 -31.69)
+		(width 0.3048)
+		(layer "F.Cu")
+		(net 1)
+		(uuid "4f5967bd-47c3-4e7c-966b-34eccf1467d1")
+	)
+	(segment
 		(start 73.264602 -30.305399)
 		(end 73.282301 -30.2877)
 		(width 0.3048)
@@ -126050,6 +126066,14 @@
 		(uuid "61f9086f-6fe1-4e80-8c96-6f655d0673b7")
 	)
 	(segment
+		(start 71.2823 -30.2877)
+		(end 71.2823 -31.0877)
+		(width 0.3048)
+		(layer "F.Cu")
+		(net 1)
+		(uuid "62db8062-e68c-4788-9008-ef74386ed547")
+	)
+	(segment
 		(start 20.050001 -45.543083)
 		(end 19.65 -45.943084)
 		(width 0.2032)
@@ -126144,6 +126168,14 @@
 		(layer "F.Cu")
 		(net 1)
 		(uuid "692db5a3-b76b-42d2-b7fc-72dc53e31a2c")
+	)
+	(segment
+		(start 77.7 -27.59)
+		(end 78.3539 -28.2439)
+		(width 0.381)
+		(layer "F.Cu")
+		(net 1)
+		(uuid "698a7252-65da-4b32-9aaf-3cd75cb3a6c9")
 	)
 	(segment
 		(start 74.91 -45.82)
@@ -126584,6 +126616,14 @@
 		(layer "F.Cu")
 		(net 1)
 		(uuid "8e355b06-6e19-4151-b58e-760f291c8bae")
+	)
+	(segment
+		(start 80.2039 -28.2439)
+		(end 80.86 -28.9)
+		(width 0.381)
+		(layer "F.Cu")
+		(net 1)
+		(uuid "8f488676-8378-4745-a2d3-7beef028f815")
 	)
 	(segment
 		(start 69.32 -58.0952)
@@ -130654,6 +130694,15 @@
 		)
 		(net 1)
 		(uuid "2d360aaf-7a6d-4881-a0e7-e8f46d14d2cc")
+	)
+	(via
+		(at 78.68 -30.31)
+		(size 0.508)
+		(drill 0.3048)
+		(layers "F.Cu" "B.Cu")
+		(free yes)
+		(net 1)
+		(uuid "2e0cb53f-98f6-4a4d-92cb-5e03f11fe0c2")
 	)
 	(via
 		(at 49.95 -12.43)
@@ -136495,6 +136544,15 @@
 		)
 		(net 1)
 		(uuid "93723047-5bd5-4c7e-990e-086fe353b182")
+	)
+	(via
+		(at 80.23 -27.78)
+		(size 0.508)
+		(drill 0.3048)
+		(layers "F.Cu" "B.Cu")
+		(free yes)
+		(net 1)
+		(uuid "93773db8-2bc3-4811-9cfd-df3b2ca6d2a7")
 	)
 	(via
 		(at 73.25625 -28.575)
