@@ -236,6 +236,8 @@ value_to_partnum_xlats_2 = {
     ('110pF 1% 30V',	'0402'): ('Murata',	'GCM1555C1H111FA16D'),
     ('',	''): ('',	    ''),
 
+    ('0uH',     '1210'): ('Panasonic',  'ERJ-14Y0R00U'),
+
     ('0',       '0402'): ('Panasonic',	'ERJ-2GE0R00X'),
     ('0Ω',	'0402'): ('Panasonic',	'ERJ-2GE0R00X'),
     ('22Ω',	'0402'): ('Panasonic',	'ERA-2AKD220X'),
@@ -310,7 +312,8 @@ other_components = {
     ('HTSW-102-07-G-S', 'CON2_1X2_TU_TSW'): None,
     ('STWD100NYWY3F', 'SOT-23-5'): None,
     ('AD4PS-1+', 'CJ725'): None,
-    ('ESQ-126-39-G-D', 'CONN_ESQ-126-39-G-D_SAI'): None,
+    #('ESQ-126-39-G-D', 'CONN_ESQ-126-39-G-D_SAI'): None,
+    ('ESQ-126-38-G-D', 'CONN_ESQ-126-39-G-D_SAI'): None,
     ('SN74AHC1G02QDCKRQ1', 'DCK5'): None,
     ('74CBTLV1G125DBVRQ1', 'DBV5'): None,
     ('TPSM828302ARDSR', 'RDS0009A-MFG'): None,
@@ -326,7 +329,7 @@ other_components = {
     ('QPC8010QTR7', 'QFN50P200X200X60-13N-D'): None,
     ('MPQ5072GG-AEC1', 'QFN-12_MP5073_MNP'): None,
     ('DAC5311IDCKRQ1', 'DCK6'): None,
-    ('M0L1228QRGERQ1', 'VQFN24_4P1X4P1_TEX'): None,
+    ('MSPM0L1228QRGERQ1', 'VQFN24_4P1X4P1_TEX'): None,
     ('G125-MH11005L1P', 'G125-MH11005L1P'): None,
     ('', ''): None,
 }
