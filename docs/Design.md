@@ -487,10 +487,10 @@ which will automatically power down the external antenna control
 board, too.  As well, the external antenna control board has an
 independent power controlled by the small processor on its pin 18.
 
-On the small processor, I2C2 is connected to I2CA on the antenna
-connector, and I2C1 is connected to I2CB on the antenna connector.
+On the small processor, I2C0 is connected to I2CA on the antenna
+connector, and I2C2 is connected to I2CB on the antenna connector.
 
-I2C0 runs to the I2C pins on the PC104, the same ones the processor
+I2C1 runs to the I2C pins on the PC104, the same ones the processor
 pins run to.  This way, if there are issues with the RTC and that I2C,
 it can be switched to this one.
 
@@ -516,9 +516,9 @@ options to add pullup resistors on these lines externally.
 |9		|PA10			|ANT\_SPI\_SOMI		|SPI SOMI from main processor
 |10		|PA11			|ANT\_SPI\_CLK		|SPI clock from the main processor
 |11		|PA15			|					|Optional line to ANT pin 10
-|12		|PA16			|PC104\_GPIO8		|ADC\_12, PC104 SPI POCI
-|13		|PA17			|PC104\_I2C\_SCL	|PC104 I2C SCL, PC104 SPI clock
-|14		|PA18			|PC104\_I2C\_SDA	|PC104 I2C SDA, PC104 SPI PICO
+|12		|PA16			|PC104\_GPIO8		|or ADC\_12, PC104 SPI POCI
+|13		|PA17			|PC104\_I2C\_SCL	|or PC104 SPI clock
+|14		|PA18			|PC104\_I2C\_SDA	|or PC104 SPI PICO
 |15		|PA19			|ANT\_JTAG\_SWDIO	|
 |16		|PA20			|ANT\_JTAG\_SWCLK	|
 |17		|PA21			|ANT\_POWER\_EN\_N	|Enable power to external antenna controller
@@ -531,7 +531,13 @@ options to add pullup resistors on these lines externally.
 |24		|PA1			|I2CA\_SDA			|ANT pin 2
 
 Note that all lines running to the PC104 go through zero-ohm resistors
-that are not populated.
+that are not populated by default.
+
+The PC104 GPIOs are arranged so that those lines can also be used as a
+SPI bus, SPI1 on the processor.  These are labeled in the description
+above with "PC104 SPI".
+
+PC104 GPIO5 and GPIO6 can also be used as a UART.
 
 ## WATCHDOG\_OUT\_N
 
