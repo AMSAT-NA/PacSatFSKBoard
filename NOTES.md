@@ -2685,3 +2685,11 @@ drain the drive power doesn't matter and +5V is easier to deal with.
 
 Add an optional inductor/capacitor to the antenna control power
 connection in case it needs current limiting.
+
+## 2026-04-08
+
+Rework the I/Os on the antenna control processor to allow it to
+provide a SPI bus on the PC104 if necessary.
+
+Move the I2C from the antenna control processor to its own pins, not
+the same one as the processor.

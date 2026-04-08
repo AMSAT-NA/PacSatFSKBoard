@@ -268,7 +268,7 @@ not known (the PC104 pins).  The second letter is U for pullup by
 default and D for pulldown by default or blank if the pin cannot be
 used as a GPIO.
 
-|Pin3	|CPU Pin Name			|Schematic Name			|G |Description |
+|Pin	|CPU Pin Name			|Schematic Name			|G |Description |
 |----	|------------			|--------------			|--|----------- |
 |1		|GIOB[3]				|OTHER\_FAULT			|ID|Fault line from other board|
 |2		|GIOA[0]				|PC104\_GPIO1			| D|PC104 pin H2-11|
@@ -487,8 +487,12 @@ which will automatically power down the external antenna control
 board, too.  As well, the external antenna control board has an
 independent power controlled by the small processor on its pin 18.
 
-On the small processor, I2C1 is connected to I2CA on the connector,
-and I2C2 is connected to I2CB on the connector.
+On the small processor, I2C2 is connected to I2CA on the antenna
+connector, and I2C1 is connected to I2CB on the antenna connector.
+
+I2C0 runs to the I2C pins on the PC104, the same ones the processor
+pins run to.  This way, if there are issues with the RTC and that I2C,
+it can be switched to this one.
 
 Power to the external antenna control board comes from 3.3V_p.  Normal
 power is very low, but it draws a lot of power when burning the
@@ -496,11 +500,38 @@ release cables, so a fairly large power line runs to it.  Make sure to
 read the antenna documentation for the exact requirements.
 
 The I2C pullup is done in the processor, but this can be disabled in
-software if the termination is on the other end.
+software if the termination is on the other end.  There are also
+options to add pullup resistors on these lines externally.
 
-This processor could be extended to add more GPIOs, another I2C
-interface, or a SPI interface for use by other things.  It has a few
-extra pins.
+|Pin	|CPU Pin Name	|Schematic Name		|Description |
+|----	|------------	|--------------		|----------- |
+|1		|PA0			|I2CA\_SCL			|ANT pin 7
+|2		|NRST			|ANT\_NRST			|Reset line for processor
+|3		|VBAT/VDD		|NRST				|
+|4		|VSS			|GND				|
+|5		|PA2			|ANT\_SPI\_CS		|SPI chip select from main processor
+|6		|PA3			|PC104\_GPIO5		|or UART1 TX
+|7		|PA4			|PC104\_GPIO6		|or UART1 RX
+|8		|PA9			|ANT\_SPI\_SIMO		|SPI SIMO from main processor
+|9		|PA10			|ANT\_SPI\_SOMI		|SPI SOMI from main processor
+|10		|PA11			|ANT\_SPI\_CLK		|SPI clock from the main processor
+|11		|PA15			|					|Optional line to ANT pin 10
+|12		|PA16			|PC104\_GPIO8		|ADC\_12, PC104 SPI POCI
+|13		|PA17			|PC104\_I2C\_SCL	|PC104 I2C SCL, PC104 SPI clock
+|14		|PA18			|PC104\_I2C\_SDA	|PC104 I2C SDA, PC104 SPI PICO
+|15		|PA19			|ANT\_JTAG\_SWDIO	|
+|16		|PA20			|ANT\_JTAG\_SWCLK	|
+|17		|PA21			|ANT\_POWER\_EN\_N	|Enable power to external antenna controller
+|18		|PA22			|ANT\_IRQ\_N		|Interrupt to main processor
+|19		|PA23			|I2CB\_SCL			|ANT pin 8
+|20		|PA24			|I2CB\_SDA			|ANT pin 4
+|21		|PA25			|					|Unused to zero ohm resistor
+|22		|PA26			|PC104\_GPIO\_7		|ADC\_1, PC104 SPI select
+|23		|VCORE			|					|
+|24		|PA1			|I2CA\_SDA			|ANT pin 2
+
+Note that all lines running to the PC104 go through zero-ohm resistors
+that are not populated.
 
 ## WATCHDOG\_OUT\_N
 

@@ -292,7 +292,7 @@ Pinout is:
 
 * 1 - +3.3V to the antenna controller
 
-* 2 - I2CA SDA (ACP pin 12)
+* 2 - I2CA SDA (ACP pin 24)
 
 * 3 - Ground
 
@@ -302,7 +302,7 @@ Pinout is:
 
 * 6 - +3.3V to the antenna controller
 
-* 7 - I2CA SCL (ACP pin 13)
+* 7 - I2CA SCL (ACP pin 1)
 
 * 8 - I2CB SCL (ACP pin 19)
 
