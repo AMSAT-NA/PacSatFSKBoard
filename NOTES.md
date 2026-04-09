@@ -2693,3 +2693,9 @@ provide a SPI bus on the PC104 if necessary.
 
 Move the I2C from the antenna control processor to its own pins, not
 the same one as the processor.
+
+## 2026-04-08
+
+Add a ferrite to the antenna control processor power and set the
+inductor for the antenna control power.  This should avoid power
+surges.
