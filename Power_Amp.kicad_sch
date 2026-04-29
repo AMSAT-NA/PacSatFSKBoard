@@ -8857,7 +8857,7 @@
 				)
 			)
 		)
-		(property "Value" "0.75pF ±.05 30V"
+		(property "Value" "0.75pF ±.1 30V"
 			(at 255.524 156.464 90)
 			(effects
 				(font

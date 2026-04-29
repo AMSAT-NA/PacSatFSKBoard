@@ -12,7 +12,6 @@ from openpyxl import Workbook
 
 infn = None
 outfn = None
-do_stage2_xlat = False
 use_murata = False
 value_in_comment = False
 
@@ -23,8 +22,6 @@ for i in sys.argv[1:]:
     if in_flags and i.startswith('-'):
         if i == '--':
             in_flags = False
-        elif i == '-2':
-            do_stage2_xlat = True
         elif i == '-murata':
             use_murata = True
         elif i == '-value-in-comment':
@@ -207,14 +204,14 @@ value_to_partnum_xlats_2 = {
     ('47uF 10V',	'1206'): ('Murata',	'GRT31CR61A476KE13L'),
     ('',	''): ('',	''),
 
-    ('0.75pF ±.05 30V',	'0402'): ('Murata',	'GCQ1555C1HR75WB01D'),
+    ('0.75pF ±.1 30V',	'0402'): ('Murata',	'GCM1555C1HR75BA16D'),
     ('1pF ±.05',  	'0402'): ('Murata',	'GCQ1555C1H1R0WB01D'),
     ('2.0pF ±.05 30V',	'0402'): ('Murata',	'GCQ1555C1H2R0WB01D'),
     ('2.2pF ±.05 30V',	'0402'): ('Murata',	'GCQ1555C1H2R2WB01D'),
     ('4.3pF 1%',	'0402'): ('Murata',	'GCQ1555C1H4R3BB01D'),
     ('5.1pF ±.1',	'0402'): ('Murata',	'GCQ1555C1H5R1BB01D'),
     ('5.4pF ±.05 30V',	'0402'): ('Murata',	'GCQ1555C1H5R4BB01D'),
-    ('5.6pF ±.1',	'0402'): ('Murata',	'GCQ1555C1H5R6BB01D'),
+    ('5.6pF ±.1',	'0402'): ('Murata',	'GCQ1555C1H5R6WB01D'),
     ('6.2pF ±.1 30V',	'0402'): ('Murata',	'GCQ1555C1H6R2BB01D'),
     ('6.4pF ±.1 30V',	'0402'): ('Murata',	'GCQ1555C1H6R4BB01D'),
     ('6.5pF ±.1',	'0402'): ('Murata',	'GCQ1555C1H6R5BB01D'),
@@ -226,10 +223,10 @@ value_to_partnum_xlats_2 = {
     ('12pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H120FB01D'),
     ('15pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H150FB01D'),
     ('18pF 1% 30V', 	'0402'): ('Murata',	'GCQ1555C1H180FB01D'),
-    ('20pF 1% 30V', 	'0402'): ('Murata',	'GCQ1555C1H200FB01D'),
+    ('20pF 1% 30V', 	'0402'): ('Murata',	'GRT1555C1H200FA02D'),
     ('22pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H220FB01D'),
     ('27pF 1% 30V', 	'0402'): ('Murata',	'GCM1555C1H270FA16D'),
-    ('36pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H360FB01D'),
+    ('36pF 1%', 	'0402'): ('Murata',	'GRT1555C1H360FA02D'),
     ('47pF 1%', 	'0402'): ('Murata',	'GCM1885C2A470FA16D'),
     ('62pF 1%', 	'0402'): ('Murata',	'GCM1555C1H620FA16D'),
     ('68pF 1%', 	'0402'): ('Murata',	'GCM1555C1H680FA16D'),
@@ -241,23 +238,23 @@ value_to_partnum_xlats_2 = {
     ('0',       '0402'): ('Panasonic',	'ERJ-2GE0R00X'),
     ('0Ω',	'0402'): ('Panasonic',	'ERJ-2GE0R00X'),
     ('22Ω',	'0402'): ('Panasonic',	'ERA-2AKD220X'),
-    ('33Ω',	'0402'): ('Panasonic',	'ERA-2AKD330X'),
+    ('33Ω',	'0402'): ('Wurth Electronik',	'560112110004'),
     ('50Ω',	'0402'): ('Panasonic',	'ERA-2AED49R9X'),
     ('61.9Ω',	'0402'): ('Panasonic',	'ERA-2AEB61R9X'),
     ('240Ω',	'0402'): ('Panasonic',	'ERA-2AED241X'),
     ('280Ω',	'0402'): ('Panasonic',	'ERA-2AEB2800X'),
     ('470Ω',	'0402'): ('Panasonic',	'ERA-2AED471X'),
     ('1KΩ',	'0402'): ('Panasonic',	'ERA-2AED102X'),
-    ('4.7KΩ',	'0402'): ('Panasonic',	'ERA-2AEB472X'),
+    ('4.7KΩ',	'0402'): ('Wurth Electronik',	'560112110018'),
     ('10KΩ',	'0402'): ('Panasonic',	'ERA-2AED103X'),
     ('18KΩ',	'0402'): ('Panasonic',	'ERA-2AED183X'),
     ('47KΩ',	'0402'): ('Panasonic',	'ERA-2AED473X'),
-    ('100KΩ',	'0402'): ('Panasonic',	'ERA-2AED104X'),
+    ('100KΩ',	'0402'): ('Wurth Electronik',	'560112110019'),
     ('1MΩ',	'0402'): ('Panasonic',	'ERJ-U02J105X'),
 
-    ('0',	'0603'): ('Panasonic',	'ERJ-S030R00V'),
-    ('0Ω',	'0603'): ('Panasonic',	'ERJ-S030R00V'),
-    ('2.4KΩ',	'0603'): ('Panasonic',	'ERJ-PA3D2401V'),
+    ('0',	'0603'): ('Panasonic',	'AC0603FR-070RL'),
+    ('0Ω',	'0603'): ('Panasonic',	'AC0603FR-070RL'),
+    ('2.4KΩ',	'0603'): ('Wurth Electronik',	'560112116061'),
     ('3KΩ',	'0603'): ('Panasonic',	'ERJ-UP3F3001V'),
     ('10KΩ',	'0603'): ('Panasonic',	'ERJ-U03F3001V'),
     ('Ω',	''): ('',    ''),
@@ -315,7 +312,7 @@ other_components = {
     #('ESQ-126-39-G-D', 'CONN_ESQ-126-39-G-D_SAI'): None,
     ('ESQ-126-38-G-D', 'CONN_ESQ-126-39-G-D_SAI'): None,
     ('SN74AHC1G02QDCKRQ1', 'DCK5'): None,
-    ('74CBTLV1G125DBVRQ1', 'DBV5'): None,
+    ('74CBTLV1G125DBVRQ1', 'DBV5'): ('Texas Instruments', '74CBTLV1G125DBVRQ1'),
     ('TPSM828302ARDSR', 'RDS0009A-MFG'): None,
     ('TPS62A02AQDRLRQ1', 'DRL0006A-MFG'): None,
     ('MP5073GG-P', 'QFN-12_MP5073_MNP'): None,
@@ -331,6 +328,12 @@ other_components = {
     ('DAC5311IDCKRQ1', 'DCK6'): None,
     ('MSPM0L1228QRGERQ1', 'VQFN24_4P1X4P1_TEX'): None,
     ('G125-MH11005L1P', 'G125-MH11005L1P'): None,
+    ('DMP3056LDM-7', 'SOT-26-6_DMP3056LDM_DIO'): None,
+    ('DMP2160UWQ-7', 'SOT-323_SC-70'): None,
+    ('MPQ5072GG-AEC1-Z', 'QFN-12_MP5073_MNP'): None,
+    ('MCP1700T-3302E/TTVAO', 'SOT-23'): None,
+    ('M0L1228QRGERQ1', 'VQFN24_4P1X4P1_TEX'): None,
+    ('2N7002TQ-7-F', 'SOT-523'): None,
     ('', ''): None,
 }
 
@@ -340,13 +343,17 @@ def xlat_value_to_partnum(s, footprint):
         v = value_to_partnum_xlats_1b[pf]
     elif pf in value_to_partnum_xlats_1:
         v = value_to_partnum_xlats_1[pf]
-    elif do_stage2_xlat and pf in value_to_partnum_xlats_2:
+    elif pf in value_to_partnum_xlats_2:
         v = value_to_partnum_xlats_2[pf]
     else:
         if pf not in other_components:
             unknown_components.append("('" + s + "', '" + footprint + "'): ('', '')")
+            v = ('', s)
+        elif other_components[pf] is not None:
+            v = other_components[pf]
+        else:
+            v = ('', s)
             pass
-        v = ('', s)
         pass
     v = [v[0], v[1]]
     if value_in_comment:
@@ -366,6 +373,7 @@ if do_xls:
     ws.cell(lineno, 3, 'Footprint')
     ws.cell(lineno, 4, 'Value')
     ws.cell(lineno, 5, 'Manufacturer')
+    ws.cell(lineno, 6, 'Quantity')
 
     for line in cf:
         lineno += 1
@@ -382,6 +390,7 @@ if do_xls:
         ws.cell(lineno, 3, footprint)
         ws.cell(lineno, 4, line[4])
         ws.cell(lineno, 5, mfg)
+        ws.cell(lineno, 6, line[3])
         pass
 
     wb.save(outfn)
@@ -392,7 +401,7 @@ else:
     ocf = csv.writer(outfile)
     lineno = 1
     ocf.writerow(('Comment', 'Designator', 'Footprint', 'Value',
-                  'Manufacturer'))
+                  'Manufacturer', 'Quantity'))
     for line in cf:
         lineno += 1
         if len(line) != 8:
@@ -404,7 +413,7 @@ else:
         footprint = xlat_footprint(line[2]).strip('"')
         (mfg, partnum) = xlat_value_to_partnum(line[4], footprint)
         #comment = comment.replace('Ω', 'ohm')
-        ocf.writerow((partnum, designator, footprint, line[4], mfg))
+        ocf.writerow((partnum, designator, footprint, line[4], mfg, line[3]))
         pass
     pass
 

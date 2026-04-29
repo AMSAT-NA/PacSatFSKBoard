@@ -5513,12 +5513,12 @@
 		(at 207.01 170.18 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "70603ec3-4539-4153-9220-3b45ab1d7912")
 		(property "Reference" "P7"
-			(at 196.85 170.18 0)
+			(at 200.66 171.704 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5708,6 +5708,77 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/d9a83ee4-3280-49b9-88b8-54d26cbd8ed1/2fc9a4ba-520e-46cf-be0c-1f13bbb64152"
 					(reference "R75")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Transistor_FET:Q_PMOS_GSD")
+		(at 321.31 83.82 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a426dac7-8404-45c9-a7f3-24a80f4a44bc")
+		(property "Reference" "Q7"
+			(at 321.31 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "DMP2160UWQ-7"
+			(at 321.31 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-323_SC-70"
+			(at 318.77 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 321.31 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "P-MOSFET transistor, gate/source/drain"
+			(at 321.31 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "a82990bb-535d-4eae-81fb-29f4c2baad39")
+		)
+		(pin "1"
+			(uuid "26bd233c-4e79-479f-90c1-9b42d262ec1d")
+		)
+		(pin "3"
+			(uuid "da7e33ac-1053-4c70-8246-6fda56770423")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/d9a83ee4-3280-49b9-88b8-54d26cbd8ed1/2fc9a4ba-520e-46cf-be0c-1f13bbb64152"
+					(reference "Q7")
 					(unit 1)
 				)
 			)
@@ -6511,77 +6582,6 @@
 			(project "PacSat_Dev_RevD_240614"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/d9a83ee4-3280-49b9-88b8-54d26cbd8ed1/2fc9a4ba-520e-46cf-be0c-1f13bbb64152"
 					(reference "L20")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Transistor_FET:Q_PMOS_GSD")
-		(at 321.31 83.82 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e6d2bff5-c45e-4300-9b4b-0097c639de04")
-		(property "Reference" "Q7"
-			(at 321.31 74.93 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "DMP2037U-7"
-			(at 321.31 77.47 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
-			(at 318.77 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 321.31 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "P-MOSFET transistor, gate/source/drain"
-			(at 321.31 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "ad94e6ef-40d2-4c67-8471-616db08b2c37")
-		)
-		(pin "1"
-			(uuid "660888bd-3b94-4f3b-9553-904136fd41aa")
-		)
-		(pin "3"
-			(uuid "0345cca2-3bb8-424c-bd5f-c0f4fd0411c0")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/d9a83ee4-3280-49b9-88b8-54d26cbd8ed1/2fc9a4ba-520e-46cf-be0c-1f13bbb64152"
-					(reference "Q7")
 					(unit 1)
 				)
 			)
