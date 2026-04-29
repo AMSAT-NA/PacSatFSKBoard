@@ -9,6 +9,9 @@ some point.
 
 # TODO
 
+There is a LMK1C1106A-Q1 part coming out from TI that should replace
+the LMK1C1106A when the new part becomes available.
+
 Thermal analysis - I don't have the skills to do thermal analysis.
 The version 2 design is definitely insufficient.  I have improved the
 thermal handling in the board itself.  I also did a heat spreader/sink
@@ -18,22 +21,8 @@ Shake and bake - I also have no experience in this sort of thing.  I
 don't have a huge concern, except for perhaps the RF splitter on the
 receiver, but I would like someone with experience to look it over.
 
-I'd really like to be 100% sure I have the PC104 pins correctly placed
-and the holes and slots all in the right place.  I've done the best I
-can, but I'm not sure.  They seem to match the power supply
-configuration information I have, but the CSK PCB specifications show
-two different H1/H2 configurations on slot 0 and slot 1. is at
-https://www.pumpkinspace.com/supporting-documents.html looking at the
-PDF file.  Slot 0 shows H1 on the bottom and H2 on top.  Slot 1 shows
-H1 on top and H2 on the bottom.  They can't both be right.  The power
-supply board shows H1 on the bottom and H2 on top, but it's not 100%
-clear.
-
 Switch to a TMS570LS2134 CPU.  This has double the FLASH and RAM and
 has the same pinout as the TMS570LS0914.
-
-Go through all the pins on the CPU and remove any unnecessary pull ups
-and pull downs in the HCG software to save some power.
 
 The chosen LNA (QPL9547) has very good specs (a NF of .3dB) but draws
 a lot of current (50ma).  Other possible options are Guerrilla RF
@@ -78,7 +67,7 @@ Parts that are not automotive rated listed below.
 
 |Part						|Function			  |Info |
 |----						|--------			  |---- |
-| LMK1C1106A				| clock distributor   | Suitable devices with 6 output not available.  Could use 4 output device (LMK00804B-Q1). Could use op amps (see https://www.analog.com/en/resources/analog-dialogue/articles/high-speed-amplifiers-make-clock-buffers.html). |
+| LMK1C1106A				| clock distributor   | Suitable devices with 6 output not available.  A Q1 version is coming out from TI |
 | O 16,0-JT22CT-A-P-3,3-LF	| oscillator | There don't appear to be any that are automotive and temp certified with 2.5ppm stability.  This one is temp, which is probably more important. There is one from TXC at 16.389MHz. |
 | AS1016204-0108X0PWAY		| MRAM | No suitable devices available. |
 | MAX31331					| RTC | No suitable devices available. |
@@ -805,6 +794,21 @@ to add with the limited GPIO lines that can do interrupts.
 
 Are the vertical MMCX connectors ok, or do they need to be right
 angle?  Yes, they do, change done.
+
+I'd really like to be 100% sure I have the PC104 pins correctly placed
+and the holes and slots all in the right place.  I've done the best I
+can, but I'm not sure.  They seem to match the power supply
+configuration information I have, but the CSK PCB specifications show
+two different H1/H2 configurations on slot 0 and slot 1. is at
+https://www.pumpkinspace.com/supporting-documents.html looking at the
+PDF file.  Slot 0 shows H1 on the bottom and H2 on top.  Slot 1 shows
+H1 on top and H2 on the bottom.  They can't both be right.  The power
+supply board shows H1 on the bottom and H2 on top, but it's not 100%
+clear. - A board was measured against the power supply and everything
+fits.
+
+Go through all the pins on the CPU and remove any unnecessary pull ups
+and pull downs in the HCG software to save some power.
 
 # Not going to do
 
