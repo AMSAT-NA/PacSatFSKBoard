@@ -540,6 +540,25 @@ above with "PC104 SPI".
 
 PC104 GPIO5 and GPIO6 can also be used as a UART.
 
+### ADC
+
+The ADC is designed for small range thermsistors, from 78 to 159 ohms.
+So the biasing and setup is a little strange.
+
+The high side of the ADC input is a 4.7K resistor, with the above
+thermsistor values you get ~.69ma of current, giving a voltage range
+of 53.9mV to 109mV feeding in to the ADC.
+
+From the theory of operation of the ADC, you can reduce the reference
+voltage down to 50mV.  We set it to 115mV.  The internal noise from
+the ADC will cause about 8 LSBs, or 3 bits of error in the output of
+the ADC, and you can only use half the range of the ADC, but even then
+you get 256 useful values, and you could average to do better.  That's
+probably good enough.  If you increase the high side resistor, then
+the voltage range will go down, which is bad for measurement.
+
+If you have a different situation, the bias resistors can be adjusted
+
 ## WATCHDOG\_OUT\_N
 
 A line is run from the hardware watchdog output to the RTC DIN input.

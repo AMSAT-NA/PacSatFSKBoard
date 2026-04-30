@@ -591,7 +591,10 @@ each have a 4.7K pullup resistor on them.  The even pins are connected
 to ground.
 
 These ADCs can be used for any purpose, thermsistors for temperature
-measurement, external voltage measurements, etc.
+measurement, external voltage measurements, etc.  It is designed for
+small value thermsistors.  Other uses may require adjusting the bias
+or high side resistances.  See the Design document (ADC section) for
+details.
 
 Normal header connectors are not suitable for space (maybe some could
 be used) but if one with a suitable interlock could be found, a 12 pin
