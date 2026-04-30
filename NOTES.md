@@ -2715,3 +2715,10 @@ some parts that are not currently available as needed.
 Add a way to power the LNA even if the main processor isn't running.
 This way if an external board uses a receive channel the LNA can
 always be powered.
+
+## 2026-04-30
+
+Review, minor cleanups of some docs and typos.
+
+Add an 8-input ADC to the antenna control processor for use by solar
+panel temperature inputs.

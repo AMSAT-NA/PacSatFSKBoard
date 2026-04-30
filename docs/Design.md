@@ -490,9 +490,10 @@ independent power controlled by the small processor on its pin 18.
 On the small processor, I2C0 is connected to I2CA on the antenna
 connector, and I2C2 is connected to I2CB on the antenna connector.
 
-I2C1 runs to the I2C pins on the PC104, the same ones the processor
-pins run to.  This way, if there are issues with the RTC and that I2C,
-it can be switched to this one.
+I2C1 runs to the I2C2 pins on the PC104, for another possible I2C.
+This I2C also runs to an ADC hooked to an 16 pin 1.27mm header.  This
+can be used for external thermsistor inputs or really anything else
+where an ADC is needed.
 
 Power to the external antenna control board comes from 3.3V_p.  Normal
 power is very low, but it draws a lot of power when burning the

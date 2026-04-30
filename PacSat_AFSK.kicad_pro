@@ -1046,6 +1046,10 @@
     [
       "75b01062-9747-4556-85bc-485f2c3c99d3",
       "Antenna Control"
+    ],
+    [
+      "0c35b1f3-051c-4645-bbee-ec3d7e916024",
+      "Extra ADC"
     ]
   ],
   "text_variables": {}

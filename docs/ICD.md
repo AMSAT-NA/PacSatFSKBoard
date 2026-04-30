@@ -280,6 +280,9 @@ add terminations if the internal pullups are insufficient.  See
 https://www.ti.com/lit/an/slva689/slva689.pdf for details on setting
 these resistors.
 
+There is also an ADC controller connected to this processor that has
+a separate 1.27mm header hooked to it.
+
 # System Interfaces Description
 
 This section defines the interfaces used to interact with the PacSat
@@ -579,6 +582,26 @@ Pinout is:
 
 Note that many of the lines out of the ACP are multi-purpose, so other
 configurations may be possible.
+
+## Extra ADC
+
+A 16-pin 1.27mm header is available on the bottom left of the board.
+It has 8 ADC connections on pins 1, 3, 5, 7, 9, 11, 13, and 15.  These
+each have a 4.7K pullup resistor on them.  The even pins are connected
+to ground.
+
+These ADCs can be used for any purpose, thermsistors for temperature
+measurement, external voltage measurements, etc.
+
+Normal header connectors are not suitable for space (maybe some could
+be used) but if one with a suitable interlock could be found, a 12 pin
+header could be put on and the first and last ADC not used.
+
+It's also possible to solder a cable directly to the holes.  This is a
+through-hole connector for that reason.
+
+A cable could be run over to the slot above it and the same strain
+relief used for the antenna control can be used for this cable, too.
 
 ## RF Connections
 
