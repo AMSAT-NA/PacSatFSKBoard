@@ -334,6 +334,7 @@ other_components = {
     ('MCP1700T-3302E/TTVAO', 'SOT-23'): None,
     ('M0L1228QRGERQ1', 'VQFN24_4P1X4P1_TEX'): None,
     ('2N7002TQ-7-F', 'SOT-523'): None,
+    ('TPS71533QDCKRQ1', 'SOT-353_SC-70-5'): None,
     ('', ''): None,
 }
 

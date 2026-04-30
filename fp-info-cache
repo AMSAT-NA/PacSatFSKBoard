@@ -1,4 +1,4 @@
-180816473797944
+186148969256573
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -74171,6 +74171,27 @@ RF_SHIELD_PIC_S_203
 0
 16
 1
+PacSatDev_misc
+SOT-26-6_DMP3056LDM_DIO
+
+DMP3056LDM-7 
+0
+6
+6
+PacSatDev_misc
+SOT-26-6_DMP3056LDM_DIO-L
+
+DMP3056LDM-7 
+0
+6
+6
+PacSatDev_misc
+SOT-26-6_DMP3056LDM_DIO-M
+
+DMP3056LDM-7 
+0
+6
+6
 PacSatDev_misc
 STITCH
 Ground-plane stitch, courtyard intentionally small to prevent DRC errors
