@@ -594,6 +594,11 @@ devices on +5VAL.  It does this by disabling the 3.3V and 1.2V
 regulators.  When 3.3V is off, the MAX4995s controlling power to the
 PA, AX5043s, and LNA will be powered off.
 
+The LNA can be optionally configured to always be on when +5VAL is
+available by populating R164 and removing R34 and R165.  This can be
+useful if a receive channel is routed to another board and the LNA
+needs to always be powered.
+
 There is also a hardware watchdog, as mentioned before.  The processor
 must toggle the FEED\_WATCHDOG line at least once a second.  If it
 fails to do that, the 1.2V and 3.3V current limiters will be disabled

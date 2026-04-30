@@ -61,12 +61,12 @@ board.  These are:
 * +5V - The main power input for 5V.
 
 * +5VAL - This provides +5V whenever power is applied.  It is used to
-  power the batter input for the RTC, the RX/TX switches (so the
-  redundant board can access the antenna even if this power is powered
-  off), the switches on the dual-board control lines (so the other board
-  can control and access this board even when this board is powered
-  off), and the CAN bus transceivers (so they can properly go tristate
-  even if the board is off).  This is current limited to 200ma.
+  power the RX/TX switches (so the redundant board can access the
+  antenna even if this power is powered off), the switches on the
+  dual-board control lines (so the other board can control and access
+  this board even when this board is powered off), and the CAN bus
+  transceivers (so they can properly go tristate even if the board is
+  off).  This is current limited to 200ma.
   
 * +1.2V - Main power for the CPU.  HW\_POWER\_OFF[1-2]\_N will disable
   this.  This is regulated to 700ma maximum.  Power comes from a buck
@@ -134,9 +134,10 @@ information.
 ### RTC
 
 A real-time clock is available so the board has accurate time even
-when off.  The battery input comes from +5VAL, and this has a large
-diode-protected capacitor so that even if external power is not
-available time can be kept for many hours.
+when off.  The battery input comes from +5, and this has a large
+diode-protected capacitor array so that even if external power is not
+available time can be kept for many hours.  This will always be
+powered when power is available.
 
 ### WDT
 
@@ -266,10 +267,10 @@ inactive.
 ### Antenna Control
 
 A small microprocessor, the antenna control processor (ACP), sits on a
-SPI bus connected to the main CPU that does antenna control.  It has
-two I2C busses that come out of J7, along with power and ground.  The
-power for the external antenna board is powered from 3.3V_p and may be
-turned on and off.
+SPI bus connected to the main CPU.  It's primary purpose is antenna
+control.  It has two I2C busses that come out of J7, along with power
+and ground.  The power for the external antenna board is powered from
+3.3V_p and may be turned on and off.
 
 The antenna connector is a Harwin G125-MH11005L1P 10-pin connector, a
 1.25mm maile pitch latch connector.  It would mate with a
@@ -309,6 +310,9 @@ Pinout is:
 * 9 - Ground
 
 * 10 - Unused, add R162 to connect to ACP pin 11.
+
+Note that many of the lines out of the ACP are multi-purpose, so other
+configurations may be possible.
 
 # System Interfaces Description
 
@@ -609,7 +613,8 @@ be used for bringing out or injecting signals.  For instance:
 * If you wanted to be able to receive 160MHz or below on an external
   board, you could disable or remove one of the AX5043s and route it's
   RF splitter output to another board.  There are obvious places for
-  doing this.
+  doing this.  There is a build option to always have power to the
+  LNA so this is available even when the board is disabled.
 
 * If you wanted to bring in your own receive signal, there are obvious
   places for that.  This could be used, for instance, if you have an
