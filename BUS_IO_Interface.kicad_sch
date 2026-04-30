@@ -2137,7 +2137,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "MRAM 16 Mb 2MX8"
+	(text "MRAM 16 Mb 2Mx8"
 		(exclude_from_sim no)
 		(at 70.485 24.765 0)
 		(effects
@@ -2158,7 +2158,7 @@
 		)
 		(uuid "28ee29ae-0b7c-4657-bcfd-178637fb62e7")
 	)
-	(text "These are QSPI parts and are readily available.\nA AS3016101-0050X0PSAY is a drop-in replacesment,\nit's not QSPI and cheaper but doesn't appear to\nbe as easily available."
+	(text "These are QSPI parts and are readily available.\nA AS3016101-0050X0PSAY is a drop-in replacement,\nit's not QSPI and cheaper but doesn't appear to\nbe as easily available."
 		(exclude_from_sim no)
 		(at 135.636 62.738 0)
 		(effects
@@ -2229,7 +2229,7 @@
 		)
 		(uuid "6f29d973-8e69-4d4f-877c-c1d0ae1793cc")
 	)
-	(text "MRAM 16 Mb 2MX8"
+	(text "MRAM 16 Mb 2Mx8"
 		(exclude_from_sim no)
 		(at 175.895 24.765 0)
 		(effects
@@ -2240,7 +2240,7 @@
 		)
 		(uuid "703d0f88-6d57-4235-b934-421d75644cfa")
 	)
-	(text "MRAM 16 Mb 2MX8"
+	(text "MRAM 16 Mb 2Mx8"
 		(exclude_from_sim no)
 		(at 174.625 75.565 0)
 		(effects
@@ -2251,7 +2251,7 @@
 		)
 		(uuid "bdda981d-c4f9-472b-8096-ac13baa36832")
 	)
-	(text "MRAM 16 Mb 2MX8"
+	(text "MRAM 16 Mb 2Mx8"
 		(exclude_from_sim no)
 		(at 62.865 75.565 0)
 		(effects
@@ -2312,6 +2312,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "09456179-6e5c-4278-bc71-2d17c989d174")
+	)
+	(junction
+		(at 105.41 34.29)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0d3bd2cc-aca9-4e25-9cbf-d30553c4da34")
 	)
 	(junction
 		(at 278.13 91.44)
@@ -2410,12 +2416,6 @@
 		(uuid "74c5ec80-7c2f-48ee-85e5-6e308e639d4d")
 	)
 	(junction
-		(at 209.55 33.02)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "75d69927-2bea-42d1-8c76-cc0da8590027")
-	)
-	(junction
 		(at 181.61 149.86)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2470,12 +2470,6 @@
 		(uuid "bc241649-0901-433b-9a57-f3044ce6e468")
 	)
 	(junction
-		(at 104.14 39.37)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bcf8e0bb-7799-419a-a20c-1f04792f4055")
-	)
-	(junction
 		(at 341.63 156.21)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2500,12 +2494,6 @@
 		(uuid "d678e923-84f6-450c-9e4b-92e0322e3886")
 	)
 	(junction
-		(at 104.14 34.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "de7a15b6-5371-4baf-9ffe-b4e82cf32712")
-	)
-	(junction
 		(at 204.47 67.31)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2524,12 +2512,6 @@
 		(uuid "e2005586-0307-4efa-9f7d-2492048b4a8a")
 	)
 	(junction
-		(at 209.55 39.37)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e628c9a4-a762-4c0b-8bb2-5d5039f73590")
-	)
-	(junction
 		(at 210.82 49.53)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2540,6 +2522,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ec9a2b74-8749-4022-907b-177623e83273")
+	)
+	(junction
+		(at 210.82 33.02)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ed6b6ce5-cbe5-427a-8fa3-60946379f58d")
 	)
 	(junction
 		(at 341.63 88.9)
@@ -2639,7 +2627,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 27.94) (xy 104.14 34.29)
+			(xy 105.41 27.94) (xy 105.41 34.29)
 		)
 		(stroke
 			(width 0)
@@ -2689,7 +2677,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 24.13) (xy 209.55 33.02)
+			(xy 210.82 24.13) (xy 210.82 33.02)
 		)
 		(stroke
 			(width 0)
@@ -3129,16 +3117,6 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 39.37) (xy 105.41 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3c86e891-224c-42cb-88eb-f9bafdcf5798")
-	)
-	(wire
-		(pts
 			(xy 365.76 92.71) (xy 365.76 96.52)
 		)
 		(stroke
@@ -3226,16 +3204,6 @@
 			(type default)
 		)
 		(uuid "4552c382-67c8-4d3e-b885-f3aa6f7be0eb")
-	)
-	(wire
-		(pts
-			(xy 209.55 39.37) (xy 210.82 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "455b97a8-1919-46e7-9691-f0db0e0d026f")
 	)
 	(wire
 		(pts
@@ -3519,7 +3487,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 33.02) (xy 209.55 39.37)
+			(xy 210.82 33.02) (xy 210.82 39.37)
 		)
 		(stroke
 			(width 0)
@@ -3779,7 +3747,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 34.29) (xy 104.14 39.37)
+			(xy 105.41 34.29) (xy 105.41 39.37)
 		)
 		(stroke
 			(width 0)
@@ -4599,7 +4567,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 33.02) (xy 209.55 33.02)
+			(xy 205.74 33.02) (xy 210.82 33.02)
 		)
 		(stroke
 			(width 0)
@@ -4609,7 +4577,7 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 34.29) (xy 104.14 34.29)
+			(xy 100.33 34.29) (xy 105.41 34.29)
 		)
 		(stroke
 			(width 0)
@@ -4729,7 +4697,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 39.37) (xy 209.55 39.37)
+			(xy 193.04 39.37) (xy 210.82 39.37)
 		)
 		(stroke
 			(width 0)
@@ -4829,7 +4797,7 @@
 	)
 	(wire
 		(pts
-			(xy 87.63 39.37) (xy 104.14 39.37)
+			(xy 87.63 39.37) (xy 105.41 39.37)
 		)
 		(stroke
 			(width 0)
@@ -7061,7 +7029,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 104.14 27.94 0)
+		(at 105.41 27.94 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7070,7 +7038,7 @@
 		(fields_autoplaced yes)
 		(uuid "50c7a14e-9879-438f-b7c9-eff1c8c87dab")
 		(property "Reference" "#PWR0110"
-			(at 104.14 31.75 0)
+			(at 105.41 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7079,7 +7047,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 104.14 24.13 0)
+			(at 105.41 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7087,7 +7055,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 104.14 27.94 0)
+			(at 105.41 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7096,7 +7064,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 104.14 27.94 0)
+			(at 105.41 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7105,7 +7073,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 104.14 27.94 0)
+			(at 105.41 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7329,7 +7297,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 209.55 24.13 0)
+		(at 210.82 24.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7338,7 +7306,7 @@
 		(fields_autoplaced yes)
 		(uuid "54432d9c-9a53-48d8-9336-ab42319e343c")
 		(property "Reference" "#PWR0249"
-			(at 209.55 27.94 0)
+			(at 210.82 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7347,7 +7315,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 209.55 20.32 0)
+			(at 210.82 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7355,7 +7323,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 209.55 24.13 0)
+			(at 210.82 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7364,7 +7332,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 209.55 24.13 0)
+			(at 210.82 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7373,7 +7341,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 209.55 24.13 0)
+			(at 210.82 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)

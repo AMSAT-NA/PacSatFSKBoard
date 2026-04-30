@@ -4793,9 +4793,9 @@
 		(at 77.47 166.37 90)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "00000000-0000-0000-0000-00005a2bafa0")
 		(property "Reference" "R29"
 			(at 78.74 163.83 90)
@@ -8019,9 +8019,9 @@
 		(at 77.47 157.48 90)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "c14d5352-945e-4110-8107-c91412a14be4")
 		(property "Reference" "R68"
 			(at 78.74 154.94 90)

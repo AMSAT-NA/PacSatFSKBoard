@@ -2467,12 +2467,6 @@
 		(uuid "b5be0dc9-e16e-4f35-96e0-cf6c061dd8c3")
 	)
 	(junction
-		(at 87.63 142.24)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e861a2f3-45e9-47f8-bb15-83d13ebaea7e")
-	)
-	(junction
 		(at 102.87 157.48)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2489,12 +2483,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fc0f2ef1-6e5f-4246-8bd5-a08157cf9857")
-	)
-	(junction
-		(at 87.63 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fd2cf434-66a4-4d18-8644-270950308a4e")
 	)
 	(no_connect
 		(at 299.72 160.02)
@@ -2809,16 +2797,6 @@
 			(type default)
 		)
 		(uuid "1e5aa652-e02e-4554-8608-f05cd34b81bd")
-	)
-	(wire
-		(pts
-			(xy 87.63 142.24) (xy 109.22 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "20be72f9-ae2f-4ac8-93a8-67a6a638570b")
 	)
 	(wire
 		(pts
@@ -3279,16 +3257,6 @@
 			(type default)
 		)
 		(uuid "6713dab3-af89-4922-a0b4-a9721ae86c7a")
-	)
-	(wire
-		(pts
-			(xy 87.63 177.8) (xy 87.63 161.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6c4f5c9c-34c0-4bde-9047-e29ff5c84247")
 	)
 	(wire
 		(pts
@@ -3942,16 +3910,6 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 177.8) (xy 87.63 177.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eda50117-a4c2-4081-9a44-87f658c407f1")
-	)
-	(wire
-		(pts
 			(xy 129.54 96.52) (xy 138.43 96.52)
 		)
 		(stroke
@@ -4120,6 +4078,16 @@
 		)
 		(uuid "11a0a5e4-5184-4737-b9c8-78fca0a75613")
 	)
+	(label "PC104_I2C1_SDA"
+		(at 107.95 147.32 180)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right bottom)
+		)
+		(uuid "3865c62d-43be-4c6f-b261-bca750b4d95d")
+	)
 	(label "3V3_S3"
 		(at 154.94 160.02 0)
 		(effects
@@ -4210,6 +4178,16 @@
 		)
 		(uuid "8e0725a9-3938-4469-a3ab-639e8017dbb0")
 	)
+	(label "PC104_I2C1_SCL"
+		(at 107.95 149.86 180)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right bottom)
+		)
+		(uuid "8f0a7a33-2214-4c67-a6e6-6972a3ea52b1")
+	)
 	(label "5V_p"
 		(at 273.05 127 0)
 		(effects
@@ -4219,16 +4197,6 @@
 			(justify left bottom)
 		)
 		(uuid "913f9704-0584-4b33-9ebf-bfaa14383ee3")
-	)
-	(label "PC104_I2C1_SDA"
-		(at 109.22 142.24 180)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify right bottom)
-		)
-		(uuid "92e439d7-3f8f-4f62-a010-541e528f760a")
 	)
 	(label "3V3_S2"
 		(at 154.94 157.48 0)
@@ -4279,16 +4247,6 @@
 			(justify right bottom)
 		)
 		(uuid "ca7ca39e-ac3d-4499-abf1-f3780de4974d")
-	)
-	(label "PC104_I2C1_SCL"
-		(at 109.22 177.8 180)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify right bottom)
-		)
-		(uuid "f3e1915c-a8d3-4c2c-b467-0dcbe016423b")
 	)
 	(label "3.3V_p"
 		(at 273.05 129.54 0)

@@ -4822,6 +4822,16 @@
 		)
 		(uuid "686904f8-00c4-4599-986f-27dde4e46b19")
 	)
+	(text "UART connector\n1 - RX\n2 - TX\n3 - GND"
+		(exclude_from_sim no)
+		(at 310.896 204.216 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "7b091835-77f8-4979-980e-e8dbe45a432b")
+	)
 	(text "Thermsistor varies from 534\nohms (125C) to 188.5KΩ (-40C).\nWith a 10KΩ bias this gives a\n.17 to 3.13V range."
 		(exclude_from_sim no)
 		(at 375.412 109.728 0)

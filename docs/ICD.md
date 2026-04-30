@@ -70,7 +70,7 @@ board.  These are:
   
 * +1.2V - Main power for the CPU.  HW\_POWER\_OFF[1-2]\_N will disable
   this.  This is regulated to 700ma maximum.  Power comes from a buck
-  regulator (either 5V or 3.3v depending on configuration).
+  regulator (either 5V or 3.3V depending on configuration).
 
 * REG_3.3V - Either the 3.3V externally, or the output of the 3.3V buck
   regulator, depending on how the board is configured.  This is used
@@ -95,7 +95,8 @@ board.  These are:
   
 * LNA_VCC - This is +5V to the LNA.  This is off by default and the
   CPU must enable it with a GPIO before it can receive.  This is
-  current limited to 200ma.
+  current limited to 200ma.  There is a resistor option to always
+  have this enabled if +5VAL is supplied.
 
 In addition, each AX5043 has a separate power control line from the
 CPU.
@@ -128,13 +129,13 @@ cannot do CAN-FD, and are thus limited to 8-byte data messages.
 
 ### MRAM
 
-2MB of MRAM is available on one of the SPI busses for storage of state
+8MB of MRAM is available on one of the SPI busses for storage of state
 information.
 
 ### RTC
 
 A real-time clock is available so the board has accurate time even
-when off.  The battery input comes from +5, and this has a large
+when off.  The battery input comes from +5V, and this has a large
 diode-protected capacitor array so that even if external power is not
 available time can be kept for many hours.  This will always be
 powered when power is available.
@@ -264,7 +265,7 @@ it's RX sent to 50 ohms.  The ACTIVE1\_N lines controls the switch, so
 that the antenna hooks to board 1 when active, and board 2 when
 inactive.
 
-### Antenna Control
+## Antenna Control
 
 A small microprocessor, the antenna control processor (ACP), sits on a
 SPI bus connected to the main CPU.  It's primary purpose is antenna
@@ -272,47 +273,12 @@ control.  It has two I2C busses that come out of J7, along with power
 and ground.  The power for the external antenna board is powered from
 3.3V_p and may be turned on and off.
 
-The antenna connector is a Harwin G125-MH11005L1P 10-pin connector, a
-1.25mm maile pitch latch connector.  It would mate with a
-G125-2041096L0 housing, with something like a G125-FC11005L0-0150F
-cable, or equivalent.  Harwin has several cable assemblies with 5+5
-position female DIL latch connections.
-
-It is possible to not use the connector and instead just solder wires
-directly to the PCB.  In that case, two holes are provided to allow
-a 2.4mm Tefzel ETFE zip tie to provide strain relief for the wires.
-
 The I2C pullup is done in the ACP, but this can be disabled in
 software if the termination if the other end pulls up the signal.  In
 addition, DNP resistors (R147, R151, R152, and R152) are in place to
 add terminations if the internal pullups are insufficient.  See
 https://www.ti.com/lit/an/slva689/slva689.pdf for details on setting
 these resistors.
-
-Pinout is:
-
-* 1 - +3.3V to the antenna controller
-
-* 2 - I2CA SDA (ACP pin 24)
-
-* 3 - Ground
-
-* 4 - I2CB SDA (ACP pin 20)
-
-* 5 - Ground
-
-* 6 - +3.3V to the antenna controller
-
-* 7 - I2CA SCL (ACP pin 1)
-
-* 8 - I2CB SCL (ACP pin 19)
-
-* 9 - Ground
-
-* 10 - Unused, add R162 to connect to ACP pin 11.
-
-Note that many of the lines out of the ACP are multi-purpose, so other
-configurations may be possible.
 
 # System Interfaces Description
 
@@ -576,6 +542,43 @@ PC104\_UMBILICAL1\_N - Remove R134
 PC104\_UNBILICAL2\_N - Remove U41
 
 VBAT\_p - Remove R126
+
+## Antenna Control
+
+The antenna control connector is a Harwin G125-MH11005L1P 10-pin
+connector, a 1.25mm maile pitch latch connector.  It would mate with a
+G125-2041096L0 housing, with something like a G125-FC11005L0-0150F
+cable, or equivalent.  Harwin has several cable assemblies with 5+5
+position female DIL latch connections.
+
+It is possible to not use the connector and instead just solder wires
+directly to the PCB.  In that case, two holes are provided to allow
+a 2.4mm Tefzel ETFE zip tie to provide strain relief for the wires.
+
+Pinout is:
+
+* 1 - +3.3V to the antenna controller
+
+* 2 - I2CA SDA (ACP pin 24)
+
+* 3 - Ground
+
+* 4 - I2CB SDA (ACP pin 20)
+
+* 5 - Ground
+
+* 6 - +3.3V to the antenna controller
+
+* 7 - I2CA SCL (ACP pin 1)
+
+* 8 - I2CB SCL (ACP pin 19)
+
+* 9 - Ground
+
+* 10 - Unused, add R162 to connect to ACP pin 11.
+
+Note that many of the lines out of the ACP are multi-purpose, so other
+configurations may be possible.
 
 ## RF Connections
 
