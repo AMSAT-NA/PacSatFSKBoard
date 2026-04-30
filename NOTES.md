@@ -2703,3 +2703,15 @@ the same one as the processor.
 Add a ferrite to the antenna control processor power and set the
 inductor for the antenna control power.  This should avoid power
 surges.
+
+## 2026-04-29
+
+Getting ready for release.  Go through all the parts, upload the BOMs
+to parts vendors, and make sure everything is available.  Replace
+some parts that are not currently available as needed.
+
+## 2026-04-29
+
+Add a way to power the LNA even if the main processor isn't running.
+This way if an external board uses a receive channel the LNA can
+always be powered.
