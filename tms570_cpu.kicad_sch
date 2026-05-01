@@ -6081,16 +6081,6 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 149.86) (xy 127 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3d65c2f1-96a1-46b9-ac44-a5a72952e812")
-	)
-	(wire
-		(pts
 			(xy 71.12 179.07) (xy 81.28 179.07)
 		)
 		(stroke
@@ -6691,6 +6681,16 @@
 	)
 	(wire
 		(pts
+			(xy 207.01 204.47) (xy 207.01 224.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67805823-e8ce-44a7-82f5-9927de0cc4af")
+	)
+	(wire
+		(pts
 			(xy 237.49 207.01) (xy 240.03 207.01)
 		)
 		(stroke
@@ -7061,7 +7061,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 154.94) (xy 149.86 154.94)
+			(xy 127 154.94) (xy 149.86 154.94)
 		)
 		(stroke
 			(width 0)
@@ -7278,16 +7278,6 @@
 			(type default)
 		)
 		(uuid "8e9c7b56-2db1-4f96-821e-78481a5929b3")
-	)
-	(wire
-		(pts
-			(xy 207.01 204.47) (xy 207.01 224.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8f6a0e2f-e766-446d-8aac-2b196240a9e0")
 	)
 	(wire
 		(pts
@@ -7511,7 +7501,7 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 157.48) (xy 125.73 157.48)
+			(xy 149.86 157.48) (xy 127 157.48)
 		)
 		(stroke
 			(width 0)
@@ -7701,7 +7691,7 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 152.4) (xy 149.86 152.4)
+			(xy 127 152.4) (xy 149.86 152.4)
 		)
 		(stroke
 			(width 0)
@@ -8398,6 +8388,16 @@
 			(type default)
 		)
 		(uuid "e13ac416-d6f8-4db8-9a02-8ae35c8f1ed1")
+	)
+	(wire
+		(pts
+			(xy 127 149.86) (xy 149.86 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1400577-a1c4-4f91-a837-8fa5138b0fbe")
 	)
 	(wire
 		(pts
@@ -9503,28 +9503,6 @@
 			)
 		)
 	)
-	(global_label "FEED_WATCHDOG"
-		(shape input)
-		(at 127 149.86 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify right)
-		)
-		(uuid "4d2eb34d-ec7e-4cb1-bbf8-72ca396a612e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 105.5751 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "AX5043_IRQ_TX"
 		(shape input)
 		(at 147.32 189.23 270)
@@ -9835,7 +9813,7 @@
 	)
 	(global_label "PC104_GPIO4"
 		(shape input)
-		(at 125.73 157.48 180)
+		(at 127 157.48 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9845,7 +9823,7 @@
 		)
 		(uuid "6e93855f-17ba-4925-a18f-b0684d10f020")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 110.959 157.48 0)
+			(at 112.229 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9917,28 +9895,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "PC104_ABF0"
-		(shape input)
-		(at 207.01 224.79 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify right)
-		)
-		(uuid "74b9a354-ae44-488d-9005-420bcfbceca7")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.01 241.7381 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -10143,7 +10099,7 @@
 	)
 	(global_label "PC104_RX"
 		(shape input)
-		(at 125.73 152.4 180)
+		(at 127 152.4 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10153,7 +10109,7 @@
 		)
 		(uuid "87cba7e4-e5f2-40ce-91af-4eb04ee8a0b5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 113.7834 152.4 0)
+			(at 115.0534 152.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10363,7 +10319,7 @@
 	)
 	(global_label "PC104_TX"
 		(shape input)
-		(at 125.73 154.94 180)
+		(at 127 154.94 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10373,7 +10329,7 @@
 		)
 		(uuid "a4f88a62-e591-4eaf-93d9-ab87897d1803")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 114.0858 154.94 0)
+			(at 115.3558 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10603,6 +10559,28 @@
 			)
 		)
 	)
+	(global_label "FEED_WATCHDOG"
+		(shape input)
+		(at 207.01 224.79 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "d5a25c32-fdfb-44cd-9f29-c8dc3570e857")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 207.01 246.3103 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "PWR_FLAG_LNA"
 		(shape input)
 		(at 255.27 68.58 90)
@@ -10665,6 +10643,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PC104_ABF0"
+		(shape input)
+		(at 127 149.86 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "ee16fb79-2222-4aec-a893-e2e392a13adb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 110.0519 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)

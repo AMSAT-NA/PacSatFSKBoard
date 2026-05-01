@@ -2209,7 +2209,7 @@
 		)
 		(uuid "2513be21-f6ba-4312-bedb-e35ba1a99e10")
 	)
-	(text "The switches on I2C and serial are so only the\nactive board can access these.  Also, it avoids\nCMOS lock-up when a board is disabled."
+	(text "The switches on I2C and serial are so only the\nactive board can access these.  Also, it avoids\nCMOS latch-up when a board is disabled."
 		(exclude_from_sim no)
 		(at 228.346 151.892 0)
 		(effects
@@ -5204,9 +5204,9 @@
 		(at 311.15 116.84 270)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "17e6074a-7cc2-4738-9396-45de953eb9bd")
 		(property "Reference" "R149"
 			(at 314.452 116.078 90)
@@ -5879,9 +5879,9 @@
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "4b655974-618c-4251-973c-0f97c07c9443")
 		(property "Reference" "R150"
 			(at 160.528 126.238 90)
@@ -6630,9 +6630,9 @@
 		(at 274.32 109.22 270)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "84e1394e-a2e3-4126-9868-f2e9bdfdba41")
 		(property "Reference" "R142"
 			(at 277.622 108.458 90)
@@ -7681,9 +7681,9 @@
 		(at 274.32 104.14 270)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "c6812bf4-7947-4e12-ac70-203bfe006ead")
 		(property "Reference" "R141"
 			(at 277.622 103.378 90)
@@ -7749,9 +7749,9 @@
 		(at 311.15 104.14 270)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "c7703b6c-4248-4495-b9bb-03139c5fd002")
 		(property "Reference" "R143"
 			(at 314.452 103.378 90)
