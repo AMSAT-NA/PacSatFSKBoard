@@ -2886,16 +2886,6 @@
 		)
 		(uuid "bc4b153d-3727-4d1d-afc3-89ea033edcd4")
 	)
-	(text "Optional pull up on\nthe Extra ADC page."
-		(exclude_from_sim no)
-		(at 202.184 93.472 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-		)
-		(uuid "bdaecf00-7879-4e39-8f48-13b2c85e50d2")
-	)
 	(junction
 		(at 220.98 78.74)
 		(diameter 0)
