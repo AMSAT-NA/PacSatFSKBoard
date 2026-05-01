@@ -51,9 +51,8 @@ An external power disable line, HW\_POWER\_OFF[12]\_N, allows an
 external device to power down all parts of the board except for +5VAL,
 as described below.
 
-Three different umbilical attached lines, called PC104\_UMBILICAL[0-2]\_N,
-come in to the board.  They shut down power to other parts of the
-system.  See the Umbilical Attachment section for details.
+Lines on the PC104 can be used to inhibit the power supply in various
+places.  See the Inhibits section for details.
 
 The power supply has separate power zones for different parts of the
 board.  These are:
@@ -90,7 +89,7 @@ board.  These are:
   
 * SPPA_VCC - This is +5V to the PA.  This is off by default and the
   CPU must enable it with a GPIO before it can transmit.  In addition,
-  as mentioned before, PC104\_UMBILICAL0\_N line will disable this.
+  as mentioned before, PC104\_PA\_DISABLE\_N line will disable this.
   This is current limited to 640ma.
   
 * LNA_VCC - This is +5V to the LNA.  This is off by default and the
@@ -357,47 +356,29 @@ this.  This is run through a 19:1 resistor divider, so 52V on the
 input should result in around 2.7V into the VBAT CPU ADC, and should
 be safe up to 62V.
 
-### Umbilical Attachment
+### Inhibits
 
-The PC104\_UMBILICAL[0-2]\_N signals tell the board that the satellite
-is in the launch vehicle.  An external module (generally the power
-supply) asserts to ground when in the launch vehicle; otherwise
-resistors pull them high when not in the launch vehicle.
+Several signals can be used to inhibit various parts of the board.
 
-PC104\_UMBILICAL0\_N inhibits the RF power amplifier.  If this is low
+PC104\_PA\_DISABLE\_N inhibits the RF power amplifier.  If this is low
 the power amplifier will not receive power from +5V.
 
-PC104\_UMBILICAL1\_N inhibits +5VAL, which normally supplies power to
-some parts on the board even when the board is disabled.  If this is
-powered off, the RF switch on the RF output will be disabled and thus
-disconnected from the antenna.
+PC104\_FULL\_DISABLE\_N inhibits +5VAL and all other power supplies.
+This powers off everything on the board but the PA.
 
-PC104\_UMBILICAL2\_N inhibits power to the rest of the system.
-Disabling this will cause all things on the board to be powered off
-except the RTC.
+The HW\_POWER\_OFF lines works as already described.
 
 This provides three separate inhibits for RF transmission.
 
-If lab testing, either provide pull ups to an external +3.3V line, or
-make the following changes to the board:
+These are all set to be pulled up and resistors are disconnected by
+default.
 
-Install R64 to pull up PC104\_UMBILICAL0\_N.
+Install R64 to pull up PC104\_PA\_DISABLE\_N.  Install R125 to connect
+this line to the PC104.
 
-Install R54 to pull up PC104\_UMBILICAL1\_N.
+Install R144 to pull up PC104\_FULL\_DISABLE\_N.  Install R134 to connect
+this line to the PC104.
 
-Install R144 to pull up PC104\_UMBILICAL2\_N.
-
-You may also need to remove the resistors connecting
-PC104\_UMBILICAL0\_N and PC104\_UMBILICAL1\_N to the PC104 if those
-pins perform other functions.  These are resistors R125 and R134.
-
-Note that if you use the umbilical lines, you must also supply 3.3V_p
-to power the logic gate for PC104\_UMBILICAL2\_N.
-
-  - PC104\_UMBILICAL[0-2]\_N - Input to the board, if high the satellite
-    is in the launch vehicle.  This turns off all power except the RTC
-    and in addition inhibits transmit in hardware.
-	
 ### CAN Bus
 
 The board has two CAN busses, CANA and CAN.  External entities use
@@ -448,7 +429,9 @@ The pins are:
   - PC104\_GPIO[1,4] - These pin can cause an interrupt to the CPU.  The
     rest of the pins cannot cause interrupts.
 	
-  - PC104\_GPIO[2-3] - General purpose I/O lines.
+  - PC104\_GPIO[2] - General purpose I/O lines.
+  
+  - PC104\_ABF0 - Used to monitor the ABF lines, cannot do interrupts.
   
   - PC104\_ADC[1-4] - Analog to Digital controller inputs.
   
@@ -522,7 +505,7 @@ PC104\_GPIO1 - Remove R142
 
 PC104\_GPIO2 - Remove R149
 
-PC104\_GPIO3 - Remove R148
+PC104\_ABF0 - Remove R148
 
 PC104\_GPIO4 - Remove R150
 
@@ -538,9 +521,9 @@ PC104\_TX2 - Remove U39
 
 PC104\_RX2 - Remove U40
 
-PC104\_UMBILICAL0\_N - Remove R125
+PC104\_PA\_DISABLE\_N - Remove R125
 
-PC104\_UMBILICAL1\_N - Remove R134
+PC104\_\_N - Remove R134
 
 PC104\_UNBILICAL2\_N - Remove U41
 

@@ -5791,7 +5791,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 243.84) (xy 204.47 204.47)
+			(xy 204.47 224.79) (xy 204.47 204.47)
 		)
 		(stroke
 			(width 0)
@@ -5901,7 +5901,7 @@
 	)
 	(wire
 		(pts
-			(xy 232.41 64.77) (xy 232.41 72.39)
+			(xy 232.41 68.58) (xy 232.41 72.39)
 		)
 		(stroke
 			(width 0)
@@ -6071,7 +6071,7 @@
 	)
 	(wire
 		(pts
-			(xy 304.8 114.3) (xy 281.94 114.3)
+			(xy 288.29 114.3) (xy 281.94 114.3)
 		)
 		(stroke
 			(width 0)
@@ -6161,7 +6161,7 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 204.47) (xy 191.77 233.68)
+			(xy 191.77 204.47) (xy 191.77 224.79)
 		)
 		(stroke
 			(width 0)
@@ -6461,7 +6461,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 204.47) (xy 209.55 233.68)
+			(xy 209.55 204.47) (xy 209.55 224.79)
 		)
 		(stroke
 			(width 0)
@@ -6601,7 +6601,7 @@
 	)
 	(wire
 		(pts
-			(xy 281.94 111.76) (xy 304.8 111.76)
+			(xy 281.94 111.76) (xy 288.29 111.76)
 		)
 		(stroke
 			(width 0)
@@ -6901,7 +6901,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 139.7) (xy 149.86 139.7)
+			(xy 127 139.7) (xy 149.86 139.7)
 		)
 		(stroke
 			(width 0)
@@ -7041,7 +7041,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 204.47) (xy 184.15 233.68)
+			(xy 184.15 204.47) (xy 184.15 224.79)
 		)
 		(stroke
 			(width 0)
@@ -7281,7 +7281,7 @@
 	)
 	(wire
 		(pts
-			(xy 207.01 204.47) (xy 207.01 226.06)
+			(xy 207.01 204.47) (xy 207.01 224.79)
 		)
 		(stroke
 			(width 0)
@@ -7451,7 +7451,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 204.47) (xy 214.63 223.52)
+			(xy 214.63 204.47) (xy 214.63 224.79)
 		)
 		(stroke
 			(width 0)
@@ -7721,7 +7721,7 @@
 	)
 	(wire
 		(pts
-			(xy 199.39 204.47) (xy 199.39 226.06)
+			(xy 199.39 204.47) (xy 199.39 224.79)
 		)
 		(stroke
 			(width 0)
@@ -7961,7 +7961,7 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 233.68) (xy 171.45 204.47)
+			(xy 171.45 224.79) (xy 171.45 204.47)
 		)
 		(stroke
 			(width 0)
@@ -7971,7 +7971,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 137.16) (xy 149.86 137.16)
+			(xy 127 137.16) (xy 149.86 137.16)
 		)
 		(stroke
 			(width 0)
@@ -8201,7 +8201,7 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 226.06) (xy 224.79 204.47)
+			(xy 224.79 224.79) (xy 224.79 204.47)
 		)
 		(stroke
 			(width 0)
@@ -8561,7 +8561,7 @@
 	)
 	(wire
 		(pts
-			(xy 201.93 204.47) (xy 201.93 226.06)
+			(xy 201.93 204.47) (xy 201.93 224.79)
 		)
 		(stroke
 			(width 0)
@@ -8661,7 +8661,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 134.62) (xy 149.86 134.62)
+			(xy 127 134.62) (xy 149.86 134.62)
 		)
 		(stroke
 			(width 0)
@@ -8781,7 +8781,7 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 64.77) (xy 234.95 72.39)
+			(xy 234.95 68.58) (xy 234.95 72.39)
 		)
 		(stroke
 			(width 0)
@@ -8791,7 +8791,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 204.47) (xy 176.53 247.65)
+			(xy 176.53 204.47) (xy 176.53 224.79)
 		)
 		(stroke
 			(width 0)
@@ -8933,7 +8933,7 @@
 	)
 	(global_label "POWER_TEMP"
 		(shape input)
-		(at 234.95 64.77 90)
+		(at 234.95 68.58 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8943,7 +8943,7 @@
 		)
 		(uuid "0a302e39-7231-4c3e-a995-34c13e3ca6c9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 234.95 47.2412 90)
+			(at 234.95 51.0512 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9065,7 +9065,7 @@
 	)
 	(global_label "AX5043_IRQ_RX2"
 		(shape input)
-		(at 121.92 139.7 180)
+		(at 127 139.7 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9075,7 +9075,7 @@
 		)
 		(uuid "1631dfe4-4ec9-4b3e-86c5-b466f8de5ca4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 100.06 139.7 0)
+			(at 105.14 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9087,7 +9087,7 @@
 	)
 	(global_label "OTHER_HW_POWER_ST"
 		(shape input)
-		(at 184.15 233.68 270)
+		(at 184.15 224.79 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9097,7 +9097,7 @@
 		)
 		(uuid "16b51e37-e9c0-4aab-b967-78c2667efe42")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 184.15 260.9333 90)
+			(at 184.15 252.0433 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9263,7 +9263,7 @@
 	)
 	(global_label "VER_BIT1"
 		(shape input)
-		(at 304.8 111.76 0)
+		(at 288.29 111.76 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9273,7 +9273,7 @@
 		)
 		(uuid "260cbe11-3c28-4a22-ba7c-5b8684ef4195")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 317.7339 111.76 0)
+			(at 301.2239 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9329,7 +9329,7 @@
 	)
 	(global_label "VER_BIT0"
 		(shape input)
-		(at 304.8 114.3 0)
+		(at 288.29 114.3 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9339,7 +9339,7 @@
 		)
 		(uuid "35509551-e839-4282-a397-af1cc0db4fe8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 317.7339 114.3 0)
+			(at 301.2239 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9461,7 +9461,7 @@
 	)
 	(global_label "POW_MEAS_EN"
 		(shape input)
-		(at 121.92 134.62 180)
+		(at 127 134.62 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9471,7 +9471,7 @@
 		)
 		(uuid "4b864091-7f8d-4c00-bb5e-e2ae7dc98061")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 103.0849 134.62 0)
+			(at 108.1649 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9483,7 +9483,7 @@
 	)
 	(global_label "AX5043_IRQ_RX4"
 		(shape input)
-		(at 204.47 243.84 270)
+		(at 204.47 224.79 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9493,7 +9493,7 @@
 		)
 		(uuid "4ce0bd9b-fb2d-4bcf-a62d-5d82b237f340")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 204.47 265.7 90)
+			(at 204.47 246.65 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9549,7 +9549,7 @@
 	)
 	(global_label "ANT_IRQ_N"
 		(shape input)
-		(at 191.77 233.68 270)
+		(at 191.77 224.79 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9559,7 +9559,7 @@
 		)
 		(uuid "53cf5121-c4f6-473b-9ca2-ba1b349f34a8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 191.77 248.3059 90)
+			(at 191.77 239.4159 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9571,7 +9571,7 @@
 	)
 	(global_label "PA_PWR_EN"
 		(shape input)
-		(at 121.92 137.16 180)
+		(at 127 137.16 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9581,7 +9581,7 @@
 		)
 		(uuid "54207824-192b-4adf-8cb7-98eda5d058bb")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 106.2055 137.16 0)
+			(at 111.2855 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9659,7 +9659,7 @@
 	)
 	(global_label "OTHER_ACTIVE"
 		(shape input)
-		(at 209.55 233.68 270)
+		(at 209.55 224.79 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9669,7 +9669,7 @@
 		)
 		(uuid "591ad35b-986e-45c6-a2cd-65bcf90438e1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 209.55 252.2974 90)
+			(at 209.55 243.4074 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9879,7 +9879,7 @@
 	)
 	(global_label "AX5043_IRQ_RX3"
 		(shape input)
-		(at 224.79 226.06 270)
+		(at 224.79 224.79 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9889,7 +9889,7 @@
 		)
 		(uuid "711692f0-cf52-4e04-86c0-67ad862aa8ff")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 224.79 247.92 90)
+			(at 224.79 246.65 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9921,9 +9921,9 @@
 			)
 		)
 	)
-	(global_label "PC104_GPIO3"
+	(global_label "PC104_ABF0"
 		(shape input)
-		(at 207.01 226.06 270)
+		(at 207.01 224.79 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9933,7 +9933,7 @@
 		)
 		(uuid "74b9a354-ae44-488d-9005-420bcfbceca7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.01 240.831 90)
+			(at 207.01 241.7381 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10165,7 +10165,7 @@
 	)
 	(global_label "OTHER_FAULT"
 		(shape input)
-		(at 171.45 233.68 270)
+		(at 171.45 224.79 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10175,7 +10175,7 @@
 		)
 		(uuid "8f40ce3b-f649-423c-a27d-4cfeda21eb59")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 171.45 251.4991 90)
+			(at 171.45 242.6091 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10253,7 +10253,7 @@
 	)
 	(global_label "CAN_A_TX"
 		(shape input)
-		(at 201.93 226.06 270)
+		(at 201.93 224.79 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10263,7 +10263,7 @@
 		)
 		(uuid "9c9875e5-33af-4f85-b5a4-d1c6de389fc7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 201.93 237.281 90)
+			(at 201.93 236.011 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10495,7 +10495,7 @@
 	)
 	(global_label "PA_TEMP"
 		(shape input)
-		(at 232.41 64.77 90)
+		(at 232.41 68.58 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10505,7 +10505,7 @@
 		)
 		(uuid "c2301775-df2b-4513-bfa6-2706b9b50e7a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 232.41 52.1761 90)
+			(at 232.41 55.9861 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10583,7 +10583,7 @@
 	)
 	(global_label "Clock_CPU"
 		(shape input)
-		(at 214.63 223.52 270)
+		(at 214.63 224.79 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10593,7 +10593,7 @@
 		)
 		(uuid "cf15d8a9-4092-4be2-b46f-fbd537b19a3b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 214.63 238.3637 90)
+			(at 214.63 239.6337 90)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10693,7 +10693,7 @@
 	)
 	(global_label "CAN_A_RX"
 		(shape input)
-		(at 199.39 226.06 270)
+		(at 199.39 224.79 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10703,7 +10703,7 @@
 		)
 		(uuid "f9a3132b-80b5-4a9d-967d-f0c29f869f9e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 199.39 237.5834 90)
+			(at 199.39 236.3134 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10781,7 +10781,7 @@
 	)
 	(global_label "I2C_SCL"
 		(shape input)
-		(at 176.53 247.65 270)
+		(at 176.53 224.79 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10791,7 +10791,7 @@
 		)
 		(uuid "fcee0874-9eb6-452d-b617-6db542ddb096")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 176.53 259.4227 90)
+			(at 176.53 236.5627 90)
 			(effects
 				(font
 					(size 1.27 1.27)

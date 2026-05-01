@@ -233,19 +233,20 @@ R123 and R124 will be required to make it work.
   only by battery to avoid the main power drop issue, this will no
   longer be required on Version 3.
   
-* PA\_PWR\_EN is now positive logic to account for the umbilical changes.
+* PA\_PWR\_EN is now positive logic to account for the external PA
+  power control changes.
 
 * SPI 5 from the processor is run to an antenna controller
-  and switches were added to allow PC102\_SPI\_EN\_N to turn on the
-  connection to the bus.
+  and switches were added to allow ANT\_EN\_N to turn on the
+  antenna controller
   
-* Pin 9, GIOA[2} was changed from OTHER\_PRESENCE\_N to ANT\_IRQ\_N.
+* Pin 9, GIOA[2] was changed from OTHER\_PRESENCE\_N to ANT\_IRQ\_N.
   OTHER\_PRESENCE\_N didn't need to be on a line with an interrupt,
   and ANT\_IRQ\_N obviously does.  OTHER\_PRESENCE\_N is moved to
   pin 86, AD1EVT.
   
 * PC104\_GPIO4 and ACTIVE are switched.  PC104\_GPIO4 is now pin 133
-  (GIOB[1]) and ACTIVE is not N2HET1\_18.  ACTIVE would not need to be
+  (GIOB[1]) and ACTIVE is now N2HET1\_18.  ACTIVE would not need to be
   used as an interrupt as it is output only, but PC104\_GPIO4 could,
   and if we need another interrupt input into the main CPU from
   something else PC104\_GPIO4 could be used for that.
@@ -254,6 +255,9 @@ R123 and R124 will be required to make it work.
   PC104 connector.  Move them to be on that connector in case this
   interfaces to a board with a partial PC104.  This moves them from
   H1-33 and H1-34 to H1-29 and H1-30.
+  
+* The ABF0 line from the power supply is run to PC104\_ABF0 on the
+  CPU.
 
 
 # IO Connections on the PacSat AFSK processor
@@ -284,7 +288,7 @@ used as a GPIO.
 |12		|CAN3RX					|CAN\_A\_RX				|IU|CAN bus transceiver |
 |13		|CAN3TX					|CAN\_A\_TX				|OU|CAN bus transceiver |
 |14		|GIOA[5]				|AX5043\_IRQ\_RX4		|ID|Interrupt from AX5043 RX4 |
-|15		|N2HET1[22]				|PC104\_GPIO4			| D|PC104 Pin H1-27|
+|15		|N2HET1[22]				|PC104\_ABF0			|ID|PC104 Pin H2-50|
 |16		|GIOA[6]				|OTHER\_ACTIVE			|ID|Active line from other board |
 |17		|VCC					|						|  | |
 |18		|OSCIN					|						|  | |
@@ -301,7 +305,7 @@ used as a GPIO.
 |29		|VCC					|						|  | |
 |30		|N2HET1[02]				|						|OD|Green LED |
 |31		|N2HET1[05]				|LNA\_ENABLE			|OD|Used to enable the LNA |
-|32		|MIBSPI5NCS[0]			|ANT\_SPI\_CS			| U|SPI for the antenna controller) |
+|32		|MIBSPI5NCS[0]			|ANT\_SPI\_CS			|OU|SPI for the antenna controller) |
 |33		|N2HET1[07]				|AX5043\_EN\_RX3\_N		|OD|Power enable for AX5043 RX 3 |
 |34		|TEST					|					    |  | |
 |35		|N2HET1[09]				|AX5043\_EN\_RX2\_N		|OD|Power enable for AX5043 RX 2 |
