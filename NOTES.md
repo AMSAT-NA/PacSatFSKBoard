@@ -2722,3 +2722,13 @@ Review, minor cleanups of some docs and typos.
 
 Add an 8-input ADC to the antenna control processor for use by solar
 panel temperature inputs.
+
+## 2026-05-01
+
+Replace the ADC with two ADS1015 ADCs.  These are easier to work with
+and don't have the accuracy problems the original one does, as they
+have a built-in op amp that can be ranged down to .256V for the
+maximum range.
+
+Add an enable to allow the ADC to be powered on and off.  So it can be
+reset if necessary, or powered down when not in use.

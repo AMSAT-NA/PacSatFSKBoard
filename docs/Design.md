@@ -526,7 +526,7 @@ options to add pullup resistors on these lines externally.
 |18		|PA22			|ANT\_IRQ\_N		|Interrupt to main processor
 |19		|PA23			|I2CB\_SCL			|ANT pin 8
 |20		|PA24			|I2CB\_SDA			|ANT pin 4
-|21		|PA25			|					|Unused to zero ohm resistor
+|21		|PA25			|ADC\_EN\_N			|Enable for ADC power
 |22		|PA26			|PC104\_GPIO\_7		|ADC\_1, PC104 SPI select
 |23		|VCORE			|					|
 |24		|PA1			|I2CA\_SDA			|ANT pin 2
@@ -543,21 +543,19 @@ PC104 GPIO5 and GPIO6 can also be used as a UART.
 ### ADC
 
 The ADC is designed for small range thermsistors, from 78 to 159 ohms.
-So the biasing and setup is a little strange.
 
 The high side of the ADC input is a 4.7K resistor, with the above
 thermsistor values you get ~.69ma of current, giving a voltage range
-of 53.9mV to 109mV feeding in to the ADC.
+of 53.9mV to 108mV feeding in to the ADC.
 
-From the theory of operation of the ADC, you can reduce the reference
-voltage down to 50mV.  We set it to 115mV.  The internal noise from
-the ADC will cause about 8 LSBs, or 3 bits of error in the output of
-the ADC, and you can only use half the range of the ADC, but even then
-you get 256 useful values, and you could average to do better.  That's
-probably good enough.  If you increase the high side resistor, then
-the voltage range will go down, which is bad for measurement.
+The ADC can be set for a .256V full scale range, so each bit is .125mV.
+With the above configuration, you get 384 useful values from the ADC.
 
-If you have a different situation, the bias resistors can be adjusted
+If you have a different situation, the high side resistors and the
+internal range settings in the ADC can be adjusted on a per-pin basis.
+
+The ADC has a separate power control, ADC\_EN\_N, to allow it to be
+powered off when not in use or to reset it.
 
 ## WATCHDOG\_OUT\_N
 

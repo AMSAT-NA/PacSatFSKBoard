@@ -337,6 +337,7 @@ other_components = {
     ('2N7002TQ-7-F', 'SOT-523'): None,
     ('TPS71533QDCKRQ1', 'SOT-353_SC-70-5'): None,
     ('ADS7828EIPWRQ1', 'TSSOP-16_4.4x5mm_P0.65mm'): None,
+    ('ADS1015BQDGSRQ1', 'TSSOP-10_3x3mm_P0.5mm'): None,
     ('', ''): None,
 }
 
