@@ -2732,3 +2732,6 @@ maximum range.
 
 Add an enable to allow the ADC to be powered on and off.  So it can be
 reset if necessary, or powered down when not in use.
+
+Replace the ADC header with a 10 pin Harwin G125-MH11005L1P, the same
+one used for the antenna control connection.

@@ -498,9 +498,10 @@ On the small processor, I2C0 is connected to I2CA on the antenna
 connector, and I2C2 is connected to I2CB on the antenna connector.
 
 I2C1 runs to the I2C2 pins on the PC104, for another possible I2C.
-This I2C also runs to an ADC hooked to an 16 pin 1.27mm header.  This
-can be used for external thermsistor inputs or really anything else
-where an ADC is needed.
+This I2C also runs to an ADC hooked to the same connector type as the
+antenna control.  This can be used for external thermsistor inputs or
+really anything else where an ADC is needed.  A few extra ADCs are
+available from one of the chips if they are needed.
 
 Power to the external antenna control board comes from 3.3V_p.  Normal
 power is very low, but it draws a lot of power when burning the
@@ -525,8 +526,8 @@ options to add pullup resistors on these lines externally.
 |10		|PA11			|ANT\_SPI\_CLK		|SPI clock from the main processor
 |11		|PA15			|					|Optional line to ANT pin 10
 |12		|PA16			|PC104\_GPIO8		|or ADC\_12, PC104 SPI POCI
-|13		|PA17			|PC104\_I2C\_SCL	|or PC104 SPI clock
-|14		|PA18			|PC104\_I2C\_SDA	|or PC104 SPI PICO
+|13		|PA17			|ADC\_SCL and PC104\_I2C\_SCL	|or PC104 SPI clock
+|14		|PA18			|ADC\_SDA and PC104\_I2C\_SDA	|or PC104 SPI PICO
 |15		|PA19			|ANT\_JTAG\_SWDIO	|
 |16		|PA20			|ANT\_JTAG\_SWCLK	|
 |17		|PA21			|ANT\_POWER\_EN\_N	|Enable power to external antenna controller
@@ -555,11 +556,14 @@ The high side of the ADC input is a 4.7K resistor, with the above
 thermsistor values you get ~.69ma of current, giving a voltage range
 of 53.9mV to 108mV feeding in to the ADC.
 
-The ADC can be set for a .256V full scale range, so each bit is .125mV.
-With the above configuration, you get 384 useful values from the ADC.
+The ADC can be set for a .256V full scale range, so each bit is
+.125mV.  The ADC is 12-bit and full range without noise issues.  So
+with the above configuration, you get 384 useful values from the ADC.
 
 If you have a different situation, the high side resistors and the
 internal range settings in the ADC can be adjusted on a per-pin basis.
+The ground connections on the other side run through zero ohm
+resistors so that can be modified, too.
 
 The ADC has a separate power control, ADC\_EN\_N, to allow it to be
 powered off when not in use or to reset it.

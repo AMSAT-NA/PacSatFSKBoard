@@ -532,7 +532,7 @@ VBAT\_p - Remove R126
 ## Antenna Control
 
 The antenna control connector is a Harwin G125-MH11005L1P 10-pin
-connector, a 1.25mm maile pitch latch connector.  It would mate with a
+connector, a 1.25mm male pitch latch connector.  It would mate with a
 G125-2041096L0 housing, with something like a G125-FC11005L0-0150F
 cable, or equivalent.  Harwin has several cable assemblies with 5+5
 position female DIL latch connections.
@@ -568,22 +568,19 @@ configurations may be possible.
 
 ## Extra ADC
 
-A 16-pin 1.27mm header is available on the bottom left of the board.
-It has 8 ADC connections on pins 1, 3, 5, 7, 9, 11, 13, and 15.  These
-each have a 4.7K pullup resistor on them.  The even pins are connected
-to ground.
+Another Harwin G125-MH11005L1P 10-pin connector is available on the
+bottom left of the board.  It has 5 ADC connections on pins 6-10.
+These each have a 4.7K pullup resistor on them.  Pins 1-5 are
+connected to ground through individual zero ohm resistors.
+
+It's possible to solder a cable directly to the holes and not use a
+connector.  This is a through-hole connector for that reason.
 
 These ADCs can be used for any purpose, thermsistors for temperature
 measurement, external voltage measurements, etc.  It is designed for
 small value thermsistors.  Other uses may require adjusting the high
-side resistances.  See the Design document (ADC section) for details.
-
-Normal header connectors are not suitable for space (maybe some could
-be used) but if one with a suitable interlock could be found, a 12 pin
-header could be put on and the first and last ADC not used.
-
-It's also possible to solder a cable directly to the holes.  This is a
-through-hole connector for that reason.
+side resistances or the ground side resistors.  See the Design
+document (ADC section) for details.
 
 A cable could be run over to the slot above it and the same strain
 relief used for the antenna control can be used for this cable, too.
