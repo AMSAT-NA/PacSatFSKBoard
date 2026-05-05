@@ -257,12 +257,9 @@ R123 and R124 will be required to make it work.
   H1-33 and H1-34 to H1-29 and H1-30.
   
 * The ABF0 line from the power supply is run to PC104\_ABF0 on the
-  CPU.
+  CPU.  This goes through a MOSFET to avoid latch up and to isolate,
+  so the logic is inverted from the PC104.
   
-* The PC104\_ABF0 and FEED\_WATCHDOG lines on the processor are switched
-  so that PC104\_ABF0 is pulled up by default.
-
-
 # IO Connections on the PacSat AFSK processor
 
 These are the pins on the TMS570 processor, where they go, what they
@@ -291,7 +288,7 @@ used as a GPIO.
 |12		|CAN3RX					|CAN\_A\_RX				|IU|CAN bus transceiver |
 |13		|CAN3TX					|CAN\_A\_TX				|OU|CAN bus transceiver |
 |14		|GIOA[5]				|AX5043\_IRQ\_RX4		|ID|Interrupt from AX5043 RX4 |
-|15		|N2HET1[22]				|\*FEED\_WATCHDOG		|OD|Resets the hardware watchdog timer |
+|15		|N2HET1[22]				|PC104\_ABF0			|ID|PC104 Pin H2-50 through a MOSFET|
 |16		|GIOA[6]				|OTHER\_ACTIVE			|ID|Active line from other board |
 |17		|VCC					|						|  | |
 |18		|OSCIN					|						|  | |
@@ -409,7 +406,7 @@ used as a GPIO.
 |127	|N2HET1[30]				|PC104\_SER\_EN\_N		|OD|Connect the 2nd serial port to the PC104|
 |128	|CAN2TX					|CAN\_B\_TX				|OU|CAN bus B transmit |
 |129	|CAN2RX					|CAN\_B\_RX				|IU|CAN bus B receive |
-|130	|MIBSPI1NCS[1]			|PC104\_ABF0			|IU|PC104 Pin H2-50|
+|130	|MIBSPI1NCS[1]			|\*FEED\_WATCHDOG		|OU|Resets the hardware watchdog timer |
 |131	|LINRX					|PC104\_RX				|IU|PC104 Pin H2-21 |
 |132	|LINTX					|PC104\_TX				|OU|PC104 Pin H2-22 |
 |133	|GIOB[1]				|PC104\_GPIO4			|OD|Local active output pin for active/standby |

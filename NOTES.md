@@ -2738,5 +2738,5 @@ one used for the antenna control connection.
 
 ## 2026-05-04
 
-Rewire the antenna controller I/Os.  This will allow the boostrap
+Rewire the antenna controller I/Os.  This will allow the bootstrap
 loader to be accessed from the PC104 bus pins.
