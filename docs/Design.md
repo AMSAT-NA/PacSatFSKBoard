@@ -514,39 +514,50 @@ options to add pullup resistors on these lines externally.
 
 |Pin	|CPU Pin Name	|Schematic Name		|Description |
 |----	|------------	|--------------		|----------- |
-|1		|PA0			|I2CA\_SCL			|ANT pin 7
+|1		|PA0			|PC104\_GPIO6		|or UART1 RX, BSL UART RX
 |2		|NRST			|ANT\_NRST			|Reset line for processor
 |3		|VBAT/VDD		|NRST				|
 |4		|VSS			|GND				|
 |5		|PA2			|ANT\_SPI\_CS		|SPI chip select from main processor
-|6		|PA3			|PC104\_GPIO5		|or UART1 TX
-|7		|PA4			|PC104\_GPIO6		|or UART1 RX
+|6		|PA3			|ANT\_IRQ\_N		|Interrupt to main processor
+|7		|PA4			|ANT\_SPI\_SOMI		|SPI SOMI from main processor
 |8		|PA9			|ANT\_SPI\_SIMO		|SPI SIMO from main processor
-|9		|PA10			|ANT\_SPI\_SOMI		|SPI SOMI from main processor
+|9		|PA10			|I2CA\_SDA			|ANT pin 2
 |10		|PA11			|ANT\_SPI\_CLK		|SPI clock from the main processor
-|11		|PA15			|					|Optional line to ANT pin 10
-|12		|PA16			|PC104\_GPIO8		|or ADC\_12, PC104 SPI POCI
+|11		|PA15			|I2CB\_SCL			|ANT pin 8
+|12		|PA16			|PC104\_GPIO8		|or ADC\_14, PC104 SPI POCI, BSL\_Invoke
 |13		|PA17			|ADC\_SCL and PC104\_I2C\_SCL	|or PC104 SPI clock
 |14		|PA18			|ADC\_SDA and PC104\_I2C\_SDA	|or PC104 SPI PICO
 |15		|PA19			|ANT\_JTAG\_SWDIO	|
 |16		|PA20			|ANT\_JTAG\_SWCLK	|
 |17		|PA21			|ANT\_POWER\_EN\_N	|Enable power to external antenna controller
-|18		|PA22			|ANT\_IRQ\_N		|Interrupt to main processor
-|19		|PA23			|I2CB\_SCL			|ANT pin 8
+|18		|PA22			|I2CA\_SCL			|ANT pin 7
+|19		|PA23			|					|Optional line to ANT pin 10
 |20		|PA24			|I2CB\_SDA			|ANT pin 4
 |21		|PA25			|ADC\_EN\_N			|Enable for ADC power
-|22		|PA26			|PC104\_GPIO\_7		|ADC\_1, PC104 SPI select
+|22		|PA26			|PC104\_GPIO7		|ADC\_1, PC104 SPI select, BSL\_Invoke
 |23		|VCORE			|					|
-|24		|PA1			|I2CA\_SDA			|ANT pin 2
+|24		|PA1			|PC104\_GPIO5		|or UART1 TX, BSL UART TX
 
 Note that all lines running to the PC104 go through zero-ohm resistors
-that are not populated by default.
+The GPIO/UART/BSL ones are populated, the others are not populated by
+default.
 
 The PC104 GPIOs are arranged so that those lines can also be used as a
 SPI bus, SPI1 on the processor.  These are labeled in the description
-above with "PC104 SPI".
+above with "PC104 SPI".  This requires disabling the extra ADC
+chips.
 
-PC104 GPIO5 and GPIO6 can also be used as a UART.
+PC104 GPIO5 and GPIO6 can also be used as a UART.  It can be used as a
+bootstrap loader UART by setting up the configuration correctly (see
+the chip manual and the bootstrap manual for the chip).  You would
+generally use PC104\_GPIO8 as the BSL\_Invoke pin, you would pull it
+low, and the BSL UART RX and TX lines to load the data.  NRST isn't
+available there, but the power to the antenna controller from the main
+processor can be used for reset.
+
+If PC104\_GPIO8 is used as a GPIO input, then you can't use it for
+BSL\_Invoke.  You can also use PC104\_GPIO7 for BSL\_Invoke.
 
 ### ADC
 

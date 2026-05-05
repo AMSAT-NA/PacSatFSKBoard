@@ -2735,3 +2735,8 @@ reset if necessary, or powered down when not in use.
 
 Replace the ADC header with a 10 pin Harwin G125-MH11005L1P, the same
 one used for the antenna control connection.
+
+## 2026-05-04
+
+Rewire the antenna controller I/Os.  This will allow the boostrap
+loader to be accessed from the PC104 bus pins.
