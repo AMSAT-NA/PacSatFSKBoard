@@ -2621,7 +2621,7 @@
 	)
 	(text "Possible I2C SDA Alt on PS"
 		(exclude_from_sim no)
-		(at 124.46 124.968 0)
+		(at 121.666 124.714 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2631,7 +2631,7 @@
 	)
 	(text "Possible I2C SCL Alt on PS"
 		(exclude_from_sim no)
-		(at 124.46 122.428 0)
+		(at 121.666 122.428 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2830,10 +2830,6 @@
 		(uuid "14b1b0e5-ab7a-434c-b3b7-dbbe471059cf")
 	)
 	(no_connect
-		(at 287.02 96.52)
-		(uuid "15befc89-1d18-45de-a110-2254dabde302")
-	)
-	(no_connect
 		(at 299.72 99.06)
 		(uuid "1ace2b01-0e5e-45c8-8b60-a6aaf46bb8c9")
 	)
@@ -2888,10 +2884,6 @@
 	(no_connect
 		(at 151.13 142.24)
 		(uuid "62e54ebc-fbdf-4857-94ac-5296e19acb82")
-	)
-	(no_connect
-		(at 299.72 96.52)
-		(uuid "63aa3118-4812-4b37-9add-acfa5d403844")
 	)
 	(no_connect
 		(at 138.43 127)
@@ -3639,6 +3631,16 @@
 	)
 	(wire
 		(pts
+			(xy 262.89 96.52) (xy 287.02 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71dcf711-1d3b-4b3d-af00-025161832fbb")
+	)
+	(wire
+		(pts
 			(xy 278.13 109.22) (xy 287.02 109.22)
 		)
 		(stroke
@@ -3916,6 +3918,16 @@
 			(type default)
 		)
 		(uuid "9ca8c01d-ac73-4121-9f3d-79dbb759ebd9")
+	)
+	(wire
+		(pts
+			(xy 299.72 96.52) (xy 321.31 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e18ad68-435c-4705-bbf5-125030707531")
 	)
 	(wire
 		(pts
@@ -5275,6 +5287,28 @@
 			)
 		)
 	)
+	(global_label "PC104_CPU_RX"
+		(shape input)
+		(at 262.89 96.52 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "9c135de8-1b4e-4b04-8dbd-54b6513d7659")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 242.7488 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "PC104_TX"
 		(shape input)
 		(at 209.55 121.92 180)
@@ -5486,6 +5520,28 @@
 		(uuid "e7a1d782-6b5c-4df8-aab3-c180fbacbd4c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 418.8487 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PC104_CPU_TX"
+		(shape input)
+		(at 321.31 96.52 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left)
+		)
+		(uuid "e83f35a8-b7ae-4211-88a1-910ab78a54f5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 341.0883 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)

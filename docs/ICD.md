@@ -441,9 +441,9 @@ of the GPIO pins can be assigned to that function.
 In addition, four GPIOs run from the antenna controller to the PC104
 connector.  These are
 
-  - PC104\_GPIO[5-6] - GPIO or UART RX/TX
+  - PC104\_GPIO[5-6] - GPIO or UART RX/TX, also bootstrap loading.
   
-  - PC104\_GPIO[7-8] - GPIO or UART RX/TX or ADC.
+  - PC104\_GPIO[7-8] - GPIO or ADC, also bootstrap loading invoke.
 
 See the schematics for the antenna controller for details on how these
 are wired.
@@ -669,10 +669,9 @@ disabled.
 
 ## Serial Port
 
-A 3.3V serial port interface is provided on the edge of the board.
-This is a standard 2.54mm (.1") header with three pins: TX, RX, and
-ground.  Remember, when connecting to an external serial port, connect
-TX to RX and RX to TX.
+A 3.3V serial port interface is provided on the PC102 J2 pin 1 is RX,
+J2 pin 2 is TX.  Remember, when connecting to an external serial port,
+connect TX to RX and RX to TX.
 
 Only connect a 3.3V serial port interface.  Connecting a 5V or
 standard RS-232 connection will likely damage the processor.
