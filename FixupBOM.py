@@ -264,6 +264,7 @@ value_to_partnum_xlats_2 = {
     ('25mΩ 1%', 	'0402'): ('Yaego',	'PE0402FRF470R025L'),
     ('360Ω 1%',         '0402'): ('Panasonic',  'ERJ-2RKF3600X'),
     ('3.32KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF3321X'),
+    ('5.1K',            '0402'): ('Panasonic',  'ERJ-2RKF5101X'),
     ('10KΩ 1%', 	'0402'): ('Panasonic',	'ERJ-PA2F1002X'),
     ('19.6KΩ 1%', 	'0402'): ('Yaego',	'AC0402FR-0719K6L'),
     ('30.9KΩ 1%', 	'0402'): ('Panasonic',	'ERJ-2RKF3092X'),
@@ -338,6 +339,10 @@ other_components = {
     ('TPS71533QDCKRQ1', 'SOT-353_SC-70-5'): None,
     ('ADS7828EIPWRQ1', 'TSSOP-16_4.4x5mm_P0.65mm'): None,
     ('ADS1015BQDGSRQ1', 'TSSOP-10_3x3mm_P0.5mm'): None,
+    ('ESD601DPYRQ1', 'DPY0002A-MFG'): ('', ''),
+    ('CY7C65215-32LTXI', 'PG-VQFN-32-803'): ('', ''),
+    ('IRLML6246TRPBF', 'SOT-523'): ('', ''),
+    ('CX90B1-24P', 'CX90B1-24P_HIR'): ('', ''),
     ('', ''): None,
 }
 

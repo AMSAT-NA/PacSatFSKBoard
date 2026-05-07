@@ -1,4 +1,4 @@
-186148969256573
+200373834778778
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -73913,6 +73913,34 @@ CUBESAT_MOUNT_HOLE
 1
 1
 PacSatDev_misc
+CX90B1-24P_HIR
+
+CX90B1-24P 
+0
+30
+28
+PacSatDev_misc
+D2PAK_STM
+
+LD1085D2T33R 
+0
+3
+3
+PacSatDev_misc
+D2PAK_STM-L
+
+LD1085D2T33R 
+0
+3
+3
+PacSatDev_misc
+D2PAK_STM-M
+
+LD1085D2T33R 
+0
+3
+3
+PacSatDev_misc
 DFN8_2x2-0p5_QOR
 
 QPL9547TR7 
@@ -73933,6 +73961,13 @@ QPL9547TR7
 0
 9
 9
+PacSatDev_misc
+DPY0002A-MFG
+
+ESD601DPYRQ1 
+0
+2
+2
 PacSatDev_misc
 Fiducial_Square_1mm_Mask2mm
 Fiducial, circular marking, 1mm bare copper, 2mm soldermask opening (Level A)
@@ -74045,6 +74080,27 @@ Fox TXCO temperature compensated oscillator
 0
 4
 4
+PacSatDev_misc
+PG-VQFN-32-803
+
+CY7C65215-32LTXI 
+0
+33
+33
+PacSatDev_misc
+PG-VQFN-32-803-L
+
+CY7C65215-32LTXI 
+0
+33
+33
+PacSatDev_misc
+PG-VQFN-32-803-M
+
+CY7C65215-32LTXI 
+0
+33
+33
 PacSatDev_misc
 PacSat_Dev_4_26
 

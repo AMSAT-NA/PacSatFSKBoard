@@ -529,6 +529,38 @@ PC104\_UNBILICAL2\_N - Remove U41
 
 VBAT\_p - Remove R126
 
+## USB
+
+The board has a USB type C connector that can be used for serial
+interfaces and power.  If USB is plugged in there, it will supply
+power to the board through USB.  So if you have USB plugged in, you
+should *not* power the board with something else.  If you really need
+to power the board some other way with USB attached, you need to
+remove Q16 and Q17.
+
+If the proper resistors are attached, this can be used to power other
+boards through the PC104.
+
+Both 3.3V and 5V are provided from USB.  If you are only using 5V from
+the PC104 and are using U4 to provide 3.3V, you should not populate
+Q17.  In all cases the USB converter chip is powered by the USB +3.3V
+converter, so you cannot remove that and use USB.
+
+The board is configured to ask for 3A from the USB, though it
+generally only needs less than 1A.  Burning the antenna release can
+draw up to 2A; it is unknown if the power provided by USB (really the
+3.3V converter) will be enough to burn the antenna release.
+
+The USB provides two serial ports, the first for the main CPU and the
+second for the antenna control processor.  Those serial ports are also
+available on the PC104 connector if not using USB, but if USB is
+plugged in you should not use the P104\_CPU and PC104\_ACP serial
+lines.
+
+The main purpose of this connector is updating software and firmware
+after the board has been assembled in the satellite.  A small hole can
+be added to access the USB connector.
+
 ## Antenna Control
 
 The antenna control connector is a Harwin G125-MH11005L1P 10-pin

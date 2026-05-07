@@ -2205,6 +2205,48 @@
 			)
 		)
 	)
+	(sheet
+		(at 175.26 97.79)
+		(size 52.07 15.24)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "f99ab153-a348-41aa-af3f-f6d44b3c2cea")
+		(property "Sheetname" "USB"
+			(at 175.26 96.9514 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "usb.kicad_sch"
+			(at 175.26 113.7162 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38"
+					(page "22")
+				)
+			)
+		)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")

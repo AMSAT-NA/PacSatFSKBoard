@@ -2856,16 +2856,6 @@
 		)
 		(uuid "28ce8484-009d-4c0b-ad45-c514c932a242")
 	)
-	(text "May also be used\nas UART0 or BSL UART"
-		(exclude_from_sim no)
-		(at 168.656 61.214 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-		)
-		(uuid "88747713-cad0-477c-a6fe-8df26e79ff22")
-	)
 	(text "I2C Pullups, in case internal\npullup is not sufficient."
 		(exclude_from_sim no)
 		(at 242.57 103.378 0)
@@ -5054,7 +5044,7 @@
 			)
 		)
 	)
-	(global_label "PC104_GPIO6"
+	(global_label "PC104_ACP_RX"
 		(shape input)
 		(at 137.16 62.23 0)
 		(fields_autoplaced yes)
@@ -5066,7 +5056,7 @@
 		)
 		(uuid "a7007ff8-d78e-4bba-ac7c-05caafa67f45")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 155.3418 62.23 0)
+			(at 157.0109 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5098,7 +5088,7 @@
 			)
 		)
 	)
-	(global_label "PC104_GPIO5"
+	(global_label "PC104_ACP_TX"
 		(shape input)
 		(at 137.16 59.69 0)
 		(fields_autoplaced yes)
@@ -5110,7 +5100,7 @@
 		)
 		(uuid "bfbb673e-2720-4475-9f82-6fca479537b2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 155.3418 59.69 0)
+			(at 156.648 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)

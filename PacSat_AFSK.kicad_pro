@@ -1050,6 +1050,10 @@
     [
       "0c35b1f3-051c-4645-bbee-ec3d7e916024",
       "Extra ADC"
+    ],
+    [
+      "f99ab153-a348-41aa-af3f-f6d44b3c2cea",
+      "USB"
     ]
   ],
   "text_variables": {}
