@@ -560,8 +560,9 @@ plugged in you should not use the P104\_CPU and PC104\_ACP serial
 lines.
 
 The main purpose of this connector is updating software and firmware
-after the board has been assembled in the satellite.  A small hole can
-be added to access the USB connector.
+and the serial consoles after the board has been assembled in the
+satellite.  A small hole in the satellite exterior can be added to
+access the USB connector.
 
 ## Antenna Control
 

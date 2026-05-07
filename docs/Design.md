@@ -16,11 +16,25 @@ or https://www.digikey.com/en/products/detail/olimex-ltd/ARM-JTAG-20-10/3471401
 
 Besides being a lot cheaper than the standard XDS110, the LP-XDS110
 also has a serial port built in, so you don't have to have a separate
-serial port interface.  Jumper J12 on the PacSat board is the serial
-interface (3.3V) and the TX and RX lines are labeled under the pins.
-The unlabeled pin is ground.  Remember, hook TX on one board to RX on
-the other.  Don't hook TX to TX.  If you don't have the JTAG
-connected, you will need to connect the ground as well.
+serial port interface.
+
+On version 2 boards, jumper J12 is the serial interface (3.3V) and the
+TX and RX lines are labeled under the pins.  The unlabeled pin is
+ground.
+
+On version 3 and later boards, there are two CPUs and two serial
+ports.  The serial port for the main CPU is on PC104 J2, TX is pin 2
+and RX is pin 1.  The serial port for the antenna controller is on J1,
+TX is pin 2 and RX is pin 1.
+
+Remember, hook TX on one board to RX on the other.  Don't
+hook TX to TX.  If you don't have the JTAG connected, you will need to
+connect the ground as well.
+
+The serial ports are also available on the USB connector via a USB to
+serial converter.  The first serial port is the main CPU and the
+second is the antenna controller.  Do not hook up the serial port
+lines on the PC104 if USB is connected, they are the same lines.
 
 The reset button on the LP-XDS110 resets the board.
 
@@ -60,6 +74,46 @@ If power cannot be trusted to be quality, there is space to add a buck
 regulator like a TPS61379-Q1 by the PC104 connector.  Or a buck-boost
 or other options.  Currently this assumes that incoming power is
 stable.
+
+Power can also be supplied through USB, see the USB section for
+details.
+
+# USB
+
+(Version 3 and later boards only.)
+
+There is a type C USB connector on the board.  It has two functions:
+accessing the serial port on the processor and powering the board when
+the satellite is completely assembled and otherwise inaccessible.
+
+## USB Serial Ports
+
+The serial ports to the main processor and the antenna control
+processor are available through a USB to serial converter.  The first
+is the main CPU and the second is the ACP.  They are standard USB
+serial devices, so no special drivers should be needed.
+
+If USB is plugged in, do not connect to the serial lines on the PC104.
+The same lines go to the USB to serial converter and are driven by
+that chip.
+
+## USB Power
+
+The USB circuitry is powered by the USB interface.  If a USB cable is
+not plugged in, it will not be powered, the USB power interface is
+designed to block power from flowing from the main power rails to the
+USB circuits.
+
+If USB is plugged in, it will provide power to the board through the
+USB interface.  You should not plug other power in unless you have the
+power separated by removing R184.  If you remove that resistor, you
+can power the board and only the USB portion will use power from the
+USB cable.
+
+The 5V will experience some power drop due to the MOSFETs used to
+switch power on.  At 1A it will sag about .24V.  The 3.3V power is
+boosted a bit in the USB power converter and will range from 3.2V to
+3.4V.
 
 # Heat Sink for the Power Amplifier
 

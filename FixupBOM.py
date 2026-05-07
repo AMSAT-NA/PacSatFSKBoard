@@ -266,6 +266,7 @@ value_to_partnum_xlats_2 = {
     ('3.32KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF3321X'),
     ('5.1K',            '0402'): ('Panasonic',  'ERJ-2RKF5101X'),
     ('10KΩ 1%', 	'0402'): ('Panasonic',	'ERJ-PA2F1002X'),
+    ('19.1KΩ 1%',       '0402'): ('Panasonic',  'ERJ-2RKF1912X'),
     ('19.6KΩ 1%', 	'0402'): ('Yaego',	'AC0402FR-0719K6L'),
     ('30.9KΩ 1%', 	'0402'): ('Panasonic',	'ERJ-2RKF3092X'),
     ('45.3KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF4532X'),
@@ -345,6 +346,7 @@ other_components = {
     ('CX90B1-24P', 'CX90B1-24P_HIR'): None,
     ('TLV75733PDBVR', 'DBV0005A_L'): None,
     ('PJE8401_R1_00001', 'SOT-523'): None,
+    ('TLV75901PDRVT', 'DRV6_1X1P6_TEX'): None,
 
     ('', ''): None,
 }

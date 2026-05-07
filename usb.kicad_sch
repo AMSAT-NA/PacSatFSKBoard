@@ -2579,7 +2579,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PACSAT_DEV_misc:TLV75733PDBVR"
+		(symbol "PACSAT_DEV_misc:TLV75901PDRVT"
 			(pin_names
 				(offset 0.254)
 			)
@@ -2587,23 +2587,23 @@
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "U"
-				(at 0 2.54 0)
+				(at 20.32 10.16 0)
 				(effects
 					(font
 						(size 1.524 1.524)
 					)
 				)
 			)
-			(property "Value" "TLV75733PDBVR"
-				(at 0 0 0)
+			(property "Value" "TLV75901PDRVT"
+				(at 20.32 7.62 0)
 				(effects
 					(font
 						(size 1.524 1.524)
 					)
 				)
 			)
-			(property "Footprint" "PacSatDev_misc:DBV0005A_L"
-				(at 2.032 -17.78 0)
+			(property "Footprint" "PacSatDev_misc:DRV6_1X1P6_TEX"
+				(at 19.304 -14.224 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -2612,8 +2612,8 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://www.ti.com/lit/gpn/tlv757p"
-				(at 0.762 -15.24 0)
+			(property "Datasheet" "https://www.ti.com/lit/gpn/tlv759p"
+				(at 19.812 -17.272 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -2631,7 +2631,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "TLV75733PDBVR"
+			(property "ki_keywords" "TLV75901PDRVT"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2640,7 +2640,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "DBV0005A_N DBV0005A_M DBV0005A_L"
+			(property "ki_fp_filters" "DRV6_1X1P6_TEX"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2649,13 +2649,13 @@
 					(hide yes)
 				)
 			)
-			(symbol "TLV75733PDBVR_0_1"
+			(symbol "TLV75901PDRVT_0_1"
 				(polyline
 					(pts
-						(xy -12.7 12.7) (xy -12.7 -12.7)
+						(xy 7.62 5.08) (xy 7.62 -12.7)
 					)
 					(stroke
-						(width 0.2032)
+						(width 0.127)
 						(type default)
 					)
 					(fill
@@ -2664,10 +2664,10 @@
 				)
 				(polyline
 					(pts
-						(xy -12.7 -12.7) (xy 12.7 -12.7)
+						(xy 7.62 -12.7) (xy 33.02 -12.7)
 					)
 					(stroke
-						(width 0.2032)
+						(width 0.127)
 						(type default)
 					)
 					(fill
@@ -2676,10 +2676,10 @@
 				)
 				(polyline
 					(pts
-						(xy 12.7 12.7) (xy -12.7 12.7)
+						(xy 33.02 5.08) (xy 7.62 5.08)
 					)
 					(stroke
-						(width 0.2032)
+						(width 0.127)
 						(type default)
 					)
 					(fill
@@ -2688,20 +2688,40 @@
 				)
 				(polyline
 					(pts
-						(xy 12.7 -12.7) (xy 12.7 12.7)
+						(xy 33.02 -12.7) (xy 33.02 5.08)
 					)
 					(stroke
-						(width 0.2032)
+						(width 0.127)
 						(type default)
 					)
 					(fill
 						(type none)
 					)
 				)
-				(pin power_in line
-					(at -17.78 7.62 0)
-					(length 5.08)
-					(name "IN"
+				(pin no_connect line
+					(at 40.64 -5.08 180)
+					(length 7.62)
+					(name "DNC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "TLV75901PDRVT_1_1"
+				(pin power_out line
+					(at 0 0 0)
+					(length 7.62)
+					(name "OUT"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2717,45 +2737,9 @@
 					)
 				)
 				(pin input line
-					(at -17.78 -2.54 0)
-					(length 5.08)
-					(name "EN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 17.78 7.62 180)
-					(length 5.08)
-					(name "OUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 17.78 -7.62 180)
-					(length 5.08)
-					(name "GND"
+					(at 0 -2.54 0)
+					(length 7.62)
+					(name "FB"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2770,12 +2754,64 @@
 						)
 					)
 				)
-			)
-			(symbol "TLV75733PDBVR_1_1"
-				(pin no_connect line
-					(at 17.78 0 180)
-					(length 5.08)
-					(name "NC"
+				(pin input line
+					(at 0 -5.08 0)
+					(length 7.62)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 40.64 0 180)
+					(length 7.62)
+					(name "EPAD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 40.64 -2.54 180)
+					(length 7.62)
+					(name "IN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 40.64 -7.62 180)
+					(length 7.62)
+					(name "EN"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3007,7 +3043,7 @@
 		)
 		(uuid "4ff5bba1-3e05-4bf0-852a-0da09c96ce4a")
 	)
-	(text "This circuit turns on power from the USB power domain to the\nmain power in the circuit if USB_+5V is applied.\n\nYou need two P-channel MOSFETS on each power rail to prevent\npower from flowing backwards through the diodes in the MOSFETS.\n\nR183 and R185 make sure the gates of the P-channel MOSFETS are\npulled high if power is applied in either direction.\n\nIf USB_+5V has power, that will turn on Q18 and pull the\nP-channel MOSFET gates to ground, turning them on."
+	(text "This circuit turns on power from the USB power domain to the\nmain power in the circuit if USB_+5V is applied.  If USB_+5V is\noff, this keeps power from going to the USB circuits from the\npower rail if power is applied on 5V_IN or 3.3V_IN.\n\nYou need two P-channel MOSFETS on each power rail to prevent\npower from flowing backwards through the diodes in the MOSFETS.\n\nR183 and R185 make sure the gates of the P-channel MOSFETS are\npulled high if power is applied in either direction.\n\nIf USB_+5V has power, that will turn on Q18 and pull the\nP-channel MOSFET gates to ground, turning them on."
 		(exclude_from_sim no)
 		(at 263.652 237.49 0)
 		(effects
@@ -3027,6 +3063,32 @@
 		)
 		(uuid "9d98a340-bdd7-4deb-929c-f30f22d7e5cf")
 	)
+	(text "Vgs minimum on the 2N7001TQ is 1V.  If power is\napplied from 5V_IN, the two 100K resistors and\nthe 10K resistor will result in the voltage here\nbeing .23V, which will not turn on the transistor."
+		(exclude_from_sim no)
+		(at 165.1 242.57 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "dd397bf7-859f-49f9-8c2c-89f78dd4c1c4")
+	)
+	(text "This will result in about 3.4V output, to account\nfor some loss in the MOSFETs going to the main\npower rail."
+		(exclude_from_sim no)
+		(at 125.476 70.104 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "dda89cad-4377-4d5c-95f4-e2595b625d2b")
+	)
+	(junction
+		(at 123.19 35.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "087e3b19-377e-4f54-8223-6434a313d79f")
+	)
 	(junction
 		(at 342.9 128.27)
 		(diameter 0)
@@ -3044,6 +3106,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "10132984-58c4-4704-949d-1b394bd796c8")
+	)
+	(junction
+		(at 123.19 46.99)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "27b807e9-6ce6-40b8-a9c8-2ae7c5a46dad")
 	)
 	(junction
 		(at 74.93 160.02)
@@ -3196,7 +3264,7 @@
 		(uuid "c5ce8c1a-4790-424f-a2e7-399c4aca2491")
 	)
 	(junction
-		(at 115.57 46.99)
+		(at 137.16 35.56)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c9f21129-b4d1-4152-8845-f996d3b303cb")
@@ -3250,7 +3318,7 @@
 		(uuid "e229de82-a21f-4bfa-a55a-dbf35a1e4aeb")
 	)
 	(junction
-		(at 132.08 46.99)
+		(at 153.67 35.56)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e5216f5c-6d23-4ca7-9a53-5d5b849b5941")
@@ -3393,6 +3461,16 @@
 	)
 	(wire
 		(pts
+			(xy 57.15 54.61) (xy 57.15 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "05fc82e0-28d8-473b-9fca-45b0292ef741")
+	)
+	(wire
+		(pts
 			(xy 121.92 135.89) (xy 125.73 135.89)
 		)
 		(stroke
@@ -3423,7 +3501,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 57.15) (xy 115.57 58.42)
+			(xy 137.16 45.72) (xy 137.16 46.99)
 		)
 		(stroke
 			(width 0)
@@ -3460,6 +3538,16 @@
 			(type default)
 		)
 		(uuid "10fcf07a-a0ad-45ce-94e5-8486ed32e552")
+	)
+	(wire
+		(pts
+			(xy 53.34 52.07) (xy 53.34 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11373679-39a1-4096-9e0c-7469699ccf95")
 	)
 	(wire
 		(pts
@@ -3753,17 +3841,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 46.99) (xy 115.57 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "43a3ed41-c459-4d38-8312-178f3d9f972d")
-	)
-	(wire
-		(pts
-			(xy 132.08 43.18) (xy 132.08 46.99)
+			(xy 153.67 31.75) (xy 153.67 35.56)
 		)
 		(stroke
 			(width 0)
@@ -3780,16 +3858,6 @@
 			(type default)
 		)
 		(uuid "453ca0d3-779f-4ab8-a3ba-25d2d5fe12cd")
-	)
-	(wire
-		(pts
-			(xy 53.34 57.15) (xy 60.96 57.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "467eadf2-4c73-48a7-ab39-a6cc1bad3987")
 	)
 	(wire
 		(pts
@@ -3943,7 +4011,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 46.99) (xy 115.57 49.53)
+			(xy 137.16 35.56) (xy 137.16 38.1)
 		)
 		(stroke
 			(width 0)
@@ -4090,6 +4158,26 @@
 			(type default)
 		)
 		(uuid "62868094-4f2f-43b3-b306-42668dcc1e6a")
+	)
+	(wire
+		(pts
+			(xy 57.15 44.45) (xy 60.96 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63953983-5289-4287-9446-105a73677a75")
+	)
+	(wire
+		(pts
+			(xy 111.76 35.56) (xy 123.19 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64be3b27-9b93-4fb0-b06d-638df95537a5")
 	)
 	(wire
 		(pts
@@ -4273,6 +4361,16 @@
 	)
 	(wire
 		(pts
+			(xy 111.76 35.56) (xy 111.76 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7977991d-afa3-45d3-8ddf-8f0ee732a47d")
+	)
+	(wire
+		(pts
 			(xy 36.83 165.1) (xy 49.53 165.1)
 		)
 		(stroke
@@ -4383,6 +4481,16 @@
 	)
 	(wire
 		(pts
+			(xy 53.34 52.07) (xy 60.96 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8b30fac1-21c5-44de-add2-b36e3100419f")
+	)
+	(wire
+		(pts
 			(xy 55.88 91.44) (xy 69.85 91.44)
 		)
 		(stroke
@@ -4440,6 +4548,26 @@
 			(type default)
 		)
 		(uuid "91ef3ea4-f43e-4e0f-96bd-814242c1bda8")
+	)
+	(wire
+		(pts
+			(xy 111.76 44.45) (xy 101.6 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92a08686-f89f-4043-baa6-af87a99f2651")
+	)
+	(wire
+		(pts
+			(xy 101.6 46.99) (xy 123.19 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "930f6483-a496-4ffb-afdd-5567a38f1a35")
 	)
 	(wire
 		(pts
@@ -4623,7 +4751,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 62.23) (xy 96.52 62.23)
+			(xy 104.14 49.53) (xy 101.6 49.53)
 		)
 		(stroke
 			(width 0)
@@ -4743,13 +4871,23 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 57.15) (xy 53.34 46.99)
+			(xy 123.19 55.88) (xy 123.19 58.42)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c9e6adb6-3b5b-44d9-ae36-f11d6dae2304")
+		(uuid "c7ceab99-d2dc-49b2-9b30-129b2b576f76")
+	)
+	(wire
+		(pts
+			(xy 123.19 45.72) (xy 123.19 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cdadfe51-a56d-492f-bc66-2ef7619db044")
 	)
 	(wire
 		(pts
@@ -4760,6 +4898,16 @@
 			(type default)
 		)
 		(uuid "ce021e90-20d9-46db-bb93-3b271a13b8a4")
+	)
+	(wire
+		(pts
+			(xy 123.19 46.99) (xy 123.19 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf69c499-bf68-48a7-ba1f-b665bfd8e6d6")
 	)
 	(wire
 		(pts
@@ -4923,7 +5071,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 46.99) (xy 132.08 46.99)
+			(xy 137.16 35.56) (xy 153.67 35.56)
 		)
 		(stroke
 			(width 0)
@@ -4993,13 +5141,23 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 46.99) (xy 148.59 46.99)
+			(xy 153.67 35.56) (xy 170.18 35.56)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "f571c4e7-c38d-49d4-95b2-e22441817f64")
+	)
+	(wire
+		(pts
+			(xy 123.19 35.56) (xy 137.16 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f681b052-ee10-4068-844b-3cdcdbefa677")
 	)
 	(wire
 		(pts
@@ -5013,6 +5171,16 @@
 	)
 	(wire
 		(pts
+			(xy 123.19 35.56) (xy 123.19 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f86bd412-fa78-4d3a-bab4-cc4e353d1edc")
+	)
+	(wire
+		(pts
 			(xy 342.9 128.27) (xy 342.9 130.81)
 		)
 		(stroke
@@ -5023,7 +5191,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 64.77) (xy 99.06 62.23)
+			(xy 104.14 52.07) (xy 104.14 49.53)
 		)
 		(stroke
 			(width 0)
@@ -5232,7 +5400,7 @@
 		(uuid "e4e25cc4-3cc1-4f28-83cf-1ced02ebf99f")
 	)
 	(label "USB_+3.3V"
-		(at 148.59 46.99 180)
+		(at 170.18 35.56 180)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6127,6 +6295,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 57.15 54.61 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2a5856de-feca-4128-84f8-1a4a9459bea2")
+		(property "Reference" "#PWR0344"
+			(at 57.15 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 57.15 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 57.15 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 57.15 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 57.15 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d79aaf03-aa93-4ae6-882d-75fbb4f87749")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
+					(reference "#PWR0344")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 118.11 123.19 90)
 		(mirror x)
@@ -6673,7 +6907,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 115.57 58.42 0)
+		(at 137.16 46.99 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6682,7 +6916,7 @@
 		(fields_autoplaced yes)
 		(uuid "5f3c3009-dbfd-4690-94ca-6b5b84522fa2")
 		(property "Reference" "#PWR0343"
-			(at 115.57 64.77 0)
+			(at 137.16 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6691,7 +6925,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 115.57 63.5 0)
+			(at 137.16 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6699,7 +6933,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 115.57 58.42 0)
+			(at 137.16 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6708,7 +6942,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 115.57 58.42 0)
+			(at 137.16 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6717,7 +6951,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 115.57 58.42 0)
+			(at 137.16 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6938,85 +7172,6 @@
 		)
 	)
 	(symbol
-		(lib_id "PACSAT_DEV_misc:TLV75733PDBVR")
-		(at 78.74 54.61 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6a5547bc-2b1b-4e99-9512-5cc0b0c03a80")
-		(property "Reference" "U48"
-			(at 78.74 36.83 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Value" "TLV75733PDBVR"
-			(at 78.74 39.37 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Footprint" "PacSatDev_misc:DBV0005A_L"
-			(at 80.772 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.ti.com/lit/gpn/tlv757p"
-			(at 79.502 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 78.74 54.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "1487fb17-511d-432f-bc73-54bdee518a4a")
-		)
-		(pin "4"
-			(uuid "e2e7c6cd-d368-4972-9ae7-b3bafa82e6ab")
-		)
-		(pin "5"
-			(uuid "09c377fd-19c8-455b-8bce-2e8a736711ad")
-		)
-		(pin "3"
-			(uuid "13daa0ac-ce3a-4533-85ee-9b061f15c773")
-		)
-		(pin "1"
-			(uuid "d5f46959-3a1b-42c4-871a-be0acaca0f80")
-		)
-		(instances
-			(project ""
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
-					(reference "U48")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 207.01 208.28 0)
 		(unit 1)
@@ -7211,6 +7366,74 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
 					(reference "#PWR0346")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 123.19 41.91 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "76acc2ab-3469-41c6-94fa-b5453cfb9e93")
+		(property "Reference" "R189"
+			(at 120.65 40.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100KΩ 1%"
+			(at 125.476 36.576 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 124.968 41.91 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 123.19 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 123.19 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5a506768-de6e-4b25-9865-941725c8b1ab")
+		)
+		(pin "2"
+			(uuid "6efafe82-7d7b-44a5-a41e-aaf46a8eb15a")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
+					(reference "R189")
 					(unit 1)
 				)
 			)
@@ -7906,7 +8129,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 99.06 64.77 0)
+		(at 104.14 52.07 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7915,7 +8138,7 @@
 		(fields_autoplaced yes)
 		(uuid "b6b14edd-7f94-4fb7-b368-02a75f00444f")
 		(property "Reference" "#PWR0350"
-			(at 99.06 71.12 0)
+			(at 104.14 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7924,7 +8147,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 99.06 69.85 0)
+			(at 104.14 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7932,7 +8155,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 99.06 64.77 0)
+			(at 104.14 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7941,7 +8164,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 99.06 64.77 0)
+			(at 104.14 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7950,7 +8173,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 99.06 64.77 0)
+			(at 104.14 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8037,8 +8260,93 @@
 		)
 	)
 	(symbol
+		(lib_id "PACSAT_DEV_misc:TLV75901PDRVT")
+		(at 101.6 44.45 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bc561ca5-440c-42f9-b22b-61be55fb5d01")
+		(property "Reference" "U48"
+			(at 81.28 34.29 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "TLV75901PDRVT"
+			(at 81.28 36.83 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "PacSatDev_misc:DRV6_1X1P6_TEX"
+			(at 82.296 58.674 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/gpn/tlv759p"
+			(at 81.788 61.722 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 101.6 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "75db8d42-35c4-438c-9d7e-c1709a76489a")
+		)
+		(pin "2"
+			(uuid "c00e85a1-8a6b-4560-bc67-c18a0fc0ad13")
+		)
+		(pin "3"
+			(uuid "487806dd-e682-4d6e-984f-4b58f48e66e9")
+		)
+		(pin "7"
+			(uuid "9213d27f-e6f3-4596-a749-df82324e2754")
+		)
+		(pin "4"
+			(uuid "d6454857-dcfb-418c-b25e-92f955661c24")
+		)
+		(pin "6"
+			(uuid "2409898e-805d-4105-be76-d30056bd9695")
+		)
+		(pin "5"
+			(uuid "bcd1be0b-9417-4c0f-8b52-2e50784c38c6")
+		)
+		(instances
+			(project ""
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
+					(reference "U48")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 132.08 43.18 0)
+		(at 153.67 31.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8047,7 +8355,7 @@
 		(fields_autoplaced yes)
 		(uuid "bf448184-01f4-40c4-9a45-fcfd59e92279")
 		(property "Reference" "#FLG023"
-			(at 132.08 41.275 0)
+			(at 153.67 29.845 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8056,7 +8364,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 132.08 39.37 0)
+			(at 153.67 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8064,7 +8372,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 132.08 43.18 0)
+			(at 153.67 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8073,7 +8381,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 132.08 43.18 0)
+			(at 153.67 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8082,7 +8390,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 132.08 43.18 0)
+			(at 153.67 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8096,6 +8404,72 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
 					(reference "#FLG023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 123.19 58.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bf5cdaab-dc0f-448d-aba0-ce815694b4a2")
+		(property "Reference" "#PWR0345"
+			(at 123.19 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 123.19 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 123.19 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 123.19 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 123.19 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "41242dbb-8f23-4264-873f-8723189b5063")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
+					(reference "#PWR0345")
 					(unit 1)
 				)
 			)
@@ -8948,7 +9322,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 115.57 53.34 0)
+		(at 137.16 41.91 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8957,7 +9331,7 @@
 		(dnp no)
 		(uuid "e9eb7dcc-9c2a-4d28-8537-a850ae52baf0")
 		(property "Reference" "C149"
-			(at 119.38 53.34 90)
+			(at 140.97 41.91 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8965,7 +9339,7 @@
 			)
 		)
 		(property "Value" "1uF"
-			(at 111.76 53.34 90)
+			(at 133.35 41.91 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8973,7 +9347,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
-			(at 114.6048 57.15 0)
+			(at 136.1948 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8982,7 +9356,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 115.57 53.34 0)
+			(at 137.16 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8990,7 +9364,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 115.57 53.34 0)
+			(at 137.16 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9007,6 +9381,74 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
 					(reference "C149")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 123.19 52.07 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "faae681b-1281-42b9-999f-fd6ff845dd5e")
+		(property "Reference" "R190"
+			(at 120.65 50.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "19.1KΩ 1%"
+			(at 125.476 48.26 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 124.968 52.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 123.19 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 123.19 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1c1b4d17-4c19-499a-9d92-47a623390ad4")
+		)
+		(pin "2"
+			(uuid "a20a3914-1925-4273-a983-d86d5fc4bae9")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
+					(reference "R190")
 					(unit 1)
 				)
 			)
