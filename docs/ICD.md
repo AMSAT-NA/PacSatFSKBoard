@@ -536,10 +536,11 @@ interfaces and power.  If USB is plugged in there, it will supply
 power to the board through USB.  So if you have USB plugged in, you
 should *not* power the board with something else.  If you really need
 to power the board some other way with USB attached, you need to
-remove Q16 and Q17.
+remove R184.
 
-If the proper resistors are attached, this can be used to power other
-boards through the PC104.
+If the proper resistors are attached, the ones from 5V\_IN and
+3.3V\_IN to the PC104, this can be used to power other boards through
+the PC104.
 
 Both 3.3V and 5V are provided from USB.  If you are only using 5V from
 the PC104 and are using U4 to provide 3.3V, you should not populate
@@ -548,8 +549,9 @@ converter, so you cannot remove that and use USB.
 
 The board is configured to ask for 3A from the USB, though it
 generally only needs less than 1A.  Burning the antenna release can
-draw up to 2A; it is unknown if the power provided by USB (really the
-3.3V converter) will be enough to burn the antenna release.
+draw up to 2A; the 3.3V power converter for USB and the control
+transistors cannot supply that much power, so you cannot use that
+function with USB power.
 
 The USB provides two serial ports, the first for the main CPU and the
 second for the antenna control processor.  Those serial ports are also

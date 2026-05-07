@@ -2740,3 +2740,16 @@ one used for the antenna control connection.
 
 Rewire the antenna controller I/Os.  This will allow the bootstrap
 loader to be accessed from the PC104 bus pins.
+
+## 2026-05-06
+
+Add a USB interface for the serial ports.
+
+## 2026-05-07
+
+Pull up/down the inputs to the USB to serial chip.
+
+Rework the USB power handling.  The N-channel MOSFET wasn't going to
+work as is, P-channel was needed.  Plus the diode in the MOSFET would
+allow current to flow in the opposite direction.  Use a double MOSFET
+to avoid that issue.

@@ -340,9 +340,12 @@ other_components = {
     ('ADS7828EIPWRQ1', 'TSSOP-16_4.4x5mm_P0.65mm'): None,
     ('ADS1015BQDGSRQ1', 'TSSOP-10_3x3mm_P0.5mm'): None,
     ('ESD601DPYRQ1', 'DPY0002A-MFG'): ('', ''),
-    ('CY7C65215-32LTXI', 'PG-VQFN-32-803'): ('', ''),
-    ('IRLML6246TRPBF', 'SOT-523'): ('', ''),
-    ('CX90B1-24P', 'CX90B1-24P_HIR'): ('', ''),
+    ('CY7C65215-32LTXI', 'PG-VQFN-32-803'): None,
+    ('IRLML6246TRPBF', 'SOT-523'): None,
+    ('CX90B1-24P', 'CX90B1-24P_HIR'): None,
+    ('TLV75733PDBVR', 'DBV0005A_L'): None,
+    ('PJE8401_R1_00001', 'SOT-523'): None,
+
     ('', ''): None,
 }
 
