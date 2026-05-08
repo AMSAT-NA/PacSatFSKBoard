@@ -4,6 +4,44 @@ PACSAT AFSK board.
 This document mostly describes internals to the board.  For information
 on external connections, see the ICD document.
 
+# Getting the Design Ready to Build
+
+You deliver three basic components to the board manufacturer: A BOM
+(Bill of Matierials), a placement/position file (pos), and gerbers.
+
+To generate the files for a build, do the following from the main
+PacSatFSKBoard directory:
+
+Remove the old files:
+```
+  rm -r gerbers PacSat_AFSK.csv PacSat_AFSK-all-pos.csv
+```
+
+On the PCB Editor window in KiCad, click on "File", then "Fabrication
+Outputs", then "Bill of Materials".  Use the defaults there and save
+it under the default name, `PacSat_AFSK.csv`.
+
+Under the same menu now choose "Component Placement" and use the
+defaults and save it under the default name `PacSat_AFSK-all-pos.csv`.
+This is placement for both sides of the board.  Then close this window.
+
+Under the same menu now choose "Gerbers" and use the defaults.  It
+saves by default in the output directory "gerbers".  Click on
+"Generate Drill Files" and generate those.  Close that window then click
+on "Plot" then close the window.
+
+Now you must process the files to make them suitable.  I'm going to
+put the output files in a PacSat directory in my home directory.
+Do the following:
+```
+  ./FixupBOM.py PacSat_AFSK.csv ~/PacSat/PacSat_AFSK-bom.csv
+  ./FixupPOS.py PacSat_AFSK-all-pos.csv >~/PacSat/PacSat_AFSK-pos.csv
+  zip -r ~/PacSat/PacSat_AFSK-gerbers.zip gerbers/
+```
+
+Send those three files (PacSat\_AFSK-bom.csv, PacSat\_AFSK-pos.csv, and
+PacSat\_AFSK-gerbers.zip) to your board manufacturer.
+
 # Hooking Up JTAG and a serial port
 
 The board uses a standard 10-pin 2x5 1.27mm pitch JTAG connector for a
