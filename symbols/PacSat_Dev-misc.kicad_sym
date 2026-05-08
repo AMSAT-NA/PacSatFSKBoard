@@ -13811,9 +13811,6 @@
 		(embedded_fonts no)
 	)
 	(symbol "PJE8401_R1_00001"
-		(pin_numbers
-			(hide yes)
-		)
 		(pin_names
 			(offset 0)
 			(hide yes)

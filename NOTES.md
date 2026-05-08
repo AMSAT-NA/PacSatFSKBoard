@@ -2753,3 +2753,9 @@ Rework the USB power handling.  The N-channel MOSFET wasn't going to
 work as is, P-channel was needed.  Plus the diode in the MOSFET would
 allow current to flow in the opposite direction.  Use a double MOSFET
 to avoid that issue.
+
+## 2026-05-08
+
+Remove the resistor from the USB power control MOSFET gates to
+USB\_+5V.  It's not necessary, it's only necessary to pull the gates
+up if 5V\_IN is applied and USB\_+5V is not.

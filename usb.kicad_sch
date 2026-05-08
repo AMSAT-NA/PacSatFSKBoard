@@ -2314,9 +2314,6 @@
 			(embedded_fonts no)
 		)
 		(symbol "PACSAT_DEV_misc:PJE8401_R1_00001"
-			(pin_numbers
-				(hide yes)
-			)
 			(pin_names
 				(offset 0)
 				(hide yes)
@@ -3043,7 +3040,7 @@
 		)
 		(uuid "4ff5bba1-3e05-4bf0-852a-0da09c96ce4a")
 	)
-	(text "This circuit turns on power from the USB power domain to the\nmain power in the circuit if USB_+5V is applied.  If USB_+5V is\noff, this keeps power from going to the USB circuits from the\npower rail if power is applied on 5V_IN or 3.3V_IN.\n\nYou need two P-channel MOSFETS on each power rail to prevent\npower from flowing backwards through the diodes in the MOSFETS.\n\nR183 and R185 make sure the gates of the P-channel MOSFETS are\npulled high if power is applied in either direction.\n\nIf USB_+5V has power, that will turn on Q18 and pull the\nP-channel MOSFET gates to ground, turning them on."
+	(text "This circuit turns on power from the USB power domain to the\nmain power in the circuit if USB_+5V is applied.  If USB_+5V is\noff, this keeps power from going to the USB circuits from the\npower rail if power is applied on 5V_IN or 3.3V_IN.\n\nYou need two P-channel MOSFETS on each power rail to prevent\npower from flowing backwards through the diodes in the MOSFETS.\n\nR183 makes sure the gates of the P-channel MOSFETS are\npulled high if power is applied to 5V_IN and not applied\nto USB_+5V.\n\nIf USB_+5V has power, that will turn on Q18 and pull the\nP-channel MOSFET gates to ground, turning them on."
 		(exclude_from_sim no)
 		(at 263.652 237.49 0)
 		(effects
@@ -3063,7 +3060,7 @@
 		)
 		(uuid "9d98a340-bdd7-4deb-929c-f30f22d7e5cf")
 	)
-	(text "Vgs minimum on the 2N7001TQ is 1V.  If power is\napplied from 5V_IN, the two 100K resistors and\nthe 10K resistor will result in the voltage here\nbeing .23V, which will not turn on the transistor."
+	(text "Vgs minimum on the 2N7001TQ is 1V.  The 10K\nresistor here should easily hold this if\nUSB_+5V isn't applied."
 		(exclude_from_sim no)
 		(at 165.1 242.57 0)
 		(effects
@@ -3142,12 +3139,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "43260db6-5a2e-4eea-bed5-61220575bdf0")
-	)
-	(junction
-		(at 160.02 200.66)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "49f27cb2-8724-4742-b9d5-b12a3121cc30")
 	)
 	(junction
 		(at 53.34 46.99)
@@ -3310,12 +3301,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d85f59cc-ff4f-4832-863c-e82ad9ab4ca1")
-	)
-	(junction
-		(at 172.72 217.17)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e229de82-a21f-4bfa-a55a-dbf35a1e4aeb")
 	)
 	(junction
 		(at 153.67 35.56)
@@ -4028,16 +4013,6 @@
 			(type default)
 		)
 		(uuid "5c6eaf0b-7c5c-4ebe-9b49-f743066dd255")
-	)
-	(wire
-		(pts
-			(xy 160.02 200.66) (xy 160.02 204.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5d0313fa-c411-476b-8598-4a4773ba83cb")
 	)
 	(wire
 		(pts
@@ -4791,7 +4766,7 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 200.66) (xy 160.02 200.66)
+			(xy 153.67 200.66) (xy 167.64 200.66)
 		)
 		(stroke
 			(width 0)
@@ -4818,16 +4793,6 @@
 			(type default)
 		)
 		(uuid "bc9ea657-655d-487d-86b3-81fc4cbb0ddf")
-	)
-	(wire
-		(pts
-			(xy 160.02 212.09) (xy 160.02 217.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c0405236-c804-4207-9902-cd9d1d53c1fc")
 	)
 	(wire
 		(pts
@@ -5011,16 +4976,6 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 217.17) (xy 172.72 217.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ddaa238e-30cb-4ab5-bd15-1dc14fc20296")
-	)
-	(wire
-		(pts
 			(xy 299.72 140.97) (xy 299.72 133.35)
 		)
 		(stroke
@@ -5198,16 +5153,6 @@
 			(type default)
 		)
 		(uuid "fc4e1664-79b9-432c-bbc0-9649f9d0f2df")
-	)
-	(wire
-		(pts
-			(xy 160.02 200.66) (xy 167.64 200.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fcb33158-acb6-46fa-a821-190da8ef2b4d")
 	)
 	(wire
 		(pts
@@ -8744,74 +8689,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
 					(reference "Q20")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 160.02 208.28 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ccdf2d5a-d239-479a-9b2d-af47733998ff")
-		(property "Reference" "R185"
-			(at 161.798 207.1116 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "100KΩ"
-			(at 161.798 209.423 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 158.242 208.28 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 160.02 208.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 160.02 208.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "96945a0e-f193-4e39-86fd-7239e063a790")
-		)
-		(pin "2"
-			(uuid "d6fbea74-d448-490a-a432-16aa9cb4d4df")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
-					(reference "R185")
 					(unit 1)
 				)
 			)
