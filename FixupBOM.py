@@ -347,6 +347,7 @@ other_components = {
     ('TLV75733PDBVR', 'DBV0005A_L'): None,
     ('PJE8401_R1_00001', 'SOT-523'): None,
     ('TLV75901PDRVT', 'DRV6_1X1P6_TEX'): None,
+    ('FDC6318P', 'TSOT-23-6'): None,
 
     ('', ''): None,
 }
