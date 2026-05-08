@@ -2759,3 +2759,10 @@ to avoid that issue.
 Remove the resistor from the USB power control MOSFET gates to
 USB\_+5V.  It's not necessary, it's only necessary to pull the gates
 up if 5V\_IN is applied and USB\_+5V is not.
+
+Remove DNP from the antenna power input capacitor.  That capacitor is
+probably necessary.
+
+Switch the USB power MOSFETs to a new part.  The other part had some
+issues, this is higher current, lower resistance, lower leakage, and
+just better all around.

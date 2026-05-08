@@ -7625,9 +7625,9 @@
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "fc36fdeb-5b7c-4022-b486-49667590fbfa")
 		(property "Reference" "C140"
 			(at 259.588 74.3966 0)

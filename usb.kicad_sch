@@ -2313,7 +2313,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PACSAT_DEV_misc:PJE8401_R1_00001"
+		(symbol "PACSAT_DEV_misc:FDC6318P"
 			(pin_names
 				(offset 0)
 				(hide yes)
@@ -2321,7 +2321,7 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "Q"
+			(property "Reference" "U"
 				(at 5.08 1.905 0)
 				(effects
 					(font
@@ -2330,7 +2330,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "PJE8401_R1_00001"
+			(property "Value" "FDC6318P"
 				(at 5.08 0 0)
 				(effects
 					(font
@@ -2339,7 +2339,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-523"
+			(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
 				(at 5.08 2.54 0)
 				(effects
 					(font
@@ -2366,7 +2366,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "P-Channel MOSFET"
+			(property "ki_keywords" "Dual P-Channel MOSFET"
 				(at 0 0 0)
 				(effects
 					(font
@@ -2375,7 +2375,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "PJE8401_R1_00001_0_1"
+			(symbol "FDC6318P_0_1"
 				(polyline
 					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
@@ -2518,7 +2518,7 @@
 					)
 				)
 			)
-			(symbol "PJE8401_R1_00001_1_1"
+			(symbol "FDC6318P_1_1"
 				(pin input line
 					(at -5.08 0 0)
 					(length 2.54)
@@ -2547,7 +2547,63 @@
 							)
 						)
 					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "FDC6318P_2_1"
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5973,6 +6029,86 @@
 		)
 	)
 	(symbol
+		(lib_id "PACSAT_DEV_misc:FDC6318P")
+		(at 172.72 203.2 90)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "227b4fee-4b87-4502-b16c-de2d32256a45")
+		(property "Reference" "U49"
+			(at 172.72 194.31 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FDC6318P"
+			(at 172.72 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
+			(at 170.18 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 172.72 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Depletion-mode P-channel MOSFET"
+			(at 172.72 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "be32ec3c-916b-49f5-98d1-ce5c592f07e4")
+		)
+		(pin "4"
+			(uuid "417834d6-05e2-4ea6-a878-d17a7de9e113")
+		)
+		(pin "3"
+			(uuid "037d7037-791e-4dd4-a1c2-ab7143df38f7")
+		)
+		(pin "5"
+			(uuid "73d08ecf-ecf3-4efb-aa93-115e18558ab0")
+		)
+		(pin "1"
+			(uuid "20ce2fe7-ddc9-4caa-b1c9-fe216144f9fb")
+		)
+		(pin "6"
+			(uuid "b69c1956-bc81-4d7c-ad14-e1fa831dad7e")
+		)
+		(instances
+			(project ""
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
+					(reference "U49")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:PWR_FLAG")
 		(at 55.88 86.36 0)
 		(unit 1)
@@ -7317,6 +7453,86 @@
 		)
 	)
 	(symbol
+		(lib_id "PACSAT_DEV_misc:FDC6318P")
+		(at 278.13 203.2 270)
+		(mirror x)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7104c569-bcb7-4cb0-8366-efc8217bcbad")
+		(property "Reference" "U50"
+			(at 278.13 194.31 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FDC6318P"
+			(at 278.13 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
+			(at 280.67 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 278.13 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Depletion-mode P-channel MOSFET"
+			(at 278.13 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "843d70fe-d9c3-433b-beca-e91d4b181aed")
+		)
+		(pin "4"
+			(uuid "94710c61-8ecc-420f-918b-994befe9933c")
+		)
+		(pin "3"
+			(uuid "ed19d92c-1a6e-44b7-bdef-9cad869ea90e")
+		)
+		(pin "5"
+			(uuid "73d08ecf-ecf3-4efb-aa93-115e18558ab0")
+		)
+		(pin "1"
+			(uuid "20ce2fe7-ddc9-4caa-b1c9-fe216144f9fb")
+		)
+		(pin "6"
+			(uuid "b69c1956-bc81-4d7c-ad14-e1fa831dad7e")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
+					(reference "U50")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 123.19 41.91 180)
 		(unit 1)
@@ -7379,77 +7595,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
 					(reference "R189")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PACSAT_DEV_misc:PJE8401_R1_00001")
-		(at 172.72 203.2 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "7c1a4dbf-b425-4d8c-b3f1-dd55c59f7abb")
-		(property "Reference" "Q16"
-			(at 172.72 194.31 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PJE8401_R1_00001"
-			(at 181.61 197.104 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-523"
-			(at 170.18 198.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 172.72 203.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Depletion-mode P-channel MOSFET"
-			(at 172.72 203.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "f13be768-646c-4fcf-be25-3364240d2d57")
-		)
-		(pin "1"
-			(uuid "c055379e-3221-4c93-aafe-f4cbfef6cbf7")
-		)
-		(pin "3"
-			(uuid "386ec79b-54fb-4733-8d30-7b82c6fb2045")
-		)
-		(instances
-			(project ""
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
-					(reference "Q16")
 					(unit 1)
 				)
 			)
@@ -7662,16 +7807,15 @@
 		)
 	)
 	(symbol
-		(lib_id "PACSAT_DEV_misc:PJE8401_R1_00001")
+		(lib_id "PACSAT_DEV_misc:FDC6318P")
 		(at 259.08 203.2 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "955417c0-23c6-4297-a34d-258281925fd4")
-		(property "Reference" "Q17"
+		(uuid "91eaed65-2bb3-4b84-bacf-7b136fc8cc0a")
+		(property "Reference" "U50"
 			(at 259.08 194.31 90)
 			(effects
 				(font
@@ -7679,7 +7823,7 @@
 				)
 			)
 		)
-		(property "Value" "PJE8401_R1_00001"
+		(property "Value" "FDC6318P"
 			(at 259.08 196.85 90)
 			(effects
 				(font
@@ -7687,7 +7831,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-523"
+		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
 			(at 256.54 198.12 0)
 			(effects
 				(font
@@ -7714,19 +7858,28 @@
 				(hide yes)
 			)
 		)
+		(pin "6"
+			(uuid "36452a44-cd86-4095-9981-5879f53e5ea1")
+		)
+		(pin "4"
+			(uuid "aac329cf-0af0-4c30-a870-20cfe0b54ebc")
+		)
 		(pin "2"
-			(uuid "c4b5b4ea-1aa4-4439-9eb6-44feabcb49af")
+			(uuid "4579f399-240c-4258-9476-43603db37524")
+		)
+		(pin "5"
+			(uuid "d5855fe5-3b5b-484a-abf1-a0a97991a804")
 		)
 		(pin "1"
-			(uuid "448101a3-13a0-46ab-bc34-0a530539336c")
+			(uuid "1d95305f-a0e5-4310-8241-feb605087e66")
 		)
 		(pin "3"
-			(uuid "d9b4d984-b7b7-43f0-adcb-c90be6687fa3")
+			(uuid "703c9ffa-8105-4584-90f9-cbeb46c105f8")
 		)
 		(instances
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
-					(reference "Q17")
+					(reference "U50")
 					(unit 1)
 				)
 			)
@@ -7929,78 +8082,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
 					(reference "#PWR0352")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PACSAT_DEV_misc:PJE8401_R1_00001")
-		(at 278.13 203.2 270)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b2af9714-0d8d-4991-b601-75826310259b")
-		(property "Reference" "Q19"
-			(at 278.13 194.31 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PJE8401_R1_00001"
-			(at 270.002 196.85 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-523"
-			(at 280.67 198.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 278.13 203.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Depletion-mode P-channel MOSFET"
-			(at 278.13 203.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "3d3d23e2-e91d-4a42-8242-734754edab65")
-		)
-		(pin "1"
-			(uuid "2a235b24-a6e4-4b1f-a8d6-6bcbf49b8693")
-		)
-		(pin "3"
-			(uuid "5c57d804-15d6-4880-b084-1f682b8d24f9")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
-					(reference "Q19")
 					(unit 1)
 				)
 			)
@@ -8284,6 +8365,86 @@
 			(project ""
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
 					(reference "U48")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PACSAT_DEV_misc:FDC6318P")
+		(at 193.04 203.2 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bcbfb450-ab1f-4452-a427-e31e23f214f0")
+		(property "Reference" "U49"
+			(at 193.04 194.31 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "FDC6318P"
+			(at 193.04 196.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-6"
+			(at 195.58 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 193.04 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Depletion-mode P-channel MOSFET"
+			(at 193.04 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "0a8e51c5-3978-4168-8194-5644844d6118")
+		)
+		(pin "4"
+			(uuid "aac329cf-0af0-4c30-a870-20cfe0b54ebc")
+		)
+		(pin "2"
+			(uuid "4579f399-240c-4258-9476-43603db37524")
+		)
+		(pin "5"
+			(uuid "0791a302-c080-42de-aaac-e7c4816c1836")
+		)
+		(pin "1"
+			(uuid "635ab4f2-0d26-4f94-90b2-01f5547863b7")
+		)
+		(pin "3"
+			(uuid "703c9ffa-8105-4584-90f9-cbeb46c105f8")
+		)
+		(instances
+			(project ""
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
+					(reference "U49")
 					(unit 1)
 				)
 			)
@@ -8617,78 +8778,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
 					(reference "R187")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PACSAT_DEV_misc:PJE8401_R1_00001")
-		(at 193.04 203.2 270)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c56cad1e-6e58-49b1-94e4-9a4e4bbca9d9")
-		(property "Reference" "Q20"
-			(at 193.04 194.31 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PJE8401_R1_00001"
-			(at 185.42 197.104 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-523"
-			(at 195.58 198.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 193.04 203.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Depletion-mode P-channel MOSFET"
-			(at 193.04 203.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "86b7d701-7478-408c-be97-7f8b5236b98d")
-		)
-		(pin "3"
-			(uuid "eccdd9bc-be29-4293-95f7-cd83e64ee03a")
-		)
-		(pin "2"
-			(uuid "b8c82332-cbe7-47d4-afd3-c2e4e1c96054")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
-					(reference "Q20")
 					(unit 1)
 				)
 			)
