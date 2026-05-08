@@ -6005,7 +6005,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0"
+		(property "Value" "0Ω"
 			(at 157.734 197.358 90)
 			(effects
 				(font
@@ -11029,7 +11029,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0"
+		(property "Value" "0Ω"
 			(at 168.402 189.484 90)
 			(effects
 				(font

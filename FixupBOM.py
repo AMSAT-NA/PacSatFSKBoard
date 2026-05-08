@@ -14,6 +14,7 @@ infn = None
 outfn = None
 use_murata = False
 value_in_comment = False
+find_unused = False
 
 unknown_components = []
 
@@ -24,10 +25,12 @@ for i in sys.argv[1:]:
             in_flags = False
         elif i == '-murata':
             use_murata = True
+        elif i == '-unused':
+            find_unused = True
         elif i == '-value-in-comment':
             value_in_comment = True
         else:
-            sys.stderr.write("Unknown flag: " + i)
+            sys.stderr.write("Unknown flag: " + i + "\n")
             sys.exit(1)
             pass
         pass
@@ -235,7 +238,6 @@ value_to_partnum_xlats_2 = {
 
     ('0uH',     '1210'): ('Panasonic',  'ERJ-14Y0R00U'),
 
-    ('0',       '0402'): ('Panasonic',	'ERJ-2GE0R00X'),
     ('0Ω',	'0402'): ('Panasonic',	'ERJ-2GE0R00X'),
     ('22Ω',	'0402'): ('Panasonic',	'ERA-2AKD220X'),
     ('33Ω',	'0402'): ('Wurth Electronik',	'560112110004'),
@@ -252,7 +254,6 @@ value_to_partnum_xlats_2 = {
     ('100KΩ',	'0402'): ('Wurth Electronik',	'560112110019'),
     ('1MΩ',	'0402'): ('Panasonic',	'ERJ-U02J105X'),
 
-    ('0',	'0603'): ('Panasonic',	'AC0603FR-070RL'),
     ('0Ω',	'0603'): ('Panasonic',	'AC0603FR-070RL'),
     ('2.4KΩ',	'0603'): ('Wurth Electronik',	'560112116061'),
     ('3KΩ',	'0603'): ('Panasonic',	'ERJ-UP3F3001V'),
@@ -352,6 +353,8 @@ other_components = {
     ('', ''): None,
 }
 
+used = {}
+
 def xlat_value_to_partnum(s, footprint):
     pf = (s, footprint)
     if use_murata and pf in value_to_partnum_xlats_1b:
@@ -369,6 +372,9 @@ def xlat_value_to_partnum(s, footprint):
         else:
             v = ('', s)
             pass
+        pass
+    if find_unused:
+        used[pf] = True
         pass
     v = [v[0], v[1]]
     if value_in_comment:
@@ -438,3 +444,28 @@ if unknown_components:
         print("  " + i)
         pass
     pass
+
+if find_unused:
+    print("Unused components:")
+    for i in value_to_partnum_xlats_1:
+        if not i in used:
+            print("  " + str(i))
+            pass
+        pass
+    for i in value_to_partnum_xlats_1b:
+        if not i in used:
+            print("  " + str(i))
+            pass
+        pass
+    for i in value_to_partnum_xlats_2:
+        if not i in used:
+            print("  " + str(i))
+            pass
+        pass
+    for i in other_components:
+        if not i in used:
+            print("  " + str(i))
+            pass
+        pass
+    pass
+
