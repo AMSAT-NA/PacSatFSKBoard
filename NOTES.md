@@ -2766,3 +2766,18 @@ probably necessary.
 Switch the USB power MOSFETs to a new part.  The other part had some
 issues, this is higher current, lower resistance, lower leakage, and
 just better all around.
+
+## 2026-05-12
+
+Move a resistor out from under the RTC crystal.  There shouldn't be
+anything under that crystal.
+
+## 2026-05-13
+
+Extend the bottom layer ground plan to include the entire RF section
+of the board.  This is to help will cooling, especially for the LNA,
+and to help with signal integrity.
+
+## 2026-05-14
+
+Move a via so the ground planes around the RTC crystal are complete.

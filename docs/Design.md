@@ -22,13 +22,19 @@ Outputs", then "Bill of Materials".  Use the defaults there and save
 it under the default name, `PacSat_AFSK.csv`.
 
 Under the same menu now choose "Component Placement" and use the
-defaults and save it under the default name `PacSat_AFSK-all-pos.csv`.
-This is placement for both sides of the board.  Then close this window.
+defaults, except *IMPORTANT* click on "Exclude all components with the
+Do No Populate flag set" box.  For some reason that setting doesn't
+get saved.  Then save it under the default name
+`PacSat_AFSK-all-pos.csv`.  This is placement for both sides of the
+board.  Then close this window.
 
 Under the same menu now choose "Gerbers" and use the defaults.  It
 saves by default in the output directory "gerbers".  Click on
 "Generate Drill Files" and generate those.  Close that window then click
 on "Plot" then close the window.
+
+A section at the end of this file has pictures of the various windows
+used for generating the outputs.
 
 Now you must process the files to make them suitable.  I'm going to
 put the output files in a PacSat directory in my home directory.
@@ -935,3 +941,17 @@ FIXME - May need to debounce some of these lines.
 FIXME - For a controlled activity switch, it probably needs to be
 handled by messaging and the hardware lines are used to do the final
 switch.
+
+# Pictures of KiCad Output Generation Windows and Board Stack
+
+First the board stack:
+![Alt text](BoardStack.png)
+
+The Gerber setup window:
+![Alt text](GerberWindow.png)
+
+The Drill File window:
+![Alt text](DrillFileWindow.png)
+
+The Placement window:
+![Alt text](PlacementWindow.png)
