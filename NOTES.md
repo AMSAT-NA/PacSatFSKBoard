@@ -11,8 +11,8 @@ some point.
 
 The Q10 transistor for FAULT\_N does not have a pull on it.  When the
 CPU is off, this may result in an invalid value.  That's probably ok,
-the other CPU should ignore the line if this CPU is off, but it may
-do something bad like oscillate.
+the other CPU should ignore the line if this CPU is off, but it may do
+something bad like oscillate.  DNI resistors are there just in case.
 
 The 1M pullups on some logic may be too large.
 
@@ -2795,3 +2795,5 @@ Changed the 22uF caps to 22uF 16V.  Change the 10uF caps to 16V to
 reflect what they really are.
 
 Add some notes about some things.
+
+Add some DNI resistors on FAULT_N just in case.
