@@ -202,8 +202,8 @@ value_to_partnum_xlats_2 = {
     ('1uF',		'0805'): ('Murata',	'GCM21BR71E105KA56L'),
     ('4.7uF',		'0805'): ('Murata',	'GCM21BR71C475KA73L'),
     ('10uF',		'0805'): ('Murata',	'GCM21BR71A106KE22K'),
-    ('10uF 10V',	'1206'): ('Murata',	'GCM31CR71C106KA64L'),
-    ('22uF',		'1206'): ('Murata',	'GCM31CR70J226KE23L'),
+    ('10uF 16V',	'1206'): ('Murata',	'GCM31CR71C106KA64L'),
+    ('22uF 16V',	'1206'): ('Murata',	'GCM31CC71C226ME36K'),
     ('47uF 10V',	'1206'): ('Murata',	'GRT31CR61A476KE13L'),
     ('',	''): ('',	''),
 

@@ -7,7 +7,7 @@ on external connections, see the ICD document.
 # Getting the Design Ready to Build
 
 You deliver three basic components to the board manufacturer: A BOM
-(Bill of Matierials), a placement/position file (pos), and gerbers.
+(Bill of Materials), a placement/position file (pos), and gerbers.
 
 To generate the files for a build, do the following from the main
 PacSatFSKBoard directory:

@@ -6216,7 +6216,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10uF 10V"
+		(property "Value" "10uF 16V"
 			(at 343.281 96.393 0)
 			(effects
 				(font
@@ -6285,7 +6285,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10uF 10V"
+		(property "Value" "10uF 16V"
 			(at 215.519 78.613 0)
 			(effects
 				(font
@@ -8092,7 +8092,7 @@
 		(dnp no)
 		(uuid "d327aca5-08fb-4ffd-9bd9-6347cdbd4266")
 		(property "Reference" "C31"
-			(at 166.624 172.4406 0)
+			(at 177.038 172.974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8100,8 +8100,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "22uF"
-			(at 166.624 174.752 0)
+		(property "Value" "22uF 16V"
+			(at 177.038 175.2854 0)
 			(effects
 				(font
 					(size 1.27 1.27)
