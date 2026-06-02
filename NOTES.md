@@ -2797,3 +2797,5 @@ reflect what they really are.
 Add some notes about some things.
 
 Add some DNI resistors on FAULT_N just in case.
+
+Add a VIA picket fence around the PA section.
