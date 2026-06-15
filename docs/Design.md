@@ -358,6 +358,10 @@ R123 and R124 will be required to make it work.
   CPU.  This goes through a MOSFET to avoid latch up and to isolate,
   so the logic is inverted from the PC104.
   
+* WATCHDOG\_OUT\_N runs to the RTC, which should make it possible to
+  know if a reset was due to the hardware watchdog by reading info
+  from the RTC at boot time.
+
 # IO Connections on the PacSat AFSK processor
 
 These are the pins on the TMS570 processor, where they go, what they

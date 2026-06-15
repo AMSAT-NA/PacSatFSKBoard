@@ -9,6 +9,12 @@ some point.
 
 # TODO
 
+Run the extra ADC unused lines to unpopulated resistors so they are
+more easily available.
+
+The DAC on the PA is only rated to +85C.  It would be nice to find one
+that went at least to +105C.
+
 The Q10 transistor for FAULT\_N does not have a pull on it.  When the
 CPU is off, this may result in an invalid value.  That's probably ok,
 the other CPU should ignore the line if this CPU is off, but it may do
@@ -2799,3 +2805,7 @@ Add some notes about some things.
 Add some DNI resistors on FAULT_N just in case.
 
 Add a VIA picket fence around the PA section.
+
+## 2026-06-02
+
+Board version 3 goes to build.
