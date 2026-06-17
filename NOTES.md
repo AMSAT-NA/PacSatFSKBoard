@@ -2809,3 +2809,13 @@ Add a VIA picket fence around the PA section.
 ## 2026-06-02
 
 Board version 3 goes to build.
+
+## 2026-06-17
+
+Add some notes on the clock distribution chip (U3) about adding a
+thermal pad under it to conduct heat.
+
+Add a thermal pad under the CPU (U2) and add notes about it.
+
+Add some DNP zero-ohm resistors to the unused extra ADC controller
+outputs to make it easier to use them.
