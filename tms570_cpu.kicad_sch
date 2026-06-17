@@ -4305,6 +4305,16 @@
 		)
 		(uuid "35923e0a-d774-4fda-a701-28223f4b2e86")
 	)
+	(text "The CPU has an open copper area under it for\nadding a (non-electrically conductive) thermal\nconductor for heat transfer."
+		(exclude_from_sim no)
+		(at 61.468 25.908 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "46d5cc8c-79d8-4c41-91fa-ed3256af27bb")
+	)
 	(text "JTAG"
 		(exclude_from_sim no)
 		(at 109.22 54.61 0)

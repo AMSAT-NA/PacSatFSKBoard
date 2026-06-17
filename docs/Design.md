@@ -56,6 +56,9 @@ Add the following notes:
 
 * Add a thermal pad under U3 for conducting heat from that chip into
   the board.
+  
+* Add a non-electrically-conductive thermal pad under U2 on the open
+  copper area for conducting heat into the board.
 
 # Hooking Up JTAG and a serial port
 
