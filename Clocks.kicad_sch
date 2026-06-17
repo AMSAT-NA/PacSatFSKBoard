@@ -1514,6 +1514,16 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "This chip does not have a thermal pad on the\nchip, but does have one in the footprint.\nAdd a thermal pad underneath it to conduct\nheat from the chip to the board."
+		(exclude_from_sim no)
+		(at 216.154 149.352 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "21c8b8b4-4ffd-4264-9414-59b4b33025ab")
+	)
 	(text "Thermsistor varies from 534\nohms (125C) to 188.5KΩ (-40C).\nWith a 10KΩ bias this gives a\n.17 to 3.13V range."
 		(exclude_from_sim no)
 		(at 131.572 160.528 0)
@@ -1547,7 +1557,7 @@
 	)
 	(text "AX5043s have capacitive termination\nat the end of the clocks per their\ndata sheet.  Only need series\ntermination on the CPU clock."
 		(exclude_from_sim no)
-		(at 248.412 134.874 0)
+		(at 285.242 111.506 0)
 		(effects
 			(font
 				(size 1.524 1.524)

@@ -48,6 +48,15 @@ Do the following:
 Send those three files (PacSat\_AFSK-bom.csv, PacSat\_AFSK-pos.csv, and
 PacSat\_AFSK-gerbers.zip) to your board manufacturer.
 
+Take a picture of the "Board Physical Stackup" under the Board Setup
+screen and send that with these files so the board stack is
+documented.
+
+Add the following notes:
+
+* Add a thermal pad under U3 for conducting heat from that chip into
+  the board.
+
 # Hooking Up JTAG and a serial port
 
 The board uses a standard 10-pin 2x5 1.27mm pitch JTAG connector for a

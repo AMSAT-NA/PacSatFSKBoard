@@ -7515,13 +7515,13 @@
 			(uuid "ed19d92c-1a6e-44b7-bdef-9cad869ea90e")
 		)
 		(pin "5"
-			(uuid "73d08ecf-ecf3-4efb-aa93-115e18558ab0")
+			(uuid "73d08ecf-ecf3-4efb-aa93-115e18558ab1")
 		)
 		(pin "1"
-			(uuid "20ce2fe7-ddc9-4caa-b1c9-fe216144f9fb")
+			(uuid "20ce2fe7-ddc9-4caa-b1c9-fe216144f9fc")
 		)
 		(pin "6"
-			(uuid "b69c1956-bc81-4d7c-ad14-e1fa831dad7e")
+			(uuid "b69c1956-bc81-4d7c-ad14-e1fa831dad7f")
 		)
 		(instances
 			(project "PacSat_AFSK"
@@ -8427,10 +8427,10 @@
 			(uuid "0a8e51c5-3978-4168-8194-5644844d6118")
 		)
 		(pin "4"
-			(uuid "aac329cf-0af0-4c30-a870-20cfe0b54ebc")
+			(uuid "aac329cf-0af0-4c30-a870-20cfe0b54ebd")
 		)
 		(pin "2"
-			(uuid "4579f399-240c-4258-9476-43603db37524")
+			(uuid "4579f399-240c-4258-9476-43603db37525")
 		)
 		(pin "5"
 			(uuid "0791a302-c080-42de-aaac-e7c4816c1836")
@@ -8439,7 +8439,7 @@
 			(uuid "635ab4f2-0d26-4f94-90b2-01f5547863b7")
 		)
 		(pin "3"
-			(uuid "703c9ffa-8105-4584-90f9-cbeb46c105f8")
+			(uuid "703c9ffa-8105-4584-90f9-cbeb46c105f9")
 		)
 		(instances
 			(project ""
