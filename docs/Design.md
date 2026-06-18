@@ -54,11 +54,11 @@ documented.
 
 Add the following notes:
 
-* Add a thermal pad under U3 for conducting heat from that chip into
-  the board.
-  
-* Add a non-electrically-conductive thermal pad under U2 on the open
-  copper area for conducting heat into the board.
+* Apply solder normally to the pad under U3 (the clock chip) even
+  though it doesn't have a pad on the chip itself.  The solder
+  will melt against the chip and supply a thermal path to the board.
+
+* Same as above for U2 (the CPU chip).
 
 # Hooking Up JTAG and a serial port
 

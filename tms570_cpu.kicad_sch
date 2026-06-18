@@ -4305,7 +4305,7 @@
 		)
 		(uuid "35923e0a-d774-4fda-a701-28223f4b2e86")
 	)
-	(text "The CPU has an open copper area under it for\nadding a (non-electrically conductive) thermal\nconductor for heat transfer."
+	(text "The CPU has an open copper area under it with\nan opening in the solder mask.  The chip will\nsit on the solder paste applied there, the\npaste will melt against the chip and the chip\nwill have a somewhat improved thermal path to\nthe board."
 		(exclude_from_sim no)
 		(at 61.468 25.908 0)
 		(effects

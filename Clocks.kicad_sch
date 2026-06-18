@@ -1514,7 +1514,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "This chip does not have a thermal pad on the\nchip, but does have one in the footprint.\nAdd a thermal pad underneath it to conduct\nheat from the chip to the board."
+	(text "This chip does not have a thermal pad on the\nchip, but does have one in the footprint.\nJust apply solder paste normally there so the\nchip will sit on it and have some thermal\npath to the board besides the pins."
 		(exclude_from_sim no)
 		(at 216.154 149.352 0)
 		(effects
