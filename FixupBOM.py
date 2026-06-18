@@ -293,7 +293,7 @@ value_to_partnum_xlats_2 = {
 
 other_components = {
     ('RB521CS30L,315', 'D_SOD-882'): None,
-    ('LMK1C1106A', 'Texas_HTSSOP-14-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask3.155x3.255mm'): None,
+    ('LMK1C1106-Q1', 'Texas_HTSSOP-14-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask3.155x3.255mm'): None,
     ('MAX31331TETB+', 'TDFN-10-1EP_3x3mm_P0.5mm_EP0.9x2mm'): None,
     ('AS3016204-0108X0PSAY', 'SOIC-8_5.3x5.3mm_P1.27mm'): None,
     ('BAV116WSQ-7', 'D_SOD-323F'): None,
