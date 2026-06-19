@@ -9,8 +9,10 @@ some point.
 
 # TODO
 
-Run the extra ADC unused lines to unpopulated resistors so they are
-more easily available.
+Maybe switch to a more accurate main oscillator.  .5ppm oscillators at
+16MHz are available, but the temperature doesn't go to 105C, only
+85C.  Maybe that's better, anyway?  The TG2520SMN 16.0000M-ECGNNM3
+from Epson is drop-in compatible to what is there.
 
 The DAC on the PA is only rated to +85C.  It would be nice to find one
 that went at least to +105C.
