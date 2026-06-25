@@ -3116,7 +3116,7 @@
 		)
 		(uuid "9d98a340-bdd7-4deb-929c-f30f22d7e5cf")
 	)
-	(text "Vgs minimum on the 2N7001TQ is 1V.  The 10K\nresistor here should easily hold this if\nUSB_+5V isn't applied."
+	(text "Vgs minimum on the 2N7002TQ is 1V.  The 10K\nresistor here should easily hold this if\nUSB_+5V isn't applied."
 		(exclude_from_sim no)
 		(at 165.1 242.57 0)
 		(effects

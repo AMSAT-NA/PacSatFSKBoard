@@ -9,10 +9,20 @@ some point.
 
 # TODO
 
+Add a diode on the USB chip's power input to avoid back current on it
+when it's off and the TX line is driven from the main CPU.
+
+Add a line from the CPU DTR on the USB chip to turn on/off power to
+the board from USB and get rid of Q18.  I have verified that DTR is
+high when not asserted and low when asserted, so it should just work.
+
+Change the resistor R190 to 20K 1%.  The voltage is too high there, the
+drop through the MOSFETs isn't as much as I expected.
+
 Maybe switch to a more accurate main oscillator.  .5ppm oscillators at
-16MHz are available, but the temperature doesn't go to 105C, only
-85C.  Maybe that's better, anyway?  The TG2520SMN 16.0000M-ECGNNM3
-from Epson is drop-in compatible to what is there.
+16MHz are available, but the temperature doesn't go to 105C, only 85C.
+Maybe that's better, anyway?  The TG2520SMN 16.0000M-ECGNNM3 from
+Epson is drop-in compatible to what is there.
 
 The DAC on the PA is only rated to +85C.  It would be nice to find one
 that went at least to +105C.
@@ -2821,3 +2831,77 @@ Add a thermal pad under the CPU (U2) and add notes about it.
 
 Add some DNP zero-ohm resistors to the unused extra ADC controller
 outputs to make it easier to use them.
+
+## 2026-06-23
+
+Got the version 3 boards today.
+
+MMCX connectors are not matching the cables I bought.  I triple
+checked that they were right, so I'm not sure what's going on.
+
+The board had a strange problem for a bit with the AX5043 SPI bus.  If
+you turned on the PA power, the TX AX5043 would no longer work.  I'm
+guessing it had something to do with the DAC on that same bus.
+However, the problem just went away.  I fixed some logic on the PA
+power line, so maybe that fixed it.  Not sure.
+
+With the PA power enabled, the PA does not draw any current.  So that
+should mean the PA doesn't draw any power when the bias is 0, like the
+DAC should be driving it at startup.  That means we can purely use the
+DAC to power the PA.
+
+There is an issue with the USB power, it appears.  When the board is
+powered through the PC104, it appears the 5V MOSFETs in U49 are
+conducting, I'm getting USB\_+5V at 5V when that's the case and the
+USB chip is powered.  But the strange thing is that if I disconnect
+3.3V from coming in the PC104, it doesn't do this.  You would think
+that it would supply power through 3.3V coming through the USB
+section.  I'm guessing that at power up the P-channel MOSFETs are
+conducting and that puts enough power on USB\_+5 to enable Q18, thus
+turning on the MOSFETs to let power in.  But that doesn't explain why
+it doesn't do this if 3.3V is not applied externally.
+
+I tried applying power to 5V first, which should pull up the inputs to
+the P-channel MOSFETS, then applying 3.3V layer.  But no help, it did
+the same things.  Power may be sneaking in through the CPU TX line to
+the USB chip and getting to USB\_+5V somehow.
+
+In hindsight, it would have been better to control Q18 with a GPIO
+from the USB chip and that way you could turn on and off power to the
+board through USB.  I now wish I had run some of those pins to empty
+resistors.
+
+The voltage dropped across the 3.3V isolation MOSFETS in the USB
+section don't seem to be dropping the voltage nearly as much as I
+expected.  I'm getting 3.4V on the output there, too.  So that needs
+to be adjusted down a bit.
+
+## 2026-06-24
+
+Removed R184, the input to the MOSFET that turns on the other MOSFETs.
+This means Q18 should be off all the time.  But for some weird reason
+this circuit works mostly like I want.  If USB is not plugged in, the
+USB section is not powered.  If the USB is plugged in, it powers the
+whole board.  If both are plugged in, USB powers the USB section and
+the external power powers the rest of the board.
+
+I'm pretty sure the problem is cause by 3.3V going from the CPU TX
+UART line into the USB chip, going out the Vdd of the chip, back
+through the power converter, and generating enough voltage to activate
+Q18.  With R184 removed, I'm seeing around 2.4V on the USB\_+5V and
+USB\_+3.3V lines.  I know it's not coming through the MOSFETs because
+it wasn't happening with external 3.3V turned off.  That's really the
+only other feasible place the voltage can be coming from.
+
+I think the right eventual solution to this is to use the DTR line out
+of the serial port to enable this.  That's cleaner than a circuit that
+mysteriously works.  That way you can control power to the board
+through the UART port.  I have tested that the DTR line coming out of
+the USB chip is high when off and low when on, so it can directly
+drive the MOSFET inputs.
+
+It also may be a good idea to add a diode on the power input to the
+USB chip to avoid the back current.
+
+And actually, the circuit does not always powered from USB.  That
+appears to be flaky.  So the DTR line is definitely the way to go.
