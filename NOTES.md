@@ -7,7 +7,27 @@ be done, and things that have been done.
 The general information will probably make it into another document at
 some point.
 
+# Version 3 board status
+
+## Board 11
+
+This is the first board I picked for working on.
+
+Removed R184
+
+Add 2.2K resistors for R147, R151, R152, R153, R166, and R167.
+
+Replaced R190 with a 20K resistor.
+
+Q18 is removed.
+
 # TODO
+
+Add a pullup to PC104\_ACP\_TX.  It's an open drain output and won't
+work right without it.
+
+Add 2.2K resistors for all the I2C pull ups.  You cannot use the
+internal chip pull ups for this, it appears.
 
 Add a diode on the USB chip's power input to avoid back current on it
 when it's off and the TX line is driven from the main CPU.
@@ -2905,3 +2925,59 @@ USB chip to avoid the back current.
 
 And actually, the circuit does not always powered from USB.  That
 appears to be flaky.  So the DTR line is definitely the way to go.
+
+## 2026-06-24
+
+Checked out all the GPIOs and cleaned up the software handling of them
+for the new board.  The only issue I'm seeing is with
+OTHER\_HW\_POWER\_ST.  It's always zero.  I verified that changing
+OTHER\_HW\_POWER\_OFF changes the value of the
+OTHER\_HW\_POWER\_OFF\_N line.  But OTHER\_HW\_POWER\_ST doesn't
+change.  There is a pull up in the CPU for it.  It should normally be
+pulled low by the Q9 and then go high when OTHER\_HW\_POWER\_OFF is
+activated.
+
+I started working on the M0L1228 processor.  I was able to program it,
+but it took some finagling.  It was giving an error about not erasing
+the NONCONFIG memory.  In TI CCS I had to go to Project->Executable
+Actions->Manage then go to the Debug section, choose "MSPM0 Flash
+Settings," then choose "Erase MAIN and NONMAIN necessary sectors only".
+Then reset the M0L1228 with the reset button on the launchpad and it
+programmed.
+
+## 2026-06-25
+
+The UART TX line out of the ACP doesn't work if it's only going to the
+USB UART.  However, if I plug an external UART in to the PC104 for
+that line (just the TX one) it goes to both UARTs.  Something strange
+electrically is happening, maybe because the 3.3V voltage on the USB
+section is too high.  But I increased the main system voltage and that
+didn't help.  The voltage in the antenna control section is a bit low
+at 3.25V.
+
+## 2026-06-26
+
+Tried the ADC I2C bus on the ACP, but it's not working.  After doing
+some more research, the internal pull ups cannot be used with I2C, so
+external ones need to be added.  Adding 2.2K resistors for this.
+After that it talks to the ADCs without issue.
+
+Replaced R190 with a 20K resistor to lower the USB 3.3V a bit, but
+that didn't help the UART port issue.
+
+Removed Q18 from board 11, just to be sure it doesn't cause trouble.
+
+## 2026-06-28
+
+I messed up the TX output (PC104\_ACP\_TX) from the ACP.  It's an open
+drain output, so it will have to have a pullup resistor.  There's no
+pullup available on that pin in the chip, either.  There's not an easy
+place to put a pullup that I could find.  You can work around this by
+plugging in the Launchpad debugger board and run the RX line from that
+to the TX line from the ACP.  This apparently has a pullup on it,
+which makes it work.
+
+I wired U44 pin 3 (DTR) to the input of the U49/U50 MOSFETs to
+directly drive it.  That didn't work so well, unfortunately.  The
+power would bounce.  I realized the DTR line will drive 3.3V, but the
+5V\_IN line is at 5V, so 3V will not turn off the transistors.

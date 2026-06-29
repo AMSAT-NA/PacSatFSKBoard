@@ -583,7 +583,7 @@ qucs.  The voltage for that can be calculated from the chip manual.
 
 # Other IO Connections
 
-## Antenna Control
+## Antenna Control Processor (ACP)
 
 A small M0L1228QRGERQ1 microprocessor sits on SPI 5 from the main CPU.
 It's main job is to provide SPI to I2C conversion, as the TMS570 CPU
@@ -669,6 +669,54 @@ processor can be used for reset.
 
 If PC104\_GPIO8 is used as a GPIO input, then you can't use it for
 BSL\_Invoke.  You can also use PC104\_GPIO7 for BSL\_Invoke.
+
+### SPI Protocol
+
+SPI itself does not define a protocol for transferring data, and a
+processor-to-processor SPI connection doesn't work like a normal
+device.  Instead, messages are sent between each device.
+
+The main processor acts as the SPI controller, so it runs the clock
+and starts all SPI transactions.
+
+The ACP is a SPI peripheral.  It as the ANT\_IRQ\_N line to signal the
+main processor.  The chip select line doesn't work like normal SPI,
+either.
+
+If the main processor wants to send a message to the ACP, it asserts
+the chip select line ANT\_SPI\_CS and waits for the ANT\_IRQ\_N line
+to be asserted.  The ACP prepares a SPI transaction for a transfer
+then asserts ANT\_IRQ\_N and the SPI transaction continues normally.
+After the transaction the ACP deasserts ANT\_IRQ\_N.  After the
+transaction the main processor waits for the ACP to deassert
+ANT\_IRQ\_N and then deasserts ANT\_SPI\_CS.
+
+If the ACP wants to send a message to the main processor, then it
+waits for ANT\_SPI\_CS to be deasserted and asserts ANT\_IRQ\_N.  This
+will cause the main processor to run a transaction.
+
+The first byte of a message is a message ID.  A message ID of 0xff
+marks no message, the contents are ignored.  Since every SPI
+transaction sends a message both ways, this is how it marks that no
+message is being transferred.
+
+#### SPI messages
+
+##### DO\_I2C (main->ACP)
+
+Transmits 0 or more I2C bytes on the given bus and requests a number
+of bytes read.  An I2C\_RESULT is always returned, even if the
+requested number of bytes is 0.  Only one I2C transaction per bus is
+allowed at a time.
+
+##### I2C\_RESULT (ACP->main)
+
+Return the results of an I2C transaction.
+
+##### ADC\_DATA (ACP->main)
+
+Send the current values of the ADC controller values, sent
+periodically by the ACP.
 
 ### ADC
 
