@@ -13,15 +13,20 @@ some point.
 
 This is the first board I picked for working on.
 
-Removed R184
+Removed R184 and run pin 3 of U44 (DTR line) to the input of Q18 (use
+a pad from R184.
 
 Add 2.2K resistors for R147, R151, R152, R153, R166, and R167.
 
 Replaced R190 with a 20K resistor.
 
-Q18 is removed.
-
 # TODO
+
+When powering with USB there is one small issue: If you disable the
+power with DTR it does not power off 5V because there's nothing
+pulling up the inputs to the MOSFETs.  A 100K resistor to USB\_+5v
+would do it.  There's enough there to turn off 3.3V, though, so it
+works to cycle power for now.  Add that resistor.
 
 Add a pullup to PC104\_ACP\_TX.  It's an open drain output and won't
 work right without it.
@@ -30,11 +35,14 @@ Add 2.2K resistors for all the I2C pull ups.  You cannot use the
 internal chip pull ups for this, it appears.
 
 Add a diode on the USB chip's power input to avoid back current on it
-when it's off and the TX line is driven from the main CPU.
+when it's off and the TX line is driven from the main CPU.  Actually,
+with R184 removed, this may not be necessary any more, there's no
+where for the power to go with that gone.
 
 Add a line from the CPU DTR on the USB chip to turn on/off power to
-the board from USB and get rid of Q18.  I have verified that DTR is
-high when not asserted and low when asserted, so it should just work.
+the board from USB by driving the input of Q18.  I have verified that
+DTR is high when not asserted and low when asserted, so it won't work
+as-is, another MOSFET needs to be added to get the polarity right.
 
 Change the resistor R190 to 20K 1%.  The voltage is too high there, the
 drop through the MOSFETs isn't as much as I expected.
@@ -2981,3 +2989,11 @@ I wired U44 pin 3 (DTR) to the input of the U49/U50 MOSFETs to
 directly drive it.  That didn't work so well, unfortunately.  The
 power would bounce.  I realized the DTR line will drive 3.3V, but the
 5V\_IN line is at 5V, so 3V will not turn off the transistors.
+
+Move U44 pin 2 to the input of Q18 (that was disconnected from +5V).
+I am able to successfully switch on and off power to the 3.3V.
+Powering with USB works and powering with external power does not
+power up the USB.  There is one small issue, when powering from USB,
+if you disable the power it does not power off 5V because there's
+nothing pulling up the inputs to the MOSFETs.  A 100K resistor to
+USB\_+5v would do it.
