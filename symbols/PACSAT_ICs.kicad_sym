@@ -5644,6 +5644,7 @@
 				(font
 					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
 		(property "Value" "SN74AHC1G00QDCKRQ1"
@@ -5652,6 +5653,7 @@
 				(font
 					(size 1.524 1.524)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" "PacSatDev_ti:DCK5"
@@ -5704,7 +5706,7 @@
 		(symbol "SN74AHC1G00QDCKRQ1_0_1"
 			(polyline
 				(pts
-					(xy 7.62 5.08) (xy 7.62 -10.16)
+					(xy 6.35 5.08) (xy 6.35 -5.08)
 				)
 				(stroke
 					(width 0.127)
@@ -5716,7 +5718,7 @@
 			)
 			(polyline
 				(pts
-					(xy 7.62 -10.16) (xy 43.18 -10.16)
+					(xy 6.35 -5.08) (xy 12.7 -5.08)
 				)
 				(stroke
 					(width 0.127)
@@ -5728,7 +5730,7 @@
 			)
 			(polyline
 				(pts
-					(xy 43.18 5.08) (xy 7.62 5.08)
+					(xy 12.7 5.08) (xy 6.35 5.08)
 				)
 				(stroke
 					(width 0.127)
@@ -5738,12 +5740,12 @@
 					(type none)
 				)
 			)
-			(polyline
-				(pts
-					(xy 43.18 -10.16) (xy 43.18 5.08)
-				)
+			(arc
+				(start 12.7 5.08)
+				(mid 17.78 0)
+				(end 12.7 -5.08)
 				(stroke
-					(width 0.127)
+					(width 0)
 					(type default)
 				)
 				(fill
@@ -5751,7 +5753,7 @@
 				)
 			)
 			(pin input line
-				(at 0 0 0)
+				(at -1.27 2.54 0)
 				(length 7.62)
 				(name "A"
 					(effects
@@ -5769,7 +5771,7 @@
 				)
 			)
 			(pin input line
-				(at 0 -2.54 0)
+				(at -1.27 -2.54 0)
 				(length 7.62)
 				(name "B"
 					(effects
@@ -5787,7 +5789,7 @@
 				)
 			)
 			(pin power_in line
-				(at 50.8 0 180)
+				(at 10.16 12.7 270)
 				(length 7.62)
 				(name "VCC"
 					(effects
@@ -5804,26 +5806,8 @@
 					)
 				)
 			)
-			(pin output line
-				(at 50.8 -2.54 180)
-				(length 7.62)
-				(name "Y"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "4"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
 			(pin power_in line
-				(at 50.8 -5.08 180)
+				(at 10.16 -12.7 90)
 				(length 7.62)
 				(name "GND"
 					(effects
@@ -5833,6 +5817,24 @@
 					)
 				)
 				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin output inverted
+				(at 25.4 0 180)
+				(length 7.62)
+				(name "Y"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "4"
 					(effects
 						(font
 							(size 1.27 1.27)

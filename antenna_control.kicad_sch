@@ -2856,6 +2856,16 @@
 		)
 		(uuid "28ce8484-009d-4c0b-ad45-c514c932a242")
 	)
+	(text "Pins PA0 and PA1 are open-drain only,\nso a pullup is required on outputs."
+		(exclude_from_sim no)
+		(at 118.11 36.068 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "8bdf7087-4b51-43c1-b5de-f92f141cec49")
+	)
 	(text "I2C Pullups, in case internal\npullup is not sufficient."
 		(exclude_from_sim no)
 		(at 242.57 103.378 0)
@@ -2868,7 +2878,7 @@
 	)
 	(text "Pins 12, 13, 14, and 22 may also\nbe used as a SPI interface on\nthe PC104 if you don't use the\nextra ADC."
 		(exclude_from_sim no)
-		(at 141.224 45.72 0)
+		(at 157.48 47.244 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -3003,6 +3013,12 @@
 		(uuid "ccd7253c-1ac8-4453-84b9-c1acdb321946")
 	)
 	(junction
+		(at 130.81 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cdfe2f11-5875-4ca6-9fae-c2fec95c4b4c")
+	)
+	(junction
 		(at 72.39 137.16)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3025,6 +3041,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e3566769-e27b-4d89-ae05-7e7edd808515")
+	)
+	(junction
+		(at 73.66 95.25)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e624f35c-57db-4c26-af3f-d7145ff9fa28")
 	)
 	(no_connect
 		(at 167.64 144.78)
@@ -3150,13 +3172,23 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 59.69) (xy 137.16 59.69)
+			(xy 124.46 59.69) (xy 130.81 59.69)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "16c4e349-a855-4ee8-904c-8e464b7676a3")
+	)
+	(wire
+		(pts
+			(xy 130.81 40.64) (xy 73.66 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "17d5c509-19f9-42c2-bc44-6ccffb8666f4")
 	)
 	(wire
 		(pts
@@ -3237,6 +3269,16 @@
 			(type default)
 		)
 		(uuid "28550808-a978-4618-808b-02af0d49db2d")
+	)
+	(wire
+		(pts
+			(xy 130.81 44.45) (xy 130.81 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28d092d9-f7c1-4b34-a9e1-5d6c5d26f779")
 	)
 	(wire
 		(pts
@@ -3330,7 +3372,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 95.25) (xy 83.82 95.25)
+			(xy 63.5 95.25) (xy 73.66 95.25)
 		)
 		(stroke
 			(width 0)
@@ -3550,6 +3592,16 @@
 	)
 	(wire
 		(pts
+			(xy 130.81 52.07) (xy 130.81 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5af9e15b-9b8a-4870-81ae-e9635c9014bd")
+	)
+	(wire
+		(pts
 			(xy 203.2 39.37) (xy 207.01 39.37)
 		)
 		(stroke
@@ -3590,7 +3642,7 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 62.23) (xy 63.5 62.23)
+			(xy 63.5 62.23) (xy 83.82 62.23)
 		)
 		(stroke
 			(width 0)
@@ -3717,6 +3769,16 @@
 			(type default)
 		)
 		(uuid "772614fc-d939-4ef1-825d-e0c6982cc60d")
+	)
+	(wire
+		(pts
+			(xy 130.81 59.69) (xy 137.16 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "784e8bd3-1b8b-4d63-9bdd-e104ec996733")
 	)
 	(wire
 		(pts
@@ -4130,6 +4192,16 @@
 	)
 	(wire
 		(pts
+			(xy 73.66 95.25) (xy 83.82 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c32d16b9-d6b5-46b4-9dc0-0fd72df1cec0")
+	)
+	(wire
+		(pts
 			(xy 147.32 158.75) (xy 147.32 165.1)
 		)
 		(stroke
@@ -4247,6 +4319,16 @@
 			(type default)
 		)
 		(uuid "d3fc1cf8-0f78-47bb-aeee-d32b47fc3089")
+	)
+	(wire
+		(pts
+			(xy 73.66 40.64) (xy 73.66 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d56094e7-da86-4f28-8667-0253e9f48149")
 	)
 	(wire
 		(pts
@@ -5461,9 +5543,9 @@
 		(at 254 119.38 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "164b83e1-2159-4936-b692-435b81cddf95")
 		(property "Reference" "R151"
 			(at 255.778 118.491 0)
@@ -5474,7 +5556,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2KΩ"
+		(property "Value" "2.2KΩ"
 			(at 255.778 120.396 0)
 			(effects
 				(font
@@ -5663,9 +5745,9 @@
 		(at 147.32 168.91 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "249b8f7e-a42d-4b2f-bfe7-a5d1a44e833a")
 		(property "Reference" "R166"
 			(at 149.098 168.021 0)
@@ -5676,7 +5758,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2KΩ"
+		(property "Value" "2.2KΩ"
 			(at 149.098 169.926 0)
 			(effects
 				(font
@@ -6431,9 +6513,9 @@
 		(at 254 147.32 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "72bcfcbd-4fd7-4440-8db3-19e2f42a695a")
 		(property "Reference" "R153"
 			(at 255.778 146.431 0)
@@ -6444,7 +6526,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2KΩ"
+		(property "Value" "2.2KΩ"
 			(at 255.778 148.336 0)
 			(effects
 				(font
@@ -6555,6 +6637,73 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/75b01062-9747-4556-85bc-485f2c3c99d3"
 					(reference "R140")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 130.81 48.26 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7ace781a-b481-47bd-83b7-ba6ab60035b1")
+		(property "Reference" "R195"
+			(at 132.08 56.134 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "4.7KΩ"
+			(at 132.334 45.466 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 129.032 48.26 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 130.81 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 130.81 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1d2dc420-dc85-4ecd-99f5-eb3b5943682e")
+		)
+		(pin "2"
+			(uuid "f0aaab14-6c81-48a1-a985-abc5d1d0e296")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/75b01062-9747-4556-85bc-485f2c3c99d3"
+					(reference "R195")
 					(unit 1)
 				)
 			)
@@ -6889,9 +7038,9 @@
 		(at 243.84 119.38 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "8cf62f0f-26e0-4986-8e7b-2da146d4eba7")
 		(property "Reference" "R147"
 			(at 245.618 118.491 0)
@@ -6902,7 +7051,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2KΩ"
+		(property "Value" "2.2KΩ"
 			(at 245.618 120.396 0)
 			(effects
 				(font
@@ -7158,9 +7307,9 @@
 		(at 243.84 147.32 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "ae25f242-83b9-424b-88cf-baaed90c69d6")
 		(property "Reference" "R152"
 			(at 245.618 146.431 0)
@@ -7171,7 +7320,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2KΩ"
+		(property "Value" "2.2KΩ"
 			(at 245.618 148.336 0)
 			(effects
 				(font
@@ -7225,9 +7374,9 @@
 		(at 156.21 168.91 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "ae29678e-6e78-434a-8b0b-a0623f528b0f")
 		(property "Reference" "R167"
 			(at 157.988 168.021 0)
@@ -7238,7 +7387,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2KΩ"
+		(property "Value" "2.2KΩ"
 			(at 157.988 169.926 0)
 			(effects
 				(font
