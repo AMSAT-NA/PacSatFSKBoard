@@ -7,6 +7,27 @@ be done, and things that have been done.
 The general information will probably make it into another document at
 some point.
 
+# Version 3 board status
+
+There is an issue where when powered from USB the TX AX5043 doesn't
+appear to power up correctly.  Voltages look ok, so I'm not sure
+what's going on.  It doesn't seem to happen when powered from normal
+
+## Board 11
+
+This is the first board I picked for working on.
+
+Removed R184 and run pin 3 of U44 (DTR line) to the input of Q18 (use
+a pad from R184.
+
+Add 2.2K resistors for R147, R151, R152, R153, R166, and R167.
+
+Replaced R190 with a 20K resistor.
+
+Soldered a wire from PC104 pin J1-2 (PC104\_ACP\_TX) to a 4.7K
+resistor added to the R153 ANT\_3.3V pin.  This provides a pull-up for
+that line so the antenna control processor's TX line works.
+
 # TODO
 
 The Q10 transistor for FAULT\_N does not have a pull on it.  When the
