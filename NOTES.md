@@ -2986,3 +2986,25 @@ power up the USB.  There is one small issue, when powering from USB,
 if you disable the power it does not power off 5V because there's
 nothing pulling up the inputs to the MOSFETs.  A 100K resistor to
 USB\_+5v would do it.
+
+## 2026-06-29
+
+Installed a pull-up on PC104\_ACP\_TX and that fixed the issue.
+
+The U.FL connectors on the TX and RX are shorting with the MMCX
+connectors and causing issues with shorting the signals to ground.  I
+cut the signal trace right at the edge of the MMCX connector on
+transmit and it's working much better.  I was getting about 14dBm out,
+now I'm getting 28dBm.  Same issue on receive, cut it there, too.
+
+The RF power measurement seems to be working well.  It needs to be
+calibrated, but I'm getting good readings.  When the TX was shorting
+to ground it was giving significant reflection that went away when
+that was fixed.
+
+Remove the U.FL connectors P23, P24, and P26 they just weren't going
+to work and there's no good place to put them, and where they were was
+shorting the MMCX connectors.  Just use the MMCX ones for output.
+
+Move the diplexer MMCX connector to give it more room and get it a
+little more out of the way of the transmit connector.
