@@ -9,6 +9,9 @@ some point.
 
 # TODO
 
+What happens if the RTC goes into lockup or some other bad state?
+There's no way to power it off, and a reset won't help.
+
 When powering with USB there is one small issue: If you disable the
 power with DTR it does not power off 5V because there's nothing
 pulling up the inputs to the MOSFETs.  A 100K resistor to USB\_+5V
@@ -3008,3 +3011,8 @@ shorting the MMCX connectors.  Just use the MMCX ones for output.
 
 Move the diplexer MMCX connector to give it more room and get it a
 little more out of the way of the transmit connector.
+
+## 2026-07-02
+
+Checked that the antenna control and ADC connectors will work
+properly.

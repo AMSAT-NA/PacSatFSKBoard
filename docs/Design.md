@@ -672,51 +672,25 @@ BSL\_Invoke.  You can also use PC104\_GPIO7 for BSL\_Invoke.
 
 ### SPI Protocol
 
-SPI itself does not define a protocol for transferring data, and a
-processor-to-processor SPI connection doesn't work like a normal
-device.  Instead, messages are sent between each device.
+See https://github.com/cminyard/PacSatSPII2C for details on the
+messaging on the SPI bus.
 
-The main processor acts as the SPI controller, so it runs the clock
-and starts all SPI transactions.
+The I2C busses on the device are numbered by index in the messaging
+protocol.  On this board, I2C index 0 in the message is I2CA out the
+antenna control connector, and I2C index 1 is I2CB on the same.
 
-The ACP is a SPI peripheral.  It as the ANT\_IRQ\_N line to signal the
-main processor.  The chip select line doesn't work like normal SPI,
-either.
+I2C index 2 goes to the ADCs and optionally to the PC104 connector.
+The ADCs are at addresses 0x48 and 0x49 on that bus.
 
-If the main processor wants to send a message to the ACP, it asserts
-the chip select line ANT\_SPI\_CS and waits for the ANT\_IRQ\_N line
-to be asserted.  The ACP prepares a SPI transaction for a transfer
-then asserts ANT\_IRQ\_N and the SPI transaction continues normally.
-After the transaction the ACP deasserts ANT\_IRQ\_N.  After the
-transaction the main processor waits for the ACP to deassert
-ANT\_IRQ\_N and then deasserts ANT\_SPI\_CS.
+The GPIOs are numbered as:
 
-If the ACP wants to send a message to the main processor, then it
-waits for ANT\_SPI\_CS to be deasserted and asserts ANT\_IRQ\_N.  This
-will cause the main processor to run a transaction.
-
-The first byte of a message is a message ID.  A message ID of 0xff
-marks no message, the contents are ignored.  Since every SPI
-transaction sends a message both ways, this is how it marks that no
-message is being transferred.
-
-#### SPI messages
-
-##### DO\_I2C (main->ACP)
-
-Transmits 0 or more I2C bytes on the given bus and requests a number
-of bytes read.  An I2C\_RESULT is always returned, even if the
-requested number of bytes is 0.  Only one I2C transaction per bus is
-allowed at a time.
-
-##### I2C\_RESULT (ACP->main)
-
-Return the results of an I2C transaction.
-
-##### ADC\_DATA (ACP->main)
-
-Send the current values of the ADC controller values, sent
-periodically by the ACP.
+| GPIO Index | GPIO pin  | Description |
+| ---------- | --------  | ----------- |
+| 0          | 12 (PA16) | PC104\_GPIO8 | 
+| 1          | 17 (PA21) | Enable +3.3V to the antenna control connector (ACC). |
+| 2          | 19 (PA23) | Optional line to pin 10 on the ACC |
+| 3          | 21 (PA25) | Enable for power to the ADCs. |
+| 4          | 22 (PA26) | PC104\_GPIO7 |
 
 ### ADC
 
