@@ -9,15 +9,26 @@ some point.
 
 # TODO
 
+If it is determined that the DIN on the RTC is not going to work,
+remove that circuitry.
+
+The coupling on the directional coupler may be too much.  It's getting
+to 3.1V, which is over 5dBm of power.  We really want the limit to be
+closer to 0dBm, so reducing the coupler length to a much smaller value
+is in order.
+
 What happens if the RTC goes into lockup or some other bad state?
 There's no way to power it off, and a reset won't help.
 
 When powering with USB there is one small issue: If you disable the
 power with DTR it does not power off 5V because there's nothing
-pulling up the inputs to the MOSFETs.  A 100K resistor to USB\_+5V
-would do it.  There's enough there to turn off 3.3V, though, so it
-works to cycle power for now.  Maybe add that resistor?  It may not be
-that important.
+pulling up the inputs to the MOSFETs.  What happens is it gets enough
+power on +5V to get it to around +4.1V, the point that the MOSFETs
+will turn off.  A 100K resistor to USB\_+5V would do it.  The 4.1V
+enough there to turn off 3.3V, though, so it works to cycle power the
+logic for now.  Maybe add that resistor?  It may not be that
+important.  The big deal is you need to power cycle the board logic
+and keep the USB disabled when not powered from USB.
 
 Maybe switch to a more accurate main oscillator.  .5ppm oscillators at
 16MHz are available, but the temperature doesn't go to 105C, only 85C.
@@ -3016,3 +3027,20 @@ little more out of the way of the transmit connector.
 
 Checked that the antenna control and ADC connectors will work
 properly.
+
+## 2026-07-07
+
+Measured the amount of time the RTC can keep time without power.  90
+minutes works, 105 minutes does not, and that's as far as I went.  90
+minutes should be ok.  With 188uF, 70na current (~71M resistance), and
+5V that's around 333 calculated seconds to hit 1.1V, but the
+capacitors are going to derate some at 5V and there is leakage through
+the capacitors themselves (which turns out to be bigger than I would
+have expected and temperature dependent).
+
+I tried to get the DIN pin working, but I couldn't figure out why.  I
+verified that the voltage on the DIN pin was doing the right thing on
+a external watchdog reset.  I tried various setting with powering with
+Vbat, various ways of enabling the pin.  Maybe that pin just doesn't
+work when not powered with VCC, but the data sheet seems to imply that
+will work.  But it doesn't say it explicitly.

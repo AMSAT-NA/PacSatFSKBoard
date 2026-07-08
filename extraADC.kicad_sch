@@ -1612,6 +1612,26 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "I2C addr = 0x48"
+		(exclude_from_sim no)
+		(at 183.388 76.708 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "1645b949-5ced-4ddc-8ea6-b02768c34892")
+	)
+	(text "I2C addr = 0x49"
+		(exclude_from_sim no)
+		(at 174.498 115.57 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "92da1a80-efe4-4f93-9f75-a2ca23c858d1")
+	)
 	(junction
 		(at 160.02 66.04)
 		(diameter 0)
