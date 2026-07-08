@@ -9,9 +9,6 @@ some point.
 
 # TODO
 
-If it is determined that the DIN on the RTC is not going to work,
-remove that circuitry.
-
 The coupling on the directional coupler may be too much.  It's getting
 to 3.1V, which is over 5dBm of power.  We really want the limit to be
 closer to 0dBm, so reducing the coupler length to a much smaller value
@@ -912,6 +909,10 @@ as-is, an inverter needs to be added between DTR and Q18.
 
 Change the resistor R190 to 20K 1%.  The voltage is too high there, the
 drop through the MOSFETs isn't as much as I expected.
+
+If it is determined that the DIN on the RTC is not going to work,
+remove that circuitry. - I figured out that you can use the timestamp
+function in the RTC to know if the DIN pin changed.
 
 # RF Shields
 
@@ -3044,3 +3045,9 @@ a external watchdog reset.  I tried various setting with powering with
 Vbat, various ways of enabling the pin.  Maybe that pin just doesn't
 work when not powered with VCC, but the data sheet seems to imply that
 will work.  But it doesn't say it explicitly.
+
+## 2026-07-07
+
+I figured out that you can use the timestamp function in the RTC to
+know if the DIN pin changed.  So that works well, and I'm removing the
+provisional circuitry there.
