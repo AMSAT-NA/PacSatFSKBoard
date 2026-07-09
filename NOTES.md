@@ -843,6 +843,9 @@ fits.
 Go through all the pins on the CPU and remove any unnecessary pull ups
 and pull downs in the HCG software to save some power.
 
+If it is determined that the DIN on the RTC is not going to work,
+remove that circuitry. - It's not going to work :-(.
+
 # Not going to do
 
 Rotate the CPU so that fewer traces need to be routed under the CPU.
@@ -909,10 +912,6 @@ as-is, an inverter needs to be added between DTR and Q18.
 
 Change the resistor R190 to 20K 1%.  The voltage is too high there, the
 drop through the MOSFETs isn't as much as I expected.
-
-If it is determined that the DIN on the RTC is not going to work,
-remove that circuitry. - I figured out that you can use the timestamp
-function in the RTC to know if the DIN pin changed.
 
 # RF Shields
 
@@ -3051,3 +3050,12 @@ will work.  But it doesn't say it explicitly.
 I figured out that you can use the timestamp function in the RTC to
 know if the DIN pin changed.  So that works well, and I'm removing the
 provisional circuitry there.
+
+Well, the above turns out to not be quite accurate.  Powering off the
+board will cause the DIN pin to drop, so any power off will cause the
+DIN pin to drop, and you can't tell if it's a watchdog or just a
+normal power up.  You might be able to pull up DIN with Vbat, but that
+would significantly shorten the time it can run on Vbat.  When
+deployed, about the only thing that can cause a power on reset is the
+watchdog, so maybe it doesn't matter.  So just pull the DIN pin on the
+RTC down.
