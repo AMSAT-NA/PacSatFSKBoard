@@ -3405,6 +3405,12 @@
 		(uuid "3a4fba34-ed57-43e2-9898-0b9f7e54b534")
 	)
 	(junction
+		(at 113.03 229.87)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3f3fa30c-453f-49b7-a01e-f14dc6e1e9bd")
+	)
+	(junction
 		(at 196.85 232.41)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3589,6 +3595,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ecef8d9a-66f7-4cca-ac42-d9eda7e6b5dc")
+	)
+	(junction
+		(at 128.27 217.17)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f166f3fc-b5fd-4f19-a9f5-ec2ea3edb89f")
 	)
 	(junction
 		(at 125.73 123.19)
@@ -3932,6 +3944,16 @@
 	)
 	(wire
 		(pts
+			(xy 128.27 217.17) (xy 128.27 219.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1de8ec63-8444-4ce5-a8bf-cb16b4dd29ab")
+	)
+	(wire
+		(pts
 			(xy 30.48 46.99) (xy 53.34 46.99)
 		)
 		(stroke
@@ -4039,6 +4061,16 @@
 			(type default)
 		)
 		(uuid "2e4b4d31-7642-461d-83de-dae75be43f64")
+	)
+	(wire
+		(pts
+			(xy 113.03 219.71) (xy 113.03 217.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e55e528-57aa-45e5-b32f-b7c627bb0462")
 	)
 	(wire
 		(pts
@@ -4449,6 +4481,16 @@
 			(type default)
 		)
 		(uuid "64be3b27-9b93-4fb0-b06d-638df95537a5")
+	)
+	(wire
+		(pts
+			(xy 113.03 217.17) (xy 128.27 217.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68962d0a-b50a-4738-b385-156f7b87830d")
 	)
 	(wire
 		(pts
@@ -5122,7 +5164,7 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 215.9) (xy 128.27 219.71)
+			(xy 128.27 213.36) (xy 128.27 217.17)
 		)
 		(stroke
 			(width 0)
@@ -5462,6 +5504,16 @@
 	)
 	(wire
 		(pts
+			(xy 113.03 227.33) (xy 113.03 229.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8dbed38-ae2c-4559-b1d5-955ab5bc20bf")
+	)
+	(wire
+		(pts
 			(xy 342.9 128.27) (xy 342.9 130.81)
 		)
 		(stroke
@@ -5711,7 +5763,7 @@
 		(uuid "f3f89684-0e94-4eeb-8477-62f7be841f5d")
 	)
 	(label "USB_+3.3V"
-		(at 128.27 215.9 0)
+		(at 128.27 213.36 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -7971,6 +8023,74 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
 					(reference "R189")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 113.03 223.52 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7fd40fd8-c571-4225-aba6-03e33c643f5d")
+		(property "Reference" "R131"
+			(at 114.808 222.3516 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10KΩ"
+			(at 114.808 224.663 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 111.252 223.52 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 113.03 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 113.03 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "988dfa57-f976-40be-8df6-c1ad2820c7c3")
+		)
+		(pin "2"
+			(uuid "55cc43b2-e005-475d-aab0-5c2752ca9c54")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
+					(reference "R131")
 					(unit 1)
 				)
 			)

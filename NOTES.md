@@ -3045,7 +3045,7 @@ Vbat, various ways of enabling the pin.  Maybe that pin just doesn't
 work when not powered with VCC, but the data sheet seems to imply that
 will work.  But it doesn't say it explicitly.
 
-## 2026-07-07
+## 2026-07-08
 
 I figured out that you can use the timestamp function in the RTC to
 know if the DIN pin changed.  So that works well, and I'm removing the
@@ -3059,3 +3059,8 @@ would significantly shorten the time it can run on Vbat.  When
 deployed, about the only thing that can cause a power on reset is the
 watchdog, so maybe it doesn't matter.  So just pull the DIN pin on the
 RTC down.
+
+## 2026-07-09
+
+Add a pull-up to the USB\_POWER line to make sure it's pulled up even
+when the USB to UART chip isn't running.
