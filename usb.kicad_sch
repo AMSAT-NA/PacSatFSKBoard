@@ -3096,7 +3096,7 @@
 		)
 		(uuid "4ff5bba1-3e05-4bf0-852a-0da09c96ce4a")
 	)
-	(text "This circuit turns on power from the USB power domain to the\nmain power in the circuit if DTR is enabled on U44.  This\nalso prevents power from flowing backwards from the main power\nrails to the USB power.\n\nYou need two P-channel MOSFETS on each power rail to prevent\npower from flowing backwards through the diodes in the MOSFETS."
+	(text "This circuit turns on power from the USB power domain to the\nmain power in the circuit if GPIO9 is enabled on U44.  This\nalso prevents power from flowing backwards from the main power\nrails to the USB power.\n\nYou need two P-channel MOSFETS on each power rail to prevent\npower from flowing backwards through the diodes in the MOSFETS."
 		(exclude_from_sim no)
 		(at 263.652 237.49 0)
 		(effects
