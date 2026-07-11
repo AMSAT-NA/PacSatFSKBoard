@@ -142,6 +142,13 @@ There is a type C USB connector on the board.  It has two functions:
 accessing the serial port on the processor and powering the board when
 the satellite is completely assembled and otherwise inaccessible.
 
+The USB chip, a CY7C65215, should be configured first before using the
+board.  This must be done on Windows.  Get the Cypress USB serial
+configuration utility and set the serial ports as 2-wire ports and set
+GPIO 9 to be 0 by default.  This will keep main board power out of the
+USB section and will allow a the cygpio program in the hostutils
+directory of the PacSatSw repository to turn on and off the board.
+
 ## USB Serial Ports
 
 The serial ports to the main processor and the antenna control
@@ -160,11 +167,12 @@ not plugged in, it will not be powered, the USB power interface is
 designed to block power from flowing from the main power rails to the
 USB circuits.
 
-If USB is plugged in, it will provide power to the board through the
-USB interface.  You should not plug other power in unless you have the
-power separated by removing R184.  If you remove that resistor, you
-can power the board and only the USB portion will use power from the
-USB cable.
+If USB is plugged in, can will provide power to the board through the
+USB interface.  This is controlled by a GPIO on the USB chip, see the
+main USB section above for details.  It should be off by default.
+
+You can power the board separately and use the USB section at the same
+time as long as you don't enable the GPIO on the USB chip.
 
 The 5V will experience some power drop due to the MOSFETs used to
 switch power on.  At 1A it will sag about .24V.  The 3.3V power is

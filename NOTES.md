@@ -3064,3 +3064,12 @@ RTC down.
 
 Add a pull-up to the USB\_POWER line to make sure it's pulled up even
 when the USB to UART chip isn't running.
+
+## 2026-07-10
+
+Pull out the inverter on the USB\_POWER line.  I've decided to just
+control this line using the USB chip output configured as a GPIO.
+Using DTR is kind of dicey, as it's hard to directly control.
+
+Add a resistor between the USB power MOSFETs and USB\_+5V so those
+will be disabled when USB power is applied but USB\_POWER is disabled.
