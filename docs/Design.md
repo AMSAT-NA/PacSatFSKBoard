@@ -145,9 +145,10 @@ the satellite is completely assembled and otherwise inaccessible.
 The USB chip, a CY7C65215, should be configured first before using the
 board.  This must be done on Windows.  Get the Cypress USB serial
 configuration utility and set the serial ports as 2-wire ports and set
-GPIO 9 to be 0 by default.  This will keep main board power out of the
-USB section and will allow a the cygpio program in the hostutils
-directory of the PacSatSw repository to turn on and off the board.
+GPIO 9 to be 0 by default.  The other GPIOs should be tristate.  This
+will keep main board power out of the USB section and will allow a the
+cygpio program in the hostutils directory of the PacSatSw repository
+to turn on and off the board.
 
 ## USB Serial Ports
 
