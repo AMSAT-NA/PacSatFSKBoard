@@ -28,6 +28,17 @@ Soldered a wire from PC104 pin J1-2 (PC104\_ACP\_TX) to a 4.7K
 resistor added to the R153 ANT\_3.3V pin.  This provides a pull-up for
 that line so the antenna control processor's TX line works.
 
+Cut the trace between P15 pin 1 and P23 pin 1 so it wouldn't short out
+transmit.
+
+Cut the trace between P17 pin 1 and P24 pin 1 so it wouldn't short out
+receive.
+
+Added a 100K resistor between pins 3 and 4 of U49.  This should pull
+up the gates of the MOSFET to be sure it's off when it's off.  This
+seems to help, but there's a little leakage, probably through the two
+100K resistors there.
+
 # TODO
 
 The Q10 transistor for FAULT\_N does not have a pull on it.  When the
