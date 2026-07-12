@@ -3073,3 +3073,14 @@ Using DTR is kind of dicey, as it's hard to directly control.
 
 Add a resistor between the USB power MOSFETs and USB\_+5V so those
 will be disabled when USB power is applied but USB\_POWER is disabled.
+
+## 2026-07-11
+
+Remove the resistor between the USB power MOSFETs and USB\_+5V.  That
+would just create a voltage divider when the USB power was off,
+lowering the voltage on the MOSFET gates to where they would turn on.
+So the original circuit is restored.  See the comments on the USB
+sheet for an explanation of current flow on 5V when powered from USB.
+
+Increase the track width or make redundant tracks on inner layer on
+USB\_+5V.  It was probably ok, but it's best to be sure.
