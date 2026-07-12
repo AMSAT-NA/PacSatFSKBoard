@@ -532,11 +532,24 @@ VBAT\_p - Remove R126
 ## USB
 
 The board has a USB type C connector that can be used for serial
-interfaces and power.  If USB is plugged in there, it will supply
-power to the board through USB.  So if you have USB plugged in, you
-should *not* power the board with something else.  If you really need
-to power the board some other way with USB attached, you need to
-remove R184.
+interfaces and power.  If USB is plugged in there, it can supply power
+to the board through USB.  On power up it will not power the rest of
+the board, you must turn on (set to 1) GPIO9 on the USB serial chip
+U44 to turn on power to the rest of the board.  A tool named cygpio is
+available in PacSatSw git repository under the hostutils directory
+that can do this.
+
+When powering from USB and GPIO9 is not enabled, some power leaks
+through on +5V.  This is expected and doesn't hurt anything.  +3.3V
+will not be powered, though, which is the main goal.
+
+You can power the board through the PC104 and use the USB at the same
+time.  This is convenient for development; you don't have to use the
+serial port through the PC104.  In this case, the +5V coming in will
+turn off the MOSFETs used to separate the USB power and the main
+power, so the comments in the previous paragraph do not apply.  But if
+you do this, you must *not* turn on GPIO9 or it will connect the two
+power domains together.
 
 If the proper resistors are attached, the ones from 5V\_IN and
 3.3V\_IN to the PC104, this can be used to power other boards through
@@ -544,14 +557,15 @@ the PC104.
 
 Both 3.3V and 5V are provided from USB.  If you are only using 5V from
 the PC104 and are using U4 to provide 3.3V, you should not populate
-Q17.  In all cases the USB converter chip is powered by the USB +3.3V
-converter, so you cannot remove that and use USB.
+U50.  In all cases the USB converter chip is powered by the USB +3.3V
+converter U48, so you cannot remove that and use USB.
 
 The board is configured to ask for 3A from the USB, though it
 generally only needs less than 1A.  Burning the antenna release can
 draw up to 2A; the 3.3V power converter for USB and the control
 transistors cannot supply that much power, so you cannot use that
-function with USB power.
+function with USB power.  It might work for a little bit, but it's
+risky.
 
 The USB provides two serial ports, the first for the main CPU and the
 second for the antenna control processor.  Those serial ports are also
@@ -559,10 +573,10 @@ available on the PC104 connector if not using USB, but if USB is
 plugged in you should not use the P104\_CPU and PC104\_ACP serial
 lines.
 
-The main purpose of this connector is updating software and firmware
-and the serial consoles after the board has been assembled in the
-satellite.  A small hole in the satellite exterior can be added to
-access the USB connector.
+The main purpose of this connector is final provisioning and updating
+software and firmware and the serial consoles after the board has been
+assembled in the satellite.  A small hole in the satellite exterior
+should be added to access the USB connector.
 
 ## Antenna Control
 
