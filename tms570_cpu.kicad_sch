@@ -8767,7 +8767,7 @@
 			)
 		)
 	)
-	(global_label "PC104_CPU_TX"
+	(global_label "CPU_TX"
 		(shape input)
 		(at 300.99 193.04 0)
 		(fields_autoplaced yes)
@@ -10065,7 +10065,7 @@
 			)
 		)
 	)
-	(global_label "PC104_CPU_RX"
+	(global_label "CPU_RX"
 		(shape input)
 		(at 300.99 190.5 0)
 		(fields_autoplaced yes)

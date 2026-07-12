@@ -544,12 +544,10 @@ through on +5V.  This is expected and doesn't hurt anything.  +3.3V
 will not be powered, though, which is the main goal.
 
 You can power the board through the PC104 and use the USB at the same
-time.  This is convenient for development; you don't have to use the
-serial port through the PC104.  In this case, the +5V coming in will
-turn off the MOSFETs used to separate the USB power and the main
-power, so the comments in the previous paragraph do not apply.  But if
-you do this, you must *not* turn on GPIO9 or it will connect the two
-power domains together.
+time.  In this case, the +5V coming in will turn off the MOSFETs used
+to separate the USB power and the main power, so the comments in the
+previous paragraph do not apply.  But if you do this, you must *not*
+turn on GPIO9 or it will connect the two power domains together.
 
 If the proper resistors are attached, the ones from 5V\_IN and
 3.3V\_IN to the PC104, this can be used to power other boards through
@@ -568,10 +566,7 @@ function with USB power.  It might work for a little bit, but it's
 risky.
 
 The USB provides two serial ports, the first for the main CPU and the
-second for the antenna control processor.  Those serial ports are also
-available on the PC104 connector if not using USB, but if USB is
-plugged in you should not use the P104\_CPU and PC104\_ACP serial
-lines.
+second for the antenna control processor.
 
 The main purpose of this connector is final provisioning and updating
 software and firmware and the serial consoles after the board has been
@@ -610,7 +605,7 @@ Pinout is:
 
 * 9 - Ground
 
-* 10 - Unused, add R162 to connect to ACP pin 11.
+* 10 - Unused, add R162 to connect to ACP pin 19 (PA23).
 
 Note that many of the lines out of the ACP are multi-purpose, so other
 configurations may be possible.
@@ -716,22 +711,10 @@ processor will be continuously reset.  A standard 2.54mm (.1") header
 is provided at J4; when a jumper is installed the watchdog timer will be
 disabled.
 
-## Serial Port
-
-A 3.3V serial port interface is provided on the PC102 J2 pin 1 is RX,
-J2 pin 2 is TX.  Remember, when connecting to an external serial port,
-connect TX to RX and RX to TX.
-
-Only connect a 3.3V serial port interface.  Connecting a 5V or
-standard RS-232 connection will likely damage the processor.
-Connecting external TX to TX on the board will likely damage the
-processor, and probably the external serial port, too.
-
 ## LP-XDS110 JTAG/Serial Debug Probe
 
 TI sells the "XDS110 LaunchPad Debug Probe", part number LP-XDS110,
-that is an inexpensive programming interface that can do both JTAG and
-the serial port.
+that is an inexpensive programming interface that can do JTAG.
 
 See the Design document for details.
 

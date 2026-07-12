@@ -3084,3 +3084,9 @@ sheet for an explanation of current flow on 5V when powered from USB.
 
 Increase the track width or make redundant tracks on inner layer on
 USB\_+5V.  It was probably ok, but it's best to be sure.
+
+## 2026-07-12
+
+Remove the serial connections from the PC104.  The USB connection has
+proven itself, so it shouldn't be needed on later boards.  This
+allowed some routing simplification.

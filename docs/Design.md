@@ -78,19 +78,23 @@ On version 2 boards, jumper J12 is the serial interface (3.3V) and the
 TX and RX lines are labeled under the pins.  The unlabeled pin is
 ground.
 
-On version 3 and later boards, there are two CPUs and two serial
-ports.  The serial port for the main CPU is on PC104 J2, TX is pin 2
-and RX is pin 1.  The serial port for the antenna controller is on J1,
-TX is pin 2 and RX is pin 1.
+On version 3 boards, there are two CPUs and two serial ports.  The
+serial port for the main CPU is on PC104 J2, TX is pin 2 and RX is
+pin 1.  The serial port for the antenna controller is on J1, TX is pin
+2 and RX is pin 1.
 
 Remember, hook TX on one board to RX on the other.  Don't
 hook TX to TX.  If you don't have the JTAG connected, you will need to
 connect the ground as well.
 
-The serial ports are also available on the USB connector via a USB to
-serial converter.  The first serial port is the main CPU and the
-second is the antenna controller.  Do not hook up the serial port
-lines on the PC104 if USB is connected, they are the same lines.
+The serial port connections to the PC104 are removed after version 3
+now that the USB interface has been proven.
+
+For version 3 and later boards, the serial ports are available via a
+USB to serial converter.  The first serial port is the main CPU and
+the second is the antenna controller.  On version 3 boards, do not
+hook up the serial port lines on the PC104 if USB is connected, they
+are the same lines.
 
 The reset button on the LP-XDS110 resets the board.
 
@@ -157,9 +161,9 @@ processor are available through a USB to serial converter.  The first
 is the main CPU and the second is the ACP.  They are standard USB
 serial devices, so no special drivers should be needed.
 
-If USB is plugged in, do not connect to the serial lines on the PC104.
-The same lines go to the USB to serial converter and are driven by
-that chip.
+On version 3 boards, if USB is plugged in, do not connect to the
+serial lines on the PC104.  The same lines go to the USB to serial
+converter and are driven by that chip.
 
 ## USB Power
 
@@ -382,6 +386,10 @@ R123 and R124 will be required to make it work.
 * WATCHDOG\_OUT\_N runs to the RTC, which should make it possible to
   know if a reset was due to the hardware watchdog by reading info
   from the RTC at boot time.
+
+# Differences between the Version 3 and Version 4 board
+
+Version 4 boards do not have the serial ports run to the PC104 connector.
 
 # IO Connections on the PacSat AFSK processor
 

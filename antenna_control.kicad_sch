@@ -5126,7 +5126,7 @@
 			)
 		)
 	)
-	(global_label "PC104_ACP_RX"
+	(global_label "ACP_RX"
 		(shape input)
 		(at 137.16 62.23 0)
 		(fields_autoplaced yes)
@@ -5170,7 +5170,7 @@
 			)
 		)
 	)
-	(global_label "PC104_ACP_TX"
+	(global_label "ACP_TX"
 		(shape input)
 		(at 137.16 59.69 0)
 		(fields_autoplaced yes)
