@@ -9,6 +9,11 @@ some point.
 
 # TODO
 
+There are outgassing concerns with the Mini-Circuits AD4PS-1+, the
+4-way RF splitter.  Mini-Circuits has a program to "Upscreen" parts
+for military and space applications, and has other 4-way splitters
+that may be usable.
+
 The coupling on the directional coupler may be too much.  It's getting
 to 3.1V, which is over 5dBm of power.  We really want the limit to be
 closer to 0dBm, so reducing the coupler length to a much smaller value
@@ -16,16 +21,6 @@ is in order.
 
 What happens if the RTC goes into lockup or some other bad state?
 There's no way to power it off, and a reset won't help.
-
-When powering with USB there is one small issue: If you disable the
-power with DTR it does not power off 5V because there's nothing
-pulling up the inputs to the MOSFETs.  What happens is it gets enough
-power on +5V to get it to around +4.1V, the point that the MOSFETs
-will turn off.  A 100K resistor to USB\_+5V would do it.  The 4.1V
-enough there to turn off 3.3V, though, so it works to cycle power the
-logic for now.  Maybe add that resistor?  It may not be that
-important.  The big deal is you need to power cycle the board logic
-and keep the USB disabled when not powered from USB.
 
 Maybe switch to a more accurate main oscillator.  .5ppm oscillators at
 16MHz are available, but the temperature doesn't go to 105C, only 85C.
@@ -42,7 +37,7 @@ something bad like oscillate.  DNI resistors are there just in case.
 
 The 1M pullups on some logic may be too large.
 
-There is a LMK1C1106A-Q1 part coming out from TI that should replace
+There is a LMK1C1106-Q1 part coming out from TI that should replace
 the LMK1C1106A when the new part becomes available.
 
 Thermal analysis - I don't have the skills to do thermal analysis.
@@ -93,7 +88,6 @@ Possible outgassing issues:
 |----						|--------				|---- |
 | AD4PS-1+					| RF power splitter		| Made of a different kind of plastic than ICs |
 | FTSH-105-01-L-DV-K		| JTAG connector		||
-| TSW-103-08-F-S-RA			| Serial port connector ||
 | HTSW-102-07-G-S			| Watchdog Jumper		||
 
 Parts that are not automotive rated listed below.
@@ -845,6 +839,17 @@ and pull downs in the HCG software to save some power.
 
 If it is determined that the DIN on the RTC is not going to work,
 remove that circuitry. - It's not going to work :-(.
+
+When powering with USB there is one small issue: If you disable the
+power with DTR it does not power off 5V because there's nothing
+pulling up the inputs to the MOSFETs.  What happens is it gets enough
+power on +5V to get it to around +4.1V, the point that the MOSFETs
+will turn off.  A 100K resistor to USB\_+5V would do it.  The 4.1V
+enough there to turn off 3.3V, though, so it works to cycle power the
+logic for now.  Maybe add that resistor?  It may not be that
+important.  The big deal is you need to power cycle the board logic
+and keep the USB disabled when not powered from USB. - Fixed this
+by using an SPDT analog switch to control the MOSFET inputs.
 
 # Not going to do
 
@@ -3090,3 +3095,8 @@ USB\_+5V.  It was probably ok, but it's best to be sure.
 Remove the serial connections from the PC104.  The USB connection has
 proven itself, so it shouldn't be needed on later boards.  This
 allowed some routing simplification.
+
+Switched out the MOSFET controlling the USB power MOSFETS to an analog
+SPDT switch to allow better control of the MOSFET inputs.  This way,
+when USB\_POWER is disabled, no power should flow on +5V or +3.3V.
+This particular chip (TMUX2819) is high-impedance when powered off.

@@ -539,15 +539,18 @@ U44 to turn on power to the rest of the board.  A tool named cygpio is
 available in PacSatSw git repository under the hostutils directory
 that can do this.
 
-When powering from USB and GPIO9 is not enabled, some power leaks
-through on +5V.  This is expected and doesn't hurt anything.  +3.3V
-will not be powered, though, which is the main goal.
+On version 3 boards, when powering from USB and GPIO9 is not enabled,
+some power leaks through on +5V.  This is expected and doesn't hurt
+anything.  +3.3V will not be powered, though, which is the main goal.
+On later boards, this is fixed an +5V will be off when GPIO9 is not
+enabled.
+
+When USB is not powered, the main 5V power will pull up the inputs to
+the MOSFETs, turning them off, thus not powering the USB section.
 
 You can power the board through the PC104 and use the USB at the same
-time.  In this case, the +5V coming in will turn off the MOSFETs used
-to separate the USB power and the main power, so the comments in the
-previous paragraph do not apply.  But if you do this, you must *not*
-turn on GPIO9 or it will connect the two power domains together.
+time.  But if you do this, you must *not* turn on GPIO9 or it will
+connect the two power domains together.
 
 If the proper resistors are attached, the ones from 5V\_IN and
 3.3V\_IN to the PC104, this can be used to power other boards through
