@@ -109,7 +109,7 @@ plot title "L Match only Loss" db((v(out) * i(Vmout)) / (v(in) * i(Vmin)))
 
 alterparam m = 6
 reset
-ac lin 50000 100Meg 500Meg
+ac lin 50000 100Meg 1000Meg
 plot title "Full Chain out Impedance" v(out) vi(out)
 
 .endc

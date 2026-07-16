@@ -19,7 +19,7 @@
 
 * This is the inductor used to bleed off static from the antenna
 L0	out	b0	470n
-R0	b0	0	12
+R0	b0	0	10K
 
 .if (1)
 * 480MHz Elliptic lowpass filter, simulated from:
@@ -48,21 +48,24 @@ C2	in	a2	1.0p
 
 * 11.35p
 * Use a 11p cap, add .4p for parasitics
-C3	a2	0	11p
+C3	a2	0	11.4p
 
 * 17.22n
 * Murata LQW15AN17NG8ZD 17nF, Q=46@439MHz, SRF=5G
 * Add .4nH for parasitics
 L4	a2	a3	17.4n
-Rl4	a3	out	1.01
-Cl4	a2	out	.059p
+Rl4	a3	out1	1.01
+Cl4	a2	out1	.059p
 * 2.07p
-* 2.0p, add .2p for parasitics
-C4	a2	out	2.2p
+* 2.0p, add .4p for parasitics
+C4	a2	out1	2.4p
 
 * 5.94p
 * Use a 5.4p cap, add .4p for parasitics
-C5	out	0	5.8p
+C5	out1	0	5.8p
+
+Rm	out1	out	0
+*cm	out1	0	15p
 .endif
 
 .if (0)

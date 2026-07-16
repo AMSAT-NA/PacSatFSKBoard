@@ -28,7 +28,8 @@ Maybe that's better, anyway?  The TG2520SMN 16.0000M-ECGNNM3 from
 Epson is drop-in compatible to what is there.
 
 The DAC on the PA is only rated to +85C.  It would be nice to find one
-that went at least to +105C.
+that went at least to +105C.  The normal (not automotive) one goes to
++125C, which is strange.
 
 The Q10 transistor for FAULT\_N does not have a pull on it.  When the
 CPU is off, this may result in an invalid value.  That's probably ok,
@@ -3100,3 +3101,9 @@ Switched out the MOSFET controlling the USB power MOSFETS to an analog
 SPDT switch to allow better control of the MOSFET inputs.  This way,
 when USB\_POWER is disabled, no power should flow on +5V or +3.3V.
 This particular chip (TMUX2819) is high-impedance when powered off.
+
+## 2026-07-16
+
+Move the RF connections to the MMCX connectors to the bottom of the
+board.  The connectors are so close to the PCB that the capacitance is
+big enough to draw power out of the connection.
