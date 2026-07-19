@@ -9,6 +9,9 @@ some point.
 
 # TODO
 
+Figure out the DAC controller issue as mentioned in log entry
+2026-07-18.
+
 There are outgassing concerns with the Mini-Circuits AD4PS-1+, the
 4-way RF splitter.  Mini-Circuits has a program to "Upscreen" parts
 for military and space applications, and has other 4-way splitters
@@ -3108,7 +3111,7 @@ Move the RF connections to the MMCX connectors to the bottom of the
 board.  The connectors are so close to the PCB that the capacitance is
 big enough to draw power out of the connection.
 
-## 2026-07-17
+## 2026-07-18
 
 I've started working on getting proper power out of the PA.  I'm
 seeing around 28.6dBm out of the filter, but I should be seeing more
@@ -3209,4 +3212,17 @@ is the output power.  I can make no sense of this:
 
 The values we need seem to work, except I should be getting higher
 voltage out, but as noted when checking the PA power these values don't
-make any sense.  I'm wondering if it's a bad DAC.
+make any sense.  I'm wondering if it's a bad DAC.  Or possibly something
+with the SPI bus.  I tried all the SPI formats on the TMS570, no love.
+
+Earlier I had measured about 30dBm coming directly out of the L match
+with a 6nH shunt inductor and a 20pF series capacitor.  This should be
+32.5dBm.  I did a measurement going straight to a 50 ohm load and got
+23.6dBm, should be 33dBm if the match was correct.  So it's about
+2.5dBm down in the first case and 9.4dBm down on the second case.
+
+## 2026-07-19
+
+Move the TXDAC chip (U37) to decrease the length of the TCLK line
+diversion.  It's probably not causing the issues with the DAC that I
+found yesterday, but it is an improvement.
