@@ -3107,3 +3107,106 @@ This particular chip (TMUX2819) is high-impedance when powered off.
 Move the RF connections to the MMCX connectors to the bottom of the
 board.  The connectors are so close to the PCB that the capacitance is
 big enough to draw power out of the connection.
+
+## 2026-07-17
+
+I've started working on getting proper power out of the PA.  I'm
+seeing around 28.6dBm out of the filter, but I should be seeing more
+like 31dBm.  It took out the resistor between the L-match out of the
+PA and the filter and started measuring.
+
+The elliptic filter seems to be working as expected.  The output
+impedance is a little higher than I would like at 67 ohms, and
+probably needs a little work, but it's not terrible.  Input impedance
+is a little over 45 ohms, which is pretty good.  Loss through the
+filter is about 1.4dB, which is almost exactly what I would expect.
+
+Looking into the PA output, however, I'm confused.  The output
+impedance of the PA (at 435MHz, like everything else here) is supposed
+to be 4.63-j.510 ohms.  The reactance computes to 718pF, basically
+zero at these frequencies.
+
+That's pretty close to what I measure when the PA has zero bias.  5.5
+ohms and -31 ohms reactance.  This is after the 10mm line from the PA
+to the match, so I would have expected a positive reactance.  However,
+once I bias the PA, things change a lot (as expected).
+
+If I put voltage in to get 4.9V on the inductor at the PA output (5.1V
+on the input), I get 4.7V out of the DAC (full output, set to 255) and
+2.8V on the other side of the PA bias resistor R79, giving 8ma.  That
+results in a 372ma increase of current from the power supply.  I
+measure the output impedance of the PA at 13.6+j5.4 ohms.
+
+This means the input impedance into the bias input of the PA is around
+350 ohms, but we need to measure at other values out of the DAC.
+
+At 215, the voltages on each side of R79 are 2.6V and 2.4V (.8ma, 2650
+ohms into the PA bias).  Not terribly linear.  Going much below this
+results in the PA not generating much output at all, so this is
+probably the minimum useful value.
+
+At 220 the voltages are 3V and 2.5V (2ma, 1250 ohms into the PA bias).
+At 225 the voltages are 3.7V and 2.6V (4.6ma, 565 ohms into the PA
+bias).  The DAC is supposed to be linear. so something is going on
+here.  I checked the VDD when doing this, and it goes up a bit to 5V.
+
+With the DAC at 215 (2.6V on the output going to R79), and it makes
+almost no difference in the current the PA draws, about 20ma.  That's
+about the highest where the PA is operating in class C, increasing to
+220 (3V) gives around 80ma and 225 (3.7) gives 200ma.  At 215 the
+output impedance is around 21-j19 ohms.  At 220 it's 21.2-j2 ohms, at
+225 it's 16+4 ohms.  So 2.6V is a definite transition point.
+
+With this analysis, the bias input appears to controlled by current,
+no surprise, and it's not a resistor, it's active and probably caps at
+2.9V or so.  If you did have 5V into R79, that would be around 8.8ma
+into the bias.
+
+The DAC isn't as close to 5V as I would have liked.  You could
+decrease the R79 to boost the current a bit.  With 4.7V and 2.9V on
+each side of R79 and 8.8ma of current, that would be a 205 ohm
+resistor.  However, this would only really affect the linearity of the
+part.  The power output doesn't change much above a DAC setting of
+215.
+
+Doing some research on this, though, the output impedance of a PA is
+not really a useful item.  There is no single output impedance of a PA
+under load.  What you really want is the best impedance to drive the
+PA at.
+
+Looking at the DAC, I see strange things going on.  Bit DB15 (PD1)
+seems to always be 0.  DB14 (PD0) seems to work.  The data bits have
+bizarre values, as noted above.  I have the following values, where
+the first number is the full 16-bit sequence to the DAC and the second
+is the output power.  I can make no sense of this:
+```
+1000 -    0
+1800 - 1.28
+1c00 - 1.92
+1e00 - 2.24
+1f00 - 2.40
+1f80 - 2.40
+1fc0 - 2.44
+
+0800 -   0
+0c00 -  .64
+0e00 -  .96
+0f00 - 1.12
+0f80 - 1.12
+0fc0 - 1.16
+0fe0 - 1.18
+
+2800 -    0
+2c00 -  .64
+2e00 -  .96
+
+3800 - 3.72
+3000 - 2.55
+
+3fc0 - 4.58
+3fe0 - 4.58
+```
+
+The values we need seem to work, except I should be getting higher
+voltage out, but as noted when checking the PA power these values don't
+make any sense.  I'm wondering if it's a bad DAC.
