@@ -679,6 +679,10 @@ be used for bringing out or injecting signals.  For instance:
 * If you wanted to route the output of the AX5043, or the direct
   output of the PA, to another board.  This could be used for an
   external amplifier or and external upconverter.
+  
+* AX5043 RX 4 has a connection to it's single-ended antenna output
+  so it could be used as a transmitter.  Parts would have to be done
+  on another port to handle amplification and filtering.
 
 ### Dual Board Controls
 

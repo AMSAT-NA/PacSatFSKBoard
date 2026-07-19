@@ -3226,3 +3226,8 @@ with a 6nH shunt inductor and a 20pF series capacitor.  This should be
 Move the TXDAC chip (U37) to decrease the length of the TCLK line
 diversion.  It's probably not causing the issues with the DAC that I
 found yesterday, but it is an improvement.
+
+Add a connection to ANTP1 on AX5043-4 so it can be used as a
+transmitter with the PA on another board.  Add DNP matching networks
+to both this one and the ANTP1 connection on the TX AX5043 so the
+impedance can be changed to 50 ohms before being sent on a cable.
