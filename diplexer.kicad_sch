@@ -2141,7 +2141,7 @@
 		(at 133.35 109.22 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp yes)
 		(uuid "c47bb0b3-1458-4d33-a42a-9bb67c65aab5")
