@@ -1695,7 +1695,7 @@
 		)
 		(uuid "b06c536e-36f9-4858-a826-a966eab81d46")
 	)
-	(text "= 608mA limit"
+	(text "= 638mA limit"
 		(exclude_from_sim no)
 		(at 180.975 132.08 0)
 		(effects
@@ -4264,7 +4264,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "45.3KΩ 1%"
+		(property "Value" "43KΩ 1%"
 			(at 179.07 128.905 0)
 			(effects
 				(font

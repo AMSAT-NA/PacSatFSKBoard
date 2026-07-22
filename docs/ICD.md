@@ -116,6 +116,10 @@ only used for lockstep processing.  It provides the I2C, SPI, and
 GPIOs for controlling the rest of the board, and the CAN bus and GPIOs
 for communicating off the board.
 
+If memory is an issue, as an option, the TMS5702134DPGEQQ1 appears to
+be drop-in compatible with the above CPU but with twice the FLASH and
+RAM.  It will require some programming changes.
+
 ### CAN
 
 The CAN bus is an automotive communication bus designed for harsh

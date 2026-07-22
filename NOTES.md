@@ -9,8 +9,9 @@ some point.
 
 # TODO
 
-Figure out the DAC controller issue as mentioned in log entry
-2026-07-18.
+Making the antenna control interface I2Cs work with fault-tolerance is
+fairly easy.  Need to figure out a way to do this with the ADCs.  It
+may work as-is, but it needs to be thought through.
 
 There are outgassing concerns with the Mini-Circuits AD4PS-1+, the
 4-way RF splitter.  Mini-Circuits has a program to "Upscreen" parts
@@ -854,6 +855,9 @@ logic for now.  Maybe add that resistor?  It may not be that
 important.  The big deal is you need to power cycle the board logic
 and keep the USB disabled when not powered from USB. - Fixed this
 by using an SPDT analog switch to control the MOSFET inputs.
+
+Figure out the DAC controller issue as mentioned in log entry
+2026-07-18. - Figured it out, clock polarity was wrong.
 
 # Not going to do
 
@@ -3231,3 +3235,31 @@ Add a connection to ANTP1 on AX5043-4 so it can be used as a
 transmitter with the PA on another board.  Add DNP matching networks
 to both this one and the ANTP1 connection on the TX AX5043 so the
 impedance can be changed to 50 ohms before being sent on a cable.
+
+## 2026-07-20
+
+The TXDAC uses the opposite clock polarity of other devices, created a
+format in halcogen for it and now it seems to work properly.  So all
+the measurements for the TXDAC above are now bogus and it has to be
+redone.
+
+From what I can tell, the best way to figure out the most optimum
+matching circuit for the PA output is to start with a good guess and
+just try things out.  Which sucks.  Why can't this just be calculated?
+But it appears, especially for class C operation, that the output
+impedance changes drastically as the signal goes up and down, so it's
+not just one value.
+
+Starting the process.
+
+| C117 | L38  | DAC | 390M | 400M | 410M | 420M | 430M | 440M | 450M | 460M | 470M | 480M | 490M | 500M | 510M | 520M | 530M |
+|------|------|-----|------|------|------|------|------|------|------|------|------|------|------|------|------|------|------|
+| 20p  | 6.2n | 133 | 25.9 | 27.5 | 29.0 | 29.4 | 29.5 | 28.7 | 27.7 | 26.8 | 27.1 | 27.2 | 27.0 | 26.3 | 25.0 | 24.2 | 23.9 |
+|      |      | 255 | 28.0 | 29.2 | 29.9 | 29.9 | 29.6 | 28.9 | 28.3 | 27.6 | 27.8 | 28.1 | 27.4 | 26.6 | 25.7 | 25.2 | 24.8 |
+| 18p  | 6.2n | 133 | 27.0 | 28.9 | 30.4 | 30.6 | 29.9 | 29.3 | 28.9 | 28.6 | 28.3 | 27.7 | 27.5 | 27.1 | 26.6 | 26.3 | 25.9 |
+|      |      | 255 | 29.3 | 30.5 | ???? | 30.8 | 30.5 | 29.9 | 29.6 | 29.3 | 29.0 | 28.3 | 28.1 | 27.6 | 27.0 | 26.8 | 26.6 |
+| 15p  | 6.2n | 133 | 25.2 | 20.5 | 22.3 | 31.1 | 30.7 | 29.8 | 29.9 | 29.7 | 29.5 | 29.0 | 28.8 | 28.5 | 27.9 | 26.9 | 28.3 |
+|      |      | 255 | 27.5 | 29.7 | 30.2 | 30.1 | 31.0 | 30.0 | 30.9 | 31.3 | 31.2 | 30.6 | 30.4 | 29.8 | 28.9 | 28.1 | 27.5 |
+|      |      |     |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+
+???? - The PA drew too much current and was cut off.  Changed the limiting resistor to help avoid this.
