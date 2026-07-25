@@ -9,8 +9,6 @@
 .if (m == 1)
 Vin ina 0 dc 0 AC 1 sin(0 1 435MEG 0 0 0)
 X0 ina x1 x1 in PAOutImpedance
-* Inductor on the PA output.
-Lpa  in  0 100n
 * Used for current measurement.
 Vmin in in1 AC 0 DC 0
 X1 in1 a1  ImpMatchPAOut
