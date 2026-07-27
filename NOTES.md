@@ -3307,3 +3307,6 @@ lower DCR.
 
 Removed the +5V and 3.3V power jumpers.  There's no need for them now,
 just use USB or the PC104.
+
+Remove the watchdog jumper and wire the watchdog enable into the USB
+chip GPIO_3 line.
