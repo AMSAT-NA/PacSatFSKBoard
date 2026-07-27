@@ -2690,7 +2690,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "The trace between the PA and the\nL match is wider, .5mm with .508mm\nclearance on the ground plane.  The\noutput of the PA is low impedance\nand thus will be high current, so\nthe extra width is required, and\nthe lower impedance from the extra\nwidth helps a bit.\n\nAfter the L match the current will\ndecrease and the voltage will\nincrease, so the normal traces are\nok."
+	(text "The trace between the PA and the\nL match is wider, .5mm with .508mm\ncoplanar.  The output of the PA is\nlow impedance and thus will be high\ncurrent, so the extra width is\nrequired, and the lower impedance\nfrom the extra width helps a bit.\n\nAfter the L match the current will\ndecrease and the voltage will\nincrease, so the normal traces are\nok."
 		(exclude_from_sim no)
 		(at 161.036 196.342 0)
 		(effects
@@ -2815,9 +2815,9 @@
 		)
 		(uuid "9dee4eee-de08-4399-a410-db3371da8091")
 	)
-	(text "Input impedance is\n1.62 - 1.05 this\nmatches to 50 ohms\nat 435MHz."
+	(text "Input impedance is\n1.62 - 1.05 this\nmatches to 50 ohms\nat 435MHz.  This seems\nto be right for\nClass AB operation, but\ndoens't match quite\nright for Class C. But\nit's good enough."
 		(exclude_from_sim no)
-		(at 66.04 172.72 0)
+		(at 64.262 179.578 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2825,9 +2825,9 @@
 		)
 		(uuid "d3602d58-4abf-44b7-9a95-14bf17ca573e")
 	)
-	(text "Output impedance if the PA is\n4.63 - j.508 ohms.  The 7mm trace\nbetween the PA and the match is\n0.5mm wide, which results in\n1.26nH with 1.68pF, converting the\nimpedance to 4.8 + j 2.8 ohms.\nThis L-match converts to 50 ohms\nat 435MHz"
+	(text "Output impedance of the PA is\n4.63 - j.508 ohms at 435MHz, per\nthe S-parms.  However, PAs don't\nquite work that way.  The 10mm trace\nbetween the PA and the match is\n0.5mm wide, which results in\n1.9nH with 2pF, converting the\nimpedance.  And the actual best\nmatch impedance is impossible to\ncalculate, but this was determined\nexperimentally."
 		(exclude_from_sim no)
-		(at 210.82 191.77 0)
+		(at 212.344 196.85 0)
 		(effects
 			(font
 				(size 1.524 1.524)
