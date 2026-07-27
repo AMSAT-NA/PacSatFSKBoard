@@ -151,6 +151,9 @@ second.  Powering off the CPU will cause all other power except
 REG_3.3V and +5VAL to be returned to their default, disabled, so it
 effectively powers off the whole board.
 
+The USB interface GPIO_3 can be set to 1 to disable the watchdog
+timer.
+
 ## RX
 
 The RF subsection consists of the section used for receiving signals.
@@ -718,9 +721,8 @@ board, as described at
 https://software-dl.ti.com/ccs/esd/documents/xdsdebugprobes/emu_jtag_connectors.html
 
 To use the JTAG interface, the watchdog timer must be disabled or the
-processor will be continuously reset.  A standard 2.54mm (.1") header
-is provided at J4; when a jumper is installed the watchdog timer will be
-disabled.
+processor will be continuously reset.  The USB interface GPIO_3 can be
+set to 1 to disable the watchdog timer.
 
 ## LP-XDS110 JTAG/Serial Debug Probe
 

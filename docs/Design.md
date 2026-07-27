@@ -262,8 +262,9 @@ With this, it is possible to test the entire RF chain.
 
 # Hardware Watchdog
 
-Jumper J4 disables the hardware watchdog when installed.  When
-programming and debugging you need to install this jumper.
+The USB interface GPIO_3 can be set to 1 to disable the watchdog
+timer.  When programming and debugging you need to disable the
+watchdog.
 
 # I2C
 
@@ -383,10 +384,6 @@ R123 and R124 will be required to make it work.
   CPU.  This goes through a MOSFET to avoid latch up and to isolate,
   so the logic is inverted from the PC104.
   
-* WATCHDOG\_OUT\_N runs to the RTC, which should make it possible to
-  know if a reset was due to the hardware watchdog by reading info
-  from the RTC at boot time.
-
 # Differences between the Version 3 and Version 4 board
 
 Version 4 boards do not have the serial ports run to the PC104 connector.
@@ -728,14 +725,6 @@ resistors so that can be modified, too.
 
 The ADC has a separate power control, ADC\_EN\_N, to allow it to be
 powered off when not in use or to reset it.
-
-## WATCHDOG\_OUT\_N
-
-A line is run from the hardware watchdog output to the RTC DIN input.
-That input can be set up to measure transitions and store the
-information.  This way the process can tell if the reset came from the
-hardware watchdog.  The watchdog is negative logic, so a transition
-from high to low will say that the hardware watchdog was triggered.
 
 ## PC104 Pins
 
