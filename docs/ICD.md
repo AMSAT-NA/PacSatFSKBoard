@@ -143,7 +143,7 @@ diode-protected capacitor array so that even if external power is not
 available time can be kept for many hours.  This will always be
 powered when power is available.
 
-### WDT
+### Watchdog Timer
 
 A watchdog timer on the board will power-cycle the CPU by disabling
 +1.2V and +3.3V if the CPU does not toggle its FEED line once a
@@ -152,7 +152,7 @@ REG_3.3V and +5VAL to be returned to their default, disabled, so it
 effectively powers off the whole board.
 
 The USB interface GPIO_3 can be set to 1 to disable the watchdog
-timer.
+timer. R161 can also be installed to disable the watchdog timer.
 
 ## RX
 

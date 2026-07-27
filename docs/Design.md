@@ -266,6 +266,8 @@ The USB interface GPIO_3 can be set to 1 to disable the watchdog
 timer.  When programming and debugging you need to disable the
 watchdog.
 
+R161 can also be installed to disable the watchdog timer.
+
 # I2C
 
 I2C can be run to the PC104.  These are on J1 (H1) pins 41 and 43,
