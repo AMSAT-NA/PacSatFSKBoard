@@ -2986,16 +2986,6 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 27.94) (xy 204.47 27.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "08f74da9-bb8c-4ff3-b93c-57f7c5140571")
-	)
-	(wire
-		(pts
 			(xy 218.44 71.12) (xy 218.44 73.66)
 		)
 		(stroke
@@ -3236,16 +3226,6 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 27.94) (xy 204.47 30.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "28da73fe-b707-4de5-92aa-f380bef5eb32")
-	)
-	(wire
-		(pts
 			(xy 140.97 234.95) (xy 143.51 234.95)
 		)
 		(stroke
@@ -3343,16 +3323,6 @@
 			(type default)
 		)
 		(uuid "40401c0b-7033-4397-865a-d038166d84b0")
-	)
-	(wire
-		(pts
-			(xy 246.38 29.21) (xy 246.38 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "40e4187b-344c-419a-af98-988f5412f05f")
 	)
 	(wire
 		(pts
@@ -3796,16 +3766,6 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 29.21) (xy 246.38 29.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9f465fb5-66c1-4751-94bc-129c52d91933")
-	)
-	(wire
-		(pts
 			(xy 140.97 242.57) (xy 143.51 242.57)
 		)
 		(stroke
@@ -3813,16 +3773,6 @@
 			(type default)
 		)
 		(uuid "a0fb826e-b8e0-475c-a57b-b291fe68c2ef")
-	)
-	(wire
-		(pts
-			(xy 195.58 25.4) (xy 204.47 25.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a4374597-a80a-458a-a216-24db6e730dc7")
 	)
 	(wire
 		(pts
@@ -4236,16 +4186,6 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 26.67) (xy 246.38 26.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f6401685-a4e2-41ed-ac58-7e6aaf841705")
-	)
-	(wire
-		(pts
 			(xy 139.7 171.45) (xy 156.21 171.45)
 		)
 		(stroke
@@ -4546,28 +4486,6 @@
 			)
 		)
 	)
-	(global_label "5V_IN"
-		(shape input)
-		(at 246.38 26.67 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left)
-		)
-		(uuid "605dbe10-e971-4292-80ee-b250a033db8f")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 257.5225 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "REG_1V2"
 		(shape input)
 		(at 177.8 166.37 0)
@@ -4674,28 +4592,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "3.3V_IN"
-		(shape input)
-		(at 204.47 25.4 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left)
-		)
-		(uuid "be3ff1ae-ecfe-4a85-84ed-03d3bd280a4b")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 215.685 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 				(hide yes)
 			)
 		)
@@ -5526,70 +5422,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 246.38 31.75 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0b3ed2b4-2751-481d-8241-1043df150d5a")
-		(property "Reference" "#PWR0297"
-			(at 246.38 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 246.507 36.1442 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 246.38 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 246.38 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 246.38 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3839544a-a9f0-4fb7-91af-8916b90704b7")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/00000000-0000-0000-0000-00005a0ea76a"
-					(reference "#PWR0297")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:L")
 		(at 212.09 71.12 270)
 		(mirror x)
@@ -6336,78 +6168,6 @@
 		)
 	)
 	(symbol
-		(lib_id "PACSAT_DEV_misc:HTSW-102-07-G-S")
-		(at 195.58 25.4 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(uuid "4ee1d8f7-e3d9-4127-8eb5-804d63cd914a")
-		(property "Reference" "J6"
-			(at 185.928 33.528 90)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "HTSW-102-07-G-S"
-			(at 195.58 25.4 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "PacSatDev_misc:CON2_1X2_TU_TSW"
-			(at 195.58 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "HTSW-102-07-G-S"
-			(at 195.58 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 195.58 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ee93472c-e386-4e20-8d8f-0f04c98142bd")
-		)
-		(pin "2"
-			(uuid "2f74dad7-f4f6-4688-87a7-a21d94f203f3")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/00000000-0000-0000-0000-00005a0ea76a"
-					(reference "J6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:PWR_FLAG")
 		(at 90.17 154.94 0)
 		(unit 1)
@@ -7079,70 +6839,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/00000000-0000-0000-0000-00005a0ea76a"
 					(reference "R2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 204.47 30.48 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "87fa858d-0f87-414c-8dce-8a988db45a27")
-		(property "Reference" "#PWR069"
-			(at 204.47 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 204.597 34.8742 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 204.47 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 204.47 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 204.47 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6167069c-2ecf-45d7-b3be-2fcf6bad1ccb")
-		)
-		(instances
-			(project "PacSat_Dev_RevD_240614"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/00000000-0000-0000-0000-00005a0ea76a"
-					(reference "#PWR069")
 					(unit 1)
 				)
 			)
@@ -8213,78 +7909,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/00000000-0000-0000-0000-00005a0ea76a"
 					(reference "R120")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PACSAT_DEV_misc:HTSW-102-07-G-S")
-		(at 236.22 26.67 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(uuid "eddd8cfc-37bb-466d-a4a2-760bece1fd78")
-		(property "Reference" "J5"
-			(at 226.568 34.798 90)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "HTSW-102-07-G-S"
-			(at 236.22 26.67 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "PacSatDev_misc:CON2_1X2_TU_TSW"
-			(at 236.22 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "HTSW-102-07-G-S"
-			(at 236.22 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 236.22 26.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9f060a31-3fc1-48d4-9b78-6074a0ddb55a")
-		)
-		(pin "2"
-			(uuid "5c6bb16d-28d6-4373-b615-0fb03ca9522a")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/00000000-0000-0000-0000-00005a0ea76a"
-					(reference "J5")
 					(unit 1)
 				)
 			)

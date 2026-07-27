@@ -16,12 +16,18 @@ may work as-is, but it needs to be thought through.
 There are outgassing concerns with the Mini-Circuits AD4PS-1+, the
 4-way RF splitter.  Mini-Circuits has a program to "Upscreen" parts
 for military and space applications, and has other 4-way splitters
-that may be usable.
+that may be usable.  I've asked Mini-Circuits about this.  Another
+option would be to use three Wilkinson power dividers as described at
+https://www.microwaves101.com/encyclopedias/lumped-element-wilkinson-splitters
+(Note that the Xl1 and Xc calculation need to be multiplied by Zo).
+That would be narrowband, you could do wideband with three
+transformers as described at
+https://www.minicircuits.com/appdoc/AN10-006.html
 
 The coupling on the directional coupler may be too much.  It's getting
-to 3.1V, which is over 5dBm of power.  We really want the limit to be
-closer to 0dBm, so reducing the coupler length to a much smaller value
-is in order.
+to 3.1V on the measurement devices output, which is over 5dBm of power
+on the input.  We really want the limit to be closer to 0dBm, so
+reducing the coupler length to a much smaller value is in order.
 
 What happens if the RTC goes into lockup or some other bad state?
 There's no way to power it off, and a reset won't help.
@@ -41,9 +47,6 @@ the other CPU should ignore the line if this CPU is off, but it may do
 something bad like oscillate.  DNI resistors are there just in case.
 
 The 1M pullups on some logic may be too large.
-
-There is a LMK1C1106-Q1 part coming out from TI that should replace
-the LMK1C1106A when the new part becomes available.
 
 Thermal analysis - I don't have the skills to do thermal analysis.
 The version 2 design is definitely insufficient.  I have improved the
@@ -858,6 +861,10 @@ by using an SPDT analog switch to control the MOSFET inputs.
 
 Figure out the DAC controller issue as mentioned in log entry
 2026-07-18. - Figured it out, clock polarity was wrong.
+
+There is a LMK1C1106-Q1 part coming out from TI that should replace
+the LMK1C1106A when the new part becomes available. - This is done,
+the parts aren't readily available yet, but are coming available.
 
 # Not going to do
 
@@ -3252,7 +3259,7 @@ not just one value.
 
 Starting the process.
 
-## 2026-07-20
+## 2026-07-25
 
 Here is the table of different values to try for the PA output match.
 
@@ -3295,3 +3302,8 @@ the ferrite 100nH one.  I'm getting another .5dB out of the circuit,
 so this is a good thing.  I've ordered some CoilCraft parts that have
 a lower DCR, and I've switched the inductor to a 0805 part for even
 lower DCR.
+
+## 2026-07-27
+
+Removed the +5V and 3.3V power jumpers.  There's no need for them now,
+just use USB or the PC104.
