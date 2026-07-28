@@ -4790,7 +4790,7 @@
 			)
 		)
 	)
-	(global_label "PC104_GPIO2"
+	(global_label "PC104_GPIO2{slash}CPU_BSL"
 		(shape input)
 		(at 321.31 116.84 0)
 		(fields_autoplaced yes)
@@ -5428,7 +5428,7 @@
 			)
 		)
 	)
-	(global_label "PC104_GPIO8"
+	(global_label "PC104_GPIO8{slash}ACP_BSL"
 		(shape input)
 		(at 175.26 99.06 0)
 		(fields_autoplaced yes)
@@ -5440,7 +5440,7 @@
 		)
 		(uuid "b443113a-a47a-4ef2-bb94-dc0a14efabb5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 193.4418 99.06 0)
+			(at 204.7629 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)

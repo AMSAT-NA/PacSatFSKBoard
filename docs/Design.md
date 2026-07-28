@@ -638,13 +638,9 @@ power is very low, but it draws a lot of power when burning the
 release cables, so a fairly large power line runs to it.  Make sure to
 read the antenna documentation for the exact requirements.
 
-The I2C pullup is done in the processor, but this can be disabled in
-software if the termination is on the other end.  There are also
-options to add pullup resistors on these lines externally.
-
 |Pin	|CPU Pin Name	|Schematic Name		|Description |
 |----	|------------	|--------------		|----------- |
-|1		|PA0			|PC104\_GPIO6		|or UART1 RX, BSL UART RX
+|1		|PA0			|ACP\_RX			|UART to the USB chip
 |2		|NRST			|ANT\_NRST			|Reset line for processor
 |3		|VBAT/VDD		|NRST				|
 |4		|VSS			|GND				|
@@ -665,9 +661,9 @@ options to add pullup resistors on these lines externally.
 |19		|PA23			|					|Optional line to ANT pin 10
 |20		|PA24			|I2CB\_SDA			|ANT pin 4
 |21		|PA25			|ADC\_EN\_N			|Enable for ADC power
-|22		|PA26			|PC104\_GPIO7		|ADC\_1, PC104 SPI select, BSL\_Invoke
+|22		|PA26			|PC104\_GPIO7		|ADC\_1, PC104 SPI select
 |23		|VCORE			|					|
-|24		|PA1			|PC104\_GPIO5		|or UART1 TX, BSL UART TX
+|24		|PA1			|ACP\_TX			|UART to the USB chip
 
 Note that all lines running to the PC104 go through zero-ohm resistors
 The GPIO/UART/BSL ones are populated, the others are not populated by

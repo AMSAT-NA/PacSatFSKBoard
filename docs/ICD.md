@@ -436,21 +436,26 @@ The pins are:
   - PC104\_GPIO[1,4] - These pin can cause an interrupt to the CPU.  The
     rest of the pins cannot cause interrupts.
 	
-  - PC104\_GPIO[2] - General purpose I/O lines.
+  - PC104\_GPIO2 - General purpose I/O line.  This is shared with the
+    bootstrap function for the main CPU, so it must tolerate being
+	pulled low during a bootstrap operation.
   
   - PC104\_ABF0 - Used to monitor the ABF lines, cannot do interrupts.
   
   - PC104\_ADC[1-4] - Analog to Digital controller inputs.
   
+  - PC104\_TX2 and PC104\_RX2 may also be configured as GPIO lines if
+    necessary.
+  
 The board does not have a dedicated safe mode input or output, but one
 of the GPIO pins can be assigned to that function.
 
-In addition, four GPIOs run from the antenna controller to the PC104
+In addition, two GPIOs run from the antenna controller to the PC104
 connector.  These are
 
-  - PC104\_GPIO[5-6] - GPIO or UART RX/TX, also bootstrap loading.
-  
-  - PC104\_GPIO[7-8] - GPIO or ADC, also bootstrap loading invoke.
+  - PC104\_GPIO[7-8] - GPIO or ADC.  GPIO8 is shared with the
+    bootstrap function for the ACP, so it must tolerate being
+	pulled low during a bootstrap operation.
 
 See the schematics for the antenna controller for details on how these
 are wired.
@@ -712,7 +717,17 @@ The board has two main interfaces for programming and debugging: A
 JTAG interface and a serial port interface.
 
 The JTAG is the primary programming interface, though capability to
-program the device could be done over the serial port.
+program the device can be done over the serial port.
+
+To support programming the processors over the serial ports, GPIO\_2
+and GPIO\_4 from the USB chip are wired to PC104\_GPIO2/CPU\_BSL and
+PC104\_GPIO9/ACP\_BSL.  BSL means "BootStrap Loader" and if you set
+the GPIOs high, it will pull the BSL lines low.  If you do that and
+power on the processor, it will go into bootstrap mode and allow
+loading the device over the serial port.
+
+These pins can be shared with a GPIO because they will normally be
+high-impedance, the GPIO lines are open drain.
 
 ## JTAG
 

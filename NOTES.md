@@ -3330,3 +3330,7 @@ latch up on the control pin out of the TMS570.
 
 Add TMUX2821s to the UART lines to the USB chip and turn them off when
 USB power isn't applied.  More latch-up avoidance.
+
+Tie the bootstrap load (BSL) lines into the USB chip through MOSFETs.
+(The MOSFETs avoid CMOS latch up.)  This will let GPIO lines on the
+USB chip start the BSL process.
