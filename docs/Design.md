@@ -390,6 +390,9 @@ R123 and R124 will be required to make it work.
 
 Version 4 boards do not have the serial ports run to the PC104 connector.
 
+The version 4 board has PC104\_I2C\_EN and PC104\_SER\_EN positive
+logic, those were negative logic on the version 3 board.
+
 # IO Connections on the PacSat AFSK processor
 
 These are the pins on the TMS570 processor, where they go, what they

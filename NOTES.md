@@ -3327,3 +3327,6 @@ Replace the switches for the PC104 I2C and UART with a TMUX2821.  It's
 smaller and has better characteristics.  Particularly, it doesn't
 require a pull-up, it's pulled down internally.  Pull down avoids CMOS
 latch up on the control pin out of the TMS570.
+
+Add TMUX2821s to the UART lines to the USB chip and turn them off when
+USB power isn't applied.  More latch-up avoidance.

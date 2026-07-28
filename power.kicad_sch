@@ -4326,7 +4326,7 @@
 			)
 		)
 	)
-	(global_label "WATCHDOG_EN_N"
+	(global_label "WATCHDOG_DISABLE"
 		(shape input)
 		(at 76.2 242.57 180)
 		(fields_autoplaced yes)
