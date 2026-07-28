@@ -11,7 +11,11 @@ some point.
 
 Making the antenna control interface I2Cs work with fault-tolerance is
 fairly easy.  Need to figure out a way to do this with the ADCs.  It
-may work as-is, but it needs to be thought through.
+may work as-is, but it needs to be thought through.  In this scenario,
+ADC\_3.3V will be turned off.  The only issue would be if the power
+input on the ADS1015BQDGSRQ1 was somehow connected to ground or one of
+the signal inputs when the device is off.  This probably needs to be
+tested.
 
 There are outgassing concerns with the Mini-Circuits AD4PS-1+, the
 4-way RF splitter.  Mini-Circuits has a program to "Upscreen" parts
@@ -27,7 +31,11 @@ https://www.minicircuits.com/appdoc/AN10-006.html
 The coupling on the directional coupler may be too much.  It's getting
 to 3.1V on the measurement devices output, which is over 5dBm of power
 on the input.  We really want the limit to be closer to 0dBm, so
-reducing the coupler length to a much smaller value is in order.
+reducing the coupler length to a much smaller value is in order.  Note
+that making this shorter will give a little more room for the filter,
+and it can be spread out to avoid inductors coupling.  U28 will need
+to be rotated and U29 can be moved down to shorten the track and give
+more room for the filter.
 
 What happens if the RTC goes into lockup or some other bad state?
 There's no way to power it off, and a reset won't help.
@@ -39,7 +47,8 @@ Epson is drop-in compatible to what is there.
 
 The DAC on the PA is only rated to +85C.  It would be nice to find one
 that went at least to +105C.  The normal (not automotive) one goes to
-+125C, which is strange.
++125C, which is strange.  It probably means the automotive ones are
+good.
 
 The Q10 transistor for FAULT\_N does not have a pull on it.  When the
 CPU is off, this may result in an invalid value.  That's probably ok,
@@ -87,8 +96,9 @@ According to the cubesat documents I have been reading, its best if
 parts are automotive certified, AEC-Q100 or AEC-Q200.  I assume this
 is so they can handle the shaking of the flight to space.  The
 passives can all be certified for this, I'm pretty sure.  The only
-connector you have to worry about is the PC104.  The chips and modules
-are a different story.
+connectors you have to worry about are the PC104 and antenna and ADC
+controller ones, which should be good.  The chips and modules are a
+different story.
 
 Possible outgassing issues:
 
@@ -3310,3 +3320,10 @@ just use USB or the PC104.
 
 Remove the watchdog jumper and wire the watchdog enable into the USB
 chip GPIO_3 line.
+
+## 2026-07-28
+
+Replace the switches for the PC104 I2C and UART with a TMUX2821.  It's
+smaller and has better characteristics.  Particularly, it doesn't
+require a pull-up, it's pulled down internally.  Pull down avoids CMOS
+latch up on the control pin out of the TMS570.

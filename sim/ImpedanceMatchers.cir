@@ -76,9 +76,9 @@ Cp2 a2a a2 1n
 
 * Impedance matching network
 * TX PA output matcher
-C1	a2	out	12p
+C1	a2	out	15p
 * Q=55, CoilCraft 0402DC
-L1	out	a3	6.2n
+L1	out	a3	6.4n
 Rl1	a3	0	.30
 Cl1	out	0	.037p
 
