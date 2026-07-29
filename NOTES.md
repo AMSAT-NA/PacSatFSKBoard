@@ -3334,3 +3334,10 @@ USB power isn't applied.  More latch-up avoidance.
 Tie the bootstrap load (BSL) lines into the USB chip through MOSFETs.
 (The MOSFETs avoid CMOS latch up.)  This will let GPIO lines on the
 USB chip start the BSL process.
+
+## 2026-07-29
+
+Add resistors to the RX lines on the USB UART connections.  These are
+the lines driven by the UART and are inputs to the CPU.  This way, if
+the CPU gets powered off and those inputs go into latch up, the
+resistors will limit the current.

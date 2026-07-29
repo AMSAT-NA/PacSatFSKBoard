@@ -3958,9 +3958,9 @@
 		)
 		(uuid "2310d63a-da0a-4521-8d38-3651db3d863d")
 	)
-	(text "Turn off these when USB power isn't applied\nto avoid latch up."
+	(text "Turn off these when USB power isn't applied\nto avoid latch up.  The resistors on the RX\nlines will limit the current to 10ma if the\nCPU goes into latch up on those lines."
 		(exclude_from_sim no)
-		(at 258.318 51.816 0)
+		(at 265.938 51.308 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -4130,7 +4130,7 @@
 		(uuid "4a44feec-56d9-488f-a137-9589aa987994")
 	)
 	(junction
-		(at 297.18 25.4)
+		(at 322.58 26.67)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4d5b5681-8e1b-4c53-9f66-56c6a9831a9e")
@@ -4160,7 +4160,7 @@
 		(uuid "600b239f-b0f1-46d1-b12d-c08094ec0052")
 	)
 	(junction
-		(at 290.83 52.07)
+		(at 316.23 53.34)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "639f2612-cd8d-48f9-9751-ae43dda75b5f")
@@ -4463,7 +4463,7 @@
 	)
 	(wire
 		(pts
-			(xy 275.59 41.91) (xy 284.48 41.91)
+			(xy 300.99 43.18) (xy 309.88 43.18)
 		)
 		(stroke
 			(width 0)
@@ -4503,7 +4503,7 @@
 	)
 	(wire
 		(pts
-			(xy 297.18 25.4) (xy 306.07 25.4)
+			(xy 322.58 26.67) (xy 331.47 26.67)
 		)
 		(stroke
 			(width 0)
@@ -4613,7 +4613,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 20.32) (xy 297.18 20.32)
+			(xy 228.6 20.32) (xy 322.58 20.32)
 		)
 		(stroke
 			(width 0)
@@ -4813,6 +4813,16 @@
 	)
 	(wire
 		(pts
+			(xy 300.99 38.1) (xy 309.88 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "256f729d-0da4-4ff7-8132-378277aafd01")
+	)
+	(wire
+		(pts
 			(xy 341.63 151.13) (xy 328.93 151.13)
 		)
 		(stroke
@@ -4923,7 +4933,7 @@
 	)
 	(wire
 		(pts
-			(xy 304.8 36.83) (xy 322.58 36.83)
+			(xy 330.2 38.1) (xy 347.98 38.1)
 		)
 		(stroke
 			(width 0)
@@ -4983,7 +4993,7 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 38.1) (xy 245.11 38.1)
+			(xy 227.33 38.1) (xy 232.41 38.1)
 		)
 		(stroke
 			(width 0)
@@ -5003,7 +5013,7 @@
 	)
 	(wire
 		(pts
-			(xy 297.18 49.53) (xy 297.18 52.07)
+			(xy 322.58 50.8) (xy 322.58 53.34)
 		)
 		(stroke
 			(width 0)
@@ -5153,7 +5163,7 @@
 	)
 	(wire
 		(pts
-			(xy 290.83 52.07) (xy 290.83 54.61)
+			(xy 316.23 53.34) (xy 316.23 55.88)
 		)
 		(stroke
 			(width 0)
@@ -5673,6 +5683,16 @@
 	)
 	(wire
 		(pts
+			(xy 240.03 38.1) (xy 245.11 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e2f1eda-235f-4921-b6de-96e8b00350cd")
+	)
+	(wire
+		(pts
 			(xy 204.47 144.78) (xy 204.47 100.33)
 		)
 		(stroke
@@ -5723,7 +5743,7 @@
 	)
 	(wire
 		(pts
-			(xy 288.29 49.53) (xy 288.29 52.07)
+			(xy 313.69 50.8) (xy 313.69 53.34)
 		)
 		(stroke
 			(width 0)
@@ -5823,7 +5843,7 @@
 	)
 	(wire
 		(pts
-			(xy 290.83 49.53) (xy 290.83 52.07)
+			(xy 316.23 50.8) (xy 316.23 53.34)
 		)
 		(stroke
 			(width 0)
@@ -5873,7 +5893,7 @@
 	)
 	(wire
 		(pts
-			(xy 297.18 52.07) (xy 306.07 52.07)
+			(xy 322.58 53.34) (xy 331.47 53.34)
 		)
 		(stroke
 			(width 0)
@@ -5973,7 +5993,7 @@
 	)
 	(wire
 		(pts
-			(xy 297.18 29.21) (xy 297.18 25.4)
+			(xy 322.58 30.48) (xy 322.58 26.67)
 		)
 		(stroke
 			(width 0)
@@ -6003,7 +6023,7 @@
 	)
 	(wire
 		(pts
-			(xy 288.29 52.07) (xy 290.83 52.07)
+			(xy 313.69 53.34) (xy 316.23 53.34)
 		)
 		(stroke
 			(width 0)
@@ -6173,7 +6193,7 @@
 	)
 	(wire
 		(pts
-			(xy 304.8 41.91) (xy 322.58 41.91)
+			(xy 330.2 43.18) (xy 347.98 43.18)
 		)
 		(stroke
 			(width 0)
@@ -6263,7 +6283,7 @@
 	)
 	(wire
 		(pts
-			(xy 275.59 36.83) (xy 284.48 36.83)
+			(xy 285.75 38.1) (xy 293.37 38.1)
 		)
 		(stroke
 			(width 0)
@@ -6373,7 +6393,7 @@
 	)
 	(wire
 		(pts
-			(xy 278.13 25.4) (xy 293.37 25.4)
+			(xy 303.53 26.67) (xy 318.77 26.67)
 		)
 		(stroke
 			(width 0)
@@ -6563,7 +6583,7 @@
 	)
 	(wire
 		(pts
-			(xy 297.18 20.32) (xy 297.18 25.4)
+			(xy 322.58 20.32) (xy 322.58 26.67)
 		)
 		(stroke
 			(width 0)
@@ -6643,7 +6663,7 @@
 	)
 	(wire
 		(pts
-			(xy 293.37 25.4) (xy 293.37 29.21)
+			(xy 318.77 26.67) (xy 318.77 30.48)
 		)
 		(stroke
 			(width 0)
@@ -6673,7 +6693,7 @@
 	)
 	(wire
 		(pts
-			(xy 306.07 52.07) (xy 306.07 25.4)
+			(xy 331.47 53.34) (xy 331.47 26.67)
 		)
 		(stroke
 			(width 0)
@@ -6832,7 +6852,7 @@
 		(uuid "2811096a-51dc-4006-a95a-016ab36ec824")
 	)
 	(label "USB_+3.3V"
-		(at 278.13 25.4 0)
+		(at 303.53 26.67 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6902,7 +6922,7 @@
 		(uuid "5b2ca3d6-2576-469c-95cd-a2a0aa0c699d")
 	)
 	(label "USB_CPU_RX"
-		(at 322.58 36.83 180)
+		(at 347.98 38.1 180)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6922,7 +6942,7 @@
 		(uuid "65343fd0-d161-47d7-a178-e881743a1ee9")
 	)
 	(label "USB_CPU_TX"
-		(at 322.58 41.91 180)
+		(at 347.98 43.18 180)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -7139,7 +7159,7 @@
 	)
 	(global_label "CPU_TX"
 		(shape input)
-		(at 275.59 41.91 180)
+		(at 300.99 43.18 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7149,7 +7169,7 @@
 		)
 		(uuid "b6cbca63-666c-42be-8eba-3296bc7dc89d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 264.375 41.91 0)
+			(at 289.775 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7249,7 +7269,7 @@
 	)
 	(global_label "CPU_RX"
 		(shape input)
-		(at 275.59 36.83 180)
+		(at 285.75 38.1 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7259,7 +7279,7 @@
 		)
 		(uuid "fe1327e1-06d0-4aa7-b98a-603420eea2da")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 264.0121 36.83 0)
+			(at 274.1721 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9198,7 +9218,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 290.83 54.61 0)
+		(at 316.23 55.88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9207,7 +9227,7 @@
 		(fields_autoplaced yes)
 		(uuid "72c193eb-80d7-4c54-8b10-856914330298")
 		(property "Reference" "#PWR0305"
-			(at 290.83 60.96 0)
+			(at 316.23 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9216,7 +9236,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 290.83 59.69 0)
+			(at 316.23 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9224,7 +9244,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 290.83 54.61 0)
+			(at 316.23 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9233,7 +9253,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 290.83 54.61 0)
+			(at 316.23 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9242,7 +9262,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 290.83 54.61 0)
+			(at 316.23 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9959,7 +9979,7 @@
 	)
 	(symbol
 		(lib_id "PACSAT_ICs:TMUX2821")
-		(at 290.83 41.91 0)
+		(at 316.23 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9967,7 +9987,7 @@
 		(dnp no)
 		(uuid "a77915fa-366c-42ff-95fd-fc2ab5d6772a")
 		(property "Reference" "U40"
-			(at 279.654 29.21 0)
+			(at 305.054 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9975,7 +9995,7 @@
 			)
 		)
 		(property "Value" "TMUX2821"
-			(at 279.654 31.75 0)
+			(at 305.054 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9983,7 +10003,7 @@
 			)
 		)
 		(property "Footprint" "Package_SON:WSON-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm"
-			(at 291.465 55.245 0)
+			(at 316.865 56.515 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9993,7 +10013,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.ti.com/lit/gpn/tmux2821"
-			(at 291.465 53.34 0)
+			(at 316.865 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10003,7 +10023,7 @@
 			)
 		)
 		(property "Description" "Dual SPST Analog Switch, 1.65-V to 5.5-V Single-Supply Operation, 1Ohm Ron, WSON8"
-			(at 298.704 33.02 0)
+			(at 324.104 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10199,6 +10219,74 @@
 			(project ""
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
 					(reference "U51")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 297.18 38.1 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b10a4320-3201-4662-b03b-a370325f8238")
+		(property "Reference" "R186"
+			(at 299.466 36.068 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "330Ω"
+			(at 299.72 40.132 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 297.18 39.878 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 297.18 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 297.18 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "dee8a58e-d554-4bfd-bd73-423b1718207e")
+		)
+		(pin "2"
+			(uuid "7aa3be96-0ced-41ca-a783-5833d2573ecb")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
+					(reference "R186")
 					(unit 1)
 				)
 			)
@@ -10829,6 +10917,74 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
 					(reference "R187")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 236.22 38.1 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c4f0b645-037d-45c4-b79f-1c07b1bf6105")
+		(property "Reference" "R188"
+			(at 238.506 36.068 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "330Ω"
+			(at 238.76 40.132 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 236.22 39.878 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 236.22 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 236.22 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e81f2dac-efee-49a4-8d3b-7f84c9b74643")
+		)
+		(pin "2"
+			(uuid "71a419e0-aaa4-470f-8266-fe4d3d890bef")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
+					(reference "R188")
 					(unit 1)
 				)
 			)
