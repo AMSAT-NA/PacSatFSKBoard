@@ -7,11 +7,74 @@ be done, and things that have been done.
 The general information will probably make it into another document at
 some point.
 
+# Board rework instructions:
+
+Add 2.2K resistors for R147, R151, R152, R153, R166, and R167.
+
+Solder a wire from PC104 pin J1-2 (PC104\_ACP\_TX) to a 4.7K
+resistor added to the R153 ANT\_3.3V pin.  This provides a pull-up for
+that line so the antenna control processor's TX line works.
+
+Replace R190 with a 20K resistor.
+
+Cut the trace between P15 pin 1 and P23 pin 1 so it wouldn't short out
+transmit.  Do this as close as possible to the MMCX connector.
+
+Cut the trace between P17 pin 1 and P24 pin 1 so it wouldn't short out
+receive.  Do this as close as possible to the MMCX connector.
+
+Change R39 to 43K to allow 638ma of current to the PA circuits.
+
+Remove R184.  Run a wire from pin 3 of U44 to pin 1 of R184.
+
+Replace C117 with a 15pF 1% 50V 0402 (TBD)
+
+Replace L38 with 6.4nH 2% 0402 (TBD)
+
+Replace L37 with a 33nH inductor.  It's an 0804 part in a 0603 socket.
+
+All of the above are already done on Board 11.
+
+Remove Q18.  Glue down a 10K resistor between Q18 and the edge of the
+board.  Then run:
+
+* one side of the 10K resistor to FB11 pin 1.
+
+Glue down a TMUX2819 chip on the other side of Q18, leaving the pin 1
+pad of Q18 still accessible.  On the TMUX2819, run the following
+wires:
+
+* 1 - Run to the other end of the 10K resistor (Input A)
+
+* 2 - N/C
+
+* 3 - Run to pin 1 (or the other end of the 10K resistor) (Enable)
+
+* 4 - C152 pin 2 (GND)
+
+* 5 - C152 pin 2 (Input B, GND)
+
+* 6 - R183 pin 2 (Turn on USB power to board)
+
+* 7 - Q18 pad 1 (Control, from U44 pin 3 through a via)
+
+* 8 - FB11 pin 1 (USB_+5V)
+
+* EPAD - C152 pin 2 (GND)
+
+Run a wire from pin 28 of U44 to a 2.2K resistor, then run the other
+end of that resistor to J4 pin 1.  This is for the watchdog enable
+control via the USB chip.
+
+Need to supply 20K and 2.2K resistors, 6.4nH and 33nH inductors, and
+the TMUX2819.  The rest should be in the parts for the board.
+
 # Version 3 board status
 
 There is an issue where when powered from USB the TX AX5043 doesn't
-appear to power up correctly.  Voltages look ok, so I'm not sure
+always to power up correctly.  Voltages look ok, so I'm not sure
 what's going on.  It doesn't seem to happen when powered from normal
+power.  Hopefully the power rework fixes the issue.
 
 ## Board 11
 
@@ -34,10 +97,7 @@ transmit.
 Cut the trace between P17 pin 1 and P24 pin 1 so it wouldn't short out
 receive.
 
-Added a 100K resistor between pins 3 and 4 of U49.  This should pull
-up the gates of the MOSFET to be sure it's off when it's off.  This
-seems to help, but there's a little leakage, probably through the two
-100K resistors there.
+Changed R39 to 43K to allow 638ma of current to the PA circuits.
 
 # TODO
 
