@@ -17,17 +17,6 @@ input on the ADS1015BQDGSRQ1 was somehow connected to ground or one of
 the signal inputs when the device is off.  This probably needs to be
 tested.
 
-There are outgassing concerns with the Mini-Circuits AD4PS-1+, the
-4-way RF splitter.  Mini-Circuits has a program to "Upscreen" parts
-for military and space applications, and has other 4-way splitters
-that may be usable.  I've asked Mini-Circuits about this.  Another
-option would be to use three Wilkinson power dividers as described at
-https://www.microwaves101.com/encyclopedias/lumped-element-wilkinson-splitters
-(Note that the Xl1 and Xc calculation need to be multiplied by Zo).
-That would be narrowband, you could do wideband with three
-transformers as described at
-https://www.minicircuits.com/appdoc/AN10-006.html
-
 The coupling on the directional coupler may be too much.  It's getting
 to 3.1V on the measurement devices output, which is over 5dBm of power
 on the input.  We really want the limit to be closer to 0dBm, so
@@ -875,6 +864,20 @@ Figure out the DAC controller issue as mentioned in log entry
 There is a LMK1C1106-Q1 part coming out from TI that should replace
 the LMK1C1106A when the new part becomes available. - This is done,
 the parts aren't readily available yet, but are coming available.
+
+There are outgassing concerns with the Mini-Circuits AD4PS-1+, the
+4-way RF splitter.  Mini-Circuits has a program to "Upscreen" parts
+for military and space applications, and has other 4-way splitters
+that may be usable.  I've asked Mini-Circuits about this.  Another
+option would be to use three Wilkinson power dividers as described at
+https://www.microwaves101.com/encyclopedias/lumped-element-wilkinson-splitters
+(Note that the Xl1 and Xc calculation need to be multiplied by Zo).
+That would be narrowband, you could do wideband with three
+transformers as described at
+https://www.minicircuits.com/appdoc/AN10-006.html - Indeed,
+MiniCircuits came back and said the AD4PS-1+ was not going to meet
+outgassing requirements.  They recommended a SCPS-4-62+ which will
+meet if the use different epoxy.
 
 # Not going to do
 
@@ -3341,3 +3344,12 @@ Add resistors to the RX lines on the USB UART connections.  These are
 the lines driven by the UART and are inputs to the CPU.  This way, if
 the CPU gets powered off and those inputs go into latch up, the
 resistors will limit the current.
+
+## 2026-07-30
+
+Replace PS2 (AD4PS-1+) with a SCPS-4-62+.  MiniCircuits said that the
+AD4PS-1+ was not going to meet outgassing requirements, but if space
+grade epoxy was used on the SCPS-4-62+, that would.  The new part is
+quite a bit bigger and required some creative rework, including moving
+the LNA power to a different location on the board.  A Wilkinson
+divider could still be used, but this was a simpler thing to do.

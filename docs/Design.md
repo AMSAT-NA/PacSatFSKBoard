@@ -9,6 +9,11 @@ on external connections, see the ICD document.
 You deliver three basic components to the board manufacturer: A BOM
 (Bill of Materials), a placement/position file (pos), and gerbers.
 
+Outgassing may need to be handled for the inductors and the SCPS-4-62+
+RF splitter.  MiniCircuits said they can build the splitter with a
+special epoxy for space.  Inductors needs to be sourced from Coilcraft
+for space.
+
 To generate the files for a build, do the following from the main
 PacSatFSKBoard directory:
 

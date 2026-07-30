@@ -689,6 +689,286 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "PACSAT_DEV_misc:SCPS-4-62+"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 34.29 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "SCPS-4-62+"
+				(at 34.29 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "PacSatDev_MiniCircuits:SCPS462"
+				(at 34.29 -94.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.minicircuits.com/pdfs/SCPS-4-62+.pdf"
+				(at 34.29 -194.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Description" "Signal Conditioning 4 Ways Core & Wire Power Splitter, 1 - 650 MHz, 50?"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Height" "4.83"
+				(at 34.29 -394.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "Mini-Circuits"
+				(at 34.29 -494.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "SCPS-4-62+"
+				(at 34.29 -594.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" "139-SCPS-4-62+"
+				(at 34.29 -694.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Mini-Circuits/SCPS-4-62%2b?qs=ZcfC38r4PosL%2FxmiEiP%252B9g%3D%3D"
+				(at 34.29 -794.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Arrow Part Number" ""
+				(at 34.29 -894.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Arrow Price/Stock" ""
+				(at 34.29 -994.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(symbol "SCPS-4-62+_1_1"
+				(rectangle
+					(start 5.08 2.54)
+					(end 33.02 -10.16)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "GROUND_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name "SUM_PORT_"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 0)
+					(length 5.08)
+					(name "GROUND_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -7.62 0)
+					(length 5.08)
+					(name "GROUND_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 38.1 0 180)
+					(length 5.08)
+					(name "PORT_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 38.1 -2.54 180)
+					(length 5.08)
+					(name "PORT_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 38.1 -5.08 180)
+					(length 5.08)
+					(name "PORT_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 38.1 -7.62 180)
+					(length 5.08)
+					(name "PORT_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "PACSAT_DEV_misc:U_FL"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1266,214 +1546,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PACSAT_Minicircuits:AD4PS+1"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "PS602"
-				(at 0 11.43 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "AD4PS+1"
-				(at 0 8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "PacSatDev_MiniCircuits:CJ725"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "AD4PS+1_0_1"
-				(rectangle
-					(start -7.62 7.62)
-					(end 7.62 -7.62)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "AD4PS+1_1_1"
-				(pin power_in line
-					(at -10.16 3.81 0)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -10.16 1.27 0)
-					(length 2.54)
-					(name "S1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -10.16 -1.27 0)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -10.16 -3.81 0)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 10.16 3.81 180)
-					(length 2.54)
-					(name "Port1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 10.16 1.27 180)
-					(length 2.54)
-					(name "Port2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 10.16 -1.27 180)
-					(length 2.54)
-					(name "Port3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 10.16 -3.81 180)
-					(length 2.54)
-					(name "Port4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:+3.3V"
 			(power)
 			(pin_numbers
@@ -1950,7 +2022,7 @@
 	)
 	(text "-6.5 dB per port:\n  -6db for dividing power\n  -.5db for insertion loss"
 		(exclude_from_sim no)
-		(at 339.598 170.18 0)
+		(at 323.342 169.672 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2250,7 +2322,7 @@
 		(uuid "51ad20a5-1ee0-40a0-80b4-766ce983aeea")
 	)
 	(junction
-		(at 330.2 148.59)
+		(at 314.96 148.59)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "54c1e929-1bb1-4bed-9573-7ee7fb01d4cb")
@@ -2268,7 +2340,7 @@
 		(uuid "59a6744f-7eeb-4ba7-9a67-f74dc817fff6")
 	)
 	(junction
-		(at 323.85 143.51)
+		(at 312.42 143.51)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5e06a444-429d-4860-bd93-e6ddf12044bc")
@@ -2358,7 +2430,7 @@
 		(uuid "9835df7a-c9aa-4735-b885-abb9dabc7514")
 	)
 	(junction
-		(at 330.2 146.05)
+		(at 314.96 146.05)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9c25fd10-1818-4a75-be3c-93dc02e9e275")
@@ -2491,16 +2563,6 @@
 	)
 	(wire
 		(pts
-			(xy 354.33 140.97) (xy 359.41 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "003112ce-ae73-48e0-af5d-10d6dd8fecde")
-	)
-	(wire
-		(pts
 			(xy 292.1 143.51) (xy 298.45 143.51)
 		)
 		(stroke
@@ -2591,7 +2653,7 @@
 	)
 	(wire
 		(pts
-			(xy 330.2 148.59) (xy 330.2 162.56)
+			(xy 314.96 148.59) (xy 314.96 162.56)
 		)
 		(stroke
 			(width 0)
@@ -2871,6 +2933,16 @@
 	)
 	(wire
 		(pts
+			(xy 356.87 148.59) (xy 387.35 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e35fcc2-e824-4f75-af2c-cef886e14d5e")
+	)
+	(wire
+		(pts
 			(xy 172.72 44.45) (xy 172.72 46.99)
 		)
 		(stroke
@@ -2921,7 +2993,7 @@
 	)
 	(wire
 		(pts
-			(xy 334.01 140.97) (xy 330.2 140.97)
+			(xy 318.77 140.97) (xy 314.96 140.97)
 		)
 		(stroke
 			(width 0)
@@ -3121,6 +3193,16 @@
 	)
 	(wire
 		(pts
+			(xy 356.87 143.51) (xy 368.3 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e1192e5-d3da-46b6-94f0-69b4c7c87b40")
+	)
+	(wire
+		(pts
 			(xy 207.01 110.49) (xy 212.09 110.49)
 		)
 		(stroke
@@ -3221,16 +3303,6 @@
 	)
 	(wire
 		(pts
-			(xy 354.33 143.51) (xy 368.3 143.51)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "55ed02af-9dc4-471c-bc0b-f3f5334aa440")
-	)
-	(wire
-		(pts
 			(xy 262.89 46.99) (xy 267.97 46.99)
 		)
 		(stroke
@@ -3241,7 +3313,7 @@
 	)
 	(wire
 		(pts
-			(xy 323.85 100.33) (xy 323.85 143.51)
+			(xy 312.42 100.33) (xy 312.42 143.51)
 		)
 		(stroke
 			(width 0)
@@ -3271,7 +3343,7 @@
 	)
 	(wire
 		(pts
-			(xy 330.2 146.05) (xy 334.01 146.05)
+			(xy 314.96 146.05) (xy 318.77 146.05)
 		)
 		(stroke
 			(width 0)
@@ -3441,7 +3513,7 @@
 	)
 	(wire
 		(pts
-			(xy 323.85 143.51) (xy 334.01 143.51)
+			(xy 312.42 143.51) (xy 318.77 143.51)
 		)
 		(stroke
 			(width 0)
@@ -3451,7 +3523,7 @@
 	)
 	(wire
 		(pts
-			(xy 323.85 100.33) (xy 334.01 100.33)
+			(xy 312.42 100.33) (xy 334.01 100.33)
 		)
 		(stroke
 			(width 0)
@@ -3578,6 +3650,16 @@
 			(type default)
 		)
 		(uuid "8ba32b2f-09ca-4365-8737-b078652da2e0")
+	)
+	(wire
+		(pts
+			(xy 356.87 146.05) (xy 379.73 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c8adecb-7e23-472c-9d03-905273d36521")
 	)
 	(wire
 		(pts
@@ -3731,7 +3813,7 @@
 	)
 	(wire
 		(pts
-			(xy 330.2 146.05) (xy 330.2 148.59)
+			(xy 314.96 146.05) (xy 314.96 148.59)
 		)
 		(stroke
 			(width 0)
@@ -3781,23 +3863,13 @@
 	)
 	(wire
 		(pts
-			(xy 298.45 143.51) (xy 323.85 143.51)
+			(xy 298.45 143.51) (xy 312.42 143.51)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "a9c73f6c-d880-4346-9f00-2bc28bd75347")
-	)
-	(wire
-		(pts
-			(xy 354.33 148.59) (xy 387.35 148.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "aa56895c-be44-43ad-83ce-e9dd9e0cf99d")
 	)
 	(wire
 		(pts
@@ -4081,16 +4153,6 @@
 	)
 	(wire
 		(pts
-			(xy 354.33 146.05) (xy 379.73 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d80f3e3a-89fb-43ea-a2cb-c58f6982aa0f")
-	)
-	(wire
-		(pts
 			(xy 262.89 57.15) (xy 262.89 62.23)
 		)
 		(stroke
@@ -4148,6 +4210,16 @@
 			(type default)
 		)
 		(uuid "dd438a3f-740d-4056-8b58-1e7e59aeb309")
+	)
+	(wire
+		(pts
+			(xy 356.87 140.97) (xy 359.41 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df969350-89bb-47d5-a4f2-e77e084b7807")
 	)
 	(wire
 		(pts
@@ -4241,7 +4313,7 @@
 	)
 	(wire
 		(pts
-			(xy 330.2 140.97) (xy 330.2 146.05)
+			(xy 314.96 140.97) (xy 314.96 146.05)
 		)
 		(stroke
 			(width 0)
@@ -4361,7 +4433,7 @@
 	)
 	(wire
 		(pts
-			(xy 330.2 148.59) (xy 334.01 148.59)
+			(xy 314.96 148.59) (xy 318.77 148.59)
 		)
 		(stroke
 			(width 0)
@@ -5623,90 +5695,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/9af0eacb-5211-4e23-85d7-9c1805bbe6a4"
 					(reference "C100")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PACSAT_Minicircuits:AD4PS+1")
-		(at 344.17 144.78 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "260df45b-820f-4f79-90f5-2807afcab26b")
-		(property "Reference" "PS2"
-			(at 344.17 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "AD4PS-1+"
-			(at 344.17 135.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "PacSatDev_MiniCircuits:CJ725"
-			(at 344.17 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 344.17 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 344.17 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8d649b6a-24ba-433d-ae58-bb9a18b074b3")
-		)
-		(pin "2"
-			(uuid "a21c2a5a-f1c8-4067-9fe4-d872252927e0")
-		)
-		(pin "3"
-			(uuid "30dc2359-9a0d-46a0-b769-6c1de5526d84")
-		)
-		(pin "4"
-			(uuid "7758a993-81f0-4ab4-bdf2-2b6c2c82e8ef")
-		)
-		(pin "5"
-			(uuid "5e6af790-4b26-4d22-81b8-10b7fad48d8d")
-		)
-		(pin "6"
-			(uuid "723ea273-5347-41ec-9d9f-3fbf702f76c8")
-		)
-		(pin "7"
-			(uuid "f56bd290-87eb-4b6e-9c65-4ff79b1901e3")
-		)
-		(pin "8"
-			(uuid "4dc649c2-b1d7-4f96-9419-6f54a90d76fd")
-		)
-		(instances
-			(project "PacSat_Dev_RevD_240614"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/9af0eacb-5211-4e23-85d7-9c1805bbe6a4"
-					(reference "PS2")
 					(unit 1)
 				)
 			)
@@ -9187,8 +9175,166 @@
 		)
 	)
 	(symbol
+		(lib_id "PACSAT_DEV_misc:SCPS-4-62+")
+		(at 318.77 140.97 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "da6bdecf-2d0a-45ed-8fad-8ef0df186616")
+		(property "Reference" "U52"
+			(at 337.82 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SCPS-4-62+"
+			(at 337.82 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "PacSatDev_MiniCircuits:SCPS462"
+			(at 353.06 235.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.minicircuits.com/pdfs/SCPS-4-62+.pdf"
+			(at 353.06 335.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Signal Conditioning 4 Ways Core & Wire Power Splitter, 1 - 650 MHz, 50?"
+			(at 318.77 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "4.83"
+			(at 353.06 535.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Mini-Circuits"
+			(at 353.06 635.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SCPS-4-62+"
+			(at 353.06 735.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" "139-SCPS-4-62+"
+			(at 353.06 835.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Mini-Circuits/SCPS-4-62%2b?qs=ZcfC38r4PosL%2FxmiEiP%252B9g%3D%3D"
+			(at 353.06 935.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 353.06 1035.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 353.06 1135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d75c5b0e-7372-42e3-bce1-a155500e9f66")
+		)
+		(pin "5"
+			(uuid "f4ca57ec-787d-4c0f-9588-e35380eb2dd3")
+		)
+		(pin "6"
+			(uuid "9cdf7b02-b2d7-49bb-a079-e9ee0234a952")
+		)
+		(pin "2"
+			(uuid "7cdb0db4-f60e-4511-907e-64b99a39ace6")
+		)
+		(pin "4"
+			(uuid "06bb0bd8-4602-41d7-b91e-df53403d0cce")
+		)
+		(pin "8"
+			(uuid "3bb860aa-599a-494a-af83-86801f58d9d2")
+		)
+		(pin "7"
+			(uuid "f64e7f56-cca4-4ba4-85e8-8d92ea601ec8")
+		)
+		(pin "3"
+			(uuid "9ab44d17-fff8-4f8a-b024-aee0ba971f82")
+		)
+		(instances
+			(project ""
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/9af0eacb-5211-4e23-85d7-9c1805bbe6a4"
+					(reference "U52")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
-		(at 330.2 162.56 0)
+		(at 314.96 162.56 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9197,7 +9343,7 @@
 		(fields_autoplaced yes)
 		(uuid "ddc0bae5-7253-4f0d-9e5c-8d1aca442d28")
 		(property "Reference" "#PWR0217"
-			(at 330.2 168.91 0)
+			(at 314.96 168.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9206,7 +9352,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 330.2 167.64 0)
+			(at 314.96 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9214,7 +9360,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 330.2 162.56 0)
+			(at 314.96 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9223,7 +9369,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 330.2 162.56 0)
+			(at 314.96 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9232,7 +9378,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 330.2 162.56 0)
+			(at 314.96 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
