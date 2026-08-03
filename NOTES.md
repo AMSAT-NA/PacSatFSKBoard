@@ -3353,3 +3353,11 @@ grade epoxy was used on the SCPS-4-62+, that would.  The new part is
 quite a bit bigger and required some creative rework, including moving
 the LNA power to a different location on the board.  A Wilkinson
 divider could still be used, but this was a simpler thing to do.
+
+## 2026-08-03
+
+Moved some vias and tracks around a little to improve things.
+
+The spacing on some zones was set incorrectly.  Set them all to
+.2032mm.  Rechecked the impedances, and it's not a huge change, 54.5
+ohms to 51.9 ohms, not a huge difference, but it's worth fixing.
