@@ -818,7 +818,20 @@ C(θ) = Co * sin(θ) = .493 * sin(.0671) = .0331
 ```
 
 and that looks pretty good.  This is all gleaned from Claude AI and
-from reading various things.
+from reading various things.  I have verified this against Pozar and
+it looks good.
+
+I am not sure about the broadside coupled stripline calculation.  I've
+tried a number of different calculators and gotten different values.
+Wildly different values.  The values above came from the given
+calculators.  If I use the Saturn PCB tool, I get very different
+values, but I've put in other reasonable values (W=1mm, H=.4mm, and
+S=.1mm) and gotten insane results (negative impedance), so I don't
+trust that.  I tried the equations in Pozar, but those assume that
+(width >> spacing) and (width >> height) to avoid fringe field
+effects, which is definitely not the case here.  The values I got were
+much different, again, but match some of the calculators I've seen, so
+those calculators are definitely wrong.
 
 # Power Control and Sequencing
 
