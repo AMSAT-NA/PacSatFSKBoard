@@ -2825,7 +2825,7 @@
 		)
 		(uuid "d3602d58-4abf-44b7-9a95-14bf17ca573e")
 	)
-	(text "Output impedance of the PA is\n4.63 - j.508 ohms at 435MHz, per\nthe S-parms.  However, PAs don't\nquite work that way.  The 10mm trace\nbetween the PA and the match is\n0.5mm wide, which results in\n1.9nH with 2pF, converting the\nimpedance.  And the actual best\nmatch impedance is impossible to\ncalculate, but this was determined\nexperimentally."
+	(text "Output impedance of the PA per the\nS-parms is 4.63Ω - j.508Ω ohms at 435MHz\nHowever, PAs don't quite work that way,\nyou really ahve to test and measure.\nThe 10mm trace between the PA and the\nmatch is 0.5mm wide, which results in\n1.9nH with 2pF, converting the\nimpedance.  Experimenting gave the\nabove values.  That translates to 5.5Ω\n- j5Ω from simulation, which is pretty\nclose.  It's getting 32dBm out of the\nPA per measurement."
 		(exclude_from_sim no)
 		(at 212.344 196.85 0)
 		(effects
@@ -2845,9 +2845,9 @@
 		)
 		(uuid "ddfdfd6d-3596-4256-9f7a-ebc5b532bdb7")
 	)
-	(text "Directional coupler 4mm long\ntrack width .1524mm with .109mm\nseparation.  The coupler is on the ground\nlayer below the signal and all ground and\nsignals are removed from the area.\n\nThis is optional and may be removed\nif power measurements aren't required."
+	(text "Broadside stripline directional coupler\n3.55mm long track width .41mm with 1.278mm\nseparation (tracks on layers 2 and 5).\nGround is on the top and bottom over the\narea.  Calculations say this gives -30dB\nof coupling, so a 30dBm output will give\n0dBm into the power measurement devices.\n\nSee the Design.md file under Directional\nCoupler for details on the math.\n\nThis is optional and may be removed\nif power measurements aren't required."
 		(exclude_from_sim no)
-		(at 354.076 178.562 0)
+		(at 354.584 186.182 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -7986,7 +7986,7 @@
 				)
 			)
 		)
-		(property "Value" "15pF 1% 30V"
+		(property "Value" "14pF 1% 30V"
 			(at 213.36 163.322 90)
 			(effects
 				(font
@@ -8923,7 +8923,7 @@
 				)
 			)
 		)
-		(property "Value" "33nH I>1A"
+		(property "Value" "47nH I>1A"
 			(at 191.77 140.716 90)
 			(effects
 				(font

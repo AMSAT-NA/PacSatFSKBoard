@@ -52,24 +52,23 @@ C1     in      out     22p
 .SUBCKT PAOutImpedance in measure1 measure2 out
 
 Rsrc in       measure1  5.63
-* -.510 ohms
-Csrc measure2 out       718p
+* 10j ohms
+Lsrc measure2 out       .6n
 
 .ENDS
 
 .SUBCKT ImpMatchPAOut in out
 
 * Inductor on the PA output.
-Lpa  in  0 100n
+Lpa  in  0 47n
 
 * Trace inductance.  The trace from the PA output to the
 * end of the match capacitor is 10mm, .5mm thick coplanar
 * with .5mm spacing, 1 oz (.0348mm) thickness. Calculating
 * at https://wcalc.sourceforge.net/cgi-bin/coplanar.cgi
 * I get .19nH/mm and .2pF/mm, so 1.9nH and 2pF.
-* Measurements show this is probably closer to 1.4nH.
 Lp1 in a2a 1.9n
-Cp1 a2 0  2p
+Cp1 a2a 0  2p
 
 * Coupling capacitor.
 Cp2 a2a a2 1n
@@ -77,8 +76,8 @@ Cp2 a2a a2 1n
 * Impedance matching network
 * TX PA output matcher
 C1	a2	out	15p
-* Q=55, CoilCraft 0402DC
-L1	out	a3	6.4n
+* Q=55, CoilCraft 0402DC, + .2nH for trace impedance.
+L1	out	a3	6.6n
 Rl1	a3	0	.30
 Cl1	out	0	.037p
 

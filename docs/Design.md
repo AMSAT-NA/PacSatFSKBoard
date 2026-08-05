@@ -746,6 +746,80 @@ powered off when not in use or to reset it.
 
 See the ICD for details.
 
+# Directional Coupler
+
+There is a broadside directional coupler on the output of the TX
+filter for measuring forward and reverse power.  This is a broadside
+coupler, there is a ground above (top layer) and a ground below
+(bottom layer) and the two coupled lines between the ground planes
+1.556mm apart.  This source line is on layer 2 and the coupled line is
+on layer 5, they are 1.278mm apart and .109mm from each respective
+ground.  Each line is .41mm wide.
+
+Putting this into a broadside coupled stripline impedance calculator,
+this gives a ZOe of 90.1 ohms and a ZOo of 30.6 ohms.  In the 4-port
+design, this means each port has the following impedance:
+
+```
+Zo = sqrt(ZOe * Zoo) = sqrt(30.6 * 90.1) = 52.5ohms
+```
+
+which should be ok.  I have tried several broadside coupled stripline
+calculators,
+https://www.electronicsforu.com/special/broadside-coupled-stripline-impedance-calculator,
+https://www.elektroda.com/calculators/pcb-impedance-calculator-broad-coupled-stripline
+and some others, and they don't seem to change evenly with width.  Any
+width value over .41 seems to give the same value, .4 give slightly
+larger values, and you have to go to .36 for it to change again, on
+both calculators.  I'm assuming they are using some kind of tables for
+this.  The equations are shown in more detail at
+https://rogerscorp.com/-/media/project/rogerscorp/documents/advanced-electronics-solutions/english/electrical-design-data/design-equations-for-broadside-and-edgewise-stripline.pdf
+but solving elliptic integrals looks kind of hard.  I'm going to have
+to trust the calculators, it appears.  But in any case it's close, and
+the width is the only value we can play with.
+
+For coupling, that depends on the length, which is 3.55mm.  So the
+electrical length is:
+
+```
+L = c / f = 3e8 / 435e6 = .689.7m, 689.7mm
+```
+
+If we use 4.3 for the permeability of the substrate, we get a velocity
+factor:
+
+```
+Vf = 1 / sqrt(4.3) = .4822
+```
+
+So the actual wavelength in the material and the phase angle of our
+3.55mm segment is:
+
+```
+Lm = Wf * L = .4822 * 689.7mm = 332.6mm
+θ = 3.55 / 332.6 * 360 = 3.84 degrees or .0671 radians
+```
+
+We want around -30dB of couple; this will convert a 30dBm signal into
+0dBm.  The chip used for measuring goes to around 5dBm, so this give a
+little headroom.
+
+The coupling coefficient Co is:
+
+```
+Co = (ZOe - ZOo) / (ZOe  + ZOo) = (90.1 - 30.6) / (90.1 + 30.6) = .493
+```
+
+And the coupling is:
+
+```
+C(θ) = Co * sin(θ) = .493 * sin(.0671) = .0331
+20 * log10(.0311) = -30.1dB
+```
+
+and that looks pretty good.  This is all gleaned from Claude AI and
+from reading various things.
+
 # Power Control and Sequencing
 
 The power control on the board is fairly simple.  On power up, power
