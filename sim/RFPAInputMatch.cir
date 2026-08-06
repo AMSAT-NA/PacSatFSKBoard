@@ -5,11 +5,10 @@
 .param measimp = 0
 
 .if (measimp == 0)
-Rsrc in1 in  50
-X1 in2 a1 ImpMatchPAIn
+V1 ina 0 dc 0 AC 1 sin(1 0 435MEG 0 0 0)
+Rsrc ina in  50
+X1 in a1 ImpMatchPAIn
 X2 a1 out out2 0 PAInImpedance
-
-V1 in1 0 dc 0 AC 1 sin(1 0 435MEG 0 0 0)
 
 * For current measurement
 Vmin  in  in2  dc 0 ac 0
@@ -29,7 +28,8 @@ X2 a1 x1 x1 0 PAInImpedance
 alterparam measimp = 0
 reset
 ac lin 5000 1Meg 1000meg
-plot title "PA Input Match Loss" db((v(out) * i(Vmout)) / (v(in) * i(Vmin)))
+* 5.74 = 2 * sqrt(Zin / Zout) = 2 * sqrt(20 / 2.43)
+plot title "PA Input Match Loss" db(5.74 * v(out) / v(ina))
 
 alterparam measimp = 1
 reset

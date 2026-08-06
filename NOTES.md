@@ -3474,4 +3474,5 @@ The way it was being done wasn't quite right.
 
 Switched to a DAC121S101-Q1 for the PA DAC, which should work better
 because it is rated for the proper voltages for the logic lines and
-has a buffer on the output to provide more current.
+has a buffer on the output to provide more current.  Lowered the bias
+resistor, too, to allow the DAC to better control the power.

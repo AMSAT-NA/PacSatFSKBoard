@@ -37,8 +37,7 @@ Rin in 0 50
 Vin ina 0 dc 0 AC 1 sin(0 1 146MEG 0 0 0)
 Rsrc ina in 50
 * Used for current measurement.
-Vmin in ina AC 0 DC 0
-X1 ina out Filt144MHzLNAOut
+X1 in out Filt144MHzLNAOut
 * Used for current measurement.
 Vmout out out2 DC 0 AC 0
 Rload out2 0    50
@@ -53,9 +52,8 @@ X1 a1 out ImpMatchLNAOut
 
 * Loss of the L match
 .if (m == 7)
-Vin ina 0 dc 0 AC 1 sin(0 1 435MEG 0 0 0)
-X0 ina in ina a1 LNAOutImpedance
-Vmin in ina dc 0 ac 0
+Vin ina 0 dc 0 AC 1 sin(0 1 146MEG 0 0 0)
+X0 ina in in a1 LNAOutImpedance
 X1 a1 out ImpMatchLNAOut
 * Used for current measurement.
 Vmout out out2 DC 0 AC 0
