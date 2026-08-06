@@ -3493,3 +3493,6 @@ Claude wrote a 2D solver for the directional coupler so I could
 accurately calculate coupling and impedance.  The couple is much
 shorter now, and I was able to move the last inductor further away
 from the other inductors to reduce coupling.
+
+Add rule areas under all RF inductors to avoid eddy currents under the
+parts.

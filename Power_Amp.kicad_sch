@@ -2749,7 +2749,7 @@
 		)
 		(uuid "2e1b8997-ff08-41dd-ba86-636ef7745094")
 	)
-	(text "-2 dB"
+	(text "-.5 dB"
 		(exclude_from_sim no)
 		(at 261.874 141.986 0)
 		(effects
