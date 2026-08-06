@@ -13,10 +13,6 @@ The ADC voltage reference on the TMS570 is just the 3.3V supply, which
 isn't really the best.  Maybe add an external voltage reference to
 increase the precision?  Like the TI REF50 parts.
 
-The ZOo and ZOe calculations for the directional coupler are suspect.
-Different tools gave wildly different values.  I think I have good
-values, but it would be nice to be sure.
-
 What happens if the RTC goes into lockup or some other bad state?
 There's no way to power it off, and a reset won't help.
 
@@ -897,6 +893,11 @@ The DAC on the PA is only rated to +85C.  It would be nice to find one
 that went at least to +105C.  The normal (not automotive) one goes to
 +125C, which is strange.  It probably means the automotive ones are
 good. - Switched to a DAC121S101-Q1.
+
+The ZOo and ZOe calculations for the directional coupler are suspect.
+Different tools gave wildly different values.  I think I have good
+values, but it would be nice to be sure. - I got an accurate
+calculator for this, I believe, and I think I have a good design.
 
 # Not going to do
 
