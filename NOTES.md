@@ -3470,9 +3470,25 @@ Reworked the directional coupler.
 Reworked the power measurement on the simulations to be more accurate.
 The way it was being done wasn't quite right.
 
+I am pretty sure I know why the PA isn't putting out as much power as
+I expected.  The DAC is not able to supply enough current at 5V to get
+the 8.9ma into the PA's bias circuitry.  And it's just not going to
+produce that much power when run as class C, that's no suprise.
+However, I think 1.5W of output is probably ok, and we are at the
+limits of the 5V power limiter.
+
+I also had my simulations wrong in a number of places, the power
+measurements weren't quite correct.  Claude helped me with that so I
+could get better estimations of the power lost in the circuit.
+
 ## 2026-08-06
 
 Switched to a DAC121S101-Q1 for the PA DAC, which should work better
 because it is rated for the proper voltages for the logic lines and
 has a buffer on the output to provide more current.  Lowered the bias
 resistor, too, to allow the DAC to better control the power.
+
+Claude wrote a 2D solver for the directional coupler so I could
+accurately calculate coupling and impedance.  The couple is much
+shorter now, and I was able to move the last inductor further away
+from the other inductors to reduce coupling.

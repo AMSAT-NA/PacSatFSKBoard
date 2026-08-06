@@ -2884,7 +2884,7 @@
 		)
 		(uuid "ddfdfd6d-3596-4256-9f7a-ebc5b532bdb7")
 	)
-	(text "Broadside stripline directional coupler\n3.55mm long track width .41mm with 1.278mm\nseparation (tracks on layers 2 and 5).\nGround is on the top and bottom over the\narea.  Calculations say this gives -30dB\nof coupling, so a 30dBm output will give\n0dBm into the power measurement devices.\n\nSee the Design.md file under Directional\nCoupler for details on the math.\n\nThis is optional and may be removed\nif power measurements aren't required."
+	(text "Broadside stripline directional coupler\n2.33mm long track width .47mm with 218mm\nseparation (tracks on layers 3 and 4).\nGround is on the top and bottom over the\narea.  Calculations say this gives -30dB\nof coupling, so a 30dBm output will give\n0dBm into the power measurement devices.\n\nSee the Design.md file under Directional\nCoupler for details on the math.\n\nThis is optional and may be removed\nif power measurements aren't required."
 		(exclude_from_sim no)
 		(at 354.584 186.182 0)
 		(effects

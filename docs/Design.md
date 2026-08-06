@@ -752,86 +752,27 @@ There is a broadside directional coupler on the output of the TX
 filter for measuring forward and reverse power.  This is a broadside
 coupler, there is a ground above (top layer) and a ground below
 (bottom layer) and the two coupled lines between the ground planes
-1.556mm apart.  This source line is on layer 2 and the coupled line is
-on layer 5, they are 1.278mm apart and .109mm from each respective
-ground.  Each line is .41mm wide.
+1.556mm apart.  This source line is on layer 3 and the coupled line is
+on layer 4, they are .218mm apart.  Each line is .47mm wide.
 
-Putting this into a broadside coupled stripline impedance calculator,
-this gives a ZOe of 90.1 ohms and a ZOo of 30.6 ohms.  In the 4-port
-design, this means each port has the following impedance:
-
-```
-Zo = sqrt(ZOe * Zoo) = sqrt(30.6 * 90.1) = 52.5ohms
-```
-
-which should be ok.  I have tried several broadside coupled stripline
-calculators,
+I put this into a number of broadside coupling calculators on the
+internet, and I got all kinds of different answers, and none made any
+sense.  This includes:
 https://www.electronicsforu.com/special/broadside-coupled-stripline-impedance-calculator,
 https://www.elektroda.com/calculators/pcb-impedance-calculator-broad-coupled-stripline
-and some others, and they don't seem to change evenly with width.  Any
-width value over .41 seems to give the same value, .4 give slightly
-larger values, and you have to go to .36 for it to change again, on
-both calculators.  I'm assuming they are using some kind of tables for
-this.  The equations are shown in more detail at
-https://rogerscorp.com/-/media/project/rogerscorp/documents/advanced-electronics-solutions/english/electrical-design-data/design-equations-for-broadside-and-edgewise-stripline.pdf
-but solving elliptic integrals looks kind of hard.  I'm going to have
-to trust the calculators, it appears.  But in any case it's close, and
-the width is the only value we can play with.
+Saturn PCB, and the Pozar equations (which I know wouldn't work, as
+the make assumptions that didn't apply here), and some others.
 
-For coupling, that depends on the length, which is 3.55mm.  So the
-electrical length is:
+So I had Claude look at it, and it was able to create a program that
+allows calculation of these parameters accurately.  The coupling is
+reasonable based upon the version 3 board measurements, and the
+program validates itself against know good values.
 
-```
-L = c / f = 3e8 / 435e6 = .689.7m, 689.7mm
-```
+This program is in the "sim" directory and named
+"broadside_coupler.py".  Instructions are in the program code.
 
-If we use 4.3 for the permeability of the substrate, we get a velocity
-factor:
-
-```
-Vf = 1 / sqrt(4.3) = .4822
-```
-
-So the actual wavelength in the material and the phase angle of our
-3.55mm segment is:
-
-```
-Lm = Wf * L = .4822 * 689.7mm = 332.6mm
-θ = 3.55 / 332.6 * 360 = 3.84 degrees or .0671 radians
-```
-
-We want around -30dB of couple; this will convert a 30dBm signal into
-0dBm.  The chip used for measuring goes to around 5dBm, so this give a
-little headroom.
-
-The coupling coefficient Co is:
-
-```
-Co = (ZOe - ZOo) / (ZOe  + ZOo) = (90.1 - 30.6) / (90.1 + 30.6) = .493
-```
-
-And the coupling is:
-
-```
-C(θ) = Co * sin(θ) = .493 * sin(.0671) = .0331
-20 * log10(.0311) = -30.1dB
-```
-
-and that looks pretty good.  This is all gleaned from Claude AI and
-from reading various things.  I have verified this against Pozar and
-it looks good.
-
-I am not sure about the broadside coupled stripline calculation.  I've
-tried a number of different calculators and gotten different values.
-Wildly different values.  The values above came from the given
-calculators.  If I use the Saturn PCB tool, I get very different
-values, but I've put in other reasonable values (W=1mm, H=.4mm, and
-S=.1mm) and gotten insane results (negative impedance), so I don't
-trust that.  I tried the equations in Pozar, but those assume that
-(width >> spacing) and (width >> height) to avoid fringe field
-effects, which is definitely not the case here.  The values I got were
-somewhat different (but closer), again, but match some of the
-calculators I've seen, so those calculators are definitely wrong.
+I used this to calculate a proper coupler.  So I'm pretty sure the
+directional coupler is correct now.
 
 # Power Control and Sequencing
 
