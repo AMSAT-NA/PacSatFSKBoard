@@ -7,8 +7,8 @@
 
 * Measure the full filter chain loss.
 .if (m == 1)
-Vin in1 0 dc 0 AC 1 sin(0 1 146MEG 0 0 0)
-X0 in1 in in2 in3 LNAOutImpedance
+Vin ina 0 dc 0 AC 1 sin(0 1 146MEG 0 0 0)
+X0 ina in in2 in3 LNAOutImpedance
 * Used for current measurement.
 Vmin in in2 dc 0 ac 0
 X1 in3  a1 ImpMatchLNAOut
@@ -37,8 +37,8 @@ Rin in 0 50
 Vin ina 0 dc 0 AC 1 sin(0 1 146MEG 0 0 0)
 Rsrc ina in 50
 * Used for current measurement.
-Vmin in in1 AC 0 DC 0
-X1 in1 out Filt144MHzLNAOut
+Vmin in ina AC 0 DC 0
+X1 ina out Filt144MHzLNAOut
 * Used for current measurement.
 Vmout out out2 DC 0 AC 0
 Rload out2 0    50
@@ -54,8 +54,8 @@ X1 a1 out ImpMatchLNAOut
 * Loss of the L match
 .if (m == 7)
 Vin ina 0 dc 0 AC 1 sin(0 1 435MEG 0 0 0)
-X0 ina in in1 a1 LNAOutImpedance
-Vmin in in1 dc 0 ac 0
+X0 ina in ina a1 LNAOutImpedance
+Vmin in ina dc 0 ac 0
 X1 a1 out ImpMatchLNAOut
 * Used for current measurement.
 Vmout out out2 DC 0 AC 0
@@ -72,12 +72,13 @@ X3 out x1 x1 0 LNAOutImpedance
 
 .control
 *tran 1ns 102000ns 101000ns
-*plot v(in1), v(out)
+*plot v(ina), v(out)
 
 alterparam m = 1
 reset
 ac lin 50000 1Meg 500Meg
-plot title "Full Chain Filter Loss" db((v(out) * i(Vmout)) / (vm(in) * i(Vmin)))
+* 2.62 = 2 * sqrt(Zin / Zout) = 2 * sqrt(86 / 50)
+plot title "Full Chain Filter Loss" db(2.62 * v(out) / v(ina))
 
 alterparam m = 2
 reset
@@ -92,7 +93,7 @@ plot title "Filter Only Output Impedance" v(out) vi(out)
 alterparam m = 4
 reset
 ac lin 50000 3Meg 500Meg
-plot title "Filter Loss" db((v(out) * i(Vmout)) / (v(in) * i(Vmin)))
+plot title "Filter Loss" db(2 * v(out) / v(ina))
 *plot vr(out) vi(out) vp(out)
 
 alterparam m = 5
@@ -103,7 +104,8 @@ plot title "L Match Output Impedance" v(out) vi(out)
 alterparam m = 7
 reset
 ac lin 50000 3Meg 1000Meg
-plot title "L Match only Loss" db((v(out) * i(Vmout)) / (v(in) * i(Vmin)))
+* 2.62 = 2 * sqrt(Zin / Zout) = 2 * sqrt(86 / 50)
+plot title "L Match only Loss" db(2.62 * v(out) / v(ina))
 
 alterparam m = 6
 reset

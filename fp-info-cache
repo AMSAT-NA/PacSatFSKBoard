@@ -1,4 +1,4 @@
-207763495695535
+214906991286516
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -73801,6 +73801,13 @@ Mini-Circuits HF1139
 8
 8
 PacSatDev_MiniCircuits
+SCPS462
+HF1485-1
+Undefined or Miscellaneous
+0
+8
+8
+PacSatDev_MiniCircuits
 TB-471
 
 
@@ -74462,6 +74469,27 @@ PacSatDev_ti
 DCQ0006A_N
 
 TPS79633QDCQRQ1 
+0
+6
+6
+PacSatDev_ti
+DDC0006A_L
+
+DAC121S101QCMK/NOPB 
+0
+6
+6
+PacSatDev_ti
+DDC0006A_M
+
+DAC121S101QCMK/NOPB 
+0
+6
+6
+PacSatDev_ti
+DDC0006A_N
+
+DAC121S101QCMK/NOPB 
 0
 6
 6

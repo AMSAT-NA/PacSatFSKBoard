@@ -9,22 +9,13 @@ some point.
 
 # TODO
 
-Making the antenna control interface I2Cs work with fault-tolerance is
-fairly easy.  Need to figure out a way to do this with the ADCs.  It
-may work as-is, but it needs to be thought through.  In this scenario,
-ADC\_3.3V will be turned off.  The only issue would be if the power
-input on the ADS1015BQDGSRQ1 was somehow connected to ground or one of
-the signal inputs when the device is off.  This probably needs to be
-tested.
+The ADC voltage reference on the TMS570 is just the 3.3V supply, which
+isn't really the best.  Maybe add an external voltage reference to
+increase the precision?  Like the TI REF50 parts.
 
-The coupling on the directional coupler may be too much.  It's getting
-to 3.1V on the measurement devices output, which is over 5dBm of power
-on the input.  We really want the limit to be closer to 0dBm, so
-reducing the coupler length to a much smaller value is in order.  Note
-that making this shorter will give a little more room for the filter,
-and it can be spread out to avoid inductors coupling.  U28 will need
-to be rotated and U29 can be moved down to shorten the track and give
-more room for the filter.
+The ZOo and ZOe calculations for the directional coupler are suspect.
+Different tools gave wildly different values.  I think I have good
+values, but it would be nice to be sure.
 
 What happens if the RTC goes into lockup or some other bad state?
 There's no way to power it off, and a reset won't help.
@@ -33,11 +24,6 @@ Maybe switch to a more accurate main oscillator.  .5ppm oscillators at
 16MHz are available, but the temperature doesn't go to 105C, only 85C.
 Maybe that's better, anyway?  The TG2520SMN 16.0000M-ECGNNM3 from
 Epson is drop-in compatible to what is there.
-
-The DAC on the PA is only rated to +85C.  It would be nice to find one
-that went at least to +105C.  The normal (not automotive) one goes to
-+125C, which is strange.  It probably means the automotive ones are
-good.
 
 The Q10 transistor for FAULT\_N does not have a pull on it.  When the
 CPU is off, this may result in an invalid value.  That's probably ok,
@@ -878,6 +864,39 @@ https://www.minicircuits.com/appdoc/AN10-006.html - Indeed,
 MiniCircuits came back and said the AD4PS-1+ was not going to meet
 outgassing requirements.  They recommended a SCPS-4-62+ which will
 meet if the use different epoxy.
+
+The coupling on the directional coupler may be too much.  It's getting
+to 3.1V on the measurement devices output, which is over 5dBm of power
+on the input.  We really want the limit to be closer to 0dBm, so
+reducing the coupler length to a much smaller value is in order.  Note
+that making this shorter will give a little more room for the filter,
+and it can be spread out to avoid inductors coupling.  U28 will need
+to be rotated and U29 can be moved down to shorten the track and give
+more room for the filter. - Fixed, figured out how to calculate this
+accurately.  A shorter track wasn't used (well, it's slightly shorter)
+but a better layout that has some math behind it.
+
+Making the antenna control interface I2Cs work with fault-tolerance is
+fairly easy.  Need to figure out a way to do this with the ADCs.  It
+may work as-is, but it needs to be thought through.  In this scenario,
+ADC\_3.3V will be turned off.  The only issue would be if the power
+input on the ADS1015BQDGSRQ1 was somehow connected to ground or one of
+the signal inputs when the device is off.  This probably needs to be
+tested. - I measured the impedance with the power turned off, I
+measured 3.8Mohms, which should be ok.
+
+The PA DAC DAC5311) has two big issues: The digital high input voltage
+is .7 * VDD, above 3.3V, and the output voltage sags at the currents
+we are running it at (8.9ma), per figure 7-14 in the datasheet.
+Replace it with something else, probably a DAC60501Z which should
+solve both issues, but will need an external reference.  Other
+possibilities are the DAC121S101-Q1, which is even better. - Switched
+to a DAC121S101-Q1.
+
+The DAC on the PA is only rated to +85C.  It would be nice to find one
+that went at least to +105C.  The normal (not automotive) one goes to
++125C, which is strange.  It probably means the automotive ones are
+good. - Switched to a DAC121S101-Q1.
 
 # Not going to do
 
@@ -3443,3 +3462,16 @@ Do the same for DAC=255:
 |  30 | .855 | 29.3 | 758 | 244 | 33.3 | 37.2 |
 |  20 | .421 | 26.2 | 659 | 236 | 19.1 | 22.1 |
 |  10 | .110 | 20.4 | 593 | 229 |  6.0 |  6.8 |
+
+## 2026-08-05
+
+Reworked the directional coupler.
+
+Reworked the power measurement on the simulations to be more accurate.
+The way it was being done wasn't quite right.
+
+## 2026-08-06
+
+Switched to a DAC121S101-Q1 for the PA DAC, which should work better
+because it is rated for the proper voltages for the logic lines and
+has a buffer on the output to provide more current.

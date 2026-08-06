@@ -1599,28 +1599,50 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PACSAT_ICs:DAC5311IDCK"
+		(symbol "PACSAT_ICs:DAC121S101QCMK_NOPB"
+			(pin_names
+				(offset 0.254)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "U"
-				(at -7.62 11.43 0)
+				(at 0 2.54 0)
 				(effects
 					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "DAC5311IDCKRQ1"
-				(at 7.62 -11.43 0)
-				(effects
-					(font
-						(size 1.27 1.27)
+						(size 1.524 1.524)
 					)
 				)
 			)
-			(property "Footprint" "PacSatDev_ti:DCK6"
+			(property "Value" "DAC121S101QCMK"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "PacSatDev_ti:DDC0006A_L"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.ti.com/lit/gpn/dac121s101-q1"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -1629,7 +1651,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://www.ti.com/lit/ds/symlink/dac5311.pdf"
+			(property "ki_keywords" "DAC121S101QCMK/NOPB"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1638,7 +1660,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "8-Bit, Single-Channel, Voltage Output, Serial Interface Digital-to-Analog Converters, SC-70"
+			(property "ki_fp_filters" "DDC0006A_N DDC0006A_M DDC0006A_L"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1647,42 +1669,59 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "DAC SPI 1-channel"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
+			(symbol "DAC121S101QCMK_NOPB_0_1"
+				(polyline
+					(pts
+						(xy -12.7 15.24) (xy -12.7 -15.24)
 					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "DCK6*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "DAC5311IDCK_0_1"
-				(rectangle
-					(start -7.62 10.16)
-					(end 7.62 -10.16)
 					(stroke
-						(width 0.254)
+						(width 0.2032)
 						(type default)
 					)
 					(fill
-						(type background)
+						(type none)
 					)
 				)
-			)
-			(symbol "DAC5311IDCK_1_1"
-				(pin input line
-					(at -10.16 2.54 0)
-					(length 2.54)
-					(name "DIN"
+				(polyline
+					(pts
+						(xy -12.7 -15.24) (xy 12.7 -15.24)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 12.7 15.24) (xy -12.7 15.24)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 12.7 -15.24) (xy 12.7 15.24)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin power_in line
+					(at -17.78 10.16 0)
+					(length 5.08)
+					(name "VA"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1698,16 +1737,16 @@
 					)
 				)
 				(pin input line
-					(at -10.16 0 0)
-					(length 2.54)
-					(name "SCLK"
+					(at -17.78 2.54 0)
+					(length 5.08)
+					(name "DIN"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "2"
+					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1716,9 +1755,45 @@
 					)
 				)
 				(pin input line
-					(at -10.16 -2.54 0)
-					(length 2.54)
-					(name "~{SYNC}"
+					(at -17.78 -2.54 0)
+					(length 5.08)
+					(name "SCLK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -17.78 -7.62 0)
+					(length 5.08)
+					(name "SYNC_N"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 17.78 5.08 180)
+					(length 5.08)
+					(name "VOUT"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1734,26 +1809,8 @@
 					)
 				)
 				(pin power_in line
-					(at 0 12.7 270)
-					(length 2.54)
-					(name "AVDD/AVREF"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 0 -12.7 90)
-					(length 2.54)
+					(at 17.78 -10.16 180)
+					(length 5.08)
 					(name "GND"
 						(effects
 							(font
@@ -1761,25 +1818,7 @@
 							)
 						)
 					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 10.16 0 180)
-					(length 2.54)
-					(name "VOUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2723,7 +2762,7 @@
 	)
 	(text "The Iref input to the PA can be controlled\nwith this DAC, allowing the quiescent current\nto the PA to be controlled and total power\nreduced.  Or, the DAC can be removed and R80\npopulated to have a fixed value based upon\nR80."
 		(exclude_from_sim no)
-		(at 153.924 52.324 0)
+		(at 149.86 45.212 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -3425,6 +3464,16 @@
 	)
 	(wire
 		(pts
+			(xy 154.94 87.63) (xy 154.94 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f8dce4d-e60b-4983-a25e-33ec3f159494")
+	)
+	(wire
+		(pts
 			(xy 194.31 105.41) (xy 194.31 116.84)
 		)
 		(stroke
@@ -3465,7 +3514,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 73.66) (xy 110.49 73.66)
+			(xy 111.76 80.01) (xy 116.84 80.01)
 		)
 		(stroke
 			(width 0)
@@ -3535,6 +3584,16 @@
 	)
 	(wire
 		(pts
+			(xy 154.94 87.63) (xy 152.4 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a29db2b-c886-43fc-91bb-a72511469e3d")
+	)
+	(wire
+		(pts
 			(xy 38.1 31.75) (xy 43.18 31.75)
 		)
 		(stroke
@@ -3565,7 +3624,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 43.18) (xy 104.14 43.18)
+			(xy 113.03 43.18) (xy 104.14 43.18)
 		)
 		(stroke
 			(width 0)
@@ -3852,6 +3911,16 @@
 			(type default)
 		)
 		(uuid "3a721cfb-cc2e-41ed-a913-3d9619cd8048")
+	)
+	(wire
+		(pts
+			(xy 113.03 67.31) (xy 116.84 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b9d7afc-2c8d-451d-9d1b-b7db813e9a74")
 	)
 	(wire
 		(pts
@@ -4815,16 +4884,6 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 60.96) (xy 120.65 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a9d32215-683c-4190-94b0-8fa4f89df3bb")
-	)
-	(wire
-		(pts
 			(xy 248.92 34.29) (xy 254 34.29)
 		)
 		(stroke
@@ -4945,7 +5004,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 71.12) (xy 110.49 71.12)
+			(xy 111.76 74.93) (xy 116.84 74.93)
 		)
 		(stroke
 			(width 0)
@@ -4955,13 +5014,13 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 73.66) (xy 160.02 73.66)
+			(xy 113.03 43.18) (xy 113.03 67.31)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b617e1ed-ad45-4cd2-813f-0021da43d20a")
+		(uuid "b58ea816-a3ff-4674-bbf4-3f17a220fd21")
 	)
 	(wire
 		(pts
@@ -5062,16 +5121,6 @@
 			(type default)
 		)
 		(uuid "bf86a469-ceb3-42fe-9c5f-ee7b69b27662")
-	)
-	(wire
-		(pts
-			(xy 120.65 86.36) (xy 120.65 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bfdd7def-89ea-4d99-878f-62993c5a7539")
 	)
 	(wire
 		(pts
@@ -5285,7 +5334,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 73.66) (xy 160.02 82.55)
+			(xy 160.02 72.39) (xy 160.02 82.55)
 		)
 		(stroke
 			(width 0)
@@ -5295,7 +5344,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 76.2) (xy 110.49 76.2)
+			(xy 111.76 85.09) (xy 116.84 85.09)
 		)
 		(stroke
 			(width 0)
@@ -5352,6 +5401,16 @@
 			(type default)
 		)
 		(uuid "e1bc7100-00f8-4423-94a9-e216af7b358b")
+	)
+	(wire
+		(pts
+			(xy 152.4 72.39) (xy 160.02 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e27675e7-8fff-4883-8d5f-da326ce9b910")
 	)
 	(wire
 		(pts
@@ -5731,7 +5790,7 @@
 	)
 	(global_label "AX5043_MOSI"
 		(shape input)
-		(at 105.41 71.12 180)
+		(at 111.76 74.93 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5741,7 +5800,7 @@
 		)
 		(uuid "5faa855e-7014-4961-8aa3-af23f6ce92f5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 87.4688 71.12 0)
+			(at 93.8188 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5841,7 +5900,7 @@
 	)
 	(global_label "PA_DAC_SEL_N"
 		(shape input)
-		(at 105.41 76.2 180)
+		(at 111.76 85.09 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5851,7 +5910,7 @@
 		)
 		(uuid "8e17bc4b-4a73-480a-87e1-3e1bc2059e9c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 86.2847 76.2 0)
+			(at 92.6347 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5885,7 +5944,7 @@
 	)
 	(global_label "AX5043_TCLK"
 		(shape input)
-		(at 105.41 73.66 180)
+		(at 111.76 80.01 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5895,7 +5954,7 @@
 		)
 		(uuid "d86cd0e6-0abf-4bcf-a190-e0d58dcf5e5e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 87.446 73.66 0)
+			(at 93.796 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7369,6 +7428,88 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
 					(reference "R80")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "PACSAT_ICs:DAC121S101QCMK_NOPB")
+		(at 134.62 77.47 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5ccec93c-ab6d-4790-9c92-0d58e11d5186")
+		(property "Reference" "U37"
+			(at 134.62 57.15 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "DAC121S101QCMK"
+			(at 134.62 59.69 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "PacSatDev_ti:DDC0006A_L"
+			(at 134.62 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.ti.com/lit/gpn/dac121s101-q1"
+			(at 134.62 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 134.62 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "19a420ec-9dcf-4ee6-b342-35caed294633")
+		)
+		(pin "2"
+			(uuid "33c64b93-c0d6-4aff-bafa-15a3bb9ddf4b")
+		)
+		(pin "3"
+			(uuid "72869884-29e4-4e62-ac60-5b94cae8d019")
+		)
+		(pin "6"
+			(uuid "8cfb07f0-2ddc-463d-bdec-b4379be1d292")
+		)
+		(pin "4"
+			(uuid "a99596ca-cf76-4527-a3d7-a1acc36adbe5")
+		)
+		(pin "5"
+			(uuid "cd32f420-e6f1-416a-bb9a-86088944c5ec")
+		)
+		(instances
+			(project ""
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
+					(reference "U37")
 					(unit 1)
 				)
 			)
@@ -9440,7 +9581,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 120.65 88.9 0)
+		(at 154.94 92.71 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9449,7 +9590,7 @@
 		(dnp no)
 		(uuid "b4b905be-6511-4805-8490-0987045c5ce5")
 		(property "Reference" "#PWR0244"
-			(at 120.65 95.25 0)
+			(at 154.94 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9458,7 +9599,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 120.523 93.2942 0)
+			(at 154.813 97.1042 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9466,7 +9607,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 120.65 88.9 0)
+			(at 154.94 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9475,7 +9616,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 120.65 88.9 0)
+			(at 154.94 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9484,7 +9625,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 120.65 88.9 0)
+			(at 154.94 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10310,86 +10451,6 @@
 		)
 	)
 	(symbol
-		(lib_id "PACSAT_ICs:DAC5311IDCK")
-		(at 120.65 73.66 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cf3d0b5f-cfaf-4557-abe7-7fcd9a4d283b")
-		(property "Reference" "U37"
-			(at 138.43 67.2398 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "DAC5311IDCKRQ1"
-			(at 138.43 69.7798 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "PacSatDev_ti:DCK6"
-			(at 120.65 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/dac5311.pdf"
-			(at 120.65 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "8-Bit, Single-Channel, Voltage Output, Serial Interface Digital-to-Analog Converters, SC-70"
-			(at 120.65 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3fae2db8-81a6-4d05-b97d-a148d2818cac")
-		)
-		(pin "5"
-			(uuid "b51ea851-e517-4ee1-a7e2-ba364151fc4e")
-		)
-		(pin "6"
-			(uuid "b436f36a-7f03-4bb6-8cf0-733f25c54021")
-		)
-		(pin "2"
-			(uuid "17a1ebe1-3c8b-4bd7-887d-2958a701f796")
-		)
-		(pin "4"
-			(uuid "123bc3fa-4a90-494e-9e5b-dba1362070b6")
-		)
-		(pin "3"
-			(uuid "5bd524b7-3769-4416-89e0-7e23d1578846")
-		)
-		(instances
-			(project ""
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
-					(reference "U37")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 160.02 109.22 0)
 		(unit 1)
@@ -10407,7 +10468,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "240Ω"
+		(property "Value" "130Ω"
 			(at 162.306 110.998 90)
 			(effects
 				(font

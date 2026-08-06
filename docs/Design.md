@@ -830,8 +830,8 @@ S=.1mm) and gotten insane results (negative impedance), so I don't
 trust that.  I tried the equations in Pozar, but those assume that
 (width >> spacing) and (width >> height) to avoid fringe field
 effects, which is definitely not the case here.  The values I got were
-much different, again, but match some of the calculators I've seen, so
-those calculators are definitely wrong.
+somewhat different (but closer), again, but match some of the
+calculators I've seen, so those calculators are definitely wrong.
 
 # Power Control and Sequencing
 

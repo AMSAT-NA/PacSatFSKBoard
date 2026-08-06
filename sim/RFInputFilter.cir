@@ -11,8 +11,8 @@
 
 * Full chain loss
 .if (m == 1)
-Vin 0 in1 dc 0 AC 1 sin(0 1 146MEG 0 0 0)
-Rsrc in1 in 50
+Vin 0 ina dc 0 AC 1 sin(0 1 146MEG 0 0 0)
+Rsrc ina in 50
 
 X1 in a1   Filt144MHzLNAIn
 X2 a1  out1 ImpMatchLNAIn
@@ -89,7 +89,8 @@ X3 out x1 x1 0 LNAInImpedance
 alterparam m = 1
 reset
 ac lin 50000 1Meg 500Meg
-plot title "Full Chain Filter Loss" db((v(out) * i(Vmout)) / (vm(in) * i(Vin)))
+* 1.185 is 2 * sqrt(Zin / Zout) = 2 * sqrt(50 / 142.4)
+plot title "Full Chain Filter Loss" db(1.185 * v(out) / v(ina))
 
 alterparam m = 2
 reset
@@ -104,7 +105,7 @@ plot title "Filter Only Output Impedance" v(out) vi(out)
 alterparam m = 4
 reset
 ac lin 50000 3Meg 1000Meg
-plot title "Filter Only Loss" db((v(out) * i(Vmout)) / (v(in) * i(Vmin)))
+plot title "Filter Only Loss" db(2 * v(out) / v(ina))
 *plot vr(out) vi(out) vp(out)
 
 alterparam m = 5
@@ -115,7 +116,8 @@ plot title "L Match Input Impedance" v(in) vi(in)
 alterparam m = 7
 reset
 ac lin 50000 3Meg 1000Meg
-plot title "L Match only Loss" db((v(out) * i(Vmout)) / (v(in) * i(Vmin)))
+* 1.185 is 2 * sqrt(Zin / Zout) = 2 * sqrt(50 / 142.4)
+plot title "L Match only Loss" db(1.185 * v(out) / v(ina))
 
 alterparam m = 6
 reset
