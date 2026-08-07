@@ -137,16 +137,14 @@ value_to_partnum_xlats_1 = {
     ('43nH 2%', 	'0603'): ('Coilcraft',	'0603DC-43NXGRW'),
     ('18nH 2%', 	'0603'): ('Coilcraft',	'0603DC-18NXGRW'),
     ('68nH',    	'0603'): ('Coilcraft',	'0603DC-68NXJRW'),
-    ('78nH 2%', 	'0603'): ('Murata',	'LQW18AN78NG8ZD'),
+    ('75nH 2%', 	'0603'): ('Coilcraft',	'0603DC-75NXGRW'),
     ('100nH',   	'0603'): ('Coilcraft',	'0603DC-R10XJRW'),
-    ('47nH 2%', 	'0805'): ('Coilcraft',	'0805HP-47NXJRC'),
-    ('47nH I>1A',       '0805'): ('Coilcraft',	'0805HP-47NXJRC'),
+    ('47nH 2%', 	'0805'): ('Coilcraft',	'0805HP-47NXGRC'),
+    ('47nH I>1A',       '0805'): ('Coilcraft',	'0805HP-47NXGRC'),
     ('91nH 2%', 	'0805'): ('Coilcraft',	'0805CS-910XGRC'),
     ('180nH 2%',	'0805'): ('Coilcraft',	'0805CS-181XGRC'),
     ('470nH 2%',        '0805'): ('Coilcraft',  '0805CS-471XGRC'),
     ('470nH',   	'0805'): ('Coilcraft',	'0805CS-471XGRC'),
-    ('1uH',   'L_Murata_DFE201610P'): ('Murata',	'DFE201612PD-1R0M'),
-    ('3.3uH', '1210'):                ('Murata',	'DFE322520FD-3R3M'),
 }
 
 # Space rated inductors
@@ -156,13 +154,12 @@ value_to_partnum_xlats_1a = {
     ('6.2nH 2%',        '0402'): ('Coilcraft',  'AR235RAG6N2GPZ'),
     ('16nH 2%', 	'0402'): ('Coilcraft',	'AR235RAG16NGPZ'),
     ('20nH 2%', 	'0402'): ('Coilcraft',	'AR235RAG20NGPZ'),
-    ('18nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG18N_PZ '),
+    ('18nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG18NGPZ '),
     ('27nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG27NGPZ'),
     ('43nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG43NGPZ'),
-    ('68nH',    	'0603'): ('Coilcraft',	'AR312RAG68N_PZ '),
-    # We convert this to 75nH
-    ('78nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG72N_PZ '),
-    ('100nH',   	'0603'): ('Coilcraft',	'AR312RAGR10_PZ '),
+    ('68nH',    	'0603'): ('Coilcraft',	'AR312RAG68NJPZ '),
+    ('75nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG75NGPZ '),
+    ('100nH',   	'0603'): ('Coilcraft',	'AR312RAGR10JPZ '),
     ('47nH 2%', 	'0805'): ('Coilcraft',	'AR336RAA470GPZ'),
     ('47nH I>1A',       '0805'): ('Coilcraft',	'AR336RAA470GPZ'),
     ('91nH 2%', 	'0805'): ('Coilcraft',	'AR336RAA910GPZ'),
@@ -185,7 +182,7 @@ value_to_partnum_xlats_1b = {
     ('27nH 2%', 	'0603'): ('Murata',	'LQW18AS27NG0ZD'),
     ('43nH 2%', 	'0603'): ('Murata',	'LQW18AS43NG0ZD'),
     ('68nH',    	'0603'): ('Murata',	'LQW18AS68NG0ZD'),
-    ('78nH 2%', 	'0603'): ('Murata',	'LQW18AN78NG8ZD'),
+    ('75nH 2%', 	'0603'): ('Murata',	'LQW18AN75NG8ZD'),
     ('100nH',   	'0603'): ('Murata',	'LQW18ASR10G0ZD'),
     ('47nH 2%', 	'0805'): ('Murata',	'LQW2BAN47NG00L'),
     ('47nH I>1A', 	'0805'): ('Murata',	'LQW2BAN47NG00L'),
@@ -200,6 +197,10 @@ value_to_partnum_xlats_1b = {
 
 # General passive parts.
 value_to_partnum_xlats_2 = {
+    # Power inductors.
+    ('1uH',   'L_Murata_DFE201610P'): ('Murata',	'DFE201612PD-1R0M'),
+    ('3.3uH', '1210'):                ('Murata',	'DFE322520FD-3R3M'),
+
     ('6.8pF',		'0402'): ('Murata',     'GCM1555C1H6R8BA16J'),
     ('10pF',		'0402'): ('Murata',	'GCM1555C1H100JA16D'),
     ('100pF',		'0402'): ('Murata',	'GCM1555C1H101JA16D'),

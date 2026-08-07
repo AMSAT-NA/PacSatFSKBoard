@@ -1,0 +1,58 @@
+* AX5043 RX circuit
+* The original circuit had 78nH inductors, I had to change to
+* 75nH because there aren't any space-capable 78nH inductors
+* that I can find.  Really, the difference isn't large
+* enough to matter.
+
+.param m = 0
+
+.SUBCKT AX5043RX in outp outn
+
+L1	in	outp	75n
+C1	in	outn	15p
+C2	outp	0	15p
+L2	outn	0	75n
+L3	outp	0	1n
+
+.ENDS
+
+.if (m == 1)
+I1  0  in  dc 0 ac 1
+X1 in outp outn AX5043RX
+Rl outp outn 100
+.endif
+
+.if (m == 2)
+I1 outn outp dc 0 ac 1
+X1 in outp outn AX5043RX
+Rl in 0 50
+.endif
+
+.if (m == 3)
+Vin 0 ina dc 0 AC 1 sin(0 1 146MEG 0 0 0)
+Rin ina in 50
+X1 in outp outn AX5043RX
+Rl outp outn 100
+.endif
+
+.control
+
+alterparam m = 1
+reset
+ac lin 50000 100Meg 200Meg
+plot title "Input Impedance" v(in) vi(in)
+
+alterparam m = 2
+reset
+ac lin 50000 100Meg 200Meg
+plot title "Output Impedance" (v(outp)-v(outn)) (vi(outp)-vi(outn))
+
+alterparam m = 3
+reset
+ac lin 50000 100Meg 200Meg
+* Gain modifier is 2 * sqrt(Zin / Zout) = 2 * sqrt(50 / 100) = 1.414
+plot title "Gain in circuit" db(1.414 * ((v(outp) - v(outn))) / v(ina))
+
+.endc
+
+.end

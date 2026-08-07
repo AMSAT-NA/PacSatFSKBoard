@@ -3553,7 +3553,7 @@
 				)
 			)
 		)
-		(property "Value" "78nH 2%"
+		(property "Value" "75nH 2%"
 			(at 213.868 134.62 90)
 			(effects
 				(font
@@ -4928,7 +4928,7 @@
 				)
 			)
 		)
-		(property "Value" "78nH 2%"
+		(property "Value" "75nH 2%"
 			(at 191.77 120.142 90)
 			(effects
 				(font

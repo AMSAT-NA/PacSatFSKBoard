@@ -3507,3 +3507,11 @@ from the other inductors to reduce coupling.
 
 Add rule areas under all RF inductors to avoid eddy currents under the
 parts.
+
+## 2026-08-07
+
+Switch the 78nH parts on the RX AX5043 inputs to 75nH parts.  78nH
+parts are not that available, especially in space ratings, so it had
+to change.  I built a simulation and figured out what looks like a
+reasonable approximation of the AX5043 (100 ohms differential?) and
+changed the 78nH to 75nH and it didn't make a significant difference.
