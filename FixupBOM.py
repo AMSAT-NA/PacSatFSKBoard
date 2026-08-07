@@ -130,59 +130,47 @@ def xlat_footprint(s):
 value_to_partnum_xlats_1 = {
     ('1nH',     	'0402'): ('Coilcraft',	'0402DC-1N0XJRW '),
     ('3.0nH 2%',	'0402'): ('Coilcraft',	'0402DC-3N0XGRW'),
-    ('5.8nH 2%',	'0402'): ('Coilcraft',	'0402DC-5N8XGRW'),
     ('6.2nH 2%',        '0402'): ('Coilcraft',  '0402DC-6N4XGRW'),
-    ('11nH 2%', 	'0603'): ('Coilcraft',	'0603DC-11NXGRW'),
     ('16nH 2%', 	'0402'): ('Coilcraft',	'0402DC-16NXGRW'),
-    ('18nH 2%', 	'0603'): ('Coilcraft',	'0603DC-18NXGRW'),
-    ('18nH 2%', 	'0402'): ('Coilcraft',	'0402DC-18NXGRW'),
     ('20nH 2%', 	'0402'): ('Coilcraft',	'0402DC-20NXGRW'),
-    ('22nH 2%', 	'0402'): ('Coilcraft',	'0402DC-22NXGRW'),
     ('27nH 2%', 	'0603'): ('Coilcraft',	'0603DC-27NXGRW'),
-    ('36nH I>1A',	'0603'): ('Coilcraft',	'0603DC-36NXGRW'),
     ('43nH 2%', 	'0603'): ('Coilcraft',	'0603DC-43NXGRW'),
-    ('43nH 2%', 	'0805'): ('Coilcraft',	'0805CS-430XGRC'),
-    ('47nH 2%', 	'0603'): ('Coilcraft',	'0603DC-47NXGRW'),
-    ('47nH 2%', 	'0805'): ('Coilcraft',	'0805HP-47NXJRC'),
-    ('47nH I>1A',       '0805'): ('Coilcraft',	'0805HP-47NXJRC'),
+    ('18nH 2%', 	'0603'): ('Coilcraft',	'0603DC-18NXGRW'),
     ('68nH',    	'0603'): ('Coilcraft',	'0603DC-68NXJRW'),
     ('78nH 2%', 	'0603'): ('Murata',	'LQW18AN78NG8ZD'),
-    ('91nH 2%', 	'0805'): ('Coilcraft',	'0805CS-910XGRC'),
     ('100nH',   	'0603'): ('Coilcraft',	'0603DC-R10XJRW'),
+    ('47nH 2%', 	'0805'): ('Coilcraft',	'0805HP-47NXJRC'),
+    ('47nH I>1A',       '0805'): ('Coilcraft',	'0805HP-47NXJRC'),
+    ('91nH 2%', 	'0805'): ('Coilcraft',	'0805CS-910XGRC'),
     ('180nH 2%',	'0805'): ('Coilcraft',	'0805CS-181XGRC'),
     ('470nH 2%',        '0805'): ('Coilcraft',  '0805CS-471XGRC'),
     ('470nH',   	'0805'): ('Coilcraft',	'0805CS-471XGRC'),
     ('1uH',   'L_Murata_DFE201610P'): ('Murata',	'DFE201612PD-1R0M'),
     ('3.3uH', '1210'):                ('Murata',	'DFE322520FD-3R3M'),
-    ('',	''): ('',	''),
 }
 
 # Space rated inductors
 value_to_partnum_xlats_1a = {
     ('1nH',     	'0402'): ('Coilcraft',	'AR235RAG1N0JPZ'),
-    ('3.0nH 2%',	'0402'): ('Coilcraft',	''),
+    ('3.0nH 2%',	'0402'): ('Coilcraft',	'AR235RAQ3N0GPZ'),
     ('6.2nH 2%',        '0402'): ('Coilcraft',  'AR235RAG6N2GPZ'),
     ('16nH 2%', 	'0402'): ('Coilcraft',	'AR235RAG16NGPZ'),
-    ('18nH 2%', 	'0402'): ('Coilcraft',	'AR235RAG18NGPZ'),
     ('20nH 2%', 	'0402'): ('Coilcraft',	'AR235RAG20NGPZ'),
-    ('22nH 2%', 	'0402'): ('Coilcraft',	'AR235RAG22NGPZ'),
-    ('11nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG11NGPZ'),
     ('18nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG18N_PZ '),
     ('27nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG27NGPZ'),
     ('43nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG43NGPZ'),
-    ('47nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG47NGPZ'),
     ('68nH',    	'0603'): ('Coilcraft',	'AR312RAG68N_PZ '),
-    # Really 75nH
+    # We convert this to 75nH
     ('78nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG72N_PZ '),
     ('100nH',   	'0603'): ('Coilcraft',	'AR312RAGR10_PZ '),
     ('47nH 2%', 	'0805'): ('Coilcraft',	'AR336RAA470GPZ'),
     ('47nH I>1A',       '0805'): ('Coilcraft',	'AR336RAA470GPZ'),
     ('91nH 2%', 	'0805'): ('Coilcraft',	'AR336RAA910GPZ'),
     ('180nH 2%',	'0805'): ('Coilcraft',	'AR336RAA181GPZ'),
+    ('470nH 2%',   	'0805'): ('Coilcraft',	'AR336RAA471JPZ'),
     ('470nH',   	'0805'): ('Coilcraft',	'AR336RAA471JPZ'),
     ('1uH',   'L_Murata_DFE201610P'): ('Murata',	'DFE201612PD-1R0M'),
     ('3.3uH', '1210'):                ('Murata',	'DFE322520FD-3R3M'),
-    ('',	''): ('',	''),
 }
 
 # These are all Murata parts.  The 0805 parts are not automotive
@@ -190,32 +178,24 @@ value_to_partnum_xlats_1a = {
 value_to_partnum_xlats_1b = {
     ('1nH',     	'0402'): ('Murata',	'LQG15WZ1N0B02D'),
     ('3.0nH 2%',	'0402'): ('Murata',	'LQW15AS3N0G8ZD'),
-    ('5.8nH 2%',	'0402'): ('Murata',	'LQW15AN5N8G8ZD'),
-    ('6.0nH 2%',	'0402'): ('Murata',	'LQW15AN6N0G8ZD'),
-    ('11nH 2%', 	'0603'): ('Murata',	'LQW18AS11NG0ZD'),
-    ('17nH 2%', 	'0402'): ('Murata',	'LQW15AN17NG8Z'),
-    ('18nH 2%', 	'0603'): ('Murata',	'LQW18AS18NG0ZD'),
-    ('18nH 2%', 	'0402'): ('Murata',	'LQW15AN18NG8ZD'),
+    ('6.2nH 2%',        '0402'): ('Murata',	'LQW15AN6N2G8ZD'),
+    ('16nH 2%', 	'0402'): ('Murata',	'LQW18AS16NG0ZD'),
     ('20nH 2%', 	'0402'): ('Murata',	'LQW15AN20NG8ZD'),
-    ('22nH 2%', 	'0402'): ('Murata',	'LQW15AN22NG8ZD'),
+    ('18nH 2%', 	'0603'): ('Murata',	'LQW18AS18NG0ZD'),
     ('27nH 2%', 	'0603'): ('Murata',	'LQW18AS27NG0ZD'),
-    ('36nH I>1A',	'0603'): ('Murata',	'LQW18AS36NG0ZD'),
     ('43nH 2%', 	'0603'): ('Murata',	'LQW18AS43NG0ZD'),
-    ('43nH 2%', 	'0805'): ('Murata',	'LQW2BAN43NG00L'),
-    ('47nH 2%', 	'0603'): ('Murata',	'LQW18AS47NG0ZD'),
-    ('47nH 2%', 	'0805'): ('Murata',	'LQW2BAN47NG00L'),
     ('68nH',    	'0603'): ('Murata',	'LQW18AS68NG0ZD'),
     ('78nH 2%', 	'0603'): ('Murata',	'LQW18AN78NG8ZD'),
-    ('91nH 2%', 	'0805'): ('Murata',	'LQW2BAN91NG00L'),
     ('100nH',   	'0603'): ('Murata',	'LQW18ASR10G0ZD'),
-    ('100nH I>1A',   	'0603'): ('Murata',	'LQW18CNR10K0ZD'),
+    ('47nH 2%', 	'0805'): ('Murata',	'LQW2BAN47NG00L'),
+    ('47nH I>1A', 	'0805'): ('Murata',	'LQW2BAN47NG00L'),
+    ('91nH 2%', 	'0805'): ('Murata',	'LQW2BAN91NG00L'),
     ('180nH 2%',	'0805'): ('Murata',	'LQW2BANR18G00L'),
-    ('470nH 2%',        '0603'): ('Murata',     'LQW18ANR47G0ZD'),
+    # Not automotive grade
+    ('470nH 2%',        '0805'): ('Murata',     'LQW2BASR47J00L'),
     ('470nH',   	'0805'): ('Murata',	'LQW21FTR47M0HL'),
     ('1uH',   'L_Murata_DFE201610P'): ('Murata',	'DFE201612PD-1R0M'),
     ('3.3uH', '1210'):                ('Murata',	'DFE322520FD-3R3M'),
-    ('4.7uH', '1210'):                ('Murata',	'DFE322520FD-4R7M'),
-    ('',	''): ('',	''),
 }
 
 # General passive parts.
@@ -235,40 +215,24 @@ value_to_partnum_xlats_2 = {
     ('10uF 16V',	'1206'): ('Murata',	'GCM31CR71C106KA64L'),
     ('22uF 16V',	'1206'): ('Murata',	'GCM31CC71C226ME36K'),
     ('47uF 10V',	'1206'): ('Murata',	'GRT31CR61A476KE13L'),
-    ('',	''): ('',	''),
 
     ('0.75pF ±.1 30V',	'0402'): ('Murata',	'GCM1555C1HR75BA16D'),
     ('1pF ±.05',  	'0402'): ('Murata',	'GCQ1555C1H1R0WB01D'),
     ('2.0pF ±.05 30V',	'0402'): ('Murata',	'GCQ1555C1H2R0WB01D'),
-    ('2.2pF ±.05 30V',	'0402'): ('Murata',	'GCQ1555C1H2R2WB01D'),
     ('4.3pF 1%',	'0402'): ('Murata',	'GCQ1555C1H4R3BB01D'),
     ('5.1pF ±.1',	'0402'): ('Murata',	'GCQ1555C1H5R1BB01D'),
     ('5.4pF ±.05 30V',	'0402'): ('Murata',	'GCQ1555C1H5R4BB01D'),
     ('5.6pF ±.1',	'0402'): ('Murata',	'GCQ1555C1H5R6WB01D'),
-    ('6.2pF ±.1 30V',	'0402'): ('Murata',	'GCQ1555C1H6R2BB01D'),
     ('6.4pF ±.1 30V',	'0402'): ('Murata',	'GCQ1555C1H6R4BB01D'),
     ('6.5pF ±.1',	'0402'): ('Murata',	'GCQ1555C1H6R5BB01D'),
-    ('6.8pF 1% 30V', 	'0402'): ('Murata',	'GCM1555C1H6R8FA16D'),
-    ('7.3pF ±.1 30V',	'0402'): ('Murata',	'GCQ1555C1H7R3BB01D'),
     ('11pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H110FB01D'),
     ('11pF 1% 30V', 	'0402'): ('Murata',	'GCQ1555C1H110FB01D'),
-    ('12pF 1% 30V', 	'0402'): ('Murata',	'GCQ1555C1H120FB01D'),
     ('12pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H120FB01D'),
-    ('14pF 1% 30V',     '0402'): ('Murata',     'GCQ1555C1H140FB01D'),
     ('15pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H150FB01D'),
     ('15pF 1% 30V', 	'0402'): ('Murata',	'GCQ1555C1H150FB01D'),
-    ('18pF 1% 30V', 	'0402'): ('Murata',	'GCQ1555C1H180FB01D'),
-    ('20pF 1% 30V', 	'0402'): ('Murata',	'GRT1555C1H200FA02D'),
     ('22pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H220FB01D'),
-    ('27pF 1% 30V', 	'0402'): ('Murata',	'GCM1555C1H270FA16D'),
     ('36pF 1%', 	'0402'): ('Murata',	'GRT1555C1H360FA02D'),
-    ('47pF 1%', 	'0402'): ('Murata',	'GCM1885C2A470FA16D'),
-    ('62pF 1%', 	'0402'): ('Murata',	'GCM1555C1H620FA16D'),
     ('68pF 1%', 	'0402'): ('Murata',	'GCM1555C1H680FA16D'),
-    ('110pF 1% 30V',	'0402'): ('Murata',	'GCM1555C1H111FA16D'),
-    ('',	''): ('',	    ''),
-
-    ('0uH',     '1210'): ('Panasonic',  'ERJ-14Y0R00U'),
 
     ('0Ω',	'0402'): ('Panasonic',	'ERJ-2GE0R00X'),
     ('22Ω',	'0402'): ('Panasonic',	'ERA-2AKD220X'),
@@ -276,14 +240,13 @@ value_to_partnum_xlats_2 = {
     ('50Ω',	'0402'): ('Panasonic',	'ERA-2AED49R9X'),
     ('61.9Ω',	'0402'): ('Panasonic',	'ERA-2AEB61R9X'),
     ('130Ω',	'0402'): ('Panasonic',	'ERA-2AED131X'),
-    ('240Ω',	'0402'): ('Panasonic',	'ERA-2AED241X'),
     ('280Ω',	'0402'): ('Panasonic',	'ERA-2AEB2800X'),
     ('330Ω',    '0402'): ('Wurth Electronik',  '560112110231'),
     ('470Ω',	'0402'): ('Panasonic',	'ERA-2AED471X'),
     ('1KΩ',	'0402'): ('Panasonic',	'ERA-2AED102X'),
     ('2.2KΩ',   '0402'): ('Wurth Electronik', '560112110087'),
     ('4.7KΩ',	'0402'): ('Wurth Electronik',	'560112110018'),
-    ('10KΩ',	'0402'): ('Panasonic',	'ERA-2AED103X'),
+    ('10KΩ',    '0402'): ('Panasonic',  'ERA-2AED103X'),
     ('18KΩ',	'0402'): ('Panasonic',	'ERA-2AED183X'),
     ('20KΩ 1%', '0402'): ('Panasonic', 'ERA-2AED203X'),
     ('43KΩ 1%', '0402'): ('Panasonic', 'ERA-2AED433X'),
@@ -294,27 +257,15 @@ value_to_partnum_xlats_2 = {
     ('0Ω',	'0603'): ('Panasonic',	'AC0603FR-070RL'),
     ('2.4KΩ',	'0603'): ('Wurth Electronik',	'560112116061'),
     ('3KΩ',	'0603'): ('Panasonic',	'ERJ-UP3F3001V'),
-    ('10KΩ',	'0603'): ('Panasonic',	'ERJ-U03F3001V'),
-    ('Ω',	''): ('',    ''),
     
-    ('50Ω >=2W',        '1206'): ('Rohm',	'ESR18EZPF49R9'),
-
-    ('25mΩ 1%', 	'0402'): ('Yaego',	'PE0402FRF470R025L'),
-    ('360Ω 1%',         '0402'): ('Panasonic',  'ERJ-2RKF3600X'),
     ('3.32KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF3321X'),
     ('5.1K',            '0402'): ('Panasonic',  'ERJ-2RKF5101X'),
     ('10KΩ 1%', 	'0402'): ('Panasonic',	'ERJ-PA2F1002X'),
-    ('19.1KΩ 1%',       '0402'): ('Panasonic',  'ERJ-2RKF1912X'),
-    ('19.6KΩ 1%', 	'0402'): ('Yaego',	'AC0402FR-0719K6L'),
-    ('30.9KΩ 1%', 	'0402'): ('Panasonic',	'ERJ-2RKF3092X'),
     ('45.3KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF4532X'),
     ('47KΩ 1%', 	'0402'): ('Panasonic',	'ERA-2AED473X'),
     ('68KΩ 1%', 	'0402'): ('Panasonic',	'ERA-2AED683X'),
-    ('88.7KΩ 1%', 	'0402'): ('Yageo',	'AC0402FR-7D88K7L'),
     ('100KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF1003X'),
     ('143KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF1433X'),
-    ('330KΩ 1%',	'0402'): ('Panasonic',	'ERJ-PA2F3303X'),
-    ('464KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF4643X'),
 
     ('1KΩ@100MHz',	'0603'): ('Laird-Signal',	'MI0603J102R-10'),
 
@@ -329,7 +280,6 @@ value_to_partnum_xlats_2 = {
 }
 
 other_components = {
-    ('RB521CS30L,315', 'D_SOD-882'): None,
     ('LMK1C1106-Q1', 'Texas_HTSSOP-14-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask3.155x3.255mm'): None,
     ('MAX31331TETB+', 'TDFN-10-1EP_3x3mm_P0.5mm_EP0.9x2mm'): None,
     ('AS3016204-0108X0PSAY', 'SOIC-8_5.3x5.3mm_P1.27mm'): None,
@@ -343,77 +293,66 @@ other_components = {
     ('FTSH-105-01-L-DV-K', 'FTSH-105-01-L-DV-K'): None,
     ('MAX4995AAUT+T', 'SOT-23-6_Handsoldering'): None,
     ('TQP7M9106', 'QFN24_TQP7M9104_QOR'): None,
-    ('CONUFL001-SMD-T', 'CONN1_CONUFL_TEC'): None,
     ('MMCX-J-P-H-RA-TH1', 'COAX4_MMCX-J-P-H-RA-TH1_SAI'): None,
-    ('2118718-2', 'TE_2118718-2'): None,
-    ('TSW-103-08-F-S-RA', 'CON3_1X3_TR_TSW_SAI'): None,
-    ('HTSW-102-07-G-S', 'CON2_1X2_TU_TSW'): None,
     ('STWD100NYWY3F', 'SOT-23-5'): None,
-    ('AD4PS-1+', 'CJ725'): None,
-    #('ESQ-126-39-G-D', 'CONN_ESQ-126-39-G-D_SAI'): None,
     ('ESQ-126-38-G-D', 'CONN_ESQ-126-39-G-D_SAI'): None,
-    ('SN74AHC1G02QDCKRQ1', 'DCK5'): None,
-    ('74CBTLV1G125DBVRQ1', 'DBV5'): ('Texas Instruments', '74CBTLV1G125DBVRQ1'),
-    ('TPSM828302ARDSR', 'RDS0009A-MFG'): None,
     ('TPS62A02AQDRLRQ1', 'DRL0006A-MFG'): None,
-    ('MP5073GG-P', 'QFN-12_MP5073_MNP'): None,
     ('O 16,0-JT22CT-A-P-3,3-LF', 'Oscillator_SMD_SiT_PQFN-4Pin_2.5x2.0mm'): None,
-    ('DMP2037U-7', 'SOT-23'): None,
     ('ADL5501AKSZ-R7', 'KS-6_ADI'): None,
     ('SN74AHC1G08QDCKRQ1', 'DCK5'): None,
     ('SN74AHC1G09QDCKRQ1', 'DCK5'): None,
-    ('BSS138', 'SOT-523'): None,
-    ('MCP1799T-3302HTT', 'SOT-23'): None,
     ('QPC8010QTR7', 'QFN50P200X200X60-13N-D'): None,
-    ('MPQ5072GG-AEC1', 'QFN-12_MP5073_MNP'): None,
-    ('DAC5311IDCKRQ1', 'DCK6'): None,
-    ('MSPM0L1228QRGERQ1', 'VQFN24_4P1X4P1_TEX'): None,
     ('G125-MH11005L1P', 'G125-MH11005L1P'): None,
     ('DMP3056LDM-7', 'SOT-26-6_DMP3056LDM_DIO'): None,
     ('DMP2160UWQ-7', 'SOT-323_SC-70'): None,
     ('MPQ5072GG-AEC1-Z', 'QFN-12_MP5073_MNP'): None,
-    ('MCP1700T-3302E/TTVAO', 'SOT-23'): None,
     ('M0L1228QRGERQ1', 'VQFN24_4P1X4P1_TEX'): None,
     ('2N7002TQ-7-F', 'SOT-523'): None,
     ('TPS71533QDCKRQ1', 'SOT-353_SC-70-5'): None,
-    ('ADS7828EIPWRQ1', 'TSSOP-16_4.4x5mm_P0.65mm'): None,
     ('ADS1015BQDGSRQ1', 'TSSOP-10_3x3mm_P0.5mm'): None,
     ('ESD601DPYRQ1', 'DPY0002A-MFG'): ('', ''),
     ('CY7C65215-32LTXI', 'PG-VQFN-32-803'): None,
-    ('IRLML6246TRPBF', 'SOT-523'): None,
     ('CX90B1-24P', 'CX90B1-24P_HIR'): None,
-    ('TLV75733PDBVR', 'DBV0005A_L'): None,
-    ('PJE8401_R1_00001', 'SOT-523'): None,
     ('TLV75901PDRVT', 'DRV6_1X1P6_TEX'): None,
     ('FDC6318P', 'TSOT-23-6'): None,
     ('DAC121S101QCMK', 'DDC0006A_L'): None,
     ('SCPS-4-62+', 'SCPS462'): None,
     ('TMUX2821', 'WSON-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm'): None,
     ('TMUX2819', 'WSON-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm'): None,
-
-    ('', ''): None,
 }
 
 used = {}
 
 def xlat_value_to_partnum(s, footprint):
     pf = (s, footprint)
-    if use_murata and pf in value_to_partnum_xlats_1b:
-        v = value_to_partnum_xlats_1b[pf]
-    elif use_space and pf in value_to_partnum_xlats_1a:
-        v = value_to_partnum_xlats_1a[pf]
-    elif pf in value_to_partnum_xlats_1:
-        v = value_to_partnum_xlats_1[pf]
-    elif pf in value_to_partnum_xlats_2:
-        v = value_to_partnum_xlats_2[pf]
+    v = None
+    if use_space:
+        if pf in value_to_partnum_xlats_1a:
+            v = value_to_partnum_xlats_1a[pf]
+            pass
+        pass
+    elif use_murata:
+        if pf in value_to_partnum_xlats_1b:
+            v = value_to_partnum_xlats_1b[pf]
+            pass
+        pass
     else:
-        if pf not in other_components:
-            unknown_components.append("('" + s + "', '" + footprint + "'): ('', '')")
-            v = ('', s)
-        elif other_components[pf] is not None:
-            v = other_components[pf]
+        if pf in value_to_partnum_xlats_1:
+            v = value_to_partnum_xlats_1[pf]
+            pass
+        pass
+    if v is None:
+        if pf in value_to_partnum_xlats_2:
+            v = value_to_partnum_xlats_2[pf]
         else:
-            v = ('', s)
+            if pf not in other_components:
+                unknown_components.append("('" + s + "', '" + footprint + "'): ('', '')")
+                v = ('', s)
+            elif other_components[pf] is not None:
+                v = other_components[pf]
+            else:
+                v = ('', s)
+                pass
             pass
         pass
     if find_unused:
@@ -491,6 +430,11 @@ if unknown_components:
 if find_unused:
     print("Unused components:")
     for i in value_to_partnum_xlats_1:
+        if not i in used:
+            print("  " + str(i))
+            pass
+        pass
+    for i in value_to_partnum_xlats_1a:
         if not i in used:
             print("  " + str(i))
             pass
