@@ -6248,7 +6248,7 @@
 				)
 			)
 		)
-		(property "Value" "17nH 2%"
+		(property "Value" "16nH 2%"
 			(at 274.32 150.622 90)
 			(effects
 				(font

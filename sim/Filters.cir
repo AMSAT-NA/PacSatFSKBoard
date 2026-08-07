@@ -39,7 +39,7 @@ C1	in	0	6.7p
 * 20.8n
 * Coilcraft 0402DC-20NX_RW Q=48@435MHz SRF=5.11
 * Add .4nH for parasitics
-L2	in	a1	20.8n
+L2	in	a1	20.4n
 Rl2	a1	a2	0.99
 Cl2	in	a2	.048p
 * 735f
@@ -53,7 +53,7 @@ C3	a2	0	11.3p
 * 17.22n
 * Murata LQW15AN17NG8ZD 17nF, Q=46@439MHz, SRF=5G
 * Add .4nH for parasitics
-L4	a2	a3	17.8n
+L4	a2	a3	16.4n
 Rl4	a3	out1	1.01
 Cl4	a2	out1	.059p
 * 2.07p
