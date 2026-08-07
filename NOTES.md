@@ -9,17 +9,6 @@ some point.
 
 # TODO
 
-All RF inductors except the 78nH inductors on the receive AX5043s are
-Coilcraft.  Coilcraft doesn't have 78nH inductors; the closest they
-have is 75 or 82.  A 75 is substituted, but I'm not sure those will
-work.  But Murata is the only company that makes 78nH inductors that
-would work.  The two power inductors are Murata metal alloy inductors;
-I do not know about their outgassing attributes, but from the looks of
-them it doesn't look like they will outgas.  The PC104 connector and
-the antenna/ADC connectors are supposed to be good for space.  The
-only thing left that might be an issue besides the 78nH inductor is
-the USB connector.
-
 The ADC voltage reference on the TMS570 is just the 3.3V supply, which
 isn't really the best.  Maybe add an external voltage reference to
 increase the precision?  Like the TI REF50 parts.
@@ -86,15 +75,14 @@ Possible outgassing issues:
 
 |Part						|Function				|Info |
 |----						|--------				|---- |
-| AD4PS-1+					| RF power splitter		| Made of a different kind of plastic than ICs |
 | FTSH-105-01-L-DV-K		| JTAG connector		||
-| HTSW-102-07-G-S			| Watchdog Jumper		||
+| CX90B1-24P                | USB connector         ||
+
 
 Parts that are not automotive rated listed below.
 
 |Part						|Function			  |Info |
 |----						|--------			  |---- |
-| LMK1C1106A				| clock distributor   | Suitable devices with 6 output not available.  A Q1 version is coming out from TI |
 | O 16,0-JT22CT-A-P-3,3-LF	| oscillator | There don't appear to be any that are automotive and temp certified with 2.5ppm stability.  This one is temp, which is probably more important. There is one from TXC at 16.389MHz. |
 | AS1016204-0108X0PWAY		| MRAM | No suitable devices available. |
 | MAX31331					| RTC | No suitable devices available. |
@@ -102,7 +90,7 @@ Parts that are not automotive rated listed below.
 | AX5043					| radio | No other option. |
 | TQP7M9106					| PA | ? |
 | QPL9547					| LNA | ? |
-| AD4PS-1+					| RF power splitter | Environmental Specs seem good, probably ok. |
+| SCPS-4-62+				| RF power splitter | Environmental Specs seem good, probably ok. |
 | ADL5501AKSZ-R7			| RF power measurement | No power measurement devices are rated. |
 | ?							| PC104 connector | Unknown if AEC |
 
@@ -145,8 +133,8 @@ or better as possible.  The outliers at the moment are:
     * RTC.  Probably only the MCP7940NT-E/MS from Microchip is
 	  suitable, but it draws 20 times the standby power.
     * AX5043 - Not another option available.
-	* AD4PS-1+ - Not sure about this one, perhaps three transformers
-	  could be used.
+	* SCPS-4-62+ - Not sure about this one, perhaps three transformers
+	  or a Wilkinson divider could be used.
 	* TQP7M9106 - RF PA.  Could use a discrete device, but the parms
 	  are pretty good.
 	* ADL5501AKSZ-R7 - RF Power Measurement.  Suitable devices don't
@@ -909,6 +897,17 @@ The ZOo and ZOe calculations for the directional coupler are suspect.
 Different tools gave wildly different values.  I think I have good
 values, but it would be nice to be sure. - I got an accurate
 calculator for this, I believe, and I think I have a good design.
+
+All RF inductors except the 78nH inductors on the receive AX5043s are
+Coilcraft.  Coilcraft doesn't have 78nH inductors; the closest they
+have is 75 or 82.  A 75nH is substituted, but I'm not sure those will
+work.  But Murata is the only company that makes 78nH inductors that
+would work.  The two power inductors are Murata metal alloy inductors;
+I do not know about their outgassing attributes, but from the looks of
+them it doesn't look like they will outgas.  The PC104 connector and
+the antenna/ADC connectors are supposed to be good for space.  The
+only thing left that might be an issue besides the 78nH inductor is
+the USB connector. - Did a simulation, replaced 78nH with 75nH.
 
 # Not going to do
 

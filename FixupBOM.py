@@ -317,7 +317,7 @@ other_components = {
     ('TLV75901PDRVT', 'DRV6_1X1P6_TEX'): None,
     ('FDC6318P', 'TSOT-23-6'): None,
     ('DAC121S101QCMK', 'DDC0006A_L'): None,
-    ('SCPS-4-62+', 'SCPS462'): None,
+    ('SCPS-4-62+', 'SCPS462'): ('Minicircuits', 'SCPS-4-62+ with space-rated expoxy'),
     ('TMUX2821', 'WSON-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm'): None,
     ('TMUX2819', 'WSON-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm'): None,
 }
@@ -363,7 +363,6 @@ def xlat_value_to_partnum(s, footprint):
     if value_in_comment:
         v[1] = v[1] + " " + s
         pass
-    v[1] = v[1].replace(' ', ',')
     return v
 
 if do_xls:
