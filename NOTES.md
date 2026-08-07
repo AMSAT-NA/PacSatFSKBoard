@@ -11,6 +11,8 @@ some point.
 
 Add 2.2K resistors for R147, R151, R152, R153, R166, and R167.
 
+Add a zero-ohm resistor on R149.
+
 Solder a wire from PC104 pin J1-2 (PC104\_ACP\_TX) to a 4.7K
 resistor added to the R153 ANT\_3.3V pin.  This provides a pull-up for
 that line so the antenna control processor's TX line works.
@@ -25,13 +27,13 @@ receive.  Do this as close as possible to the MMCX connector.
 
 Change R39 to 43K to allow 638ma of current to the PA circuits.
 
-Remove R184.  Run a wire from pin 3 of U44 to pin 1 of R184.
+Replace C117 with a 15pF 1% 50V 0402
 
-Replace C117 with a 15pF 1% 50V 0402 (TBD)
-
-Replace L38 with 6.4nH 2% 0402 (TBD)
+Replace L38 with 6.2nH 2% 0402
 
 Replace L37 with a 33nH inductor.  It's an 0804 part in a 0603 socket.
+
+Remove R184.  Run a wire from pin 3 of U44 to pin 1 of R184.
 
 All of the above are already done on Board 11.
 
@@ -66,7 +68,7 @@ Run a wire from pin 28 of U44 to a 2.2K resistor, then run the other
 end of that resistor to J4 pin 1.  This is for the watchdog enable
 control via the USB chip.
 
-Need to supply 20K and 2.2K resistors, 6.4nH and 33nH inductors, and
+Need to supply 20K and 2.2K resistors, 6.2nH and 33nH inductors, and
 the TMUX2819.  The rest should be in the parts for the board.
 
 # Version 3 board status
@@ -98,6 +100,9 @@ Cut the trace between P17 pin 1 and P24 pin 1 so it wouldn't short out
 receive.
 
 Changed R39 to 43K to allow 638ma of current to the PA circuits.
+
+Added a zero ohm resistor on R149 so the bootstrap loader can be
+controlled.
 
 # TODO
 
