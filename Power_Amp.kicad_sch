@@ -2825,7 +2825,7 @@
 	)
 	(text "2W (33dBm) into 50 ohms is 10V RMS, ~14.3V peak\nto peak on the right side of the impedance converter.\nPick appropriate devices."
 		(exclude_from_sim no)
-		(at 245.872 219.71 0)
+		(at 246.38 226.822 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2864,9 +2864,9 @@
 		)
 		(uuid "d3602d58-4abf-44b7-9a95-14bf17ca573e")
 	)
-	(text "Output impedance of the PA per the\nS-parms is 4.63Ω - j.508Ω ohms at 435MHz\nHowever, PAs don't quite work that way,\nyou really ahve to test and measure.\nThe 10mm trace between the PA and the\nmatch is 0.5mm wide, which results in\n1.9nH with 2pF, converting the\nimpedance.  Experimenting gave the\nabove values.  That translates to 5.5Ω\n- j5Ω from simulation, which is pretty\nclose.  It's getting 32dBm out of the\nPA per measurement."
+	(text "Output impedance of the PA per the\nS-parms is 4.63Ω - j.508Ω ohms at 435MHz\nHowever, PAs don't quite work that way,\nyou really ahve to test and measure.\nThe 10mm trace between the PA and the\nmatch is 0.5mm wide, which results in\n1.9nH with 2pF, converting the\nimpedance.  Experimenting gave the\nabove values.  That translates to 5.5Ω\n- j5Ω from simulation, which is pretty\nclose.  It's getting 32dBm out of the\nPA per measurement.\n\n6.4nH and 14pF would be better, but there's\nno space rated 6.4nH available."
 		(exclude_from_sim no)
-		(at 212.344 196.85 0)
+		(at 212.09 201.676 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -8127,7 +8127,7 @@
 				)
 			)
 		)
-		(property "Value" "14pF 1% 30V"
+		(property "Value" "15pF 1% 30V"
 			(at 213.36 163.322 90)
 			(effects
 				(font
@@ -8727,7 +8727,7 @@
 				)
 			)
 		)
-		(property "Value" "6.4nH 2%"
+		(property "Value" "6.2nH 2%"
 			(at 223.012 170.18 90)
 			(effects
 				(font

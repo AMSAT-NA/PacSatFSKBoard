@@ -77,7 +77,7 @@ Cp2 a2a a2 1n
 * TX PA output matcher
 C1	a2	out	15p
 * Q=55, CoilCraft 0402DC, + .2nH for trace impedance.
-L1	out	a3	6.6n
+L1	out	a3	6.4n
 Rl1	a3	0	.30
 Cl1	out	0	.037p
 

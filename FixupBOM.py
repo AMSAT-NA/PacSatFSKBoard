@@ -13,6 +13,7 @@ from openpyxl import Workbook
 infn = None
 outfn = None
 use_murata = False
+use_space = False
 value_in_comment = False
 find_unused = False
 
@@ -25,6 +26,8 @@ for i in sys.argv[1:]:
             in_flags = False
         elif i == '-murata':
             use_murata = True
+        elif i == '-space':
+            use_space = True
         elif i == '-unused':
             find_unused = True
         elif i == '-value-in-comment':
@@ -128,8 +131,7 @@ value_to_partnum_xlats_1 = {
     ('1nH',     	'0402'): ('Coilcraft',	'0402DC-1N0XJRW '),
     ('3.0nH 2%',	'0402'): ('Coilcraft',	'0402DC-3N0XGRW'),
     ('5.8nH 2%',	'0402'): ('Coilcraft',	'0402DC-5N8XGRW'),
-    ('6.0nH 2%',	'0402'): ('Coilcraft',	'0402DC-6N0XGRW'),
-    ('6.4nH 2%',        '0402'): ('Coilcraft',  '0402DC-6N4XGRW'),
+    ('6.2nH 2%',        '0402'): ('Coilcraft',  '0402DC-6N4XGRW'),
     ('11nH 2%', 	'0603'): ('Coilcraft',	'0603DC-11NXGRW'),
     ('16nH 2%', 	'0402'): ('Coilcraft',	'0402DC-16NXGRW'),
     ('18nH 2%', 	'0603'): ('Coilcraft',	'0603DC-18NXGRW'),
@@ -148,8 +150,36 @@ value_to_partnum_xlats_1 = {
     ('91nH 2%', 	'0805'): ('Coilcraft',	'0805CS-910XGRC'),
     ('100nH',   	'0603'): ('Coilcraft',	'0603DC-R10XJRW'),
     ('180nH 2%',	'0805'): ('Coilcraft',	'0805CS-181XGRC'),
-    ('470nH 2%',        '0603'): ('Coilcraft',  '0603DC-R47XJRW'),
+    ('470nH 2%',        '0805'): ('Coilcraft',  '0805CS-471XGRC'),
     ('470nH',   	'0805'): ('Coilcraft',	'0805CS-471XGRC'),
+    ('1uH',   'L_Murata_DFE201610P'): ('Murata',	'DFE201612PD-1R0M'),
+    ('3.3uH', '1210'):                ('Murata',	'DFE322520FD-3R3M'),
+    ('',	''): ('',	''),
+}
+
+# Space rated inductors
+value_to_partnum_xlats_1a = {
+    ('1nH',     	'0402'): ('Coilcraft',	'AR235RAG1N0JPZ'),
+    ('3.0nH 2%',	'0402'): ('Coilcraft',	''),
+    ('6.2nH 2%',        '0402'): ('Coilcraft',  'AR235RAG6N2GPZ'),
+    ('16nH 2%', 	'0402'): ('Coilcraft',	'AR235RAG16NGPZ'),
+    ('18nH 2%', 	'0402'): ('Coilcraft',	'AR235RAG18NGPZ'),
+    ('20nH 2%', 	'0402'): ('Coilcraft',	'AR235RAG20NGPZ'),
+    ('22nH 2%', 	'0402'): ('Coilcraft',	'AR235RAG22NGPZ'),
+    ('11nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG11NGPZ'),
+    ('18nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG18N_PZ '),
+    ('27nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG27NGPZ'),
+    ('43nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG43NGPZ'),
+    ('47nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG47NGPZ'),
+    ('68nH',    	'0603'): ('Coilcraft',	'AR312RAG68N_PZ '),
+    # Really 75nH
+    ('78nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG72N_PZ '),
+    ('100nH',   	'0603'): ('Coilcraft',	'AR312RAGR10_PZ '),
+    ('47nH 2%', 	'0805'): ('Coilcraft',	'AR336RAA470GPZ'),
+    ('47nH I>1A',       '0805'): ('Coilcraft',	'AR336RAA470GPZ'),
+    ('91nH 2%', 	'0805'): ('Coilcraft',	'AR336RAA910GPZ'),
+    ('180nH 2%',	'0805'): ('Coilcraft',	'AR336RAA181GPZ'),
+    ('470nH',   	'0805'): ('Coilcraft',	'AR336RAA471JPZ'),
     ('1uH',   'L_Murata_DFE201610P'): ('Murata',	'DFE201612PD-1R0M'),
     ('3.3uH', '1210'):                ('Murata',	'DFE322520FD-3R3M'),
     ('',	''): ('',	''),
@@ -226,6 +256,7 @@ value_to_partnum_xlats_2 = {
     ('12pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H120FB01D'),
     ('14pF 1% 30V',     '0402'): ('Murata',     'GCQ1555C1H140FB01D'),
     ('15pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H150FB01D'),
+    ('15pF 1% 30V', 	'0402'): ('Murata',	'GCQ1555C1H150FB01D'),
     ('18pF 1% 30V', 	'0402'): ('Murata',	'GCQ1555C1H180FB01D'),
     ('20pF 1% 30V', 	'0402'): ('Murata',	'GRT1555C1H200FA02D'),
     ('22pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H220FB01D'),
@@ -369,6 +400,8 @@ def xlat_value_to_partnum(s, footprint):
     pf = (s, footprint)
     if use_murata and pf in value_to_partnum_xlats_1b:
         v = value_to_partnum_xlats_1b[pf]
+    elif use_space and pf in value_to_partnum_xlats_1a:
+        v = value_to_partnum_xlats_1a[pf]
     elif pf in value_to_partnum_xlats_1:
         v = value_to_partnum_xlats_1[pf]
     elif pf in value_to_partnum_xlats_2:

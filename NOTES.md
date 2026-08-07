@@ -9,6 +9,17 @@ some point.
 
 # TODO
 
+All RF inductors except the 78nH inductors on the receive AX5043s are
+Coilcraft.  Coilcraft doesn't have 78nH inductors; the closest they
+have is 75 or 82.  A 75 is substituted, but I'm not sure those will
+work.  But Murata is the only company that makes 78nH inductors that
+would work.  The two power inductors are Murata metal alloy inductors;
+I do not know about their outgassing attributes, but from the looks of
+them it doesn't look like they will outgas.  The PC104 connector and
+the antenna/ADC connectors are supposed to be good for space.  The
+only thing left that might be an issue besides the 78nH inductor is
+the USB connector.
+
 The ADC voltage reference on the TMS570 is just the 3.3V supply, which
 isn't really the best.  Maybe add an external voltage reference to
 increase the precision?  Like the TI REF50 parts.
