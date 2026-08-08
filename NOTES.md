@@ -31,7 +31,7 @@ Replace C117 with a 15pF 1% 50V 0402
 
 Replace L38 with 6.2nH 2% 0402
 
-Replace L37 with a 33nH inductor.  It's an 0804 part in a 0603 socket.
+Replace L37 with a 47nH inductor.  It's an 0804 part in a 0603 socket.
 
 Remove R184.  Run a wire from pin 3 of U44 to pin 1 of R184.
 
@@ -68,7 +68,7 @@ Run a wire from pin 28 of U44 to a 2.2K resistor, then run the other
 end of that resistor to J4 pin 1.  This is for the watchdog enable
 control via the USB chip.
 
-Need to supply 20K and 2.2K resistors, 6.2nH and 33nH inductors, and
+Need to supply 20K and 2.2K resistors, 6.2nH and 47nH inductors, and
 the TMUX2819.  The rest should be in the parts for the board.
 
 # Version 3 board status
