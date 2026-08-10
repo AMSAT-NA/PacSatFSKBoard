@@ -9,6 +9,17 @@ some point.
 
 # TODO
 
+I believe the last outgassing concern is the USB connector.  See notes
+below about outgassing for details.
+
+The PA power limiter limits the output power to ~1.5W. To increase
+this, you would need a new part, the current one is at its
+limit.  The TPS2557-Q1, for instance, might work.
+
+Maybe add some grounds on the PC104 for return path current.  The CAN
+bus is differential so it's not so important there, but the lack of
+grounds will limit I2C speed on the areas that don't have them.
+
 Measure the PA input impedance again, for both class AB and class C
 operation.  The match seems good for class AB, but not so good for
 class C.  It's possible we could get more output from the PA if the
@@ -16,10 +27,6 @@ match was better for class C.
 
 The serial ports only run to the USB chip now.  Is that going to be a
 problem?
-
-The ADC voltage reference on the TMS570 is just the 3.3V supply, which
-isn't really the best.  Maybe add an external voltage reference to
-increase the precision?  Like the TI REF50 parts.
 
 What happens if the RTC goes into lockup or some other bad state?
 There's no way to power it off, and a reset won't help.
@@ -83,8 +90,8 @@ Possible outgassing issues:
 
 |Part						|Function				|Info |
 |----						|--------				|---- |
-| FTSH-105-01-L-DV-K		| JTAG connector		||
-| CX90B1-24P                | USB connector         ||
+| FTSH-105-01-L-DV-K		| JTAG connector		| Could be removed before flight |
+| CX90B1-24P                | USB connector         | Thermoplastic UL94V-0 black |
 
 
 Parts that are not automotive rated listed below.
@@ -957,6 +964,11 @@ All in all, it's 1.36dB loss from the PA output match to the output
 according to the VNA, and that matches well with what we are measuring
 as power.  With a filter, directional coupler, and switch, it's not
 out of the ballpark.
+
+The ADC voltage reference on the TMS570 is just the 3.3V supply, which
+isn't really the best.  Maybe add an external voltage reference to
+increase the precision?  Like the TI REF50 parts. - Put a REF3133 for
+the voltage reference to the DAC.
 
 # Not going to do
 
@@ -3612,6 +3624,10 @@ j19.7, S21 is -1.36dB, output impedance is 68 + j18.2, and S12, for
 the record, is -1.45dB.
 
 The RF switch, when off, is 40K-50K of resistance.
+
+## 2026-08-10
+
+Added a REF3133 part as the voltage reference for the ADC.
 
 Still to measure:
 
