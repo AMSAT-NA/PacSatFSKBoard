@@ -746,6 +746,21 @@ powered off when not in use or to reset it.
 
 See the ICD for details.
 
+# RF Power Output Considerations
+
+The PA can output up to 2W of power per spec, and it operates at
+slightly more than 50% efficiency when operating in class AB mode.
+It's a little more efficient for class C, but from measurement,
+nowhere near close to 80% that might be achievable with class C.
+
+That means to transmit at 2W, it would need ~4W of power, or 800ma of
+current.  The current limiter on the PA limits it to 625ma, so that's
+going to limit us to around 3W, or 1.5W (31.8dBm) of output power.
+
+The power output chain should have ~1db of loss, putting us at
+30.8dBm, or around 1.2W.  This can be controlled by a DAC feeding the
+PA input.
+
 # Directional Coupler
 
 There is a broadside directional coupler on the output of the TX

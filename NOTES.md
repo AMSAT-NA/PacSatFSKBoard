@@ -9,6 +9,14 @@ some point.
 
 # TODO
 
+Measure the PA input impedance again, for both class AB and class C
+operation.  The match seems good for class AB, but not so good for
+class C.  It's possible we could get more output from the PA if the
+match was better for class C.
+
+The serial ports only run to the USB chip now.  Is that going to be a
+problem?
+
 The ADC voltage reference on the TMS570 is just the 3.3V supply, which
 isn't really the best.  Maybe add an external voltage reference to
 increase the precision?  Like the TI REF50 parts.
@@ -908,6 +916,47 @@ them it doesn't look like they will outgas.  The PC104 connector and
 the antenna/ADC connectors are supposed to be good for space.  The
 only thing left that might be an issue besides the 78nH inductor is
 the USB connector. - Did a simulation, replaced 78nH with 75nH.
+
+Measure what happens when the QPC8010Q is disabled with the EN pin or
+powered down. - It appears to go to 40K-50K when powered off.
+
+Hunt down loss in the RF output chain.  The current PA output power is
+around 1.5W.  The power out of the PA, through the impedance match, is
+around 31.4dBm, which is close to what is expected.  Currently the
+output at the end of the chain is 29.5dBm.  It should be closer to
+30.7dBm, so we are losing 1.3dB somewhere in there.  Possible
+candidates:
+
+* The loss is in the differential coupler.  This could be testing by
+  grounding each end of the coupled signal by shorting pin 3 to pin 4
+  on U28 and U29. - This actually cause higher loss through the
+  coupler.  I have no idea why.  The redesigned coupler should fix
+  this.  It might improve the output impedance match, too.
+
+* The power is lost due to the signal routing around the MMCX
+  connector.  The signals run right under the connector, making a
+  capacitive coupling to ground there.  I'm not sure that's enough to
+  matter, though.  Probably not. - This is not enough to matter.
+
+* The power measurement is broadband.  Need to check the power
+  measurement with the signal analyzer and see how much power is in
+  the harmonics at P21, since all that power would be lost. - This was
+  an issue.  Measuring the power just at 435MHz gave 30.5dBm, so
+  around .26W is at other frequencies.
+
+* Maybe something about the filter?  Claude thinks the filter looks
+  pretty good, though, and simulation looks good. - Not terrible.
+  It's hard to say.
+
+* The power switch might be more than .25dB.  Worst case is .45dB,
+  which might be it's large signal.  It also may be generating
+  harmonics, need to look at the spectrum output after the switch. -
+  Bypassing the switch reduced loss by .2dB.
+
+All in all, it's 1.36dB loss from the PA output match to the output
+according to the VNA, and that matches well with what we are measuring
+as power.  With a filter, directional coupler, and switch, it's not
+out of the ballpark.
 
 # Not going to do
 
@@ -3514,3 +3563,59 @@ parts are not that available, especially in space ratings, so it had
 to change.  I built a simulation and figured out what looks like a
 reasonable approximation of the AX5043 (100 ohms differential?) and
 changed the 78nH to 75nH and it didn't make a significant difference.
+
+## 2026-08-09
+
+Measure power with the spectrum analyzer out of the main port,
+transmitting full power (DAC 255, ax5043 100) at 435MHz, 1MHz channel
+bandwidth, we get the following peaks:
+
+| Freq      | Power    | Notes |
+|-----------|----------|-------|
+| 433.748MHz| 2.5dBm   |
+| 435MHz    | 28.9dBm  |
+| 436.252MHz| 2.5dBm   |
+| 870MHz    | -17.5dBm |
+| 1305Mhz   | -45.9dBm |
+
+Do some measurements...
+
+Do some voltage measurement on the output of the DAC to be sure it's
+sagging as suspected. - It's not sagging as much as expected, I'm
+measuring 4.53V on the output of the DAC when set to 255.  But it's
+still sagging some.
+
+Add jumpers from pin 3-4 (ground to signal) on U28 and U29 and re-do
+the above measurements to find out the effect of the directional
+coupler on the output. - This appears to have made it worse.  I'm
+measuring 28.3dBm in the above measurements at 435MHz.
+
+Add R107 to bypass the switch and re-measure the above values. - This
+made a slight difference, about .2dB improvement.  That was expected.
+
+Remove R129.  Measure the above values at P21:
+
+| Freq      | Power    | Notes |
+|-----------|----------|-------|
+| 433.748MHz| 4.3dBm   |
+| 435MHz    | 30.5dBm  |
+| 436.252MHz| 4.3dBm   |
+| 870MHz    | -3dBm    |
+| 1305Mhz   | 11.4dBm  |
+
+So we are only getting 30.5dBm (1.12W) out at 435MHz, so about .26W is
+going out at other frequencies.
+
+Measure the filter with a VNA. - Have to remember to turn on the
+switch so we get a signal through it.  The input impedance is 39.7 -
+j19.7, S21 is -1.36dB, output impedance is 68 + j18.2, and S12, for
+the record, is -1.45dB.
+
+The RF switch, when off, is 40K-50K of resistance.
+
+Still to measure:
+
+Remove R102, add P13, and measure the input impedance on the PA match
+when at class C and class AB.  Then remove L27 and C27 and add a 0 ohm
+resistor for C27 to measure the actual input impedance on the PA in
+both modes.
