@@ -40,8 +40,8 @@
         "other_text_upright": false,
         "pads": {
           "drill": 0.0,
-          "height": 1.2,
-          "width": 1.05
+          "height": 1.0922,
+          "width": 1.0414
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -78,6 +78,22 @@
         }
       ],
       "drc_exclusions": [
+        [
+          "annular_width|7050001|-72119998|f2b5fb73-0e69-4653-9def-6d8c0e3f99f8|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "annular_width|7050001|-80310000|724adcfb-32f2-4bc9-b9e3-e1252829f9ca|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "annular_width|7650001|-71894999|61ad63b5-acf6-4fac-bec4-4e3f06817f23|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "annular_width|7650001|-80534999|e90c655d-91e8-47b5-9b51-99c1e3ae2754|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
         [
           "copper_edge_clearance|85600000|-90810000|280f2953-a3ac-4ab1-aaf8-d5ec4b621845|0a0b6543-61fe-4f15-beb5-d8d168841c41",
           ""
@@ -291,7 +307,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "1.2"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -1066,16 +1082,16 @@
       {
         "filename": "PacSat_AFSK.kicad_sch",
         "name": "PacSat_AFSK",
-        "uuid": "00000000-0000-0000-0000-000000000000"
+        "uuid": "cc9f42d2-6985-41ac-acab-5ab7b01c5b38"
       }
     ],
-    "used_designators": "",
+    "used_designators": "C18,C156,#PWR310,#PWR312,#PWR354,U53",
     "variants": []
   },
   "sheets": [
     [
       "cc9f42d2-6985-41ac-acab-5ab7b01c5b38",
-      "Root"
+      "PacSat_AFSK"
     ],
     [
       "adf61ae3-df77-4e04-8bda-b4049a36fcf4",
