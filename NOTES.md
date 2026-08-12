@@ -9,8 +9,24 @@ some point.
 
 # TODO
 
+How far out does the USB-C connector need to come?  It's flush with
+the board edge now, but it could come out 1mm or so with the current
+connector, maybe farther with a new connector.  I'm not sure what is
+needed once the board is in the chassis and USB access is required.
+
+Are the MMCX connectors suitable?  The current configuration is right
+angle pointing toward the slot in the board.  But maybe vertical
+mounting is better?  A slot could be cut in the board and it could be
+an edge mount?  Vertical would be nicest from a board use point of
+view, but it might be too tall.  Vertical (MMCX-J-P-H-ST-TH1) would be
+about 10mm tall with a right-angle connector, right angle
+(MMCX-J-P-H-RA-TH1) is about 4mm tall.  Maybe switch to the
+high-vibration version (MMCXV)?  They won't interconnect with MMCX.
+
 The various general GPIOs on the PC104 are not latch up protected.
-This needs to be documented or handled somehow.
+This needs to be documented or handled somehow.  All the
+fault-tolerance I/Os are latch up protected; they could be used for
+other purposes if the fault-tolerance isn't being used.
 
 Are WSON-8 parts a problem for thermal cycles? If so, it may be
 necessary to switch back to the 74CBTLV1G125DBVRQ1 for the PC104
