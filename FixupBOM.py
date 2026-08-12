@@ -318,8 +318,9 @@ other_components = {
     ('FDC6318P', 'TSOT-23-6'): None,
     ('DAC121S101QCMK', 'DDC0006A_L'): None,
     ('SCPS-4-62+', 'SCPS462'): ('Minicircuits', 'SCPS-4-62+ with space-rated expoxy'),
-    ('TMUX2821', 'WSON-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm'): None,
-    ('TMUX2819', 'WSON-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm'): None,
+    ('TMUX2821', 'Texas_DSG0008A_WSON-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm'): None,
+    ('TMUX2819', 'Texas_DSG0008A_WSON-8-1EP_2x2mm_P0.5mm_EP0.9x1.6mm'): None,
+    ('REF3133AQDBZRQ1', 'SOT-23'): None,
 }
 
 used = {}

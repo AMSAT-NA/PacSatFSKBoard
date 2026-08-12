@@ -9,16 +9,32 @@ some point.
 
 # TODO
 
-I believe the last outgassing concern is the USB connector.  See notes
-below about outgassing for details.
+The various general GPIOs on the PC104 are not latch up protected.
+This needs to be documented or handled somehow.
 
-The PA power limiter limits the output power to ~1.5W. To increase
-this, you would need a new part, the current one is at its
+Are WSON-8 parts a problem for thermal cycles? If so, it may be
+necessary to switch back to the 74CBTLV1G125DBVRQ1 for the PC104
+switches.  It's not so important for the switches in the USB section;
+they don't have to work after launch.
+
+I believe the last outgassing concerns are the USB connector, MMCX
+connectors, and the JTAG ones:
+
+|Part						|Function				|Info |
+|----						|--------				|---- |
+| FTSH-105-01-L-DV-K		| JTAG connector		| Could be removed before flight |
+| MMCX-J-P-H-RA-TH1			| MMCX connector		| PTFE 9002-84-0 .016g 3.5744% of part weight |
+| CX90B1-24P                | USB connector         | Thermoplastic UL94V-0 black |
+
+The PA power limiter limits the output power from the PA (not the
+final output power, that will be down 2.5dB or so) to ~1.5W. To
+increase this, you would need a new part, the current one is at its
 limit.  The TPS2557-Q1, for instance, might work.
 
 Maybe add some grounds on the PC104 for return path current.  The CAN
 bus is differential so it's not so important there, but the lack of
-grounds will limit I2C speed on the areas that don't have them.
+grounds will limit I2C speed on the areas that don't have them.  The
+trouble is it's hard to know where to add them.
 
 Measure the PA input impedance again, for both class AB and class C
 operation.  The match seems good for class AB, but not so good for
@@ -66,14 +82,10 @@ best for optimizing power.  It also has built-in matching, but is 3.3V
 and doesn't have any control over gain.  It does seem that lower NF
 values require higher power.
 
-Maybe spend some time needs to be spent looking for a new PA.  It
-seems to be fairly efficient, 500ma at 5V 2.5W for 2W of output,
-that's 80% efficiency.
+Maybe spend some time needs to be spent looking for a new PA.
 
 Add 0 ohm resistors to make some of the dual-board lines available if
 the dual-board switching parts are not populated.
-
-Add the SAFE\_MODE pin to the board, if necessary.
 
 On the CSKB standard, do we need to be able to operate as board 0?
 That affects board layout.
@@ -85,14 +97,6 @@ passives can all be certified for this, I'm pretty sure.  The only
 connectors you have to worry about are the PC104 and antenna and ADC
 controller ones, which should be good.  The chips and modules are a
 different story.
-
-Possible outgassing issues:
-
-|Part						|Function				|Info |
-|----						|--------				|---- |
-| FTSH-105-01-L-DV-K		| JTAG connector		| Could be removed before flight |
-| CX90B1-24P                | USB connector         | Thermoplastic UL94V-0 black |
-
 
 Parts that are not automotive rated listed below.
 
@@ -129,18 +133,6 @@ Probably switch the analog switches dealing with active standby with a
 set of zero ohm resistors.  That's a lot of resistors to switch,
 though.  Populating 8 of 16 total resistors, maybe more with the UART
 lines.  But there are advantages to a completely passive solution.
-
-You could use one of the receive AX5043s ANTP1 port as an alternate
-transmitter.  You could use the same PA or a different PA, either way
-a QPC1022 RF switch could handle the choice.  You could even have
-separate antennas.  I have tested, and with an 18nH inductor
-installed, if you disable the external inductor the AX5043 will range
-at 420-450MHz.  This is probably not going to be feasible.  You could
-switch the output of the 4th AX5043 into the top of the PA.  That
-wouldn't be too bad.  But the most likely thing to fail is the PA,
-really, not the AX5043.  Having a duplicate PA would take up too much
-space, especially with the heat sink.  I'll leave this here for now,
-but if you want redundancy you would be better off with two boards.
 
 Figure out temperature ratings on all parts and get as many to be 105C
 or better as possible.  The outliers at the moment are:
@@ -969,6 +961,24 @@ The ADC voltage reference on the TMS570 is just the 3.3V supply, which
 isn't really the best.  Maybe add an external voltage reference to
 increase the precision?  Like the TI REF50 parts. - Put a REF3133 for
 the voltage reference to the DAC.
+
+Add the SAFE\_MODE pin to the board, if necessary. - There are plenty
+of GPIO lines for this.
+
+You could use one of the receive AX5043s ANTP1 port as an alternate
+transmitter.  You could use the same PA or a different PA, either way
+a QPC1022 RF switch could handle the choice.  You could even have
+separate antennas.  I have tested, and with an 18nH inductor
+installed, if you disable the external inductor the AX5043 will range
+at 420-450MHz.  This is probably not going to be feasible.  You could
+switch the output of the 4th AX5043 into the top of the PA.  That
+wouldn't be too bad.  But the most likely thing to fail is the PA,
+really, not the AX5043.  Having a duplicate PA would take up too much
+space, especially with the heat sink.  I'll leave this here for now,
+but if you want redundancy you would be better off with two boards. -
+The RX4 AX5043 has a U.FL connector on the single-ended transmit pin.
+If you need a second transmitter, you could use that and put it on
+another board.
 
 # Not going to do
 
