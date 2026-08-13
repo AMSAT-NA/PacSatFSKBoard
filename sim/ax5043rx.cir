@@ -49,7 +49,7 @@ plot title "Output Impedance" (v(outp)-v(outn)) (vi(outp)-vi(outn))
 
 alterparam m = 3
 reset
-ac lin 50000 100Meg 200Meg
+ac lin 50000 1Meg 1000Meg
 * Gain modifier is 2 * sqrt(Zin / Zout) = 2 * sqrt(50 / 100) = 1.414
 plot title "Gain in circuit" db(1.414 * ((v(outp) - v(outn))) / v(ina))
 

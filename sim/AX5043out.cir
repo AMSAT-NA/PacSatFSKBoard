@@ -40,6 +40,21 @@ C3b	b2	out	5.1p
 
 .ENDS
 
+.param m = 0
+
+.if (m == 1)
+I1 inn inp dc 0 ac 1
+X1 inp inn out AX5043Out
+Rl out 0 50
+.endif
+
+.if (m == 2)
+I1 out 0 dc 0 ac 1
+X1 inp inn out AX5043Out
+Rl inn inp 100
+.endif
+
+.if (m == 3)
 V1 ina inb dc 0 AC 1 sin(0 1 440MEG 0 0 0)
 Rsrca ina ina1 50
 Rsrcb inb inb1 50
@@ -47,12 +62,26 @@ Rsrcb inb inb1 50
 X1 ina1 inb1 out AX5043Out
 
 Rload out 0 50
+.endif
 
 .control
 *tran .1ns 1200ns 1100ns
 *plot v(ina1,inb1), v(out)
+
+alterparam m = 1
+reset
+ac lin 50000 100Meg 500Meg
+plot title "Input Impedance" (v(inp)-v(inn)) (vi(inp)-vi(inn))
+
+alterparam m = 2
+reset
+ac lin 50000 100Meg 500Meg
+plot title "Output Impedance" -vr(out) vi(out)
+
+alterparam m = 3
+reset
 ac lin 50000 100Meg 1000Meg
-plot db((vm(out)^2/50)/(vm(ina1,inb1) * i(v1)))
+plot title "Gain in circuit" db(2 * sqrt(100 / 50) * v(out) / v(ina, inb))
 .endc
 
 .end
