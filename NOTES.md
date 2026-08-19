@@ -104,6 +104,9 @@ Changed R39 to 43K to allow 638ma of current to the PA circuits.
 Added a zero ohm resistor on R149 so the bootstrap loader can be
 controlled.
 
+Pins J1-1, J1-2, J2-1, and J2-2 are removed from the PC104 so it may
+be plugged on top of another board.
+
 # TODO
 
 The Q10 transistor for FAULT\_N does not have a pull on it.  When the
