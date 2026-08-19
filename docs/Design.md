@@ -65,6 +65,64 @@ Add the following notes:
 
 * Same as above for U2 (the CPU chip).
 
+# Setting up the USB chip
+
+The first thing you must do is program the USB chip.  This is done
+with the Infineon USB Configuration Utility and must be done on a
+Windows machine, unfortunately.
+
+Start the utility, plug the board in to a USB port, choose "Select
+Target" then select the device (it should be the only one) and click
+on "Connect".
+
+Click on SCB 0.  It should be in UART mode.  Click on "Configure" and
+set to 2-pin mode, 38400N81.  Then go to SCB 1 and do the same, except
+set it to 9600N81.
+
+Click on CapSense/BCD/GPIO and click on "Configure" by "Unused GPIO's
+drive mode".  GPIOs 2, 3, 4, and 9 should all be set to "Drive 0".
+The rest should be tristate.
+
+The GPIO pins on the USB device can be controlled with the cygpio
+command in the hostutils/linux directory in the PacSatSw repository.
+
+# Initial Board Programming
+
+The first thing you must do is program the main software onto the main
+CPU (TMS570) with Code Composer Studio 12.8.1 through the debug port.
+You need an XDS110 device of some kind, see the next section for
+details on that and hooking up a serial port.
+
+It's recommended to power with USB while doing this.  Using the cygpio
+utility, enable power and disable the watchdog with:
+
+```
+$ sudo cygpio 1 nowdog 1
+$ sudo cygpio 1 power 1
+```
+
+which will disable the external watchdog timer and enable the power.
+Note: Don't enable power here if you have external power applied
+through the PC104.  When programming with the XDS110 at any time, you
+need to disable the watchdog timer.  You don't want it resetting the
+CPU while programming.
+
+After that you can program the main CPU with JTAG.
+
+On the main CPU serial port you should see it boot.  It will enable
+the ACP by default, but that must be programmed, too, to work.
+
+To program that, pull up Code Composer Studio 20.5.0 or later and load
+the PacSatSPII2CSysconfig workspace.  This contains the internal
+configuration for the device and must be programmed first before
+anything else will work.  Failing here can brick the chip.  But it's
+small and not likely to fail.
+
+After that, program the PacSatSPII2C workspace to get the normal
+software on the ACP.
+
+After this, the board should be functional.
+
 # Hooking Up JTAG and a serial port
 
 The board uses a standard 10-pin 2x5 1.27mm pitch JTAG connector for a
@@ -99,7 +157,8 @@ For version 3 and later boards, the serial ports are available via a
 USB to serial converter.  The first serial port is the main CPU and
 the second is the antenna controller.  On version 3 boards, do not
 hook up the serial port lines on the PC104 if USB is connected, they
-are the same lines.
+are the same lines.  On version 4 and later USB is the only way to
+hook to the serial port.
 
 The reset button on the LP-XDS110 resets the board.
 
@@ -114,7 +173,9 @@ shifters.
 
 # Hooking Up Power
 
-The normal board build only takes 5V.  There is a build option (or
+## Version 2
+
+Version 2 boards build only takes 5V.  There is a build option (or
 some solder work) to remove the 3.3V regulator and supply 3.3V through
 an external interface.
 
@@ -128,20 +189,28 @@ jumper J6.  This could also be done from the PC104 J2 (H2) pin 27 or
 default, or one of the other 3.3V entry points on the PC104, also not
 installed by default.
 
+You obviously must hook up ground.  On the PC104 this is J2 (H2) pins
+29, 30, and 32.  The other power pins have an associated ground.
+
 There are also other pins on the PC104 which can supply 5V and 3.3V,
 matching some power supplies, but certain resistors need to be
 installed to do this.  They are not installed by default.
 
-You obviously must hook up ground.  On the PC104 this is J2 (H2) pins
-29, 30, and 32.  The other power pins have an associated ground.
+## Version 3 and later
 
-If power cannot be trusted to be quality, there is space to add a buck
-regulator like a TPS61379-Q1 by the PC104 connector.  Or a buck-boost
-or other options.  Currently this assumes that incoming power is
-stable.
+Version 3 and later boards do not have the 3.3V regulator, you must
+supply both 5V and 3.3V.  There are unpopulated headers on the board
+that you can install to supply power, but it's recommended to go
+through the PC104 or USB to supply power.  Really, USB is the
+simplest, so unless you need to measure power usage, just use USB.
+The PC104 pins are the same ones as used for the Version 2 board.
 
-Power can also be supplied through USB, see the USB section for
-details.
+If you need to power from some other voltage, there is space to add a
+buck regulator like a TPS61379-Q1 by the PC104 connector.  Or a
+buck-boost or other options.  Currently this assumes that incoming
+power is stable +5V and +3.3V.
+
+See the USB section for details on powering from that.
 
 # USB
 
@@ -152,12 +221,7 @@ accessing the serial port on the processor and powering the board when
 the satellite is completely assembled and otherwise inaccessible.
 
 The USB chip, a CY7C65215, should be configured first before using the
-board.  This must be done on Windows.  Get the Cypress USB serial
-configuration utility and set the serial ports as 2-wire ports and set
-GPIO 9 to be 0 by default.  The other GPIOs should be tristate.  This
-will keep main board power out of the USB section and will allow a the
-cygpio program in the hostutils directory of the PacSatSw repository
-to turn on and off the board.
+board.  See "Setting Up the USB Chip" for details.
 
 ## USB Serial Ports
 
