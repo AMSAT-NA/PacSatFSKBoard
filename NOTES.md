@@ -11,8 +11,12 @@ some point.
 
 How far out does the USB-C connector need to come?  It's flush with
 the board edge now, but it could come out 1mm or so with the current
-connector, maybe farther with a new connector.  I'm not sure what is
-needed once the board is in the chassis and USB access is required.
+connector, maybe farther with a new connector.  And where can it go?
+I'm not sure what is needed once the board is in the chassis and USB
+access is required.  Chris and I talked, and maybe look at a panel
+mount sort of thing?  Not much really exists for that, and it comes
+with outgassing issues.  Or maybe we do all the provisioning before
+it's in the pod?  We are going to need help on this.
 
 Are the MMCX connectors suitable?  The current configuration is right
 angle pointing toward the slot in the board.  But maybe vertical
@@ -20,8 +24,10 @@ mounting is better?  A slot could be cut in the board and it could be
 an edge mount?  Vertical would be nicest from a board use point of
 view, but it might be too tall.  Vertical (MMCX-J-P-H-ST-TH1) would be
 about 10mm tall with a right-angle connector, right angle
-(MMCX-J-P-H-RA-TH1) is about 4mm tall.  Maybe switch to the
-high-vibration version (MMCXV)?  They won't interconnect with MMCX.
+(MMCX-J-P-H-RA-TH1) is about 4mm tall.
+
+Maybe switch to the high-vibration versions of the RF connectors
+(MMCXV)?  They won't interconnect with MMCX.
 
 The various general GPIOs on the PC104 are not latch up protected.
 This needs to be documented or handled somehow.  All the
@@ -43,7 +49,7 @@ connectors, and the JTAG ones:
 | CX90B1-24P                | USB connector         | Thermoplastic UL94V-0 black |
 
 The PA power limiter limits the output power from the PA (not the
-final output power, that will be down 2.5dB or so) to ~1.5W. To
+final output power, that will be down 1.5dB or so) to ~1.5W. To
 increase this, you would need a new part, the current one is at its
 limit.  The TPS2557-Q1, for instance, might work.
 
@@ -67,13 +73,6 @@ Maybe switch to a more accurate main oscillator.  .5ppm oscillators at
 16MHz are available, but the temperature doesn't go to 105C, only 85C.
 Maybe that's better, anyway?  The TG2520SMN 16.0000M-ECGNNM3 from
 Epson is drop-in compatible to what is there.
-
-The Q10 transistor for FAULT\_N does not have a pull on it.  When the
-CPU is off, this may result in an invalid value.  That's probably ok,
-the other CPU should ignore the line if this CPU is off, but it may do
-something bad like oscillate.  DNI resistors are there just in case.
-
-The 1M pullups on some logic may be too large.
 
 Thermal analysis - I don't have the skills to do thermal analysis.
 The version 2 design is definitely insufficient.  I have improved the
@@ -995,6 +994,14 @@ but if you want redundancy you would be better off with two boards. -
 The RX4 AX5043 has a U.FL connector on the single-ended transmit pin.
 If you need a second transmitter, you could use that and put it on
 another board.
+
+The Q10 transistor for FAULT\_N does not have a pull on it.  When the
+CPU is off, this may result in an invalid value.  That's probably ok,
+the other CPU should ignore the line if this CPU is off, but it may do
+something bad like oscillate.  DNI resistors are there just in case.
+- This appears to be ok
+
+The 1M pullups on some logic may be too large. - This appears to be ok
 
 # Not going to do
 
@@ -3661,3 +3668,17 @@ Remove R102, add P13, and measure the input impedance on the PA match
 when at class C and class AB.  Then remove L27 and C27 and add a 0 ohm
 resistor for C27 to measure the actual input impedance on the PA in
 both modes.
+
+## 2026-08-18
+
+The USB power handling still isn't working correctly, powering the
+board externally powers the USB section.  What's happening is USB\_+5V
+is coming in through the MOSFETs, but it's pulled down to about 4.2V.
+That's what's coming in to pin 1 of U51, and even though that it
+switched to the MOSFET gates, it's not high enough to power down the
+MOSFETs.  Instead, I think the right way to fix this is N/C U51 pin1,
+remove R131, and run USB\_POWER to pin 3 (Enable) as well as pin 7 of
+U51.  That way, the enable for U51 is pulled to 0 normally and that
+will Hi-Zn the device, letting R183 pull up the MOSFET gates and power
+them off.  When USB\_POWER is driven to 1, it will enable U51 and set
+the input to the MOSFETs to ground, enabling them.
