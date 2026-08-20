@@ -5,11 +5,13 @@
 	(uuid "458dc11f-de4d-48ea-8815-d50a6c99c99e")
 	(paper "USLedger")
 	(title_block
-		(title "Radiation Tolerant PacSat Communication")
-		(date "2023-06-17")
-		(rev "A")
+		(title "Receive LNA and Power Divider")
+		(date "2026-08-20")
+		(rev "4.0")
 		(company "AMSAT-NA")
-		(comment 1 "N5BRG")
+		(comment 1 "AE5KM")
+		(comment 2 "Copyright Corey Minyard, 2026")
+		(comment 3 "Licensed under CERN-OHL-W version 2")
 	)
 	(lib_symbols
 		(symbol "Device:C"
@@ -2313,17 +2315,6 @@
 			)
 		)
 		(uuid "81cdeab2-de19-44fe-994a-ce9b4a136fae")
-	)
-	(text "RX INPUT POWER DIVIDER"
-		(exclude_from_sim no)
-		(at 330.2 245.11 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "b7e01c74-1edb-436d-9c26-98b28443fa58")
 	)
 	(text "-.25db"
 		(exclude_from_sim no)

@@ -4,6 +4,15 @@
 	(generator_version "10.0")
 	(uuid "f0d764ea-6753-4420-9caa-3dc172c06032")
 	(paper "A4")
+	(title_block
+		(title "Power Limiters")
+		(date "2026-08-20")
+		(rev "4.0")
+		(company "AMSAT-NA")
+		(comment 1 "AE5KM")
+		(comment 2 "Copyright Corey Minyard, 2026")
+		(comment 3 "Licensed under CERN-OHL-W version 2")
+	)
 	(lib_symbols
 		(symbol "Device:C"
 			(pin_numbers

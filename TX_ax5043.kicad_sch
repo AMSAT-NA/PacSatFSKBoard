@@ -5,11 +5,13 @@
 	(uuid "77033c27-9488-47ae-a83f-15c1a1e22b72")
 	(paper "USLedger")
 	(title_block
-		(title "Radiation Tolerant PacSat Communication")
-		(date "2023-06-17")
-		(rev "A")
+		(title "AX5043 Transmitter")
+		(date "2026-08-20")
+		(rev "4.0")
 		(company "AMSAT-NA")
-		(comment 1 "N5BRG")
+		(comment 1 "AE5KM")
+		(comment 2 "Copyright Corey Minyard, 2026")
+		(comment 3 "Licensed under CERN-OHL-W version 2")
 	)
 	(lib_symbols
 		(symbol "Device:C"
@@ -2130,17 +2132,6 @@
 			(justify left bottom)
 		)
 		(uuid "8db0d7b3-ed03-4aa5-b19b-298be2eff146")
-	)
-	(text "TRANSMITTER"
-		(exclude_from_sim no)
-		(at 317.5 245.11 0)
-		(effects
-			(font
-				(size 6.35 6.35)
-			)
-			(justify left bottom)
-		)
-		(uuid "b321e482-b01f-4cdc-b3ab-b3f867ab3074")
 	)
 	(text "While radio transceivers using power amplifiers with topologies such as class-A or class-B may have integrated amplifiers, \nAX5043 utilizes a class-E amplifier. Because of this, high efficiency power output can be achieved, though external components are \nrequired.\n\nAX5043 pins ANTP, ANTN, and ANTP1 are not the PA outputj; rather, they are the transition between the internal \nswitching transistor and the external resonant components. In the various AX5043 reference designs, LC, CC, CT, LT, \nand CM actually form the amplifier. For this reason, the output impedance of the ANT pins is not relevant to antenna matching. \nWhen the class-E power amplifier has been properly designed, the output impedance will be found at the balun (LB, CB) components, \nand will be 100 ohms differential, and 50 ohms after the balun. Between the balun and the antenna (or SMA port), filtering and \nAntenna matching networks can be inserted in series with the RF path.\n\nAnother important point is that the output impedance of the internal PA transistor also depends on the output power setting."
 		(exclude_from_sim no)

@@ -5,11 +5,13 @@
 	(uuid "77033c27-9488-47ae-a83f-15c1a1e22b72")
 	(paper "USLedger")
 	(title_block
-		(title "Radiation Tolerant PacSat Communication")
-		(date "2023-06-17")
-		(rev "A")
+		(title "AX5043 Receiver 1")
+		(date "2026-08-20")
+		(rev "4.0")
 		(company "AMSAT-NA")
-		(comment 1 "N5BRG")
+		(comment 1 "AE5KM")
+		(comment 2 "Copyright Corey Minyard, 2026")
+		(comment 3 "Licensed under CERN-OHL-W version 2")
 	)
 	(lib_symbols
 		(symbol "Device:C"
@@ -2108,17 +2110,6 @@
 			)
 			(embedded_fonts no)
 		)
-	)
-	(text "RECEIVER 1"
-		(exclude_from_sim no)
-		(at 336.55 247.65 0)
-		(effects
-			(font
-				(size 6.096 6.096)
-			)
-			(justify left bottom)
-		)
-		(uuid "7a49baa3-c998-48e7-a11c-1f4162a03212")
 	)
 	(text "The cover for this frame is 2118713-4\nand also needs to be ordered.  When access\nto the parts is no longer needed (or shake\nresistance is required) the 2118706-4 has\nthe same layout as a single unit.\n\nThis is the same for all shields on the\nAX5043 parts."
 		(exclude_from_sim no)

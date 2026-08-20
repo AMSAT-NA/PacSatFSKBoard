@@ -5,11 +5,13 @@
 	(uuid "9b0c2f5e-6565-40e7-a837-d96427ad5e3c")
 	(paper "USLedger")
 	(title_block
-		(title "Radiation Tolerant PacSat Communication")
-		(date "2023-06-17")
-		(rev "1.1")
+		(title "Main Processor")
+		(date "2026-08-20")
+		(rev "4.0")
 		(company "AMSAT-NA")
-		(comment 1 "N5BRG")
+		(comment 1 "AE5KM")
+		(comment 2 "Copyright Corey Minyard, 2026")
+		(comment 3 "Licensed under CERN-OHL-W version 2")
 	)
 	(lib_symbols
 		(symbol "Device:C"
@@ -4535,17 +4537,6 @@
 			)
 			(embedded_fonts no)
 		)
-	)
-	(text "Texas Instruments TMS570 CPU"
-		(exclude_from_sim no)
-		(at 334.01 245.11 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "0489001f-5a4b-4039-ba0e-43994deb0aca")
 	)
 	(text "RTCK"
 		(exclude_from_sim no)

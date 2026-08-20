@@ -4,6 +4,15 @@
 	(generator_version "10.0")
 	(uuid "014f7770-49e3-40ce-a0eb-23c472987035")
 	(paper "A4")
+	(title_block
+		(title "All AX5043 Radios")
+		(date "2026-08-20")
+		(rev "4.0")
+		(company "AMSAT-NA")
+		(comment 1 "AE5KM")
+		(comment 2 "Copyright Corey Minyard, 2026")
+		(comment 3 "Licensed under CERN-OHL-W version 2")
+	)
 	(lib_symbols)
 	(sheet
 		(at 105.41 31.75)

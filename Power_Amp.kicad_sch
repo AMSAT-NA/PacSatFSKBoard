@@ -5,11 +5,13 @@
 	(uuid "77033c27-9488-47ae-a83f-15c1a1e22b72")
 	(paper "USLedger")
 	(title_block
-		(title "Radiation Tolerant PacSat Communication")
-		(date "2023-06-17")
-		(rev "A")
+		(title "Transmit PA, Filters, and Power Measurement")
+		(date "2026-08-20")
+		(rev "4.0")
 		(company "AMSAT-NA")
-		(comment 1 "N5BRG")
+		(comment 1 "AE5KM")
+		(comment 2 "Copyright Corey Minyard, 2026")
+		(comment 3 "Licensed under CERN-OHL-W version 2")
 	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x02_Pin"
@@ -3010,17 +3012,6 @@
 			(justify right bottom)
 		)
 		(uuid "52ab3ac9-02f0-43fb-b561-2a7ab24888a9")
-	)
-	(text "RF POWER AMP"
-		(exclude_from_sim no)
-		(at 336.55 243.84 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "585a8a0e-b99b-4a79-9c1e-08bda73141aa")
 	)
 	(text "+20 dB"
 		(exclude_from_sim no)

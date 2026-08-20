@@ -5,11 +5,13 @@
 	(uuid "458dc11f-de4d-48ea-8815-d50a6c99c99e")
 	(paper "USLedger")
 	(title_block
-		(title "Radiation Tolerant PacSat Communication")
-		(date "2023-06-17")
-		(rev "A")
+		(title "USB interface for power, UARTs, and control")
+		(date "2026-08-20")
+		(rev "4.0")
 		(company "AMSAT-NA")
-		(comment 1 "N5BRG")
+		(comment 1 "AE5KM")
+		(comment 2 "Copyright Corey Minyard, 2026")
+		(comment 3 "Licensed under CERN-OHL-W version 2")
 	)
 	(lib_symbols
 		(symbol "Device:C"
@@ -3679,17 +3681,6 @@
 			)
 		)
 		(uuid "404ec1af-83f9-4be0-a64b-560e1cf84911")
-	)
-	(text "USB power and UART"
-		(exclude_from_sim no)
-		(at 336.55 246.38 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "4ff5bba1-3e05-4bf0-852a-0da09c96ce4a")
 	)
 	(text "This circuit turns on power from the USB power domain to the\nmain power in the circuit if GPIO9 is enabled on U44.  This\nalso prevents power from flowing backwards from the main power\nrails to the USB power.\n\nYou need two P-channel MOSFETS on each power rail to prevent\npower from flowing backwards through the diodes in the MOSFETS."
 		(exclude_from_sim no)

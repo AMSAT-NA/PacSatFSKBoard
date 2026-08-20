@@ -5,11 +5,13 @@
 	(uuid "9ec3701f-b0e9-4264-91c3-d011705a2e1e")
 	(paper "USLedger")
 	(title_block
-		(title "Radiation Tolerant PacSat Communication")
-		(date "2023-06-17")
-		(rev "1.1")
+		(title "Internal Bus Interfaces")
+		(date "2026-08-20")
+		(rev "4.0")
 		(company "AMSAT-NA")
-		(comment 1 "N5BRG")
+		(comment 1 "AE5KM")
+		(comment 2 "Copyright Corey Minyard, 2026")
+		(comment 3 "Licensed under CERN-OHL-W version 2")
 	)
 	(lib_symbols
 		(symbol "Device:C"
@@ -2407,17 +2409,6 @@
 			)
 		)
 		(uuid "6256b025-ed0e-4be5-a706-e056b3f0c57b")
-	)
-	(text "BUS IO"
-		(exclude_from_sim no)
-		(at 334.01 245.11 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "6f29d973-8e69-4d4f-877c-c1d0ae1793cc")
 	)
 	(text "MRAM 16 Mb 2Mx8"
 		(exclude_from_sim no)

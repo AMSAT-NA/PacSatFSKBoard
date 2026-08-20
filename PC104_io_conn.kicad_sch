@@ -5,11 +5,13 @@
 	(uuid "458dc11f-de4d-48ea-8815-d50a6c99c99e")
 	(paper "USLedger")
 	(title_block
-		(title "Radiation Tolerant PacSat Communication")
-		(date "2023-06-17")
-		(rev "A")
+		(title "PC104 Connectors")
+		(date "2026-08-20")
+		(rev "4.0")
 		(company "AMSAT-NA")
-		(comment 1 "N5BRG")
+		(comment 1 "AE5KM")
+		(comment 2 "Copyright Corey Minyard, 2026")
+		(comment 3 "Licensed under CERN-OHL-W version 2")
 	)
 	(lib_symbols
 		(symbol "Connector_Generic:Conn_02x26_Odd_Even"
@@ -2854,17 +2856,6 @@
 			)
 		)
 		(uuid "6f755389-d57e-41bb-b9f4-49123b835f91")
-	)
-	(text "PACSAT BOARD IO"
-		(exclude_from_sim no)
-		(at 332.74 245.11 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "747abccd-52b4-4027-8d37-43084c2cb215")
 	)
 	(text "This is to prevent\nlatch-up on this line.\nPerhaps paranoid, but\njust in case."
 		(exclude_from_sim no)

@@ -5,11 +5,13 @@
 	(uuid "77033c27-9488-47ae-a83f-15c1a1e22b72")
 	(paper "USLedger")
 	(title_block
-		(title "Radiation Tolerant PacSat Communication")
-		(date "2023-06-17")
-		(rev "A")
+		(title "AX5043 Receiver 3")
+		(date "2026-08-20")
+		(rev "4.0")
 		(company "AMSAT-NA")
-		(comment 1 "N5BRG")
+		(comment 1 "AE5KM")
+		(comment 2 "Copyright Corey Minyard, 2026")
+		(comment 3 "Licensed under CERN-OHL-W version 2")
 	)
 	(lib_symbols
 		(symbol "Device:C"
@@ -2108,17 +2110,6 @@
 			)
 			(embedded_fonts no)
 		)
-	)
-	(text "RECEIVER 3"
-		(exclude_from_sim no)
-		(at 339.09 247.65 0)
-		(effects
-			(font
-				(size 6.096 6.096)
-			)
-			(justify left bottom)
-		)
-		(uuid "293f283d-b85f-4c0a-9214-7e05d39330fa")
 	)
 	(text "RX3+"
 		(exclude_from_sim no)

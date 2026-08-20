@@ -4,6 +4,15 @@
 	(generator_version "10.0")
 	(uuid "3436dfbb-48cd-407c-a150-6157f57b99ca")
 	(paper "A4")
+	(title_block
+		(title "RF Input Swtich Controlled by Active Standby")
+		(date "2026-08-20")
+		(rev "4.0")
+		(company "AMSAT-NA")
+		(comment 1 "AE5KM")
+		(comment 2 "Copyright Corey Minyard, 2026")
+		(comment 3 "Licensed under CERN-OHL-W version 2")
+	)
 	(lib_symbols
 		(symbol "Device:L"
 			(pin_numbers

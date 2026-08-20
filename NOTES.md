@@ -9,6 +9,10 @@ some point.
 
 # TODO
 
+Run a GPIO from the USB chip so the main processor can know it's
+powered.  This is all part of the ABF/RBF line, which will need to be
+reworked as part of this.
+
 In the current design, if USB power is applied and main power is not,
 then about 4.2V leaks through U49 to the main power rails.  This is
 required to disable U50, and it doesn't really hurt anything, but it's

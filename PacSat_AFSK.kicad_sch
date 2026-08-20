@@ -5,11 +5,13 @@
 	(uuid "cc9f42d2-6985-41ac-acab-5ab7b01c5b38")
 	(paper "USLedger")
 	(title_block
-		(title "Radiation Tolerant Internal Housekeeping Unit (IHU)")
-		(date "2022-12-27")
-		(rev "1.2")
+		(title "PacSat Radio and Control Board")
+		(date "2026-08-20")
+		(rev "4.0")
 		(company "AMSAT-NA")
-		(comment 1 "N5BRG")
+		(comment 1 "AE5KM")
+		(comment 2 "Copyright Corey Minyard, 2026")
+		(comment 3 "Licensed under CERN-OHL-W version 2")
 	)
 	(lib_symbols
 		(symbol "Mechanical:Fiducial"

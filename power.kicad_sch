@@ -5,11 +5,13 @@
 	(uuid "a54b01d5-490d-40ce-a7db-3d426a7c4805")
 	(paper "USLedger")
 	(title_block
-		(title "Radiation Tolerant PacSat Communication")
-		(date "2023-06-17")
-		(rev "A")
+		(title "Power Conversion")
+		(date "2026-08-20")
+		(rev "4.0")
 		(company "AMSAT-NA")
-		(comment 1 "N5BRG")
+		(comment 1 "AE5KM")
+		(comment 2 "Copyright Corey Minyard, 2026")
+		(comment 3 "Licensed under CERN-OHL-W version 2")
 	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x02_Pin"
@@ -2606,17 +2608,6 @@
 			)
 		)
 		(uuid "c79d4c47-53a0-4ebc-ac49-4e23e11cf2fe")
-	)
-	(text "POWER"
-		(exclude_from_sim no)
-		(at 334.01 245.11 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "df31b3a4-22c0-4d54-bac3-8ba773c3bb7e")
 	)
 	(text "Place by the power converters."
 		(exclude_from_sim no)

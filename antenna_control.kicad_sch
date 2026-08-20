@@ -4,6 +4,15 @@
 	(generator_version "10.0")
 	(uuid "64c9edc8-48fe-44fe-9526-01008736d7da")
 	(paper "A4")
+	(title_block
+		(title "Processor for Interfaces to the Antenna Controller")
+		(date "2026-08-20")
+		(rev "4.0")
+		(company "AMSAT-NA")
+		(comment 1 "AE5KM")
+		(comment 2 "Copyright Corey Minyard, 2026")
+		(comment 3 "Licensed under CERN-OHL-W version 2")
+	)
 	(lib_symbols
 		(symbol "Device:C"
 			(pin_numbers
