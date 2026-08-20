@@ -241,9 +241,9 @@ not plugged in, it will not be powered, the USB power interface is
 designed to block power from flowing from the main power rails to the
 USB circuits.
 
-If USB is plugged in, can will provide power to the board through the
-USB interface.  This is controlled by GPIO9 on the USB chip, see the
-main USB section above for details.  It is off by default.
+If USB is plugged in, can provide power to the board through the USB
+interface.  This is controlled by GPIO9 on the USB chip, see the main
+USB section above for details.  It is off by default.
 
 You can power the board separately and use the USB section at the same
 time as long as you don't enable GPIO9 on the USB chip.
@@ -252,6 +252,20 @@ The 5V will experience some power drop due to the MOSFETs used to
 switch power on.  At 1A it will sag about .24V.  The 3.3V power is
 boosted a bit in the USB power converter and will range from 3.2V to
 3.4V.
+
+The design has one minor flaw.  If the USB is powered, then the 5V\_IN
+main power rail will have about 4.2-4.5V on it.  This is harmless, but
+annoying.  This is due to a feedback loop with the power going out of
+the 5V USB power MOSFETs going into the resistor that pulls the gates
+up and shuts off the power.  The voltage will be held right below the
+cutoff of the 5V MOSFET gates.  The 3.3V MOSFET gates will be shut
+off, their cutoff is in the 2.8V range, so it powers off the main
+circuitry on the board, but you will see the power LED and a few
+things will be powered.  If power is applied to the main rails from
+elsewhere, it will pull op the 5V MOSFET gates and shut them off, so
+it's safe to power both separately.  If a clever design to fix this
+can be found, it might be fixed, but nothing has been found to date
+that justifies the added complexity.
 
 # Heat Sink for the Power Amplifier
 

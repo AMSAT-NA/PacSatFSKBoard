@@ -553,9 +553,9 @@ that can do this.
 
 On version 3 boards, when powering from USB and GPIO9 is not enabled,
 some power leaks through on +5V.  This is expected and doesn't hurt
-anything.  +3.3V will not be powered, though, which is the main goal.
-On later boards, this is fixed an +5V will be off when GPIO9 is not
-enabled.
+anything (see the Design.md document for details).  +3.3V will not be
+powered, though, which is the main goal.  This may be fixes later if a
+suitable design can be found.
 
 When USB is not powered, the main 5V power will pull up the inputs to
 the MOSFETs, turning them off, thus not powering the USB section.

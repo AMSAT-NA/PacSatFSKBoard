@@ -9,14 +9,29 @@ some point.
 
 # TODO
 
-How far out does the USB-C connector need to come?  It's flush with
-the board edge now, but it could come out 1mm or so with the current
-connector, maybe farther with a new connector.  And where can it go?
-I'm not sure what is needed once the board is in the chassis and USB
-access is required.  Chris and I talked, and maybe look at a panel
-mount sort of thing?  Not much really exists for that, and it comes
-with outgassing issues.  Or maybe we do all the provisioning before
-it's in the pod?  We are going to need help on this.
+In the current design, if USB power is applied and main power is not,
+then about 4.2V leaks through U49 to the main power rails.  This is
+required to disable U50, and it doesn't really hurt anything, but it's
+not ideal, either.  You would really want the U49 and U50 gates pulled
+up by USB\_+5V, too.  But if you do that with just a resistor on both,
+the resistors become a power divider since the power rails will be low
+impedance to ground when unpowered.  If you put an ideal diode on
+USB\_+5V and the resistor between the ideal diode and U49, it might
+work, but it's the only solution I've found that might work besides a
+relay, and a relay is just too big and comes with other issues.  A
+real diode adds too much voltage drop.
+
+How is the USB-C connector going to get to the outside of the
+spacecraft?  It's flush with the board edge now, but it could come out
+1mm or so with the current connector, maybe farther with a new
+connector.  And where can it go?  I'm not sure what is needed once the
+board is in the chassis and USB access is required.  Chris and I
+talked, and maybe look at a panel mount sort of thing?  Not much
+really exists for that, and it comes with outgassing issues.  Or maybe
+we do all the provisioning before it's in the pod?  We are going to
+need help on this.  It appears that FoxPlus-A runs a cable to a
+panel-mount USB.  If so, we need to get those designs and use the same
+thing.
 
 Are the MMCX connectors suitable?  The current configuration is right
 angle pointing toward the slot in the board.  But maybe vertical
@@ -3682,3 +3697,17 @@ U51.  That way, the enable for U51 is pulled to 0 normally and that
 will Hi-Zn the device, letting R183 pull up the MOSFET gates and power
 them off.  When USB\_POWER is driven to 1, it will enable U51 and set
 the input to the MOSFETs to ground, enabling them.
+
+## 2026-08-19
+
+The USB power fix I proposed yesterday will not work.  It basically
+would covert it back to the way it worked before with just the MOSFET.
+You could put a diode on USB\_+5V, but I'd like to avoid the voltage
+drop on that would add.
+
+## 2026-08-20
+
+Just go back to the MOSFET controlled USB power control from the USB
+power rails to the main power rails.  There may be ways to fix this,
+but they are more complicated than justified for the minor
+inconvenience.
