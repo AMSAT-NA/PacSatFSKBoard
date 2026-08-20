@@ -4,6 +4,9 @@ PACSAT AFSK board.
 This document mostly describes internals to the board.  For information
 on external connections, see the ICD document.
 
+Copyright Corey Minyard, 2026
+Licensed under CC BY-SA 4.0
+
 # Getting the Design Ready to Build
 
 You deliver three basic components to the board manufacturer: A BOM

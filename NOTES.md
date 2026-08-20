@@ -1,6 +1,9 @@
 Notes on the AFSK Board
 =======================
 
+Copyright Corey Minyard, 2026
+Licensed under CC BY-SA 4.0
+
 This keeps track of history, general information, things that need to
 be done, and things that have been done.
 

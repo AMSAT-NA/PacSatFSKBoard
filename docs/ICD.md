@@ -1,6 +1,9 @@
 PacSat AFSK Board Interface Control Document
 ============================================
 
+Copyright Corey Minyard, 2026
+Licensed under CC BY-SA 4.0
+
 March 10, 2026
 Revision: 0.2
 
