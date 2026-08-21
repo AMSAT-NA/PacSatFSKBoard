@@ -4926,7 +4926,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005da5102b")
 		(property "Reference" "R30"
-			(at 86.36 227.33 0)
+			(at 85.598 227.203 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4937,7 +4937,7 @@
 			)
 		)
 		(property "Value" "10KΩ"
-			(at 86.36 229.235 0)
+			(at 85.598 229.108 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5873,7 +5873,7 @@
 			)
 		)
 		(property "Value" "2.2KΩ"
-			(at 90.17 241.3 90)
+			(at 83.82 245.364 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6757,7 +6757,7 @@
 		(dnp no)
 		(uuid "6fe9de48-b281-4836-9208-7a615c2619aa")
 		(property "Reference" "R76"
-			(at 93.98 232.41 0)
+			(at 96.774 232.664 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6768,7 +6768,7 @@
 			)
 		)
 		(property "Value" "0Ω"
-			(at 95.885 232.41 0)
+			(at 96.266 237.49 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8331,7 +8331,7 @@
 		(dnp yes)
 		(uuid "e6bee123-70d6-4976-a45b-a35d76bf96e6")
 		(property "Reference" "R161"
-			(at 101.6 226.06 0)
+			(at 102.362 225.806 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8342,7 +8342,7 @@
 			)
 		)
 		(property "Value" "0Ω"
-			(at 101.6 224.155 0)
+			(at 102.362 223.901 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

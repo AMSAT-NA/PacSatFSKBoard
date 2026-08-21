@@ -964,7 +964,16 @@ configuration.  These are:
   - RF\_SWITCH\_EN - Removing the resistor R105 to +3.3VAL will
     disable all the RF switches into high impedance mode.  Then the
     zero ohm resistors to bypass the switches, R107 and R96 must be
-    added.
+    added.  R109 should also be removed in this case to avoid the
+	extra load on ACTIVE\_N.  You might possible have to remove U34,
+	too, if just pulling the EN line down doesn't put the QPC8010
+	into a high impedance state like powering it off does.  Or
+	remove the QPC8010, too.
+	
+	Just pulling off R109 will put the switches into permanent
+	connections between RF1 and ANT, so just making that change is
+	really enough.  You could add R107 and R96 in this case for a
+	lower impedance path, too.
 
 In addition, for simplex, or if each board in a two-board set has its
 own antenna connections or antennas, all the chips and resistors on

@@ -258,6 +258,19 @@ resistors can connect the few lines required for operation.
 board2 does not have the RF portion (TX/RX Switch) of this populated
 (or has it disabled and bypassed).  Board 1 does All TX/RX switching.
 
+Boards operate in one of three configurations:
+
+Board 0 - A board goes into this configuration if another board is not
+present (OTHER\_PRESENCE\_N is not asserted), whether it is configured
+as board 1 or board 2.
+
+Board 1 - If another board is present and R91 is not present.
+
+Board 2 - If another board is present and R91 is present.
+
+Boards by default are board 1.  Using a board as board 2 requires some
+changes to the RF switch section.  See below for details.
+
 ### TX Switch
 
 The TX switch switches the TX antenna between board1 and board2.  It
@@ -274,23 +287,54 @@ it's RX sent to 50 ohms.  The ACTIVE1\_N lines controls the switch, so
 that the antenna hooks to board 1 when active, and board 2 when
 inactive.
 
+### Board 2 Configuration
+
+Besides adding R91, as mentioned before, you must at least remove R109
+to permanently hook the PA on board 2 to the main antenna output.  The
+antenna output is then switched on board 1 between the two boards.
+
+To reduce the impedance from the RF switch, you can install R96 and
+R107 to bypass the switch.
+
+You can optionally remove all hardware dealing with switching: U34,
+U33, C141, C111, R105, R106, R109, R128, and U31.
+
+### Board 0 Optimizations
+
+If you are using the board stand-alone, you can gain .2dB or so on the
+RF inputs and outputs by eliminating the switch in the same way that
+board 2 does above.
+
+When operating as board 0 you can use some of the control lines used for
+active/standby switching for other purposes.  With R91 not present the
+FAULT2, PRESENCE2\_N, and ACTIVE2\_N can be used as inputs; ACTIVE1\_N
+and HW\_POWER\_OFF2\_N can be used as outputs.  In this case the
+outputs and ACTIVE2\_N input are CMOS latchup protected.
+
+If none of this is needed, most of the parts on the "Active Standby
+Switching Logic" schematic page can be removed.  The only required
+parts are R93 and R95.  If you want an external board to be able to
+power down this board, you can add R118 and HW\_POWER\_OFF1\_N can be
+used for this purpose.
+
+If you remove U24 and U30, individual lines across those chips could
+be jumpered, too.
+
 ## Antenna Control
 
 A small microprocessor, the antenna control processor (ACP), sits on a
 SPI bus connected to the main CPU.  It's primary purpose is antenna
 control.  It has two I2C busses that come out of J7, along with power
 and ground.  The power for the external antenna board is powered from
-3.3V_p and may be turned on and off.
+3.3V_p to the power lines on J7 and may be turned on and off.
 
-The I2C pullup is done in the ACP, but this can be disabled in
-software if the termination if the other end pulls up the signal.  In
-addition, DNP resistors (R147, R151, R152, and R152) are in place to
-add terminations if the internal pullups are insufficient.  See
-https://www.ti.com/lit/an/slva689/slva689.pdf for details on setting
-these resistors.
+Resistors (R147, R151, R152, and R152) are in place to add pullups to
+the I2C lines.  See https://www.ti.com/lit/an/slva689/slva689.pdf for
+details on setting these resistors.  These can be modified or removed
+based upon 
 
 There is also an ADC controller connected to this processor that has
-a separate 1.27mm header hooked to it.
+a separate connector, J10, for those outputs.
 
 # System Interfaces Description
 
@@ -427,6 +471,15 @@ installed across pins 4 and 5 of the U32 and U38 pads, if necessary.
 The main CPU will have to communicate with the antenna control
 processor for I2C, but it's do-able.
 
+### Serial
+
+The LIN serial device on the TMS570 processor is run to PC104\_TX2 and
+PC104\_RX2.
+
+Like I2C, These can be removed from the PC104 connector with
+PC104\_SER\_EN for supporting other uses for those pins or
+active/standby on the serial port.
+
 ### GPIOs and ADC
 
 Four GPIOs rum from the CPU to the PC104 connectors.  They can all be
@@ -508,9 +561,7 @@ CANB+, CANB- - Remove U22, R89, and R90
 
 CANA+, CANA- - Remove U14, R50, and R51
 
-PC104\_I2C\_SDA - Remove U32
-
-PC104\_I2C\_SCL - Remove U38
+PC104\_I2C\_SDA, PC104\_I2C\_SCL - Remove U32
 
 PC104\_ADC1 - Remove R141
 
@@ -524,23 +575,15 @@ PC104\_ABF0 - Remove R148
 
 PC104\_GPIO4 - Remove R150
 
-PC104\_GPIO5 - Remove R161
-
-PC104\_GPIO6 - Remove R158
-
 PC104\_GPIO7 - Remove R160
 
 PC104\_GPIO8 - Remove R159
 
-PC104\_TX2 - Remove U39
-
-PC104\_RX2 - Remove U40
+PC104\_TX2, PC104\_RX2 - Remove U38
 
 PC104\_PA\_DISABLE\_N - Remove R125
 
-PC104\_\_N - Remove R134
-
-PC104\_UNBILICAL2\_N - Remove U41
+PC104\_FULL\_DISABLE\_N - Remove R134
 
 VBAT\_p - Remove R126
 
@@ -593,7 +636,7 @@ should be added to access the USB connector.
 
 ## Antenna Control
 
-The antenna control connector is a Harwin G125-MH11005L1P 10-pin
+The antenna control connector J7 is a Harwin G125-MH11005L1P 10-pin
 connector, a 1.25mm male pitch latch connector.  It would mate with a
 G125-2041096L0 housing, with something like a G125-FC11005L0-0150F
 cable, or equivalent.  Harwin has several cable assemblies with 5+5
@@ -630,8 +673,8 @@ configurations may be possible.
 
 ## Extra ADC
 
-Another Harwin G125-MH11005L1P 10-pin connector is available on the
-bottom left of the board.  It has 5 ADC connections on pins 6-10.
+Another Harwin G125-MH11005L1P 10-pin connector, J10, is available on
+the bottom left of the board.  It has 5 ADC connections on pins 6-10.
 These each have a 4.7K pullup resistor on them.  Pins 1-5 are
 connected to ground through individual zero ohm resistors.
 

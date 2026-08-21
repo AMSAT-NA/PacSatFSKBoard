@@ -12,6 +12,15 @@ some point.
 
 # TODO
 
+Remove (or DNP) R101 and R108 and change R82 to 10K.
+
+Perhaps remove the 1.2V current limiter and generate 1.2V from the
+current-limited 3.3V bus.  That would remove an (unproven) current
+limiter.  Might have to raise the current limit on 3.3V if we do this.
+
+What do we do with LEDs?  Do we DNP them or remove them before flight?
+I'm guessing we don't want them on a flight board.
+
 Run a GPIO from the USB chip so the main processor can know it's
 powered.  This is all part of the ABF/RBF line, which will need to be
 reworked as part of this.

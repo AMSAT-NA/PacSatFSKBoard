@@ -2349,7 +2349,7 @@
 		)
 		(uuid "201312da-a58e-40dc-89bf-762874ee7c10")
 	)
-	(text "This RF switch setup handles TX active/standby.\nOn board 1 the zero ohm resistor is not populated.  On board 2\nor on simplex boards none of the switch circuitry is\npopulated (or the resistor to the left is removed to disable\nthe switches) and only the zero ohm resistor is populated."
+	(text "This RF switch setup handles TX active/standby.\nOn board 1 the zero ohm resistor is not populated.  On board 2\nor on simplex boards none of the switch circuitry is\npopulated (or the resistor to the left is removed to disable\nthe switches) and only the zero ohm resistor is populated.\nR109 should also be removed in this case."
 		(exclude_from_sim no)
 		(at 69.342 180.086 0)
 		(effects
