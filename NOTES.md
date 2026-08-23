@@ -204,6 +204,76 @@ be necessary.
 Determine current limiter values, probably need to build a board and
 measure.
 
+## PA Options
+
+Looking at different PAs, there's not a lot of options out there.
+Here are some PA modules:
+
+* TQP7M9106 - What's in there now.  It's working ok, I'm able to get
+  32dBm out of the PA with the current limiter at 640ma.  Increasing
+  the current limit and bias voltage would almost certainly get it to
+  33dBm.  Efficiency is around 50% in my measurements.  With a proper
+  tank circuit and PI filter on the output it might be better at class
+  C; that would require experimenting.
+
+  A couple of threads on the support forum show issues with getting
+  full power and amplification at lower frequencies:
+  https://forum.qorvo.com/t/tqp7m9106-qorvo-support-request-for-lower-gain/23170
+  https://forum.qorvo.com/t/tqp7m9106-output-power-at-200mhz/25688
+  though I'm getting better than this.  It's not easy to use this part
+  at this frequency, it appears, but it can be done.
+
+  Gain - 20dB
+  Max VSWR - 10:1
+  Op Temp Range: -40C - +85C
+
+* GRF5112 - This puts out 32dBm at P1dB, though it looks a little
+  better at 450MHz.  There is a 450MHz tune for this that has 31dBm of
+  output so it might be feasible.  A tweaked tune might even be
+  better.  It has a higher maximum operating temperature, which is a
+  plus.
+
+  Gain - 17dB (though demonstrated 21.6dB with the 450MHz tune)
+  Max VSWR - Appear to be 8:1, but it's not really easy to tell.
+  Op Temp Range: -40C - +105C
+
+* GRF5115 - This part is similar to the GRF5112.  It has a slightly higher
+  OP1dB, but see the video from the main tech person at Guerilla RF:
+  https://youtu.be/d5ELEUsyElo?si=Dn5yrjmjZ8OO749c
+  From that and our requirements it appears the GRF5112 is a better match.
+
+  Gain - 14.8dB (though demonstrated 22.2dB with the 450MHz tune)
+  Max VSWR - ?
+  Op Temp Range: -40C - +85C
+
+* GRF5604 - This has a lot of gain (37dB) and the efficiency at lower
+  power is poor.  It's probably not a good choice, the efficiency is
+  30% at 32dBm for the 460MHz tune.
+
+  Gain - 37dB
+  Max VSWR - ?
+  Op Temp Range: -40C - +85C
+
+* GRF5504 - This has a lot of gain (41dB) and the efficiency at lower
+  power is poor.  Like the GRF5604 it's probably not a good choice,
+  again, still only 30% efficient at 32dBm.
+
+  Gain - 41dB
+  Max VSWR - TBD
+  Op Temp Range: -40C - +85C
+
+And a couple of transistors that could be more effectively used at
+class C.  At class AB it's likely the above parts are more efficient
+and easier to use.
+
+* Mitsubishi RD04LUS2 — 527MHz, 4W (36dBm) typ at 3.6V, VDSS rated to
+  25V so there's real headroom to run it at 5V for more margin.
+
+* Mitsubishi RD07MUS2B — 7.2V nominal, 7W (38.5dBm). Mitsubishi's own
+  published application note (AN-UHF-098) shows 7W out, 12.5dB gain, 66%
+  efficiency at 450–527MHz, and a second note (AN-UHF-097) covers
+  400–470MHz directly.
+
 ## Suggestions From Bob
 
 I would suggest sweeping the frequency through the filter bandpass and
