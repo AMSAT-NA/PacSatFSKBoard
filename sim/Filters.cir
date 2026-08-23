@@ -27,6 +27,9 @@ R0	b0	0	10K
 * 5th order, shunt first, 480MHz cutoff, .10db ripple in passband, 50
 * ohm input, 50 ohm output impedance, 50dB stopband attenuation.
 *
+* This is around -62dB at the 870MHz, -40dB at the third harmonic.
+* It has less than 1dB of loss over the full chain, including the
+* match.
 
 * I looked at using a 3rd order or 4th order filter, but 3rd order
 * only supplies -11dB at the first harmonic.  4th order was -22dB.
@@ -43,22 +46,26 @@ L2	in	a1	20.4n
 Rl2	a1	a2	0.99
 Cl2	in	a2	.048p
 * 735f
-* .75pF, add .25 for parasitics
-C2	in	a2	1p
+* .75pF, parasitics to ground are accounted for in C1
+* Note that this capacitor has a strong influence on the notch at
+* around the 3rd harmonic.
+C2	in	a2	.6p
 
 * 11.35p
 * Use a 11p cap, add .3p for parasitics
 C3	a2	0	11.3p
 
 * 17.22n
-* Murata LQW15AN17NG8ZD 17nF, Q=46@439MHz, SRF=5G
+* Coilcraft 0402DC-16NX_RW, Q=48@435MHz, SRF=5G
 * Add .4nH for parasitics
 L4	a2	a3	16.4n
 Rl4	a3	out1	1.01
 Cl4	a2	out1	.059p
+
 * 2.07p
-* 2.0p, add .3p for parasitics
-C4	a2	out1	2.3p
+* 2.2p, parasitics to ground are accounted for in C5
+* Strong influence on output impedance.
+C4	a2	out1	2.2p
 
 * 5.94p
 * Use a 5.4p cap, add .3p for parasitics
@@ -70,65 +77,64 @@ Rm	out1	out	0
 .endif
 
 .if (0)
-* 480MHz lowpass filter as above, but series first.
-L1	in	a1a	18n
-Rl1	a1a	a1	1.13
+* This is a 3rd order PI filter, based on the equations from:
+* https://www.rfcandy.biz/communication/pa313.html
+* This does not need an impedance match, it has a 4.63 ohm input
+* impedance.
+* It does not perform very well, only -20dB at 870MHz and -35dB
+* at 1340MHz.
 
-C1	a1	a1b	8p
-L2	a1b	0	1.8n
+* F = 435MHz, bw=100MHz, Rin = 4.63  Rout = 50
+* Q = 435e6 / 100e6 = 4.35
+* Xc1 = 50 / 4.35 = 11.49
+* Xc2 = 4.64 * sqrt((50 / 4.63) / ((4.35 ** 2 + 1) - (50 / 4.63))) = 5.048
+* Xl1 = (4.35 * 50 + ((4.63 * 50) / 5)) / (4.35 ** 2 + 1)) = 13.24
+* C1 = 1 / (2 * pi * 435e6 * 11.5) = 31.8e-12
+* C2 = 1 / (2 * pi * 435e6 * 5) = 73.2e-12
+* L1 = 13.24 / (2 * pi * 435e6) = 4.84e-09
 
-L3	a1	a2a	28n
-Rl3	a2a	a2	2
+C2	in	0	73p
 
-C2	a2	a2b	7p
-L4	a2b	0	5n
+L1	in	a1	5n
+Rl1	a1	out	0.3
+Cl1	in	out	.048p
 
-L5	a2	out1	15n
-Rl5	out1	out	1
+C1	out	0	32p
 .endif
 
 .if (0)
-* 400-480MHz bandpass filter 3rd order, series first.
-* This might supply a high input impedance at 145MHz, but it's extremely sensitive
-* to the C1 and C4 values.  It does perform as well, maybe better, than the normal
-* filter.
-C1	in	a1	1.3pf
-L1	a1	a1a	100n
-Rl1	a1a	a2	1.6
+* Convert the above PI filter into a 5th order by tacking on a
+* 50 ohm input/output section.
+* It doesn't perform as well as the elliptical filter on the 2nd harmonic,
+* -42dB at 870MHz.  Better at third harmonic -67dB at 1340MHz.
+* It has 1.3dB of loss at 435MHz, so worse than the elliptic.
 
-C2	a2	a2a	14p
-L2	a2a	0	3.5n
+* F = 435MHz, bw=100MHz, Rin = 50  Rout = 50
+* Xc3 = 50 / 4.35 = 11.49
+* Xc4 = 50 * sqrt((50 / 50) / ((4.35 ** 2 + 1) - (50 / 50))) = 11.49
+* Xl2 = (4.35 * 50 + ((50 * 50) / 11.5)) / (4.35 ** 2 + 1)= 21.83
+* C3 = 1 / (2 * pi * 435e6 * 11.5) = 31.8e-12
+* C4 = 1 / (2 * pi * 435e6 * 11.5) = 31.8e-12
+* L2 = 21.83 / (2 * pi * 435e6) = 7.99e-9
 
-C3	a2	a2b	38p
-L3	a2b	0	10n
+.if (1)
+C2	in	0	73p
 
-C4	a2	a3	1.3pf
-L4	a3	a3a	100n
-Rl4	a3a	out	1.6
+L1	in	a1	5n
+Rl1	a1	s1	0.3
+Cl1	in	s1	.048p
+
+C1	s1	0	32p
+
+C4	s1	0	32p
+
+L2	s1	a2	8n
+Rl2	a2	out	0.3
+Cl2	s1	out	.048p
+
+C3	out	0	32p
 .endif
 
-.if (0)
-* This is a 3rd-order Chebyshev followed by a 3rd order elliptic.
-* It performs very similar to the above filter.  Not quite as much
-* stop band, though.  Interesting experiment.
-C1	in	0	6.8p
-
-L2	in	a1	19n
-Rl2	a1	a2	1.13
-Cl2	in	a2	.048p
-* 735f
-C2	in	a2	1.0p
-
-C3a	a2	0	6.8p
-
-C3b	a2	0	6.7p
-
-L4	a2	a3	18.5n
-Rl4	a3	out	1.01
-Cl4	a2	out	.059p
-C4	a2	out	1.18p
-
-C5	out	0	6.7p
 .endif
 
 .ENDS

@@ -1331,16 +1331,6 @@
 	)
 	(text "Pullup in CPU."
 		(exclude_from_sim no)
-		(at 231.14 139.7 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-		)
-		(uuid "b41f8c6e-d6b9-4ca2-bf8a-83a8b88fdfe6")
-	)
-	(text "Pullup in CPU."
-		(exclude_from_sim no)
 		(at 205.232 118.11 0)
 		(effects
 			(font
@@ -1416,12 +1406,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "589e5385-4dcb-4f51-a3fd-825f5365b158")
-	)
-	(junction
-		(at 194.31 148.59)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "66f57403-3988-467b-b94c-feec0960f96a")
 	)
 	(junction
 		(at 63.5 69.85)
@@ -1521,7 +1505,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 148.59) (xy 110.49 148.59)
+			(xy 110.49 148.59) (xy 168.91 148.59)
 		)
 		(stroke
 			(width 0)
@@ -1901,7 +1885,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 144.78) (xy 194.31 148.59)
+			(xy 168.91 146.05) (xy 168.91 148.59)
 		)
 		(stroke
 			(width 0)
@@ -2341,16 +2325,6 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 148.59) (xy 196.85 148.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bdf6dc41-2b7f-4125-aeb9-42b8ac3c514d")
-	)
-	(wire
-		(pts
 			(xy 128.27 36.83) (xy 128.27 43.18)
 		)
 		(stroke
@@ -2428,26 +2402,6 @@
 			(type default)
 		)
 		(uuid "ce2a1954-0152-4ec0-92db-21c3b8207906")
-	)
-	(wire
-		(pts
-			(xy 204.47 143.51) (xy 204.47 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d13a37e6-b0ab-40b9-9315-119b3ac877ba")
-	)
-	(wire
-		(pts
-			(xy 204.47 142.24) (xy 218.44 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d25016c3-6d8f-4339-ab2e-470046e88bbe")
 	)
 	(wire
 		(pts
@@ -2571,16 +2525,6 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 153.67) (xy 204.47 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e3b9c942-e5d5-4d5a-9849-b580059784ab")
-	)
-	(wire
-		(pts
 			(xy 124.46 173.99) (xy 124.46 140.97)
 		)
 		(stroke
@@ -2701,16 +2645,6 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 148.59) (xy 194.31 148.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f73abb79-fc1c-4f25-9842-b59f983a33cb")
-	)
-	(wire
-		(pts
 			(xy 187.96 68.58) (xy 187.96 71.12)
 		)
 		(stroke
@@ -2731,7 +2665,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 134.62) (xy 194.31 137.16)
+			(xy 168.91 135.89) (xy 168.91 138.43)
 		)
 		(stroke
 			(width 0)
@@ -2750,7 +2684,7 @@
 		(uuid "fec91596-3d26-4c64-872b-df420dc38db4")
 	)
 	(label "OTHER_HW_POWER_OFF_N"
-		(at 139.7 148.59 0)
+		(at 128.27 148.59 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -3063,30 +2997,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-			)
-		)
-	)
-	(global_label "OTHER_HW_POWER_ST"
-		(shape input)
-		(at 218.44 142.24 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left)
-		)
-		(uuid "8b214da6-f1b2-4691-a76d-ac9526081d9b")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 245.6933 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 	)
@@ -3741,82 +3651,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 204.47 156.21 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "349a96e3-94cb-48f6-bc49-d1a67de3470d")
-		(property "Reference" "#PWR0268"
-			(at 204.47 162.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 208.28 157.988 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 204.47 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 204.47 156.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 204.47 156.21 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e0475537-ba8c-4fa8-83f3-8cf80836cc12")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/4fa888af-703c-49ed-93bb-d56d2f02c470"
-					(reference "#PWR0268")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 149.86 26.67 0)
 		(unit 1)
@@ -3898,18 +3732,18 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 194.31 140.97 0)
+		(at 168.91 142.24 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "41dd5b2e-4b78-4866-937a-9a7869a4dc70")
 		(property "Reference" "R133"
-			(at 192.532 139.8016 0)
+			(at 167.132 141.0716 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3919,8 +3753,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1MΩ"
-			(at 192.532 142.113 0)
+		(property "Value" "10KΩ"
+			(at 167.132 143.383 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3931,7 +3765,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 196.088 140.97 90)
+			(at 170.688 142.24 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3942,7 +3776,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 194.31 140.97 0)
+			(at 168.91 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3953,7 +3787,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 194.31 140.97 0)
+			(at 168.91 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5101,95 +4935,8 @@
 		)
 	)
 	(symbol
-		(lib_id "PACSAT_DEV_misc:2N7002TQ-7-F")
-		(at 201.93 148.59 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "993f48a7-e140-4fb3-914b-951088e80451")
-		(property "Reference" "Q9"
-			(at 206.248 143.51 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "2N7002TQ-7-F"
-			(at 205.994 145.288 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-523"
-			(at 207.01 150.495 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/2N7002TQ.pdf"
-			(at 207.01 152.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Description" "MOSFET N-CH 60V 115MA SOT523"
-			(at 201.93 148.59 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "47623973-663c-44bc-a305-320df3afd1e9")
-		)
-		(pin "3"
-			(uuid "ac2d4470-b8cd-45c3-a67c-daf7f3ccaf96")
-		)
-		(pin "1"
-			(uuid "2166eaff-8eeb-442d-87b5-befb13ea312d")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/4fa888af-703c-49ed-93bb-d56d2f02c470"
-					(reference "Q9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3.3V")
-		(at 194.31 134.62 0)
+		(at 168.91 135.89 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5200,7 +4947,7 @@
 		(fields_autoplaced yes)
 		(uuid "9cb46601-f360-4c89-82e6-ac73557959ed")
 		(property "Reference" "#PWR0294"
-			(at 194.31 138.43 0)
+			(at 168.91 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5211,7 +4958,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 194.31 129.54 0)
+			(at 168.91 130.81 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5221,7 +4968,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 194.31 134.62 0)
+			(at 168.91 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5232,7 +4979,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 194.31 134.62 0)
+			(at 168.91 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5243,7 +4990,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 194.31 134.62 0)
+			(at 168.91 135.89 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

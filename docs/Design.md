@@ -84,7 +84,8 @@ set it to 9600N81.
 
 Click on CapSense/BCD/GPIO and click on "Configure" by "Unused GPIO's
 drive mode".  GPIOs 2, 3, 4, and 9 should all be set to "Drive 0".
-The rest should be tristate.
+GPIO 0 should be set to "Drive 1" (this is the umbilical attached
+line). The rest should be tristate.
 
 The GPIO pins on the USB device can be controlled with the cygpio
 command in the hostutils/linux directory in the PacSatSw repository.
@@ -489,6 +490,9 @@ The version 4 boards have the bootstrap load invoke lines run to the
 USB chip to allow the USB chip to invoke a bootstrap without having to
 do anything physical to the board.
 
+The version 4 board has UMBILICAL\_ATTACHED where OTHER\_HW\_POWER\_ST
+was.  This lets you know if the USB chip is powered.
+
 # IO Connections on the PacSat AFSK processor
 
 These are the pins on the TMS570 processor, where they go, what they
@@ -508,7 +512,7 @@ used as a GPIO.
 |3		|MIBSPI3NCS[3]			|I2C\_SCL				|OU|RTC control (MAX31331TETB+) |
 |4		|MIBSPI3NCS[2]			|I2C\_SDA				|BU|RTC control (MAX31331TETB+) |
 |5		|GIOA[1]				|AX5043\_IRQ\_RX1		|ID|Interrupt from AX5043 RX1 |
-|6		|N2HET1[11]				|OTHER\_HW\_POWER\_ST   |ID|Power off state for the other board |
+|6		|N2HET1[11]				|UMBILICAL\_ATTACHED    |ID|USB power is applied|
 |7		|FLTP1					|						|  | |
 |8		|FLTP2					|						|  | |
 |9		|GIOA[2]				|ANT\_IRQ\_N			|ID|Interrupt from the antenna control chip |

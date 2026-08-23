@@ -21,9 +21,12 @@ limiter.  Might have to raise the current limit on 3.3V if we do this.
 What do we do with LEDs?  Do we DNP them or remove them before flight?
 I'm guessing we don't want them on a flight board.
 
-Run a GPIO from the USB chip so the main processor can know it's
-powered.  This is all part of the ABF/RBF line, which will need to be
-reworked as part of this.
+Run a GPIO from the USB chip (through a MOSFET) so the main processor
+can know it's powered from USB.  Is this part of the ABF/RBF line,
+which will need to be reworked as part of this?  Or do we need a
+separate UMBILICAL\_ATTACHED line like other satellites?  If we need
+another line, the value of OTHER\_HW\_POWER\_ST is dubious, it could
+be changed to be a more useful purpose.
 
 In the current design, if USB power is applied and main power is not,
 then about 4.2V leaks through U49 to the main power rails.  This is
@@ -3727,3 +3730,8 @@ Just go back to the MOSFET controlled USB power control from the USB
 power rails to the main power rails.  There may be ways to fix this,
 but they are more complicated than justified for the minor
 inconvenience.
+
+## 2026-08-21
+
+OTHER\_HW\_POWER\_ST is not UMBILICAL\_ATTACHED to know if the USB
+chip is powered.
