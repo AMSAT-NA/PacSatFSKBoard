@@ -217,7 +217,7 @@ value_to_partnum_xlats_2 = {
     ('22uF 16V',	'1206'): ('Murata',	'GCM31CC71C226ME36K'),
     ('47uF 10V',	'1206'): ('Murata',	'GRT31CR61A476KE13L'),
 
-    ('0.5pF ±.1 30V',	'0402'): ('Murata',	'GCM1555C1HR50WA16D'),
+    ('0.6pF ±.1 30V',	'0402'): ('Murata',	'GCM1555C1HR60WA16D'),
     ('1pF ±.05',  	'0402'): ('Murata',	'GCQ1555C1H1R0WB01D'),
     ('2.0pF ±.05 30V',	'0402'): ('Murata',	'GCQ1555C1H2R0WB01D'),
     ('4.3pF 1%',	'0402'): ('Murata',	'GCQ1555C1H4R3BB01D'),
