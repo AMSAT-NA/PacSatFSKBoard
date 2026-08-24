@@ -79,6 +79,9 @@ bandwidth of 100MHz, R2 = 4.63, and R1 = 50
 Note if using as a PA output filter you must subtract the
 collector-emitter (or equivalent) capacitance from C2.
 
+If there is input or output reactance, it can be canceled with an
+input or output capacitor/inductor.
+
 Use the same impedances but reverse the capacitors and inductors to
 make a low pass filters.
 
@@ -88,4 +91,165 @@ the input and output resistances $R_1$ and $R_2$ be the same all the
 filters but one, usually 50 ohms.  Then the equation for C2 simplifies
 and $X_{C2} = X_{C1}$.  Note that combining filters can cause odd
 resonances outside the filtered area in the semi-passband.
+
+\section{Input Filter}
+
+The above web page also had an input matching/filter.  This is a
+separate problem, and matching can be done differently, but I'm just
+grabbing this info for later.
+
+Figure \ref{InputFilter} shows a circuit diagram for a the input filter
+where R2 is the input resistance and R1 is input resistance of the
+transistor.
+\begin{figure}[ht]
+  \caption{Input Filter}\label{InputFilter}
+  \begin{center}
+  \includesvg[scale=.25]{InputFilter}
+  \end{center}
+\end{figure}
+
+To calculate the values for an input filter, the first thing you need
+to calculate is the Q of the filter, which is:
+\begin{dmath}
+  Q = \frac{f_0}{BW}
+\end{dmath}
+\begin{dmath}
+  X_L = Q R_1
+\end{dmath}
+\begin{dmath}
+  X_{C1} = R_2 \sqrt{\frac{R_1}{R_2}(1 + Q^2) - 1}
+\end{dmath}
+\begin{dmath}
+  X_{C2} = \frac{R_1(1 + Q^2)}{Q - \sqrt{\frac{R_1}{R_2}(1 + Q^2) - 1}}
+\end{dmath}
+
+If the input or output has reactance, that can be compensated for with
+adjusting the input or output reactances.
+
+\section{Collector choke inductance}
+
+(Much text taken from the web page.)
+
+The last part we have to discuss is the inductor at the collector of
+the transistor.  This inductor has nothing to do with filtering
+purpose. The inductor acts as a energy storage for the output filter
+during the time the transistor is OFF. Take a look at Figure
+\ref{PAOutInductor} and I will explain.
+\begin{figure}[ht]
+  \caption{PA Output Inductor}\label{PAOutInductor}
+  \begin{center}
+  \includesvg[scale=.25]{PAOutInductor}
+  \end{center}
+\end{figure}
+
+The transistor works in two state, ON and OFF.  When the transistor is
+ON, the transistor will sink current Ic to ground. Ic = I1 + I2.
+
+When a current flow through an inductor (L) a magnetic energy filed
+starts to built up around the windings.  The amount of energy is
+dependent on the current I1 and the inductance of L.
+
+When the transistor goes into the next phase which is OFF the current
+Ic disappear.  The magnetic field in the inductor (L) will now start
+to collapse and induce a current I1 which will flow into the
+pi-filter. I2 flows in opposite direction and is equal to I1.  As time
+goes on, the current drops and so will the voltage at the collector of
+the transistor.  When the transistor is about to go back into ON
+phase, the energy level in the inductor (L) should be close to
+zero. This means the current I1 is close to zero and so will the
+voltage at the collector also be.
+
+What happens if we use a too large or too small collector inductor
+(L)?  If we use a very large inductor (L), the transistor current will
+charge it with to much energy during the ON phase. The conventional
+designs of PA often use large inductor (choke), because you will then
+have the inductor working as a energy "fly-wheel" delivering energy to
+the pi-filter while the transistor is OFF stage.  This is why you
+often see the collector inductor labelled as choke, (no value of
+inductance).  It will work and is simple, but it is actually not the
+best solution.
+
+Why?
+
+Since the inductor (L) still have lot of spare energy when the
+transistor is about to go into ON phase, the current I1 will still be
+high and so will the voltage at the collector also be. When the
+transistor enters ON phase it will drag this voltage down to zero and
+this "discharge" will create high current in the transistor causing a
+spike of power dissipation. Remember, there is one ON transition, and
+one OFF transition every cycle of the RF wave.  This will happened 100
+million times/second so the transistor will have to work harder and
+become warmer.
+
+If we use a too small inductor (L), we will not have enough energy to
+the following pi-filter and the collector voltage will swing to a
+negative voltage - an undesirable state.
+
+If we choose the inductor (L) value carefully, the collector voltage
+can swing right down to zero at the moment of transistor turn-ON.
+This is exactly what is needed to practically eliminate the power
+dissipation spike at the ON transition. This single change can
+significantly boost efficiency.  Take a look at the simulation below
+and you will see the difference more clearly.
+
+The upside of choosing correct inductor (L) is that you get higher
+efficiency of the transmitter and your transistor will run much
+cooler. The peak collector current will be larger too. Peak collector
+current is larger because while ON, the transistor builds extra
+current through the small inductor (L). This current is dumped into
+the pi-filter (during the OFF phase) and must be replenished during
+the next ON period. The result is that the filter sees a larger swing,
+which translates to slightly larger output RF power. So you can see
+that the extra voltage and current that the transistor encounters is
+not wasted.
+
+With a small choke, collector voltage has a higher, narrower
+peak. This tends to increase even-order harmonics presented to the
+filter.  The filter has more difficulty rejecting the 2nd
+harmonic. Second harmonics can be reduced by designing the filter for
+a slightly lower cutoff frequency, and extending the OFF period at the
+expense of the ON period (this must be done at the base drive). You'll
+get slightly less power out as a result.
+
+You'll also need to more carefully address power supply filtering at
+the power supply end of the choke.
+
+The small choke results in large peak-to-peak currents drawn from the
+supply. The supply-end of the choke will tend to get yanked around:
+excellent, short-leaded bypass capacitors should be employed to ensure
+a steady voltage at this point. Larger current swings around the
+transistor/choke/bypass area could cause ground-loop problems for the
+amplifier that drives the base. Even more care must be taken with
+component placement and printed circuit layout issues when this design
+technique is employed. The higher drive levels needed for efficient
+operation mean that final amp gain is less than normal. More power is
+required of the driver stage. A compromise is reached where driver
+dissipation eats into good final amp efficiency.
+
+How to calculate the inductor (L)?
+
+The energy needed is dependent on many factors. Higher Q filters will
+have an inherent voltage swing that is larger due to a current dump,
+so an inductor having less energy is required. Inductance likely
+scales with filter Q. You also have losses in the components to
+consider.
+
+The inductor should dump its entire current charge while the
+transistor is OFF into the following filter. At the filter's input
+(collector), the current dump will result in a voltage swing dependent
+on filter Q. Many filters will have low Q, to keep losses low, and to
+keep component tolerances non critical.  For a Q of one, here is a
+very simple approximation:
+
+The inductance required is collector impedance Z divided by 4f, where
+f is transmitted frequency in Hz.
+\begin{dmath}
+  L = \frac{Z}{4f}
+\end{dmath}
+
+Once you calculate a collector choke, you should test it on a computer
+circuit simulator.  The testing goal attempts to swing collector
+voltage just down to zero at the moment of OFF-to-ON transition,
+without swinging negative.
+
 \end{document}
