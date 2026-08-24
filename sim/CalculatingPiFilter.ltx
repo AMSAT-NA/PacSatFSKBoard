@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{breqn}
+\usepackage[inkscapeformat=png]{svg}
+\begin{document}
+\title{Calculating Pi Filters}
+\author{Corey Minyard - AE5KM}
+\maketitle
+\section{Introduction}
+This is taken from https://www.rfcandy.biz/communication/pa313.html
+and it's not quite the same as a normal filter.  The bandwidth where
+the impedance matches well is fairly narrow.  And though this is a low
+pass filter, what happens on the low side is not really low pass.
+It's more of a semi-bandpass filter with uneven and less filtering on
+the low side.  But you can define the Q, so you can make a filter
+with high Q that's more suitable for a class C amplifier.
+
+Figure \ref{PiFilter} shows a circuit diagram for a Pi filter where R2
+is the input resistance and R1 is the output resistance.
+\begin{figure}[ht]
+  \caption{Pi Filter}\label{PiFilter}
+  \begin{center}
+  \includesvg[scale=.25]{PiFilter}
+  \end{center}
+\end{figure}
+
+To calculate the values for a Pi filter, the first thing you need to
+calculate is the Q of the filter, which is:
+\begin{dmath}
+  Q = \frac{f_0}{BW}
+\end{dmath}
+where $f_0$ is the center frequency of the filter and $BW$ is the
+3dB bandwidth of the filter.
+
+To calculate the impedance of C1, use:
+\begin{dmath}
+  X_{C1} = \frac{R_1}{Q}
+\end{dmath}
+
+To calculate the impedance of C2, use:
+\begin{dmath}
+  X_{C2} = R_2 \sqrt{\frac{\frac{R_1}{R_2}}{(Q^2 + 1) - \frac{R_1}{R_2}}}
+\end{dmath}
+
+The impedance of L is:
+\begin{dmath}
+  X_{L} = \frac{QR_1 + \frac{R_1R_2}{X_{c2}}}{Q^2 + 1}
+\end{dmath}
+
+Then convert impedance to capacitor and inductor values using the
+standard formulas for that.
+
+As an example, suppose we have a frequency of 435MHz, desired
+bandwidth of 100MHz, R2 = 4.63, and R1 = 50
+
+\begin{dmath}
+  Q = \frac{435e6}{100e6} = 4.35
+\end{dmath}
+\begin{dmath}
+  X_{C1} = \frac{50}{4.35} = 11.49
+\end{dmath}
+\begin{dmath}
+  X_{C2} = 4.63 \sqrt{\frac{\frac{50}{4.63}}{(4.35^2 + 1) - \frac{4.63}{50}}} = 5.048
+\end{dmath}
+\begin{dmath}
+  X_{L} = \frac{(4.35)(50) + \frac{(4.63)(50)}{5.048}}{4.35^2 + 1} = 13.24
+\end{dmath}
+\begin{dmath}
+  C_1 = \frac{1}{2 * \pi * 435e6 * 11.49} = 31.8e-12
+\end{dmath}
+\begin{dmath}
+  C_2 = \frac{1}{2 * \pi * 435e6 * 5.048} = 73.2e-12
+\end{dmath}
+\begin{dmath}
+  L = \frac{13.24}{2 * \pi * 435e6} = 4.84e-09
+\end{dmath}
+
+Note if using as a PA output filter you must subtract the
+collector-emitter (or equivalent) capacitance from C2.
+
+Use the same impedances but reverse the capacitors and inductors to
+make a low pass filters.
+
+Pi filters can be chained to make the filters sharper or to do
+bandpass or notch filters.  When chaining, you would generally have
+the input and output resistances $R_1$ and $R_2$ be the same all the
+filters but one, usually 50 ohms.  Then the equation for C2 simplifies
+and $X_{C2} = X_{C1}$.  Note that combining filters can cause odd
+resonances outside the filtered area in the semi-passband.
+\end{document}

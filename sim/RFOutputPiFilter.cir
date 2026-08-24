@@ -1,0 +1,173 @@
+* Pi output filter from the PA
+* We aren't currently using these, but they are here for an example.
+
+.include ImpedanceMatchers.cir
+.include Filters.cir
+
+.param m = 0
+
+* 3rd order LP filter loss
+.if (m == 1)
+Vin ina 0 dc 0 AC 1 sin(0 1 435MEG 0 0 0)
+X0 ina x1 x1 in PAOutImpedance
+X1 in out PiFiltLP3_PA_440MHz
+Rload out 0    50
+.endif
+
+* Measure the input impedance of the filter
+.if (m == 2)
+I1  0  in  dc 0 ac 1
+X1 in out PiFiltLP3_PA_440MHz
+Rout out 0 50
+.endif
+
+* Measure the output impedance of the filter
+.if (m == 3)
+I1  0  out  dc 0 ac 1
+X1 in out PiFiltLP3_PA_440MHz
+X0 0 x1 x1 in PAOutImpedance
+.endif
+
+* 5th order LP filter loss
+.if (m == 4)
+Vin ina 0 dc 0 AC 1 sin(0 1 435MEG 0 0 0)
+X0 ina x1 x1 in PAOutImpedance
+X1 in a1 PiFiltLP3_PA_440MHz
+X2 a1 out PiFiltLP3_440MHz
+Rload out 0    50
+.endif
+
+* Measure the input impedance of the filter
+.if (m == 5)
+I1  0  in  dc 0 ac 1
+X1 in a1 PiFiltLP3_PA_440MHz
+X2 a1 out PiFiltLP3_440MHz
+Rout out 0 50
+.endif
+
+* Measure the output impedance of the filter
+.if (m == 6)
+I1  0  out  dc 0 ac 1
+X1 in a1 PiFiltLP3_PA_440MHz
+X2 a1 out PiFiltLP3_440MHz
+X0 0 x1 x1 in PAOutImpedance
+.endif
+
+* 3rd order HP filter loss
+.if (m == 7)
+Vin ina 0 dc 0 AC 1 sin(0 1 435MEG 0 0 0)
+Rin ina in 50
+X1 in out PiFiltHP3_440MHz
+Rload out 0    50
+.endif
+
+* Measure the input impedance of the filter
+.if (m == 8)
+I1  0  in  dc 0 ac 1
+X1 in out PiFiltHP3_440MHz
+Rout out 0 50
+.endif
+
+* Measure the output impedance of the filter
+.if (m == 9)
+I1  0  out  dc 0 ac 1
+X1 in out PiFiltHP3_440MHz
+X0 0 x1 x1 in PAOutImpedance
+.endif
+
+* 5th order BP filter loss
+.if (m == 10)
+Vin ina 0 dc 0 AC 1 sin(0 1 435MEG 0 0 0)
+X0 ina x1 x1 in PAOutImpedance
+X1 in a1 PiFiltLP3_PA_440MHz
+X2 a1 out PiFiltHP3_440MHz
+Rload out 0    50
+.endif
+
+* Measure the input impedance of the filter
+.if (m == 11)
+I1  0  in  dc 0 ac 1
+X1 in a1 PiFiltLP3_PA_440MHz
+X2 a1 out PiFiltHP3_440MHz
+Rout out 0 50
+.endif
+
+* Measure the output impedance of the filter
+.if (m == 12)
+I1  0  out  dc 0 ac 1
+X1 in a1 PiFiltLP3_PA_440MHz
+X2 a1 out PiFiltHP3_440MHz
+X0 0 x1 x1 in PAOutImpedance
+.endif
+
+.control
+alterparam m = 1
+reset
+ac lin 50000 3Meg 1400Meg
+* .663 is 2 * sqrt(Zin / Zout) = 2 * sqrt(5.5 / 50)
+plot title "3rd Order LP Filter Loss" db(.663 * v(out) / v(ina))
+*plot vr(out) vi(out) vp(out)
+
+alterparam m = 2
+reset
+ac lin 50000 3Meg 1400Meg
+plot title "3rd Order LP Filter Input Impedance" v(in) vi(in)
+
+alterparam m = 3
+reset
+ac lin 50000 3Meg 1400Meg
+plot title "3rd Order LP Filter Output Impedance" v(out) vi(out)
+
+alterparam m = 4
+reset
+ac lin 50000 3Meg 1400Meg
+* .663 is 2 * sqrt(Zin / Zout) = 2 * sqrt(5.5 / 50)
+plot title "5th Order LP Filter Loss" db(.663 * v(out) / v(ina))
+*plot vr(out) vi(out) vp(out)
+
+alterparam m = 5
+reset
+ac lin 50000 3Meg 1400Meg
+plot title "5th Order LP Filter Input Impedance" v(in) vi(in)
+
+alterparam m = 6
+reset
+ac lin 50000 3Meg 1400Meg
+plot title "5th Order LP Filter Output Impedance" v(out) vi(out)
+
+alterparam m = 7
+reset
+ac lin 50000 3Meg 1400Meg
+plot title "3rd Order HP Filter Loss" db(2 * v(out) / v(ina))
+*plot vr(out) vi(out) vp(out)
+
+alterparam m = 8
+reset
+ac lin 50000 3Meg 1400Meg
+plot title "3rd Order HP Filter Input Impedance" v(in) vi(in)
+
+alterparam m = 9
+reset
+ac lin 50000 3Meg 1400Meg
+plot title "3rd Order HP Filter Output Impedance" v(out) vi(out)
+
+alterparam m = 10
+reset
+ac lin 50000 3Meg 1400Meg
+* .663 is 2 * sqrt(Zin / Zout) = 2 * sqrt(5.5 / 50)
+plot title "5th Order BP Filter Loss" db(.663 * v(out) / v(ina))
+*plot vr(out) vi(out) vp(out)
+
+alterparam m = 11
+reset
+ac lin 50000 3Meg 1400Meg
+plot title "5th Order BP Filter Input Impedance" v(in) vi(in)
+
+alterparam m = 12
+reset
+ac lin 50000 3Meg 1400Meg
+plot title "5th Order BP Filter Output Impedance" v(out) vi(out)
+
+.endc
+
+.end

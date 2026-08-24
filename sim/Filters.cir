@@ -21,7 +21,6 @@
 L0	out	b0	470n
 R0	b0	0	10K
 
-.if (1)
 * 480MHz Elliptic lowpass filter, simulated from:
 * https://markimicrowave.com/technical-resources/tools/lc-filter-design-tool/
 * 5th order, shunt first, 480MHz cutoff, .10db ripple in passband, 50
@@ -74,24 +73,33 @@ C5	out1	0	5.5p
 Rm	out1	out	0
 *Lm	out1	out	0n
 *Cm	out1	out	9p
-.endif
 
-.if (0)
+.ENDS
+
+*                           input
+*                           |   output
+*                           |   |
+.SUBCKT PiFiltLP3_PA_440MHz in1 out
+
+* Cancel the small inductance from the PA output
+Cin	in1	in	220p
+
 * This is a 3rd order PI filter, based on the equations from:
 * https://www.rfcandy.biz/communication/pa313.html
-* This does not need an impedance match, it has a 4.63 ohm input
+* Or see the CalculatingPiFilters in this directory.
+* This does not need an impedance match, it has a 5.63 ohm input
 * impedance.
 * It does not perform very well, only -20dB at 870MHz and -35dB
 * at 1340MHz.
 
-* F = 435MHz, bw=100MHz, Rin = 4.63  Rout = 50
+* F = 435MHz, bw=100MHz, Rin = 5.63  Rout = 50
 * Q = 435e6 / 100e6 = 4.35
 * Xc1 = 50 / 4.35 = 11.49
-* Xc2 = 4.64 * sqrt((50 / 4.63) / ((4.35 ** 2 + 1) - (50 / 4.63))) = 5.048
-* Xl1 = (4.35 * 50 + ((4.63 * 50) / 5)) / (4.35 ** 2 + 1)) = 13.24
+* Xc2 = 5.63 * sqrt((50 / 5.63) / ((4.35 ** 2 + 1) - (50 / 5.63))) = 5.049
+* Xl1 = (4.35 * 50 + ((5.63 * 50) / 5)) / (4.35 ** 2 + 1) = 13.74
 * C1 = 1 / (2 * pi * 435e6 * 11.5) = 31.8e-12
 * C2 = 1 / (2 * pi * 435e6 * 5) = 73.2e-12
-* L1 = 13.24 / (2 * pi * 435e6) = 4.84e-09
+* L1 = 13.74 / (2 * pi * 435e6) = 5.027e-09
 
 C2	in	0	73p
 
@@ -100,42 +108,59 @@ Rl1	a1	out	0.3
 Cl1	in	out	.048p
 
 C1	out	0	32p
-.endif
 
-.if (0)
-* Convert the above PI filter into a 5th order by tacking on a
-* 50 ohm input/output section.
-* It doesn't perform as well as the elliptical filter on the 2nd harmonic,
-* -42dB at 870MHz.  Better at third harmonic -67dB at 1340MHz.
-* It has 1.3dB of loss at 435MHz, so worse than the elliptic.
+.ENDS
+
+*                        input
+*                        |   output
+*                        |   |
+.SUBCKT PiFiltLP3_440MHz in  out
+
+* Like the above, but 50 ohms input and output
 
 * F = 435MHz, bw=100MHz, Rin = 50  Rout = 50
 * Xc3 = 50 / 4.35 = 11.49
-* Xc4 = 50 * sqrt((50 / 50) / ((4.35 ** 2 + 1) - (50 / 50))) = 11.49
-* Xl2 = (4.35 * 50 + ((50 * 50) / 11.5)) / (4.35 ** 2 + 1)= 21.83
-* C3 = 1 / (2 * pi * 435e6 * 11.5) = 31.8e-12
-* C4 = 1 / (2 * pi * 435e6 * 11.5) = 31.8e-12
+* Xc4 = 50 * sqrt((50. / 50) / ((4.35 ** 2 + 1) - (50. / 50))) = 11.49
+* Xl2 = (4.35 * 50 + ((50. * 50) / 11.49)) / (4.35 ** 2 + 1) = 21.83
+* C3 = 1 / (2 * pi * 435e6 * 11.49) = 31.8e-12
+* C4 = 1 / (2 * pi * 435e6 * 11.49) = 31.8e-12
 * L2 = 21.83 / (2 * pi * 435e6) = 7.99e-9
 
-.if (1)
-C2	in	0	73p
+C4	in	0	32p
 
-L1	in	a1	5n
-Rl1	a1	s1	0.3
-Cl1	in	s1	.048p
-
-C1	s1	0	32p
-
-C4	s1	0	32p
-
-L2	s1	a2	8n
+L2	in	a2	8n
 Rl2	a2	out	0.3
-Cl2	s1	out	.048p
+Cl2	in	out	.048p
 
 C3	out	0	32p
-.endif
 
-.endif
+.ENDS
+
+*                        input
+*                        |   output
+*                        |   |
+.SUBCKT PiFiltHP3_440MHz in  out
+
+* The above filter converted to high pass.  Use the same impedances
+* but switch the capacitors and inductors.
+
+* F = 435MHz, bw=100MHz, Rin = 50  Rout = 50
+* Xc3 = 50 / 4.35 = 11.49
+* Xc4 = 50 * sqrt((50. / 50) / ((4.35 ** 2 + 1) - (50. / 50))) = 11.49
+* Xl2 = (4.35 * 50 + ((50. * 50) / 11.49)) / (4.35 ** 2 + 1) = 21.83
+* L1 = 11.5 / (2 * pi * 435e6) = 4.21e-9
+* L2 = 11.5 / (2 * pi * 435e6) = 4.21e-9
+* C1 = 1. / (2 * pi * 435e6 * 21.83) = 16.8e-12
+
+L2	in	a1	4.2n
+Rl2	a1	0	0.3
+Cl2	in	0	.048p
+
+C1	in	out	17p
+
+L1	out	a2	4.2n
+Rl1	a2	0	0.3
+Cl1	out	0	.048p
 
 .ENDS
 
