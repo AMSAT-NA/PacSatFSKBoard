@@ -223,8 +223,8 @@ Here are some PA modules:
   though I'm getting better than this.  It's not easy to use this part
   at this frequency, it appears, but it can be done.
 
-  Gain - 20dB
-  Max VSWR - 10:1
+  Gain - 20dB  
+  Max VSWR - 10:1  
   Op Temp Range: -40C - +85C
 
 * GRF5112 - This puts out 32dBm at P1dB, though it looks a little
@@ -233,8 +233,8 @@ Here are some PA modules:
   better.  It has a higher maximum operating temperature, which is a
   plus.
 
-  Gain - 17dB (though demonstrated 21.6dB with the 450MHz tune)
-  Max VSWR - Appear to be 8:1, but it's not really easy to tell.
+  Gain - 17dB (though demonstrated 21.6dB with the 450MHz tune)  
+  Max VSWR - Appear to be 8:1, but it's not really easy to tell.  
   Op Temp Range: -40C - +105C
 
 * GRF5115 - This part is similar to the GRF5112.  It has a slightly higher
@@ -242,24 +242,24 @@ Here are some PA modules:
   https://youtu.be/d5ELEUsyElo?si=Dn5yrjmjZ8OO749c
   From that and our requirements it appears the GRF5112 is a better match.
 
-  Gain - 14.8dB (though demonstrated 22.2dB with the 450MHz tune)
-  Max VSWR - ?
+  Gain - 14.8dB (though demonstrated 22.2dB with the 450MHz tune)  
+  Max VSWR - ?  
   Op Temp Range: -40C - +85C
 
 * GRF5604 - This has a lot of gain (37dB) and the efficiency at lower
   power is poor.  It's probably not a good choice, the efficiency is
   30% at 32dBm for the 460MHz tune.
 
-  Gain - 37dB
-  Max VSWR - ?
+  Gain - 37dB  
+  Max VSWR - ?  
   Op Temp Range: -40C - +85C
 
 * GRF5504 - This has a lot of gain (41dB) and the efficiency at lower
   power is poor.  Like the GRF5604 it's probably not a good choice,
   again, still only 30% efficient at 32dBm.
 
-  Gain - 41dB
-  Max VSWR - TBD
+  Gain - 41dB  
+  Max VSWR - TBD  
   Op Temp Range: -40C - +85C
 
 And a couple of transistors that could be more effectively used at
@@ -273,6 +273,10 @@ and easier to use.
   published application note (AN-UHF-098) shows 7W out, 12.5dB gain, 66%
   efficiency at 450–527MHz, and a second note (AN-UHF-097) covers
   400–470MHz directly.
+  
+Macom also has some possibly suitable transistors (MRF313) though they
+appear to only be for higher voltages.  It would require experiments
+to know if they would work at 5V.
 
 ## Suggestions From Bob
 
