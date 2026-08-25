@@ -3815,3 +3815,17 @@ chip is powered.
 
 Move the GPIO for UMBILICAL_ATTACHED to USB GPIO 17.  USB GPIO 0 was
 used for LEDs, probably not the best to use for this.
+
+## 2026-08-25
+
+Heard back from Amphenol on the USB-C connector.  The material LCP
+E130i is low out grassing.  Still looking how to make something fit
+onto the board.  I found the GSB1C4K11DSHR which might work, it's
+raised ~5mm off the board, so you could place this inside the board
+and connect to it.  Not sure if it's the right material, though.
+
+Moved the JTAG connector for the main processor over by the processor.
+That relieves a lot of routing congestion and gives space for USB-C
+connector solution.  Since the processor code can be updated from the
+USB port, there's not reason to put the JTAG connector on the edge any
+more.
