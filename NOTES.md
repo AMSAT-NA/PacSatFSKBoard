@@ -212,9 +212,10 @@ Here are some PA modules:
 * TQP7M9106 - What's in there now.  It's working ok, I'm able to get
   32dBm out of the PA with the current limiter at 640ma.  Increasing
   the current limit and bias voltage would almost certainly get it to
-  33dBm.  Efficiency is around 50% in my measurements.  With a proper
-  tank circuit and PI filter on the output it might be better at class
-  C; that would require experimenting.
+  33dBm.  Efficiency is around 50% directly out of the PA in my
+  measurements.  With a proper tank circuit and PI filter on the
+  output it might be better at class C; that would require
+  experimenting.
 
   A couple of threads on the support forum show issues with getting
   full power and amplification at lower frequencies:
@@ -3809,3 +3810,8 @@ inconvenience.
 
 OTHER\_HW\_POWER\_ST is not UMBILICAL\_ATTACHED to know if the USB
 chip is powered.
+
+## 2026-08-24
+
+Move the GPIO for UMBILICAL_ATTACHED to USB GPIO 17.  USB GPIO 0 was
+used for LEDs, probably not the best to use for this.

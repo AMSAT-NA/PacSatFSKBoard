@@ -126,7 +126,14 @@ to calculate is the Q of the filter, which is:
 If the input or output has reactance, that can be compensated for with
 adjusting the input or output reactances.
 
-\section{Collector choke inductance}
+\section{Input Bias}
+
+On a class C device (and really any amplifier) the input bias must be
+set correctly, generally with a choke of some type and a voltage
+source.  The value of the choke isn't so important as long as it's
+effectively invisible to the RF.
+
+\section{Collector Choke Inductance}
 
 (Much text taken from the web page.)
 
@@ -143,7 +150,9 @@ during the time the transistor is OFF. Take a look at Figure
 \end{figure}
 
 The transistor works in two state, ON and OFF.  When the transistor is
-ON, the transistor will sink current Ic to ground. Ic = I1 + I2.
+ON, the transistor will sink current Ic to ground. Ic = I1 + I2.  Note
+that the transistor also has resistance and capacitance that must be
+accounted for.
 
 When a current flow through an inductor (L) a magnetic energy filed
 starts to built up around the windings.  The amount of energy is

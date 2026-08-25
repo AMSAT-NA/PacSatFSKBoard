@@ -79,12 +79,13 @@ Target" then select the device (it should be the only one) and click
 on "Connect".
 
 Click on SCB 0.  It should be in UART mode.  Click on "Configure" and
-set to 2-pin mode, 38400N81.  Then go to SCB 1 and do the same, except
-set it to 9600N81.
+set to 2-pin mode, 38400N81.  Click on "Notification LED" and set
+everything to "None".  Then go to SCB 1 and do the same, except set it
+to 9600N81.
 
 Click on CapSense/BCD/GPIO and click on "Configure" by "Unused GPIO's
 drive mode".  GPIOs 2, 3, 4, and 9 should all be set to "Drive 0".
-GPIO 0 should be set to "Drive 1" (this is the umbilical attached
+GPIO 17 should be set to "Drive 1" (this is the umbilical attached
 line). The rest should be tristate.
 
 The GPIO pins on the USB device can be controlled with the cygpio
@@ -123,7 +124,9 @@ anything else will work.  Failing here can brick the chip.  But it's
 small and not likely to fail.
 
 After that, program the PacSatSPII2C workspace to get the normal
-software on the ACP.
+software on the ACP.  You must cycle the power on the chip before you
+can program it after programming the previous one to get it in the
+right state.
 
 After this, the board should be functional.
 
