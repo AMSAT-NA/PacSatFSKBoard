@@ -1,0 +1,83 @@
+* Class C PA
+
+* This is a viable class C PA for producing 1W.  It's not simulated
+* with an actual MOSFET, but it has the gate capacitance and on
+* resistance simulated for a RD02LUS2 device.  Both regular and low
+* outgassing inductors are spec-ed, along with all critical
+* capacitors.
+
+.include Filters.cir
+
+* Switch acting as the MOSFET.  Add output capacitance and a way
+* to measure source current.
+.model xsw sw RON=1.32
+Csd a0 em 35p
+S1 a0 em in 0 xsw OFF
+Vm1 em em2 dc 0
+Rx em2 0 0
+
+* Power input network.  A big inductor, some capacitors, and a small
+* inductor.
+V5v v5in 0 DC 5
+* Resistance is DC resistance, not from Q.  Capacitance isn't meaningful.
+* Coilcraft AE563PKA301MSZ
+*L5v v5in m3 300n
+*RL5v m3 v5 .003
+* Coilcraft 0805LS-471X_RC
+L5v v5in m3 470n
+RL5v m3 v5 .030
+Cp2 v5 0 100p
+Cp3 v5 0 1n
+
+* This is the small inductor.  It's small enough that we can make
+* it with a PCB trace.
+* 10mm .225mm trace .109mm over ground
+Lp v5 m2 2.6n
+RLp m2 a0 .006
+CLp v5 a0 1.3e-12
+
+* Used to measure current going into the PI filter.
+Vm2 a0 a1 dc 0
+
+* Output PI filter
+* Freq = 435000000.000000  bw = 120000000.000000  Rin = 10.000000  Rout = 50.000000
+* Q = 3.625000  Xc1 = 13.793103  Xc1 = 7.396003  Xl = 17.598521
+* Murata GCM1555C1H510FA16D
+C2 a1 0 51p
+* Coilcraft 0603DC-6N2X_RW 
+L1 a1 m1 6.2n
+RL1 m1 a2 0.13
+CL1 a1 a2 0.048p
+* Coilcraft AR312RAG6N0_PZ 
+*L1 a1 m1 6.0n
+*RL1 m1 a2 0.13
+*CL1 a1 a2 0.048p
+* Murata GCM1555C1H270FA16D
+C1 a2 0 27p
+
+* Extra filtration, probably not required.
+.if (0)
+X2 a2 a3 PiFiltLP3_440MHz
+.else
+Rt1 a2 a3 0
+.endif
+
+* Drive the switch input.  The -.6 sets the bias here, the switch
+* turns on if the input is >0.
+Vin in 0 DC 0 AC 1 sin(-.6 1 435MEG 0 0 0)
+
+* Output.  Need to have a capacitor to block DC.
+Cout a3 out 100p
+Rout out 0 50
+
+.control
+* Wide range plot
+tran .01ns 1010ns 100ns
+plot i(v5v)
+plot v(out)
+
+* Do a small detailed plot
+reset
+tran .01ns 410ns 400ns
+plot v(in) v(a1) v(out) i(Vm1) i(Vm2) i(v5v)
+.endc
