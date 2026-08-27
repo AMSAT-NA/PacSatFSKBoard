@@ -270,6 +270,9 @@ and easier to use.
 * Mitsubishi RD04LUS2 — 527MHz, 4W (36dBm) typ at 3.6V, VDSS rated to
   25V so there's real headroom to run it at 5V for more margin.
 
+* Mitsubishi RD02LUS2 - 470MHz, 2W (33dBm) typ at 3.6V.  Very similar
+  to the above part, probably easier to get.
+
 * Mitsubishi RD07MUS2B — 7.2V nominal, 7W (38.5dBm). Mitsubishi's own
   published application note (AN-UHF-098) shows 7W out, 12.5dB gain, 66%
   efficiency at 450–527MHz, and a second note (AN-UHF-097) covers
@@ -3829,3 +3832,40 @@ That relieves a lot of routing congestion and gives space for USB-C
 connector solution.  Since the processor code can be updated from the
 USB port, there's not reason to put the JTAG connector on the edge any
 more.
+
+## 2026-08-26
+
+I've spent some time looking at class-C amplifiers.  Trying to use the
+current configuration in class C has not worked very well.  There are
+a number of problems:
+
+* You need a different sort of power feed network with a class-C
+  amplifier.  You need a big inductor, some capacitors, and a small
+  inductor to properly feed it.
+
+* The matching network is suppressing a lot of the harmonics and they
+  are not getting reflected like they should.  You really need a Pi
+  filter there with a high Q to match the impedance, provide
+  hysteresis, and filter out the harmonics.
+
+* The elliptic filter is probably not the right solution.
+
+* The input impedance when operating at class C is wrong, thus
+  causing issues.
+
+When getting 31.4dBm out of the PA match, about .26W is harmonics and
+that power is lost.
+
+The current filter seems to work well for class-A, it has notches at
+the 2nd and 3rd harmonic and should be fairly low loss (.5dB).  I'm
+seeing 2nd harmonic over 60dB down and 3rd harmonic over 70dB down.
+But it's hard to tell because something, probably the directional
+coupler, is causing significant loss.
+
+I'm wondering if what is coming out of the ax5043 is not a pure sine
+wave.  According to simulation, the output circuit has a moderate
+amount of filtering, around 12dB at 2nd harmonic and 20 at 3rd
+harmonic.  So that doesn't seem likely.  And if I send harmonic-rich
+signal I see 3rd harmonic go up 6dB.
+
+Everything else seems to be working as it should.

@@ -80,7 +80,7 @@ plot title "Output Impedance" -vr(out) vi(out)
 
 alterparam m = 3
 reset
-ac lin 50000 100Meg 1000Meg
+ac lin 50000 100Meg 2000Meg
 plot title "Gain in circuit" db(2 * sqrt(100 / 50) * v(out) / v(ina, inb))
 .endc
 
