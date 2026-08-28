@@ -144,6 +144,10 @@ value_to_partnum_xlats_1 = {
     ('470nH',   	'0805'): ('Coilcraft',	'0805CS-471XGRC'),
     ('1uH',  'IND_EPL2010_COC'): ('Coilcraft',	'AE338PZA102MPZ'),
     ('3.3uH','IND_EPL2010_COC'): ('Coilcraft',	''),
+
+    # Ferrite beads
+    ('1KΩ@100MHz',	'0603'): ('Laird-Signal',	'MI0603J102R-10'),
+    ('1KΩ@100MHz',	'0805'): ('Laird-Signal',	'MI0805J102R-10'),
 }
 
 # Space rated inductors
@@ -167,31 +171,10 @@ value_to_partnum_xlats_1a = {
     ('470nH',   	'0805'): ('Coilcraft',	'AR336RAA471JPZ'),
     ('1uH',  'IND_EPL2010_COC'): ('Coilcraft',	'AE338PZA102MPZ'),
     ('3.3uH','IND_EPL2010_COC'): ('Coilcraft',	'AE338PZA332MPZ'),
-}
 
-# These are all Murata parts.  The 0805 parts are not automotive
-# certified.
-value_to_partnum_xlats_1b = {
-    ('1nH',     	'0402'): ('Murata',	'LQG15WZ1N0B02D'),
-    ('3.0nH 2%',	'0402'): ('Murata',	'LQW15AS3N0G8ZD'),
-    ('6.2nH 2%',        '0402'): ('Murata',	'LQW15AN6N2G8ZD'),
-    ('16nH 2%', 	'0402'): ('Murata',	'LQW18AS16NG0ZD'),
-    ('20nH 2%', 	'0402'): ('Murata',	'LQW15AN20NG8ZD'),
-    ('18nH 2%', 	'0603'): ('Murata',	'LQW18AS18NG0ZD'),
-    ('27nH 2%', 	'0603'): ('Murata',	'LQW18AS27NG0ZD'),
-    ('43nH 2%', 	'0603'): ('Murata',	'LQW18AS43NG0ZD'),
-    ('68nH',    	'0603'): ('Murata',	'LQW18AS68NG0ZD'),
-    ('75nH 2%', 	'0603'): ('Murata',	'LQW18AN75NG8ZD'),
-    ('100nH',   	'0603'): ('Murata',	'LQW18ASR10G0ZD'),
-    ('47nH 2%', 	'0805'): ('Murata',	'LQW2BAN47NG00L'),
-    ('47nH I>1A', 	'0805'): ('Murata',	'LQW2BAN47NG00L'),
-    ('91nH 2%', 	'0805'): ('Murata',	'LQW2BAN91NG00L'),
-    ('180nH 2%',	'0805'): ('Murata',	'LQW2BANR18G00L'),
-    # Not automotive grade
-    ('470nH 2%',        '0805'): ('Murata',     'LQW2BASR47J00L'),
-    ('470nH',   	'0805'): ('Murata',	'LQW21FTR47M0HL'),
-    ('1uH',   ''): ('Coilcraft',	'EPL2010-102MLC'),
-    ('3.3uH', '1210'):                ('Murata',	'DFE322520FD-3R3M'),
+    # Ferrite beads
+    ('1KΩ@100MHz',	'0603'): ('Vanguard',	'RFB0603-102KS-4'),
+    ('1KΩ@100MHz',	'0805'): ('Vanguard',	'RFB0805-102KS-4'),
 }
 
 # General passive parts.
@@ -216,7 +199,7 @@ value_to_partnum_xlats_2 = {
     ('22uF 16V',	'1206'): ('Murata',	'GCM31CC71C226ME36K'),
     ('47uF 10V',	'1206'): ('Murata',	'GRT31CR61A476KE13L'),
 
-    ('0.6pF ±.1 30V',	'0402'): ('Murata',	'GCM1555C1HR60WA16D'),
+    ('0.6pF ±.05 30V',	'0402'): ('Murata',	'GCM1555C1HR60WA16D'),
     ('1pF ±.05',  	'0402'): ('Murata',	'GCQ1555C1H1R0WB01D'),
     ('2.0pF ±.05 30V',	'0402'): ('Murata',	'GCQ1555C1H2R0WB01D'),
     ('4.3pF 1%',	'0402'): ('Murata',	'GCQ1555C1H4R3BB01D'),
@@ -266,8 +249,6 @@ value_to_partnum_xlats_2 = {
     ('68KΩ 1%', 	'0402'): ('Panasonic',	'ERA-2AED683X'),
     ('100KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF1003X'),
     ('143KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF1433X'),
-
-    ('1KΩ@100MHz',	'0603'): ('Laird-Signal',	'MI0603J102R-10'),
 
     ('BLUE LED', '0603'): ('Rohm', 'SMLD12BN1WT86C'),
     ('RED LED', '0603'): ('Rohm', 'CSL0902UT1C'),

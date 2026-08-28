@@ -3878,3 +3878,6 @@ Everything else seems to be working as it should.
 Replace the metal allow inductors with ones that can be space-rated.
 Coilcraft had some space-rated and non-space-rated parts that had
 equivalent footprints, which was handy.
+
+Add space-rated ferrite beads.  I had to increase the USB one to 0805
+to get the power capacity it needed.
