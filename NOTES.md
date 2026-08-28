@@ -223,6 +223,9 @@ Here are some PA modules:
   https://forum.qorvo.com/t/tqp7m9106-output-power-at-200mhz/25688
   though I'm getting better than this.  It's not easy to use this part
   at this frequency, it appears, but it can be done.
+  
+  This has around 4 times the heat transfer area under the chip
+  compared to the GRF parts.
 
   Gain: 20dB  
   Max VSWR: 10:1  
@@ -3869,3 +3872,9 @@ harmonic.  So that doesn't seem likely.  And if I send harmonic-rich
 signal I see 3rd harmonic go up 6dB.
 
 Everything else seems to be working as it should.
+
+## 2026-08-28
+
+Replace the metal allow inductors with ones that can be space-rated.
+Coilcraft had some space-rated and non-space-rated parts that had
+equivalent footprints, which was handy.

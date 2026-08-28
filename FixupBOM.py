@@ -12,7 +12,6 @@ from openpyxl import Workbook
 
 infn = None
 outfn = None
-use_murata = False
 use_space = False
 value_in_comment = False
 find_unused = False
@@ -24,8 +23,6 @@ for i in sys.argv[1:]:
     if in_flags and i.startswith('-'):
         if i == '--':
             in_flags = False
-        elif i == '-murata':
-            use_murata = True
         elif i == '-space':
             use_space = True
         elif i == '-unused':
@@ -145,6 +142,8 @@ value_to_partnum_xlats_1 = {
     ('180nH 2%',	'0805'): ('Coilcraft',	'0805CS-181XGRC'),
     ('470nH 2%',        '0805'): ('Coilcraft',  '0805CS-471XGRC'),
     ('470nH',   	'0805'): ('Coilcraft',	'0805CS-471XGRC'),
+    ('1uH',  'IND_EPL2010_COC'): ('Coilcraft',	'AE338PZA102MPZ'),
+    ('3.3uH','IND_EPL2010_COC'): ('Coilcraft',	''),
 }
 
 # Space rated inductors
@@ -166,8 +165,8 @@ value_to_partnum_xlats_1a = {
     ('180nH 2%',	'0805'): ('Coilcraft',	'AR336RAA181GPZ'),
     ('470nH 2%',   	'0805'): ('Coilcraft',	'AR336RAA471JPZ'),
     ('470nH',   	'0805'): ('Coilcraft',	'AR336RAA471JPZ'),
-    ('1uH',   'L_Murata_DFE201610P'): ('Murata',	'DFE201612PD-1R0M'),
-    ('3.3uH', '1210'):                ('Murata',	'DFE322520FD-3R3M'),
+    ('1uH',  'IND_EPL2010_COC'): ('Coilcraft',	'AE338PZA102MPZ'),
+    ('3.3uH','IND_EPL2010_COC'): ('Coilcraft',	'AE338PZA332MPZ'),
 }
 
 # These are all Murata parts.  The 0805 parts are not automotive
@@ -191,7 +190,7 @@ value_to_partnum_xlats_1b = {
     # Not automotive grade
     ('470nH 2%',        '0805'): ('Murata',     'LQW2BASR47J00L'),
     ('470nH',   	'0805'): ('Murata',	'LQW21FTR47M0HL'),
-    ('1uH',   'L_Murata_DFE201610P'): ('Murata',	'DFE201612PD-1R0M'),
+    ('1uH',   ''): ('Coilcraft',	'EPL2010-102MLC'),
     ('3.3uH', '1210'):                ('Murata',	'DFE322520FD-3R3M'),
 }
 
@@ -333,11 +332,6 @@ def xlat_value_to_partnum(s, footprint):
             v = value_to_partnum_xlats_1a[pf]
             pass
         pass
-    elif use_murata:
-        if pf in value_to_partnum_xlats_1b:
-            v = value_to_partnum_xlats_1b[pf]
-            pass
-        pass
     else:
         if pf in value_to_partnum_xlats_1:
             v = value_to_partnum_xlats_1[pf]
@@ -436,11 +430,6 @@ if find_unused:
             pass
         pass
     for i in value_to_partnum_xlats_1a:
-        if not i in used:
-            print("  " + str(i))
-            pass
-        pass
-    for i in value_to_partnum_xlats_1b:
         if not i in used:
             print("  " + str(i))
             pass
