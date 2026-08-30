@@ -241,7 +241,7 @@ value_to_partnum_xlats_2 = {
     ('2.4KΩ',	'0603'): ('Wurth Electronik',	'560112116061'),
     ('3KΩ',	'0603'): ('Panasonic',	'ERJ-UP3F3001V'),
 
-    ('277Ω .1%'),	'0402'): ('KOA Speer ',	'RN73R1ETTP2770B25'),
+    ('277Ω .1%',	'0402'): ('KOA Speer ',	'RN73R1ETTP2770B25'),
     ('3.32KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF3321X'),
     ('5.1K',            '0402'): ('Panasonic',  'ERJ-2RKF5101X'),
     ('10KΩ 1%', 	'0402'): ('Panasonic',	'ERJ-PA2F1002X'),
