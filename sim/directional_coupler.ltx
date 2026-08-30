@@ -1,0 +1,151 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{breqn}
+\usepackage[inkscapeformat=png]{svg}
+\begin{document}
+\title{Directional Coupling Practical Theory}
+\author{Corey Minyard - AE5KM}
+\maketitle
+\section{Introduction}
+The board has a broadside directional coupler on it.  This paper talks
+about the practical aspects of using a directional coupler like this
+from a semi-theoretical point of view.  It doesn't go into the deep
+theory of how the devices work, see S.B. Cohn's 1960 paper
+"Characteristic Impedances of Broadside-Coupled Strip Transmission
+Lines" (IRE Trans. MTT) for that sort of detail.
+
+There's a good paper at:
+https://markimicrowave.com/assets/e01dd483-b079-4da5-9d03-79b6db1f5969/directivity\_and\_vswr\_measurements.pdf
+describing the problems associated with directional couplers.  Though
+it doesn't go into the theory as much as you might like.
+
+\section{What Is a Directional Coupler}
+A directional coupler is a 4-port device, it has an ``input'' and
+``output'' port for the measured signal and coupled ports for the
+measurement of forward and reverse power.  These coupled ports measure
+the signal; the forward power port will output a signal based on the
+power flowing from ``input'' to ``output'' and the reverse power port
+will output a signal based on the power flowing the other way.  Thus
+``input'' and ``output'' are not good names, since power flows both
+ways, but good names are hard to come by.
+
+The amount of power coupled depends on the coupler design and is
+generally expressed in dB from the amount of input power to the
+coupled power.  So, for instance, if you input 30dBm and the coupled
+power was 10dBm, the coupling coefficient would be -20dB.
+
+Each port has an impedance, and it's important to get these right.  As
+usual, these are generally designed to be $50\Omega$.
+
+You can buy directional coupler parts, and you can build one using
+stripline on a PCB.  It's reasonable to get 20dB of directivity with a
+stripline coupler.  For higher directivity you really need a precision
+part.
+
+\section{Errors in Measurement}
+A directional coupler, like all real devices, has imperfections.  The
+basic problem is that some power flowing in the forward direction will
+come out the reverse power port, and vice versa.  This is expressed in
+directivity, the amount of power flowing out one coupled port that
+came from the other direction.  So if the directivity is 20dB, the
+amount of power from one direction flowing ``wrong'' port will be 20dB
+less than the power flowing in the ``right'' port.
+
+How bad this depends on various imperfections in the layout and
+components.
+
+The coupling coefficient can be off, too, but that's not generally as
+big an issue.  And it can be compensated for with calibration.
+
+You cannot realistically compensate for directivity error by
+calibration with a simple magnitude-only measurement device.  To
+compensate by calibration you would need a device that also measure
+phase (like a VNA) because the phase of the opposite direction is not
+known and it can interfere constructively or destructively.  So if the
+directivity is 20dB and the forward power is 30dBm and the reverse
+power is 10dBm, the power out the reverse power port will be half from
+the forward power (20dB directivity, -30dB coupling, so -20dBm) and
+half from the reverse power (-30dB coupling from a 10dBM signal).  If
+the signals were in phase, you would measure twice the power, -17dBm;
+if they were 180 degrees out of phase you would measure no power.  It
+could be anywhere in-between.
+
+\subsection{Layout Variations}
+
+A directional coupler should be as symmetric as possible to avoid
+these sorts of errors.  Even if the layout is perfect, PCB tolerance
+can cause asymmetry.  Trace width and layer-to-layer distance, for
+instance.  This causes directivity issues, where power from one
+direction leaks into the other direction.  One big thing is
+layer-to-layer registration, or the alignment error between the
+layers.  This can be 75um for standard process, and with a trace
+that's 470um wide that's a pretty big variance.  You might be able to
+get this down to 35um with a higher precision process.
+
+The impedances on the ports don't seem to be affected so much by this
+sort of error.  Some, of course, but it's not as significant as the
+directivity.
+
+These errors are difficult to quantify.
+
+\subsection{Coupled Load Mismatch}
+The problem with measuring both sides of a directional coupler has to
+do with load mismatch on the coupled ends.  If the port is $50\Omega$,
+and the load is not, you will get reflections that will, of course,
+flow right into the other coupled port.
+
+For precision measurement, one side of a directional coupler is often
+terminated with a precision $50\Omega$ resistor.  That way you know
+you are not getting significant reflection on that side.  Obviously,
+if you want to measure both directions you will need two directional
+couplers.  Some manufacturers make devices that have all this built
+in.
+
+\section{How Important Are These Errors?}
+The importance of all this depends on what you are trying to do.  If
+you are trying to build a precision device that can measure return
+loss down to 25dB, you are going to need better precision than
+standard PCB board manufacturing can do and probably two separate
+couplers.  You are going to need very good directivity, on the order
+of 40dB.
+
+If you are trying to keep your PA from getting blown and know if you
+have a reasonable working antenna on the other end, then precision is
+not so important.  One nice thing for this purpose is the error goes
+down as the reflected power goes up.  With the previous example of 20
+dB of directivity, measuring 10dB of return loss, though not extremely
+accurate, is a reasonable thing to do.  Let's use the PacSat board as
+an example.
+
+One important thing to note is the forward power measurement is not
+going to be inaccurate unless the reflected power is very high.
+
+\section{Example of the PacSat Board}
+The PacSat board has a broadside directional coupler with -30dB of
+coupling.  The PA is capable of 33dBm (P1dB) output and can withstand
+a VSWR of 10:1, so that corresponds to a return loss of 1.75dB, or
+around 31.25dBm flowing back into the PA.  Of course you don't want to
+get anywhere near that.  Loss through the filter and matches is around
+1dB.  So even at full power, the power reflected back from the antenna
+cannot be more than 31dBm.
+
+But as stated, we don't want to get near that.  Assuming the
+directivity of the directional coupler is 20dB and we want to keep the
+reverse power to less than 27dBm (return loss of 5dB), lets figure out
+what we need to do.
+
+If the power flowing forward is 32dB, that means the forward power
+into the reverse coupled port will be -18dBm.  Forward power into the
+forward port is 2dBm, of course.  With a reflected power of 27dBm, you
+would get -3dBm from the reflected power into the reverse coupled
+port.  -3dBm is 500uW, -18dBm is 16uW.  If the forward and reverse
+signal are opposite phase that would be 483uW, -3.16dBm.  So that's
+the point where you would start protecting the PA.  If you wanted to
+keep the error to around 10\%, you could realistically support a
+measurement down to a return loss of 10dB, around 2:1 VSWR.
+
+So it looks quite reasonable to be able to know if the antenna is
+deployed and working, and to be able to protect the PA.
+
+\end{document}

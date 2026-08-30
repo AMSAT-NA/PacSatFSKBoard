@@ -27,7 +27,8 @@ There's a good paper at:
 https://markimicrowave.com/assets/e01dd483-b079-4da5-9d03-79b6db1f5969/directivity_and_vswr_measurements.pdf
 The problem with measuring both sides of a directional coupler has to
 do with load mismatch on the coupled ends.  This causes power
-measurement issues on the two ports.  But if you are going to the same
+measurement issues on the two ports because some power will be
+reflected back from the other end.  But if you are going to the same
 chip and keep the line lengths the same, that shouldn't be an issue.
 External component tolerances could be a problem though.  The other
 problem with this asymmetry in the design.  Even if the layout is
