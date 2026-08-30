@@ -483,18 +483,21 @@ Version 4 boards do not have the serial ports run to the PC104 connector.
 The version 4 board has PC104\_I2C\_EN and PC104\_SER\_EN positive
 logic, those were negative logic on the version 3 board.
 
-The version 4 boards no longer have a watchdog disable jumper.  That
+The version 4 board no longer has a watchdog disable jumper.  That
 is accomplished from the USB chip now.
 
-The version 4 boards no longer have plugs for +5V and +3.3V.  Use the
+The version 4 board no longer has plugs for +5V and +3.3V.  Use the
 PC104 or USB for power.
 
-The version 4 boards have the bootstrap load invoke lines run to the
+The version 4 board has the bootstrap load invoke lines run to the
 USB chip to allow the USB chip to invoke a bootstrap without having to
 do anything physical to the board.
 
 The version 4 board has UMBILICAL\_ATTACHED where OTHER\_HW\_POWER\_ST
 was.  This lets you know if the USB chip is powered.
+
+The version 4 board has a different DAC driving the PA bias.  The
+previous one had issues.
 
 # IO Connections on the PacSat AFSK processor
 

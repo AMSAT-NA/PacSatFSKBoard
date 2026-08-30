@@ -12,6 +12,49 @@ some point.
 
 # TODO
 
+There are ferrite beads all over the board for current surge limiting,
+USB input, each AX5043 has a power control, on the power inputs to the
+oscillator and clock distribution chip, the antenna control processor
+power, the ADCs attached to the antenna control processor, 10 in all.
+That's a lot, and the space rated ones are expensive.  Do we need
+individual controls on the AX5043s?  The one for the ACP ADCs is not
+that necessary.
+
+There was some discussion about directional couplers.  It's apparently
+hard to get them right when using both ends of a directional coupler.
+I'm not sure I understand completely, needs to be looked in to. -
+There's a good paper at:
+https://markimicrowave.com/assets/e01dd483-b079-4da5-9d03-79b6db1f5969/directivity_and_vswr_measurements.pdf
+The problem with measuring both sides of a directional coupler has to
+do with load mismatch on the coupled ends.  This causes power
+measurement issues on the two ports.  But if you are going to the same
+chip and keep the line lengths the same, that shouldn't be an issue.
+External component tolerances could be a problem though.  The other
+problem with this asymmetry in the design.  Even if the layout is
+perfect, PCB tolerance can cause asymmetry.  Trace width and
+layer-to-layer distance, for instance.  This causes directivity
+issues, where power from one direction leaks into the other direction.
+A big thing is layer-to-layer registration, or the alignment error
+between the layers.  This can be 75um for standard process, and with a
+trace that's 470um wide that's a pretty big variance.  You might be
+able to get this down to 35um with a higher precision process.  The
+low level of coupling in the current design exacerbates these issues.
+More coupling you have the less the directivity matters error, so the
+-30dB coupling in the one I have could be a problem.  The directivity
+results in forward power being fed into the reflected power coupling.
+The leakage is a constant percentage of in both directivity and load
+mismatch, but you can't really measure it and compensate for it.  The
+error depends on the phase of the reflected signal, and if you are
+just measuring magnitude and not phase, the error can be plus or minus
+depending on phase.  You cannot quantify how far plus or minus it will
+be, just the worst-case amount.  I don't think that's a big issue with
+the current design, especially since we are just looking for gross
+level information, not precise measurements.  Error on forward power
+isn't generally an issue.  Error on reflected power gets better as
+more power is reflected, so if all we care about is keeping the PA
+safe and telling if the antenna is deployed correctly, the current
+design should work.
+
 Remove (or DNP) R101 and R108 and change R82 to 10K.
 
 Perhaps remove the 1.2V current limiter and generate 1.2V from the
@@ -81,6 +124,7 @@ connectors, and the JTAG ones:
 | FTSH-105-01-L-DV-K		| JTAG connector		| Could be removed before flight |
 | MMCX-J-P-H-RA-TH1			| MMCX connector		| PTFE 9002-84-0 .016g 3.5744% of part weight |
 | CX90B1-24P                | USB connector         | Thermoplastic UL94V-0 black |
+| LEDs						|						| Remove before flight |
 
 The PA power limiter limits the output power from the PA (not the
 final output power, that will be down 1.5dB or so) to ~1.5W. To
@@ -3881,3 +3925,7 @@ equivalent footprints, which was handy.
 
 Add space-rated ferrite beads.  I had to increase the USB one to 0805
 to get the power capacity it needed.
+
+## 2026-08-29
+
+Cleanup up the directional coupler a bit to improve the symmetry.
