@@ -6976,7 +6976,7 @@
 			)
 		)
 	)
-	(global_label "UMBILICAL_ATTACHED"
+	(global_label "PC104_UMBILICAL_ATTACHED_N"
 		(shape input)
 		(at 356.87 147.32 0)
 		(fields_autoplaced yes)
@@ -6988,7 +6988,7 @@
 		)
 		(uuid "fd7ddbec-1c51-4e51-acb7-882d97d83812")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 383.3976 147.32 0)
+			(at 394.7186 147.32 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

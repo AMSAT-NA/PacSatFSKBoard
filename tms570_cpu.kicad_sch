@@ -8944,7 +8944,7 @@
 			)
 		)
 	)
-	(global_label "UMBILICAL_ATTACHED"
+	(global_label "UMBILICAL_ATTACHED_N"
 		(shape input)
 		(at 184.15 224.79 270)
 		(fields_autoplaced yes)
@@ -8956,7 +8956,7 @@
 		)
 		(uuid "16b51e37-e9c0-4aab-b967-78c2667efe42")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 184.15 251.3176 90)
+			(at 184.15 254.0753 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9712,7 +9712,7 @@
 			)
 		)
 	)
-	(global_label "PC104_ABF0"
+	(global_label "PC104_ABF0_N"
 		(shape input)
 		(at 207.01 224.79 270)
 		(fields_autoplaced yes)
@@ -9724,7 +9724,7 @@
 		)
 		(uuid "61a61b95-f012-4d22-814b-f0c6fb34d8d8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.01 241.7381 90)
+			(at 207.01 244.4958 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

@@ -496,7 +496,7 @@ The pins are:
     bootstrap function for the main CPU, so it must tolerate being
 	pulled low during a bootstrap operation.
   
-  - PC104\_ABF0 - Used to monitor the ABF lines, cannot do interrupts.
+  - PC104\_ABF0\_N - Used to monitor the ABF lines, cannot do interrupts.
   
   - PC104\_ADC[1-4] - Analog to Digital controller inputs.
   
@@ -515,6 +515,23 @@ connector.  These are
 
 See the schematics for the antenna controller for details on how these
 are wired.
+
+### PC104_UMBILICAL\_ATTACHED\_N
+
+A line runs from the USB chip on the board that will pull down this
+line if the USB chip is powered.  This runs to the processor, but it
+also runs to the PC104 connector to allow other boards to know if the
+umbilical is attached, or to allow other boards to drive this as a
+wire-nor.
+
+If another board monitors this, it should provide its own latch-up
+protection and a weak (100K) pullup.
+
+In a dual-board configuration this allows both processors to know if
+an umbilical is attached anywhere.
+
+The processor uses this to know if the satellite is in the pod and
+needs to take precautions based on that.
 
 ### Dual Board Controls
 
@@ -571,7 +588,7 @@ PC104\_GPIO1 - Remove R142
 
 PC104\_GPIO2 - Remove R149
 
-PC104\_ABF0 - Remove R148
+PC104\_ABF0\_N - Remove R148
 
 PC104\_GPIO4 - Remove R150
 

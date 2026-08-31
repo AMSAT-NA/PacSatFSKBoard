@@ -499,6 +499,10 @@ was.  This lets you know if the USB chip is powered.
 The version 4 board has a different DAC driving the PA bias.  The
 previous one had issues.
 
+The PC104\_ABF now runs through an analog switch for latch up
+protection, and is now named PC104\_ABF\_N because it's now negative
+logic since there is no MOSFET supplying the latch up protection.
+
 # IO Connections on the PacSat AFSK processor
 
 These are the pins on the TMS570 processor, where they go, what they

@@ -29,13 +29,6 @@ limiter.  Might have to raise the current limit on 3.3V if we do this.
 What do we do with LEDs?  Do we DNP them or remove them before flight?
 I'm guessing we don't want them on a flight board.
 
-Run a GPIO from the USB chip (through a MOSFET) so the main processor
-can know it's powered from USB.  Is this part of the ABF/RBF line,
-which will need to be reworked as part of this?  Or do we need a
-separate UMBILICAL\_ATTACHED line like other satellites?  If we need
-another line, the value of OTHER\_HW\_POWER\_ST is dubious, it could
-be changed to be a more useful purpose.
-
 In the current design, if USB power is applied and main power is not,
 then about 4.2V leaks through U49 to the main power rails.  This is
 required to disable U50, and it doesn't really hurt anything, but it's
@@ -1132,6 +1125,14 @@ hard to get them right when using both ends of a directional coupler.
 I'm not sure I understand completely, needs to be looked in to. -
 See the directional coupler document in the sim directory, this
 looks to be ok for what we need.
+
+Run a GPIO from the USB chip (through a MOSFET) so the main processor
+can know it's powered from USB.  Is this part of the ABF/RBF line,
+which will need to be reworked as part of this?  Or do we need a
+separate UMBILICAL\_ATTACHED line like other satellites?  If we need
+another line, the value of OTHER\_HW\_POWER\_ST is dubious, it could
+be changed to be a more useful purpose. - This is done from the USB
+chip and run to the PC104, too.
 
 # Not going to do
 
@@ -3900,3 +3901,13 @@ to get the power capacity it needed.
 ## 2026-08-29
 
 Cleanup up the directional coupler a bit to improve the symmetry.
+
+Added a tmux2821 for latch-up protection, ran UMBILICAL\_ATTACHED to
+that, ran UMBILICAL\_ATTACHED to the PC104, and did some renaming on
+that line.  This will allow other boards to drive and monitor if an
+umbilical is attached.  The latchup protection is also used for the
+ABF line, and the ABF line is renamed PC104\_ABF\_N because it's now
+negative logic without the MOSFET.
+
+
+
