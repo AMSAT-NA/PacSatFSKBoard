@@ -37,39 +37,12 @@ Remove R184.  Run a wire from pin 3 of U44 to pin 1 of R184.
 
 All of the above are already done on Board 11.
 
-Remove Q18.  Glue down a 10K resistor between Q18 and the edge of the
-board.  Then run:
-
-* one side of the 10K resistor to FB11 pin 1.
-
-Glue down a TMUX2819 chip on the other side of Q18, leaving the pin 1
-pad of Q18 still accessible.  On the TMUX2819, run the following
-wires:
-
-* 1 - Run to the other end of the 10K resistor (Input A)
-
-* 2 - N/C
-
-* 3 - Run to pin 1 (or the other end of the 10K resistor) (Enable)
-
-* 4 - C152 pin 2 (GND)
-
-* 5 - C152 pin 2 (Input B, GND)
-
-* 6 - R183 pin 2 (Turn on USB power to board)
-
-* 7 - Q18 pad 1 (Control, from U44 pin 3 through a via)
-
-* 8 - FB11 pin 1 (USB_+5V)
-
-* EPAD - C152 pin 2 (GND)
-
 Run a wire from pin 28 of U44 to a 2.2K resistor, then run the other
 end of that resistor to J4 pin 1.  This is for the watchdog enable
 control via the USB chip.
 
-Need to supply 20K and 2.2K resistors, 6.2nH and 47nH inductors, and
-the TMUX2819.  The rest should be in the parts for the board.
+Need to supply 20K and 2.2K resistors, 6.2nH and 47nH inductors.  The
+rest should be in the parts for the board.
 
 # Version 3 board status
 
@@ -77,6 +50,18 @@ There is an issue where when powered from USB the TX AX5043 doesn't
 always to power up correctly.  Voltages look ok, so I'm not sure
 what's going on.  It doesn't seem to happen when powered from normal
 power.  Hopefully the power rework fixes the issue.
+
+## Board 9
+
+Has the full rework.  In addition, it has a try at a rework of the USB
+power to the board.  That rework failed to work properly, but it has
+been converted to work the same as the other boards.
+
+## Board 10
+
+Full rework is done on this board.
+
+DAC U37 is remove and a zero-ohm is added for R80.
 
 ## Board 11
 
@@ -106,6 +91,14 @@ controlled.
 
 Pins J1-1, J1-2, J2-1, and J2-2 are removed from the PC104 so it may
 be plugged on top of another board.
+
+This board does not have the watchdog line run from the USB chip.
+
+This board is configured as board 2 by adding R91 and removing R109.
+
+## Board 12
+
+Full rework is done on this board.
 
 # TODO
 
