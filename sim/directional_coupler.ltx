@@ -67,9 +67,10 @@ directivity is 20dB and the forward power is 30dBm and the reverse
 power is 10dBm, the power out the reverse power port will be half from
 the forward power (20dB directivity, -30dB coupling, so -20dBm) and
 half from the reverse power (-30dB coupling from a 10dBM signal).  If
-the signals were in phase, you would measure twice the power, -17dBm;
-if they were 180 degrees out of phase you would measure no power.  It
-could be anywhere in-between.
+the signals were in phase, you would measure four times the power,
+-14dBm (these are coherent signal, summing them in phase doubles the
+voltage, thus quadrupling the power).  If they were 180 degrees out of
+phase you would measure no power.  It could be anywhere in-between.
 
 \subsection{Layout Variations}
 
@@ -126,9 +127,9 @@ The PacSat board has a broadside directional coupler with -30dB of
 coupling.  The PA is capable of 33dBm (P1dB) output and can withstand
 a VSWR of 10:1, so that corresponds to a return loss of 1.75dB, or
 around 31.25dBm flowing back into the PA.  Of course you don't want to
-get anywhere near that.  Loss through the filter and matches is around
-1dB.  So even at full power, the power reflected back from the antenna
-cannot be more than 31dBm.
+get anywhere near that.  Loss one direction through the filter and
+matches is around 1dB.  So even at full power, the power reflected
+back from the antenna cannot be more than 31dBm.
 
 But as stated, we don't want to get near that.  Assuming the
 directivity of the directional coupler is 20dB and we want to keep the
@@ -140,10 +141,15 @@ into the reverse coupled port will be -18dBm.  Forward power into the
 forward port is 2dBm, of course.  With a reflected power of 27dBm, you
 would get -3dBm from the reflected power into the reverse coupled
 port.  -3dBm is 500uW, -18dBm is 16uW.  If the forward and reverse
-signal are opposite phase that would be 483uW, -3.16dBm.  So that's
-the point where you would start protecting the PA.  If you wanted to
-keep the error to around 10\%, you could realistically support a
-measurement down to a return loss of 10dB, around 2:1 VSWR.
+signal are opposite phase that would be 337uW, -4.7dBm.  This is a
+32\% error.  If they combine in phase that would be 695uW, about a
+39\% error.
+
+So -4.7dBm is where you would want to start protecting the PA.  An in
+phase combination that would result in -4.7dBm is 205uW, -6.9dBm from
+the reverse power, so 23dBm of reverse power, a VWSR of 2:1. So a VSWR
+of somewhere between 2 and 3.5 would trigger the protection circuits,
+depending on phase.
 
 So it looks quite reasonable to be able to know if the antenna is
 deployed and working, and to be able to protect the PA.
