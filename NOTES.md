@@ -12,6 +12,8 @@ some point.
 
 # TODO
 
+Need to apply whatever ABF/RBF design the other teams come up with.
+
 There are ferrite beads all over the board for current surge limiting,
 USB input, each AX5043 has a power control, on the power inputs to the
 oscillator and clock distribution chip, the antenna control processor
@@ -3909,5 +3911,36 @@ umbilical is attached.  The latchup protection is also used for the
 ABF line, and the ABF line is renamed PC104\_ABF\_N because it's now
 negative logic without the MOSFET.
 
+## 2026-08-31
 
+I've learned some things about tracks, impedance, and RF.  I had been
+using .225mm tracks .109mm over ground with .2032mm clearance for a 50
+ohm trace.  I had noticed that most RF boards used much wider traces,
+like 1.3mm trace .9mm over ground with .5mm clearance.  So I did some
+research.  It turns out there were some bad effects from that.  Not
+terrible, but the narrower trace has much higher RF resistance, about
+3 times as much, even though it has less inductance.  And the narrow
+clearance probably adds another 30-70% to that number because of the
+edge ground interactions.  Moving to wider traces is hard, though,
+when dealing with the RF switch and other components.
 
+Also, increasing the clearance will mess up via impedance.  With a
+.3048mm hole, a .508mm ring, and .91mm anti-ring, it's very close to
+50 ohms.  Changing the anti-ring to 1.5mm increases the impedance to
+81 ohms.  I can't find a way to make a different clearance for rings
+and tracks, and that seems kind of weird, anyway.
+
+So I have increased the clearance around the PA output traces to be
+.5mm.  This gets the impedance of the tracks a little closer to 50
+ohms, and should decrease the RF resistance.  The main output of the
+PA is increased to .762mm tracks to lower the impedance a little more.
+But the few places in the PA output area where there are vias have
+special zones to keep the clearance at .2032mm.
+
+You could eliminate the second and third layer and put a ground on the
+fourth layer at .639mm.  Then with a .762mm track you will have 50
+ohms and lower loss.  But the distances are so small I'm not sure it's
+worth it.
+
+This isn't so important for low-power signals, so the receive side
+and lower power TX part isn't changed.

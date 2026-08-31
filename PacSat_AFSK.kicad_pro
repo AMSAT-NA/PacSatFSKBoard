@@ -61,10 +61,10 @@
           "hatch_smoothing_level": 0,
           "hatch_smoothing_value": 0.1,
           "hatch_thickness": 1.0,
-          "min_clearance": 0.0,
+          "min_clearance": 0.225,
           "min_island_area": 10.0,
           "min_thickness": 0.25,
-          "pad_connection": 2,
+          "pad_connection": 1,
           "remove_islands": 0,
           "thermal_relief_gap": 0.5,
           "thermal_relief_spoke_width": 0.5
@@ -713,7 +713,7 @@
         "wire_width": 6
       },
       {
-        "clearance": 0.1524,
+        "clearance": 0.2032,
         "diff_pair_gap": 0.18,
         "diff_pair_width": 0.127,
         "microvia_diameter": 0.3,
@@ -728,16 +728,16 @@
         "via_drill": 0.3048
       },
       {
-        "clearance": 0.5,
+        "clearance": 0.1524,
         "diff_pair_gap": 0.18,
         "diff_pair_width": 0.127,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
-        "name": "RF Coplaner",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "name": "RF Wide",
+        "pcb_color": "rgb(204, 102, 0)",
         "priority": 0,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.22,
+        "track_width": 0.762,
         "tuning_profile": "",
         "via_diameter": 0.508,
         "via_drill": 0.3048
@@ -770,26 +770,6 @@
         "pattern": "AX5043_3V3"
       },
       {
-        "netclass": "RF Coplaner",
-        "pattern": "/Rx_Power_Divider/S+"
-      },
-      {
-        "netclass": "RF Coplaner",
-        "pattern": "Port1_P"
-      },
-      {
-        "netclass": "RF Coplaner",
-        "pattern": "Port3_P"
-      },
-      {
-        "netclass": "RF Coplaner",
-        "pattern": "Port4_P"
-      },
-      {
-        "netclass": "RF Coplaner",
-        "pattern": "Port2_P"
-      },
-      {
         "netclass": "Default",
         "pattern": "/Rx_Power_Divider/RF_Input"
       },
@@ -802,7 +782,7 @@
         "pattern": "/Rx_Power_Divider/RFI2"
       },
       {
-        "netclass": "RF Coplaner",
+        "netclass": "RF Wide",
         "pattern": "/Rx_Power_Divider/RFI3"
       },
       {
@@ -814,16 +794,24 @@
         "pattern": "/Rx_Power_Divider/RFI5"
       },
       {
-        "netclass": "RF Coplaner",
-        "pattern": "/Rx_Power_Divider/RFI6"
-      },
-      {
         "netclass": "FatPower",
         "pattern": "LNA_VCC"
       },
       {
         "netclass": "Power",
         "pattern": "+5VAL"
+      },
+      {
+        "netclass": "RF Wide",
+        "pattern": "/RF_Power_AMP_FET/RFW_1"
+      },
+      {
+        "netclass": "RF Wide",
+        "pattern": "/RF_Power_AMP_FET/RFW_2"
+      },
+      {
+        "netclass": "RF Wide",
+        "pattern": "/RF_Power_AMP_FET/RFW_3"
       }
     ]
   },

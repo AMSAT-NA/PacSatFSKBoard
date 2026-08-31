@@ -2951,7 +2951,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "The trace between the PA and the\nL match is wider, .5mm with .508mm\ncoplanar.  The output of the PA is\nlow impedance and thus will be high\ncurrent, so the extra width is\nrequired, and the lower impedance\nfrom the extra width helps a bit.\n\nAfter the L match the current will\ndecrease and the voltage will\nincrease, so the normal traces are\nok."
+	(text "The trace between the PA and the\nL match is wider, .762mm with .5mm\ncoplanar.  The output of the PA is\nlow impedance and thus will be high\ncurrent, so the extra width is\nrequired, and the lower impedance\nfrom the extra width helps a bit.\n\nAfter the L match the current will\ndecrease and the voltage will\nincrease, so the normal traces are\nok."
 		(exclude_from_sim no)
 		(at 161.036 196.342 0)
 		(effects
@@ -5994,6 +5994,36 @@
 			(type default)
 		)
 		(uuid "fe6590ca-9baa-4dc2-aaea-c1644235c83e")
+	)
+	(label "RFW_2"
+		(at 203.2 160.02 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "25b2b0ab-6b02-485d-9ed9-298225c50034")
+	)
+	(label "RFW_1"
+		(at 184.15 160.02 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "2c0e9f76-d90d-409a-88c2-bd6eeaef6d49")
+	)
+	(label "RFW_3"
+		(at 218.44 160.02 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "4625d9bb-f9e9-4286-a0a1-0afcb4f03235")
 	)
 	(label "PA In"
 		(at 76.2 142.24 0)
