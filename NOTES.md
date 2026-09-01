@@ -20,7 +20,11 @@ oscillator and clock distribution chip, the antenna control processor
 power, the ADCs attached to the antenna control processor, 10 in all.
 That's a lot, and the space rated ones are expensive.  Do we need
 individual controls on the AX5043s?  The one for the ACP ADCs is not
-that necessary.
+that necessary.  Maybe it would be best to replace these with devices
+that turn the FETs on slowly to avoid a power surge.  Bob's original
+design had a TPS22919D, which has inrush control, probably need to go
+back to that.  The ferrite beads+FET were cheaper and smaller until
+you moved to space rated ones.
 
 Remove (or DNP) R101 and R108 and change R82 to 10K.
 
@@ -3944,3 +3948,9 @@ worth it.
 
 This isn't so important for low-power signals, so the receive side
 and lower power TX part isn't changed.
+
+I replaced the 1nF capacitor on the PA output with a zero ohm resistor
+and got another .5dB out of the circuit.  I'm not sure what was going
+on, but that's a nice improvement, and that capacitor wasn't doing
+anything useful.  I cannot figure out why it made that big of a
+difference.

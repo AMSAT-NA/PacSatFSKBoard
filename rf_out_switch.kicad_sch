@@ -2369,6 +2369,17 @@
 		)
 		(uuid "68f2e65a-2e5a-4cba-81df-d80b14706212")
 	)
+	(text "-.25 dB"
+		(exclude_from_sim no)
+		(at 159.512 83.566 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "70ca09dc-d806-4fe2-a4af-8c1714d66456")
+	)
 	(text "ACTIVE1_N is a 3.3V signal, but the maximum input\ncontrol voltage to the QPC8010Q is 2.7V (and the\nminimum is 1.3V).  Driving it directly with ACTIVE1_N\nappears to have burned up some devices.  Add a voltage\ndivider to bring the voltage to a correct range.\n\nWith this in place, the voltage on ACTIVE_N should be\n3.08V when high, and the voltage to the control line\nhere shold be 2.04V."
 		(exclude_from_sim no)
 		(at 236.22 28.448 0)

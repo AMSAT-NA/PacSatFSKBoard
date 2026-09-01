@@ -770,48 +770,12 @@
         "pattern": "AX5043_3V3"
       },
       {
-        "netclass": "Default",
-        "pattern": "/Rx_Power_Divider/RF_Input"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "/Rx_Power_Divider/RFI1"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "/Rx_Power_Divider/RFI2"
-      },
-      {
-        "netclass": "RF Wide",
-        "pattern": "/Rx_Power_Divider/RFI3"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "/Rx_Power_Divider/RFI4"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "/Rx_Power_Divider/RFI5"
-      },
-      {
         "netclass": "FatPower",
         "pattern": "LNA_VCC"
       },
       {
         "netclass": "Power",
         "pattern": "+5VAL"
-      },
-      {
-        "netclass": "RF Wide",
-        "pattern": "/RF_Power_AMP_FET/RFW_1"
-      },
-      {
-        "netclass": "RF Wide",
-        "pattern": "/RF_Power_AMP_FET/RFW_2"
-      },
-      {
-        "netclass": "RF Wide",
-        "pattern": "/RF_Power_AMP_FET/RFW_3"
       }
     ]
   },

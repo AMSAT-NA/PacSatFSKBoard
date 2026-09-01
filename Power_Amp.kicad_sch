@@ -2961,6 +2961,17 @@
 		)
 		(uuid "07be56a0-0566-440a-a8be-d4eb1b5d995c")
 	)
+	(text "-.2 dB"
+		(exclude_from_sim no)
+		(at 346.202 162.052 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "264954b6-1705-4081-a26c-9ce8f484b5cc")
+	)
 	(text "Place by the PA."
 		(exclude_from_sim no)
 		(at 90.424 236.474 0)
@@ -3024,16 +3035,6 @@
 		)
 		(uuid "61c87cfc-9e70-461c-8129-55de8b327a5e")
 	)
-	(text "Relieve the DC bias\nfrom the capacitor to\nthe right to avoid\nbias effects."
-		(exclude_from_sim no)
-		(at 194.056 170.434 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-		)
-		(uuid "72981b7f-fa0c-42ff-9460-112a1d210be6")
-	)
 	(text "2W (33dBm) into 50 ohms is 10V RMS, ~14.3V peak\nto peak on the right side of the impedance converter.\nPick appropriate devices."
 		(exclude_from_sim no)
 		(at 246.38 226.822 0)
@@ -3043,6 +3044,17 @@
 			)
 		)
 		(uuid "7921cee6-3643-4410-a3a7-84417ea57323")
+	)
+	(text "-.5 dB"
+		(exclude_from_sim no)
+		(at 205.486 152.654 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "79c5a306-d39f-41e6-94f9-40b9bb934a1a")
 	)
 	(text "The input impedance of the ADL5501 devices is\ndefined to be 63Ω||1.4pF at 450MHz.  This\nmakes the magnitude of the impedance around\n61Ω.  R198 and R198 bring the impedance to\n50Ω."
 		(exclude_from_sim no)
@@ -3258,12 +3270,6 @@
 		(uuid "58fe0a66-913f-4fd1-8244-4930f4ce637e")
 	)
 	(junction
-		(at 194.31 160.02)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "59add2d5-56eb-45c0-9955-f43d90f33536")
-	)
-	(junction
 		(at 38.1 29.21)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3292,6 +3298,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "65342e6b-da2a-4ba6-a898-d7af02c53d7c")
+	)
+	(junction
+		(at 194.31 160.02)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "685c2ef1-2fed-459f-947c-5ac14cfb75db")
 	)
 	(junction
 		(at 99.06 59.69)
@@ -3897,7 +3909,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 160.02) (xy 209.55 160.02)
+			(xy 205.74 160.02) (xy 209.55 160.02)
 		)
 		(stroke
 			(width 0)
@@ -5127,7 +5139,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 160.02) (xy 195.58 160.02)
+			(xy 194.31 160.02) (xy 198.12 160.02)
 		)
 		(stroke
 			(width 0)
@@ -5994,36 +6006,6 @@
 			(type default)
 		)
 		(uuid "fe6590ca-9baa-4dc2-aaea-c1644235c83e")
-	)
-	(label "RFW_2"
-		(at 203.2 160.02 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "25b2b0ab-6b02-485d-9ed9-298225c50034")
-	)
-	(label "RFW_1"
-		(at 184.15 160.02 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "2c0e9f76-d90d-409a-88c2-bd6eeaef6d49")
-	)
-	(label "RFW_3"
-		(at 218.44 160.02 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "4625d9bb-f9e9-4286-a0a1-0afcb4f03235")
 	)
 	(label "PA In"
 		(at 76.2 142.24 0)
@@ -8903,85 +8885,6 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 199.39 160.02 90)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "6a8c6f5d-509c-4656-ba3b-f503e2a565d7")
-		(property "Reference" "C123"
-			(at 199.39 163.83 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1nF"
-			(at 199.39 156.718 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 203.2 160.9852 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 199.39 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 199.39 160.02 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3c5eaf4f-624c-42b2-8398-464614ecc55a")
-		)
-		(pin "2"
-			(uuid "6eca7662-b31f-4989-9f37-b8400a23169e")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
-					(reference "C123")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
 		(at 213.36 160.02 270)
 		(mirror x)
 		(unit 1)
@@ -9365,6 +9268,86 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
 					(reference "J17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 201.93 160.02 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7d97df7d-0a56-4563-aa89-2ab3f25775c4")
+		(property "Reference" "R197"
+			(at 202.184 157.734 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0Ω"
+			(at 205.74 157.734 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 201.93 161.798 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 201.93 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 201.93 160.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "29cdb9df-e67c-4dac-a5c2-1daab3aa3481")
+		)
+		(pin "2"
+			(uuid "d235ef3e-babd-4ebe-a35e-a181743d6ca3")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
+					(reference "R197")
 					(unit 1)
 				)
 			)
