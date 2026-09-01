@@ -5209,7 +5209,7 @@
 			)
 		)
 	)
-	(global_label "ADC_EN_N"
+	(global_label "PC104_GPIO6"
 		(shape input)
 		(at 137.16 105.41 0)
 		(fields_autoplaced yes)
@@ -5221,7 +5221,7 @@
 		)
 		(uuid "77fcda1b-64b7-4ed7-882a-3edfb5d11aa8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 151.2054 105.41 0)
+			(at 155.3418 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

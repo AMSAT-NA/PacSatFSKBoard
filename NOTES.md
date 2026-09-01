@@ -14,7 +14,11 @@ some point.
 
 Need to apply whatever ABF/RBF design the other teams come up with.
 
-Remove (or DNP) R101 and R108 and change R82 to 10K.
+I've changed most of the ferrites on the board to inrush limited power
+switches because of the cost of space-rated ferrites.  The ferrites on
+the clock devices need to stay.  That leaves the USB ferrite.  You
+could replace that with a power switch like the TPS22991, but that
+would provide no EMI protection.
 
 Perhaps remove the 1.2V current limiter and generate 1.2V from the
 current-limited 3.3V bus.  That would remove an (unproven) current
@@ -234,7 +238,7 @@ Here are some PA modules:
   plus.
 
   Gain: 17dB (though demonstrated 21.6dB with the 450MHz tune)  
-  Max VSWR: Appear to be 8:1, but it's not really easy to tell.  
+  Max VSWR: Appears to be 8:1, but it's not really easy to tell.  
   Op Temp Range: -40C - +105C
 
 * GRF5115 - This part is similar to the GRF5112.  It has a slightly higher

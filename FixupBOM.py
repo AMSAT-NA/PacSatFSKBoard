@@ -142,8 +142,8 @@ value_to_partnum_xlats_1 = {
     ('180nH 2%',	'0805'): ('Coilcraft',	'0805CS-181XGRC'),
     ('470nH 2%',        '0805'): ('Coilcraft',  '0805CS-471XGRC'),
     ('470nH',   	'0805'): ('Coilcraft',	'0805CS-471XGRC'),
-    ('1uH',  'IND_EPL2010_COC'): ('Coilcraft',	'AE338PZA102MPZ'),
-    ('3.3uH','IND_EPL2010_COC'): ('Coilcraft',	''),
+    ('1uH',  'IND_EPL2010_COC'): ('Coilcraft',	'EPL2010-102MLC'),
+    ('3.3uH','IND_EPL2010_COC'): ('Coilcraft',	'EPL2010-332MLC'),
 
     # Ferrite beads
     ('1KΩ@100MHz',	'0603'): ('Laird-Signal',	'MI0603J102R-10'),
