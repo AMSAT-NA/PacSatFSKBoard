@@ -503,6 +503,9 @@ The PC104\_ABF now runs through an analog switch for latch up
 protection, and is now named PC104\_ABF\_N because it's now negative
 logic since there is no MOSFET supplying the latch up protection.
 
+The version 4 board changes all the AX5043 power controls to positive
+logic.
+
 # IO Connections on the PacSat AFSK processor
 
 These are the pins on the TMS570 processor, where they go, what they
@@ -540,7 +543,7 @@ used as a GPIO.
 |21		|VSS					|						|  | |
 |22		|GIOA[7]				|AX5043\_IRQ\_RX3		|ID|Interrupt from AX5043 RX3 |
 |23		|N2HET1[01]				|						|OD|Yellow LED |
-|24		|N2HET1[03]				|AX5043\_EN\_RX4\_N		|OD|Power enable for AX5043 RX 4 |
+|24		|N2HET1[03]				|AX5043\_EN\_RX4		|OD|Power enable for AX5043 RX 4 |
 |25		|N2HET1[00]				|						|OD|Red LED |
 |26		|VCCIO					|						|  | |
 |27		|VSS					|						|  | |
@@ -549,10 +552,10 @@ used as a GPIO.
 |30		|N2HET1[02]				|						|OD|Green LED |
 |31		|N2HET1[05]				|LNA\_ENABLE			|OD|Used to enable the LNA |
 |32		|MIBSPI5NCS[0]			|ANT\_SPI\_CS			|OU|SPI for the antenna controller) |
-|33		|N2HET1[07]				|AX5043\_EN\_RX3\_N		|OD|Power enable for AX5043 RX 3 |
+|33		|N2HET1[07]				|AX5043\_EN\_RX3		|OD|Power enable for AX5043 RX 3 |
 |34		|TEST					|					    |  | |
-|35		|N2HET1[09]				|AX5043\_EN\_RX2\_N		|OD|Power enable for AX5043 RX 2 |
-|36		|N2HET1[04]				|AX5043\_EN\_RX1\_N		|OD|Power enable for AX5043 RX 1 |
+|35		|N2HET1[09]				|AX5043\_EN\_RX2		|OD|Power enable for AX5043 RX 2 |
+|36		|N2HET1[04]				|AX5043\_EN\_RX1		|OD|Power enable for AX5043 RX 1 |
 ||||||
 |37		|MIBSPI3NCS[1]			|MRAM\_NCS3				|OU| |
 |38		|N2HET1[06]				|UART\_RX1				|ID|PC104 pin 92 |
@@ -607,7 +610,7 @@ used as a GPIO.
 |86		|AD1EVT					|OTHER\_PRESENCE\_N		|ID|Presence line from other board |
 |87		|VCC					|						|  | |
 |88		|VSS					|						|  | |
-|89		|CAN1TX					|AX5043\_EN\_TX\_N		|OU|Power enable for AX5043 TX |
+|89		|CAN1TX					|AX5043\_EN\_TX			|OU|Power enable for AX5043 TX |
 |90		|CAN1RX					|AX5043\_SEL1\_N		|OU|SPI chip select for AX5043 RX1 |
 |91		|N2HET1[24]				|AX5043\_SEL2\_N		|OD|SPI chip select for AX5043 RX2 |
 |92		|N2HET1[26]				|AX5043\_SEL3\_N		|OD|SPI chip select for AX5043 RX3 |

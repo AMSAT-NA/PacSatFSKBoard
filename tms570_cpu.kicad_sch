@@ -8752,7 +8752,7 @@
 		)
 		(uuid "fee53e90-e96e-40f3-af34-3d1d776aae7b")
 	)
-	(global_label "AX5043_EN_RX1_N"
+	(global_label "AX5043_EN_RX1"
 		(shape input)
 		(at 260.35 215.9 270)
 		(fields_autoplaced yes)
@@ -8764,7 +8764,7 @@
 		)
 		(uuid "06bdfe5d-8c9f-4607-a838-4f1fe804c2b5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 260.35 239.7423 90)
+			(at 260.35 236.9846 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9496,7 +9496,7 @@
 			)
 		)
 	)
-	(global_label "AX5043_EN_RX4_N"
+	(global_label "AX5043_EN_RX4"
 		(shape input)
 		(at 229.87 224.79 270)
 		(fields_autoplaced yes)
@@ -9508,7 +9508,7 @@
 		)
 		(uuid "56b002db-2890-444e-a20f-6f8b3a0c1624")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 229.87 248.6323 90)
+			(at 229.87 245.8746 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9664,7 +9664,7 @@
 			)
 		)
 	)
-	(global_label "AX5043_EN_RX3_N"
+	(global_label "AX5043_EN_RX3"
 		(shape input)
 		(at 252.73 215.9 270)
 		(fields_autoplaced yes)
@@ -9676,7 +9676,7 @@
 		)
 		(uuid "60008b1c-b9ae-4c5d-b482-cbf1a17fbb92")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 252.73 239.7423 90)
+			(at 252.73 236.9846 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10168,7 +10168,7 @@
 			)
 		)
 	)
-	(global_label "AX5043_EN_TX_N"
+	(global_label "AX5043_EN_TX"
 		(shape input)
 		(at 219.71 59.69 90)
 		(fields_autoplaced yes)
@@ -10180,7 +10180,7 @@
 		)
 		(uuid "9867bb3e-1986-49f7-8122-81367b060d49")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 219.71 37.662 90)
+			(at 219.71 40.4197 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10720,7 +10720,7 @@
 			)
 		)
 	)
-	(global_label "AX5043_EN_RX2_N"
+	(global_label "AX5043_EN_RX2"
 		(shape input)
 		(at 257.81 215.9 270)
 		(fields_autoplaced yes)
@@ -10732,7 +10732,7 @@
 		)
 		(uuid "f7b2b5ab-1439-44d2-820a-35a6e55ce758")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 257.81 239.7423 90)
+			(at 257.81 236.9846 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

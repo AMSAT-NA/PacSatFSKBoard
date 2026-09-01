@@ -14,18 +14,6 @@ some point.
 
 Need to apply whatever ABF/RBF design the other teams come up with.
 
-There are ferrite beads all over the board for current surge limiting,
-USB input, each AX5043 has a power control, on the power inputs to the
-oscillator and clock distribution chip, the antenna control processor
-power, the ADCs attached to the antenna control processor, 10 in all.
-That's a lot, and the space rated ones are expensive.  Do we need
-individual controls on the AX5043s?  The one for the ACP ADCs is not
-that necessary.  Maybe it would be best to replace these with devices
-that turn the FETs on slowly to avoid a power surge.  Bob's original
-design had a TPS22919D, which has inrush control, probably need to go
-back to that.  The ferrite beads+FET were cheaper and smaller until
-you moved to space rated ones.
-
 Remove (or DNP) R101 and R108 and change R82 to 10K.
 
 Perhaps remove the 1.2V current limiter and generate 1.2V from the
@@ -1139,6 +1127,18 @@ separate UMBILICAL\_ATTACHED line like other satellites?  If we need
 another line, the value of OTHER\_HW\_POWER\_ST is dubious, it could
 be changed to be a more useful purpose. - This is done from the USB
 chip and run to the PC104, too.
+
+There are ferrite beads all over the board for current surge limiting,
+USB input, each AX5043 has a power control, on the power inputs to the
+oscillator and clock distribution chip, the antenna control processor
+power, the ADCs attached to the antenna control processor, 10 in all.
+That's a lot, and the space rated ones are expensive.  Do we need
+individual controls on the AX5043s?  The one for the ACP ADCs is not
+that necessary.  Maybe it would be best to replace these with devices
+that turn the FETs on slowly to avoid a power surge.  Bob's original
+design had a TPS22919D, which has inrush control, probably need to go
+back to that.  The ferrite beads+FET were cheaper and smaller until
+you moved to space rated ones. - Replacement done.
 
 # Not going to do
 
@@ -3954,3 +3954,7 @@ and got another .5dB out of the circuit.  I'm not sure what was going
 on, but that's a nice improvement, and that capacitor wasn't doing
 anything useful.  I cannot figure out why it made that big of a
 difference.
+
+Change the MOSFET + ferrite bead combo on all the AX5043 power inputs
+to a inrush-controlled power controller.  The space-rated ferrites are
+just too expensive.
