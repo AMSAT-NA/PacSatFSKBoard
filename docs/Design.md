@@ -506,6 +506,11 @@ logic since there is no MOSFET supplying the latch up protection.
 The version 4 board changes all the AX5043 power controls to positive
 logic.
 
+The version 4 board changes the ANT\_EN line to positive logic.
+
+The version 4 board no longer has direct power control of the ACP
+ADCs, they are powered with ANT\_+3.3V now.
+
 # IO Connections on the PacSat AFSK processor
 
 These are the pins on the TMS570 processor, where they go, what they
@@ -627,7 +632,7 @@ used as a GPIO.
 |103	|VSS					|						|  | |
 |104	|VCCIO					|						|  | |
 |105	|MIBSPI1NCS[0]			|CAN\_B\_EN\_N			|OU|CAN bus B transceiver enable |
-|106	|N2HET1[08]				|ANT\_EN\_N				|OD|Power control for the antenna chip|
+|106	|N2HET1[08]				|ANT\_EN				|OD|Power control for the antenna chip|
 |107	|N2HET1[28]				|PA\_DAC\_SEL\_N		|OD|Select pin for the PA DAC Iref, on the AC5043 SPI bus |
 |108	|TMS					|JTAG pin				|  | |
 ||||||
@@ -773,7 +778,7 @@ read the antenna documentation for the exact requirements.
 |18		|PA22			|I2CA\_SCL			|ANT pin 7
 |19		|PA23			|					|Optional line to ANT pin 10
 |20		|PA24			|I2CB\_SDA			|ANT pin 4
-|21		|PA25			|ADC\_EN\_N			|Enable for ADC power
+|21		|PA25			|PC104\_GPIO6		|PC104 GPIO 6
 |22		|PA26			|PC104\_GPIO7		|ADC\_1, PC104 SPI select
 |23		|VCORE			|					|
 |24		|PA1			|ACP\_TX			|UART to the USB chip
@@ -817,7 +822,7 @@ The GPIOs are numbered as:
 | 0          | 12 (PA16) | PC104\_GPIO8 | 
 | 1          | 17 (PA21) | Enable +3.3V to the antenna control connector (ACC). |
 | 2          | 19 (PA23) | Optional line to pin 10 on the ACC |
-| 3          | 21 (PA25) | Enable for power to the ADCs. |
+| 3          | 21 (PA25) | PC105\_GPIO6 |
 | 4          | 22 (PA26) | PC104\_GPIO7 |
 
 ### ADC

@@ -3957,4 +3957,7 @@ difference.
 
 Change the MOSFET + ferrite bead combo on all the AX5043 power inputs
 to a inrush-controlled power controller.  The space-rated ferrites are
-just too expensive.
+just too expensive.  Do the same on the antenna controller power and
+remove the separate ADC power enable.  Just power it with the antenna
+controller power, there wasn't much benefit in separate power control
+for it.

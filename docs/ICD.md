@@ -592,6 +592,8 @@ PC104\_ABF0\_N - Remove R148
 
 PC104\_GPIO4 - Remove R150
 
+PC104\_GPIO6 - Remove R176
+
 PC104\_GPIO7 - Remove R160
 
 PC104\_GPIO8 - Remove R159
