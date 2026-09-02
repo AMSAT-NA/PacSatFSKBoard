@@ -2265,9 +2265,9 @@
 		)
 		(uuid "5846d741-8711-4499-aacf-602644ee96e1")
 	)
-	(text "-2db"
+	(text "-1db for the output chain"
 		(exclude_from_sim no)
-		(at 276.606 159.004 0)
+		(at 244.094 182.372 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -2316,16 +2316,6 @@
 		)
 		(uuid "81cdeab2-de19-44fe-994a-ce9b4a136fae")
 	)
-	(text "-.25db"
-		(exclude_from_sim no)
-		(at 216.916 158.75 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-		)
-		(uuid "b834ef06-79f4-4a77-9982-e86eeac6eeb0")
-	)
 	(text "+20 dB"
 		(exclude_from_sim no)
 		(at 177.292 167.386 0)
@@ -2336,16 +2326,6 @@
 			(justify left bottom)
 		)
 		(uuid "ba236560-ff97-433b-ae2f-11b3c5b6c6e4")
-	)
-	(text "-1db"
-		(exclude_from_sim no)
-		(at 86.106 164.846 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-		)
-		(uuid "d1dfde17-2d88-4be0-b71b-435603fff136")
 	)
 	(text "The input impedance of the QPL9547 is\n142.4-j80.8 ohms.  This adjusts the\nimpedance to 50 ohms at 145MHz."
 		(exclude_from_sim no)
@@ -2368,9 +2348,9 @@
 		)
 		(uuid "e1c6a0db-a39e-4620-b4bc-1d7f6cebe364")
 	)
-	(text "-.5db"
+	(text "-.5db for the input chain."
 		(exclude_from_sim no)
-		(at 133.604 157.48 0)
+		(at 110.998 182.626 0)
 		(effects
 			(font
 				(size 1.524 1.524)

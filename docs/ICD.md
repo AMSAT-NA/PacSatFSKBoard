@@ -516,7 +516,7 @@ connector.  These are
 See the schematics for the antenna controller for details on how these
 are wired.
 
-### PC104_UMBILICAL\_ATTACHED\_N
+### PC104\_UMBILICAL\_ATTACHED\_N
 
 A line runs from the USB chip on the board that will pull down this
 line if the USB chip is powered.  This runs to the processor, but it

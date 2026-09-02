@@ -3979,3 +3979,29 @@ just too expensive.  Do the same on the antenna controller power and
 remove the separate ADC power enable.  Just power it with the antenna
 controller power, there wasn't much benefit in separate power control
 for it.
+
+## 2026-09-01
+
+Reworked some traces in the RF sections to get them closer to 50 ohms.
+
+I did a crude measurement of receiver sensitivity.  I measured a
+repeater in my area at -72dBm through the antenna I was using.  Then I
+hooked that up to the board and started adding attenuators.  It was
+able to receive a signal reliably at around -118dBm.  This was with
+AFSK; I'm not sure how that affects the sensitivity of the receiver
+sensitivity, all the sensitivities in the AX5043 data sheet are for
+normal FSK or PSK.  The RF receive chain should have around 11.5dB of
+gain, so that's 106.5dBm into the AX5043, plus whatever noise is added
+by the receive chain.  AFSK can't be very good, though.  Asking
+Claude, it quotes 4-8dB of loss between AFSK and FSK at the same data
+rate.  But that's through a normal transceiver.  The way I'm guessing
+the AX5043 works it's going to be worse.  I need to get a way to send
+FSK directly, so I'm going to need to get the B210 clone I have
+transmitting properly.  Hopefully the people I got it from can fix the
+issue soon.
+
+I tried the AFSK test on my TM-V71.  It looked like it worked reliably
+at about the same level.  At around -121dBm it was flaky, at -118dBm
+it was solid.  So I guess the PacSat receiver is working ok.
+
+Actually run PC104\_UMBILICAL\_ATTACHED\_N to the PC104.
