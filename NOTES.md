@@ -12,6 +12,11 @@ some point.
 
 # TODO
 
+I read recently that there are issues soldering on gold.  It looks
+like the places where the shields will solder on are gold plated.
+There may be gold in other places.  Need to figure this out and tell
+the board shop what to do.
+
 The USB design is not what I had imagined.  There will be an external
 board to handle USB termination and power; it will have a connection
 with UART lines and power that goes to the board.
@@ -24,18 +29,6 @@ limiter.  Might have to raise the current limit on 3.3V if we do this.
 
 What do we do with LEDs?  Do we DNP them or remove them before flight?
 I'm guessing we don't want them on a flight board.
-
-How is the USB-C connector going to get to the outside of the
-spacecraft?  It's flush with the board edge now, but it could come out
-1mm or so with the current connector, maybe farther with a new
-connector.  And where can it go?  I'm not sure what is needed once the
-board is in the chassis and USB access is required.  Chris and I
-talked, and maybe look at a panel mount sort of thing?  Not much
-really exists for that, and it comes with outgassing issues.  Or maybe
-we do all the provisioning before it's in the pod?  We are going to
-need help on this.  It appears that FoxPlus-A runs a cable to a
-panel-mount USB.  If so, we need to get those designs and use the same
-thing.
 
 Are the MMCX connectors suitable?  The current configuration is right
 angle pointing toward the slot in the board.  But maybe vertical
@@ -1152,6 +1145,18 @@ would expect if the input match was good.
 
 Determine current limiter values, probably need to build a board and
 measure. - All seems good on the current board.
+
+How is the USB-C connector going to get to the outside of the
+spacecraft?  It's flush with the board edge now, but it could come out
+1mm or so with the current connector, maybe farther with a new
+connector.  And where can it go?  I'm not sure what is needed once the
+board is in the chassis and USB access is required.  Chris and I
+talked, and maybe look at a panel mount sort of thing?  Not much
+really exists for that, and it comes with outgassing issues.  Or maybe
+we do all the provisioning before it's in the pod?  We are going to
+need help on this.  It appears that FoxPlus-A runs a cable to a
+panel-mount USB.  If so, we need to get those designs and use the same
+thing.
 
 # Not going to do
 

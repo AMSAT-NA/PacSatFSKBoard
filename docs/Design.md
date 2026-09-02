@@ -849,12 +849,44 @@ powered off when not in use or to reset it.
 
 See the ICD for details.
 
+# Traces, Vias, and Impedance
+
+All RF lines are coplanar.
+
+Lower power RF traces are .216mm wide with .2032mm coplanar clearance
+.109mm over ground.
+
+Higher power RF traces are .225mm with .5mm coplanar clearance .109mm
+over ground.
+
+The trace directly out of the PA and into the match is .762mm wide,
+.5mm coplanar clearance, .109mm over ground.  This presents a low
+impedance, in the 15 ohm range, to be closer to what is coming out of
+the PA.
+
+For the higher power traces, for RF impedance it would be better to
+use a wider trace higher over ground.  If you used layer 3 as the
+ground plane you could get 1.1mm over .639mm.  That would reduce the
+loss in the traces around 5 times, from probably in .0009dB/mm to
+.0002dB/mm.  That presents a number of problems, though, with
+component size and routing.  The distances are so small that the loss
+is really negligible, and most of the distance traveled by the signal
+is in the components, not on the traces.
+
+Vias are all .3048mm hold with .508 annular rings and .2032 clearance
+(.9154mm opening for the via).  There's some trickiness played with
+zones to get the clearance around the vias what we want in the high
+power RF section.
+
 # RF Power Output Considerations
 
 The PA can output up to 2W of power per spec, and it operates at
 slightly more than 50% efficiency when operating in class AB mode.
 It's a little more efficient for class C, but from measurement,
 nowhere near close to 80% that might be achievable with class C.
+Running it in class C would involve redesigning the networks on the
+output of the PA.  If you wanted to go class C, a different device
+would probably be better.
 
 That means to transmit at 2W, it would need ~4W of power, or 800ma of
 current.  The current limiter on the PA limits it to 625ma, so that's
