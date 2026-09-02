@@ -12,13 +12,11 @@ some point.
 
 # TODO
 
-Need to apply whatever ABF/RBF design the other teams come up with.
+The USB design is not what I had imagined.  There will be an external
+board to handle USB termination and power; it will have a connection
+with UART lines and power that goes to the board.
 
-I've changed most of the ferrites on the board to inrush limited power
-switches because of the cost of space-rated ferrites.  The ferrites on
-the clock devices need to stay.  That leaves the USB ferrite.  You
-could replace that with a power switch like the TPS22991, but that
-would provide no EMI protection.
+Need to apply whatever ABF/RBF design the other teams come up with.
 
 Perhaps remove the 1.2V current limiter and generate 1.2V from the
 current-limited 3.3V bus.  That would remove an (unproven) current
@@ -26,18 +24,6 @@ limiter.  Might have to raise the current limit on 3.3V if we do this.
 
 What do we do with LEDs?  Do we DNP them or remove them before flight?
 I'm guessing we don't want them on a flight board.
-
-In the current design, if USB power is applied and main power is not,
-then about 4.2V leaks through U49 to the main power rails.  This is
-required to disable U50, and it doesn't really hurt anything, but it's
-not ideal, either.  You would really want the U49 and U50 gates pulled
-up by USB\_+5V, too.  But if you do that with just a resistor on both,
-the resistors become a power divider since the power rails will be low
-impedance to ground when unpowered.  If you put an ideal diode on
-USB\_+5V and the resistor between the ideal diode and U49, it might
-work, but it's the only solution I've found that might work besides a
-relay, and a relay is just too big and comes with other issues.  A
-real diode adds too much voltage drop.
 
 How is the USB-C connector going to get to the outside of the
 spacecraft?  It's flush with the board edge now, but it could come out
@@ -79,7 +65,6 @@ connectors, and the JTAG ones:
 |----						|--------				|---- |
 | FTSH-105-01-L-DV-K		| JTAG connector		| Could be removed before flight |
 | MMCX-J-P-H-RA-TH1			| MMCX connector		| PTFE 9002-84-0 .016g 3.5744% of part weight |
-| CX90B1-24P                | USB connector         | Thermoplastic UL94V-0 black |
 | LEDs						|						| Remove before flight |
 
 The PA power limiter limits the output power from the PA (not the
@@ -91,14 +76,6 @@ Maybe add some grounds on the PC104 for return path current.  The CAN
 bus is differential so it's not so important there, but the lack of
 grounds will limit I2C speed on the areas that don't have them.  The
 trouble is it's hard to know where to add them.
-
-Measure the PA input impedance again, for both class AB and class C
-operation.  The match seems good for class AB, but not so good for
-class C.  It's possible we could get more output from the PA if the
-match was better for class C.
-
-The serial ports only run to the USB chip now.  Is that going to be a
-problem?
 
 What happens if the RTC goes into lockup or some other bad state?
 There's no way to power it off, and a reset won't help.
@@ -192,7 +169,7 @@ or better as possible.  The outliers at the moment are:
 	* SCPS-4-62+ - Not sure about this one, perhaps three transformers
 	  or a Wilkinson divider could be used.
 	* TQP7M9106 - RF PA.  Could use a discrete device, but the parms
-	  are pretty good.
+	  are pretty good.  GRF5112 goes to 105C.
 	* ADL5501AKSZ-R7 - RF Power Measurement.  Suitable devices don't
 	  seem to be available.  This is an optional feature.
 
@@ -200,9 +177,6 @@ Is there a reason the ANTP1 output of the AX5043s are connected to a 50
 ohm resistor?  I can't find anything in the datasheet or errata about
 that, it always shows it disconnected when not used. - May or may not
 be necessary.
-
-Determine current limiter values, probably need to build a board and
-measure.
 
 ## PA Options
 
@@ -1143,6 +1117,41 @@ that turn the FETs on slowly to avoid a power surge.  Bob's original
 design had a TPS22919D, which has inrush control, probably need to go
 back to that.  The ferrite beads+FET were cheaper and smaller until
 you moved to space rated ones. - Replacement done.
+
+I've changed most of the ferrites on the board to inrush limited power
+switches because of the cost of space-rated ferrites.  The ferrites on
+the clock devices need to stay.  That leaves the USB ferrite.  You
+could replace that with a power switch like the TPS22991, but that
+would provide no EMI protection. - The USB is being reworked, so this
+is no longer an issue.
+
+In the current design, if USB power is applied and main power is not,
+then about 4.2V leaks through U49 to the main power rails.  This is
+required to disable U50, and it doesn't really hurt anything, but it's
+not ideal, either.  You would really want the U49 and U50 gates pulled
+up by USB\_+5V, too.  But if you do that with just a resistor on both,
+the resistors become a power divider since the power rails will be low
+impedance to ground when unpowered.  If you put an ideal diode on
+USB\_+5V and the resistor between the ideal diode and U49, it might
+work, but it's the only solution I've found that might work besides a
+relay, and a relay is just too big and comes with other issues.  A
+real diode adds too much voltage drop. - The USB is being reworked, so
+this is no longer an issue.
+
+The serial ports only run to the USB chip now.  Is that going to be a
+problem? - The USB is being reworked, so this is no longer an issue.
+
+Measure the PA input impedance again, for both class AB and class C
+operation.  The match seems good for class AB, but not so good for
+class C.  It's possible we could get more output from the PA if the
+match was better for class C. - After analysis, using class C with the
+existing part is not ideal, and it would require a different output
+network.  Class A input impedance seems to be good, output starts
+decreasing at half power from the AX5043, 13dBm, which is where you
+would expect if the input match was good.
+
+Determine current limiter values, probably need to build a board and
+measure. - All seems good on the current board.
 
 # Not going to do
 
