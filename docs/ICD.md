@@ -293,6 +293,10 @@ Besides adding R91, as mentioned before, you must at least remove R109
 to permanently hook the PA on board 2 to the main antenna output.  The
 antenna output is then switched on board 1 between the two boards.
 
+You must also remove R206 and R207 so the same serial port lines are
+not driven by both boards.  You can optionally hook board 2 to the
+PC104 on different lines using R208 and R209.
+
 To reduce the impedance from the RF switch, you can install R96 and
 R107 to bypass the switch.
 
@@ -598,6 +602,16 @@ PC104\_GPIO7 - Remove R160
 
 PC104\_GPIO8 - Remove R159
 
+CPU_TX - R206 and R208 connect this to one of two different PC104
+pins.  The default is H2-21 (R206), which is the default UART pass
+through from the power supply.  It can also be hooked to H2-19 (R208)
+for board 2.
+
+CPU_RX - R206 and R208 connect this to one of two different PC104
+pins.  The default is H2-22 (R207), which is the default UART pass
+through from the power supply.  It can also be hooked to H2-20 (R209)
+for board 2.
+
 PC104\_TX2, PC104\_RX2 - Remove U38
 
 PC104\_PA\_DISABLE\_N - Remove R125
@@ -784,15 +798,19 @@ JTAG interface and a serial port interface.
 The JTAG is the primary programming interface, though capability to
 program the device can be done over the serial port.
 
-To support programming the processors over the serial ports, GPIO\_2
-and GPIO\_4 from the USB chip are wired to PC104\_GPIO2/CPU\_BSL and
-PC104\_GPIO9/ACP\_BSL.  BSL means "BootStrap Loader" and if you set
-the GPIOs high, it will pull the BSL lines low.  If you do that and
-power on the processor, it will go into bootstrap mode and allow
-loading the device over the serial port.
+To support programming the ACP over the serial ports, GPIO\_4 from the
+USB chip is wired to PC104\_GPIO9/ACP\_BSL.  BSL means "BootStrap
+Loader" and if you set the GPIO high, it will pull the BSL line low.
+If you do that and power on the processor, it will go into bootstrap
+mode and allow loading the device over the serial port.
 
-These pins can be shared with a GPIO because they will normally be
+This pins can be shared with a GPIO because it will normally be
 high-impedance, the GPIO lines are open drain.
+
+The main CPU can also be programmed over the serial port.  This can be
+done from USB, or Lines H2-21 and H2-22 from the PC104 can be used to
+do this, generally as a pass-through for an umbilical cord from the
+power supply.
 
 ## JTAG
 

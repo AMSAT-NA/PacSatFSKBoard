@@ -9112,7 +9112,7 @@
 			)
 		)
 	)
-	(global_label "PC104_GPIO2{slash}CPU_BSL"
+	(global_label "PC104_GPIO2"
 		(shape input)
 		(at 125.73 121.92 180)
 		(fields_autoplaced yes)
@@ -9124,7 +9124,7 @@
 		)
 		(uuid "22b333af-caba-484e-9428-1f50b6d343c1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 110.959 121.92 0)
+			(at 107.5482 121.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

@@ -12,6 +12,9 @@ some point.
 
 # TODO
 
+Do better receiver sensitivity measurements.  I need my SDR working
+properly on transmit for this.
+
 I read recently that there are issues soldering on gold.  It looks
 like the places where the shields will solder on are gold plated.
 There may be gold in other places.  Need to figure this out and tell
@@ -4005,3 +4008,12 @@ at about the same level.  At around -121dBm it was flaky, at -118dBm
 it was solid.  So I guess the PacSat receiver is working ok.
 
 Actually run PC104\_UMBILICAL\_ATTACHED\_N to the PC104.
+
+## 2026-09-03
+
+Reworked the serial port and bootstrap loader lines.  The USB
+connection for the main CPU BSL line has been removed; the RX line on
+that interface is used to detect the umbilical cord.  The PC104_[TR]X2
+lines are now run to different pins, the power supply pins that are a
+serial port go to the main serial port.  This is a pass through from
+the power supply to an umbilical cord.

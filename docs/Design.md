@@ -658,8 +658,8 @@ used as a GPIO.
 |128	|CAN2TX					|CAN\_B\_TX				|OU|CAN bus B transmit |
 |129	|CAN2RX					|CAN\_B\_RX				|IU|CAN bus B receive |
 |130	|MIBSPI1NCS[1]			|\*FEED\_WATCHDOG		|OU|Resets the hardware watchdog timer |
-|131	|LINRX					|PC104\_RX				|IU|PC104 Pin H2-21 |
-|132	|LINTX					|PC104\_TX				|OU|PC104 Pin H2-22 |
+|131	|LINRX					|PC104\_RX				|IU|PC104 Pin H2-23 |
+|132	|LINTX					|PC104\_TX				|OU|PC104 Pin H2-24 |
 |133	|GIOB[1]				|PC104\_GPIO4			|OD|Local active output pin for active/standby |
 |134	|VCCP					|						|  | |
 |135	|VSS					|						|  | |
