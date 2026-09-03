@@ -390,20 +390,26 @@ beside one another.
 CAN A can be disabled by removing U14 and R50 and R51.  CAN B can be
 disabled by removing U22 and R89 and R90.
 
-# PC104 Serial Port
+# PC104 Serial Ports
 
 The second serial port from the processor is run to PC104 J2 (H2) pins
-22 (RX) and 21 (TX).
+24 (RX) and 23 (TX).  On version 3 and earlier boards this was H2-22 and H2-21, but that was a mistake.
 
 On version 3 and later boards, U39 and U40 must be installed (the
 default) and then the PC104\_SER\_EN\_N line must be enabled to turn
 on access to this.  To permanently add a connection, U39 and U40 can
 be removed and a 0402 zero-ohm resistor connected between pins 2 and 4
-on both devices.
+on both devices.  Note that you can also use these pins a GPIOs if you
+don't need a serial port.
 
 On version 2 boards, You need to install R123 and R124 to make this
 connection.  However, RX and TX are backwards so special jumpering on
 R123 and R124 will be required to make it work.
+
+The main serial port is wired to PC104 J2 (H2) pins 22 (RX) and 21
+(TX) by default.  This can be moved to pins 20 and 19 by removing R206
+and R207 and adding R208 and R209 (for board 2).  This connection is
+primarily for the power supply pass through from the umbilical cord.
 
 # Differences between the Version 2 and Version 3 board
 
@@ -476,6 +482,10 @@ R123 and R124 will be required to make it work.
   CPU.  This goes through a MOSFET to avoid latch up and to isolate,
   so the logic is inverted from the PC104.
   
+* PC104\_TX2 and PC104\_RX2 are now run to different pins, moved from
+  H2-21 and H2-22 to H2-23 and H2-24.  The main CPU serial port is run
+  to H2-21 and H2-22.
+
 # Differences between the Version 3 and Version 4 board
 
 Version 4 boards do not have the serial ports run to the PC104 connector.

@@ -12,6 +12,23 @@ some point.
 
 # TODO
 
+The way the umbilical cord works is quite a bit different than what I
+originally expected.  I thought it was running USB into the system,
+but it's not, it's only running a single serial port, power, and some
+GPIO controls using a USB-C connector.  The design has been reworked
+to accommodate this for a single board and for software update of the
+main processor.  A number of issues remain:
+
+* How do you update the software on the second processor?  Some
+  possible options: Don't worry about updating it, update it over SPI
+  from the main processor, use the second serial port on the main
+  processor to update it.  SPI would be nice, but would require a
+  custom BSL on the second processor.
+
+* In a dual-board situation, how do you update the second board?  You
+  could do it over serial from board 1, or maybe over CAN bus from
+  board 1.  You could run a second header for board 2.
+
 Do better receiver sensitivity measurements.  I need my SDR working
 properly on transmit for this.
 
