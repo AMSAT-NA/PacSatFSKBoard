@@ -4057,3 +4057,7 @@ that interface is used to detect the umbilical cord.  The PC104_[TR]X2
 lines are now run to different pins, the power supply pins that are a
 serial port go to the main serial port.  This is a pass through from
 the power supply to an umbilical cord.
+
+## 2026-09-04
+
+Run the reset line to the USB chip so it can reset the main CPU.

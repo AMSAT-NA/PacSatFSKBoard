@@ -12612,6 +12612,7 @@
 		)
 		(property "Value" "FTSH-105-01-L-DV-K"
 			(at 111.76 59.0804 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

@@ -803,6 +803,9 @@ JTAG interface and a serial port interface.
 The JTAG is the primary programming interface, though capability to
 program the device can be done over the serial port.
 
+A reset line is run to USB GPIO\_2 so the USB chip can use that pin to
+reset the main CPU.
+
 To support programming the ACP over the serial ports, GPIO\_4 from the
 USB chip is wired to PC104\_GPIO9/ACP\_BSL.  BSL means "BootStrap
 Loader" and if you set the GPIO high, it will pull the BSL line low.
