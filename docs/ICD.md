@@ -675,6 +675,11 @@ G125-2041096L0 housing, with something like a G125-FC11005L0-0150F
 cable, or equivalent.  Harwin has several cable assemblies with 5+5
 position female DIL latch connections.
 
+You can build your own cable.  You would need the G125-2041096L0
+housing, pins are G125-0010005 (for 26 AWG), G125-0020005 (for 28-32
+AWG).  You will need two tools, the crimper (Z125-900, which is quite
+pricey) and insertion tool (Z125-902).
+
 It is possible to not use the connector and instead just solder wires
 directly to the PCB.  In that case, two holes are provided to allow
 a 2.4mm Tefzel ETFE zip tie to provide strain relief for the wires.

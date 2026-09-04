@@ -12,6 +12,17 @@ some point.
 
 # TODO
 
+The connector on the antenna board is an Omnetics A29100-009 and
+that's actually a little smaller than the Harwin G125-MH11005L1P
+that's on the board now that going to connect to it.  We could switch.
+However, I'm not sure it matters that much.
+
+I found a part that will fix the USB power issue.  It's a TI LM73100,
+an ideal diode with an enable line.  I believe it does everything I
+need it to do.  That chip has a voltage output that can be used for
+current measurement; that can be fed to one of the extra inputs in
+U43.
+
 The way the umbilical cord works is quite a bit different than what I
 originally expected.  I thought it was running USB into the system,
 but it's not, it's only running a single serial port, power, and some
@@ -25,21 +36,20 @@ main processor.  A number of issues remain:
   processor to update it.  SPI would be nice, but would require a
   custom BSL on the second processor.
 
+  My current inclination is to do this over SPI if it's necessary.
+  You could use the SPI lines to signal the BSL to start, so it
+  won't take another pin.
+
 * In a dual-board situation, how do you update the second board?  You
   could do it over serial from board 1, or maybe over CAN bus from
-  board 1.  You could run a second header for board 2.
-
-Do better receiver sensitivity measurements.  I need my SDR working
-properly on transmit for this.
+  board 1.  You could run a second header for board 2.  I'm thinking
+  you could have one board mirror its flash to the other board over
+  CAN, include the ACP.
 
 I read recently that there are issues soldering on gold.  It looks
 like the places where the shields will solder on are gold plated.
 There may be gold in other places.  Need to figure this out and tell
 the board shop what to do.
-
-The USB design is not what I had imagined.  There will be an external
-board to handle USB termination and power; it will have a connection
-with UART lines and power that goes to the board.
 
 Need to apply whatever ABF/RBF design the other teams come up with.
 
@@ -299,6 +309,19 @@ chamber with some insulation and a vacuum pump. I have a small vacuum
 pump.  I feel this may turn out to an issue long term.  About all that
 can be done is to limit transmit time or reduce power level. Having
 some data would be needed to understand if there is an issue.
+
+## Testing
+
+Do better receiver sensitivity measurements.  I need my SDR working
+properly on transmit for this.
+
+Test the dual-board RF, making sure it passes through properly.
+
+Test the connection to the antenna board from J7 to make sure the
+power and I2C lines go through properly.  I need to get something to
+hook it to, though.
+
+Test the ADC connections from J10.
 
 # Done
 
