@@ -12,39 +12,28 @@ some point.
 
 # TODO
 
+The connectors used to bring RF off the board in various places are
+all U.FL.  Of concern are the two secondary TX connections from
+AX5043s and the places where you could bring in or out RX connections.
+From what I can tell, U.FL is not suitable for flight.  But there's no
+room for MMCX connectors at all these places.  Would soldering down a
+coax to the U.FL pads and epoxying down the cable be ok?  Do we need
+holes for this?
+
+Replace the USB connector with a GSB1C4K11DSHR, assuming Amphenol gets
+back to me and verifies that this is made with low outgassing plastic.
+Face it sideways.  This will make it usable as an umbilical connection.
+
 The connector on the antenna board is an Omnetics A29100-009 and
 that's actually a little smaller than the Harwin G125-MH11005L1P
-that's on the board now that going to connect to it.  We could switch.
-However, I'm not sure it matters that much.
+that's on the board now that's going to connect to it.  We could
+switch.  However, I'm not sure it matters that much.
 
 I found a part that will fix the USB power issue.  It's a TI LM73100,
 an ideal diode with an enable line.  I believe it does everything I
 need it to do.  That chip has a voltage output that can be used for
 current measurement; that can be fed to one of the extra inputs in
 U43.
-
-The way the umbilical cord works is quite a bit different than what I
-originally expected.  I thought it was running USB into the system,
-but it's not, it's only running a single serial port, power, and some
-GPIO controls using a USB-C connector.  The design has been reworked
-to accommodate this for a single board and for software update of the
-main processor.  A number of issues remain:
-
-* How do you update the software on the second processor?  Some
-  possible options: Don't worry about updating it, update it over SPI
-  from the main processor, use the second serial port on the main
-  processor to update it.  SPI would be nice, but would require a
-  custom BSL on the second processor.
-
-  My current inclination is to do this over SPI if it's necessary.
-  You could use the SPI lines to signal the BSL to start, so it
-  won't take another pin.
-
-* In a dual-board situation, how do you update the second board?  You
-  could do it over serial from board 1, or maybe over CAN bus from
-  board 1.  You could run a second header for board 2.  I'm thinking
-  you could have one board mirror its flash to the other board over
-  CAN, include the ACP.
 
 I read recently that there are issues soldering on gold.  It looks
 like the places where the shields will solder on are gold plated.
@@ -89,6 +78,7 @@ connectors, and the JTAG ones:
 | FTSH-105-01-L-DV-K		| JTAG connector		| Could be removed before flight |
 | MMCX-J-P-H-RA-TH1			| MMCX connector		| PTFE 9002-84-0 .016g 3.5744% of part weight |
 | LEDs						|						| Remove before flight |
+|							| Crystals				| ? |
 
 The PA power limiter limits the output power from the PA (not the
 final output power, that will be down 1.5dB or so) to ~1.5W. To
@@ -1200,6 +1190,29 @@ we do all the provisioning before it's in the pod?  We are going to
 need help on this.  It appears that FoxPlus-A runs a cable to a
 panel-mount USB.  If so, we need to get those designs and use the same
 thing.
+
+The way the umbilical cord works is quite a bit different than what I
+originally expected.  I thought it was running USB into the system,
+but it's not, it's only running a single serial port, power, and some
+GPIO controls using a USB-C connector.  The design has been reworked
+to accommodate this for a single board and for software update of the
+main processor.  A number of issues remain:
+
+* How do you update the software on the second processor?  Some
+  possible options: Don't worry about updating it, update it over SPI
+  from the main processor, use the second serial port on the main
+  processor to update it.  SPI would be nice, but would require a
+  custom BSL on the second processor.
+
+  My current inclination is to do this over SPI if it's necessary.
+  You could use the SPI lines to signal the BSL to start, so it
+  won't take another pin. - That's the way this will be done.
+
+* In a dual-board situation, how do you update the second board?  You
+  could do it over serial from board 1, or maybe over CAN bus from
+  board 1.  You could run a second header for board 2.  I'm thinking
+  you could have one board mirror its flash to the other board over
+  CAN, include the ACP. - This will be tracked under the software.
 
 # Not going to do
 
@@ -4061,3 +4074,8 @@ the power supply to an umbilical cord.
 ## 2026-09-04
 
 Run the reset line to the USB chip so it can reset the main CPU.
+
+## 2026-09-06
+
+Change the connectors on board 1 that go to board 2 RF from U.FL to
+MMCX.

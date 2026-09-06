@@ -12,11 +12,6 @@ Licensed under CC BY-SA 4.0
 You deliver three basic components to the board manufacturer: A BOM
 (Bill of Materials), a placement/position file (pos), and gerbers.
 
-Outgassing may need to be handled for the inductors and the SCPS-4-62+
-RF splitter.  MiniCircuits said they can build the splitter with a
-special epoxy for space.  Inductors needs to be sourced from Coilcraft
-for space.
-
 To generate the files for a build, do the following from the main
 PacSatFSKBoard directory:
 
@@ -52,6 +47,9 @@ Do the following:
   ./FixupPOS.py PacSat_AFSK-all-pos.csv >~/PacSat/PacSat_AFSK-pos.csv
   zip -r ~/PacSat/PacSat_AFSK-gerbers.zip gerbers/
 ```
+
+If building for flight, add the `--space` option to FixupBOM.py so it
+chooses low outgassing devices.
 
 Send those three files (PacSat\_AFSK-bom.csv, PacSat\_AFSK-pos.csv, and
 PacSat\_AFSK-gerbers.zip) to your board manufacturer.
@@ -410,6 +408,38 @@ The main serial port is wired to PC104 J2 (H2) pins 22 (RX) and 21
 (TX) by default.  This can be moved to pins 20 and 19 by removing R206
 and R207 and adding R208 and R209 (for board 2).  This connection is
 primarily for the power supply pass through from the umbilical cord.
+
+# Outgassing considerations
+
+Per my understanding of outgassing, you don't have to worry about
+normal black plastic chips, black plastic transistors, ceramic
+capacitors, or resistors.
+
+The BOM fixup program, which adds the actual device numbers, has a
+`--space` option that switches to low outgassing inductors and
+ferrites.
+
+This leaves connectors and a number of special devices:
+
+* Crystals - O 16,0-JT22CT-A-P-3,3-LF, ABS07AIG-32.768KHZ-6-1-T - ?
+
+* PC104 connector - This is the part number specified by Pumpkin
+  Space.
+  
+* 10-pin antenna control and ADC connectors - These are Harwin Gecko
+  G125 series, rated low outgassing and high reliability.
+  
+* JTAG connectors - FTSH-105-01-L-DV-K - Not sure about these, but they
+  can be removed before flight.
+  
+* MMCX Connectors - Samtec MMCX-J-P-H-RA-TH1 - These are PTFE
+  9002-84-0 (teflon).
+
+* LEDs - Remove or do not populate on flight boards.
+
+* RF splittter - SCPS-4-62+ - Per MiniCircuits, these need to be
+  ordered with special epoxy for space.
+
 
 # Differences between the Version 2 and Version 3 board
 
