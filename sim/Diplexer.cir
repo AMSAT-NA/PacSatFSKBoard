@@ -19,8 +19,6 @@ C2	in2b	outhi	5p
 
 .if (0)
 * Narrow notch filters to block 435 and 145
-* Use this diplexer, as it has DC connections through to
-* allow static to bleed off.
 
 L1	in	in1a	220n
 Rl1	in1a	outhi	3.36
@@ -29,6 +27,24 @@ C1	in	outhi	14p
 L2	in	in2a	27n
 Rl2	in2a	outlo	.6
 C2	in	outlo	5p
+.endif
+
+.if (0)
+* Normal diplexer
+C3	in	in1a	4.7p
+L4	in1a	0	15n
+C4	in1a	in1b	2.7p
+L5	in1b	0	15n
+C5	in1b	outhi	4.7p
+
+L1	in	in2a	68n
+Rl1	in2a	in2b	.6
+C1	in2b	0	18p
+L2	in2b	in2c	100n
+Rl2	in2c	in2d	.6
+C2	in2d	0	18p
+L3	in2d	in2e	68n
+Rl3	in2e	outlo	.6
 .endif
 
 .ends
@@ -40,23 +56,37 @@ C2	in	outlo	5p
 * Measure impedance
 .if (m == 1)
 I1  0  in dc 0 ac 1
+Rlo outlo 0 50
+Rhi outhi 0 50
+.endif
+
+.if (m == 3)
+Rin in    0 50
+I1  0  outlo dc 0 ac 1
+Rhi outhi 0 50
+.endif
+
+.if (m == 4)
+Rin in    0 50
+Rlo outlo 0 50
+I1  0  outhi dc 0 ac 1
 .endif
 
 * Measure loss
 .if (m == 2)
 Vin ina 0 dc 0 AC 1 sin(0 1 146MEG 0 0 0)
-Rin ina inb 50
-Vmin inb in dc 0 ac 0
+Rin ina in 50
+Rlo outlo 0 50
+Rhi outhi 0 50
 .endif
 
-X1 in inlo inhi Diplexer144x435
-X2 inlo outlo Filt144MHzLNAIn
-X3 inhi outhi Filt440MHz
+* Just the diplexer
+X1 in outlo outhi Diplexer144x435
 
-Vmoutlo outlo outlo1 dc 0 ac 0
-Rlo outlo1 0 50
-Vmouthi outhi outhi1 dc 0 ac 0
-Rhi outhi1 0 50
+* The diplexer with the filters
+*X1 in inlo inhi Diplexer144x435
+*X2 inlo outlo Filt144MHzLNAIn
+*X3 inhi outhi Filt440MHz
 
 .control
 *tran 1ns 102000ns 101000ns
@@ -64,16 +94,20 @@ Rhi outhi1 0 50
 
 alterparam m = 1
 reset
-ac lin 50000 1Meg 500Meg
+ac lin 50000 100Meg 500Meg
 plot title "Input Impedance" v(in) vi(in)
+
+alterparam m = 3
 reset
-ac lin 50000 140Meg 150Meg
-plot title "Input Impedance 145" v(in) vi(in)
+ac lin 50000 100Meg 500Meg
+plot title "Lo Input Impedance" v(outlo) vi(outlo)
+
+alterparam m = 4
 reset
-ac lin 50000 400Meg 500Meg
-plot title "Input Impedance 435" v(in) vi(in)
+ac lin 50000 100Meg 500Meg
+plot title "Hi Input Impedance" v(outhi) vi(outhi)
 
 alterparam m = 2
 reset
-ac lin 50000 1Meg 1000Meg
-plot title "Loss" db((v(outlo) * i(Vmoutlo)) / (vm(in) * i(Vin))) db((v(outhi) * i(Vmouthi)) / (vm(in) * i(Vin)))
+ac lin 50000 100Meg 1000Meg
+plot title "Loss" db(2 * v(outlo) / v(ina)) db(2 * v(outhi) / vm(ina))
