@@ -15,19 +15,17 @@ some point.
 The connectors used to bring RF off the board in various places are
 all U.FL.  Of concern are the two secondary TX connections from
 AX5043s and the places where you could bring in or out RX connections.
-From what I can tell, U.FL is not suitable for flight.  But there's no
-room for MMCX connectors at all these places.  Would soldering down a
-coax to the U.FL pads and epoxying down the cable be ok?  Do we need
-holes for this?
-
-Replace the USB connector with a GSB1C4K11DSHR, assuming Amphenol gets
-back to me and verifies that this is made with low outgassing plastic.
-Face it sideways.  This will make it usable as an umbilical connection.
+From what I can tell, U.FL is not suitable for flight.  Maybe they
+would be, but they would need to be epoxied down.  But there's no room
+for MMCX connectors at all these places.  Would soldering down a coax
+to the U.FL pads and epoxying down the cable be ok?  Do we need holes
+for this?  The board 2 connections were changed to MMCX, but do they
+need to be?  Maybe you could use the U.FL
 
 The connector on the antenna board is an Omnetics A29100-009 and
 that's actually a little smaller than the Harwin G125-MH11005L1P
-that's on the board now that's going to connect to it.  We could
-switch.  However, I'm not sure it matters that much.
+that's on the PacSat board now that's going to connect to it.  We
+could switch.  However, I'm not sure it matters that much.
 
 I read recently that there are issues soldering on gold.  It looks
 like the places where the shields will solder on are gold plated.
@@ -64,8 +62,8 @@ necessary to switch back to the 74CBTLV1G125DBVRQ1 for the PC104
 switches.  It's not so important for the switches in the USB section;
 they don't have to work after launch.
 
-I believe the last outgassing concerns are the USB connector, MMCX
-connectors, and the JTAG ones:
+I believe the last outgassing concerns are the crystal, USB connector,
+MMCX connectors, and the JTAG ones:
 
 |Part						|Function				|Info |
 |----						|--------				|---- |
@@ -1214,6 +1212,12 @@ need it to do.  That chip has a voltage output that can be used for
 current measurement; that can be fed to one of the extra inputs in
 U43. - Replaced the part.
 
+Replace the USB connector with a GSB1C4K11DSHR, assuming Amphenol gets
+back to me and verifies that this is made with low outgassing plastic.
+Face it sideways.  This will make it usable as an umbilical
+connection. -- Done.
+
+
 # Not going to do
 
 Rotate the CPU so that fewer traces need to be routed under the CPU.
@@ -1300,6 +1304,10 @@ I assume shields should be non-magnetic to avoid issues with inductor
 coupling.  It's hard to find two-piece shields where the frame is
 aluminum, though.  I'm not sure of the requirements around this,
 though.
+
+After doing some measurements, I'm pretty sure the shields are not
+necessary unless there's something else in the satellite that might
+affect/be affected.  There's little radiation coming out at transmit.
 
 # History
 
@@ -4085,3 +4093,10 @@ MMCX.
 Replaced the MOSFETs controlling USB power with an LM7310, which is a
 dual MOSFET ideal diode with an enable.  It should fix all the USB
 power problems.
+
+## 2026-09-08
+
+Changed the USB connector to one that is raised and faces toward the
+RF section of the board.  This will allow the connector to be used on
+the board as an umbilical.  This required moving the RTC and a massive
+rework of the entire USB section.

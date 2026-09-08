@@ -5113,7 +5113,7 @@
 			)
 		)
 	)
-	(global_label "PC104_GPIO8{slash}ACP_BSL"
+	(global_label "PC104_GPIO8"
 		(shape input)
 		(at 130.81 82.55 0)
 		(fields_autoplaced yes)
@@ -5125,7 +5125,7 @@
 		)
 		(uuid "4da22c45-fec5-4905-a57b-f1a1431eaae2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 160.3129 82.55 0)
+			(at 148.9918 82.55 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5377,7 +5377,7 @@
 			)
 		)
 	)
-	(global_label "PC104_GPIO8{slash}ACP_BSL"
+	(global_label "PC104_GPIO8"
 		(shape input)
 		(at 52.07 35.56 0)
 		(fields_autoplaced yes)
@@ -5389,7 +5389,7 @@
 		)
 		(uuid "c81b6675-ec7f-4e4e-ad69-b3579ddf64a8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 81.5729 35.56 0)
+			(at 70.2518 35.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

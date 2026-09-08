@@ -526,16 +526,25 @@ A line runs from the USB chip on the board that will pull down this
 line if the USB chip is powered.  This runs to the processor, but it
 also runs to the PC104 connector to allow other boards to know if the
 umbilical is attached, or to allow other boards to drive this as a
-wire-nor.
+wired-NOR.
 
 If another board monitors this, it should provide its own latch-up
-protection and a weak (100K) pullup.
+protection and a weak (100K) pullup.  The main CPU may be disconnected
+from this line so it needs an external pullup in that case.
 
 In a dual-board configuration this allows both processors to know if
 an umbilical is attached anywhere.
 
-The processor uses this to know if the satellite is in the pod and
-needs to take precautions based on that.
+The processor uses this to know if the satellite is connected to an
+"umbilical", a device for configuration and programming, while in
+flight configuration.
+
+This is an wired-NOR driven by the USB chip (if it is configured to do
+so) if a USB cable is plugged in.  It can be driven by and external
+device on the PC104 if necessary, and the main processor may drive it
+if it has another way to detect umbilical attached.  Or the main
+processor may monitor it.  The pull up for this is in the CPU when the
+CPU is driving or monitoring it.
 
 ### Dual Board Controls
 

@@ -82,8 +82,8 @@ everything to "None".  Then go to SCB 1 and do the same, except set it
 to 9600N81.
 
 Click on CapSense/BCD/GPIO and click on "Configure" by "Unused GPIO's
-drive mode".  GPIOs 2, 3, 4, and 9 should all be set to "Drive 0".
-GPIO 17 should be set to "Drive 1" (this is the umbilical attached
+drive mode".  GPIOs 2, 3, and 9 should all be set to "Drive 0".  GPIO
+17 should be set to "Drive 1" (this is the umbilical attached
 line). The rest should be tristate.
 
 The GPIO pins on the USB device can be controlled with the cygpio
@@ -407,13 +407,14 @@ R123 and R124 will be required to make it work.
 The main serial port is wired to PC104 J2 (H2) pins 22 (RX) and 21
 (TX) by default.  This can be moved to pins 20 and 19 by removing R206
 and R207 and adding R208 and R209 (for board 2).  This connection is
-primarily for the power supply pass through from the umbilical cord.
+primarily for whree the power supply passes a serial connection from
+the umbilical cord.
 
 # Outgassing considerations
 
 Per my understanding of outgassing, you don't have to worry about
-normal black plastic chips, black plastic transistors, ceramic
-capacitors, or resistors.
+normal black plastic chips, black plastic transistors, black plastic
+diodes, ceramic capacitors, or resistors.
 
 The BOM fixup program, which adds the actual device numbers, has a
 `--space` option that switches to low outgassing inductors and
@@ -573,7 +574,7 @@ used as a GPIO.
 |3		|MIBSPI3NCS[3]			|I2C\_SCL				|OU|RTC control (MAX31331TETB+) |
 |4		|MIBSPI3NCS[2]			|I2C\_SDA				|BU|RTC control (MAX31331TETB+) |
 |5		|GIOA[1]				|AX5043\_IRQ\_RX1		|ID|Interrupt from AX5043 RX1 |
-|6		|N2HET1[11]				|UMBILICAL\_ATTACHED    |ID|USB power is applied|
+|6		|N2HET1[11]				|UMBILICAL\_ATTACHED\_N	|ID|An umbilical is attached somewhere.|
 |7		|FLTP1					|						|  | |
 |8		|FLTP2					|						|  | |
 |9		|GIOA[2]				|ANT\_IRQ\_N			|ID|Interrupt from the antenna control chip |
@@ -887,6 +888,10 @@ resistors so that can be modified, too.
 
 The ADC has a separate power control, ADC\_EN\_N, to allow it to be
 powered off when not in use or to reset it.
+
+Two of the ADC lines run to the current monitor on the USB power
+supply.  You can use this to measure the current used on both power
+rails.
 
 ## PC104 Pins
 

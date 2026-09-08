@@ -9170,7 +9170,7 @@
 					)
 				)
 			)
-			(pin power_in line
+			(pin power_out line
 				(at -17.78 10.16 0)
 				(length 5.08)
 				(name "VBUS_A"
