@@ -1,5 +1,13 @@
 * Diplexer on antenna, single antenna with UHF and VHF split
 
+* Note that the primary purpose of this diplexer is not filtering,
+* though it does that, too, just not as much as a normal diplexer.
+* The purpose of this is to help filter 435MHz out of the 145MHz input
+* to some extent (though there's already a hefty filter on that input)
+* and to provide proper impedance matching on all the ports.  It
+* doesn't do much to keep 145MHz out of 435MHz, but 145MHz doesn't
+* transmit.
+
 *                       input
 *                       |   lower freq output
 *                       |   |     higher freq output
@@ -30,7 +38,13 @@ C2	in	outlo	5p
 .endif
 
 .if (0)
-* Normal diplexer
+
+* Normal diplexer.  This is from
+* https://github.com/antonjan/vhf_uhf_diplexer
+* It doesn't have good impedance matching on 440MHz, but in
+* general it seems to work pretty well.  A lot more than we
+* need.
+
 C3	in	in1a	4.7p
 L4	in1a	0	15n
 C4	in1a	in1b	2.7p
