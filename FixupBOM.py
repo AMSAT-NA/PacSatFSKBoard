@@ -228,7 +228,7 @@ value_to_partnum_xlats_2 = {
     ('470Ω',	'0402'): ('Panasonic',	'ERA-2AED471X'),
     ('1KΩ',	'0402'): ('Panasonic',	'ERA-2AED102X'),
     ('2.2KΩ',   '0402'): ('Wurth Electronik', '560112110087'),
-    ('4.7KΩ',	'0402'): ('Wurth Electronik', '560112110018'),
+    ('4.7KΩ',	'0402'): ('Panasonic',	'ERA-2AED472X'),
     ('10KΩ',    '0402'): ('Panasonic',  'ERA-2AED103X'),
     ('18KΩ',	'0402'): ('Panasonic',	'ERA-2AED183X'),
     ('20KΩ 1%', '0402'): ('Panasonic', 'ERA-2AED203X'),
@@ -250,6 +250,9 @@ value_to_partnum_xlats_2 = {
     ('68KΩ 1%', 	'0402'): ('Panasonic',	'ERA-2AED683X'),
     ('100KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF1003X'),
     ('143KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF1433X'),
+
+    # Zener diode
+    ('1.8V',	'D_SOD-523'): ('onsemi',	'MM5Z4678T5G'),
 
     ('BLUE LED', '0603'): ('Rohm', 'SMLD12BN1WT86C'),
     ('RED LED', '0603'): ('Rohm', 'CSL0902UT1C'),

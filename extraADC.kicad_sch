@@ -1186,14 +1186,6 @@
 		(uuid "ebdb22e3-4872-4ae7-8b67-f9345019824b")
 	)
 	(no_connect
-		(at 127 137.16)
-		(uuid "1c0289aa-3154-4bbe-8461-17fbb31e31f4")
-	)
-	(no_connect
-		(at 127 134.62)
-		(uuid "456ac04b-7e1b-4545-92dc-910ef7ece773")
-	)
-	(no_connect
 		(at 127 139.7)
 		(uuid "a4e8f3f5-a15c-44c9-b5eb-605b635afa5d")
 	)
@@ -1504,6 +1496,16 @@
 			(type default)
 		)
 		(uuid "6c429265-78c0-4e24-8a58-6dc20ebf0e01")
+	)
+	(wire
+		(pts
+			(xy 120.65 134.62) (xy 127 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6dbf3acb-4c18-4768-bfc6-5bcb5feebb98")
 	)
 	(wire
 		(pts
@@ -1877,6 +1879,16 @@
 	)
 	(wire
 		(pts
+			(xy 120.65 137.16) (xy 127 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db4e496b-44df-4386-868f-8af5b45595e4")
+	)
+	(wire
+		(pts
 			(xy 149.86 58.42) (xy 160.02 58.42)
 		)
 		(stroke
@@ -2025,6 +2037,30 @@
 		)
 		(uuid "ff91099f-abc3-4edb-b9e7-029a25b834a9")
 	)
+	(global_label "USB_5V_IMON"
+		(shape input)
+		(at 120.65 134.62 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "22dc4259-61db-425b-9791-c44860758a1d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 102.5407 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "ADC_SCL"
 		(shape input)
 		(at 203.2 92.71 0)
@@ -2062,6 +2098,30 @@
 		(uuid "8593c25a-f79b-49f1-870c-6ffbedd6ec1a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 143.2533 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "USB_3.3V_IMON"
+		(shape input)
+		(at 120.65 137.16 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "8e26a2cf-e6b9-4450-8575-c0145dd7866b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 100.3636 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2677,10 +2737,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "49851e99-82b2-4c50-9c4f-359d17179724")
 		(property "Reference" "R192"
 			(at 131.572 132.334 90)
@@ -3756,10 +3816,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "efe1d585-f690-4741-b1df-a0b6819a42ae")
 		(property "Reference" "R193"
 			(at 133.858 136.144 90)
@@ -3773,7 +3833,7 @@
 			)
 		)
 		(property "Value" "0Ω"
-			(at 123.444 137.16 90)
+			(at 125.222 135.89 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

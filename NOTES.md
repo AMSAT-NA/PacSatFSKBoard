@@ -29,12 +29,6 @@ that's actually a little smaller than the Harwin G125-MH11005L1P
 that's on the board now that's going to connect to it.  We could
 switch.  However, I'm not sure it matters that much.
 
-I found a part that will fix the USB power issue.  It's a TI LM73100,
-an ideal diode with an enable line.  I believe it does everything I
-need it to do.  That chip has a voltage output that can be used for
-current measurement; that can be fed to one of the extra inputs in
-U43.
-
 I read recently that there are issues soldering on gold.  It looks
 like the places where the shields will solder on are gold plated.
 There may be gold in other places.  Need to figure this out and tell
@@ -1213,6 +1207,12 @@ main processor.  A number of issues remain:
   board 1.  You could run a second header for board 2.  I'm thinking
   you could have one board mirror its flash to the other board over
   CAN, include the ACP. - This will be tracked under the software.
+
+I found a part that will fix the USB power issue.  It's a TI LM73100,
+an ideal diode with an enable line.  I believe it does everything I
+need it to do.  That chip has a voltage output that can be used for
+current measurement; that can be fed to one of the extra inputs in
+U43. - Replaced the part.
 
 # Not going to do
 
@@ -4079,3 +4079,9 @@ Run the reset line to the USB chip so it can reset the main CPU.
 
 Change the connectors on board 1 that go to board 2 RF from U.FL to
 MMCX.
+
+## 2026-09-07
+
+Replaced the MOSFETs controlling USB power with an LM7310, which is a
+dual MOSFET ideal diode with an enable.  It should fix all the USB
+power problems.

@@ -437,8 +437,11 @@ This leaves connectors and a number of special devices:
 
 * LEDs - Remove or do not populate on flight boards.
 
-* RF splittter - SCPS-4-62+ - Per MiniCircuits, these need to be
+* RF splitter - SCPS-4-62+ - Per MiniCircuits, these need to be
   ordered with special epoxy for space.
+  
+* The board itself - Need to make sure it's properly built with the
+  right materials.
 
 
 # Differences between the Version 2 and Version 3 board
