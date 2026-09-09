@@ -49,7 +49,9 @@ Do the following:
 ```
 
 If building for flight, add the `--space` option to FixupBOM.py so it
-chooses low outgassing devices.
+chooses low outgassing devices.  The RF splitter U52 must be
+special-ordered with lower-outgassing epoxy, inform the board shop
+about this.
 
 Send those three files (PacSat\_AFSK-bom.csv, PacSat\_AFSK-pos.csv, and
 PacSat\_AFSK-gerbers.zip) to your board manufacturer.
@@ -65,6 +67,9 @@ Add the following notes:
   will melt against the chip and supply a thermal path to the board.
 
 * Same as above for U2 (the CPU chip).
+
+* A flight build must special-order U52 (the RF splitter) with
+  low-outgassing epoxy.
 
 # Setting up the USB chip
 
@@ -140,7 +145,7 @@ or https://www.digikey.com/en/products/detail/olimex-ltd/ARM-JTAG-20-10/3471401
 
 Besides being a lot cheaper than the standard XDS110, the LP-XDS110
 also has a serial port built in, so you don't have to have a separate
-serial port interface.
+serial port interface if you need that.
 
 On version 2 boards, jumper J12 is the serial interface (3.3V) and the
 TX and RX lines are labeled under the pins.  The unlabeled pin is
@@ -155,15 +160,10 @@ Remember, hook TX on one board to RX on the other.  Don't
 hook TX to TX.  If you don't have the JTAG connected, you will need to
 connect the ground as well.
 
-The serial port connections to the PC104 are removed after version 3
-now that the USB interface has been proven.
-
 For version 3 and later boards, the serial ports are available via a
 USB to serial converter.  The first serial port is the main CPU and
-the second is the antenna controller.  On version 3 boards, do not
-hook up the serial port lines on the PC104 if USB is connected, they
-are the same lines.  On version 4 and later USB is the only way to
-hook to the serial port.
+the second is the antenna controller.  Do not hook up the serial port
+lines on the PC104 if USB is connected, they are the same lines.
 
 The reset button on the LP-XDS110 resets the board.
 
@@ -205,15 +205,16 @@ installed to do this.  They are not installed by default.
 
 Version 3 and later boards do not have the 3.3V regulator, you must
 supply both 5V and 3.3V.  There are unpopulated headers on the board
-that you can install to supply power, but it's recommended to go
-through the PC104 or USB to supply power.  Really, USB is the
-simplest, so unless you need to measure power usage, just use USB.
-The PC104 pins are the same ones as used for the Version 2 board.
+that you can install to supply power (removed version 4 and later),
+but it's recommended to go through the PC104 or USB to supply power.
+Really, USB is the simplest, so unless you need to measure power
+usage, just use USB.  The PC104 pins are the same ones as used for the
+Version 2 board.
 
 If you need to power from some other voltage, there is space to add a
 buck regulator like a TPS61379-Q1 by the PC104 connector.  Or a
-buck-boost or other options.  Currently this assumes that incoming
-power is stable +5V and +3.3V.
+buck-boost or other options.  Currently this design assumes that
+incoming power is stable +5V and +3.3V.
 
 See the USB section for details on powering from that.
 
@@ -258,19 +259,24 @@ switch power on.  At 1A it will sag about .24V.  The 3.3V power is
 boosted a bit in the USB power converter and will range from 3.2V to
 3.4V.
 
-The design has one minor flaw.  If the USB is powered, then the 5V\_IN
-main power rail will have about 4.2-4.5V on it.  This is harmless, but
-annoying.  This is due to a feedback loop with the power going out of
-the 5V USB power MOSFETs going into the resistor that pulls the gates
-up and shuts off the power.  The voltage will be held right below the
-cutoff of the 5V MOSFET gates.  The 3.3V MOSFET gates will be shut
-off, their cutoff is in the 2.8V range, so it powers off the main
-circuitry on the board, but you will see the power LED and a few
-things will be powered.  If power is applied to the main rails from
-elsewhere, it will pull op the 5V MOSFET gates and shut them off, so
-it's safe to power both separately.  If a clever design to fix this
-can be found, it might be fixed, but nothing has been found to date
-that justifies the added complexity.
+The design has one minor flaw on version 3 boards.  If the USB is
+powered, then the 5V\_IN main power rail will have about 4.2-4.5V on
+it.  This is harmless, but annoying.  This is due to a feedback loop
+with the power going out of the 5V USB power MOSFETs going into the
+resistor that pulls the gates up and shuts off the power.  The voltage
+will be held right below the cutoff of the 5V MOSFET gates.  The 3.3V
+MOSFET gates will be shut off, their cutoff is in the 2.8V range, so
+it powers off the main circuitry on the board, but you will see the
+power LED and a few things will be powered.  If power is applied to
+the main rails from elsewhere, it will pull op the 5V MOSFET gates and
+shut them off, so it's safe to power both separately.  If a clever
+design to fix this can be found, it might be fixed, but nothing has
+been found to date that justifies the added complexity.
+
+On version 4 and later boards, the chip used to switch power to the
+main power bus has a current monitor on it.  This is connected to two
+of the extra ADCs in the ACP section, so you can measure the current
+there.  See the chip documents for details.
 
 # Heat Sink for the Power Amplifier
 
@@ -391,7 +397,8 @@ disabled by removing U22 and R89 and R90.
 # PC104 Serial Ports
 
 The second serial port from the processor is run to PC104 J2 (H2) pins
-24 (RX) and 23 (TX).  On version 3 and earlier boards this was H2-22 and H2-21, but that was a mistake.
+24 (RX) and 23 (TX).  On version 3 and earlier boards this was H2-22
+and H2-21, but that was a mistake.
 
 On version 3 and later boards, U39 and U40 must be installed (the
 default) and then the PC104\_SER\_EN\_N line must be enabled to turn

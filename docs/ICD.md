@@ -112,7 +112,7 @@ are thermsistors that feed into A/D converters on the CPU.
 ## CPU
 
 The TI Hercules CPU, a TMS5700914APGEQQ1 specifically, is a CPU
-designed for automotive use.  It has two ARM Cortex-M4F processors
+designed for automotive use.  It has two ARM Cortex-R4F processors
 running in lockstep for detection of errors.  It does not have the
 ability to split the CPUs for independent execution, the dual CPUs are
 only used for lockstep processing.  It provides the I2C, SPI, and
@@ -332,13 +332,17 @@ control.  It has two I2C busses that come out of J7, along with power
 and ground.  The power for the external antenna board is powered from
 3.3V_p to the power lines on J7 and may be turned on and off.
 
-Resistors (R147, R151, R152, and R152) are in place to add pullups to
+Resistors (R147, R151, R152, and R152) are in place with pullups to
 the I2C lines.  See https://www.ti.com/lit/an/slva689/slva689.pdf for
 details on setting these resistors.  These can be modified or removed
-based upon 
+based upon what is required.
 
-There is also an ADC controller connected to this processor that has
-a separate connector, J10, for those outputs.
+There are also two ADC controllers connected to this processor that
+have a separate connector, J10, for those outputs.  Another I2C from
+the ACP goes to this, and that I2C can optionally also go the PC104
+connector.
+
+Some GPIO/ADC lines also go the PC104 from the ACP.
 
 # System Interfaces Description
 
@@ -466,23 +470,27 @@ pins are:
 
   - PC104\_I2C\_SDA, PC104\_I2C\_SCL
   
-That same I2C bus is wired to I2C0 of the antenna control processor,
-too, through two DNP resistors, R156 and R157.  There is some question
-whether sharing the RTC on the I2C bus like this will work.  If it
-doesn't, U32 and U38 can be removed and R156 and R157 installed to
-hook the antenna control processor to the I2C.  Pull ups (0603) can be
-installed across pins 4 and 5 of the U32 and U38 pads, if necessary.
-The main CPU will have to communicate with the antenna control
-processor for I2C, but it's do-able.
+Another I2C can optionally come from the antenna control processor,
+too, through two DNP resistors, R156 and R157.
 
 ### Serial
 
-The LIN serial device on the TMS570 processor is run to PC104\_TX2 and
-PC104\_RX2.
+The main serial device on the TMS570 processor runs to PC104\_TX and
+PC104\_RX.  These same pins run to the USB device on the board, so if
+you have USB plugged in, you cannot use these pins.  In the normal
+configuration, these pins go through the power supply to the umbilical
+cord.
 
-Like I2C, These can be removed from the PC104 connector with
-PC104\_SER\_EN for supporting other uses for those pins or
-active/standby on the serial port.
+For board 2, you need to remove R206 and R207 so that both boards are
+not connected to the same pins.  You can optionally install R208 and
+R209 to move them to different pins.
+
+The LIN serial device on the TMS570 processor runs to PC104\_TX2 and
+PC104\_RX2.  This provides a serial port for communicating with
+something else in the system.  Like I2C, this can be removed from the
+PC104 connector with PC104\_SER\_EN for supporting other uses for
+those pins or active/standby on the LIN serial port.  These may also
+be used as GPIO pins.
 
 ### GPIOs and ADC
 
@@ -496,9 +504,7 @@ The pins are:
   - PC104\_GPIO[1,4] - These pin can cause an interrupt to the CPU.  The
     rest of the pins cannot cause interrupts.
 	
-  - PC104\_GPIO2 - General purpose I/O line.  This is shared with the
-    bootstrap function for the main CPU, so it must tolerate being
-	pulled low during a bootstrap operation.
+  - PC104\_GPIO2 - General purpose I/O line.
   
   - PC104\_ABF0\_N - Used to monitor the ABF lines, cannot do interrupts.
   
@@ -513,9 +519,7 @@ of the GPIO pins can be assigned to that function.
 In addition, two GPIOs run from the antenna controller to the PC104
 connector.  These are
 
-  - PC104\_GPIO[7-8] - GPIO or ADC.  GPIO8 is shared with the
-    bootstrap function for the ACP, so it must tolerate being
-	pulled low during a bootstrap operation.
+  - PC104\_GPIO[7-8] - GPIO or ADC.
 
 See the schematics for the antenna controller for details on how these
 are wired.
@@ -642,11 +646,23 @@ that can do this.
 On version 3 boards, when powering from USB and GPIO9 is not enabled,
 some power leaks through on +5V.  This is expected and doesn't hurt
 anything (see the Design.md document for details).  +3.3V will not be
-powered, though, which is the main goal.  This may be fixes later if a
-suitable design can be found.
+powered, though, which is the main goal.  This is fixed on later
+boards.
 
-When USB is not powered, the main 5V power will pull up the inputs to
-the MOSFETs, turning them off, thus not powering the USB section.
+Setting GPIO3 on the USB chip to 1 disables the hardware watchdog,
+which is useful when programming the board with JTAG.
+
+GPIO3 on the USB chip will pull the reset line low if set to 1.
+
+GPIO17 is designed to be an umbilical attached signal to the main CPU
+as described in the PC104\_UMBILICAL\_ATTACHED\_N section.  It is
+normally programmed to always be asserted when the USB chip is
+powered, but this can be changed in the USB chip programming.
+
+On version 3 boards, when USB is not powered, the main 5V power will
+pull up the inputs to the MOSFETs, turning them off, thus not powering
+the USB section.  On version 4 and later boards an ideal diode
+provides the same function.
 
 You can power the board through the PC104 and use the USB at the same
 time.  But if you do this, you must *not* turn on GPIO9 or it will
@@ -671,10 +687,10 @@ risky.
 The USB provides two serial ports, the first for the main CPU and the
 second for the antenna control processor.
 
-The main purpose of this connector is final provisioning and updating
-software and firmware and the serial consoles after the board has been
-assembled in the satellite.  A small hole in the satellite exterior
-should be added to access the USB connector.
+The main purpose of this connector is ease of development, though it
+could be used as an umbilical cord connection.  On version 4 and later
+boards the USB connectors is raised and oriented so you can plug in a
+USB cable when the board is in the satellite.
 
 ## Antenna Control
 
@@ -748,7 +764,11 @@ receive simultaneously with nearby antennas without issues.
 
 Version 3 boards also two U.FL connectors, P23 for transmit and P24
 for receive (not populated by default), that can also be used for
-antenna connections.
+antenna connections.  Version 4 boards have this removed due to space
+constraints.
+
+Version 3 boards have U.FL connectors on board 1 for connecting to
+board 2.  On version 4 and later these are MMCX.
 
 Version 2 boards have two U.FL connectors, P15 for transmit and P17
 for receive, for antenna connections.
@@ -762,6 +782,11 @@ sufficient filtering to avoid transmit at 440MHz from affecting
 reception.  The RF input and RF output connectors can be removed in
 that case as well as the bleed-off inductors on the RF input and
 output.  This option costs about 1dB on both transmit and receive.
+
+Due to how close the MMCX connectors are to the board, you cannot use
+the diplexer on version3 boards; the traces had to be cut to keep them
+from shorting with the connector.  It is available on version 4 and
+later boards.
 
 ### Other RF connections
 
@@ -783,11 +808,18 @@ be used for bringing out or injecting signals.  For instance:
 
 * If you wanted to route the output of the AX5043, or the direct
   output of the PA, to another board.  This could be used for an
-  external amplifier or and external upconverter.
+  external amplifier or and external upconverter.  In addition, the
+  single-ended output of the transmit AX5043 is also available on a
+  U.FL connector.
   
 * AX5043 RX 4 has a connection to it's single-ended antenna output
   so it could be used as a transmitter.  Parts would have to be done
   on another port to handle amplification and filtering.
+  
+U.FL connectors are probably not flight worthy.  The black ones may
+be, but that would require some analysis, and they would need to be
+epoxied down.  You could solder a coax directly to the U.FL connector
+pads and epoxy down the cable.
 
 ### Dual Board Controls
 
@@ -815,24 +847,23 @@ program the device can be done over the serial port.
 A reset line is run to USB GPIO\_2 so the USB chip can use that pin to
 reset the main CPU.
 
-To support programming the ACP over the serial ports, GPIO\_4 from the
-USB chip is wired to PC104\_GPIO9/ACP\_BSL.  BSL means "BootStrap
-Loader" and if you set the GPIO high, it will pull the BSL line low.
-If you do that and power on the processor, it will go into bootstrap
-mode and allow loading the device over the serial port.
-
-This pins can be shared with a GPIO because it will normally be
-high-impedance, the GPIO lines are open drain.
+To support programming the ACP over the serial ports, the SPI select
+line to the ACP will cause the ACP to start the BSL (Bootstrap Loader)
+if pulled low when the ACP powers up.  Without custom programming, the
+BSL uses the serial port.  The ACP can also be custom programmed to
+load the software over the SPI port.
 
 The main CPU can also be programmed over the serial port.  This can be
-done from USB, or Lines H2-21 and H2-22 from the PC104 can be used to
-do this, generally as a pass-through for an umbilical cord from the
-power supply.
+done from USB, or Lines H2-21 (CPU\_TX) and H2-22 (CPU\_RX) from the
+PC104 can be used to do this, generally as a pass-through for an
+umbilical cord from the power supply.  If the bootstrap loader is on
+the main CPU and the RX line is pulled high for 5 seconds when the
+main CPU powers up, it will go into boostrap mode.
 
 ## JTAG
 
 An ARM standard 10-pin JTAG header is provided on one edge of the
-board, as described at
+board (Version 3) or by the main CPU (version 4), as described at
 https://software-dl.ti.com/ccs/esd/documents/xdsdebugprobes/emu_jtag_connectors.html
 
 To use the JTAG interface, the watchdog timer must be disabled or the
