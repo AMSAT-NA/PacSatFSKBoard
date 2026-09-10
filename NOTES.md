@@ -4103,6 +4103,8 @@ rework of the entire USB section.
 
 ## 2026-09-10
 
-Add a 350K resistor between USB\_+3.3V and the enable pins of the
+Add a 330K resistor between USB\_+3.3V and the enable pins of the
 LM73100RPWR chips.  TI says this is necessary to prevent damage to the
 diodes.
+
+
