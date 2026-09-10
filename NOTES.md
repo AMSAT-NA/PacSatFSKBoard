@@ -4100,3 +4100,9 @@ Changed the USB connector to one that is raised and faces toward the
 RF section of the board.  This will allow the connector to be used on
 the board as an umbilical.  This required moving the RTC and a massive
 rework of the entire USB section.
+
+## 2026-09-10
+
+Add a 350K resistor between USB\_+3.3V and the enable pins of the
+LM73100RPWR chips.  TI says this is necessary to prevent damage to the
+diodes.

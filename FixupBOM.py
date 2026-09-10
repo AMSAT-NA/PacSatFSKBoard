@@ -235,6 +235,7 @@ value_to_partnum_xlats_2 = {
     ('43KΩ 1%', '0402'): ('Panasonic', 'ERA-2AED433X'),
     ('47KΩ',	'0402'): ('Panasonic',	'ERA-2AED473X'),
     ('100KΩ',	'0402'): ('Wurth Electronik', '560112110019'),
+    ('350KΩ',	'0402'): ('Wurth Electronik', '560112110088'),
     ('1MΩ',	'0402'): ('Panasonic',	'ERJ-U02J105X'),
 
     ('0Ω',	'0603'): ('Panasonic',	'AC0603FR-070RL'),

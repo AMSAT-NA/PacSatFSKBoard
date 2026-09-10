@@ -4459,6 +4459,16 @@
 	)
 	(wire
 		(pts
+			(xy 160.02 167.64) (xy 160.02 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e280906-555a-463e-914b-0abf22f59499")
+	)
+	(wire
+		(pts
 			(xy 227.33 43.18) (xy 245.11 43.18)
 		)
 		(stroke
@@ -4526,6 +4536,16 @@
 			(type default)
 		)
 		(uuid "31c823c0-5e80-49be-b9ea-08fe8b2b3969")
+	)
+	(wire
+		(pts
+			(xy 153.67 156.21) (xy 160.02 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3230b580-7f34-405b-9b8b-a2a0964f149a")
 	)
 	(wire
 		(pts
@@ -4766,6 +4786,16 @@
 			(type default)
 		)
 		(uuid "4bb68b3a-78ec-4cde-b255-7210405de58f")
+	)
+	(wire
+		(pts
+			(xy 160.02 160.02) (xy 160.02 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4bcac5c3-709e-48e5-ba18-b58b1302001d")
 	)
 	(wire
 		(pts
@@ -6498,6 +6528,16 @@
 		(uuid "0715023f-b3d9-4422-bf64-832079bd8d32")
 	)
 	(label "USB_+3.3V"
+		(at 153.67 156.21 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "1e1a2dc3-dd98-43a0-9de2-26f209243eee")
+	)
+	(label "USB_+3.3V"
 		(at 177.8 26.67 0)
 		(effects
 			(font
@@ -7274,6 +7314,86 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
 					(reference "C150")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 160.02 163.83 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0cb9ae81-21e3-4b05-9700-89ed520b97f6")
+		(property "Reference" "R184"
+			(at 161.798 162.6616 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "350KΩ"
+			(at 161.798 164.973 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 158.242 163.83 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 160.02 163.83 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 160.02 163.83 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ecf4a8e2-7fcc-4a57-8a8e-0b60717af3c9")
+		)
+		(pin "2"
+			(uuid "6edcb908-397d-4943-bf3d-2602e363dc27")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/f99ab153-a348-41aa-af3f-f6d44b3c2cea"
+					(reference "R184")
 					(unit 1)
 				)
 			)
