@@ -2969,16 +2969,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "Can also be used as ADC channel 14 or BSL_Invoke"
-		(exclude_from_sim no)
-		(at 197.866 82.55 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-		)
-		(uuid "17f4600e-413e-4db1-bc56-8d52adfb4847")
-	)
 	(text "Add a way to put an inductor/capacitor\nfor current limiting in case\nthe antenna controller needs it."
 		(exclude_from_sim no)
 		(at 257.81 89.408 0)
