@@ -2380,7 +2380,7 @@
 		)
 		(uuid "55795ac1-363f-4afd-82ef-cc210a771d11")
 	)
-	(text "This is here to slow down the\ndrop of voltage into VCC at\npower off. It has to drop less\nthan .5V/ms per the datasheet."
+	(text "This is here to slow down the\ndrop of voltage into VCC at\npower off. It has to drop less\nthan 0.5V/ms per the datasheet."
 		(exclude_from_sim no)
 		(at 187.706 133.35 0)
 		(effects

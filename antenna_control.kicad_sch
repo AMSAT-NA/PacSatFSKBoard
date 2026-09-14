@@ -8071,7 +8071,7 @@
 		(dnp no)
 		(uuid "c1874225-cf98-467c-a866-db72993ad6e2")
 		(property "Reference" "C137"
-			(at 50.8 105.41 90)
+			(at 48.26 103.886 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8080,8 +8080,8 @@
 				)
 			)
 		)
-		(property "Value" ".47uF"
-			(at 50.8 100.33 90)
+		(property "Value" "0.47uF"
+			(at 48.514 101.346 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

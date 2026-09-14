@@ -1808,9 +1808,9 @@
 		)
 		(uuid "7e3c6912-167e-4fee-976e-5c5978258835")
 	)
-	(text ".1ms soft-start time"
+	(text "0.1ms soft-start time"
 		(exclude_from_sim no)
-		(at 54.102 77.216 0)
+		(at 51.562 79.248 0)
 		(effects
 			(font
 				(size 1.524 1.524)

@@ -255,7 +255,7 @@ You can power the board separately and use the USB section at the same
 time as long as you don't enable GPIO9 on the USB chip.
 
 The 5V will experience some power drop due to the MOSFETs used to
-switch power on.  At 1A it will sag about .24V.  The 3.3V power is
+switch power on.  At 1A it will sag about 0.24V.  The 3.3V power is
 boosted a bit in the USB power converter and will range from 3.2V to
 3.4V.
 
@@ -305,7 +305,7 @@ ground area on the bottom of the board for cooling.  But the provision
 is there.  At worst case it needs to dissipate around 2W of heat. (The
 PA is powered but no signal is transmitted.  When a signal is being
 transmitted at full power, most of the power is being sent and only
-around .5W is being dissipated by the PA.  It may also be possible to
+around 0.5W is being dissipated by the PA.  It may also be possible to
 reduce the quiescent current drawn by the PA by modifying the Iref
 current using the DAC on a Version 3 or later board.
 
@@ -315,7 +315,7 @@ the PA.  Experience has shown that most of the head goes to the bottom
 of the chip and not to the top, but it could help a little.
 
 On Amazon you can search for "copper flat bar" to find suitable
-material.  The PA is .85mm tall, the shield is 2.54mm, leaving 1.69mm
+material.  The PA is 0.85mm tall, the shield is 2.54mm, leaving 1.69mm
 (.067") of space between the shield and the PA.  A 1/16" (.0625) will
 probably work for a connection from the PA to the shield, though it
 might be a tad too thick.  It could be sanded a bit.
@@ -738,7 +738,7 @@ generate interrupts, and they are all used for that purpose.
 
 Thermsistors are connected to ADC pins on the processor to measure
 temperatures on the board.  Resistance varies from 534 ohms (125C) to
-188.5K (-40C).  There is a 10K bias, so this gives this gives a .17V
+188.5K (-40C).  There is a 10K bias, so this gives this gives a 0.17V
 (125C) to 3.13V (-40C) voltage range.  It is supposed to be fairly
 linear, but does require compensation by software.
 
@@ -764,10 +764,10 @@ A directional coupler and power measurement chips (ADL5501AK) feed
 into the ADCs (Forward power to pin 74 AD1IN[3] and reverse to pin 73
 AS1IN[2]) and an enable for those parts into pin 124 N2HET1[12].  Pin
 124 is pulled down by default, so the chips will be disabled at reset.
-The direction coupler is 4mm long with .1524mm traces .127mm apart.
+The direction coupler is 4mm long with 0.1524mm traces 0.127mm apart.
 At full power out (+33dBm) this will result in about -7dBm of power
-from the coupler.  This was simulated with a transmission line in
-qucs.  The voltage for that can be calculated from the chip manual.
+from the coupler.  The voltage for that can be calculated from the
+chip manual.  See the section on Directional Coupler for more details.
 
 # Other IO Connections
 
@@ -884,7 +884,7 @@ The high side of the ADC input is a 4.7K resistor, with the above
 thermsistor values you get ~.69ma of current, giving a voltage range
 of 53.9mV to 108mV feeding in to the ADC.
 
-The ADC can be set for a .256V full scale range, so each bit is
+The ADC can be set for a 0.256V full scale range, so each bit is
 .125mV.  The ADC is 12-bit and full range without noise issues.  So
 with the above configuration, you get 384 useful values from the ADC.
 
@@ -908,27 +908,27 @@ See the ICD for details.
 
 All RF lines are coplanar.
 
-Lower power RF traces are .216mm wide with .2032mm coplanar clearance
+Lower power RF traces are 0.216mm wide with 0.2032mm coplanar clearance
 .109mm over ground.
 
-Higher power RF traces are .225mm with .5mm coplanar clearance .109mm
+Higher power RF traces are 0.225mm with 0.5mm coplanar clearance 0.109mm
 over ground.
 
-The trace directly out of the PA and into the match is .762mm wide,
-.5mm coplanar clearance, .109mm over ground.  This presents a low
+The trace directly out of the PA and into the match is 0.762mm wide,
+.5mm coplanar clearance, 0.109mm over ground.  This presents a low
 impedance, in the 15 ohm range, to be closer to what is coming out of
 the PA.
 
 For the higher power traces, for RF impedance it would be better to
 use a wider trace higher over ground.  If you used layer 3 as the
-ground plane you could get 1.1mm over .639mm.  That would reduce the
-loss in the traces around 5 times, from probably in .0009dB/mm to
+ground plane you could get 1.1mm over 0.639mm.  That would reduce the
+loss in the traces around 5 times, from probably in 0.0009dB/mm to
 .0002dB/mm.  That presents a number of problems, though, with
 component size and routing.  The distances are so small that the loss
 is really negligible, and most of the distance traveled by the signal
 is in the components, not on the traces.
 
-Vias are all .3048mm hold with .508 annular rings and .2032 clearance
+Vias are all 0.3048mm hold with 0.508 annular rings and 0.2032 clearance
 (.9154mm opening for the via).  There's some trickiness played with
 zones to get the clearance around the vias what we want in the high
 power RF section.
@@ -958,7 +958,7 @@ filter for measuring forward and reverse power.  This is a broadside
 coupler, there is a ground above (top layer) and a ground below
 (bottom layer) and the two coupled lines between the ground planes
 1.556mm apart.  This source line is on layer 3 and the coupled line is
-on layer 4, they are .218mm apart.  Each line is .47mm wide.
+on layer 4, they are 0.218mm apart.  Each line is 0.47mm wide.
 
 I put this into a number of broadside coupling calculators on the
 internet, and I got all kinds of different answers, and none made any

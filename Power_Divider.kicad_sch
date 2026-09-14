@@ -2234,7 +2234,7 @@
 		)
 		(uuid "19dbc172-0130-484e-8fc7-f95f67a824f8")
 	)
-	(text "Unless otherwise noted, all\nRF traces are .225mm with .508mm\nclearance on the ground around\nthe trace and .109mm above the\nground plane.  All RF traces are\ncoplanar.  This gives around\n48.5 ohm nominal impedance."
+	(text "Unless otherwise noted, all\nRF traces are 0.225mm with 0.508mm\nclearance on the ground around\nthe trace and 0.109mm above the\nground plane.  All RF traces are\ncoplanar.  This gives around\n48.5 ohm nominal impedance."
 		(exclude_from_sim no)
 		(at 65.532 46.736 0)
 		(effects
@@ -2244,7 +2244,7 @@
 		)
 		(uuid "295d4a69-bfa6-4844-88b7-373db6a1e0f7")
 	)
-	(text "The calculated capacitance is 1.2pF, but the\ninductor SRF is 1.8GHz working out to a series\ncapacitance of .18pF."
+	(text "The calculated capacitance is 1.2pF, but the\ninductor SRF is 1.8GHz working out to a series\ncapacitance of 0.18pF."
 		(exclude_from_sim no)
 		(at 121.92 130.81 0)
 		(effects
@@ -2296,7 +2296,7 @@
 		)
 		(uuid "683c48d1-590e-48e2-9bb5-36a07e4f3281")
 	)
-	(text "123-173MHz Chebychev bandpass filter, simulated from:\n* https://markimicrowave.com/technical-resources/tools/lc-filter-design-tool/\n3rd order, conventional shunt first, 123MHz low cutoff, 173MHz high\ncutoff, .10db ripple in passband, 50 ohm input, 50 ohm output\nimpedance."
+	(text "123-173MHz Chebychev bandpass filter, simulated from:\n* https://markimicrowave.com/technical-resources/tools/lc-filter-design-tool/\n3rd order, conventional shunt first, 123MHz low cutoff, 173MHz high\ncutoff, 0.10db ripple in passband, 50 ohm input, 50 ohm output\nimpedance."
 		(exclude_from_sim no)
 		(at 273.812 127.254 0)
 		(effects

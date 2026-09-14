@@ -305,7 +305,7 @@ U33, C141, C111, R105, R106, R109, R128, and U31.
 
 ### Board 0 Optimizations
 
-If you are using the board stand-alone, you can gain .2dB or so on the
+If you are using the board stand-alone, you can gain 0.2dB or so on the
 RF inputs and outputs by eliminating the switch in the same way that
 board 2 does above.
 
