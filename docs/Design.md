@@ -966,7 +966,7 @@ sense.  This includes:
 https://www.electronicsforu.com/special/broadside-coupled-stripline-impedance-calculator,
 https://www.elektroda.com/calculators/pcb-impedance-calculator-broad-coupled-stripline
 Saturn PCB, and the Pozar equations (which I know wouldn't work, as
-the make assumptions that didn't apply here), and some others.
+they make assumptions that didn't apply here), and some others.
 
 So I had Claude look at it, and it was able to create a program that
 allows calculation of these parameters accurately.  The coupling is
@@ -977,7 +977,11 @@ This program is in the "sim" directory and named
 "broadside_coupler.py".  Instructions are in the program code.
 
 I used this to calculate a proper coupler.  So I'm pretty sure the
-directional coupler is correct now.
+directional coupler is correct now.  The directional coupler is
+explained in the directional\_coupler.ltx document in the sim
+directory.  It's not terribly accurate.  Forward power is probably ok,
+and reverse power is good enough to know if you have a decent working
+antenna on the other end.
 
 # Power Control and Sequencing
 
