@@ -84,7 +84,7 @@ X2 a1 out Filt440MHz
 alterparam m = 1
 reset
 ac lin 50000 3Meg 1400Meg
-* .663 is 2 * sqrt(Zin / Zout) = 2 * sqrt(5.5 / 50)
+* 0.663 is 2 * sqrt(Zin / Zout) = 2 * sqrt(5.5 / 50)
 plot title "Full Chain Filter Loss" db(.663 * v(out) / v(ina))
 *plot vr(out) vi(out) vp(out)
 
@@ -117,7 +117,7 @@ plot title "L Match Output Impedance" v(out) vi(out)
 alterparam m = 7
 reset
 ac lin 50000 3Meg 1400Meg
-* .663 is 2 * sqrt(Zin / Zout) = 2 * sqrt(5.5 / 50)
+* 0.663 is 2 * sqrt(Zin / Zout) = 2 * sqrt(5.5 / 50)
 plot title "L Match only Loss" db(.663 * v(out) / v(ina))
 
 alterparam m = 6

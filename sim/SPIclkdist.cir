@@ -1,16 +1,16 @@
 * Analyze the AX5043 SPI clock to get proper resistors for avoiding
 * bouncing signals.
 
-V1 inv 0 dc 0 AC 1 pulse(0 3 0ns .2ns .2ns 5ns 10ns)
+V1 inv 0 dc 0 AC 1 pulse(0 3 0ns 0.2ns 0.2ns 5ns 10ns)
 Rsrc inv in 50
 
 * 3.8mm from the resistor to the load
-.model tline50_Load ltra rel=1 r=.01 g=0
+.model tline50_Load ltra rel=1 r=0.01 g=0
 + l=2.62e-10 c=1.05e-13 len=3.8
 
 * 31.7mm transmission line with 50 ohm impedance, from the series resistor
 * to the resistor feeding the TX AS5043
-.model tline50_TX ltra rel=1 r=.01 g=0
+.model tline50_TX ltra rel=1 r=0.01 g=0
 + l=2.62e-10 c=1.05e-13 len=31.7
 OTX in 0 n1 0 tline50_TX
 RTX n1 n1a 470
@@ -18,7 +18,7 @@ OTXl n1a 0 n1b 0 tline50_load
 RTXl n1b 0 1Meg
 
 * From TX to RX4 resistor, 27.4mm
-.model tline50_RX4 ltra rel=1 r=.01 g=0
+.model tline50_RX4 ltra rel=1 r=0.01 g=0
 + l=2.62e-10 c=1.05e-13 len=27.4
 ORX4 in 0 n2 0 tline50_RX4
 RRX4 n2 n2a 470
@@ -26,7 +26,7 @@ ORX4l n2a 0 n2b 0 tline50_load
 RRX4l n2b 0 1Meg
 
 * From RX4 to RX3 resistor, 13.2mm
-.model tline50_RX3 ltra rel=1 r=.01 g=0
+.model tline50_RX3 ltra rel=1 r=0.01 g=0
 + l=2.62e-10 c=1.05e-13 len=13.2
 ORX3 in 0 n3 0 tline50_RX3
 RRX3 n3 n3a 470
@@ -34,7 +34,7 @@ ORX3l n3a 0 n3b 0 tline50_load
 RRX3l n3b 0 1Meg
 
 * From RX3 to RX2 resistor, 13.2mm
-.model tline50_RX2 ltra rel=1 r=.01 g=0
+.model tline50_RX2 ltra rel=1 r=0.01 g=0
 + l=2.62e-10 c=1.05e-13 len=13.2
 ORX2 in 0 n4 0 tline50_RX2
 RRX2 n4 n4a 470
@@ -42,7 +42,7 @@ ORX2l n4a 0 n4b 0 tline50_load
 RRX2l n4b 0 1Meg
 
 * From RX1 to RX1 resistor, 14.2mm
-.model tline50_RX1 ltra rel=1 r=.01 g=0
+.model tline50_RX1 ltra rel=1 r=0.01 g=0
 + l=2.62e-10 c=1.05e-13 len=14.2
 ORX1 in 0 n5 0 tline50_RX1
 RRX1 n5 n5a 470

@@ -65,7 +65,7 @@ Rload out 0 50
 .endif
 
 .control
-*tran .1ns 1200ns 1100ns
+*tran 0.1ns 1200ns 1100ns
 *plot v(ina1,inb1), v(out)
 
 alterparam m = 1

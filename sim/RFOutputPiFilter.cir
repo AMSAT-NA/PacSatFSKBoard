@@ -104,7 +104,7 @@ X0 0 x1 x1 in PAOutImpedance
 alterparam m = 1
 reset
 ac lin 50000 3Meg 1400Meg
-* .663 is 2 * sqrt(Zin / Zout) = 2 * sqrt(5.5 / 50)
+* 0.663 is 2 * sqrt(Zin / Zout) = 2 * sqrt(5.5 / 50)
 plot title "3rd Order LP Filter Loss" db(.663 * v(out) / v(ina))
 *plot vr(out) vi(out) vp(out)
 
@@ -121,7 +121,7 @@ plot title "3rd Order LP Filter Output Impedance" v(out) vi(out)
 alterparam m = 4
 reset
 ac lin 50000 3Meg 1400Meg
-* .663 is 2 * sqrt(Zin / Zout) = 2 * sqrt(5.5 / 50)
+* 0.663 is 2 * sqrt(Zin / Zout) = 2 * sqrt(5.5 / 50)
 plot title "5th Order LP Filter Loss" db(.663 * v(out) / v(ina))
 *plot vr(out) vi(out) vp(out)
 
@@ -154,7 +154,7 @@ plot title "3rd Order HP Filter Output Impedance" v(out) vi(out)
 alterparam m = 10
 reset
 ac lin 50000 3Meg 1400Meg
-* .663 is 2 * sqrt(Zin / Zout) = 2 * sqrt(5.5 / 50)
+* 0.663 is 2 * sqrt(Zin / Zout) = 2 * sqrt(5.5 / 50)
 plot title "5th Order BP Filter Loss" db(.663 * v(out) / v(ina))
 *plot vr(out) vi(out) vp(out)
 

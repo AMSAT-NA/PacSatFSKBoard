@@ -22,16 +22,16 @@ V5v v5in 0 DC 5
 * Resistance is DC resistance, not from Q.  Capacitance isn't meaningful.
 * Coilcraft AE563PKA301MSZ
 *L5v v5in m3 300n
-*RL5v m3 v5 .003
+*RL5v m3 v5 0.003
 * Coilcraft 0805LS-471X_RC
 L5v v5in m3 470n
-RL5v m3 v5 .030
+RL5v m3 v5 0.030
 Cp2 v5 0 100p
 Cp3 v5 0 1n
 
 * This is the small inductor.  It's small enough that we can make
 * it with a PCB trace.
-* 4.55mm .225mm trace .612mm over ground.
+* 4.55mm 0.225mm trace 0.612mm over ground.
 * Calculated with KiCad transmission line calculator.  Calculated
 * using er=4.3, got Zo=103 angle=0.069.
 * Convert that to L with:
@@ -39,8 +39,8 @@ Cp3 v5 0 1n
 *     = (103 * 0.069) / (2 * pi * 435e6)
 *     = 2.6-09
 Lp v5 m2 2.6n
-RLp m2 a0 .003
-CLp v5 a0 .25e-12
+RLp m2 a0 0.003
+CLp v5 a0 0.25e-12
 
 * Used to measure current going into the PI filter.
 Vm2 a0 a1 dc 0
@@ -78,12 +78,12 @@ Rout out 0 50
 
 .control
 * Wide range plot
-tran .01ns 1010ns 100ns
+tran 0.01ns 1010ns 100ns
 plot i(v5v)
 plot v(out)
 
 * Do a small detailed plot
 reset
-tran .01ns 410ns 400ns
+tran 0.01ns 410ns 400ns
 plot v(in) v(a1) v(out) i(Vm1) i(Vm2) i(v5v)
 .endc

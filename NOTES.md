@@ -85,7 +85,7 @@ trouble is it's hard to know where to add them.
 What happens if the RTC goes into lockup or some other bad state?
 There's no way to power it off, and a reset won't help.
 
-Maybe switch to a more accurate main oscillator.  .5ppm oscillators at
+Maybe switch to a more accurate main oscillator.  0.5ppm oscillators at
 16MHz are available, but the temperature doesn't go to 105C, only 85C.
 Maybe that's better, anyway?  The TG2520SMN 16.0000M-ECGNNM3 from
 Epson is drop-in compatible to what is there.
@@ -102,7 +102,7 @@ receiver, but I would like someone with experience to look it over.
 Switch to a TMS570LS2134 CPU.  This has double the FLASH and RAM and
 has the same pinout as the TMS570LS0914.
 
-The chosen LNA (QPL9547) has very good specs (a NF of .3dB) but draws
+The chosen LNA (QPL9547) has very good specs (a NF of 0.3dB) but draws
 a lot of current (50ma).  Other possible options are Guerrilla RF
 GRF2374, GRF4001, Skyworks LNAs (SKY67150-396LF, SKY67183-396LF,
 SKY65015-70LF), or Qorvo SGL0622Z.  The Qorvo part is very low power,
@@ -330,7 +330,7 @@ the board.
 Move the RX ax5043s to below and slightly left of the processor.  Move
 the RF chain to below that.
 
-Possibly rework board stack to have .1mm between the top layer and the
+Possibly rework board stack to have 0.1mm between the top layer and the
 ground layer to reduce trace size required for 50 ohms.
 (This was already done.)
 
@@ -376,7 +376,7 @@ That's pretty standard.
 
 The RF lines need some rework, some from the hybrid to the AX5043s are
 kind of long, and they probably need to be coplaner.  I have added a
-coplaner net class for this board stack (.225mm trace, .7mm spacing).
+coplaner net class for this board stack (.225mm trace, 0.7mm spacing).
 
 Shield on receive AX5043s.
 
@@ -682,7 +682,7 @@ and put the capacitor there, that should be much easier - On the
 new version, added a 1nF capacitor between L35 and the PA.
 
 The Iref input to the PA has the resistor and inductor swapped from
-what's in the datasheet, and there is also a .1uF capacitor from
+what's in the datasheet, and there is also a 0.1uF capacitor from
 between the resistor and inductor to ground.  It should probably
 match the datasheet. - Changed to match the datasheet.
 
@@ -809,8 +809,8 @@ some scenarios that can result in high leakage on DIN when powered
 off.  See "Battery Leakage Current" in the datasheet. -- I figured
 this out from the Analog forum.  The power at Vcc has to be held a bit
 on power off to give the chip time to switch over.  In the data sheet
-this is Tvccf and it's .5V/ms, meaning that the power can't fall
-faster than .5V/ms or the chip won't switch over in time.  So a bigger
+this is Tvccf and it's 0.5V/ms, meaning that the power can't fall
+faster than 0.5V/ms or the chip won't switch over in time.  So a bigger
 capacitor and a resistor or something would need to be added to avoid
 the issue.  A resistor would have to be pretty large to avoid the
 issue, and the voltage drop across it might cause issues.  Instead I
@@ -1010,7 +1010,7 @@ tested. - I measured the impedance with the power turned off, I
 measured 3.8Mohms, which should be ok.
 
 The PA DAC DAC5311) has two big issues: The digital high input voltage
-is .7 * VDD, above 3.3V, and the output voltage sags at the currents
+is 0.7 * VDD, above 3.3V, and the output voltage sags at the currents
 we are running it at (8.9ma), per figure 7-14 in the datasheet.
 Replace it with something else, probably a DAC60501Z which should
 solve both issues, but will need an external reference.  Other
@@ -1063,16 +1063,16 @@ candidates:
   measurement with the signal analyzer and see how much power is in
   the harmonics at P21, since all that power would be lost. - This was
   an issue.  Measuring the power just at 435MHz gave 30.5dBm, so
-  around .26W is at other frequencies.
+  around 0.26W is at other frequencies.
 
 * Maybe something about the filter?  Claude thinks the filter looks
   pretty good, though, and simulation looks good. - Not terrible.
   It's hard to say.
 
-* The power switch might be more than .25dB.  Worst case is .45dB,
+* The power switch might be more than 0.25dB.  Worst case is 0.45dB,
   which might be it's large signal.  It also may be generating
   harmonics, need to look at the spectrum output after the switch. -
-  Bypassing the switch reduced loss by .2dB.
+  Bypassing the switch reduced loss by 0.2dB.
 
 All in all, it's 1.36dB loss from the PA output match to the output
 according to the VNA, and that matches well with what we are measuring
@@ -1444,20 +1444,20 @@ Sized up some power lines for safety margin.
 
 Calculation of the via impedance (done at Sierra Circuits proto
 express) comes out to ~52 ohms.  The board is 1.56mm thick (JLCPCB
-2116 board stack), each copper layer is .035mm.  Input is:
+2116 board stack), each copper layer is 0.035mm.  Input is:
 
   Height of dielectric - H1 ( mm ) - 1.416
   Dielectric Constant Er\_1 - 4.5
-  Height of dielectric - H2 ( mm ) - .109
+  Height of dielectric - H2 ( mm ) - 0.109
   Dielectric Constant Er\_2 - 4.5
   Dielectric Constant Er\_3 - 1
-  Via Diameter ( mm ) - .308
+  Via Diameter ( mm ) - 0.308
   Anti Pad Diameter ( mm ) - 1.53
-  Annular Pad Diameter ( mm ) - .508
-  Via Pad Diameter ( mm ) - .508
-  Via Plating Thickness ( mm ) - .035
-  Annular Pad Thickness ( mm ) - .035
-  Reference Plane Thickness ( mm ) - .035
+  Annular Pad Diameter ( mm ) - 0.508
+  Via Pad Diameter ( mm ) - 0.508
+  Via Plating Thickness ( mm ) - 0.035
+  Annular Pad Thickness ( mm ) - 0.035
+  Reference Plane Thickness ( mm ) - 0.035
 
 Reroute the SPI clock to the bottom of the board where it can be
 impedance controlled to 50 ohms.  Add a ground plane on the bottom to
@@ -1465,9 +1465,9 @@ the entire RF section so that the impedance is the same as on the top.
 
 Simulated the AX5043 SPI clock and set the resistor values to 470 ohms
 and added a resistor for the end device, too.  With the current
-settings, assuming a .2ns rise time from the processor, this gives a
+settings, assuming a 0.2ns rise time from the processor, this gives a
 fairly smooth signal on all the inputs.  The signal reaches 2.8V (from
-0 to 3V input) or .2V (from 3V to 0) in 2ns.  Resistance values 330
+0 to 3V input) or 0.2V (from 3V to 0) in 2ns.  Resistance values 330
 and down give some issues at the RX2 input, there is a dip that could
 be double-clocked on.  Higher values will slow the rise time more.
 With this setup, no resistors on the other lines, as long as they
@@ -1559,8 +1559,8 @@ Add a directional coupler and power measurement chips (ADL5501AK) to
 feed into the ADCs (Forward power to pin 74 AD1IN[3] and reverse to
 pin 73 AS1IN[2]) and an enable for those parts into pin 124
 N2HET1[12].  Pin 124 is pulled down by default, so the chips will be
-disabled at reset.  The direction coupler is 4mm long with .1524mm
-traces .127mm apart.  At full power out (+33dBm) this will result in
+disabled at reset.  The direction coupler is 4mm long with 0.1524mm
+traces 0.127mm apart.  At full power out (+33dBm) this will result in
 about -7dBm of power from the coupler.  This was simulated with a
 transmission line in qucs.  The voltage for that can be calculated
 from the chip manual.
@@ -1808,7 +1808,7 @@ Lots of work on the various parts to make the board more
 manufacturable.  Changed some values from hard to get values and
 changes the strings in the values to be used more easily.
 
-Moved the RF splitter over a bit to make room for another .5" square
+Moved the RF splitter over a bit to make room for another 0.5" square
 shield in case we switch to discrete components for a filter.
 
 ## 2025-08-25
@@ -1840,7 +1840,7 @@ inductor I don't think it will add noise (maybe?  Not 100% sure.)
 
 Looked at capacitance of the inductors.  The only significant change
 was in the RF input filter, since it had a parallel capacitor of 1.2pF
-and a capacitance of .18pF.  Added inductor capacitors to the
+and a capacitance of 0.18pF.  Added inductor capacitors to the
 simulations, but they didn't make much difference elsewhere.
 
 ## 2025-08-27
@@ -2230,7 +2230,7 @@ I've been playing around with the different capacitor values on the PA
 and output filter.  With a signal generator (SG) and a spectrum
 analyzer (SA) I was able to get about 3dB more power out of the board.
 I changed the PA input capacitor (C27) to 33pF, the PA output
-capacitor (C117) to 22pF, removed C125, the .75pF capacitor in the
+capacitor (C117) to 22pF, removed C125, the 0.75pF capacitor in the
 filter, and changed C127 to 2pf.  Each change gained about 1dB.
 
 I've also changed inductors L30 and L33 from 22nH to 20nH and 18nH to
@@ -2360,10 +2360,10 @@ L35) to a 47pF capacitor like it was supposed to be and it improved,
 but not like it was.  I can get about 1W out of the far end (input
 power around 50% of the AX5043's max) before it shuts down.  I put
 everything back like it was before and it still has an issue.  In fact
-it's worse, I can't even get .5W out.
+it's worse, I can't even get 0.5W out.
 
 Lowering the voltage to 4V causes the problem to go away, but it's
-only putting out about .5W in that case.
+only putting out about 0.5W in that case.
 
 And I realized that it might be the current limiter for the PA.  And
 it was, it's drawing more current than it will allow.  So it's drawing
@@ -2518,13 +2518,13 @@ Anyway, I tried reducing the voltage and the power from the ax5043:
 
 TX power and draw current verses input power at 3.5V:
 
-    35        .5W     300mA
+    35        0.5W     300mA
     50         1W     400mA
     100       1.8W     550mA
 
 TX power and draw current verses input power at 5V:
 
-    35        .5W     550mA
+    35        0.5W     550mA
     50         1W     550mA
     100       1.8W     600mA
 
@@ -2625,32 +2625,32 @@ Iref V=2.0V:
 
     100    1.8W     2.5W	600mA	83%
     50     1.2W		1.7W    500mA	76%
-    35      .8W		1.1W    300mA	73%
+    35     0.8W		1.1W    300mA	73%
 
 Iref V=2.5V:
 
     100    1.7W		2.4W    600mA	80%
-    50      .8W		1.1W	400mA	55%
-    40      .5W		 .7W    350mA	40%
-    35      .3W		 .4W    250mA	20%
+    50     0.8W		1.1W	400mA	55%
+    40     0.5W 	0.7W    350mA	40%
+    35     0.3W	    0.4W    250mA	20%
 
 Iref V=3V:
 
     100    1.8W		2.5W	600mA	83%
-    50      .9W		1.3W	450mA	57%
-    35      .4W		 .6W	350mA	34%
+    50     0.9W		1.3W	450mA	57%
+    35     0.4W	    0.6W	350mA	34%
 
 Iref V=3.5V:
 
     100    1.8W		2.5W	600mA	83%
     50     1.0W		1.4W	450mA	62%
-    35      .5W		 .7W	350mA	40%
+    35     0.5W     0.7W	350mA	40%
 
 Iref V=4.5V:
 
     100    1.8W		2.5W	600mA	83%
     50     1.0W		1.4W	500mA	56%
-    35      .5W		 .7W	450mA	31%
+    35     0.5W     0.7W	450mA	31%
 
 All these numbers are pretty rough, read off of power supply meters
 and SWR meters.
@@ -2725,7 +2725,7 @@ something is off there.  Here's what I got at 435MHz:
     435MHz:
     S11: -.84 + j.049
     S21: 2.53 - j1.1
-    S22: -.73 + j .12
+    S22: -.73 + j 0.12
     S12: 0 + j0
 
     Zin 4.14 + j1.26
@@ -2762,7 +2762,7 @@ and through connections.  Have to wait for it to arrive.
 Got the U.FL, board, calibrated the VNA.  At 435Mhz with the L-Match
 removed and zero-ohm resistors in place, I get:
 
-    S11: -.842 + .347j
+    S11: -.842 + 0.347j
 	S21: -.401 + 2.85j
     S22: -.704 + 0.354j
 	S12: 0 + 0j
@@ -3066,7 +3066,7 @@ controller GPIO lines to make them easily available.
 ## 2026-03-15
 
 Re-verified the board dimensions.  The slot at the bottom of the board
-was .01mm too high.  It wouldn't have mattered, but I fixed it anyway.
+was 0.01mm too high.  It wouldn't have mattered, but I fixed it anyway.
 I also locked all the edge cuts, the PC104 connector, and the holes.
 
 Verified that in KiCad, the board edge is in the *middle* of the edge
@@ -3078,10 +3078,10 @@ Important detail.
 
 In a meeting it came up that the thermsistors needs to be looked at
 from a current point of view.  The maximum permissible current on the
-device is .31ma.  The lowest resistance is 534 ohms at 125C and the
+device is 0.31ma.  The lowest resistance is 534 ohms at 125C and the
 highest is 188.4K at -40C.  The companion resistor in the divider is
-10K, at 3.3V that gives .17V at the minimum and 3.13V at the maximum.
-At the lowest resistance we have 10.534K, giving .31mA.  Maybe I
+10K, at 3.3V that gives 0.17V at the minimum and 3.13V at the maximum.
+At the lowest resistance we have 10.534K, giving 0.31mA.  Maybe I
 designed it that way, I don't remember.
 
 Change the MMCX connectors to right-angle ones to avoid conflicting
@@ -3159,7 +3159,7 @@ panel temperature inputs.
 
 Replace the ADC with two ADS1015 ADCs.  These are easier to work with
 and don't have the accuracy problems the original one does, as they
-have a built-in op amp that can be ranged down to .256V for the
+have a built-in op amp that can be ranged down to 0.256V for the
 maximum range.
 
 Add an enable to allow the ADC to be powered on and off.  So it can be
@@ -3558,17 +3558,17 @@ is the output power.  I can make no sense of this:
 1f80 - 2.40
 1fc0 - 2.44
 
-0800 -   0
-0c00 -  .64
-0e00 -  .96
+0800 -    0
+0c00 - 0.64
+0e00 - 0.96
 0f00 - 1.12
 0f80 - 1.12
 0fc0 - 1.16
 0fe0 - 1.18
 
 2800 -    0
-2c00 -  .64
-2e00 -  .96
+2c00 - 0.64
+2e00 - 0.96
 
 3800 - 3.72
 3000 - 2.55
@@ -3654,7 +3654,7 @@ I've ordered some more parts based on this to narrow it down.  I've
 changed the schematic based on my current guesses.
 
 Also, I changed the part feeding the PA to a 36nH inductor instead of
-the ferrite 100nH one.  I'm getting another .5dB out of the circuit,
+the ferrite 100nH one.  I'm getting another 0.5dB out of the circuit,
 so this is a good thing.  I've ordered some CoilCraft parts that have
 a lower DCR, and I've switched the inductor to a 0805 part for even
 lower DCR.
@@ -3748,11 +3748,11 @@ power value:
 |  70 | 1.21 | 30.8 | 783 | 264 | 46.6 | 52.0 |
 |  60 | 1.10 | 30.4 | 754 | 261 | 44.6 | 49.9 |
 |  54 | 1.01 | 30.0 | 734 | 259 | 42.5 | 47.2 |
-|  50 | .943 | 29.7 | 713 | 257 | 41.4 | 45.9 |
-|  40 | .675 | 28.3 | 636 | 250 | 35.0 | 39.3 |
-|  30 | .361 | 25.5 | 523 | 244 | 26.0 | 25.5 |
-|  20 | .112 | 20.4 | 389 | 236 | 14.6 | 16.1 |
-|  10 | .014 | 11.3 | 283 | 229 |  5.1 |  5.6 |
+|  50 | 0.943| 29.7 | 713 | 257 | 41.4 | 45.9 |
+|  40 | 0.675| 28.3 | 636 | 250 | 35.0 | 39.3 |
+|  30 | 0.361| 25.5 | 523 | 244 | 26.0 | 25.5 |
+|  20 | 0.112| 20.4 | 389 | 236 | 14.6 | 16.1 |
+|  10 | 0.014| 11.3 | 283 | 229 |  5.1 |  5.6 |
 
 val is the AX5043 power setting.
 
@@ -3768,7 +3768,7 @@ PA off.
 
 Eff1 is the calculated efficiency out of the matching network.
 
-Eff2 is the estimated efficiency by adding .5dB for the loss in the
+Eff2 is the estimated efficiency by adding 0.5dB for the loss in the
 matching network.  This should be the output of the PA.
 
 Do the same for DAC=255:
@@ -3783,9 +3783,9 @@ Do the same for DAC=255:
 |  50 | 1.35 | 31.3 | 866 | 259 | 44.5 | 49.9 |
 |  40 | 1.18 | 30.7 | 828 | 257 | 41.3 | 46.2 |
 |  34 | 1.01 | 30.0 | 792 | 250 | 37.3 | 41.4 |
-|  30 | .855 | 29.3 | 758 | 244 | 33.3 | 37.2 |
-|  20 | .421 | 26.2 | 659 | 236 | 19.1 | 22.1 |
-|  10 | .110 | 20.4 | 593 | 229 |  6.0 |  6.8 |
+|  30 | 0.855| 29.3 | 758 | 244 | 33.3 | 37.2 |
+|  20 | 0.421| 26.2 | 659 | 236 | 19.1 | 22.1 |
+|  10 | 0.110| 20.4 | 593 | 229 |  6.0 |  6.8 |
 
 ## 2026-08-05
 
@@ -3855,7 +3855,7 @@ coupler on the output. - This appears to have made it worse.  I'm
 measuring 28.3dBm in the above measurements at 435MHz.
 
 Add R107 to bypass the switch and re-measure the above values. - This
-made a slight difference, about .2dB improvement.  That was expected.
+made a slight difference, about 0.2dB improvement.  That was expected.
 
 Remove R129.  Measure the above values at P21:
 
@@ -3867,7 +3867,7 @@ Remove R129.  Measure the above values at P21:
 | 870MHz    | -3dBm    |
 | 1305Mhz   | 11.4dBm  |
 
-So we are only getting 30.5dBm (1.12W) out at 435MHz, so about .26W is
+So we are only getting 30.5dBm (1.12W) out at 435MHz, so about 0.26W is
 going out at other frequencies.
 
 Measure the filter with a VNA. - Have to remember to turn on the
@@ -3960,7 +3960,7 @@ a number of problems:
 * The input impedance when operating at class C is wrong, thus
   causing issues.
 
-When getting 31.4dBm out of the PA match, about .26W is harmonics and
+When getting 31.4dBm out of the PA match, about 0.26W is harmonics and
 that power is lost.
 
 The current filter seems to work well for class-A, it has notches at
@@ -4000,9 +4000,9 @@ negative logic without the MOSFET.
 ## 2026-08-31
 
 I've learned some things about tracks, impedance, and RF.  I had been
-using .225mm tracks .109mm over ground with .2032mm clearance for a 50
+using 0.225mm tracks 0.109mm over ground with 0.2032mm clearance for a 50
 ohm trace.  I had noticed that most RF boards used much wider traces,
-like 1.3mm trace .9mm over ground with .5mm clearance.  So I did some
+like 1.3mm trace 0.9mm over ground with 0.5mm clearance.  So I did some
 research.  It turns out there were some bad effects from that.  Not
 terrible, but the narrower trace has much higher RF resistance, about
 3 times as much, even though it has less inductance.  And the narrow
@@ -4011,7 +4011,7 @@ edge ground interactions.  Moving to wider traces is hard, though,
 when dealing with the RF switch and other components.
 
 Also, increasing the clearance will mess up via impedance.  With a
-.3048mm hole, a .508mm ring, and .91mm anti-ring, it's very close to
+.3048mm hole, a 0.508mm ring, and 0.91mm anti-ring, it's very close to
 50 ohms.  Changing the anti-ring to 1.5mm increases the impedance to
 81 ohms.  I can't find a way to make a different clearance for rings
 and tracks, and that seems kind of weird, anyway.
@@ -4019,12 +4019,12 @@ and tracks, and that seems kind of weird, anyway.
 So I have increased the clearance around the PA output traces to be
 .5mm.  This gets the impedance of the tracks a little closer to 50
 ohms, and should decrease the RF resistance.  The main output of the
-PA is increased to .762mm tracks to lower the impedance a little more.
+PA is increased to 0.762mm tracks to lower the impedance a little more.
 But the few places in the PA output area where there are vias have
-special zones to keep the clearance at .2032mm.
+special zones to keep the clearance at 0.2032mm.
 
 You could eliminate the second and third layer and put a ground on the
-fourth layer at .639mm.  Then with a .762mm track you will have 50
+fourth layer at 0.639mm.  Then with a 0.762mm track you will have 50
 ohms and lower loss.  But the distances are so small I'm not sure it's
 worth it.
 
@@ -4032,7 +4032,7 @@ This isn't so important for low-power signals, so the receive side
 and lower power TX part isn't changed.
 
 I replaced the 1nF capacitor on the PA output with a zero ohm resistor
-and got another .5dB out of the circuit.  I'm not sure what was going
+and got another 0.5dB out of the circuit.  I'm not sure what was going
 on, but that's a nice improvement, and that capacitor wasn't doing
 anything useful.  I cannot figure out why it made that big of a
 difference.

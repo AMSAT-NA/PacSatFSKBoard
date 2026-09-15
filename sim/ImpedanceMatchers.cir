@@ -38,13 +38,13 @@ Rout measure2 out       2.43
 * This is what is currently installed
 * Q=65, Coilcraft 0603DC
 L1     in      a1a     3.3n
-Rl1    a1a     0       .13
+Rl1    a1a     0       0.13
 C1     in      out     22p
 
 * Assuming the input impedance is correct, this would be a better
 * match.
 *L1     in      a1a     4.3n
-*Rl1    a1a     0       .13
+*Rl1    a1a     0       0.13
 *C1     in      out     17p
 
 .ENDS
@@ -53,7 +53,7 @@ C1     in      out     22p
 
 Rsrc in       measure1  5.63
 * 10j ohms
-Lsrc measure2 out       .6n
+Lsrc measure2 out       0.6n
 
 .ENDS
 
@@ -63,10 +63,10 @@ Lsrc measure2 out       .6n
 Lpa  in  0 47n
 
 * Trace inductance.  The trace from the PA output to the
-* end of the match capacitor is 10mm, .5mm thick coplanar
-* with .5mm spacing, 1 oz (.0348mm) thickness. Calculating
+* end of the match capacitor is 10mm, 0.5mm thick coplanar
+* with 0.5mm spacing, 1 oz (.0348mm) thickness. Calculating
 * at https://wcalc.sourceforge.net/cgi-bin/coplanar.cgi
-* I get .19nH/mm and .2pF/mm, so 1.9nH and 2pF.
+* I get 0.19nH/mm and 0.2pF/mm, so 1.9nH and 2pF.
 Lp1 in a2a 1.9n
 Cp1 a2a 0  2p
 
@@ -76,10 +76,10 @@ Cp2 a2a a2 1n
 * Impedance matching network
 * TX PA output matcher
 C1	a2	out	15p
-* Q=55, CoilCraft 0402DC, + .2nH for trace impedance.
+* Q=55, CoilCraft 0402DC, + 0.2nH for trace impedance.
 L1	out	a3	6.4n
-Rl1	a3	0	.30
-Cl1	out	0	.037p
+Rl1	a3	0	0.30
+Cl1	out	0	0.037p
 
 .ENDS
 
@@ -122,15 +122,15 @@ C1	in1	0	12p
 * Coilcraft 0603DC series has a Q of around 35
 L1	in	a2	43n
 Rl1	a2	out2	1.12
-Cl1	in	out2	.186p
+Cl1	in	out2	0.186p
 
 * Trace inductance.  The trace from the filter input to the
-* end of the match inductor is 7mm, .225mm thick coplanar
-* with .5mm spacing, 1 oz (.0348mm) thickness. Calculating
+* end of the match inductor is 7mm, 0.225mm thick coplanar
+* with 0.5mm spacing, 1 oz (.0348mm) thickness. Calculating
 * at https://wcalc.sourceforge.net/cgi-bin/coplanar.cgi
-* I get .32nH/mm and .13pF/mm, so 2.2nH and .91pF.
+* I get 0.32nH/mm and 0.13pF/mm, so 2.2nH and 0.91pF.
 Lt	out2	out	2.2n
-Ct	out	0	.91p
+Ct	out	0	0.91p
 
 .ENDS
 
