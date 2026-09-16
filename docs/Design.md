@@ -94,45 +94,6 @@ line). The rest should be tristate.
 The GPIO pins on the USB device can be controlled with the cygpio
 command in the hostutils/linux directory in the PacSatSw repository.
 
-# Initial Board Programming
-
-The first thing you must do is program the main software onto the main
-CPU (TMS570) with Code Composer Studio 12.8.1 through the debug port.
-You need an XDS110 device of some kind, see the next section for
-details on that and hooking up a serial port.
-
-It's recommended to power with USB while doing this.  Using the cygpio
-utility, enable power and disable the watchdog with:
-
-```
-$ sudo cygpio 1 nowdog 1
-$ sudo cygpio 1 power 1
-```
-
-which will disable the external watchdog timer and enable the power.
-Note: Don't enable power here if you have external power applied
-through the PC104.  When programming with the XDS110 at any time, you
-need to disable the watchdog timer.  You don't want it resetting the
-CPU while programming.
-
-After that you can program the main CPU with JTAG.
-
-On the main CPU serial port you should see it boot.  It will enable
-the ACP by default, but that must be programmed, too, to work.
-
-To program that, pull up Code Composer Studio 20.5.0 or later and load
-the PacSatSPII2CSysconfig workspace.  This contains the internal
-configuration for the device and must be programmed first before
-anything else will work.  Failing here can brick the chip.  But it's
-small and not likely to fail.
-
-After that, program the PacSatSPII2C workspace to get the normal
-software on the ACP.  You must cycle the power on the chip before you
-can program it after programming the previous one to get it in the
-right state.
-
-After this, the board should be functional.
-
 # Hooking Up JTAG and a serial port
 
 The board uses a standard 10-pin 2x5 1.27mm pitch JTAG connector for a
@@ -176,6 +137,48 @@ Otherwise the LP-XDS110 will be providing power to the device, which
 you don't want.  In that case the PacSat board is powering the level
 shifters.
 
+On Linux the serial devices will appear as /dev/ttyACM\<x\> for the main
+CPU and /dev/ttyACM\<x+1\> for the second CPU.
+
+# Initial Board Programming
+
+The first thing you must do is program the main software onto the main
+CPU (TMS570) with Code Composer Studio 12.8.1 through the debug port.
+You need an XDS110 device of some kind, see the previous section for
+details on that and hooking up a serial port.  You can find more
+details on this in the PacSatSw repository.
+
+It's recommended to power with USB while doing this.  Using the cygpio
+utility, disable the watchdog and enable power with:
+
+```
+$ sudo cygpio 1 nowdog 1
+$ sudo cygpio 1 power 1
+```
+
+Note: Don't enable power here if you have external power applied
+through the PC104.  When programming with the XDS110 at any time, you
+need to disable the watchdog timer.  You don't want it resetting the
+CPU while programming.
+
+After that you can program the main CPU with JTAG.
+
+On the main CPU serial port you should see it boot.  It will enable
+the ACP by default, but that must be programmed, too, to work.
+
+To program that, pull up Code Composer Studio 20.5.0 or later and load
+the PacSatSPII2CSysconfig workspace.  This contains the internal
+configuration for the device and must be programmed first before
+anything else will work.  Failing here can brick the chip.  But it's
+small and not likely to fail.
+
+After that, program the PacSatSPII2C workspace to get the normal
+software on the ACP.  You must cycle the power on the chip before you
+can program it after programming the previous one to get it in the
+right state.
+
+After this, the board should be functional.
+
 # Hooking Up Power
 
 ## Version 2
@@ -203,13 +206,20 @@ installed to do this.  They are not installed by default.
 
 ## Version 3 and later
 
-Version 3 and later boards do not have the 3.3V regulator, you must
-supply both 5V and 3.3V.  There are unpopulated headers on the board
-that you can install to supply power (removed version 4 and later),
-but it's recommended to go through the PC104 or USB to supply power.
-Really, USB is the simplest, so unless you need to measure power
-usage, just use USB.  The PC104 pins are the same ones as used for the
-Version 2 board.
+Version 3 and later boards do not have the 3.3V regulator populated,
+you must either supply both 5V and 3.3V, or you must install the 3.3V
+regulator (U4, R119, and R120).  There are unpopulated headers on the
+board that you can install to supply power (removed version 4 and
+later), but it's recommended to go through the PC104 or USB to supply
+power.
+
+For development, USB is the simplest, so unless you need to measure
+power usage, just use USB.
+
+For flight or flight testing, you will use the PC104 pins.  The PC104
+pins are the same ones as used for the Version 2 board, PC104
+connector J2 (H2) pin 25 or 26 for 5V and PC104 J2 (H2) pin 27 or
+28.
 
 If you need to power from some other voltage, there is space to add a
 buck regulator like a TPS61379-Q1 by the PC104 connector.  Or a
@@ -222,9 +232,9 @@ See the USB section for details on powering from that.
 
 (Version 3 and later boards only.)
 
-There is a type C USB connector on the board.  It has two functions:
-accessing the serial port on the processor and powering the board when
-the satellite is completely assembled and otherwise inaccessible.
+There is a type C USB connector on the board.  It has three functions:
+accessing the serial port on the processor, powering the board for
+development, and controlling some GPIO lines and reset.
 
 The USB chip, a CY7C65215, should be configured first before using the
 board.  See "Setting Up the USB Chip" for details.
@@ -286,16 +296,16 @@ according to the data sheet.
 
 There is space and mounting holes for a 26mm by 12mm heat sink.
 Mounting holes are M1.6 sized PTH centered 2.25mm from each edge.
-The idea is to have a flat copper plat of that size.
+The idea is to have a flat copper plate of that size.
 
 The mounting hole centers are 21.5mm apart horizontally and 7.5mm
 apart vertically.
 
-Near the center of the plate there is a small block of copper to
-extend down to the circuit board under the PA.  The PA has an open
-copper area for this.  This area is 3.5mm x 3.5mm.  It's right edge
-is located 13.60mm from the right side of the plate and the left edge
-is located 8.7mm from the left side of the plate.  The top of the
+Near the center of the plate mount a small block of copper to extend
+down from the plate to the circuit board under the PA.  The PA has an
+open copper area for this.  This area is 3.5mm x 3.5mm.  It's right
+edge is located 13.60mm from the right side of the plate and the left
+edge is located 8.7mm from the left side of the plate.  The top of the
 area is 4.35mm from the top of the plate and 4.15mm from the bottom of
 the plate.
 
@@ -311,7 +321,7 @@ current using the DAC on a Version 3 or later board.
 
 It would also be possible to connect the top of the chip via some type
 of riser to the shield to provide additional radiation surfaces for
-the PA.  Experience has shown that most of the head goes to the bottom
+the PA.  Experience has shown that most of the heat goes to the bottom
 of the chip and not to the top, but it could help a little.
 
 On Amazon you can search for "copper flat bar" to find suitable
@@ -347,7 +357,7 @@ area and receive there, too.  The receiver will pick up stray output
 from the transmitter on the board, but the power will be very low.
 (This was tested without shields, shields might eliminate that.)  When
 going out the antenna port to a nearby antenna and then back in, the
-power will be much stronger.
+power will be much stronger, though still not very strong.
 
 This should work through the diplexer, if that is installed, but you
 can't test the actual antennas in that case.
@@ -404,7 +414,7 @@ On version 3 and later boards, U39 and U40 must be installed (the
 default) and then the PC104\_SER\_EN\_N line must be enabled to turn
 on access to this.  To permanently add a connection, U39 and U40 can
 be removed and a 0402 zero-ohm resistor connected between pins 2 and 4
-on both devices.  Note that you can also use these pins a GPIOs if you
+on both devices.  Note that you can also use these pins as GPIOs if you
 don't need a serial port.
 
 On version 2 boards, You need to install R123 and R124 to make this
@@ -986,7 +996,7 @@ antenna on the other end.
 # Power Control and Sequencing
 
 The power control on the board is fairly simple.  On power up, power
-comes in through VSYS, goes through and inductor, and goes to +5V,
+comes in through VSYS, goes through an inductor, and goes to +5V,
 which is always powered on.  +5V goes through a current limiter to
 +5VAL, which power the circuits on the board that are always on, the
 circuits the handle the board presence/active/etc. and the board1 RF

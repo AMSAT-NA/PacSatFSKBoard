@@ -84,7 +84,7 @@ board.  These are:
   
 * +3.3VAL - Supplies power to the RF switches, which run on +3.3V and
   must be powered when the board is disabled.  It derives from +5VAL,
-  so will be off when +5.5VAL is off.
+  so will be off when +5VAL is off.
   
 * AX5043_3.3V - This is a separately switched power, off by default,
   that powers all the AX5043 chips.  The CPU must enable power to
@@ -151,8 +151,8 @@ powered when power is available.
 A watchdog timer on the board will power-cycle the CPU by disabling
 +1.2V and +3.3V if the CPU does not toggle its FEED line once a
 second.  Powering off the CPU will cause all other power except
-REG_3.3V and +5VAL to be returned to their default, disabled, so it
-effectively powers off the whole board.
+REG_3.3V, +5VAL, and +3.3VAL to be returned to their default,
+disabled, so it effectively powers off the whole board.
 
 The USB interface GPIO_3 can be set to 1 to disable the watchdog
 timer. R161 can also be installed to disable the watchdog timer.
@@ -245,7 +245,7 @@ the CAN busses so the standby board can take over operation seamlessly
 when it becomes active.
 
 The boards are called "board1" and "board2".  A resistor on the board,
-R91, tells the CPU which board it is.  Absence of R1 makes it board 1,
+R91, tells the CPU which board it is.  Absence of R91 makes it board 1,
 presence makes it board 2.
 
 With R94 installed, an external device must decide which board is
@@ -255,7 +255,7 @@ lines.
 This entire section is optional and may be removed.  Bypass zero-ohm
 resistors can connect the few lines required for operation.
 
-board2 does not have the RF portion (TX/RX Switch) of this populated
+board2 does not have the RF portion (TX/RX Switch) of this depopulated
 (or has it disabled and bypassed).  Board 1 does All TX/RX switching.
 
 Boards operate in one of three configurations:
