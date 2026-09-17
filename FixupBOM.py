@@ -285,6 +285,7 @@ other_components = {
     ('ESQ-126-38-G-D', 'CONN_ESQ-126-39-G-D_SAI'): None,
     ('TPS62A02AQDRLRQ1', 'DRL0006A-MFG'): None,
     ('O 16,0-JT22CT-A-P-3,3-LF', 'Oscillator_SMD_SiT_PQFN-4Pin_2.5x2.0mm'): None,
+    ('TG2520SMN 16.0000M-MCGNNM3', 'Oscillator_SMD_SiT_PQFN-4Pin_2.5x2.0mm'): None,
     ('ADL5501AKSZ-R7', 'KS-6_ADI'): None,
     ('SN74AHC1G08QDCKRQ1', 'DCK5'): None,
     ('SN74AHC1G09QDCKRQ1', 'DCK5'): None,

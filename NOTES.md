@@ -27,11 +27,6 @@ that's actually a little smaller than the Harwin G125-MH11005L1P
 that's on the PacSat board now that's going to connect to it.  We
 could switch.  However, I'm not sure it matters that much.
 
-I read recently that there are issues soldering on gold.  It looks
-like the places where the shields will solder on are gold plated.
-There may be gold in other places.  Need to figure this out and tell
-the board shop what to do.
-
 Need to apply whatever ABF/RBF design the other teams come up with.
 
 Perhaps remove the 1.2V current limiter and generate 1.2V from the
@@ -57,11 +52,6 @@ This needs to be documented or handled somehow.  All the
 fault-tolerance I/Os are latch up protected; they could be used for
 other purposes if the fault-tolerance isn't being used.
 
-Are WSON-8 parts a problem for thermal cycles? If so, it may be
-necessary to switch back to the 74CBTLV1G125DBVRQ1 for the PC104
-switches.  It's not so important for the switches in the USB section;
-they don't have to work after launch.
-
 I believe the last outgassing concerns are the crystal, USB connector,
 MMCX connectors, and the JTAG ones:
 
@@ -81,11 +71,6 @@ Maybe add some grounds on the PC104 for return path current.  The CAN
 bus is differential so it's not so important there, but the lack of
 grounds will limit I2C speed on the areas that don't have them.  The
 trouble is it's hard to know where to add them.
-
-Maybe switch to a more accurate main oscillator.  0.5ppm oscillators at
-16MHz are available, but the temperature doesn't go to 105C, only 85C.
-Maybe that's better, anyway?  The TG2520SMN 16.0000M-ECGNNM3 from
-Epson is drop-in compatible to what is there.
 
 Thermal analysis - I don't have the skills to do thermal analysis.
 The version 2 design is definitely insufficient.  I have improved the
@@ -1218,6 +1203,23 @@ What happens if the RTC goes into lockup or some other bad state?
 There's no way to power it off, and a reset won't help. - Move the RTC
 power to +5VAL.  That means it's possibly not powered in some
 circumstances, but it will be protected from latch up.
+
+I read recently that there are issues soldering on gold.  It looks
+like the places where the shields will solder on are gold plated.
+There may be gold in other places.  Need to figure this out and tell
+the board shop what to do. - This is not an issue any more, see
+https://advancedplatingtech.com/wp-content/uploads/2020/08/Soldering-to-Gold-A-Practicle-Guide-R-Bulwith.pdf
+
+Are WSON-8 parts a problem for thermal cycles? If so, it may be
+necessary to switch back to the 74CBTLV1G125DBVRQ1 for the PC104
+switches.  It's not so important for the switches in the USB section;
+they don't have to work after launch. - Seems to be ok.
+
+Maybe switch to a more accurate main oscillator.  0.5ppm oscillators
+at 16MHz are available, but the temperature doesn't go to 105C, only
+85C.  Maybe that's better, anyway?  The TG2520SMN 16.0000M-MCGNNM3
+from Epson is drop-in compatible to what is there. - Switched to the
+Epson part.
 
 # Not going to do
 
@@ -4136,3 +4138,7 @@ bins.
 
 Power the RTC backup supply off of +5VAL, not +5V, so it goes through
 a current limiter and if it latches up the problem will be fixed.
+
+Switched the oscillator to a TG2520SMN 16.0000M-MCGNNM3, which is
+.5ppm instead of 2.5ppm.  The temp range is -40-85C instead of
+-40-105C, but the extra precision is worth it.

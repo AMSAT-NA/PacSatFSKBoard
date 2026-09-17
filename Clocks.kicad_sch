@@ -1712,7 +1712,7 @@
 		)
 		(uuid "dc03b6bb-bbc2-4b27-8641-db546c1e69c3")
 	)
-	(text "Idd = 5.0 mA"
+	(text "Idd = 1.5mA"
 		(exclude_from_sim no)
 		(at 160.02 119.38 0)
 		(effects
@@ -3781,7 +3781,7 @@
 		(dnp no)
 		(uuid "85fb8101-1661-4fb3-ab27-970196bb048d")
 		(property "Reference" "Y2"
-			(at 166.37 100.33 0)
+			(at 163.322 102.87 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3790,8 +3790,8 @@
 				)
 			)
 		)
-		(property "Value" "O 16,0-JT22CT-A-P-3,3-LF"
-			(at 176.276 103.124 0)
+		(property "Value" "TG2520SMN 16.0000M-MCGNNM3"
+			(at 172.466 100.33 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
