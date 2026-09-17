@@ -5847,7 +5847,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7KΩ"
+		(property "Value" "4.7kΩ"
 			(at 88.392 175.387 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5927,7 +5927,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7KΩ"
+		(property "Value" "4.7kΩ"
 			(at 156.21 169.164 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6742,7 +6742,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 164.084 79.502 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7168,7 +7168,7 @@
 				)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 338.582 78.994 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7717,7 +7717,7 @@
 				)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 338.582 146.304 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8734,7 +8734,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 52.324 79.502 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8813,7 +8813,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 197.612 84.836 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8892,7 +8892,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 200.152 35.306 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9154,7 +9154,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 165.354 27.432 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9309,7 +9309,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 59.944 29.972 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10085,7 +10085,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 94.742 36.576 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10152,7 +10152,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "b4a4a5cb-c0ee-4306-8011-1f1d42d693fb")
 		(property "Reference" "#PWR0290"
 			(at 233.68 149.86 0)
@@ -10165,14 +10164,15 @@
 				)
 			)
 		)
-		(property "Value" "+5V"
-			(at 233.68 140.97 0)
+		(property "Value" "+5VAL"
+			(at 230.886 142.494 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -10644,7 +10644,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7KΩ"
+		(property "Value" "4.7kΩ"
 			(at 222.25 152.146 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10875,7 +10875,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7KΩ"
+		(property "Value" "4.7kΩ"
 			(at 99.314 175.26 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11363,7 +11363,7 @@
 				)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 338.582 178.054 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11620,7 +11620,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 84.582 84.836 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11852,7 +11852,7 @@
 				)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 338.582 110.744 90)
 			(show_name no)
 			(do_not_autoplace no)

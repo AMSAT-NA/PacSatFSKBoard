@@ -4667,7 +4667,7 @@
 		)
 		(uuid "686904f8-00c4-4599-986f-27dde4e46b19")
 	)
-	(text "Thermsistor varies from 534\nohms (125C) to 188.5KΩ (-40C).\nWith a 10KΩ bias this gives a\n.17 to 3.13V range."
+	(text "Thermsistor varies from 534\nohms (125C) to 188.5kΩ (-40C).\nWith a 10kΩ bias this gives a\n.17 to 3.13V range."
 		(exclude_from_sim no)
 		(at 375.412 109.728 0)
 		(effects
@@ -11544,7 +11544,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 114.046 108.712 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12790,7 +12790,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 147.828 88.646 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12869,7 +12869,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 92.456 108.712 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13334,7 +13334,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "3KΩ"
+		(property "Value" "3kΩ"
 			(at 281.305 246.38 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13413,7 +13413,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "3KΩ"
+		(property "Value" "3kΩ"
 			(at 281.305 254 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13492,7 +13492,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "3KΩ"
+		(property "Value" "3kΩ"
 			(at 281.305 261.62 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13571,7 +13571,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 333.375 151.765 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13726,7 +13726,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1KΩ"
+		(property "Value" "1kΩ"
 			(at 312.42 48.26 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13805,7 +13805,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1KΩ"
+		(property "Value" "1kΩ"
 			(at 316.23 48.26 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13884,7 +13884,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1KΩ"
+		(property "Value" "1kΩ"
 			(at 320.04 48.26 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13963,7 +13963,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1KΩ"
+		(property "Value" "1kΩ"
 			(at 323.85 48.26 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14272,7 +14272,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "NTCG103JF103FTDS 10KΩ@25C"
+		(property "Value" "NTCG103JF103FTDS 10kΩ@25C"
 			(at 401.066 137.414 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14892,7 +14892,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ 1%"
+		(property "Value" "10kΩ 1%"
 			(at 231.14 24.638 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15202,7 +15202,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ 1%"
+		(property "Value" "10kΩ 1%"
 			(at 256.032 25.146 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15358,7 +15358,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ 1%"
+		(property "Value" "10kΩ 1%"
 			(at 256.54 35.56 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15670,7 +15670,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ 1%"
+		(property "Value" "10kΩ 1%"
 			(at 383.794 117.602 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16287,7 +16287,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ 1%"
+		(property "Value" "10kΩ 1%"
 			(at 218.186 35.052 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17060,7 +17060,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ 1%"
+		(property "Value" "10kΩ 1%"
 			(at 218.44 24.892 0)
 			(show_name no)
 			(do_not_autoplace no)

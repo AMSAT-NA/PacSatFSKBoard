@@ -914,7 +914,7 @@ The GPIOs are numbered as:
 
 The ADC is designed for small range thermsistors, from 78 to 159 ohms.
 
-The high side of the ADC input is a 4.7K resistor, with the above
+The high side of the ADC input is a 4.7k resistor, with the above
 thermsistor values you get ~.69ma of current, giving a voltage range
 of 53.9mV to 108mV feeding in to the ADC.
 

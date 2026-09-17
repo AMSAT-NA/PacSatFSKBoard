@@ -533,7 +533,7 @@ umbilical is attached, or to allow other boards to drive this as a
 wired-NOR.
 
 If another board monitors this, it should provide its own latch-up
-protection and a weak (100K) pullup.  The main CPU may be disconnected
+protection and a weak (100k) pullup.  The main CPU may be disconnected
 from this line so it needs an external pullup in that case.
 
 In a dual-board configuration this allows both processors to know if
@@ -565,13 +565,13 @@ monitoring the board.  See the design document for details.
 The signal for this are:
 
   - HW\_POWER\_OFF[12]\_N - Input to board, pulling this low causes the
-    power to be disabled on boardn.  boardn pulls this high with a 10K
+    power to be disabled on boardn.  boardn pulls this high with a 10k
 	resistor.  If driven, it should be open drain or open collector.
 	Be careful not to glitch this line.
 
   - PRESENCE[12]\_N - The board is physically present.  This must be
 	pulled high by a 1M resistor on entity reading this value, it is
-	pulled low by a 10K resistor on boardn.
+	pulled low by a 10k resistor on boardn.
 	
   - ACTIVE[12]\_N - boardn is asserting that it is active.  This is
 	pulled high on boardn and will be driven low by boardn when it is
@@ -738,7 +738,7 @@ configurations may be possible.
 
 Another Harwin G125-MH11005L1P 10-pin connector, J10, is available on
 the bottom left of the board.  It has 5 ADC connections on pins 6-10.
-These each have a 4.7K pullup resistor on them.  Pins 1-5 are
+These each have a 4.7k pullup resistor on them.  Pins 1-5 are
 connected to ground through individual zero ohm resistors.
 
 It's possible to solder a cable directly to the holes and not use a

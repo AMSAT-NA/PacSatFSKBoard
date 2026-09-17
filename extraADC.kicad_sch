@@ -2360,7 +2360,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7KΩ"
+		(property "Value" "4.7kΩ"
 			(at 110.744 75.946 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2909,7 +2909,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7KΩ"
+		(property "Value" "4.7kΩ"
 			(at 103.124 75.946 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3598,7 +3598,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7KΩ"
+		(property "Value" "4.7kΩ"
 			(at 99.314 75.946 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3677,7 +3677,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7KΩ"
+		(property "Value" "4.7kΩ"
 			(at 114.554 75.946 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3912,7 +3912,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7KΩ"
+		(property "Value" "4.7kΩ"
 			(at 106.934 75.946 90)
 			(show_name no)
 			(do_not_autoplace no)

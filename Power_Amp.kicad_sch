@@ -10702,7 +10702,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "NTCG103JF103FTDS 10KΩ@25C"
+		(property "Value" "NTCG103JF103FTDS 10kΩ@25C"
 			(at 96.266 230.124 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11729,7 +11729,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ 1%"
+		(property "Value" "10kΩ 1%"
 			(at 78.994 210.312 0)
 			(show_name no)
 			(do_not_autoplace no)

@@ -1660,7 +1660,7 @@
 		)
 		(uuid "21c8b8b4-4ffd-4264-9414-59b4b33025ab")
 	)
-	(text "Thermsistor varies from 534\nohms (125C) to 188.5KΩ (-40C).\nWith a 10KΩ bias this gives a\n.17 to 3.13V range."
+	(text "Thermsistor varies from 534\nohms (125C) to 188.5kΩ (-40C).\nWith a 10kΩ bias this gives a\n.17 to 3.13V range."
 		(exclude_from_sim no)
 		(at 131.572 160.528 0)
 		(effects
@@ -2848,7 +2848,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1KΩ@100MHz"
+		(property "Value" "1kΩ@100MHz"
 			(at 158.75 90.1318 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3160,7 +3160,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ 1%"
+		(property "Value" "10kΩ 1%"
 			(at 139.954 168.402 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3240,7 +3240,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 195.072 100.203 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3553,7 +3553,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 141.478 101.473 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3876,7 +3876,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1KΩ@100MHz"
+		(property "Value" "1kΩ@100MHz"
 			(at 215.9 83.1469 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4392,7 +4392,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "NTCG103JF103FTDS 10KΩ@25C"
+		(property "Value" "NTCG103JF103FTDS 10kΩ@25C"
 			(at 157.226 188.214 90)
 			(show_name no)
 			(do_not_autoplace no)

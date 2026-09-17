@@ -146,8 +146,8 @@ value_to_partnum_xlats_1 = {
     ('3.3uH','IND_EPL2010_COC'): ('Coilcraft',	'EPL2010-332MLC'),
 
     # Ferrite beads
-    ('1KΩ@100MHz',	'0603'): ('Laird-Signal',	'MI0603J102R-10'),
-    ('1KΩ@100MHz',	'0805'): ('Laird-Signal',	'MI0805J102R-10'),
+    ('1kΩ@100MHz',	'0603'): ('Laird-Signal',	'MI0603J102R-10'),
+    ('1kΩ@100MHz',	'0805'): ('Laird-Signal',	'MI0805J102R-10'),
 }
 
 # Space rated inductors
@@ -173,8 +173,8 @@ value_to_partnum_xlats_1a = {
     ('3.3uH','IND_EPL2010_COC'): ('Coilcraft',	'AE338PZA332MPZ'),
 
     # Ferrite beads
-    ('1KΩ@100MHz',	'0603'): ('Vanguard',	'RFB0603-102KS-4'),
-    ('1KΩ@100MHz',	'0805'): ('Vanguard',	'RFB0805-102KS-4'),
+    ('1kΩ@100MHz',	'0603'): ('Vanguard',	'RFB0603-102KS-4'),
+    ('1kΩ@100MHz',	'0805'): ('Vanguard',	'RFB0805-102KS-4'),
 }
 
 # General passive parts.
@@ -227,31 +227,31 @@ value_to_partnum_xlats_2 = {
     ('280Ω',	'0402'): ('Panasonic',	'ERA-2AEB2800X'),
     ('330Ω',    '0402'): ('Wurth Electronik', '560112110231'),
     ('470Ω',	'0402'): ('Panasonic',	'ERA-2AED471X'),
-    ('1KΩ',	'0402'): ('Panasonic',	'ERA-2AED102X'),
-    ('2.2KΩ',   '0402'): ('Wurth Electronik', '560112110087'),
-    ('4.7KΩ',	'0402'): ('Panasonic',	'ERA-2AED472X'),
-    ('10KΩ',    '0402'): ('Panasonic',  'ERA-2AED103X'),
-    ('18KΩ',	'0402'): ('Panasonic',	'ERA-2AED183X'),
-    ('20KΩ 1%', '0402'): ('Panasonic', 'ERA-2AED203X'),
-    ('43KΩ 1%', '0402'): ('Panasonic', 'ERA-2AED433X'),
-    ('47KΩ',	'0402'): ('Panasonic',	'ERA-2AED473X'),
-    ('100KΩ',	'0402'): ('Wurth Electronik', '560112110019'),
-    ('330KΩ',	'0402'): ('Wurth Electronik', '560112110088'),
+    ('1kΩ',	'0402'): ('Panasonic',	'ERA-2AED102X'),
+    ('2.2kΩ',   '0402'): ('Wurth Electronik', '560112110087'),
+    ('4.7kΩ',	'0402'): ('Panasonic',	'ERA-2AED472X'),
+    ('10kΩ',    '0402'): ('Panasonic',  'ERA-2AED103X'),
+    ('18kΩ',	'0402'): ('Panasonic',	'ERA-2AED183X'),
+    ('20kΩ 1%', '0402'): ('Panasonic', 'ERA-2AED203X'),
+    ('43kΩ 1%', '0402'): ('Panasonic', 'ERA-2AED433X'),
+    ('47kΩ',	'0402'): ('Panasonic',	'ERA-2AED473X'),
+    ('100kΩ',	'0402'): ('Wurth Electronik', '560112110019'),
+    ('330kΩ',	'0402'): ('Wurth Electronik', '560112110088'),
     ('1MΩ',	'0402'): ('Panasonic',	'ERJ-U02J105X'),
 
     ('0Ω',	'0603'): ('Panasonic',	'AC0603FR-070RL'),
-    ('2.4KΩ',	'0603'): ('Wurth Electronik',	'560112116061'),
-    ('3KΩ',	'0603'): ('Panasonic',	'ERJ-UP3F3001V'),
+    ('2.4kΩ',	'0603'): ('Wurth Electronik',	'560112116061'),
+    ('3kΩ',	'0603'): ('Panasonic',	'ERJ-UP3F3001V'),
 
     ('277Ω 0.1%',	'0402'): ('KOA Speer ',	'RN73R1ETTP2770B25'),
-    ('3.32KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF3321X'),
-    ('5.1K',            '0402'): ('Panasonic',  'ERJ-2RKF5101X'),
-    ('10KΩ 1%', 	'0402'): ('Panasonic',	'ERJ-PA2F1002X'),
-    ('45.3KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF4532X'),
-    ('47KΩ 1%', 	'0402'): ('Panasonic',	'ERA-2AED473X'),
-    ('68KΩ 1%', 	'0402'): ('Panasonic',	'ERA-2AED683X'),
-    ('100KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF1003X'),
-    ('143KΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF1433X'),
+    ('3.32kΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF3321X'),
+    ('5.1KΩ',           '0402'): ('Panasonic',  'ERJ-2RKF5101X'),
+    ('10kΩ 1%', 	'0402'): ('Panasonic',	'ERJ-PA2F1002X'),
+    ('45.3kΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF4532X'),
+    ('47kΩ 1%', 	'0402'): ('Panasonic',	'ERA-2AED473X'),
+    ('68kΩ 1%', 	'0402'): ('Panasonic',	'ERA-2AED683X'),
+    ('100kΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF1003X'),
+    ('143kΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF1433X'),
 
     # Zener diode
     ('1.8V',	'D_SOD-523'): ('onsemi',	'MM5Z4678T5G'),
@@ -263,7 +263,7 @@ value_to_partnum_xlats_2 = {
 
     ('32.768kHz', 'Crystal_SMD_EuroQuartz_EQ161-2Pin_3.2x1.5mm'): ('Abracon', 'ABS07AIG-32.768KHZ-6-1-T'),
 
-    ('NTCG103JF103FTDS 10KΩ@25C', '0402'): ('TDK', 'NTCG103JF103FTDS'),
+    ('NTCG103JF103FTDS 10kΩ@25C', '0402'): ('TDK', 'NTCG103JF103FTDS'),
 }
 
 other_components = {

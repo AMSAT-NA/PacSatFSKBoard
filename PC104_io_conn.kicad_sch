@@ -6641,7 +6641,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2KΩ"
+		(property "Value" "2kΩ"
 			(at 38.1 189.23 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7041,7 +7041,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2KΩ"
+		(property "Value" "2kΩ"
 			(at 51.308 189.103 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7456,7 +7456,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1KΩ"
+		(property "Value" "1kΩ"
 			(at 243.586 211.328 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7856,7 +7856,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "18KΩ"
+		(property "Value" "18kΩ"
 			(at 243.586 199.644 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8825,7 +8825,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100KΩ"
+		(property "Value" "100kΩ"
 			(at 70.358 58.166 0)
 			(show_name no)
 			(do_not_autoplace no)

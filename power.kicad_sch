@@ -5103,7 +5103,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 85.598 229.108 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5182,7 +5182,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 90.17 252.095 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5731,7 +5731,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 60.706 175.768 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5888,7 +5888,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "68KΩ 1%"
+		(property "Value" "68kΩ 1%"
 			(at 172.466 170.18 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6045,7 +6045,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2KΩ"
+		(property "Value" "2.2kΩ"
 			(at 83.82 245.364 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6204,7 +6204,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ 1%"
+		(property "Value" "10kΩ 1%"
 			(at 222.504 225.552 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6706,7 +6706,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "88.7KΩ 1%"
+		(property "Value" "88.7kΩ 1%"
 			(at 366.776 108.712 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7171,7 +7171,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "68KΩ 1%"
+		(property "Value" "68kΩ 1%"
 			(at 172.466 180.34 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7252,7 +7252,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.4KΩ"
+		(property "Value" "2.4kΩ"
 			(at 236.22 88.8999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7413,7 +7413,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 66.548 106.172 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7570,7 +7570,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "NTCG103JF103FTDS 10KΩ@25C"
+		(property "Value" "NTCG103JF103FTDS 10kΩ@25C"
 			(at 239.776 245.364 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7651,7 +7651,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "18KΩ"
+		(property "Value" "18kΩ"
 			(at 60.706 192.278 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8519,7 +8519,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "19.6KΩ 1%"
+		(property "Value" "19.6kΩ 1%"
 			(at 366.776 120.65 90)
 			(show_name no)
 			(do_not_autoplace no)

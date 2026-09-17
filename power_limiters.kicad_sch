@@ -4322,7 +4322,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "143KΩ 1%"
+		(property "Value" "143kΩ 1%"
 			(at 179.07 89.535 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4553,7 +4553,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "43KΩ 1%"
+		(property "Value" "43kΩ 1%"
 			(at 179.07 128.905 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5401,7 +5401,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "45.3KΩ 1%"
+		(property "Value" "45.3kΩ 1%"
 			(at 179.07 50.165 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5941,7 +5941,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47KΩ 1%"
+		(property "Value" "47kΩ 1%"
 			(at 24.384 94.488 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6096,7 +6096,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 218.44 89.535 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6175,7 +6175,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 218.694 129.286 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7237,7 +7237,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 217.678 70.612 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7545,7 +7545,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 83.058 120.142 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7624,7 +7624,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 128.27 158.115 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8681,7 +8681,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 229.87 112.395 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8914,7 +8914,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "143KΩ 1%"
+		(property "Value" "143kΩ 1%"
 			(at 77.47 174.625 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9300,7 +9300,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 75.438 99.822 0)
 			(show_name no)
 			(do_not_autoplace no)
