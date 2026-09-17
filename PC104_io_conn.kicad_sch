@@ -2837,10 +2837,6 @@
 		(uuid "3cd3f628-835a-4b70-8368-d292bc6e919e")
 	)
 	(no_connect
-		(at 138.43 96.52)
-		(uuid "3d169af0-6d3a-4982-acfb-b1342818f893")
-	)
-	(no_connect
 		(at 138.43 142.24)
 		(uuid "4b69438c-d0b6-4b53-bb83-87f6787a745e")
 	)
@@ -3070,16 +3066,6 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 99.06) (xy 121.92 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "15c1d7b2-f4d6-4fd2-a346-9cbc8c80f8ad")
-	)
-	(wire
-		(pts
 			(xy 181.61 172.72) (xy 187.96 172.72)
 		)
 		(stroke
@@ -3300,6 +3286,16 @@
 	)
 	(wire
 		(pts
+			(xy 138.43 96.52) (xy 125.73 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34f120a0-a730-4b0e-a081-fdbe87b03a51")
+	)
+	(wire
+		(pts
 			(xy 151.13 160.02) (xy 170.18 160.02)
 		)
 		(stroke
@@ -3317,6 +3313,16 @@
 			(type default)
 		)
 		(uuid "39876c2b-4d3e-4af6-a966-aa18ef2661ef")
+	)
+	(wire
+		(pts
+			(xy 125.73 99.06) (xy 138.43 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b12bdce-df1f-4577-b39c-08acaefa6bdc")
 	)
 	(wire
 		(pts
@@ -3580,6 +3586,16 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 101.6) (xy 138.43 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ef79caa-7a54-405b-8475-c6366bbb7c29")
+	)
+	(wire
+		(pts
 			(xy 151.13 157.48) (xy 170.18 157.48)
 		)
 		(stroke
@@ -3747,16 +3763,6 @@
 			(type default)
 		)
 		(uuid "751a9dca-74da-4e87-98e2-565d3000ad60")
-	)
-	(wire
-		(pts
-			(xy 125.73 101.6) (xy 138.43 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7641d2ae-710c-4664-a162-233c62ac1dd4")
 	)
 	(wire
 		(pts
@@ -4100,16 +4106,6 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 101.6) (xy 163.83 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9fa32b97-a70a-4c84-8f8f-e8a3c258ef47")
-	)
-	(wire
-		(pts
 			(xy 177.8 166.37) (xy 181.61 166.37)
 		)
 		(stroke
@@ -4127,16 +4123,6 @@
 			(type default)
 		)
 		(uuid "a57a4b63-ad05-40ad-9220-e01c42ec17fa")
-	)
-	(wire
-		(pts
-			(xy 129.54 99.06) (xy 138.43 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a6c7cc31-e2d9-4feb-bc39-7ebeca4535a4")
 	)
 	(wire
 		(pts
@@ -4177,6 +4163,16 @@
 			(type default)
 		)
 		(uuid "b22e0f53-71a4-40f9-842f-9b9947e16b70")
+	)
+	(wire
+		(pts
+			(xy 114.3 101.6) (xy 121.92 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b291fb2f-1346-421f-a843-aab17cfdf9ad")
 	)
 	(wire
 		(pts
@@ -4986,9 +4982,9 @@
 			)
 		)
 	)
-	(global_label "PC104_GPIO7"
+	(global_label "CANA-"
 		(shape input)
-		(at 114.3 99.06 180)
+		(at 125.73 96.52 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4996,9 +4992,9 @@
 			)
 			(justify right)
 		)
-		(uuid "2b80ddbf-690c-4db4-a669-9bd1c53c0446")
+		(uuid "2ba648fa-0c07-478f-b430-35233a4ad92f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 96.1182 99.06 0)
+			(at 115.3131 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5012,7 +5008,7 @@
 	)
 	(global_label "CANA+"
 		(shape input)
-		(at 125.73 101.6 180)
+		(at 125.73 99.06 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5020,9 +5016,9 @@
 			)
 			(justify right)
 		)
-		(uuid "315a8831-721a-43b4-9bad-73c038cf162e")
+		(uuid "34ceab50-d20e-490b-8e80-57200560a178")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 115.3131 101.6 0)
+			(at 115.3131 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5047,30 +5043,6 @@
 		(uuid "3e04c52d-598e-48bf-bee3-8b5692b795d1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 189.7408 114.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "CANA-"
-		(shape input)
-		(at 163.83 101.6 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left)
-		)
-		(uuid "3f24ad71-83e6-4ecb-b534-fa02fbe4d68d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 174.2469 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5311,6 +5283,30 @@
 		(uuid "64937ec2-db4c-4db8-9eb5-53115a91765d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 249.135 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "PC104_GPIO7"
+		(shape input)
+		(at 114.3 101.6 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "656ffad1-c8de-42ca-8f54-9677f2063264")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 96.1182 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8000,7 +7996,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 125.73 99.06 270)
+		(at 125.73 101.6 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8008,9 +8004,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "9cb6fec8-148c-4f43-9855-8ae129d285c7")
+		(uuid "a04e8c96-e708-45d3-8ce1-580b55ae1511")
 		(property "Reference" "R160"
-			(at 129.032 98.298 90)
+			(at 129.032 100.838 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8021,7 +8017,7 @@
 			)
 		)
 		(property "Value" "0Ω"
-			(at 119.888 98.044 90)
+			(at 120.142 102.616 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8032,7 +8028,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 125.73 97.282 90)
+			(at 125.73 99.822 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8043,7 +8039,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 125.73 99.06 0)
+			(at 125.73 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8054,7 +8050,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 125.73 99.06 0)
+			(at 125.73 101.6 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8064,10 +8060,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "a11e90f6-7b55-4f53-a35b-1afcdd8bfa3d")
+			(uuid "82442dd6-9891-44b4-9866-21a5ce92a588")
 		)
 		(pin "2"
-			(uuid "db058ae4-c977-4ba6-b02e-6dc209f26aef")
+			(uuid "cc06822f-1056-4315-ae89-df06d6e93c36")
 		)
 		(instances
 			(project "PacSat_AFSK"

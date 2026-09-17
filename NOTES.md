@@ -4123,3 +4123,8 @@ What appeared to be happening was one of the select lines to the devices
 was going into latch up through the pullups in the CPU, and it was
 messing up the bus.  When you pulled the select line for that device low
 to communicate with it the latch up would go away.
+
+## 2026-09-17
+
+Move the CAN bus connections on the PC104 to match up with what the
+LIHU has and what other boards have.

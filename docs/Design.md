@@ -391,7 +391,7 @@ ones are not necessary.
 # CAN Bus
 
 Two CAN buses are routed to the PC104 and they are on by default.  CAN
-A is on H1 (J1) pins 5 (the +) and 6 (the -).  CAN B is on H2 (J1)
+A is on H1 (J1) pins 3 (the +) and 1 (the -).  CAN B is on H2 (J1)
 pins 51 (the +) and 52 (the -).
 
 CAN A is routed to CAN3 on the CPU, and CAN B is routed to CAN2 on the
@@ -401,8 +401,9 @@ These are not standard.  I found the NanoMind device specifies a CAN
 bus on H2 pins 1 and 5, but they are differential and need to be
 beside one another.
 
-The AMSAT LIHU uses pins 51 and 52, so that's why that choice was
-made.
+The AMSAT LIHU uses pins H2 51 and 52, so that's why that choice was
+made.  Some other board use H1 pins 1 and 3, so that matches those
+boards.
 
 CAN A can be disabled by removing U14 and R50 and R51.  CAN B can be
 disabled by removing U22 and R89 and R90.
