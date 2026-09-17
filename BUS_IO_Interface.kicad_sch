@@ -7945,7 +7945,7 @@
 		(dnp no)
 		(uuid "5e2d6ebc-4c28-44cc-ad34-6679efa2fb0f")
 		(property "Reference" "C75"
-			(at 267.97 141.732 0)
+			(at 268.224 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7956,7 +7956,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 267.97 144.272 0)
+			(at 266.7 144.526 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12320,7 +12320,7 @@
 		(dnp no)
 		(uuid "fc8ac847-851f-4967-925d-58d1b9ba3f95")
 		(property "Reference" "C84"
-			(at 356.616 140.208 0)
+			(at 355.092 140.716 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12331,7 +12331,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 356.616 142.748 0)
+			(at 355.092 143.256 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

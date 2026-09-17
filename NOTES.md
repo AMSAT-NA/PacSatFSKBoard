@@ -82,9 +82,6 @@ bus is differential so it's not so important there, but the lack of
 grounds will limit I2C speed on the areas that don't have them.  The
 trouble is it's hard to know where to add them.
 
-What happens if the RTC goes into lockup or some other bad state?
-There's no way to power it off, and a reset won't help.
-
 Maybe switch to a more accurate main oscillator.  0.5ppm oscillators at
 16MHz are available, but the temperature doesn't go to 105C, only 85C.
 Maybe that's better, anyway?  The TG2520SMN 16.0000M-ECGNNM3 from
@@ -1217,6 +1214,10 @@ back to me and verifies that this is made with low outgassing plastic.
 Face it sideways.  This will make it usable as an umbilical
 connection. -- Done.
 
+What happens if the RTC goes into lockup or some other bad state?
+There's no way to power it off, and a reset won't help. - Move the RTC
+power to +5VAL.  That means it's possibly not powered in some
+circumstances, but it will be protected from latch up.
 
 # Not going to do
 
@@ -4132,3 +4133,6 @@ LIHU has and what other boards have.
 Move PC104\_UMBILICAL\_ATTACHED\_N to H2 pin 13 to match the LIHU.
 Also move the dual board controls to avoid conflicts with some LIHU
 bins.
+
+Power the RTC backup supply off of +5VAL, not +5V, so it goes through
+a current limiter and if it latches up the problem will be fixed.
