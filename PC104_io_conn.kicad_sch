@@ -2777,8 +2777,8 @@
 		(uuid "fc0f2ef1-6e5f-4246-8bd5-a08157cf9857")
 	)
 	(no_connect
-		(at 299.72 160.02)
-		(uuid "0355e498-a73d-4770-8af8-e8e0a1290a4b")
+		(at 138.43 132.08)
+		(uuid "030068c8-0490-48c9-8609-e2e943c4e9e1")
 	)
 	(no_connect
 		(at 287.02 134.62)
@@ -2811,6 +2811,10 @@
 	(no_connect
 		(at 299.72 149.86)
 		(uuid "2888abfc-730c-4284-bcf0-e701618c5d16")
+	)
+	(no_connect
+		(at 151.13 132.08)
+		(uuid "2f7954ca-a8fa-437c-9d17-5a2b1bddf617")
 	)
 	(no_connect
 		(at 138.43 111.76)
@@ -2907,10 +2911,6 @@
 	(no_connect
 		(at 287.02 144.78)
 		(uuid "b61a7c5b-fb11-470f-a4f2-6097cc342030")
-	)
-	(no_connect
-		(at 287.02 160.02)
-		(uuid "b6f847fe-635f-4bf9-9023-3faed4c1896d")
 	)
 	(no_connect
 		(at 138.43 121.92)
@@ -3407,16 +3407,6 @@
 			(type default)
 		)
 		(uuid "44182859-9139-437a-902c-f2a2d1ba0b7b")
-	)
-	(wire
-		(pts
-			(xy 151.13 132.08) (xy 165.1 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "44d0e87c-babe-4c75-9c0f-74fc37d579d6")
 	)
 	(wire
 		(pts
@@ -4040,16 +4030,6 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 132.08) (xy 138.43 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "982846eb-a6cc-4f66-8bba-b8f597c6ff1f")
-	)
-	(wire
-		(pts
 			(xy 264.16 119.38) (xy 287.02 119.38)
 		)
 		(stroke
@@ -4077,6 +4057,26 @@
 			(type default)
 		)
 		(uuid "9a2165b2-46ed-4193-bcb4-de084c031df2")
+	)
+	(wire
+		(pts
+			(xy 274.32 160.02) (xy 287.02 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a30f1db-a9ec-4f0a-9b37-037d927a1050")
+	)
+	(wire
+		(pts
+			(xy 299.72 160.02) (xy 313.69 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9aec441b-410a-4f1c-b539-125df1ea917f")
 	)
 	(wire
 		(pts
@@ -4842,30 +4842,6 @@
 			)
 		)
 	)
-	(global_label "CANB-"
-		(shape input)
-		(at 165.1 132.08 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left)
-		)
-		(uuid "0c07f151-10d5-4d16-b66d-2800ec667bb7")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 175.7346 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "PC104_I2C2_SDA"
 		(shape input)
 		(at 114.3 104.14 180)
@@ -4887,6 +4863,30 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "CANB-"
+		(shape input)
+		(at 313.69 160.02 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left)
+		)
+		(uuid "11bd328d-488e-48df-bf10-4d060f4ff1b0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 324.3246 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -5634,30 +5634,6 @@
 			)
 		)
 	)
-	(global_label "CANB+"
-		(shape input)
-		(at 125.73 132.08 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify right)
-		)
-		(uuid "b58dd20f-e52b-43e0-95ec-b37dffd13f88")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 115.0954 132.08 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
 	(global_label "PC104_GPIO6"
 		(shape input)
 		(at 321.31 109.22 0)
@@ -5823,6 +5799,30 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+	)
+	(global_label "CANB+"
+		(shape input)
+		(at 274.32 160.02 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "e767b438-a6d4-4ed3-811e-205592add41d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 263.6854 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 	)
