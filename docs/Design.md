@@ -576,6 +576,9 @@ The version 4 board changes the ANT\_EN line to positive logic.
 The version 4 board no longer has direct power control of the ACP
 ADCs, they are powered with ANT\_+3.3V now.
 
+The CAN bus connections, many GPIOS, and the dual board control lines
+are moved to match with or avoid conflicts with the LIHU lines.
+
 # IO Connections on the PacSat AFSK processor
 
 These are the pins on the TMS570 processor, where they go, what they

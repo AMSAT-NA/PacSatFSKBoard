@@ -4128,3 +4128,7 @@ to communicate with it the latch up would go away.
 
 Move the CAN bus connections on the PC104 to match up with what the
 LIHU has and what other boards have.
+
+Move PC104\_UMBILICAL\_ATTACHED\_N to H2 pin 13 to match the LIHU.
+Also move the dual board controls to avoid conflicts with some LIHU
+bins.
