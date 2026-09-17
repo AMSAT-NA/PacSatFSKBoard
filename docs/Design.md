@@ -779,6 +779,23 @@ At full power out (+33dBm) this will result in about -7dBm of power
 from the coupler.  The voltage for that can be calculated from the
 chip manual.  See the section on Directional Coupler for more details.
 
+# SPI bus issues
+
+It appears the select lines on the AX5043 SPI have has a latch up issue.
+I was seeing an occasional issue where the SPI bus would not work on a
+reset, but once you went through and talked to all the AX5043s it would
+start working again.
+
+What appeared to be happening was one of the select lines to the devices
+was going into latch up through the pullups in the CPU, and it was
+messing up the bus.  When you pulled the select line for that device low
+to communicate with it the latch up would go away.
+
+This is worked around in software.  I'm not sure how to fix it in the
+hardware, but a software workaround is easy.
+
+This doesn't appear to be happening on the MRAM SPI bus.
+
 # Other IO Connections
 
 ## Antenna Control Processor (ACP)

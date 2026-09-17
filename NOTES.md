@@ -4113,3 +4113,13 @@ Per design review, overlap the ground sections on the top layer of the
 board.  They were directly abutted, not overlapped, and that was going
 to leave a seam between them, abutting them is not enough.  Also
 remove a semi-orphaned area of that ground plane above R81.
+
+It appears the select lines on the AX5043 SPI bus has a latch up issue.
+I was seeing an occasional issue where the SPI bus would not work on a
+reset, but once you went through and talked to all the AX5043s it would
+start working again.
+
+What appeared to be happening was one of the select lines to the devices
+was going into latch up through the pullups in the CPU, and it was
+messing up the bus.  When you pulled the select line for that device low
+to communicate with it the latch up would go away.
