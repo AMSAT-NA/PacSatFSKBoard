@@ -4107,4 +4107,9 @@ Add a 330K resistor between USB\_+3.3V and the enable pins of the
 LM73100RPWR chips.  TI says this is necessary to prevent damage to the
 diodes.
 
+## 2026-09-16
 
+Per design review, overlap the ground sections on the top layer of the
+board.  They were directly abutted, not overlapped, and that was going
+to leave a seam between them, abutting them is not enough.  Also
+remove a semi-orphaned area of that ground plane above R81.
