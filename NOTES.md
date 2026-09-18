@@ -47,10 +47,9 @@ about 10mm tall with a right-angle connector, right angle
 Maybe switch to the high-vibration versions of the RF connectors
 (MMCXV)?  They won't interconnect with MMCX.
 
-The various general GPIOs on the PC104 are not latch up protected.
-This needs to be documented or handled somehow.  All the
-fault-tolerance I/Os are latch up protected; they could be used for
-other purposes if the fault-tolerance isn't being used.
+The various general GPIOs, ADC lines and the I2C from the ACP on the
+PC104 are not latch up protected.  This needs to be documented or
+handled somehow.
 
 I believe the last outgassing concerns are the crystal, USB connector,
 MMCX connectors, and the JTAG ones:
@@ -4151,7 +4150,7 @@ Switched the oscillator to a TG2520SMN 16.0000M-MCGNNM3, which is
 Increase the coplanar spacing for the trace to the board to TX
 connector.
 
-## 2026-09-17
+## 2026-09-18
 
 Rework some thing around the TX connectors and directional coupler to
 avoid shorting and make the coupler measurement side as consistent as
@@ -4161,3 +4160,6 @@ Change resistors on CPU\_TX and CPU\_RX to 330Ω.  This way if the
 lines latch up they will be current limited.  Since these are for the
 umbilical, fixing the latch up isn't a huge issue, the cable can be
 plugged and unplugged.
+
+Lots of little track and via cleanups, neaten things up to make future
+routing easier.
