@@ -6791,7 +6791,7 @@
 		(dnp yes)
 		(uuid "4532e11f-fc00-4b79-89b5-518b926fcfc6")
 		(property "Reference" "R208"
-			(at 263.652 118.618 90)
+			(at 262.89 120.396 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6801,8 +6801,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0Ω"
-			(at 254.508 118.364 90)
+		(property "Value" "330Ω"
+			(at 252.476 120.396 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7526,7 +7526,7 @@
 		(dnp no)
 		(uuid "76cd49a9-b767-4708-83ad-1324c40effb0")
 		(property "Reference" "R206"
-			(at 263.652 121.158 90)
+			(at 262.89 122.936 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7536,8 +7536,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0Ω"
-			(at 254.508 120.904 90)
+		(property "Value" "330Ω"
+			(at 252.476 123.19 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9686,8 +9686,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0Ω"
-			(at 305.308 118.364 90)
+		(property "Value" "330Ω"
+			(at 303.276 118.364 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9766,8 +9766,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0Ω"
-			(at 319.278 120.904 90)
+		(property "Value" "330Ω"
+			(at 316.992 120.904 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

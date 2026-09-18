@@ -4156,3 +4156,8 @@ connector.
 Rework some thing around the TX connectors and directional coupler to
 avoid shorting and make the coupler measurement side as consistent as
 possible.
+
+Change resistors on CPU\_TX and CPU\_RX to 330Ω.  This way if the
+lines latch up they will be current limited.  Since these are for the
+umbilical, fixing the latch up isn't a huge issue, the cable can be
+plugged and unplugged.
