@@ -1690,6 +1690,16 @@
 		)
 		(uuid "b1c36ff1-3be1-4535-8dd0-ddd0af091156")
 	)
+	(text "Some oscillators use the VC input as an enable,\nsome use it as a voltage control, and some don't\nuse it and require it to float.  The current\nrequires it to float, but leave R25 here in\ncase the oscillator needs to change."
+		(exclude_from_sim no)
+		(at 101.854 86.614 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "bfbd4b41-603b-4eaf-a500-3b4c21b3958f")
+	)
 	(text "16 MHz"
 		(exclude_from_sim no)
 		(at 162.56 114.3 0)
@@ -3537,10 +3547,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "707d6fa7-e5f7-4b64-9574-784aadb4e9ed")
 		(property "Reference" "R25"
 			(at 141.478 99.1616 0)
