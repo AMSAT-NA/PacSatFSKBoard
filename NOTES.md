@@ -84,17 +84,6 @@ receiver, but I would like someone with experience to look it over.
 Switch to a TMS570LS2134 CPU.  This has double the FLASH and RAM and
 has the same pinout as the TMS570LS0914.
 
-The chosen LNA (QPL9547) has very good specs (a NF of 0.3dB) but draws
-a lot of current (50ma).  Other possible options are Guerrilla RF
-GRF2374, GRF4001, Skyworks LNAs (SKY67150-396LF, SKY67183-396LF,
-SKY65015-70LF), or Qorvo SGL0622Z.  The Qorvo part is very low power,
-simple, but the NF is 1.4dB.  The SKY67150-396LF has a similar NF to
-the QPL9547, but draws 85ma.  Looking over the parts, the QPL9547
-seems to be the best part for optimizing for NF, and the SGL0622Z is
-best for optimizing power.  It also has built-in matching, but is 3.3V
-and doesn't have any control over gain.  It does seem that lower NF
-values require higher power.
-
 Maybe spend some time needs to be spent looking for a new PA.
 
 Add 0 ohm resistors to make some of the dual-board lines available if
@@ -1220,6 +1209,22 @@ at 16MHz are available, but the temperature doesn't go to 105C, only
 85C.  Maybe that's better, anyway?  The TG2520SMN 16.0000M-MCGNNM3
 from Epson is drop-in compatible to what is there. - Switched to the
 Epson part.
+
+The chosen LNA (QPL9547) has very good specs (a NF of 0.3dB) but draws
+a lot of current (50ma).  Other possible options are Guerrilla RF
+GRF2374, GRF4001, Skyworks LNAs (SKY67150-396LF, SKY67183-396LF,
+SKY65015-70LF), or Qorvo SGL0622Z.  The Qorvo part is very low power,
+simple, but the NF is 1.4dB.  The SKY67150-396LF has a similar NF to
+the QPL9547, but draws 85ma.  Looking over the parts, the QPL9547
+seems to be the best part for optimizing for NF, and the SGL0622Z is
+best for optimizing power.  It also has built-in matching, but is 3.3V
+and doesn't have any control over gain.  It does seem that lower NF
+values require higher power. - Sticking with the part that's there.
+Looking at the other options, they just aren't going to beat it from a
+linearity (OIP3), NF, and power usage point of view.  The SGL0622Z has
+much poorer performance all around, the GRF parts aren't nearly as
+good, and the Skyworks parts are just as good but draw more power.
+There's also the Qorvo TQP3M9036, but it's fairly equivalent.
 
 # Not going to do
 
@@ -4142,3 +4147,6 @@ a current limiter and if it latches up the problem will be fixed.
 Switched the oscillator to a TG2520SMN 16.0000M-MCGNNM3, which is
 .5ppm instead of 2.5ppm.  The temp range is -40-85C instead of
 -40-105C, but the extra precision is worth it.
+
+Increase the coplanar spacing for the trace to the board to TX
+connector.
