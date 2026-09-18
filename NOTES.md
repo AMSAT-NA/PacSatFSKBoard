@@ -4150,3 +4150,9 @@ Switched the oscillator to a TG2520SMN 16.0000M-MCGNNM3, which is
 
 Increase the coplanar spacing for the trace to the board to TX
 connector.
+
+## 2026-09-17
+
+Rework some thing around the TX connectors and directional coupler to
+avoid shorting and make the coupler measurement side as consistent as
+possible.
