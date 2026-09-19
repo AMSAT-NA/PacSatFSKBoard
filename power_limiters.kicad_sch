@@ -8090,7 +8090,7 @@
 				)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "+5Vext"
 			(at 265.43 109.22 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9224,7 +9224,7 @@
 				)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "+5Vext"
 			(at 163.83 154.94 0)
 			(show_name no)
 			(do_not_autoplace no)

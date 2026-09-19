@@ -9616,7 +9616,7 @@
 			)
 		)
 	)
-	(global_label "PC104_ADC4"
+	(global_label "PWR_FLAG_5V"
 		(shape input)
 		(at 247.65 68.58 90)
 		(fields_autoplaced yes)
@@ -9628,7 +9628,7 @@
 		)
 		(uuid "5e7d0e4e-8b2e-4f11-a09f-1c469238c336")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 247.65 51.4142 90)
+			(at 247.65 50.5433 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14649,7 +14649,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "226c51e6-00df-4329-a02d-33d5747c0870")
 		(property "Reference" "#PWR0310"
 			(at 337.82 78.74 0)
@@ -14662,14 +14661,15 @@
 				)
 			)
 		)
-		(property "Value" "+5VAL"
-			(at 337.82 69.85 0)
+		(property "Value" "+5V"
+			(at 336.042 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -16907,14 +16907,15 @@
 				)
 			)
 		)
-		(property "Value" "+5VAL"
-			(at 254 13.97 0)
+		(property "Value" "+5V"
+			(at 256.54 17.7799 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""

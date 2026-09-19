@@ -576,8 +576,15 @@ The version 4 board changes the ANT\_EN line to positive logic.
 The version 4 board no longer has direct power control of the ACP
 ADCs, they are powered with ANT\_+3.3V now.
 
-The CAN bus connections, many GPIOS, and the dual board control lines
-are moved to match with or avoid conflicts with the LIHU lines.
+The CAN bus connections, many GPIOs, and the dual board control lines
+are moved on the PC104 connector to match with or avoid conflicts with
+the LIHU lines.
+
+The +5V bus was renamed +5Vext for external power and a current
+regulated +5V bus was added.  This allows latch up situations in the
+CAN bus, +3.3V regulator, and a few other places to be corrected.  The
+PC104\_ADC4 line was converted to PWR\_FLAG\_5V for monitoring that
+current regulator.
 
 # IO Connections on the PacSat AFSK processor
 
@@ -672,10 +679,10 @@ used as a GPIO.
 |75		|AD1IN[11] / AD2IN[11]	|PWR\_FLAG\_LNA			|  |Power flag from the LNA current limiter |
 |76		|AD1IN[04]				|PWR\_FLAG\_SSPA		|  |Power flag from the PA current limiter |
 |77		|AD1IN[12] / AD2IN[12]	|						|  |+5V power measure, linear from 0-2.5V |
-|78		|AD1IN[05]				|						|  |ADC to PC104 H1-10|
+|78		|AD1IN[05]				|PWR\_FLAG\_5V			|  |Power flag from the +5V current limiter |
 |79		|AD1IN[13] / AD2IN[13]	|						|  |+1.2V power measure, 0-1.2V |
 |80		|AD1IN[06]				|						|  |+3.3V power measure, 0-1.65V |
-|81		|AD1IN[22] / AD2IN[06]	|						|  |ADC to PC104 H1-09|
+|81		|AD1IN[22] / AD2IN[06]	|PC104\_ADC3			|  |ADC to PC104 H1-09|
 |82		|AD1IN[14] / AD2IN[14]	|						|  |Board version number bit 2 |
 |83		|AD1IN[08] / AD2IN[08]	|\*POWER\_TEMP			|  |Thermsistor in power conversion section |
 |84		|AD1IN[23] / AD2IN[07]	|\*PA\_TEMP				|  |Thermsistor near the PA |

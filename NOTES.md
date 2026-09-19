@@ -12,6 +12,16 @@ some point.
 
 # TODO
 
+The +5VAL power can have some latch-up issues.  If the CAN bus drivers
+or the 3.3V reference input to the main CPU go into latch up, they
+cannot be recovered.  The things that are going through large
+resistors won't be able to sustain a latch up, so they are ok.  The RF
+switches might be an issue, too.
+
+The various general GPIOs, ADC lines and the I2Cs from the ACP on the
+PC104 and on the it's connector are not latch up protected.  This
+needs to be documented or handled somehow.
+
 The connectors used to bring RF off the board in various places are
 all U.FL.  Of concern are the two secondary TX connections from
 AX5043s and the places where you could bring in or out RX connections.
@@ -46,10 +56,6 @@ about 10mm tall with a right-angle connector, right angle
 
 Maybe switch to the high-vibration versions of the RF connectors
 (MMCXV)?  They won't interconnect with MMCX.
-
-The various general GPIOs, ADC lines and the I2C from the ACP on the
-PC104 are not latch up protected.  This needs to be documented or
-handled somehow.
 
 I believe the last outgassing concerns are the crystal, USB connector,
 MMCX connectors, and the JTAG ones:
@@ -4163,3 +4169,11 @@ plugged and unplugged.
 
 Lots of little track and via cleanups, neaten things up to make future
 routing easier.
+
+## 2026-09-19
+
+The +5V bus was renamed +5Vext for external power and a current
+regulated +5V bus was added.  This allows latch up situations in the
+CAN bus, +3.3V regulator, and a few other places to be corrected.  The
+PC104\_ADC4 line was converted to PWR\_FLAG\_5V for monitoring that
+current regulator.

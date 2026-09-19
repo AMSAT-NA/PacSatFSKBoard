@@ -6497,7 +6497,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "1a4c7f09-9017-420b-b72b-2fbbdfae10b7")
 		(property "Reference" "#PWR0115"
 			(at 281.94 72.39 0)
@@ -6510,14 +6509,15 @@
 				)
 			)
 		)
-		(property "Value" "+5VAL"
-			(at 281.94 63.5 0)
+		(property "Value" "+5V"
+			(at 280.162 64.516 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -10942,7 +10942,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "cf19373a-fdf3-4844-8720-bcc5768f4497")
 		(property "Reference" "#PWR0255"
 			(at 281.94 139.7 0)
@@ -10955,14 +10954,15 @@
 				)
 			)
 		)
-		(property "Value" "+5VAL"
-			(at 281.94 130.81 0)
+		(property "Value" "+5V"
+			(at 280.416 131.572 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""

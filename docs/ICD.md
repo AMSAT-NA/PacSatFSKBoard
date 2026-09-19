@@ -508,7 +508,7 @@ The pins are:
   
   - PC104\_ABF0\_N - Used to monitor the ABF lines, cannot do interrupts.
   
-  - PC104\_ADC[1-4] - Analog to Digital controller inputs.
+  - PC104\_ADC[1-3] - Analog to Digital controller inputs.
   
   - PC104\_TX2 and PC104\_RX2 may also be configured as GPIO lines if
     necessary.
