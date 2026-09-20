@@ -12,6 +12,10 @@ some point.
 
 # TODO
 
+Ground plane cutouts under big RF pads to reduce the capacitance?
+
+Is P25 too close to the RF splitter?
+
 The RF switches might be latch up issues.  Need to figure that out.
 
 The various general GPIOs, ADC lines and the I2Cs from the ACP on the
