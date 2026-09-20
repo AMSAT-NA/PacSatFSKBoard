@@ -4186,3 +4186,10 @@ PC104\_ADC4 line was converted to PWR\_FLAG\_5V for monitoring that
 current regulator.
 
 Get rid of all the via in pads that were able to be removed.
+
+## 2026-09-20
+
+Move P25 away from the RF splitter.  It was too close, installing and
+removing the connecter would be close to impossible.  Also move it
+toward the right a bit.  If you are using it, you won't be using the
+main TX connector, so the conflict there doesn't matter.
