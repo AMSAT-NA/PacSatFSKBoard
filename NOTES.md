@@ -12,11 +12,7 @@ some point.
 
 # TODO
 
-The +5VAL power can have some latch-up issues.  If the CAN bus drivers
-or the 3.3V reference input to the main CPU go into latch up, they
-cannot be recovered.  The things that are going through large
-resistors won't be able to sustain a latch up, so they are ok.  The RF
-switches might be an issue, too.
+The RF switches might be latch up issues.  Need to figure that out.
 
 The various general GPIOs, ADC lines and the I2Cs from the ACP on the
 PC104 and on the it's connector are not latch up protected.  This
@@ -1230,6 +1226,13 @@ linearity (OIP3), NF, and power usage point of view.  The SGL0622Z has
 much poorer performance all around, the GRF parts aren't nearly as
 good, and the Skyworks parts are just as good but draw more power.
 There's also the Qorvo TQP3M9036, but it's fairly equivalent.
+
+The +5VAL power can have some latch-up issues.  If the CAN bus drivers
+or the 3.3V reference input to the main CPU go into latch up, they
+cannot be recovered.  The things that are going through large
+resistors won't be able to sustain a latch up, so they are ok.  The RF
+switches might be an issue, too. - A switched +5V bus was added
+and several things moved to it.
 
 # Not going to do
 
@@ -4177,3 +4180,5 @@ regulated +5V bus was added.  This allows latch up situations in the
 CAN bus, +3.3V regulator, and a few other places to be corrected.  The
 PC104\_ADC4 line was converted to PWR\_FLAG\_5V for monitoring that
 current regulator.
+
+Get rid of all the via in pads that were able to be removed.
