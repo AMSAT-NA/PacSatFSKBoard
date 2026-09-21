@@ -12,9 +12,17 @@ some point.
 
 # TODO
 
-Ground plane cutouts under big RF pads to reduce the capacitance?
+Perhaps specify a low-outgassing circuit board material like FR408HR.
+See:
+https://www.isola-group.com/wp-content/uploads/Outgassing-Data-041224.pdf
 
-Is P25 too close to the RF splitter?
+Look at differential traces and the grounds under them per
+https://www.ti.com/lit/an/slla414a/slla414a.pdf?ts=1789770139213
+
+Perhaps use stripline instead of microstrip for RX rf traces, see:
+https://www.microwavejournal.com/blogs/1-rog-blog/post/16668-microstrip-versus-stripline-how-to-make-the-choice
+
+Ground plane cutouts under big RF pads to reduce the capacitance?
 
 The RF switches might be latch up issues.  Need to figure that out.
 
@@ -1237,6 +1245,8 @@ cannot be recovered.  The things that are going through large
 resistors won't be able to sustain a latch up, so they are ok.  The RF
 switches might be an issue, too. - A switched +5V bus was added
 and several things moved to it.
+
+Is P25 too close to the RF splitter? - Yes, it was moved.
 
 # Not going to do
 
@@ -4193,3 +4203,8 @@ Move P25 away from the RF splitter.  It was too close, installing and
 removing the connecter would be close to impossible.  Also move it
 toward the right a bit.  If you are using it, you won't be using the
 main TX connector, so the conflict there doesn't matter.
+
+Fix clearance around differential pairs to meet the 5X requirement for
+trace width vs clearance.  See
+https://www.ti.com/lit/an/slla414a/slla414a.pdf?ts=1789770139213 on
+differential signal spacing.

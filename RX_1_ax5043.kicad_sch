@@ -3004,7 +3004,7 @@
 		)
 		(uuid "f0e9da1b-cfb1-43de-b401-1a99f3d5265c")
 	)
-	(label "RXANT_N"
+	(label "RX1ANT_N"
 		(at 179.07 135.89 0)
 		(effects
 			(font
@@ -3014,7 +3014,7 @@
 		)
 		(uuid "3f7a716e-f5c8-443e-86a6-8e97b7fda162")
 	)
-	(label "RXANT_P"
+	(label "RX1ANT_P"
 		(at 179.07 133.35 0)
 		(effects
 			(font

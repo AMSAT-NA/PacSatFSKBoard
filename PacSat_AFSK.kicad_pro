@@ -61,11 +61,11 @@
           "hatch_smoothing_level": 0,
           "hatch_smoothing_value": 0.1,
           "hatch_thickness": 1.0,
-          "min_clearance": 0.0,
+          "min_clearance": 0.762,
           "min_island_area": 0.0013161349,
           "min_thickness": 0.025,
           "pad_connection": 0,
-          "remove_islands": 1,
+          "remove_islands": 0,
           "thermal_relief_gap": 0.5,
           "thermal_relief_spoke_width": 0.5
         }
@@ -721,16 +721,16 @@
         "via_drill": 0.3048
       },
       {
-        "clearance": 0.1524,
-        "diff_pair_gap": 0.18,
-        "diff_pair_width": 0.127,
+        "clearance": 0.762,
+        "diff_pair_gap": 0.36,
+        "diff_pair_width": 0.36,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
-        "name": "RF Wide",
+        "name": "RF Diff",
         "pcb_color": "rgb(204, 102, 0)",
         "priority": 0,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.762,
+        "track_width": 0.127,
         "tuning_profile": "",
         "via_diameter": 0.508,
         "via_drill": 0.3048
@@ -748,7 +748,7 @@
       },
       {
         "netclass": "FatPower",
-        "pattern": "+5V"
+        "pattern": "+5Vext"
       },
       {
         "netclass": "+3.3V",
@@ -769,6 +769,14 @@
       {
         "netclass": "Power",
         "pattern": "+5VAL"
+      },
+      {
+        "netclass": "RF Diff",
+        "pattern": "/AX5043/RX_?_ax5043/RX?ANT_?"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "+5V"
       }
     ]
   },

@@ -2983,7 +2983,7 @@
 		)
 		(uuid "fb68942c-18b8-45f7-8efe-65e71df52ec6")
 	)
-	(label "RX3_N"
+	(label "RX3ANT_N"
 		(at 228.6 124.46 0)
 		(effects
 			(font
@@ -2993,7 +2993,7 @@
 		)
 		(uuid "98b92af1-ec1b-4611-a3f1-9eaa4b3c5dd9")
 	)
-	(label "RX3_P"
+	(label "RX3ANT_P"
 		(at 228.6 121.92 0)
 		(effects
 			(font
