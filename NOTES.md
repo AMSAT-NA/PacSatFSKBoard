@@ -4208,3 +4208,8 @@ Fix clearance around differential pairs to meet the 5X requirement for
 trace width vs clearance.  See
 https://www.ti.com/lit/an/slla414a/slla414a.pdf?ts=1789770139213 on
 differential signal spacing.
+
+Looked at via fencing around the RF areas.  Via spacing is supposed to
+be `wavelength / 20` and that's around 50mm for 2 meters and 16mm for
+70cm, so really, just any kind of fence is good enough.  But added
+some vias and cleaned up the zones a little bit.
