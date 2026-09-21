@@ -12,17 +12,31 @@ some point.
 
 # TODO
 
+Ask the board shop about rails, if they are necessary, how to do them.
+
+Ask the board shop about vias, tenting, and issues with chemicals
+getting into the via then causing the solder mask to break open during
+reflow.  Does filling the vias help here?  How thermally conductive is
+the epoxy filling for vias?
+
+Maybe switch each U.FL connectors to just a pair of holes that can be
+soldered to.  Need to figure out how to tell the board shop not to
+solder these holes.  I guess the paste layer would do this, should be
+easy.
+
+Look at copper balancing, making sure the amount of copper across the
+board is relatively even.  This apparently can help avoid
+delamination.
+
 Perhaps specify a low-outgassing circuit board material like FR408HR.
 See:
 https://www.isola-group.com/wp-content/uploads/Outgassing-Data-041224.pdf
 
-Look at differential traces and the grounds under them per
-https://www.ti.com/lit/an/slla414a/slla414a.pdf?ts=1789770139213
-
 Perhaps use stripline instead of microstrip for RX rf traces, see:
 https://www.microwavejournal.com/blogs/1-rog-blog/post/16668-microstrip-versus-stripline-how-to-make-the-choice
 
-Ground plane cutouts under big RF pads to reduce the capacitance?
+Remove ground plane cutouts under big RF pads to reduce the
+capacitance?
 
 The RF switches might be latch up issues.  Need to figure that out.
 
@@ -1247,6 +1261,10 @@ switches might be an issue, too. - A switched +5V bus was added
 and several things moved to it.
 
 Is P25 too close to the RF splitter? - Yes, it was moved.
+
+Look at differential traces and the grounds around them per
+https://www.ti.com/lit/an/slla414a/slla414a.pdf?ts=1789770139213 - Done,
+added rule areas to keep the grounds away from the differential pairs.
 
 # Not going to do
 
