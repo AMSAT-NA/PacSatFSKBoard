@@ -61,7 +61,7 @@
           "hatch_smoothing_level": 0,
           "hatch_smoothing_value": 0.1,
           "hatch_thickness": 1.0,
-          "min_clearance": 0.762,
+          "min_clearance": 0.0,
           "min_island_area": 0.0013161349,
           "min_thickness": 0.025,
           "pad_connection": 0,
@@ -769,10 +769,6 @@
       {
         "netclass": "Power",
         "pattern": "+5VAL"
-      },
-      {
-        "netclass": "RF Diff",
-        "pattern": "/AX5043/RX_?_ax5043/RX?ANT_?"
       },
       {
         "netclass": "Power",
