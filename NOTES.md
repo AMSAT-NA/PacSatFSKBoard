@@ -4231,3 +4231,9 @@ Looked at via fencing around the RF areas.  Via spacing is supposed to
 be `wavelength / 20` and that's around 50mm for 2 meters and 16mm for
 70cm, so really, just any kind of fence is good enough.  But added
 some vias and cleaned up the zones a little bit.
+
+## 2026-09-21
+
+Spent some time on the layers trying to balance the copper on all of
+them.  Reworked all the zones to clean them up and make them
+consistent.
