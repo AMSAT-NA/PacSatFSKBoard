@@ -4237,3 +4237,9 @@ some vias and cleaned up the zones a little bit.
 Spent some time on the layers trying to balance the copper on all of
 them.  Reworked all the zones to clean them up and make them
 consistent.
+
+Remove the notes about using GPIO7 and GPIO8 for BSL\_Invoke, and
+remove the pull ups from those lines.  BSL\_Invoke is now the SPI
+select pin going to the ACP.
+
+More track cleanups.
