@@ -4243,3 +4243,24 @@ remove the pull ups from those lines.  BSL\_Invoke is now the SPI
 select pin going to the ACP.
 
 More track cleanups.
+
+## 2026-09-22
+
+More work on copper balancing.  Current fill areas are:
+
+| Layer | Filled area |
+|     1 | 7415.892    |
+|     2 | 7378.915    |
+|     3 | 6363.065    |
+|     4 | 6286.672    |
+|     5 | 6982.831    |
+|     6 | 7544.727    |
+
+I don't really understand why layers 3 and 4 are so much less than the
+rest.  Visually, it looks pretty similar to the other layers.  1 and 6
+may be a little high because some of the zones overlap a little, but
+not very much.  This is ~9% variance between the median and the other
+layers.  But I don't think these are really accurate.
+
+Remove the extra power feeds on the 47-52 pins of the PC104 J1.  They
+aren't needed.
