@@ -12,6 +12,11 @@ some point.
 
 # TODO
 
+Via annulars are 4 mils, which is at most board shop limits, usually.
+Would increasing these to 6 mils be better?  This would change RF
+impedance and increase capacitance, so leave them at 4 mils for RF
+might be required if this change is done.
+
 Ask the board shop about rails, if they are necessary, how to do them.
 
 Ask the board shop about vias, tenting, and issues with chemicals
@@ -4270,3 +4275,8 @@ room has been made there for it.  This frees up some space.
 
 Remove PC104\_FULL\_DISABLE\_N and PC104\_PA\_DISABLE\_N.  They won't
 be needed, and it frees up some space and some latch up concerns.
+
+## 2026-09-23
+
+Fix the enable on the +5V current limiter.  It needs a pull up, not a
+pull down.

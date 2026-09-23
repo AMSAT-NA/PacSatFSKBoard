@@ -1665,6 +1665,12 @@
 		(uuid "100e7d14-fca3-4a77-876c-4a6a5b5cfbd6")
 	)
 	(junction
+		(at 129.54 165.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1bb09f4b-cbd8-4f23-ab42-08c747291c1e")
+	)
+	(junction
 		(at 162.56 116.84)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2032,7 +2038,7 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 165.1) (xy 152.4 165.1)
+			(xy 113.03 165.1) (xy 129.54 165.1)
 		)
 		(stroke
 			(width 0)
@@ -2249,16 +2255,6 @@
 			(type default)
 		)
 		(uuid "538c6b06-e4a6-49f4-b475-7c7dd902fb4e")
-	)
-	(wire
-		(pts
-			(xy 118.11 170.18) (xy 118.11 167.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "543f9e79-82c6-4cf1-a680-987037cee182")
 	)
 	(wire
 		(pts
@@ -2492,6 +2488,16 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 167.64) (xy 129.54 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "824db979-2b04-4823-af5a-de34fc787631")
+	)
+	(wire
+		(pts
 			(xy 167.64 31.75) (xy 167.64 38.1)
 		)
 		(stroke
@@ -2529,6 +2535,16 @@
 			(type default)
 		)
 		(uuid "889664a7-9abe-4236-93bf-507af5e85129")
+	)
+	(wire
+		(pts
+			(xy 129.54 165.1) (xy 152.4 165.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8bc89f89-2678-4719-b787-ee78ce28a010")
 	)
 	(wire
 		(pts
@@ -2659,6 +2675,16 @@
 			(type default)
 		)
 		(uuid "a318b379-d0aa-42b2-8e1a-7f3e9c310135")
+	)
+	(wire
+		(pts
+			(xy 125.73 167.64) (xy 129.54 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a35ef620-4065-4503-97cc-5b4eddcbdbe6")
 	)
 	(wire
 		(pts
@@ -3009,16 +3035,6 @@
 			(type default)
 		)
 		(uuid "ec575475-fe2f-4e96-85a3-a26c8e2a78e4")
-	)
-	(wire
-		(pts
-			(xy 118.11 177.8) (xy 118.11 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ee2aff19-52d1-4da4-9cd4-e8e46353a7cb")
 	)
 	(wire
 		(pts
@@ -5842,83 +5858,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 118.11 179.07 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "0f2ec5f7-aea5-490f-a78d-c4b7141ccb33")
-		(property "Reference" "#PWR0378"
-			(at 118.11 185.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 117.983 183.4642 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 118.11 179.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 118.11 179.07 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 118.11 179.07 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "df495f35-eabb-4081-9e4c-ee90403c0394")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/00000000-0000-0000-0000-00005a0ea76a/c3879c9c-e3de-4d40-a3e3-f7fd281b7d00"
-					(reference "#PWR0378")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5V")
 		(at 49.53 156.21 0)
 		(unit 1)
@@ -6891,7 +6830,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 118.11 173.99 0)
+		(at 121.92 167.64 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6901,7 +6840,7 @@
 		(dnp no)
 		(uuid "79d7d7ad-f61c-4b51-a035-c394e6b745ea")
 		(property "Reference" "R144"
-			(at 119.888 172.847 0)
+			(at 124.46 171.704 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6912,7 +6851,7 @@
 			)
 		)
 		(property "Value" "10kΩ"
-			(at 119.888 174.752 0)
+			(at 124.46 169.799 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6923,7 +6862,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 116.332 173.99 90)
+			(at 121.92 169.418 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6934,7 +6873,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 118.11 173.99 0)
+			(at 121.92 167.64 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6944,7 +6883,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 118.11 173.99 0)
+			(at 121.92 167.64 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
