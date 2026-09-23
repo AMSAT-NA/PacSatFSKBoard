@@ -3038,12 +3038,6 @@
 		(uuid "135fe736-41b1-4e6a-b29f-0617ecee3339")
 	)
 	(junction
-		(at 166.37 85.09)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "143b97d7-ba51-4556-b8e4-12a9510a56ea")
-	)
-	(junction
 		(at 142.24 165.1)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3078,12 +3072,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "59c50bb6-eee0-4688-8cc4-fc5fccf5735e")
-	)
-	(junction
-		(at 168.91 87.63)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "70928f52-68a5-440b-bb04-52e48fd0aa22")
 	)
 	(junction
 		(at 63.5 137.16)
@@ -3209,16 +3197,6 @@
 	)
 	(wire
 		(pts
-			(xy 181.61 87.63) (xy 195.58 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "04678d25-46ca-4aa9-9b7f-1c9b2a34bafc")
-	)
-	(wire
-		(pts
 			(xy 124.46 107.95) (xy 137.16 107.95)
 		)
 		(stroke
@@ -3329,7 +3307,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 87.63) (xy 168.91 87.63)
+			(xy 124.46 87.63) (xy 179.07 87.63)
 		)
 		(stroke
 			(width 0)
@@ -3439,16 +3417,6 @@
 	)
 	(wire
 		(pts
-			(xy 181.61 85.09) (xy 195.58 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2c7308b6-ddc1-4148-adf4-c7a410f64334")
-	)
-	(wire
-		(pts
 			(xy 191.77 119.38) (xy 210.82 119.38)
 		)
 		(stroke
@@ -3509,7 +3477,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 85.09) (xy 166.37 85.09)
+			(xy 124.46 85.09) (xy 179.07 85.09)
 		)
 		(stroke
 			(width 0)
@@ -3626,16 +3594,6 @@
 			(type default)
 		)
 		(uuid "4c3869e1-d83b-44c5-9916-7e0360e611bf")
-	)
-	(wire
-		(pts
-			(xy 177.8 91.44) (xy 168.91 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4f771eff-8908-438e-a891-fd4347784846")
 	)
 	(wire
 		(pts
@@ -4049,16 +4007,6 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 87.63) (xy 173.99 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a3c456fe-8ee6-4ed3-8517-f66b2011e0e6")
-	)
-	(wire
-		(pts
 			(xy 137.16 165.1) (xy 142.24 165.1)
 		)
 		(stroke
@@ -4146,26 +4094,6 @@
 			(type default)
 		)
 		(uuid "b309c7e9-4eb9-4b55-a014-52f5b4b434bf")
-	)
-	(wire
-		(pts
-			(xy 177.8 93.98) (xy 166.37 93.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b415c3d8-7033-4c03-9a0c-6ee708028d54")
-	)
-	(wire
-		(pts
-			(xy 168.91 91.44) (xy 168.91 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b5101d05-53f8-415e-8f41-f74524aff455")
 	)
 	(wire
 		(pts
@@ -4369,16 +4297,6 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 93.98) (xy 166.37 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d3350136-7bd6-4c0c-874d-f48d07c4e84a")
-	)
-	(wire
-		(pts
 			(xy 173.99 124.46) (xy 179.07 124.46)
 		)
 		(stroke
@@ -4496,16 +4414,6 @@
 			(type default)
 		)
 		(uuid "f1141088-765f-4ffa-84b1-8b5145ccba83")
-	)
-	(wire
-		(pts
-			(xy 166.37 85.09) (xy 173.99 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f20a6876-c4e2-4f08-83cf-f2f53cf8e5d9")
 	)
 	(wire
 		(pts
@@ -4873,30 +4781,6 @@
 			)
 		)
 	)
-	(global_label "PC104_I2C2_SCL"
-		(shape input)
-		(at 195.58 85.09 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left)
-		)
-		(uuid "2f286e1c-4b82-47ea-84cc-2c66ab2836f7")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 217.4628 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "ADC_SDA"
 		(shape input)
 		(at 123.19 185.42 180)
@@ -4923,7 +4807,7 @@
 	)
 	(global_label "ADC_SDA"
 		(shape input)
-		(at 177.8 91.44 0)
+		(at 179.07 87.63 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4933,7 +4817,7 @@
 		)
 		(uuid "33f2f2af-df1b-471a-8470-8c2a23e95906")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 190.3939 91.44 0)
+			(at 191.6639 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5065,7 +4949,7 @@
 			)
 		)
 	)
-	(global_label "PC104_GPIO6"
+	(global_label "PC104_GPIO78_EN"
 		(shape input)
 		(at 137.16 105.41 0)
 		(fields_autoplaced yes)
@@ -5077,7 +4961,7 @@
 		)
 		(uuid "77fcda1b-64b7-4ed7-882a-3edfb5d11aa8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 155.3418 105.41 0)
+			(at 160.9298 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5115,7 +4999,7 @@
 	)
 	(global_label "ADC_SCL"
 		(shape input)
-		(at 177.8 93.98 0)
+		(at 179.07 85.09 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5125,7 +5009,7 @@
 		)
 		(uuid "8d288883-c4b5-480d-9a12-8ff9c5bd2d52")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 190.3213 93.98 0)
+			(at 191.5913 85.09 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5174,30 +5058,6 @@
 		(uuid "a7007ff8-d78e-4bba-ac7c-05caafa67f45")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 157.0109 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "PC104_I2C2_SDA"
-		(shape input)
-		(at 195.58 87.63 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left)
-		)
-		(uuid "bb52cb46-870b-46f7-a955-7381b64d7a8c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 217.5354 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5761,86 +5621,6 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 177.8 85.09 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp yes)
-		(uuid "1f246cb9-53d1-439e-8d20-b2210a23ce97")
-		(property "Reference" "R157"
-			(at 181.102 84.328 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0Ω"
-			(at 171.958 84.074 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 177.8 83.312 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 177.8 85.09 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 177.8 85.09 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3422eb6f-96dc-42db-b098-57c3767a8084")
-		)
-		(pin "2"
-			(uuid "d3cc3b7c-0409-4da8-810a-68e5bd4eb237")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/75b01062-9747-4556-85bc-485f2c3c99d3"
-					(reference "R157")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
 		(at 229.87 73.66 0)
 		(unit 1)
 		(body_style 1)
@@ -6374,86 +6154,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/75b01062-9747-4556-85bc-485f2c3c99d3"
 					(reference "#PWR0330")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 177.8 87.63 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp yes)
-		(uuid "6ea3552b-12a3-49b4-bf8e-ae9f5f8ab951")
-		(property "Reference" "R156"
-			(at 181.356 86.614 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0Ω"
-			(at 171.958 86.614 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 177.8 85.852 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 177.8 87.63 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 177.8 87.63 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b09b7251-cc39-493d-acab-7ba01793b3df")
-		)
-		(pin "2"
-			(uuid "decb5b28-3212-4f3c-b165-68f1987c6873")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/75b01062-9747-4556-85bc-485f2c3c99d3"
-					(reference "R156")
 					(unit 1)
 				)
 			)

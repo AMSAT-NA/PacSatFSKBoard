@@ -45,10 +45,6 @@ capacitance?
 
 The RF switches might be latch up issues.  Need to figure that out.
 
-The various general GPIOs, ADC lines and the I2Cs from the ACP on the
-PC104 and on the it's connector are not latch up protected.  This
-needs to be documented or handled somehow.
-
 The connectors used to bring RF off the board in various places are
 all U.FL.  Of concern are the two secondary TX connections from
 AX5043s and the places where you could bring in or out RX connections.
@@ -1270,6 +1266,12 @@ Is P25 too close to the RF splitter? - Yes, it was moved.
 Look at differential traces and the grounds around them per
 https://www.ti.com/lit/an/slla414a/slla414a.pdf?ts=1789770139213 - Done,
 added rule areas to keep the grounds away from the differential pairs.
+
+The various general GPIOs, ADC lines and the I2Cs from the ACP on the
+PC104 and on the it's connector are not latch up protected.  This
+needs to be documented or handled somehow. - TMUX2821s were added to
+the GPIO lines and the I2C lines.  GPIO 6 and 2 are removed and used
+to control the TMXU2821s.
 
 # Not going to do
 
@@ -4283,3 +4285,10 @@ pull down.
 
 More movement of things to make room, the I2C switch is moved, USB
 umbilical attached transistors, and others.
+
+TMUX2821s were added to the GPIO lines and the I2C lines going to the
+PC104.  GPIO 6 and 2 are removed and used to control the TMXU2821s.
+All the ADC specific lines are removed from the PC104 and now go to
+DNP resistors.  I've never seen ADCs on the bus on any other board, so
+it must not be useful.
+

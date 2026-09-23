@@ -386,14 +386,6 @@ switched inputs on the PC104 connector.
     The board has a 0 ohm resistor that must be populated to get power
 	from these pins.
 
-  - 5V\_S[1-3] - Switched +5V power from the power supply.  The board
-    has 0 ohm resistors, one of which must be populated to get power
-    from these pins.
-
-  - 3V3\_S[1-3] - Switched +3.3V power from the power supply.  The
-	board has a 0 ohm resistor that must be populated to get power
-	from these pins.
-
   - GND
 
 A power disable, named HW\_POWER\_OFF[12]\_N, can be used to disable
@@ -428,6 +420,9 @@ CAN FD or CAN XL.  It is thus limited to 8 byte data packets, though
 protocols exists to do multi-packet messages.  The pins are:
 
   - CAN[AB][+-] - CAN bus signals.
+  
+On power down the CAN transceivers go high impedance so the bus is
+still operational.
 
 ### I2C
 
@@ -440,14 +435,18 @@ Approaches for Efficient Electrical Interfaces of CubeSats" at
 https://www.researchgate.net/publication/354837502_Standardization_Approaches_for_Efficient_Electrical_Interfaces_of_CubeSats?enrichId=rgreq-3c8f3f7a94bf0ca750dcd71e69db6025-XXX&enrichSource=Y292ZXJQYWdlOzM1NDgzNzUwMjtBUzoxMDcxODgzMjE0NjYzNjgxQDE2MzI1NjgyODEyNzE%3D&el=1_x_2&_esc=publicationCoverPdf
 
 These can be electrically removed from the bus by a signal from the
-processor (PC104\_I2C\_EN\_N), so that in a dual-board situation only
-one device drives the bus.  See the design document for details.  The
-pins are:
+processor (PC104\_I2C\_EN\_N) with a TMUX2821 device.  See the design
+document for details.  The pins are:
 
   - PC104\_I2C\_SDA, PC104\_I2C\_SCL
   
 Another I2C can optionally come from the antenna control processor,
-too, through two DNP resistors, R156 and R157.
+too, through a TMUX2821 analog switch, which is connects to the PC104
+bus with the PC104\_GPIO78\_EN line.
+
+The enables and TMUX2821 are designed so that in a dual-board
+situation only one device drives the bus, and they will go high
+impedance when powered down to avoid latch up issues.
 
 ### Serial
 
@@ -455,7 +454,7 @@ The main serial device on the TMS570 processor runs to PC104\_TX and
 PC104\_RX.  These same pins run to the USB device on the board, so if
 you have USB plugged in, you cannot use these pins.  In the normal
 configuration, these pins go through the power supply to the umbilical
-cord.
+cord.  These pins have serial resistors for latch-up protection.
 
 For board 2, you need to remove R206 and R207 so that both boards are
 not connected to the same pins.  You can optionally install R208 and
@@ -466,25 +465,21 @@ PC104\_RX2.  This provides a serial port for communicating with
 something else in the system.  Like I2C, this can be removed from the
 PC104 connector with PC104\_SER\_EN for supporting other uses for
 those pins or active/standby on the LIN serial port.  These may also
-be used as GPIO pins.
+be used as GPIO pins.  These are connected through a TMUX2821 device
+for the enabling and latch up protection.
 
 ### GPIOs and ADC
 
-Four GPIOs rum from the CPU to the PC104 connectors.  They can all be
-either inputs or outputs; they are tristate by default.
-
-Four ADC inputs can be used to measure analog values.
+Two GPIOs run from the CPUs to the PC104 connectors.  They can all be
+either inputs or outputs; they are tristate by default.  There are
+other lines that provide I/O functions, to.
 
 The pins are:
 
   - PC104\_GPIO[1,4] - These pin can cause an interrupt to the CPU.  The
     rest of the pins cannot cause interrupts.
 	
-  - PC104\_GPIO2 - General purpose I/O line.
-  
   - PC104\_ABF0\_N - Used to monitor the ABF lines, cannot do interrupts.
-  
-  - PC104\_ADC[1-3] - Analog to Digital controller inputs.
   
   - PC104\_TX2 and PC104\_RX2 may also be configured as GPIO lines if
     necessary.
@@ -499,6 +494,9 @@ connector.  These are
 
 See the schematics for the antenna controller for details on how these
 are wired.
+
+All these lines are latch up protected using TMUX2821 devices to allow
+recovery from a latch-up and to allow dual-board operation.
 
 ### PC104\_UMBILICAL\_ATTACHED\_N
 
@@ -524,7 +522,8 @@ so) if a USB cable is plugged in.  It can be driven by and external
 device on the PC104 if necessary, and the main processor may drive it
 if it has another way to detect umbilical attached.  Or the main
 processor may monitor it.  The pull up for this is in the CPU when the
-CPU is driving or monitoring it.
+CPU is driving or monitoring it.  It is latch-up protected on this
+board.
 
 ### Dual Board Controls
 
@@ -558,6 +557,9 @@ The signal for this are:
   - FAULT[12] - Output from boardn, the processor is reporting an error.
     Positive logic (high is fault), open drain.
 
+All the dual-board controls are latch up protected with MOSFETs, so
+can only work one way.
+
 ### PC104 Pin Disconnects
 
 Almost all lines on the PC104s can be disconnected for functions that
@@ -573,33 +575,27 @@ CANA+, CANA- - Remove U14, R50, and R51
 
 PC104\_I2C\_SDA, PC104\_I2C\_SCL - Remove U32
 
-PC104\_ADC1 - Remove R141
-
-PC104\_ADC2 - Remove R143
-
-PC104\_GPIO1 - Remove R142
-
-PC104\_GPIO2 - Remove R149
+PC104\_GPIO1 - Remove R220
 
 PC104\_ABF0\_N - Remove R148
 
-PC104\_GPIO4 - Remove R150
+PC104\_GPIO4 - Remove R219
 
-PC104\_GPIO6 - Remove R176
+PC104\_GPIO7 - Remove R218
 
-PC104\_GPIO7 - Remove R160
-
-PC104\_GPIO8 - Remove R159
+PC104\_GPIO8 - Remove R217
 
 CPU_TX - R206 and R208 connect this to one of two different PC104
 pins.  The default is H2-21 (R206), which is the default UART pass
 through from the power supply.  It can also be hooked to H2-19 (R208)
-for board 2.
+for board 2.  These should be 330 ohm resistors for latch up
+protection.
 
 CPU_RX - R206 and R208 connect this to one of two different PC104
 pins.  The default is H2-22 (R207), which is the default UART pass
 through from the power supply.  It can also be hooked to H2-20 (R209)
-for board 2.
+for board 2.  These should be 330 ohm resistors for latch up
+protection.
 
 PC104\_TX2, PC104\_RX2 - Remove U38
 
@@ -705,6 +701,9 @@ Pinout is:
 
 Note that many of the lines out of the ACP are multi-purpose, so other
 configurations may be possible.
+
+These lines are *not* latch up protected; that protection must be
+provided on the external board.
 
 ## Extra ADC
 
