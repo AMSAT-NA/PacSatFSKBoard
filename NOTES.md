@@ -4280,3 +4280,6 @@ be needed, and it frees up some space and some latch up concerns.
 
 Fix the enable on the +5V current limiter.  It needs a pull up, not a
 pull down.
+
+More movement of things to make room, the I2C switch is moved, USB
+umbilical attached transistors, and others.
