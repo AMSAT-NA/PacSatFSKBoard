@@ -1362,171 +1362,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PACSAT_DEV_misc:U_FL"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U"
-				(at -3.81 2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "U_FL_0_1"
-				(polyline
-					(pts
-						(xy -1.27 -3.81) (xy 1.27 -3.81)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 0)
-					(radius 0.508)
-					(stroke
-						(width 0.2032)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 0)
-					(radius 1.778)
-					(stroke
-						(width 0.3048)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -3.81) (xy 0 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "U_FL_1_1"
-				(pin bidirectional line
-					(at -3.81 0 0)
-					(length 3.302)
-					(name "In"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -1.27 -8.89 90)
-					(length 5.08)
-					(name "2"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 1.27 -8.89 90)
-					(length 5.08)
-					(name "3"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Power_Management:TPS22919DCK"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1850,28 +1685,11 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "Rx2+"
-		(exclude_from_sim no)
-		(at 119.38 118.11 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "8d886410-1620-4ebe-b85e-65a01ea5008b")
-	)
 	(junction
 		(at 113.03 55.88)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "06f34e18-4de2-4f40-99f9-95fb17d53c9f")
-	)
-	(junction
-		(at 130.81 123.19)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0be25996-d9cf-47ca-9f7f-9eab96f303d1")
 	)
 	(junction
 		(at 113.03 48.26)
@@ -1920,12 +1738,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "76d802b2-5e4e-4c72-a520-31bf714306a2")
-	)
-	(junction
-		(at 120.65 133.35)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "78956bb6-5c98-40ec-80c0-08d88b19076c")
 	)
 	(junction
 		(at 149.86 123.19)
@@ -2125,16 +1937,6 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 133.35) (xy 123.19 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2470c138-f671-4a1a-bfc5-660ef96ba366")
-	)
-	(wire
-		(pts
 			(xy 113.03 45.72) (xy 118.11 45.72)
 		)
 		(stroke
@@ -2142,16 +1944,6 @@
 			(type default)
 		)
 		(uuid "250db186-46bf-4f92-add8-29915eba1235")
-	)
-	(wire
-		(pts
-			(xy 130.81 118.11) (xy 130.81 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "27de9d20-e49a-45f6-ac87-7981ddf96b42")
 	)
 	(wire
 		(pts
@@ -2205,33 +1997,13 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 101.6) (xy 130.81 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "36c93019-886b-43d5-bd33-00b05c237545")
-	)
-	(wire
-		(pts
-			(xy 130.81 123.19) (xy 132.08 123.19)
+			(xy 125.73 123.19) (xy 132.08 123.19)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "370f0b01-a472-4fe1-83e3-7290881e605e")
-	)
-	(wire
-		(pts
-			(xy 123.19 132.08) (xy 123.19 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "37f43647-47c7-4152-9b1a-bf1b95764713")
 	)
 	(wire
 		(pts
@@ -2252,16 +2024,6 @@
 			(type default)
 		)
 		(uuid "3cd52196-1395-4e3b-9784-2552edd91ea5")
-	)
-	(wire
-		(pts
-			(xy 125.73 123.19) (xy 130.81 123.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3d82f01f-e30f-4fcb-8834-b48991705d4c")
 	)
 	(wire
 		(pts
@@ -2332,16 +2094,6 @@
 			(type default)
 		)
 		(uuid "4a704a7d-4baa-41ae-b052-69ba1779099d")
-	)
-	(wire
-		(pts
-			(xy 120.65 133.35) (xy 120.65 134.62)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5cdea8af-4a8e-45cc-b937-dc4a5df9a398")
 	)
 	(wire
 		(pts
@@ -2655,16 +2407,6 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 132.08) (xy 120.65 133.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b4aea076-bfe3-4590-b16f-58bd72d8a0d5")
-	)
-	(wire
-		(pts
 			(xy 137.16 133.35) (xy 132.08 133.35)
 		)
 		(stroke
@@ -2722,6 +2464,16 @@
 			(type default)
 		)
 		(uuid "be5c63e2-cd24-48f9-83ae-51e9838a9df1")
+	)
+	(wire
+		(pts
+			(xy 110.49 123.19) (xy 118.11 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c0bf5114-6388-42b8-aa61-eba5e86b598f")
 	)
 	(wire
 		(pts
@@ -3101,17 +2853,17 @@
 	)
 	(global_label "RX_PORT2"
 		(shape input)
-		(at 130.81 101.6 90)
+		(at 110.49 123.19 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.524 1.524)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "7564612d-3d47-4aec-bd9a-099254e3ee9e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 130.81 87.4096 90)
+			(at 96.2996 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3119,7 +2871,7 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 	)
@@ -4769,7 +4521,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 130.81 114.3 0)
+		(at 121.92 123.19 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4779,7 +4531,7 @@
 		(dnp no)
 		(uuid "7197fb1f-dda6-4ed6-ac0f-a925814b0312")
 		(property "Reference" "C49"
-			(at 133.35 113.2586 0)
+			(at 120.8786 120.65 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4790,7 +4542,7 @@
 			)
 		)
 		(property "Value" "100pF"
-			(at 133.35 115.57 0)
+			(at 123.19 120.65 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4801,7 +4553,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 131.7752 118.11 0)
+			(at 125.73 122.2248 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4812,7 +4564,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 130.81 114.3 0)
+			(at 121.92 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4823,7 +4575,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 130.81 114.3 0)
+			(at 121.92 123.19 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5078,90 +4830,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/d9a83ee4-3280-49b9-88b8-54d26cbd8ed1/3e6f7332-644d-4717-84ac-71c159dc6072"
 					(reference "#PWR0122")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PACSAT_DEV_misc:U_FL")
-		(at 121.92 123.19 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp yes)
-		(uuid "9154cd2b-8612-427d-a7cd-f1e61ebfd6d3")
-		(property "Reference" "P2"
-			(at 124.46 119.38 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "CONUFL001-SMD-T"
-			(at 121.92 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "PacSatDev_misc:CONN1_CONUFL_TEC"
-			(at 121.92 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 121.92 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 121.92 123.19 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "40c857fd-2b7f-4964-aa93-336faeaae3d0")
-		)
-		(pin "2"
-			(uuid "591d4a23-8a0c-4fbc-a0e2-b333821bf80c")
-		)
-		(pin "3"
-			(uuid "02602ca3-e484-41fa-83a2-5fc1daf1ffbf")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/d9a83ee4-3280-49b9-88b8-54d26cbd8ed1/3e6f7332-644d-4717-84ac-71c159dc6072"
-					(reference "P2")
 					(unit 1)
 				)
 			)
@@ -5545,83 +5213,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/d9a83ee4-3280-49b9-88b8-54d26cbd8ed1/3e6f7332-644d-4717-84ac-71c159dc6072"
 					(reference "C157")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 120.65 134.62 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b3916c71-484a-462f-a752-e4760f1dc211")
-		(property "Reference" "#PWR0121"
-			(at 120.65 140.97 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 120.65 139.7 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 120.65 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 120.65 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 120.65 134.62 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a3fd7742-e172-469e-a5f9-4e9039b3747f")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/d9a83ee4-3280-49b9-88b8-54d26cbd8ed1/3e6f7332-644d-4717-84ac-71c159dc6072"
-					(reference "#PWR0121")
 					(unit 1)
 				)
 			)

@@ -12,6 +12,9 @@ some point.
 
 # TODO
 
+Look at using stripline for the long RF runs.  The only ones that
+would matter are the receive lines from the splitter to the AX5043s.
+
 Via annulars are 4 mils, which is at most board shop limits, usually.
 Would increasing these to 6 mils be better?  This would change RF
 impedance and increase capacitance, so leave them at 4 mils for RF
@@ -4292,3 +4295,6 @@ All the ADC specific lines are removed from the PC104 and now go to
 DNP resistors.  I've never seen ADCs on the bus on any other board, so
 it must not be useful.
 
+Remove the U.FL connectors from all AX5043 RX connections except
+AX5043 4.  They aren't necessary.  If you need to pull off an RX line
+for another board, you can use 4, and you can use 4 for testing.
