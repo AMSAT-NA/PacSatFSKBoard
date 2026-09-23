@@ -4267,3 +4267,6 @@ aren't needed.
 
 Move the CANB transceiver over to the right side of the PC014, since
 room has been made there for it.  This frees up some space.
+
+Remove PC104\_FULL\_DISABLE\_N and PC104\_PA\_DISABLE\_N.  They won't
+be needed, and it frees up some space and some latch up concerns.

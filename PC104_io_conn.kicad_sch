@@ -2859,6 +2859,10 @@
 		(uuid "9392ceaf-6477-4772-97b0-efc1e7efb801")
 	)
 	(no_connect
+		(at 287.02 142.24)
+		(uuid "9e659cc4-967b-434a-ac5c-46cf2e38d1d3")
+	)
+	(no_connect
 		(at 138.43 152.4)
 		(uuid "a0539887-ff48-45b3-8421-51a859d6598a")
 	)
@@ -2945,6 +2949,10 @@
 	(no_connect
 		(at 287.02 96.52)
 		(uuid "e383e62d-8c81-43ff-9ce7-75c2599a4b9e")
+	)
+	(no_connect
+		(at 299.72 142.24)
+		(uuid "e4fd025a-4d85-4cb0-a3ac-3a380018e0e4")
 	)
 	(no_connect
 		(at 287.02 101.6)
@@ -3113,16 +3121,6 @@
 			(type default)
 		)
 		(uuid "2299ef21-365a-43b1-a867-6c751c5cdb2b")
-	)
-	(wire
-		(pts
-			(xy 284.48 142.24) (xy 287.02 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "22e057cb-107d-4abd-bd42-34870f2b4c47")
 	)
 	(wire
 		(pts
@@ -3846,16 +3844,6 @@
 	)
 	(wire
 		(pts
-			(xy 309.88 142.24) (xy 314.96 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "915d5ca9-ec59-42cb-b39c-15527c006cdd")
-	)
-	(wire
-		(pts
 			(xy 256.54 62.23) (xy 256.54 63.5)
 		)
 		(stroke
@@ -3863,16 +3851,6 @@
 			(type default)
 		)
 		(uuid "921120a2-7cee-45b4-b529-87da09604e05")
-	)
-	(wire
-		(pts
-			(xy 276.86 142.24) (xy 271.78 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "96e8e6cf-9362-4d1d-a536-4c75446de696")
 	)
 	(wire
 		(pts
@@ -4023,16 +4001,6 @@
 			(type default)
 		)
 		(uuid "b78224b7-5656-45d2-8b7e-771176d5c978")
-	)
-	(wire
-		(pts
-			(xy 299.72 142.24) (xy 302.26 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bee428fe-6ca3-4cf2-971a-e396c3b0cf79")
 	)
 	(wire
 		(pts
@@ -5088,30 +5056,6 @@
 			)
 		)
 	)
-	(global_label "PC104_FULL_DISABLE_N"
-		(shape input)
-		(at 271.78 142.24 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "77fe7905-e852-4a08-b005-aff4f27116dc")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 246.9519 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
 	(global_label "PC104_RX"
 		(shape input)
 		(at 288.29 54.61 0)
@@ -5149,30 +5093,6 @@
 		(uuid "9b0ad755-39fe-4430-859b-6dcf42eccb18")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 299.9342 49.53 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "PC104_PA_DISABLE_N"
-		(shape input)
-		(at 314.96 142.24 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "a215bbdd-9394-44f0-ad7c-c7f32cb3a2d3")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 337.6714 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6270,86 +6190,6 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 306.07 142.24 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp yes)
-		(uuid "40542d06-d28f-45ed-b3a1-5c7c3807d2a3")
-		(property "Reference" "R125"
-			(at 306.832 139.954 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0Ω"
-			(at 303.022 139.954 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 306.07 140.462 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 306.07 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 306.07 142.24 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a9daeaad-3f08-49e9-9f37-0ec31ac81f8d")
-		)
-		(pin "2"
-			(uuid "acaf547c-8f76-4697-8afd-a5e777daff30")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/163b95be-82a7-4cd3-9077-48a01f79e25c"
-					(reference "R125")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
 		(at 260.35 119.38 270)
 		(unit 1)
 		(body_style 1)
@@ -7319,87 +7159,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/163b95be-82a7-4cd3-9077-48a01f79e25c"
 					(reference "R126")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 280.67 142.24 90)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp yes)
-		(uuid "9a6ac826-8bf2-4b4f-aaf3-e2d718d14aa6")
-		(property "Reference" "R134"
-			(at 279.908 139.954 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0Ω"
-			(at 283.718 139.954 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 280.67 140.462 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 280.67 142.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 280.67 142.24 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "9b8ad0e1-0247-4a4b-8390-1c8bbe763f6c")
-		)
-		(pin "2"
-			(uuid "862da9e7-755f-44ac-bd74-3b94b793c83f")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/163b95be-82a7-4cd3-9077-48a01f79e25c"
-					(reference "R134")
 					(unit 1)
 				)
 			)

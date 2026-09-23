@@ -91,9 +91,8 @@ board.  These are:
   these through a GPIO.  This is current limited to 200ma.
   
 * SPPA_VCC - This is +5V to the PA.  This is off by default and the
-  CPU must enable it with a GPIO before it can transmit.  In addition,
-  as mentioned before, PC104\_PA\_DISABLE\_N line will disable this.
-  This is current limited to 640ma.
+  CPU must enable it with a GPIO before it can transmit.  This is
+  current limited to 640ma.
   
 * LNA_VCC - This is +5V to the LNA.  This is off by default and the
   CPU must enable it with a GPIO before it can receive.  This is
@@ -418,29 +417,6 @@ this.  This is run through a 19:1 resistor divider, so 52V on the
 input should result in around 2.7V into the VBAT CPU ADC, and should
 be safe up to 62V.
 
-### Inhibits
-
-Several signals can be used to inhibit various parts of the board.
-
-PC104\_PA\_DISABLE\_N inhibits the RF power amplifier.  If this is low
-the power amplifier will not receive power from +5V.
-
-PC104\_FULL\_DISABLE\_N inhibits +5VAL and all other power supplies.
-This powers off everything on the board but the PA.
-
-The HW\_POWER\_OFF lines works as already described.
-
-This provides three separate inhibits for RF transmission.
-
-These are all set to be pulled up and resistors are disconnected by
-default.
-
-Install R64 to pull up PC104\_PA\_DISABLE\_N.  Install R125 to connect
-this line to the PC104.
-
-Install R144 to pull up PC104\_FULL\_DISABLE\_N.  Install R134 to connect
-this line to the PC104.
-
 ### CAN Bus
 
 The board has two CAN busses, CANA and CAN.  External entities use
@@ -626,10 +602,6 @@ through from the power supply.  It can also be hooked to H2-20 (R209)
 for board 2.
 
 PC104\_TX2, PC104\_RX2 - Remove U38
-
-PC104\_PA\_DISABLE\_N - Remove R125
-
-PC104\_FULL\_DISABLE\_N - Remove R134
 
 VBAT\_p - Remove R126
 
