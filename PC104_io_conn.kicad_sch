@@ -3186,16 +3186,6 @@
 	)
 	(wire
 		(pts
-			(xy 316.23 157.48) (xy 328.93 157.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2b890c3f-c599-4f19-aa6f-3f9adede9e24")
-	)
-	(wire
-		(pts
 			(xy 38.1 133.35) (xy 38.1 161.29)
 		)
 		(stroke
@@ -4066,6 +4056,16 @@
 	)
 	(wire
 		(pts
+			(xy 316.23 157.48) (xy 337.82 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c56b7545-3768-465d-9113-26ec2c78e778")
+	)
+	(wire
+		(pts
 			(xy 36.83 204.47) (xy 49.53 204.47)
 		)
 		(stroke
@@ -4226,7 +4226,7 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 80.01) (xy 92.71 80.01)
+			(xy 69.85 80.01) (xy 106.68 80.01)
 		)
 		(stroke
 			(width 0)
@@ -4334,8 +4334,8 @@
 		)
 		(uuid "11a0a5e4-5184-4737-b9c8-78fca0a75613")
 	)
-	(label "ABF0_N"
-		(at 92.71 80.01 180)
+	(label "PC104_ABF0_N"
+		(at 106.68 80.01 180)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -4414,8 +4414,8 @@
 		)
 		(uuid "61542def-102f-4c3e-86c0-3e44720904ac")
 	)
-	(label "ABF0_N"
-		(at 328.93 157.48 180)
+	(label "PC104_ABF0_N"
+		(at 337.82 157.48 180)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -4704,7 +4704,7 @@
 			)
 		)
 	)
-	(global_label "PC104_ABF0_N"
+	(global_label "ABF0_N"
 		(shape input)
 		(at 43.18 80.01 180)
 		(fields_autoplaced yes)
@@ -4716,7 +4716,7 @@
 		)
 		(uuid "428c97c1-0504-48c4-8fd1-55f323da55b7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 23.4742 80.01 0)
+			(at 32.0375 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

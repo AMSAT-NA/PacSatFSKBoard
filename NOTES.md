@@ -4264,3 +4264,6 @@ layers.  But I don't think these are really accurate.
 
 Remove the extra power feeds on the 47-52 pins of the PC104 J1.  They
 aren't needed.
+
+Move the CANB transceiver over to the right side of the PC014, since
+room has been made there for it.  This frees up some space.

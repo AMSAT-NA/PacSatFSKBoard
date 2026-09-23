@@ -9712,7 +9712,7 @@
 			)
 		)
 	)
-	(global_label "PC104_ABF0_N"
+	(global_label "ABF0_N"
 		(shape input)
 		(at 207.01 224.79 270)
 		(fields_autoplaced yes)
@@ -9724,7 +9724,7 @@
 		)
 		(uuid "61a61b95-f012-4d22-814b-f0c6fb34d8d8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.01 244.4958 90)
+			(at 207.01 235.9325 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
