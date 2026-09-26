@@ -24,7 +24,10 @@ configuration, need to add a resistor to connect WATCHDOG\_OUT\_N to
 POWER_ENABLE and remove U5.
 
 Look at using stripline for the long RF runs.  The only ones that
-would matter are the receive lines from the splitter to the AX5043s.
+would matter are the receive lines from the splitter to the AX5043s
+and the diplexer line from the receive side. Stripline will have less
+interference, but has higher loss.  See
+https://www.microwavejournal.com/blogs/1-rog-blog/post/16668-microstrip-versus-stripline-how-to-make-the-choice
 
 Via annulars are 4 mils, which is at most board shop limits, usually.
 Would increasing these to 6 mils be better?  This would change RF
@@ -41,7 +44,8 @@ the epoxy filling for vias?
 Maybe switch each U.FL connectors to just a pair of holes that can be
 soldered to.  Need to figure out how to tell the board shop not to
 solder these holes.  I guess the paste layer would do this, should be
-easy.
+easy. - The smallest pair of wire holes in Kicad are much larger than
+a U.FL connector.
 
 Look at copper balancing, making sure the amount of copper across the
 board is relatively even.  This apparently can help avoid
