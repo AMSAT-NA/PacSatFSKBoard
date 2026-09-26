@@ -13,7 +13,15 @@ some point.
 # TODO
 
 The AND gate U5 is a latch up concern.  Possibly use a part that
-cannot latch up or a wire-OR.
+cannot latch up or a wire-OR.  The part that is there (74ahc1g08) has
+good latch up handling, but something completely latch up free would
+be better. - This is mostly ok.  If the input from the watchdog timer
+goes into latch up, the watchdog timer (open drain) will eventually
+fire and clear the latch up.  In a dual-board configuration, the other
+board will cycle power on the HW\_POWER\_OFF\_N when it detects that
+the board is not running, clearing the latch up.  In a single-board
+configuration, need to add a resistor to connect WATCHDOG\_OUT\_N to
+POWER_ENABLE and remove U5.
 
 Look at using stripline for the long RF runs.  The only ones that
 would matter are the receive lines from the splitter to the AX5043s.
