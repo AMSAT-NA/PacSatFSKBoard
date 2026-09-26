@@ -51,53 +51,67 @@ regulator can convert 5V to 3.3V when installed.  Power inputs have
 inductors to control surge current on power up.
 
 An external power disable line, HW\_POWER\_OFF[12]\_N, allows an
-external device to power down all parts of the board except for +5VAL,
-as described below.
-
-Lines on the PC104 can be used to inhibit the power supply in various
-places.  See the Inhibits section for details.
+external device to power down all parts of the board except for +5VAL
+and +3.3VAL, as described below.
 
 The power supply has separate power zones for different parts of the
 board.  These are:
 
-* +5V - The main power input for 5V.
+* 5V\_IN - Power directly from the PC104 or the USB power supply.
 
+* 3.3V\_IN - Power directly from the PC104 or the USB power supply.
+
+* +5Vext - The main power input for 5V, filtered from 5V\_IN.  This is
+  only used as inputs to the power converters and limiters.
+  
+* REG\_3.3V - Either the 3.3V externally, or the output of the 3.3V
+  buck regulator, depending on how the board is configured.  This is
+  used for some control and the watchdog timer so they are available
+  even when the board is powered off by the WDT.  This is not power
+  limited; anything on this bus must be unable to latch up.
+  
 * +5VAL - This provides +5V whenever power is applied.  It is used to
   power the RX/TX switches (so the redundant board can access the
   antenna even if this power is powered off), the switches on the
   dual-board control lines (so the other board can control and access
-  this board even when this board is powered off), and the CAN bus
-  transceivers (so they can properly go tristate even if the board is
-  off).  This is current limited to 200ma.
-  
-* +1.2V - Main power for the CPU.  HW\_POWER\_OFF[1-2]\_N will disable
-  this.  This is regulated to 700ma maximum.  Power comes from a buck
-  regulator (either 5V or 3.3V depending on configuration).
-
-* REG_3.3V - Either the 3.3V externally, or the output of the 3.3V buck
-  regulator, depending on how the board is configured.  This is used
-  for some control and the watchdog timer so they are available even
-  when the board is powered off by the WDT.
-  
-* +3.3V - This is the main I/O supply for the CPU and power for the
-  MRAMs and the RTC.  It is current limited to 640ma.
+  this board even when this board is powered off), and backup power
+  for the RTC.  This is current limited to 200ma.
   
 * +3.3VAL - Supplies power to the RF switches, which run on +3.3V and
-  must be powered when the board is disabled.  It derives from +5VAL,
-  so will be off when +5VAL is off.
+  must be powered when the board is disabled.  It derives from +5VAL
+  so is current limited by that.
   
-* AX5043_3.3V - This is a separately switched power, off by default,
+* +1.2V - Main power for the CPU.  HW\_POWER\_OFF[1-2]\_N will disable
+  this.  This is current limited to 700ma maximum.  Power comes from a
+  buck regulator, derived from either 5V or 3.3V depending on
+  configuration.
+
+* +3.3V - This is the main I/O supply for the CPU and power for the
+  MRAMs and the RTC.  It is current limited to 640ma and derived from
+  REG\_3.3V.
+  
+* AX5043\_3.3V - This is a separately switched power, off by default,
   that powers all the AX5043 chips.  The CPU must enable power to
-  these through a GPIO.  This is current limited to 200ma.
+  these through a GPIO.  This is current limited to 200ma and derived
+  from REG\_3.3V.
   
-* SPPA_VCC - This is +5V to the PA.  This is off by default and the
+* SPPA\_VCC - This is +5V to the PA.  This is off by default and the
   CPU must enable it with a GPIO before it can transmit.  This is
-  current limited to 640ma.
+  current limited to 640ma and derived from +5Vext.
   
-* LNA_VCC - This is +5V to the LNA.  This is off by default and the
+* LNA\_VCC - This is +5V to the LNA.  This is off by default and the
   CPU must enable it with a GPIO before it can receive.  This is
-  current limited to 200ma.  There is a resistor option to always
-  have this enabled if +5VAL is supplied.
+  supplied from +5VAL and current limited to 200ma.  There is a
+  resistor option to always have this enabled if +5VAL is supplied.
+  
+* ANT\_3.3V - This powers the antenna control processor and the ADC
+  devices it controls.  It is on a power switch hooked to +3.3V and
+  thus is current limited by that supply.
+  
+* There is a 2A capable 3.3V power supply over the antenna control
+  connector switched by a MOSFET.  This is derived directly from
+  3.3V\_IN.  This is for powering the antenna device and for the burn
+  wire.
 
 In addition, each AX5043 has a separate power control line from the
 CPU.
@@ -140,20 +154,20 @@ information.
 ### RTC
 
 A real-time clock is available so the board has accurate time even
-when off.  The battery input comes from +5V, and this has a large
+when off.  The battery input comes from +5VAL, and this has a large
 diode-protected capacitor array so that even if external power is not
-available time can be kept for many hours.  This will always be
-powered when power is available.
+available time can be kept over an hour This will always be powered
+when power is available.
 
 ### Watchdog Timer
 
 A watchdog timer on the board will power-cycle the CPU by disabling
-+1.2V and +3.3V if the CPU does not toggle its FEED line once a
++1.2V, +3.3V, and +5V if the CPU does not toggle its FEED line once a
 second.  Powering off the CPU will cause all other power except
 REG_3.3V, +5VAL, and +3.3VAL to be returned to their default,
 disabled, so it effectively powers off the whole board.
 
-The USB interface GPIO_3 can be set to 1 to disable the watchdog
+The USB interface GPIO\_3 can be set to 1 to disable the watchdog
 timer. R161 can also be installed to disable the watchdog timer.
 
 ## RX
@@ -164,8 +178,10 @@ It can receive on 4 different frequencies simultaneously.
 ### LPF (RX)
 
 The Low Pass Filter on the antenna input keeps 440MHz from the
-transmitter out of the receiver.  It has a relatively low loss (<1dB)
-to keep the sensitivity of the receiver high.  It's cutoff is 176MHz.
+transmitter out of the receiver to avoid desensing during transmit so
+you can transmit and receive at the same time.  It has a relatively
+low loss (<1dB) to keep the sensitivity of the receiver high.  It's
+cutoff is 176MHz.
 
 ### LNA
 
@@ -182,7 +198,8 @@ signals that might affect RX.
 
 The RF splitter takes the output of the BPF (at 50 ohms) and splits it
 into four separate signals (at 50 ohms).  Each signal is about 6.5dB
-lower than the input signal.
+lower than the input signal.  The LNA increases power to account for
+this loss.
 
 ### AX5043 (RX)
 
@@ -194,14 +211,16 @@ too.  The processor communicates with these over a SPI bus.
 
 The board has one transmitter for sending FSK-type signals.  The main
 transmission format is G3RUH, though it can dynamically switch to
-other FSK modulation formats under software control.  It can transmit
-at approximately 31dBm, though this can be reduced in the AX5043.  It
-is designed for the 430-440MHz range.
+other FSK modulation formats under software control.  It can do over
+100kb/s with proper configuration. It can transmit at approximately
+32dBm, though this can be reduced in the AX5043 and by bias control
+into the PA.  It is designed for the 430-440MHz range.
 
 ### AX5043 (TX)
 
 The AX5043 receives data over SPI from the CPU for transmission.
-There is some filtering done on the output of this.
+There is some filtering done on the output of this.  The output here
+can be up to +16dBm.
 
 ### PA
 
@@ -217,22 +236,25 @@ installed.
 
 ### LPF (TX)
 
-The LPF on the output of the PA reduces output noise.  It's 3dB cutoff
-is 460MHz.  It introduces ~2dB of loss, giving the maximum 31dBm power
-output.
+The matching circuit and LPF on the output of the PA reduces output
+noise.  It's 3dB cutoff is 460MHz.  It introduces ~1dB of loss, giving
+the maximum 32dBm power output.
 
 ### Power Measurement
 
-An optional power measurement circuit provide transmit power
-measurements with a directional coupler on the board.  This can
-measure both forward and reflected power.  It can be depopulated if
-not required.
+An optional power measurement circuit provide transmit and reflected
+power measurements with a directional coupler on the board.  It can be
+depopulated if not required.  The measurement of output power is
+fairly accurate, but the measurement of reflected power is not
+terribly accurate.  Good enough to know if the antenna is working ok.
+See the directional\_coupler document in the sim directory for
+details.
 
 ## Dual Board Fault Tolerance
 
 The board, as described in the design document, can operation in a
 dual-board fault tolerant configuration.  Only one board can transmit
-or receive at a time.  These signals and switches allow two boards to
+and receive at a time.  These signals and switches allow two boards to
 control each other and communicate so they can decide that one board
 is active and the other is standby.  If a board fails, the other board
 can detect this, take over operation, and power cycle the failed board
@@ -247,15 +269,17 @@ The boards are called "board1" and "board2".  A resistor on the board,
 R91, tells the CPU which board it is.  Absence of R91 makes it board 1,
 presence makes it board 2.
 
-With R94 installed, an external device must decide which board is
-active and which is standby by driving the ACTIVE1\_N or ACTIVE2\_N
-lines.
+With R94 installed, the boards expect that an external control system
+will decide which board is active and which is stanby.  This external
+control system must decide which board is active and which is standby
+by driving the ACTIVE1\_N or ACTIVE2\_N lines.
 
 This entire section is optional and may be removed.  Bypass zero-ohm
 resistors can connect the few lines required for operation.
 
-board2 does not have the RF portion (TX/RX Switch) of this depopulated
-(or has it disabled and bypassed).  Board 1 does All TX/RX switching.
+board2 does not have the RF portion (TX/RX Switch) of the
+active/standby circuitry (or has it disabled and bypassed).  Board 1
+does All TX/RX switching.
 
 Boards operate in one of three configurations:
 
@@ -280,7 +304,7 @@ inactive.
 
 ### RX Switch
 
-The RX switch switches the RX antenna between board1 and board1.  It
+The RX switch switches the RX antenna between board1 and board2.  It
 uses the active line for board1 to do this.  The inactive board has
 it's RX sent to 50 ohms.  The ACTIVE1\_N lines controls the switch, so
 that the antenna hooks to board 1 when active, and board 2 when
@@ -296,17 +320,17 @@ You must also remove R206 and R207 so the same serial port lines are
 not driven by both boards.  You can optionally hook board 2 to the
 PC104 on different lines using R208 and R209.
 
-To reduce the impedance from the RF switch, you can install R96 and
-R107 to bypass the switch.
+To eliminate the loss from the RF switches, you can install R96 and R107
+to bypass those.  This is the preferred configuration for board 2.
 
 You can optionally remove all hardware dealing with switching: U34,
 U33, C141, C111, R105, R106, R109, R128, and U31.
 
 ### Board 0 Optimizations
 
-If you are using the board stand-alone, you can gain 0.2dB or so on the
-RF inputs and outputs by eliminating the switch in the same way that
-board 2 does above.
+If you are using the board stand-alone, you can gain 0.2dB or so on
+the RF inputs and outputs by eliminating the RF switches in the same
+way that board 2 does above.
 
 When operating as board 0 you can use some of the control lines used for
 active/standby switching for other purposes.  With R91 not present the
@@ -329,7 +353,7 @@ A small microprocessor, the antenna control processor (ACP), sits on a
 SPI bus connected to the main CPU.  It's primary purpose is antenna
 control.  It has two I2C busses that come out of J7, along with power
 and ground.  The power for the external antenna board is powered from
-3.3V_p to the power lines on J7 and may be turned on and off.
+3.3V\_p to the power lines on J7 and may be turned on and off.
 
 Resistors (R147, R151, R152, and R152) are in place with pullups to
 the I2C lines.  See https://www.ti.com/lit/an/slva689/slva689.pdf for
@@ -341,7 +365,7 @@ have a separate connector, J10, for those outputs.  Another I2C from
 the ACP goes to this, and that I2C can optionally also go the PC104
 connector.
 
-Some GPIO/ADC lines also go the PC104 from the ACP.
+Some GPIO/ADC lines and an I2C bus also go the PC104 from the ACP.
 
 # System Interfaces Description
 
@@ -374,9 +398,7 @@ regulator, or it can run on external +5V and +3.3V.  External power
 interfaces have inductors to regulate surge at startup.
 
 The default power pins are the ones defined by the CubeSat KitBus
-standard, and a zero-ohm resistors can choose either the default
-+5V/+3.3V inputs, 5V\_p and 3.3V\_p, or one of the three secondary
-switched inputs on the PC104 connector.
+standard.
 
   - 5V\_p - +5V that is always present when the satellite is powered.
     The board has a 0 ohm resistor that must be populated to get power
@@ -398,7 +420,7 @@ externally control power on the board.
 
 If 3.3V is not supplied from the PC104 connector, then U4, R119, and
 R120 must be installed, and you should generally remove the 3.3V
-resistors to the PC104.
+resistor R111 to the PC104.
 
 ### VBAT
 
@@ -411,7 +433,7 @@ be safe up to 62V.
 
 ### CAN Bus
 
-The board has two CAN busses, CANA and CAN.  External entities use
+The board has two CAN busses, CANA and CANB.  External entities use
 these to supply control and telemetry information.  The board can send
 control information to other boards over this.
 
@@ -540,21 +562,21 @@ monitoring the board.  See the design document for details.
 The signal for this are:
 
   - HW\_POWER\_OFF[12]\_N - Input to board, pulling this low causes the
-    power to be disabled on boardn.  boardn pulls this high with a 10k
+    power to be disabled on board<n>.  board<n> pulls this high with a 10k
 	resistor.  If driven, it should be open drain or open collector.
 	Be careful not to glitch this line.
 
   - PRESENCE[12]\_N - The board is physically present.  This must be
 	pulled high by a 1M resistor on entity reading this value, it is
-	pulled low by a 10k resistor on boardn.
+	pulled low by a 10k resistor on board<n>.
 	
-  - ACTIVE[12]\_N - boardn is asserting that it is active.  This is
-	pulled high on boardn and will be driven low by boardn when it is
+  - ACTIVE[12]\_N - board<n> is asserting that it is active.  This is
+	pulled high on board<n> and will be driven low by board<n> when it is
 	active and not under external active/standby control.  When under
 	external active/standby control, this is an input that another
 	entity must pull low to cause the board to go active.
 	
-  - FAULT[12] - Output from boardn, the processor is reporting an error.
+  - FAULT[12] - Output from board<n>, the processor is reporting an error.
     Positive logic (high is fault), open drain.
 
 All the dual-board controls are latch up protected with MOSFETs, so
@@ -575,6 +597,8 @@ CANA+, CANA- - Remove U14, R50, and R51
 
 PC104\_I2C\_SDA, PC104\_I2C\_SCL - Remove U32
 
+PC104\_I2C\_SDA2, PC104\_I2C\_SCL2 - Remove R215 and R216.
+
 PC104\_GPIO1 - Remove R220
 
 PC104\_ABF0\_N - Remove R148
@@ -585,13 +609,13 @@ PC104\_GPIO7 - Remove R218
 
 PC104\_GPIO8 - Remove R217
 
-CPU_TX - R206 and R208 connect this to one of two different PC104
+CPU\_TX - R206 and R208 connect this to one of two different PC104
 pins.  The default is H2-21 (R206), which is the default UART pass
 through from the power supply.  It can also be hooked to H2-19 (R208)
 for board 2.  These should be 330 ohm resistors for latch up
 protection.
 
-CPU_RX - R206 and R208 connect this to one of two different PC104
+CPU\_RX - R206 and R208 connect this to one of two different PC104
 pins.  The default is H2-22 (R207), which is the default UART pass
 through from the power supply.  It can also be hooked to H2-20 (R209)
 for board 2.  These should be 330 ohm resistors for latch up
@@ -620,7 +644,7 @@ boards.
 Setting GPIO3 on the USB chip to 1 disables the hardware watchdog,
 which is useful when programming the board with JTAG.
 
-GPIO3 on the USB chip will pull the reset line low if set to 1.
+GPIO2 on the USB chip will pull the reset line low if set to 1.
 
 GPIO17 is designed to be an umbilical attached signal to the main CPU
 as described in the PC104\_UMBILICAL\_ATTACHED\_N section.  It is
@@ -752,7 +776,7 @@ components; they are not installed by default.  The receiver has
 sufficient filtering to avoid transmit at 440MHz from affecting
 reception.  The RF input and RF output connectors can be removed in
 that case as well as the bleed-off inductors on the RF input and
-output.  This option costs about 1dB on both transmit and receive.
+output.  This option costs about 0.5dB on both transmit and receive.
 
 Due to how close the MMCX connectors are to the board, you cannot use
 the diplexer on version3 boards; the traces had to be cut to keep them

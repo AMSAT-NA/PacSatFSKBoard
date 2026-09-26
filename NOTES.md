@@ -12,6 +12,9 @@ some point.
 
 # TODO
 
+The AND gate U5 is a latch up concern.  Possibly use a part that
+cannot latch up or a wire-OR.
+
 Look at using stripline for the long RF runs.  The only ones that
 would matter are the receive lines from the splitter to the AX5043s.
 

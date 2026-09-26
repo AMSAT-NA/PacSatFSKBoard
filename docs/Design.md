@@ -117,9 +117,12 @@ serial port for the main CPU is on PC104 J2, TX is pin 2 and RX is
 pin 1.  The serial port for the antenna controller is on J1, TX is pin
 2 and RX is pin 1.
 
-Remember, hook TX on one board to RX on the other.  Don't
-hook TX to TX.  If you don't have the JTAG connected, you will need to
-connect the ground as well.
+On version 4 boards, the main CPU's serial port is wired to J2 pin 21
+(TX) and 22 (RX).  This is for an external umbilical going through the
+power supply to control the board once the satellite is assembled.
+
+Remember, hook TX on one board to RX on the other.  Don't hook TX to
+TX.
 
 For version 3 and later boards, the serial ports are available via a
 USB to serial converter.  The first serial port is the main CPU and
@@ -279,9 +282,8 @@ MOSFET gates will be shut off, their cutoff is in the 2.8V range, so
 it powers off the main circuitry on the board, but you will see the
 power LED and a few things will be powered.  If power is applied to
 the main rails from elsewhere, it will pull op the 5V MOSFET gates and
-shut them off, so it's safe to power both separately.  If a clever
-design to fix this can be found, it might be fixed, but nothing has
-been found to date that justifies the added complexity.
+shut them off, so it's safe to power both separately.  This is fixed
+on version 4 and later boards by using a switched ideal diode.
 
 On version 4 and later boards, the chip used to switch power to the
 main power bus has a current monitor on it.  This is connected to two
@@ -386,7 +388,8 @@ on both devices.
 On version 2 boards, resistors R113 and R122 need to be installed.
 
 The TMS570 processor provides pull ups for the I2C lines, so external
-ones are not necessary.
+ones are not necessary.  There are places to install external pull up
+if necessary.
 
 # CAN Bus
 
@@ -397,12 +400,8 @@ pins 51 (the +) and 52 (the -).
 CAN A is routed to CAN3 on the CPU, and CAN B is routed to CAN2 on the
 CPU.  That is a bit confusing.
 
-These are not standard.  I found the NanoMind device specifies a CAN
-bus on H2 pins 1 and 5, but they are differential and need to be
-beside one another.
-
 The AMSAT LIHU uses pins H2 51 and 52, so that's why that choice was
-made.  Some other board use H1 pins 1 and 3, so that matches those
+made.  A number of other board use H1 pins 1 and 3, so that matches those
 boards.
 
 CAN A can be disabled by removing U14 and R50 and R51.  CAN B can be
@@ -425,11 +424,11 @@ On version 2 boards, You need to install R123 and R124 to make this
 connection.  However, RX and TX are backwards so special jumpering on
 R123 and R124 will be required to make it work.
 
-The main serial port is wired to PC104 J2 (H2) pins 22 (RX) and 21
-(TX) by default.  This can be moved to pins 20 and 19 by removing R206
-and R207 and adding R208 and R209 (for board 2).  This connection is
-primarily for whree the power supply passes a serial connection from
-the umbilical cord.
+On version 4 and later boards the main serial port is wired to PC104
+J2 (H2) pins 22 (RX) and 21 (TX) by default.  This can be moved to
+pins 20 and 19 by removing R206 and R207 and adding R208 and R209 (for
+board 2).  This connection is primarily for where the power supply
+passes a serial connection from the umbilical cord.
 
 # Outgassing considerations
 
