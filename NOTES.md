@@ -49,14 +49,12 @@ a U.FL connector.
 
 Look at copper balancing, making sure the amount of copper across the
 board is relatively even.  This apparently can help avoid
-delamination.
+delamination. - Copper is mostly balanced, but still needs some
+analysis.
 
 Perhaps specify a low-outgassing circuit board material like FR408HR.
 See:
 https://www.isola-group.com/wp-content/uploads/Outgassing-Data-041224.pdf
-
-Perhaps use stripline instead of microstrip for RX rf traces, see:
-https://www.microwavejournal.com/blogs/1-rog-blog/post/16668-microstrip-versus-stripline-how-to-make-the-choice
 
 Remove ground plane cutouts under big RF pads to reduce the
 capacitance?
@@ -4318,3 +4316,8 @@ for another board, you can use 4, and you can use 4 for testing.
 
 Reduce the capacitor distances on the switching regulator inputs.
 Should help performance a bit.
+
+## 2026-10-09
+
+Add more vias and fix a long thin area on signal 2 that couldn't have
+enough vias by moving tracks around to make it go away.
