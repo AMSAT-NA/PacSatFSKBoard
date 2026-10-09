@@ -4313,3 +4313,8 @@ it must not be useful.
 Remove the U.FL connectors from all AX5043 RX connections except
 AX5043 4.  They aren't necessary.  If you need to pull off an RX line
 for another board, you can use 4, and you can use 4 for testing.
+
+## 2026-10-08
+
+Reduce the capacitor distances on the switching regulator inputs.
+Should help performance a bit.

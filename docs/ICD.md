@@ -326,7 +326,7 @@ to bypass those.  This is the preferred configuration for board 2.
 You can optionally remove all hardware dealing with switching: U34,
 U33, C141, C111, R105, R106, R109, R128, and U31.
 
-### Board 0 Optimizations
+### Board 0 Optimizations and Requirements
 
 If you are using the board stand-alone, you can gain 0.2dB or so on
 the RF inputs and outputs by eliminating the RF switches in the same
@@ -346,6 +346,8 @@ used for this purpose.
 
 If you remove U24 and U30, individual lines across those chips could
 be jumpered, too.
+
+If using a single board, remove U5 and add R221
 
 ## Antenna Control
 
