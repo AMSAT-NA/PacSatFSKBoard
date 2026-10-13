@@ -4328,3 +4328,12 @@ enough vias by moving tracks around to make it go away.
 Rework the area around the antenna control connector a bit to make the
 routing cleaner and better isolate the clocks with surrounding
 grounds.
+
+After talking to the board shop, they say that .1mm (4 mil) annular
+rings around vias is really too small and we need to use .127mm (5
+mil) for best.  The current vias are all .3048mm (12 mil) holes,
+.508mm (20 mil) rings, and .92mm openings.  If we decrease the hole
+size to .254mm (10 mil), that doesn't change the impedance very much
+(from 50 ohms to 51 ohms) and solves the problem.  So change all the
+vias except the ones under the PA (which are special for that device)
+to
