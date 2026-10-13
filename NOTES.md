@@ -4337,3 +4337,5 @@ size to .254mm (10 mil), that doesn't change the impedance very much
 (from 50 ohms to 51 ohms) and solves the problem.  So change all the
 vias except the ones under the PA (which are special for that device)
 to
+
+Make pin one square on the connectors.
