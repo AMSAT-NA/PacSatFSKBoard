@@ -12,16 +12,17 @@ some point.
 
 # TODO
 
+The PS below this board will not have all the pins available, so we
+will need to be able to not have pins hanging in space.  Some special
+configuration of multiple connectors will be required.
+
 The AND gate U5 is a latch up concern.  Possibly use a part that
 cannot latch up or a wire-OR.  The part that is there (74ahc1g08) has
 good latch up handling, but something completely latch up free would
-be better. - This is mostly ok.  If the input from the watchdog timer
-goes into latch up, the watchdog timer (open drain) will eventually
-fire and clear the latch up.  In a dual-board configuration, the other
-board will cycle power on the HW\_POWER\_OFF\_N when it detects that
-the board is not running, clearing the latch up.  In a single-board
-configuration, need to add a resistor to connect WATCHDOG\_OUT\_N to
-POWER_ENABLE and remove U5.
+be better. - Since it's powered with REG\_3V3, if it goes into latchup
+that line needs to be protected.  Also an issue with the 1.2V power
+limiter U8.  Wire-OR won't work because if the 3.3V converter is used
+the watchdog would then power itself down when it fired.
 
 Look at using stripline for the long RF runs.  The only ones that
 would matter are the receive lines from the splitter to the AX5043s
@@ -4321,3 +4322,9 @@ Should help performance a bit.
 
 Add more vias and fix a long thin area on signal 2 that couldn't have
 enough vias by moving tracks around to make it go away.
+
+## 2026-10-13
+
+Rework the area around the antenna control connector a bit to make the
+routing cleaner and better isolate the clocks with surrounding
+grounds.
