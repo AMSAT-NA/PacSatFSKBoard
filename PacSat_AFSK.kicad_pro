@@ -580,7 +580,7 @@
         "track_width": 0.1524,
         "tuning_profile": "",
         "via_diameter": 0.508,
-        "via_drill": 0.3048,
+        "via_drill": 0.254,
         "wire_width": 6
       },
       {
@@ -598,7 +598,7 @@
         "track_width": 0.3048,
         "tuning_profile": "",
         "via_diameter": 0.508,
-        "via_drill": 0.3048,
+        "via_drill": 0.254,
         "wire_width": 6
       },
       {
@@ -616,7 +616,7 @@
         "track_width": 0.2032,
         "tuning_profile": "",
         "via_diameter": 0.508,
-        "via_drill": 0.3048,
+        "via_drill": 0.254,
         "wire_width": 6
       },
       {
@@ -634,7 +634,7 @@
         "track_width": 0.254,
         "tuning_profile": "",
         "via_diameter": 0.508,
-        "via_drill": 0.3048,
+        "via_drill": 0.254,
         "wire_width": 6
       },
       {
@@ -670,7 +670,7 @@
         "track_width": 0.3048,
         "tuning_profile": "",
         "via_diameter": 0.508,
-        "via_drill": 0.3048,
+        "via_drill": 0.254,
         "wire_width": 6
       },
       {
@@ -688,7 +688,7 @@
         "track_width": 0.2032,
         "tuning_profile": "",
         "via_diameter": 0.508,
-        "via_drill": 0.3048,
+        "via_drill": 0.254,
         "wire_width": 6
       },
       {
@@ -706,7 +706,7 @@
         "track_width": 0.2032,
         "tuning_profile": "",
         "via_diameter": 0.508,
-        "via_drill": 0.3048,
+        "via_drill": 0.254,
         "wire_width": 6
       },
       {
@@ -722,7 +722,7 @@
         "track_width": 0.1725,
         "tuning_profile": "",
         "via_diameter": 0.508,
-        "via_drill": 0.3048
+        "via_drill": 0.254
       },
       {
         "clearance": 0.762,
@@ -737,7 +737,7 @@
         "track_width": 0.127,
         "tuning_profile": "",
         "via_diameter": 0.508,
-        "via_drill": 0.3048
+        "via_drill": 0.254
       }
     ],
     "meta": {
