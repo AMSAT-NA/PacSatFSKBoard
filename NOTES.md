@@ -4339,3 +4339,8 @@ vias except the ones under the PA (which are special for that device)
 to
 
 Make pin one square on the connectors.
+
+## 2026-10-15
+
+Spent some time on track cleanups.  Just make things neater and
+improve the routing of the CPU clock so there's a ground around it.
