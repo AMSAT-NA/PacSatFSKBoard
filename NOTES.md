@@ -12,6 +12,13 @@ some point.
 
 # TODO
 
+MIBSPI5 has a higher current limit (8ma) than MIBSPI1 (2ma).  Since
+MIBSPI1 goes to the AX5043s, it's probably better to switch them so
+the bus driving all the AX5043s has a higher current limit.
+
+Look at galvanic isolation (MAX1493x parts) between a dual board
+setup.
+
 The PS below this board will not have all the pins available, so we
 will need to be able to not have pins hanging in space.  Some special
 configuration of multiple connectors will be required.
