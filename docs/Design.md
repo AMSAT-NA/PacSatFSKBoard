@@ -795,6 +795,12 @@ At full power out (+33dBm) this will result in about -7dBm of power
 from the coupler.  The voltage for that can be calculated from the
 chip manual.  See the section on Directional Coupler for more details.
 
+If you populate R134, remove R141, and change R199 to 50 ohms, this
+will (perhaps) provide a more accurate sampling of the reverse RF
+power and take the forward power from a tap on that line.  The value
+of R134 would need to be calculated.  It is unknown how much of a
+difference this will make, but the option is available.
+
 # SPI bus issues
 
 It appears the select lines on the AX5043 SPI have has a latch up issue.

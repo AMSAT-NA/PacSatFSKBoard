@@ -4360,3 +4360,10 @@ Switch SPI1 and SPI5.  SPI5 has a higher maximum drive current and is
 better suited to drive the bus with all the AX5043s.
 
 Tested I2C1 and the I2C1 switch on the PC104.
+
+Add an option to tap the forward RF TX power and put a 50 ohm resistor
+to terminate the forward leg of the directional coupler.  This might
+be more accurate for measuring reverse current since the match on the
+forward leg of the coupler would be perfect and you wouldn't get
+reflections back to the reverse side from that.  However, the match on
+using the current design should be pretty good, so hard to say.

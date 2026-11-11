@@ -3087,6 +3087,16 @@
 		)
 		(uuid "9dee4eee-de08-4399-a410-db3371da8091")
 	)
+	(text "Option to directly sample the output\npower through resistor R134.  Then\nremove R141 and change R199 to 50Ω."
+		(exclude_from_sim no)
+		(at 315.214 131.572 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "aa174a22-a04e-4d33-aed0-de68aedce238")
+	)
 	(text "Input impedance is\n1.62 - 1.05 this\nmatches to 50 ohms\nat 435MHz.  This seems\nto be right for\nClass AB operation, but\ndoens't match quite\nright for Class C. But\nit's good enough."
 		(exclude_from_sim no)
 		(at 64.262 179.578 0)
@@ -3240,6 +3250,12 @@
 		(uuid "521a5e0a-5519-4bd6-baa6-a727cc9c4791")
 	)
 	(junction
+		(at 295.91 160.02)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5299e0f2-e2d2-48f9-a670-8086e53063ec")
+	)
+	(junction
 		(at 267.97 107.95)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3382,6 +3398,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9d8411af-7416-47b6-adb5-401743119c41")
+	)
+	(junction
+		(at 295.91 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a3106420-874d-4917-94c9-2124334058a8")
 	)
 	(junction
 		(at 160.02 118.11)
@@ -5049,6 +5071,26 @@
 	)
 	(wire
 		(pts
+			(xy 295.91 153.67) (xy 295.91 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "94ac5e14-d384-42d5-a0e2-854bd8752ff7")
+	)
+	(wire
+		(pts
+			(xy 295.91 160.02) (xy 302.26 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "96ae33bc-a076-4e10-8635-55b67a027162")
+	)
+	(wire
+		(pts
 			(xy 83.82 160.02) (xy 90.17 160.02)
 		)
 		(stroke
@@ -5349,6 +5391,16 @@
 	)
 	(wire
 		(pts
+			(xy 295.91 138.43) (xy 295.91 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bba35460-946c-4acc-930f-be58eadaab05")
+	)
+	(wire
+		(pts
 			(xy 354.33 138.43) (xy 378.46 138.43)
 		)
 		(stroke
@@ -5499,6 +5551,16 @@
 	)
 	(wire
 		(pts
+			(xy 295.91 138.43) (xy 299.72 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cfd61465-22f6-417d-a045-be060a5d6534")
+	)
+	(wire
+		(pts
 			(xy 83.82 162.56) (xy 83.82 171.45)
 		)
 		(stroke
@@ -5609,7 +5671,7 @@
 	)
 	(wire
 		(pts
-			(xy 290.83 138.43) (xy 312.42 138.43)
+			(xy 290.83 138.43) (xy 295.91 138.43)
 		)
 		(stroke
 			(width 0)
@@ -5899,6 +5961,16 @@
 	)
 	(wire
 		(pts
+			(xy 307.34 138.43) (xy 312.42 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7060617-d5a3-417e-84cd-0a04391916ad")
+	)
+	(wire
+		(pts
 			(xy 309.88 33.02) (xy 314.96 33.02)
 		)
 		(stroke
@@ -5949,7 +6021,7 @@
 	)
 	(wire
 		(pts
-			(xy 283.21 160.02) (xy 302.26 160.02)
+			(xy 283.21 160.02) (xy 295.91 160.02)
 		)
 		(stroke
 			(width 0)
@@ -7838,86 +7910,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 312.42 146.05 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "42aa1e90-2cbe-41cf-a83f-ed673dba722f")
-		(property "Reference" "R198"
-			(at 310.642 145.034 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "277Ω 0.1%"
-			(at 310.642 147.066 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 314.198 146.05 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 312.42 146.05 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 312.42 146.05 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3acb5c07-3d25-47cf-94a0-65fc965fc333")
-		)
-		(pin "2"
-			(uuid "0c77f886-60ad-49c5-bd3b-2df9e53c40b8")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
-					(reference "R198")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 58.42 161.29 0)
 		(unit 1)
@@ -8161,6 +8153,86 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
 					(reference "R80")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 312.42 146.05 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "56a44204-d69a-47aa-86c0-ced054bafdd4")
+		(property "Reference" "R199"
+			(at 310.134 145.034 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "277Ω 0.1%"
+			(at 310.388 147.066 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 314.198 146.05 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 312.42 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 312.42 146.05 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c6d65f30-e52a-46d1-a23d-d68f69e74c80")
+		)
+		(pin "2"
+			(uuid "d94fb415-93c0-4e2e-b1a0-3f0e13fe23b4")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
+					(reference "R199")
 					(unit 1)
 				)
 			)
@@ -10523,6 +10595,86 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 303.53 138.43 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a685b17a-fc38-44e6-ab82-6cc78b001bf9")
+		(property "Reference" "R141"
+			(at 303.276 140.716 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0Ω"
+			(at 299.72 140.716 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 303.53 136.652 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 303.53 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 303.53 138.43 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bc64e8c5-9e50-4d77-b665-0bf67c64e1f9")
+		)
+		(pin "2"
+			(uuid "ad0536be-370f-4daa-9aed-f7dcaa5d810c")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
+					(reference "R141")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
 		(at 309.88 27.94 0)
 		(unit 1)
@@ -10597,6 +10749,86 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
 					(reference "H6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 295.91 149.86 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp yes)
+		(uuid "acb0fa42-7975-4df7-8ab4-e054797e3c20")
+		(property "Reference" "R134"
+			(at 293.624 149.606 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0Ω"
+			(at 293.624 146.05 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 297.688 149.86 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 295.91 149.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 295.91 149.86 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "cdb2e957-7230-4f02-b934-1cdd9b2fb76b")
+		)
+		(pin "2"
+			(uuid "02b20964-5f22-45d5-abdd-82ef4393208a")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
+					(reference "R134")
 					(unit 1)
 				)
 			)
@@ -11066,6 +11298,86 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 367.03 146.05 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "ba00fde0-2be0-4548-93ab-1116e66bfb3b")
+		(property "Reference" "R198"
+			(at 365.252 145.034 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "277Ω 0.1%"
+			(at 365.252 147.066 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 368.808 146.05 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 367.03 146.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 367.03 146.05 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1c09cb7d-a083-4f1a-aa5b-422f02ca3651")
+		)
+		(pin "2"
+			(uuid "d0b1ff2c-08bf-4f95-9f09-f8e91474baff")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
+					(reference "R198")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PACSAT_ICs:ADL5501AKSZ")
 		(at 358.14 97.79 0)
 		(unit 1)
@@ -11309,86 +11621,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
 					(reference "C127")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 367.03 146.05 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "bfc99425-aa4a-44f4-af26-dae7b93ea032")
-		(property "Reference" "R199"
-			(at 364.744 145.034 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "277Ω 0.1%"
-			(at 364.998 147.066 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 368.808 146.05 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 367.03 146.05 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 367.03 146.05 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d964661f-70fe-42d4-89d9-723fa731b1ab")
-		)
-		(pin "2"
-			(uuid "638b0876-40a3-4022-a395-2fd9096b1ced")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
-					(reference "R199")
 					(unit 1)
 				)
 			)
