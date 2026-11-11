@@ -4351,3 +4351,12 @@ Make pin one square on the connectors.
 
 Spent some time on track cleanups.  Just make things neater and
 improve the routing of the CPU clock so there's a ground around it.
+
+## 2026-11-11
+
+More track cleanups.
+
+Switch SPI1 and SPI5.  SPI5 has a higher maximum drive current and is
+better suited to drive the bus with all the AX5043s.
+
+Tested I2C1 and the I2C1 switch on the PC104.
