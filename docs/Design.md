@@ -542,7 +542,14 @@ This leaves connectors and a number of special devices:
 
 # Differences between the Version 3 and Version 4 board
 
-Version 4 boards do not have the serial ports run to the PC104 connector.
+Version 4 boards do not have the serial ports run to the PC104
+connector as they were before.  Instead, the main serial port from the
+TMS570 goes to pins to the power supply that are designed to pass
+through to an umbilical.
+
+SPI1 and SPI5 were switched.  SPI1 was for the AX5043s, but that uses
+lower drive outputs (2ma).  SPI5 has 8ma outputs and is more suitable
+for driving the AX5043 bus with more things on it.
 
 The version 4 board has PC104\_I2C\_EN and PC104\_SER\_EN positive
 logic, those were negative logic on the version 3 board.

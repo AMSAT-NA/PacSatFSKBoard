@@ -12,10 +12,6 @@ some point.
 
 # TODO
 
-MIBSPI5 has a higher current limit (8ma) than MIBSPI1 (2ma).  Since
-MIBSPI1 goes to the AX5043s, it's probably better to switch them so
-the bus driving all the AX5043s has a higher current limit.
-
 Look at galvanic isolation (MAX1493x parts) between a dual board
 setup.
 
@@ -1298,6 +1294,10 @@ the GPIO lines and the I2C lines.  GPIO 6 and 2 are removed and used
 to control the TMXU2821s.
 
 # Not going to do
+
+MIBSPI5 has a higher current limit (8ma) than MIBSPI1 (2ma).  Since
+MIBSPI1 goes to the AX5043s, it's probably better to switch them so
+the bus driving all the AX5043s has a higher current limit.
 
 Rotate the CPU so that fewer traces need to be routed under the CPU.
 Perhaps replace the CPU with a BGA version to save space, the BGA is

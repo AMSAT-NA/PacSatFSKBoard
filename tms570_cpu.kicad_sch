@@ -4584,7 +4584,7 @@
 	)
 	(text "See document on \nAX5043 clock\nsignal handling."
 		(exclude_from_sim no)
-		(at 210.566 25.654 90)
+		(at 197.104 25.654 90)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -9028,30 +9028,6 @@
 			)
 		)
 	)
-	(global_label "ANT_SPI_SIMO"
-		(shape input)
-		(at 194.31 59.69 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left)
-		)
-		(uuid "1f50aaff-20f2-4daf-a4c7-64fcb7e06603")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 194.31 41.2905 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "MRAM_MOSI"
 		(shape input)
 		(at 293.37 144.78 0)
@@ -9220,6 +9196,30 @@
 			)
 		)
 	)
+	(global_label "AX5043_MOSI"
+		(shape input)
+		(at 194.31 59.69 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left)
+		)
+		(uuid "3031f653-b7ad-45be-b001-7e77e6c63435")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 194.31 41.6534 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "VER_BIT0"
 		(shape input)
 		(at 288.29 114.3 0)
@@ -9257,6 +9257,30 @@
 		(uuid "37a78443-3f05-4013-9cb6-dc599e57ff46")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 308.6854 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "AX5043_MISO"
+		(shape input)
+		(at 196.85 59.69 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left)
+		)
+		(uuid "3a3976be-a78c-470a-b524-ed0b8017c5eb")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 196.85 41.6534 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9361,6 +9385,54 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "ANT_SPI_SIMO"
+		(shape input)
+		(at 209.55 59.69 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left)
+		)
+		(uuid "4a027241-e516-44aa-bc65-f9fbb2bedae9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 209.55 41.2905 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "ANT_SPI_SOMI"
+		(shape input)
+		(at 207.01 59.69 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left)
+		)
+		(uuid "4a9b5bed-e6c7-4efa-886b-3dc460846fd2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 207.01 41.2905 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -9652,30 +9724,6 @@
 			)
 		)
 	)
-	(global_label "ANT_SPI_CLK"
-		(shape input)
-		(at 191.77 40.64 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left)
-		)
-		(uuid "61068b61-b6ae-464c-8c19-5e35aeafb947")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 191.77 23.4742 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "ABF0_N"
 		(shape input)
 		(at 207.01 224.79 270)
@@ -9841,30 +9889,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-			)
-		)
-	)
-	(global_label "AX5043_MISO"
-		(shape input)
-		(at 207.01 59.69 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left)
-		)
-		(uuid "71fe350f-1457-4899-8a4b-c97eb8acbe68")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 207.01 41.6534 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 	)
@@ -10060,30 +10084,6 @@
 			)
 		)
 	)
-	(global_label "ANT_SPI_SOMI"
-		(shape input)
-		(at 196.85 59.69 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left)
-		)
-		(uuid "8765cb8e-939d-449f-bc42-292de81fa605")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 196.85 41.2905 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "PC104_RX"
 		(shape input)
 		(at 127 152.4 180)
@@ -10193,6 +10193,30 @@
 		(uuid "9a0057d4-4603-4525-9d32-e34eb61196c0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 260.35 55.6232 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "AX5043_SPI_CLK"
+		(shape input)
+		(at 191.77 40.64 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left)
+		)
+		(uuid "9c39df77-11ab-430d-b18d-b2ca6b37e0a8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 191.77 23.8371 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10540,30 +10564,6 @@
 			)
 		)
 	)
-	(global_label "AX5043_MOSI"
-		(shape input)
-		(at 209.55 59.69 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left)
-		)
-		(uuid "cdcfd748-33e4-4ecb-b0f9-ae29f180da10")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 209.55 41.6534 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "Clock_CPU"
 		(shape input)
 		(at 214.63 224.79 270)
@@ -10660,6 +10660,30 @@
 			)
 		)
 	)
+	(global_label "ANT_SPI_CLK"
+		(shape input)
+		(at 204.47 34.29 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left)
+		)
+		(uuid "ef6bd7b6-69dd-4240-88aa-2fb96058c282")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 204.47 17.1242 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "AX5043_EN_RX2"
 		(shape input)
 		(at 257.81 215.9 270)
@@ -10721,30 +10745,6 @@
 		(uuid "fae9d84c-7f22-4c46-b88c-ad09a2cdb515")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 325.12 34.0561 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "AX5043_SPI_CLK"
-		(shape input)
-		(at 204.47 34.29 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left)
-		)
-		(uuid "fc7b73da-34c9-440b-acbc-0327603400f9")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 204.47 17.4871 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18636,7 +18636,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "33Ω"
+		(property "Value" "22Ω"
 			(at 205.867 39.751 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19100,7 +19100,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "22Ω"
+		(property "Value" "33Ω"
 			(at 190.5 46.736 90)
 			(show_name no)
 			(do_not_autoplace no)
