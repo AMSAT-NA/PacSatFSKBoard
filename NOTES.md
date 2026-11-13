@@ -12,6 +12,11 @@ some point.
 
 # TODO
 
+Look at doing a full magnesium shield for the board.  This would
+require rework to give the shield a full ground on the edges.  If a
+fully shielded board is done, the connector for the ADCs is going to
+be a problem.
+
 Look at galvanic isolation (MAX1493x parts) between a dual board
 setup.
 
@@ -33,23 +38,12 @@ and the diplexer line from the receive side. Stripline will have less
 interference, but has higher loss.  See
 https://www.microwavejournal.com/blogs/1-rog-blog/post/16668-microstrip-versus-stripline-how-to-make-the-choice
 
-Via annulars are 4 mils, which is at most board shop limits, usually.
-Would increasing these to 6 mils be better?  This would change RF
-impedance and increase capacitance, so leave them at 4 mils for RF
-might be required if this change is done.
-
 Ask the board shop about rails, if they are necessary, how to do them.
 
 Ask the board shop about vias, tenting, and issues with chemicals
 getting into the via then causing the solder mask to break open during
 reflow.  Does filling the vias help here?  How thermally conductive is
 the epoxy filling for vias?
-
-Maybe switch each U.FL connectors to just a pair of holes that can be
-soldered to.  Need to figure out how to tell the board shop not to
-solder these holes.  I guess the paste layer would do this, should be
-easy. - The smallest pair of wire holes in Kicad are much larger than
-a U.FL connector.
 
 Look at copper balancing, making sure the amount of copper across the
 board is relatively even.  This apparently can help avoid
@@ -131,8 +125,6 @@ receiver, but I would like someone with experience to look it over.
 
 Switch to a TMS570LS2134 CPU.  This has double the FLASH and RAM and
 has the same pinout as the TMS570LS0914.
-
-Maybe spend some time needs to be spent looking for a new PA.
 
 Add 0 ohm resistors to make some of the dual-board lines available if
 the dual-board switching parts are not populated.
@@ -1292,6 +1284,21 @@ PC104 and on the it's connector are not latch up protected.  This
 needs to be documented or handled somehow. - TMUX2821s were added to
 the GPIO lines and the I2C lines.  GPIO 6 and 2 are removed and used
 to control the TMXU2821s.
+
+Via annulars are 4 mils, which is at most board shop limits, usually.
+Would increasing these to 6 mils be better?  This would change RF
+impedance and increase capacitance, so leave them at 4 mils for RF
+might be required if this change is done. - Done, change to 5 mil
+(.127mm) rings.
+
+Maybe spend some time looking for a new PA. - Did a lot of checking
+here.  It looks like the current PA is still the best option.
+
+Maybe switch each U.FL connectors to just a pair of holes that can be
+soldered to.  Need to figure out how to tell the board shop not to
+solder these holes.  I guess the paste layer would do this, should be
+easy. - The smallest pair of wire holes in Kicad are much larger than
+a U.FL connector.
 
 # Not going to do
 
@@ -4367,3 +4374,13 @@ be more accurate for measuring reverse current since the match on the
 forward leg of the coupler would be perfect and you wouldn't get
 reflections back to the reverse side from that.  However, the match on
 using the current design should be pretty good, so hard to say.
+
+## 2026-11-12
+
+Finally got a crimper for 2.54mm pins.  I had bought a two-sided cable
+with the Gecko connectors for the antenna control and the ADC.  I cut
+the cable in half and put on 2.54mm pins on it so I could hook to an
+I2C device I had.  Everything seemed to work correctly on the power
+control and the I2C on the antenna connector.
+
+Also checked the ADC connector, all checks out good there.
