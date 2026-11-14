@@ -58,7 +58,8 @@ PacSat\_AFSK-gerbers.zip) to your board manufacturer.
 
 Take a picture of the "Board Physical Stackup" under the Board Setup
 screen and send that with these files so the board stack is
-documented.
+documented.  Note that the Er for the board needs to be 4.5 for the
+core and prepreg.  If it's different some things have to change.
 
 Add the following notes:
 

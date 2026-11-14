@@ -4405,3 +4405,12 @@ to 50 ohms.  I added "RF-" to all net names and net labels for all RF
 lines on the board so it's easy to change them.  You just have to
 watch out for the directional coupler traces.  I locked them, so
 hopefully that helps.
+
+## 2026-11-14
+
+From
+https://software-dl.ti.com/hercules/hercules_docs/latest/hercules/Hardware_Kits/hardware_kits.html#debug-interface-jtag-signals:
+
+Series termination resistors are required for TCK, RTCK and TDO.
+
+So make that so.  They were on the wrong lines.

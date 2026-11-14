@@ -5246,7 +5246,7 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 101.6) (xy 135.89 67.31)
+			(xy 135.89 101.6) (xy 135.89 82.55)
 		)
 		(stroke
 			(width 0)
@@ -5646,7 +5646,7 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 62.23) (xy 118.11 62.23)
+			(xy 118.11 62.23) (xy 171.45 62.23)
 		)
 		(stroke
 			(width 0)
@@ -6566,6 +6566,16 @@
 	)
 	(wire
 		(pts
+			(xy 135.89 74.93) (xy 135.89 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a1f1210-c93d-4916-8c44-1ccc313ba3fb")
+	)
+	(wire
+		(pts
 			(xy 140.97 185.42) (xy 149.86 185.42)
 		)
 		(stroke
@@ -6616,7 +6626,7 @@
 	)
 	(wire
 		(pts
-			(xy 124.46 69.85) (xy 118.11 69.85)
+			(xy 118.11 69.85) (xy 138.43 69.85)
 		)
 		(stroke
 			(width 0)
@@ -6913,16 +6923,6 @@
 			(type default)
 		)
 		(uuid "84afae65-64af-482d-bc6a-7cf1314581d7")
-	)
-	(wire
-		(pts
-			(xy 138.43 69.85) (xy 132.08 69.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8504c471-f297-458e-9785-5b640abb7aa9")
 	)
 	(wire
 		(pts
@@ -7676,16 +7676,6 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 62.23) (xy 140.97 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b8fb4d5d-ea87-44d8-86c7-b073c4676cc7")
-	)
-	(wire
-		(pts
 			(xy 337.82 74.93) (xy 337.82 78.74)
 		)
 		(stroke
@@ -7756,7 +7746,7 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 106.68) (xy 130.81 76.2)
+			(xy 130.81 106.68) (xy 130.81 88.9)
 		)
 		(stroke
 			(width 0)
@@ -8703,6 +8693,16 @@
 			(type default)
 		)
 		(uuid "fc0cea67-23e6-4879-99a1-cdc5a123439e")
+	)
+	(wire
+		(pts
+			(xy 130.81 81.28) (xy 130.81 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc44ae48-22a1-4438-aa7c-180037b407a2")
 	)
 	(wire
 		(pts
@@ -14272,6 +14272,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 130.81 85.09 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0d61dd76-73cb-4113-be91-411b6c19cc03")
+		(property "Reference" "R7"
+			(at 128.524 82.55 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22Ω"
+			(at 129.54 77.978 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 132.588 85.09 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 130.81 85.09 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 130.81 85.09 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8d16174f-e155-4157-a9f4-13cc882e5340")
+		)
+		(pin "2"
+			(uuid "56b8f19b-1504-43ed-bdac-712e1455d715")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
+					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 289.56 240.03 0)
 		(unit 1)
@@ -15350,85 +15429,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
 					(reference "R15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 137.16 62.23 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "3a862762-2682-4a6e-a523-aa25a4a61177")
-		(property "Reference" "R7"
-			(at 139.7 59.944 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "22Ω"
-			(at 144.272 60.96 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 137.16 64.008 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 137.16 62.23 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 137.16 62.23 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "1cd5bc0e-ad2b-438f-ada6-006d22ea06eb")
-		)
-		(pin "2"
-			(uuid "bfe83acc-5f78-47d6-bb54-be1ac9354390")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
-					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -17139,6 +17139,85 @@
 	)
 	(symbol
 		(lib_id "Device:R")
+		(at 135.89 78.74 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8cea9cc1-2b14-48d9-a471-567a0dd1097d")
+		(property "Reference" "R6"
+			(at 136.906 73.406 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22Ω"
+			(at 134.874 72.136 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 137.668 78.74 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 135.89 78.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 135.89 78.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e2ba5162-cbab-40d9-bceb-2cf0154805ab")
+		)
+		(pin "2"
+			(uuid "a942a731-8fc4-4369-aab4-2f08ffabaab1")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
+					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
 		(at 228.6 24.13 0)
 		(unit 1)
 		(body_style 1)
@@ -17980,85 +18059,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
 					(reference "#PWR045")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 128.27 69.85 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "c0bd58d4-f48a-48e2-b608-4d1eda2b38fb")
-		(property "Reference" "R6"
-			(at 131.318 74.168 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "22Ω"
-			(at 132.588 72.39 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 128.27 71.628 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 128.27 69.85 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 128.27 69.85 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ed018c61-42d8-4bd4-af52-03c51de8dd78")
-		)
-		(pin "2"
-			(uuid "1961400c-13cf-46f4-9fd4-589df75f8d4a")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
-					(reference "R6")
 					(unit 1)
 				)
 			)
