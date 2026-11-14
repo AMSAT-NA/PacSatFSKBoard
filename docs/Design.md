@@ -1028,13 +1028,17 @@ antenna on the other end.
 
 I found an online field solver at https://hforsten.com/field_solver.html
 which gives results somewhat close to what the broadside coupler program
-has.  After talking to Claude a bit about this, that program doesn't
-take into account the trace thickness, 0.035mm in this case.
+has.  After talking to Claude a bit about this, the program it generated
+doesn't take into account the trace thickness, 0.035mm in this case.
 
 Setting the thickness in the field solver to a very small value gave
-almost the same values as the program, so that's probably the issue.
+almost the same values as Claude's program, so that's probably the issue.
 Switch the widths to what the field solver said to get to 50 ohms Z0,
 0.38mm.  Coupling remains close to -30dB.
+
+There is a program in the sim directory, Z0o\_Z0e\_to\_Z0\_k.py, that
+takes the Z0\_even, Z0\_odd, the coupled trace length, frequency, and
+Er and calculates the input impedance and coupling.
 
 # Power Control and Sequencing
 
