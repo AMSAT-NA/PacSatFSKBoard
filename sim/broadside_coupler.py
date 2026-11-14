@@ -4,6 +4,13 @@
 stripline directional coupler (two traces stacked on adjacent PCB layers,
 centered between two ground planes, in a homogeneous dielectric).
 
+NOTE: I found a field solver at https://hforsten.com/field_solver.html
+If I set the thickness very small in the solver, it gives very close
+to the same results as this program.  However, the conductor thickness
+is significant in this case, it makes a bigger difference than stated
+in the assumptions below.  So switch to using the field solver.  This
+program is left here for history, but is not used any more.
+
 WHY THIS EXISTS
 ----------------
 Simplified closed-form PCB-trace calculators (Wheeler/IPC-style formulas)
@@ -276,9 +283,9 @@ def validate_against_cohn(w_mm=0.4, b_mm=1.554, er=4.3):
 if __name__ == "__main__":
     # ---- EDIT THESE FOR YOUR DESIGN --------------------------------------
     w_mm = 0.47        # trace width
-    s_mm = .218        # gap between the two traces
-    b_mm = 1.556       # total ground-to-ground spacing
-    er = 4.3           # dielectric constant
+    s_mm = .288        # gap between the two traces
+    b_mm = 1.506       # total ground-to-ground spacing
+    er = 4.5           # dielectric constant
     length_mm = 2.33   # physical coupled length
     freq_hz = 435e6    # operating frequency
     # -----------------------------------------------------------------------

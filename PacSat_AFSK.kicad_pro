@@ -236,6 +236,7 @@
         0.0,
         0.127,
         0.1524,
+        0.1725,
         0.2032,
         0.216,
         0.225,
@@ -710,7 +711,7 @@
         "wire_width": 6
       },
       {
-        "clearance": 0.2032,
+        "clearance": 0.1524,
         "diff_pair_gap": 0.18,
         "diff_pair_width": 0.127,
         "microvia_diameter": 0.3,
@@ -777,6 +778,14 @@
       {
         "netclass": "Power",
         "pattern": "+5V"
+      },
+      {
+        "netclass": "RF",
+        "pattern": "RF-*"
+      },
+      {
+        "netclass": "RF",
+        "pattern": "*/RF-*"
       }
     ]
   },

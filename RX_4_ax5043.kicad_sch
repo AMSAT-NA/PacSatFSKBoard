@@ -1926,7 +1926,7 @@
 		(uuid "55acd7b5-44e7-4538-b94b-5df4265a69ed")
 	)
 	(junction
-		(at 154.94 163.83)
+		(at 140.97 163.83)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6381e111-53e7-4cc3-9f15-49cabfe1ee6a")
@@ -1950,7 +1950,7 @@
 		(uuid "a89b785b-d0fa-4251-872d-24367e573db9")
 	)
 	(junction
-		(at 148.59 175.26)
+		(at 134.62 175.26)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ad6c2710-e367-4ca9-ac25-a8da80f2119e")
@@ -1974,7 +1974,7 @@
 		(uuid "bd8bad7f-dc52-4777-b221-a206145ce4cc")
 	)
 	(junction
-		(at 146.05 175.26)
+		(at 132.08 175.26)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cdab3368-dd55-48f3-8af1-b207522d363e")
@@ -2039,7 +2039,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 125.73) (xy 106.68 125.73)
+			(xy 91.44 125.73) (xy 99.06 125.73)
 		)
 		(stroke
 			(width 0)
@@ -2079,7 +2079,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 125.73) (xy 118.11 125.73)
+			(xy 106.68 125.73) (xy 118.11 125.73)
 		)
 		(stroke
 			(width 0)
@@ -2089,7 +2089,7 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 175.26) (xy 148.59 175.26)
+			(xy 140.97 175.26) (xy 134.62 175.26)
 		)
 		(stroke
 			(width 0)
@@ -2129,7 +2129,7 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 163.83) (xy 154.94 166.37)
+			(xy 140.97 163.83) (xy 140.97 166.37)
 		)
 		(stroke
 			(width 0)
@@ -2139,7 +2139,7 @@
 	)
 	(wire
 		(pts
-			(xy 148.59 172.72) (xy 148.59 175.26)
+			(xy 134.62 172.72) (xy 134.62 175.26)
 		)
 		(stroke
 			(width 0)
@@ -2269,7 +2269,7 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 173.99) (xy 154.94 175.26)
+			(xy 140.97 173.99) (xy 140.97 175.26)
 		)
 		(stroke
 			(width 0)
@@ -2359,7 +2359,7 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 163.83) (xy 160.02 163.83)
+			(xy 140.97 163.83) (xy 160.02 163.83)
 		)
 		(stroke
 			(width 0)
@@ -2399,7 +2399,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 175.26) (xy 146.05 176.53)
+			(xy 132.08 175.26) (xy 132.08 176.53)
 		)
 		(stroke
 			(width 0)
@@ -2419,7 +2419,7 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 163.83) (xy 154.94 163.83)
+			(xy 137.16 163.83) (xy 140.97 163.83)
 		)
 		(stroke
 			(width 0)
@@ -2459,7 +2459,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 172.72) (xy 146.05 175.26)
+			(xy 132.08 172.72) (xy 132.08 175.26)
 		)
 		(stroke
 			(width 0)
@@ -2579,7 +2579,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 175.26) (xy 148.59 175.26)
+			(xy 132.08 175.26) (xy 134.62 175.26)
 		)
 		(stroke
 			(width 0)
@@ -3147,6 +3147,16 @@
 		)
 		(uuid "02ce2d02-0ad3-4d39-b355-a71f0555e008")
 	)
+	(label "RF-RX4_TX_OUT2"
+		(at 139.7 163.83 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "1bef9613-c3c9-4452-9053-8aee4e3cdd48")
+	)
 	(label "RX4ANT_P"
 		(at 167.64 129.54 0)
 		(effects
@@ -3156,6 +3166,26 @@
 			(justify left bottom)
 		)
 		(uuid "70602087-c062-45d6-b1b8-673ae11949cf")
+	)
+	(label "RF-AX_IN4"
+		(at 109.22 125.73 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "7166b1b2-79e1-4e49-b64a-3f6a1a6a679b")
+	)
+	(label "RF-RX4_TX_OUT1"
+		(at 173.99 161.29 90)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "800c63f8-ab5c-4d00-b50a-67b973b6ae1e")
 	)
 	(global_label "Clock_RX4"
 		(shape input)
@@ -3181,9 +3211,9 @@
 			)
 		)
 	)
-	(global_label "RX_PORT4"
+	(global_label "RF-RX_PORT4"
 		(shape input)
-		(at 99.06 125.73 180)
+		(at 91.44 125.73 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3193,7 +3223,7 @@
 		)
 		(uuid "2dfbd932-25b6-4e56-a481-76e11fdbe5a0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 84.8696 125.73 0)
+			(at 77.2496 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4228,7 +4258,7 @@
 	)
 	(symbol
 		(lib_id "Device:L")
-		(at 154.94 170.18 180)
+		(at 140.97 170.18 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4238,7 +4268,7 @@
 		(dnp yes)
 		(uuid "491eb65a-e16d-4493-8d49-a083ab392786")
 		(property "Reference" "L47"
-			(at 152.4 170.18 90)
+			(at 138.43 170.18 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4248,7 +4278,7 @@
 			)
 		)
 		(property "Value" "0"
-			(at 157.48 170.18 90)
+			(at 143.51 170.18 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4258,7 +4288,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_0402_1005Metric_Pad0.77x0.64mm_HandSolder"
-			(at 154.94 170.18 0)
+			(at 140.97 170.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4269,7 +4299,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 154.94 170.18 0)
+			(at 140.97 170.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4280,7 +4310,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 154.94 170.18 0)
+			(at 140.97 170.18 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5529,7 +5559,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 146.05 176.53 0)
+		(at 132.08 176.53 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5540,7 +5570,7 @@
 		(fields_autoplaced yes)
 		(uuid "c78a91b4-fa57-43b9-b737-53e2e0edc0a6")
 		(property "Reference" "#PWR0353"
-			(at 146.05 182.88 0)
+			(at 132.08 182.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5551,7 +5581,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 146.05 181.61 0)
+			(at 132.08 181.61 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5561,7 +5591,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 146.05 176.53 0)
+			(at 132.08 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5572,7 +5602,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 146.05 176.53 0)
+			(at 132.08 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5583,7 +5613,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 146.05 176.53 0)
+			(at 132.08 176.53 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5918,7 +5948,7 @@
 	)
 	(symbol
 		(lib_id "PACSAT_DEV_misc:U_FL")
-		(at 147.32 163.83 0)
+		(at 133.35 163.83 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -5929,7 +5959,7 @@
 		(dnp yes)
 		(uuid "da2f8963-54ba-40b6-b8e5-2cc333a2b74b")
 		(property "Reference" "P23"
-			(at 149.86 160.02 0)
+			(at 135.89 160.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5940,7 +5970,7 @@
 			)
 		)
 		(property "Value" "CONUFL001-SMD-T"
-			(at 147.32 163.83 0)
+			(at 133.35 163.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5951,7 +5981,7 @@
 			)
 		)
 		(property "Footprint" "PacSatDev_misc:CONN1_CONUFL_TEC"
-			(at 147.32 163.83 0)
+			(at 133.35 163.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5962,7 +5992,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 147.32 163.83 0)
+			(at 133.35 163.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5973,7 +6003,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 147.32 163.83 0)
+			(at 133.35 163.83 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6313,7 +6343,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 110.49 125.73 90)
+		(at 102.87 125.73 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6323,7 +6353,7 @@
 		(dnp no)
 		(uuid "f4747dca-b2e5-4b70-9d06-83630557b116")
 		(property "Reference" "C67"
-			(at 109.4486 122.936 0)
+			(at 101.8286 122.936 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6334,7 +6364,7 @@
 			)
 		)
 		(property "Value" "100pF"
-			(at 111.76 122.936 0)
+			(at 104.14 122.936 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6345,7 +6375,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 114.3 124.7648 0)
+			(at 106.68 124.7648 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6356,7 +6386,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 110.49 125.73 0)
+			(at 102.87 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6367,7 +6397,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 110.49 125.73 0)
+			(at 102.87 125.73 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

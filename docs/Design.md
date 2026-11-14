@@ -1000,8 +1000,8 @@ There is a broadside directional coupler on the output of the TX
 filter for measuring forward and reverse power.  This is a broadside
 coupler, there is a ground above (top layer) and a ground below
 (bottom layer) and the two coupled lines between the ground planes
-1.556mm apart.  This source line is on layer 3 and the coupled line is
-on layer 4, they are 0.218mm apart.  Each line is 0.47mm wide.
+1.506mm apart.  This source line is on layer 3 and the coupled line is
+on layer 4, they are 0.218mm apart.  Each line is 0.38mm wide.
 
 I put this into a number of broadside coupling calculators on the
 internet, and I got all kinds of different answers, and none made any
@@ -1025,6 +1025,16 @@ explained in the directional\_coupler.ltx document in the sim
 directory.  It's not terribly accurate.  Forward power is probably ok,
 and reverse power is good enough to know if you have a decent working
 antenna on the other end.
+
+I found an online field solver at https://hforsten.com/field_solver.html
+which gives results somewhat close to what the broadside coupler program
+has.  After talking to Claude a bit about this, that program doesn't
+take into account the trace thickness, 0.035mm in this case.
+
+Setting the thickness in the field solver to a very small value gave
+almost the same values as the program, so that's probably the issue.
+Switch the widths to what the field solver said to get to 50 ohms Z0,
+0.38mm.  Coupling remains close to -30dB.
 
 # Power Control and Sequencing
 

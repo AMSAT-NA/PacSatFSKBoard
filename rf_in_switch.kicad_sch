@@ -1826,7 +1826,7 @@
 	)
 	(text "RX FROM BOARD2"
 		(exclude_from_sim no)
-		(at 117.602 85.852 0)
+		(at 107.442 85.852 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -1873,7 +1873,7 @@
 		(uuid "1ec193ab-df9e-4505-be6a-c4fe43faa839")
 	)
 	(junction
-		(at 114.3 97.79)
+		(at 104.14 97.79)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2913cce2-915a-404c-8451-a449a693fcb0")
@@ -1891,13 +1891,13 @@
 		(uuid "34ea5ab1-4451-4713-b94d-b06d29fbc471")
 	)
 	(junction
-		(at 114.3 102.87)
+		(at 104.14 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "545a88e3-2f40-4480-a115-148913a97c1e")
 	)
 	(junction
-		(at 114.3 100.33)
+		(at 104.14 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5ec7ddbe-64de-4c6c-b5c9-ac975c70e023")
@@ -2002,7 +2002,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 95.25) (xy 114.3 97.79)
+			(xy 104.14 95.25) (xy 104.14 97.79)
 		)
 		(stroke
 			(width 0)
@@ -2022,7 +2022,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 100.33) (xy 114.3 102.87)
+			(xy 104.14 100.33) (xy 104.14 102.87)
 		)
 		(stroke
 			(width 0)
@@ -2072,7 +2072,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 95.25) (xy 111.76 95.25)
+			(xy 104.14 95.25) (xy 101.6 95.25)
 		)
 		(stroke
 			(width 0)
@@ -2082,7 +2082,7 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 92.71) (xy 128.27 92.71)
+			(xy 101.6 92.71) (xy 128.27 92.71)
 		)
 		(stroke
 			(width 0)
@@ -2152,7 +2152,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 97.79) (xy 114.3 100.33)
+			(xy 104.14 97.79) (xy 104.14 100.33)
 		)
 		(stroke
 			(width 0)
@@ -2182,7 +2182,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 97.79) (xy 111.76 97.79)
+			(xy 104.14 97.79) (xy 101.6 97.79)
 		)
 		(stroke
 			(width 0)
@@ -2252,7 +2252,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 100.33) (xy 111.76 100.33)
+			(xy 104.14 100.33) (xy 101.6 100.33)
 		)
 		(stroke
 			(width 0)
@@ -2302,7 +2302,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 102.87) (xy 114.3 113.03)
+			(xy 104.14 102.87) (xy 104.14 113.03)
 		)
 		(stroke
 			(width 0)
@@ -2422,7 +2422,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 102.87) (xy 111.76 102.87)
+			(xy 104.14 102.87) (xy 101.6 102.87)
 		)
 		(stroke
 			(width 0)
@@ -2460,6 +2460,16 @@
 		)
 		(uuid "ff42d57a-9c72-463c-b147-c66cccca943c")
 	)
+	(label "RF-RX_BRD2"
+		(at 104.14 92.71 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "dd205814-8feb-403b-8cd1-25b5acc4ceb7")
+	)
 	(global_label "RF_SWITCH_EN"
 		(shape input)
 		(at 125.73 68.58 180)
@@ -2484,7 +2494,7 @@
 			)
 		)
 	)
-	(global_label "RF_IN_SWITCH"
+	(global_label "RF-IN_SWITCH"
 		(shape input)
 		(at 191.77 92.71 0)
 		(fields_autoplaced yes)
@@ -2532,7 +2542,7 @@
 			)
 		)
 	)
-	(global_label "RF In"
+	(global_label "RF-In"
 		(shape input)
 		(at 133.35 142.24 180)
 		(fields_autoplaced yes)
@@ -2794,7 +2804,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 114.3 113.03 0)
+		(at 104.14 113.03 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2805,7 +2815,7 @@
 		(fields_autoplaced yes)
 		(uuid "74fa9748-1f75-4153-a41f-ab9e76a6fa0e")
 		(property "Reference" "#PWR0369"
-			(at 114.3 119.38 0)
+			(at 104.14 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2816,7 +2826,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 114.3 118.11 0)
+			(at 104.14 118.11 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2826,7 +2836,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 114.3 113.03 0)
+			(at 104.14 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2837,7 +2847,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 114.3 113.03 0)
+			(at 104.14 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2848,7 +2858,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 114.3 113.03 0)
+			(at 104.14 113.03 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3394,7 +3404,7 @@
 	)
 	(symbol
 		(lib_id "PACSAT_DEV_misc:MMCX-J-P-H-RA-TH1")
-		(at 111.76 92.71 0)
+		(at 101.6 92.71 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -3405,7 +3415,7 @@
 		(dnp yes)
 		(uuid "ad48882d-4374-43ce-ab83-9cfa3bb16a2c")
 		(property "Reference" "P26"
-			(at 104.902 88.646 0)
+			(at 94.742 88.646 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3416,7 +3426,7 @@
 			)
 		)
 		(property "Value" "MMCX-J-P-H-RA-TH1"
-			(at 111.76 92.71 0)
+			(at 101.6 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3427,7 +3437,7 @@
 			)
 		)
 		(property "Footprint" "PacSatDev_misc:COAX4_MMCX-J-P-H-RA-TH1_SAI"
-			(at 111.76 92.71 0)
+			(at 101.6 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3439,7 +3449,7 @@
 			)
 		)
 		(property "Datasheet" "MMCX-J-P-H-RA-TH1"
-			(at 111.76 92.71 0)
+			(at 101.6 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3451,7 +3461,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 111.76 92.71 0)
+			(at 101.6 92.71 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

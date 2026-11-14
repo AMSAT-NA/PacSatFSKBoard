@@ -4384,3 +4384,24 @@ I2C device I had.  Everything seemed to work correctly on the power
 control and the I2C on the antenna connector.
 
 Also checked the ADC connector, all checks out good there.
+
+## 2026-11-13
+
+I found an online field solver at https://hforsten.com/field_solver.html
+It's close to the parameters calculated by the program that Claude wrote,
+but not exact.  After talking to Claude a bit about this, that program
+doesn't take into account the trace thickness, 0.035mm in this case.
+Setting the thickness in the field solver to a very small value gave
+almost the same values as the program, so that's probably the issue.
+Switch the widths to what the field solver said to get to 50 ohms Z0,
+0.38mm.  Coupling remains close to -30dB.
+
+I now feel more confident about the design of the directional coupler.
+
+Also, now having a field solver I think I can trust, I calculated the
+impedance of the RF lines that were .225mm.  They were 43 ohms, which
+isn't that great.  Changing the width to .1725mm brings it very close
+to 50 ohms.  I added "RF-" to all net names and net labels for all RF
+lines on the board so it's easy to change them.  You just have to
+watch out for the directional coupler traces.  I locked them, so
+hopefully that helps.

@@ -1998,7 +1998,7 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 129.54) (xy 135.89 129.54)
+			(xy 123.19 129.54) (xy 135.89 129.54)
 		)
 		(stroke
 			(width 0)
@@ -2188,7 +2188,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 129.54) (xy 121.92 129.54)
+			(xy 110.49 129.54) (xy 115.57 129.54)
 		)
 		(stroke
 			(width 0)
@@ -2776,6 +2776,16 @@
 		)
 		(uuid "837e4469-f621-4a3d-9528-fa5e504924de")
 	)
+	(label "RF-AX_IN1"
+		(at 124.46 129.54 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "ac09c993-1821-4bca-91a0-a95dcdf64034")
+	)
 	(global_label "AX5043_MOSI"
 		(shape input)
 		(at 247.65 138.43 0)
@@ -2968,9 +2978,9 @@
 			)
 		)
 	)
-	(global_label "RX_PORT1"
+	(global_label "RF-RX_PORT1"
 		(shape input)
-		(at 116.84 129.54 180)
+		(at 110.49 129.54 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2980,7 +2990,7 @@
 		)
 		(uuid "f3cdabac-da11-4645-96e9-0d71f2da64ea")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 102.6496 129.54 0)
+			(at 96.2996 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5239,7 +5249,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 125.73 129.54 90)
+		(at 119.38 129.54 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5249,7 +5259,7 @@
 		(dnp no)
 		(uuid "bd557b42-d894-4742-bb86-eff36d133b45")
 		(property "Reference" "C76"
-			(at 124.714 127 0)
+			(at 118.364 127 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5260,7 +5270,7 @@
 			)
 		)
 		(property "Value" "100pF"
-			(at 127.0254 127 0)
+			(at 120.6754 127 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5271,7 +5281,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 129.54 128.5748 0)
+			(at 123.19 128.5748 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5282,7 +5292,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 125.73 129.54 0)
+			(at 119.38 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5293,7 +5303,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 125.73 129.54 0)
+			(at 119.38 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
