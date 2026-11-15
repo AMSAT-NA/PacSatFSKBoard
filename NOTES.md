@@ -76,10 +76,6 @@ could switch.  However, I'm not sure it matters that much.
 
 Need to apply whatever ABF/RBF design the other teams come up with.
 
-Perhaps remove the 1.2V current limiter and generate 1.2V from the
-current-limited 3.3V bus.  That would remove an (unproven) current
-limiter.  Might have to raise the current limit on 3.3V if we do this.
-
 What do we do with LEDs?  Do we DNP them or remove them before flight?
 I'm guessing we don't want them on a flight board.
 
@@ -1299,6 +1295,13 @@ soldered to.  Need to figure out how to tell the board shop not to
 solder these holes.  I guess the paste layer would do this, should be
 easy. - The smallest pair of wire holes in Kicad are much larger than
 a U.FL connector.
+
+Perhaps remove the 1.2V current limiter and generate 1.2V from the
+current-limited 3.3V bus.  That would remove an (unproven) current
+limiter.  Might have to raise the current limit on 3.3V if we do
+this. - The power limiter (MP5073GG) for 1.2V had a push-pull power
+output, but this is not good for driving the reset line.  So just
+do this conversion.
 
 # Not going to do
 
@@ -4410,7 +4413,16 @@ hopefully that helps.
 
 From
 https://software-dl.ti.com/hercules/hercules_docs/latest/hercules/Hardware_Kits/hardware_kits.html#debug-interface-jtag-signals:
-
 Series termination resistors are required for TCK, RTCK and TDO.
-
 So make that so.  They were on the wrong lines.
+
+This power limiter (MP5073GG) for 1.2V had a push-pull power output,
+but this is not good for driving the reset line, it needs to be open
+drain.  From what I can tell, there is no suitable load switch.
+Remove the 1.2V current limiter and generate 1.2V from the
+current-limited 3.3V bus.  That removes an (unproven) current limiter.
+Raise the current limit on 3.3V a bit, though there is plenty of
+margin.
+
+Tie in the 3.3V power good signal to the processor reset.
+
