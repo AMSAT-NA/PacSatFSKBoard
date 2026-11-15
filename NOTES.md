@@ -4441,3 +4441,11 @@ to accomplish this task.
 
 Add pull ups to the SPI MISO lines to avoid leaving them floating when
 nothing is selected on the bus.
+
+## 2026-11-15
+
+Ground the unused ADC inputs through a zero ohm resistor instead of
+leaving them to an unconnected DNI resistor.  Design rules state that
+unused ADC inputs should be grounded.
+https://software-dl.ti.com/hercules/hercules_docs/latest/hercules/Hardware_Kits/hardware_kits.html#unused-mibadc-input-pins
+
