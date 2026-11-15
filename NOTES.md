@@ -4426,3 +4426,16 @@ margin.
 
 Tie in the 3.3V power good signal to the processor reset.
 
+The TMS570 has a separate power reset line that must be asserted when
+the power is not good.  It was just pulled up, instead drive it with
+the power good lines from the power converters.
+
+The TMS570 docs say that the nPORRST line must be driven low if the
+power inputs are bad, and it must be driven low 1ms after voltages
+have reached proper levels, 1ms after voltages have gone below the
+power off level, and I couldn't find it in the data sheet, but
+https://software-dl.ti.com/hercules/hercules_docs/latest/hercules/Hardware_Kits/hardware_kits.html#power-sequencing
+says that during power-down, the nPORRST should be asserted low at
+least 1ms before the VCCIO supply reaches 1.14V.  Add a TLV803EC29DCK
+to accomplish this task.
+

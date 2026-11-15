@@ -4423,12 +4423,12 @@
 		(uuid "0dedec32-a24d-4222-b124-7a11841a9f8a")
 	)
 	(label "RF-RX3"
-		(at 200.66 143.51 180)
+		(at 191.77 143.51 0)
 		(effects
 			(font
 				(size 1.524 1.524)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "4ef6518f-4a31-4cd0-a445-4234dfcf90fd")
 	)
