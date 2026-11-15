@@ -4439,3 +4439,5 @@ says that during power-down, the nPORRST should be asserted low at
 least 1ms before the VCCIO supply reaches 1.14V.  Add a TLV803EC29DCK
 to accomplish this task.
 
+Add pull ups to the SPI MISO lines to avoid leaving them floating when
+nothing is selected on the bus.
