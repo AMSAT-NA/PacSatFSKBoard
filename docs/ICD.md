@@ -501,12 +501,14 @@ other lines that provide I/O functions, to.
 The pins are:
 
   - PC104\_GPIO[1,4] - These pin can cause an interrupt to the CPU.  The
-    rest of the pins cannot cause interrupts.
+    rest of the pins cannot cause interrupts.  These are enabled on the
+    PC104 with the PC104\_GPIO14\_EN line.
 	
   - PC104\_ABF0\_N - Used to monitor the ABF lines, cannot do interrupts.
   
   - PC104\_TX2 and PC104\_RX2 may also be configured as GPIO lines if
-    necessary.
+    necessary.  These are enabled on the PC104 with the PC104\_SER\_EN
+    line.
   
 The board does not have a dedicated safe mode input or output, but one
 of the GPIO pins can be assigned to that function.
@@ -514,7 +516,8 @@ of the GPIO pins can be assigned to that function.
 In addition, two GPIOs run from the antenna controller to the PC104
 connector.  These are
 
-  - PC104\_GPIO[7-8] - GPIO or ADC.
+  - PC104\_GPIO[7-8] - GPIO or ADC.  These are enabled on the PC104
+    with the PC104\_GPIO78\_EN line.  These can generate interrupts.
 
 See the schematics for the antenna controller for details on how these
 are wired.

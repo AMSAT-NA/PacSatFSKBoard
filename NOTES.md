@@ -4449,3 +4449,10 @@ leaving them to an unconnected DNI resistor.  Design rules state that
 unused ADC inputs should be grounded.
 https://software-dl.ti.com/hercules/hercules_docs/latest/hercules/Hardware_Kits/hardware_kits.html#unused-mibadc-input-pins
 
+I did a test by sticking a cheap stick-on aluminum heat sink on the
+bottom of the PA.  I was unable to get the temperature to 50C when
+transmitting continuously; it topped out at about 48C.  It also cools
+off very quickly.  I already know that very little heat comes out of
+the top of the chip because adding a heat sink there makes almost no
+difference.  So the heat seems to move well out of the bottom of the
+chip.  With proper copper heat transfer it should work well.

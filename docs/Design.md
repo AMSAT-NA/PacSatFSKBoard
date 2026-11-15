@@ -577,7 +577,13 @@ logic.
 The version 4 board changes the ANT\_EN line to positive logic.
 
 The version 4 board no longer has direct power control of the ACP
-ADCs, they are powered with ANT\_+3.3V now.
+ADCs, they are powered with ANT\_+3.3V now.  The line that did that
+out of the ADC (PA25) is now the enable for PC104 GPIOs 7 and 8 and
+for connecting the ADC I2C line to the PC104.
+
+GPIOs have been reworked to have switches to enable or disable them on
+the PC104 bus.  Now only GPIOs 1, 4, 7, and 8 are on the bus.  GPIO2
+was changed into an enable line for GPIOs 1 and 4.
 
 The CAN bus connections, many GPIOs, and the dual board control lines
 are moved on the PC104 connector to match with or avoid conflicts with
