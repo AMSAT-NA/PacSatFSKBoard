@@ -4465,3 +4465,7 @@ turning on the CAN bus transceiver at start up.  This means the MRAM
 NCS is pulled down at startup, but it's the only one, so it's ok.
 
 Moved some parts away from the board edges in places.
+
+Remove the series terminator on the TCK line.  The docs are wrong,
+that's an input on the chip and has a terminator on the other end
+in the debugger.
