@@ -595,6 +595,10 @@ CAN bus, +3.3V regulator, and a few other places to be corrected.  The
 PC104\_ADC4 line was converted to PWR\_FLAG\_5V for monitoring that
 current regulator.
 
+Swapped MRAM\_NCS2 and CAN\_A\_EN\_N.  The CAN bus enable needed to be
+on a pin that was pulled up by default to avoid turning on the CAN bus
+transceiver at start up.
+
 # IO Connections on the PacSat AFSK processor
 
 These are the pins on the TMS570 processor, where they go, what they
@@ -649,8 +653,8 @@ used as a GPIO.
 |37		|MIBSPI3NCS[1]			|MRAM\_NCS3				|OU| |
 |38		|N2HET1[06]				|UART\_RX1				|ID|PC104 pin 92 |
 |39		|N2HET1[13]				|UART\_TX1				|OD|PC104 pin 88 |
-|40		|MIBSPI1NCS[2]			|MRAM\_NCS2				|OU| |
-|41		|N2HET1[15]				|CAN\_A\_EN\_N			|OD|CAN bus A transceiver enable |
+|40		|MIBSPI1NCS[2]			|CAN\_A\_EN\_N			|OU|CAN bus A transceiver enable |
+|41		|N2HET1[15]				|MRAM\_NCS2				|OD| This is the only MRAM NCS line that is pulled down by default, you can only have one. |
 |42		|VCCIO					|						|  | |
 |43		|VSS					|						|  | |
 |44		|VSS					|						|  | |
