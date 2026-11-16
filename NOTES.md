@@ -4469,3 +4469,8 @@ Moved some parts away from the board edges in places.
 Remove the series terminator on the TCK line.  The docs are wrong,
 that's an input on the chip and has a terminator on the other end
 in the debugger.
+
+## 2026-11-16
+
+Swap MRAM\_NCS2 and CAN\_A\_EN\_N back and put a stiffer pull up on
+CAN\_A\_EN\_N so it's pulled up at reset.

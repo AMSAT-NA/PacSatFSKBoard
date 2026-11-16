@@ -595,10 +595,6 @@ CAN bus, +3.3V regulator, and a few other places to be corrected.  The
 PC104\_ADC4 line was converted to PWR\_FLAG\_5V for monitoring that
 current regulator.
 
-Swapped MRAM\_NCS2 and CAN\_A\_EN\_N.  The CAN bus enable needed to be
-on a pin that was pulled up by default to avoid turning on the CAN bus
-transceiver at start up.
-
 # IO Connections on the PacSat AFSK processor
 
 These are the pins on the TMS570 processor, where they go, what they

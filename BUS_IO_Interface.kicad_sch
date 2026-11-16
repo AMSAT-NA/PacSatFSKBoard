@@ -2421,6 +2421,16 @@
 		)
 		(uuid "703d0f88-6d57-4235-b934-421d75644cfa")
 	)
+	(text "Only CAN A needs a pull up on STB.  It's\nTMS570 line is a pull down at reset, so\nadd a stiffer pull up so it's pulled up\nat reset.  CAN B is on a pull up at\nreset line, so it doesn't need this."
+		(exclude_from_sim no)
+		(at 351.79 50.038 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "7129b9d4-78ed-444e-b6ec-2be8ffeee416")
+	)
 	(text "MRAM 16 Mb 2Mx8"
 		(exclude_from_sim no)
 		(at 174.625 75.565 0)
@@ -2595,6 +2605,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "84d2bfeb-5cf1-415f-9b90-9c2dff92f974")
+	)
+	(junction
+		(at 339.09 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "95b2674e-ea72-41e5-8e33-b4e8c54851bc")
 	)
 	(junction
 		(at 365.76 175.26)
@@ -2918,7 +2934,7 @@
 	)
 	(wire
 		(pts
-			(xy 336.55 88.9) (xy 341.63 88.9)
+			(xy 336.55 88.9) (xy 339.09 88.9)
 		)
 		(stroke
 			(width 0)
@@ -3205,6 +3221,16 @@
 			(type default)
 		)
 		(uuid "38aba300-6c5c-420c-9b4f-8247a8f0d838")
+	)
+	(wire
+		(pts
+			(xy 339.09 88.9) (xy 341.63 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38ace5d1-0323-4605-9f1c-e9245b63560b")
 	)
 	(wire
 		(pts
@@ -4368,6 +4394,16 @@
 	)
 	(wire
 		(pts
+			(xy 339.09 81.28) (xy 339.09 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c21b7fbb-e2fb-4b29-860e-f666a4c447ba")
+	)
+	(wire
+		(pts
 			(xy 193.04 41.91) (xy 195.58 41.91)
 		)
 		(stroke
@@ -4738,6 +4774,16 @@
 	)
 	(wire
 		(pts
+			(xy 339.09 69.85) (xy 346.71 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb9b90d6-c233-42df-8c37-ed5bf1a085ab")
+	)
+	(wire
+		(pts
 			(xy 365.76 171.45) (xy 365.76 175.26)
 		)
 		(stroke
@@ -4805,6 +4851,16 @@
 			(type default)
 		)
 		(uuid "f470b784-d11a-4f8b-a593-15f19b6f24e1")
+	)
+	(wire
+		(pts
+			(xy 339.09 73.66) (xy 339.09 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6502530-9c81-4823-9a67-aa13f6fd9c2a")
 	)
 	(wire
 		(pts
@@ -7017,6 +7073,85 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/aff81ec5-748c-4fc9-b1e8-df12a16f6289"
 					(reference "C98")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 339.09 77.47 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "456987ab-93de-4d9a-89fd-79c67573c49a")
+		(property "Reference" "R88"
+			(at 341.63 74.93 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "4.7kΩ"
+			(at 336.804 74.93 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 340.868 77.47 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 339.09 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 339.09 77.47 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fd8fc353-8d1c-4fa2-921e-41f639f51509")
+		)
+		(pin "2"
+			(uuid "48d1fc0f-4eb4-4945-9329-12c613d03deb")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/aff81ec5-748c-4fc9-b1e8-df12a16f6289"
+					(reference "R88")
 					(unit 1)
 				)
 			)
