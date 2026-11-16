@@ -604,7 +604,7 @@ The "G" column shows the GPIO usage and capability.  The first letter
 is how the GPIO is used: I for input, O for output, B for
 bidirectional, blank if not used as a GPIO, and ? if the function is
 not known (the PC104 pins).  The second letter is U for pullup by
-default and D for pulldown by default or blank if the pin cannot be
+default and D for pulldown after reset, or blank if the pin cannot be
 used as a GPIO.
 
 |Pin	|CPU Pin Name			|Schematic Name			|G |Description |
@@ -649,8 +649,8 @@ used as a GPIO.
 |37		|MIBSPI3NCS[1]			|MRAM\_NCS3				|OU| |
 |38		|N2HET1[06]				|UART\_RX1				|ID|PC104 pin 92 |
 |39		|N2HET1[13]				|UART\_TX1				|OD|PC104 pin 88 |
-|40		|MIBSPI1NCS[2]			|CAN\_A\_EN\_N			|OU|CAN bus A transceiver enable |
-|41		|N2HET1[15]				|MRAM\_NCS2				|OD| This is the only MRAM NCS line that is pulled down by default, you can only have one. |
+|40		|MIBSPI1NCS[2]			|MRAM\_NCS2				|OU| |
+|41		|N2HET1[15]				|CAN\_A\_EN\_N			|OD|CAN bus A transceiver enable |
 |42		|VCCIO					|						|  | |
 |43		|VSS					|						|  | |
 |44		|VSS					|						|  | |
@@ -730,7 +730,7 @@ used as a GPIO.
 |116	|nRST					|\*Processor\_Reset		|  |Main reset pin for the processor |
 |117	|nERROR					|FAULT\_N				|  |Output ERROR line from the processor|
 |118	|N2HET1[10]				|OTHER\_HW\_POWER\_OFF  |OD|Power off the other board |
-|119	|ECLK					|PC104\_GPIO2			|ID|PC104 pin H2-18 |
+|119	|ECLK					|PC104\_GPIO14_EN		|ID|PC104 pin H2-18 |
 |120	|VCCIO					|						|  | |
 |121	|VSS					|						|  | |
 |122	|VSS					|						|  | |
@@ -738,19 +738,19 @@ used as a GPIO.
 |124	|H2HET1[12]				|POW\_MEAS\_EN			|OD|\*TX power measurement enable |
 |125	|H2HET1[14]				|PA\_PWR\_ON			|OD|Enable PA power |
 |126	|GIOB[0]				|AX5043\_IRQ\_RX2		|ID|Interrupt from AX5043 RX2 |
-|127	|N2HET1[30]				|PC104\_SER\_EN\_N		|OD|Connect the 2nd serial port to the PC104|
+|127	|N2HET1[30]				|PC104\_SER\_EN			|OD|Connect the 2nd serial port to the PC104|
 |128	|CAN2TX					|CAN\_B\_TX				|OU|CAN bus B transmit |
 |129	|CAN2RX					|CAN\_B\_RX				|IU|CAN bus B receive |
 |130	|MIBSPI1NCS[1]			|\*FEED\_WATCHDOG		|OU|Resets the hardware watchdog timer |
 |131	|LINRX					|PC104\_RX				|IU|PC104 Pin H2-23 |
 |132	|LINTX					|PC104\_TX				|OU|PC104 Pin H2-24 |
-|133	|GIOB[1]				|PC104\_GPIO4			|OD|Local active output pin for active/standby |
+|133	|GIOB[1]				|PC104\_GPIO4			|OD| |
 |134	|VCCP					|						|  | |
 |135	|VSS					|						|  | |
 |136	|VCCIO					|						|  | |
 |137	|VCC					|						|  | |
 |138	|VSS					|						|  | |
-|139	|N2HET1[16]				|PC104\_I2C\_EN\_N		|OD|Connect the I2C bus to the PC104|
+|139	|N2HET1[16]				|PC104\_I2C\_EN			|OD|Connect the I2C bus to the PC104|
 |140	|N2HET1[18]				|ACTIVE					| D|PC104 Pin H1-27 |
 |141	|N2HET1[20]				|AX5043\_PWR\_EN		|OD|Main power enable for all AX5043s |
 |142	|GIOB[2]				|AX5043\_IRQ\_TX		|ID|Interrupt from AX5043 TX |

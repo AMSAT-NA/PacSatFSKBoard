@@ -2421,7 +2421,7 @@
 		)
 		(uuid "703d0f88-6d57-4235-b934-421d75644cfa")
 	)
-	(text "Only CAN A needs a pull up on STB.  It's\nTMS570 line is a pull down at reset, so\nadd a stiffer pull up so it's pulled up\nat reset.  CAN B is on a pull up at\nreset line, so it doesn't need this."
+	(text "Only CAN A needs a pull up on STB.  Its\nTMS570 line is a pull down at reset, so\nadd a stiffer pull up so it's pulled up\nat reset.  CAN B is on a pull up at\nreset line, so it doesn't need this."
 		(exclude_from_sim no)
 		(at 351.79 50.038 0)
 		(effects
