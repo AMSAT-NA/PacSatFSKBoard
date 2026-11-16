@@ -4457,7 +4457,7 @@ the top of the chip because adding a heat sink there makes almost no
 difference.  So the heat seems to move well out of the bottom of the
 chip.  With proper copper heat transfer it should work well.
 
-Remove the voltage divider on the CAN bus chip enable lines.  With the
+Remove the voltage dividers on the CAN bus chip enable lines.  With the
 new power scheme they are no longer necessary.  The chip has an
 internal pullup.  Swapped MRAM\_NCS2 and CAN\_A\_EN\_N.  The CAN bus
 enable needed to be on a pin that was pulled up by default to avoid

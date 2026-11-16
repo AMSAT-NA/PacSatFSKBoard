@@ -659,7 +659,7 @@ used as a GPIO.
 |43		|VSS					|						|  | |
 |44		|VSS					|						|  | |
 |45		|VCC					|						|  | |
-|46		|nPORRST				|						|  | |
+|46		|nPORRST				|Power\_Reset\_N		|  | |
 |47		|VSS					|						|  | |
 |48		|VCC					|						|  | |
 |49		|VCC					|						|  | |
