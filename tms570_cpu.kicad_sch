@@ -9576,6 +9576,30 @@
 			)
 		)
 	)
+	(global_label "ANT_SPI_CS"
+		(shape input)
+		(at 292.1 172.72 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left)
+		)
+		(uuid "2cf41814-d85b-4d07-8dc6-69ccefbd8e8b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 307.9595 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "AX5043_MOSI"
 		(shape input)
 		(at 194.31 59.69 90)
@@ -9693,6 +9717,30 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+			)
+		)
+	)
+	(global_label "CAN_A_EN_N"
+		(shape input)
+		(at 250.19 215.9 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify right)
+		)
+		(uuid "3e09409d-f37f-463f-bc04-c994f35bbece")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 250.19 232.4854 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 	)
@@ -10176,30 +10224,6 @@
 			)
 		)
 	)
-	(global_label "ANT_SPI_CS"
-		(shape input)
-		(at 250.19 215.9 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify right)
-		)
-		(uuid "6729ebf2-9e96-4740-8208-4c6b33fbf8e5")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 250.19 231.7595 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
 	(global_label "Processor_Reset_N"
 		(shape input)
 		(at 81.28 88.9 180)
@@ -10293,30 +10317,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-			)
-		)
-	)
-	(global_label "CAN_A_EN_N"
-		(shape input)
-		(at 292.1 172.72 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left)
-		)
-		(uuid "714d4a0b-3607-4751-b5a6-6343f8ff18dd")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 308.6854 172.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 	)

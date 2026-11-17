@@ -40,11 +40,6 @@ https://www.microwavejournal.com/blogs/1-rog-blog/post/16668-microstrip-versus-s
 
 Ask the board shop about rails, if they are necessary, how to do them.
 
-Ask the board shop about vias, tenting, and issues with chemicals
-getting into the via then causing the solder mask to break open during
-reflow.  Does filling the vias help here?  How thermally conductive is
-the epoxy filling for vias?
-
 Look at copper balancing, making sure the amount of copper across the
 board is relatively even.  This apparently can help avoid
 delamination. - Copper is mostly balanced, but still needs some
@@ -1302,6 +1297,12 @@ limiter.  Might have to raise the current limit on 3.3V if we do
 this. - The power limiter (MP5073GG) for 1.2V had a push-pull power
 output, but this is not good for driving the reset line.  So just
 do this conversion.
+
+Ask the board shop about vias, tenting, and issues with chemicals
+getting into the via then causing the solder mask to break open during
+reflow.  Does filling the vias help here?  How thermally conductive is
+the epoxy filling for vias? - MITSI says this is not an issue, all
+vias are filled and plated by default.
 
 # Not going to do
 
@@ -4474,3 +4475,7 @@ in the debugger.
 
 Swap MRAM\_NCS2 and CAN\_A\_EN\_N back and put a stiffer pull up on
 CAN\_A\_EN\_N so it's pulled up at reset.
+
+Swap CAN\_A\_EN\_N with ANT\_SPI\_CS.  This puts CAN\_A\_EN\_N on a
+pin that's pulled up by default, so that eliminates the need for the
+pullup on that line.  And it simplified the routing a little bit.

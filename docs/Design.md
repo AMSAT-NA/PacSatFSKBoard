@@ -595,6 +595,8 @@ CAN bus, +3.3V regulator, and a few other places to be corrected.  The
 PC104\_ADC4 line was converted to PWR\_FLAG\_5V for monitoring that
 current regulator.
 
+CAN\_A\_EN\_N and ANT\_SPI\_CS are swapped.
+
 # IO Connections on the PacSat AFSK processor
 
 These are the pins on the TMS570 processor, where they go, what they
@@ -640,7 +642,7 @@ used as a GPIO.
 |29		|VCC					|						|  | |
 |30		|N2HET1[02]				|						|OD|Green LED |
 |31		|N2HET1[05]				|LNA\_ENABLE			|OD|Used to enable the LNA |
-|32		|MIBSPI5NCS[0]			|ANT\_SPI\_CS			|OU|SPI for the antenna controller) |
+|32		|MIBSPI5NCS[0]			|CAN\_A\_EN\_N			|OU|CAN bus A transceiver enable |
 |33		|N2HET1[07]				|AX5043\_EN\_RX3		|OD|Power enable for AX5043 RX 3 |
 |34		|TEST					|					    |  | |
 |35		|N2HET1[09]				|AX5043\_EN\_RX2		|OD|Power enable for AX5043 RX 2 |
@@ -650,7 +652,7 @@ used as a GPIO.
 |38		|N2HET1[06]				|UART\_RX1				|ID|PC104 pin 92 |
 |39		|N2HET1[13]				|UART\_TX1				|OD|PC104 pin 88 |
 |40		|MIBSPI1NCS[2]			|MRAM\_NCS2				|OU| |
-|41		|N2HET1[15]				|CAN\_A\_EN\_N			|OD|CAN bus A transceiver enable |
+|41		|N2HET1[15]				|ANT\_SPI\_CS			|OD|SPI select for the antenna controller |
 |42		|VCCIO					|						|  | |
 |43		|VSS					|						|  | |
 |44		|VSS					|						|  | |
