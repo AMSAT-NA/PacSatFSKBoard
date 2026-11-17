@@ -4479,3 +4479,26 @@ CAN\_A\_EN\_N so it's pulled up at reset.
 Swap CAN\_A\_EN\_N with ANT\_SPI\_CS.  This puts CAN\_A\_EN\_N on a
 pin that's pulled up by default, so that eliminates the need for the
 pullup on that line.  And it simplified the routing a little bit.
+
+I did some measurements of transmitted noise at various frequencies.
+I did this with a tinySA Ultra holding the antenna 1cm about the given
+noise sources.  No shields were installed.
+
+At 16MHz (the clock going through the board) I measured -70dBm.  At
+the third harmonic it was -65dBm.  There was no measurable signal down
+to -100dBm on the second harmonic.
+
+At 80MHz I measured -75dBm and at 160MHz I measure -85dBm. These are
+the CPU clock frequencies.  At 240MHz I measured -75dBm, at 320MHz I
+measured -80dBm, and at 480MHz I measured -90dBm.
+
+At 144-146MHz and at the second harmonic I could find no measurable
+signal down to -90dBm.  This would be measuring the PLLs 
+
+At 435-436MHz and at the second harmonic there was no measurable
+signal when not transmitting down to -100dBm.
+
+When transmitting at 435.76MHz into a dummy load at full power (2W out
+of the PA), I measured -30dBm at that frequency.  At the second
+harmonic I got -70dBm.  At the third harmonic I couldn't measure
+anything down to -110dBm.  At 1m away the main frequency was -70dBm.
