@@ -12,6 +12,8 @@ some point.
 
 # TODO
 
+Need to apply whatever ABF/RBF design the other teams come up with.
+
 Look at doing a full magnesium shield for the board.  This would
 require rework to give the shield a full ground on the edges.  If a
 fully shielded board is done, the connector for the ADCs is going to
@@ -32,7 +34,7 @@ Perhaps specify a low-outgassing circuit board material like FR408HR.
 See:
 https://www.isola-group.com/wp-content/uploads/Outgassing-Data-041224.pdf
 
-Remove ground plane cutouts under big RF pads to reduce the
+Add ground plane cutouts under big RF pads to reduce the
 capacitance?
 
 The connectors used to bring RF off the board in various places are
@@ -49,8 +51,6 @@ The connector on the antenna board is an Omnetics A29100-009 and
 that's actually a little smaller than the Harwin G125-MH11005L1P
 that's on the PacSat board now that's going to connect to it.  We
 could switch.  However, I'm not sure it matters that much.
-
-Need to apply whatever ABF/RBF design the other teams come up with.
 
 What do we do with LEDs?  Do we DNP them or remove them before flight?
 I'm guessing we don't want them on a flight board.
