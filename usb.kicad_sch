@@ -9956,7 +9956,7 @@
 				)
 			)
 		)
-		(property "Value" "5.1KΩ"
+		(property "Value" "5.1kΩ"
 			(at 110.49 137.16 90)
 			(show_name no)
 			(do_not_autoplace no)

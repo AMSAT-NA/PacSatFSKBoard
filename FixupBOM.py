@@ -150,7 +150,7 @@ value_to_partnum_xlats_1 = {
     ('1kΩ@100MHz',	'0805'): ('Laird-Signal',	'MI0805J102R-10'),
 }
 
-# Space rated inductors
+# Space rated inductors and other parts
 value_to_partnum_xlats_1a = {
     ('1nH',     	'0402'): ('Coilcraft',	'AR235RAG1N0JPZ'),
     ('3.0nH 2%',	'0402'): ('Coilcraft',	'AR235RAQ3N0GPZ'),
@@ -175,6 +175,8 @@ value_to_partnum_xlats_1a = {
     # Ferrite beads
     ('1kΩ@100MHz',	'0603'): ('Vanguard',	'RFB0603-102KS-4'),
     ('1kΩ@100MHz',	'0805'): ('Vanguard',	'RFB0805-102KS-4'),
+
+    ('SN74LVC1G08B-EP', 'SOT-23-5'): ('SN54SC1G08-SEP', 'SOT-23-5'),
 }
 
 # General passive parts.
@@ -245,7 +247,7 @@ value_to_partnum_xlats_2 = {
 
     ('277Ω 0.1%',	'0402'): ('KOA Speer ',	'RN73R1ETTP2770B25'),
     ('3.32kΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF3321X'),
-    ('5.1KΩ',           '0402'): ('Panasonic',  'ERJ-2RKF5101X'),
+    ('5.1kΩ',           '0402'): ('Panasonic',  'ERJ-2RKF5101X'),
     ('10kΩ 1%', 	'0402'): ('Panasonic',	'ERJ-PA2F1002X'),
     ('45.3kΩ 1%',	'0402'): ('Panasonic',	'ERJ-2RKF4532X'),
     ('47kΩ 1%', 	'0402'): ('Panasonic',	'ERA-2AED473X'),
@@ -289,6 +291,7 @@ other_components = {
     ('ADL5501AKSZ-R7', 'KS-6_ADI'): None,
     ('SN74AHC1G08QDCKRQ1', 'DCK5'): None,
     ('SN74AHC1G09QDCKRQ1', 'DCK5'): None,
+    ('SN74LVC1G08B-EP', 'SOT-23-5'): None,
     ('QPC8010QTR7', 'QFN50P200X200X60-13N-D'): None,
     ('G125-MH11005L1P', 'G125-MH11005L1P'): None,
     ('DMP3056LDM-7', 'SOT-26-6_DMP3056LDM_DIO'): None,
@@ -311,6 +314,7 @@ other_components = {
     ('GSB1C4K11DSHR', 'AMPHENOL_GSB1C4K11DSHR'): None,
     ('LM73100RPWR', 'RPW0010A-MFG'): None,
     ('TPS22919DCK', 'SOT-363_SC-70-6'): None,
+    ('TLV803EC29DCK', 'DCK0003A-IPC_A'): None,
 }
 
 used = {}

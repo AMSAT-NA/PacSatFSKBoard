@@ -2519,6 +2519,16 @@
 		)
 		(uuid "564cc931-b01b-4ad9-989a-43725529ad19")
 	)
+	(text "If you specify a space-rated BOM, this will\nbe replaced with a SN54SC1G08-SEP.  This is\na critical part that has no real latch-up\nprotection except the main power supply."
+		(exclude_from_sim no)
+		(at 311.404 20.574 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "7d18a797-936f-404a-a9ac-d549099c2431")
+	)
 	(text "HARDWARE WATCHDOG"
 		(exclude_from_sim no)
 		(at 51.435 212.725 0)
@@ -7896,7 +7906,7 @@
 				)
 			)
 		)
-		(property "Value" "SN74AHC1G08QDCKRQ1"
+		(property "Value" "SN74LVC1G08B-EP"
 			(at 307.34 38.1 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7906,7 +7916,7 @@
 				)
 			)
 		)
-		(property "Footprint" "PacSatDev_ti:DCK5"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5_HandSoldering"
 			(at 305.054 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -7918,7 +7928,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/gpn/sn74ahc1g08-q1"
+		(property "Datasheet" ""
 			(at 307.34 57.15 0)
 			(hide yes)
 			(show_name no)

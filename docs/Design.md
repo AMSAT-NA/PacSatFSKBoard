@@ -71,6 +71,21 @@ Add the following notes:
 
 * A flight build must special-order U52 (the RF splitter) with
   low-outgassing epoxy.
+  
+* Some power supplies have a partial PC104 that one board will plug in
+  to.  If you have one of those, you don't want all the extra pins
+  hanging in space.  In this case, for each of J1 and J1, instead of
+  ordering an ESQ-126-38-G-D for J1 and J2, you would order a set of
+  smaller connectors, an ESQ-1xx-38-G-D for the places that have power
+  supply pins, and an ESQ-1xx-37-G-D for the places without pins,
+  where xx is the number of rows on the connector.  For instance, if
+  the power supply only had pins 21-32 and pins 39-52, you would order:
+  ESQ-110-37-G-D (pins 1-20), ESQ-106-38-G-D (pins 21-32),
+  ESQ-103-37-G-D (pins 33-38) and ESQ-107-38-G-D (pins 39-52).
+
+* U5 has the option for a space-rated part.  It's a critical gate
+  where the only latch up protection is in the external power supply.
+  If you are paranoid, pick the space-rated part.
 
 # Setting up the USB chip
 

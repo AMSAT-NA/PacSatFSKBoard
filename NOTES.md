@@ -20,18 +20,6 @@ be a problem.
 Look at galvanic isolation (MAX1493x parts) between a dual board
 setup.
 
-The PS below this board will not have all the pins available, so we
-will need to be able to not have pins hanging in space.  Some special
-configuration of multiple connectors will be required.
-
-The AND gate U5 is a latch up concern.  Possibly use a part that
-cannot latch up or a wire-OR.  The part that is there (74ahc1g08) has
-good latch up handling, but something completely latch up free would
-be better. - Since it's powered with REG\_3V3, if it goes into latchup
-that line needs to be protected.  Also an issue with the 1.2V power
-limiter U8.  Wire-OR won't work because if the 3.3V converter is used
-the watchdog would then power itself down when it fired.
-
 Look at using stripline for the long RF runs.  The only ones that
 would matter are the receive lines from the splitter to the AX5043s
 and the diplexer line from the receive side. Stripline will have less
@@ -40,19 +28,12 @@ https://www.microwavejournal.com/blogs/1-rog-blog/post/16668-microstrip-versus-s
 
 Ask the board shop about rails, if they are necessary, how to do them.
 
-Look at copper balancing, making sure the amount of copper across the
-board is relatively even.  This apparently can help avoid
-delamination. - Copper is mostly balanced, but still needs some
-analysis.
-
 Perhaps specify a low-outgassing circuit board material like FR408HR.
 See:
 https://www.isola-group.com/wp-content/uploads/Outgassing-Data-041224.pdf
 
 Remove ground plane cutouts under big RF pads to reduce the
 capacitance?
-
-The RF switches might be latch up issues.  Need to figure that out.
 
 The connectors used to bring RF off the board in various places are
 all U.FL.  Of concern are the two secondary TX connections from
@@ -1303,6 +1284,34 @@ getting into the via then causing the solder mask to break open during
 reflow.  Does filling the vias help here?  How thermally conductive is
 the epoxy filling for vias? - MITSI says this is not an issue, all
 vias are filled and plated by default.
+
+The PS below this board will not have all the pins available, so we
+will need to be able to not have pins hanging in space.  Some special
+configuration of multiple connectors will be required. - In this case,
+you would order 4 different types of connectors for each of J1 and J2:
+* ESQ-110-37-G-D - For pins 1-20 on the connector
+* ESQ-106-38-G-D - For pins 21-32 on the connector
+* ESQ-103-37-G-D - For pins 33-38 on the connector
+* ESQ-107-38-G-D - For pins 39-52 on the connector
+
+The RF switches might be latch up issues.  Need to figure that out. -
+Should be good, the power is on a max4995 and the other end is on a
+MOSFET with large pullup/pulldowns.
+
+Look at copper balancing, making sure the amount of copper across the
+board is relatively even.  This apparently can help avoid
+delamination. - Copper is mostly balanced, but maybe still needs some
+analysis?  Should be good enough.
+
+The AND gate U5 is a latch up concern.  Possibly use a part that
+cannot latch up or a wire-OR.  The part that is there (74ahc1g08) has
+good latch up handling, but something completely latch up free would
+be better. - Since it's powered with REG\_3V3, if it goes into latchup
+that line needs to be protected.  Also an issue with the 1.2V power
+limiter U8.  Wire-OR won't work because if the 3.3V converter is used
+the watchdog would then power itself down when it fired. - This part
+has been replaced with a -EP related part with the option for a -SEP
+rated part.  The 1.2V power limiter has been removed.
 
 # Not going to do
 
@@ -4502,3 +4511,9 @@ When transmitting at 435.76MHz into a dummy load at full power (2W out
 of the PA), I measured -30dBm at that frequency.  At the second
 harmonic I got -70dBm.  At the third harmonic I couldn't measure
 anything down to -110dBm.  At 1m away the main frequency was -70dBm.
+
+## 2026-11-16
+
+U5 (AND gate in the power supply section) has been replaced with a -EP
+related part with the option for a -SEP rated part for radiation
+resistance.
