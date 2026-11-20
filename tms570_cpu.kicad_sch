@@ -4861,9 +4861,9 @@
 		)
 		(uuid "686904f8-00c4-4599-986f-27dde4e46b19")
 	)
-	(text "Don't leave the MISO lines\nfloating."
+	(text "Don't leave the MISO lines\nfloating and ground to\nvoid injecting power into\nan unpowered part."
 		(exclude_from_sim no)
-		(at 287.274 60.706 0)
+		(at 287.528 62.992 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -6756,6 +6756,16 @@
 	)
 	(wire
 		(pts
+			(xy 288.29 15.24) (xy 294.64 15.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "622c00bc-b9b4-4bbe-8528-76dab075f1b4")
+	)
+	(wire
+		(pts
 			(xy 309.88 59.69) (xy 313.69 59.69)
 		)
 		(stroke
@@ -7156,7 +7166,7 @@
 	)
 	(wire
 		(pts
-			(xy 288.29 20.32) (xy 288.29 22.86)
+			(xy 288.29 15.24) (xy 288.29 22.86)
 		)
 		(stroke
 			(width 0)
@@ -8453,6 +8463,16 @@
 			(type default)
 		)
 		(uuid "d813bd2f-a55d-441c-b1c8-24a2cc0a68bd")
+	)
+	(wire
+		(pts
+			(xy 294.64 15.24) (xy 294.64 16.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d86cab1d-76fe-4561-a17a-d40d9423d6dc")
 	)
 	(wire
 		(pts
@@ -15188,7 +15208,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10kΩ"
+		(property "Value" "100kΩ"
 			(at 284.226 36.576 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17047,7 +17067,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10kΩ"
+		(property "Value" "100kΩ"
 			(at 296.926 36.576 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17279,7 +17299,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10kΩ"
+		(property "Value" "100kΩ"
 			(at 290.576 36.576 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18423,83 +18443,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 288.29 20.32 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a00d6229-24cb-4137-a5bd-f55b9e07bd4a")
-		(property "Reference" "#PWR090"
-			(at 288.29 24.13 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 288.29 16.51 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 288.29 20.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 288.29 20.32 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 288.29 20.32 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "36dff0d1-2e87-4392-aae0-cbc07883e7aa")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
-					(reference "#PWR090")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 91.44 171.45 0)
 		(unit 1)
@@ -19588,6 +19531,82 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 294.64 16.51 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "dd6f53f3-e1c1-4b5b-b8a1-cae2d0899b63")
+		(property "Reference" "#PWR098"
+			(at 294.64 22.86 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 294.767 20.9042 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 294.64 16.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 294.64 16.51 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 294.64 16.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8753735f-fb12-4e86-a86c-913bdeb9a5c0")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
+					(reference "#PWR098")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 204.47 39.37 0)
 		(unit 1)
@@ -20073,7 +20092,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "33Ω"
+		(property "Value" "50Ω"
 			(at 190.5 46.736 90)
 			(show_name no)
 			(do_not_autoplace no)

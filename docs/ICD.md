@@ -178,13 +178,8 @@ It can receive on 4 different frequencies simultaneously.
 ### Frequency Spacing
 
 You must be careful to keep the receive frequencies sufficiently far
-apart.  Some LO power will leak out of the AX5043s receive port and
-into the splitter, which will leak that into the other AX5043 inputs.
-The leakage is small, but the receivers are very sensitive.  If this
-is in the passband of another receiver, it can negatively affect it.
-
-How far apart the frequencies need to be depends on the modulation
-type and modulation factor (MF).  The minimums are:
+apart.  How far apart the frequencies need to be depends on the
+modulation type and modulation factor (MF).  The minimums are:
 
 | Modulation  | Spacing       |
 |------------ |-------------- |
@@ -193,6 +188,14 @@ type and modulation factor (MF).  The minimums are:
 | AFSK (1200) | 100kHz        |
 
 More is better.
+
+Theoretically, some LO power will leak out of the AX5043s receive port
+and into the splitter, which will leak that into the other AX5043
+inputs.  The leakage is small, but the receivers are very sensitive.
+If this is in the passband of another receiver, it can negatively
+affect it.  However, measurement has not found any LO leakage down to
+-120dBm on the RX lines.  The LNA in the AX5043 is probably blocking
+this.
 
 ### LPF (RX)
 

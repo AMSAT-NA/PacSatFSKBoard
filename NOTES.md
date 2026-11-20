@@ -4540,3 +4540,19 @@ Add a 33nf capacitor to RF\_IO\_CONTROL.  This should slow the
 transition of the switch to well after the PA could be transmitting on
 a full power off.  The switches have a max 20dBm power through it when
 switching.
+
+## 2026-11-20
+
+Pull down the SPI MISO lines with a weak resistor instead of pulling
+them up.  This will avoid latch up issues.
+
+Power the TX DAC with +5V now that it's available.  Now it won't turn
+off and back on with the PA power.
+
+Change the AX5043 SPI series resistor to 50 ohm.  This avoids some
+undershoot issues shown in simulation.
+
+Reworked the USB\_+5V power input some.  Simulations showed it would
+ring.  Increase the capacitor to 10uF 16V and add a 1 ohm series
+resistor to avoid that.  Also add a 1uF bypass on the input of U48
+because the other bypass capacitors are too far away.

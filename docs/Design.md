@@ -612,6 +612,9 @@ current regulator.
 
 CAN\_A\_EN\_N and ANT\_SPI\_CS are swapped.
 
+The TX DAC is powered from +5V so it's not a latch up issue on the SPI
+bus.  It does need to be set to 0 when the PA is powered off.
+
 # IO Connections on the PacSat AFSK processor
 
 These are the pins on the TMS570 processor, where they go, what they
