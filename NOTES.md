@@ -4533,3 +4533,10 @@ that.
 Change the LNA limit to 100ma.  It's max is supposed to be 50ma max.
 
 Change the +5VAL limit to be 50ma.
+
+Add decoupling caps to the ADL5501s per data sheet.
+
+Add a 33nf capacitor to RF\_IO\_CONTROL.  This should slow the
+transition of the switch to well after the PA could be transmitting on
+a full power off.  The switches have a max 20dBm power through it when
+switching.

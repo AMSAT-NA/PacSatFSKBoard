@@ -191,6 +191,7 @@ value_to_partnum_xlats_2 = {
     ('1nF',		'0402'): ('Murata',	'GCM1555C1H102JA16D'),
     ('4.7nF',		'0402'): ('Kyocera',	'04025C472J4T2A'),
     ('10nF',		'0402'): ('Murata',	'GCM155R71H103KA55D'),
+    ('33nF',		'0402'): ('Murata',	'GCM155R71E333KA55D'),
     ('100nF',		'0402'): ('Murata',	'GCM155R71C104KA55D'),
     ('0.47uF',          '0603'): ('Murata',     'GCM188R71E474KA64J'),
     ('1uF',		'0603'): ('Murata',	'GCM188R71C105KA64J'),

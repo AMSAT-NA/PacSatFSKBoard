@@ -2184,6 +2184,16 @@
 		)
 		(uuid "201312da-a58e-40dc-89bf-762874ee7c10")
 	)
+	(text "The capacitor here slows the switching\ntime of the switch so that on a power\ndown the switch waits a bit before\nswitching.  If it switches while the\nPA is transmitting that would be bad\nfor the switch."
+		(exclude_from_sim no)
+		(at 188.976 70.866 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "2176568b-22e4-4b82-a199-5a9f10c6ac5d")
+	)
 	(text "This RF switch setup handles TX active/standby.\nOn board 1 the zero ohm resistor is not populated.  On board 2\nor on simplex boards none of the switch circuitry is\npopulated (or the resistor to the left is removed to disable\nthe switches) and only the zero ohm resistor is populated.\nR109 should also be removed in this case."
 		(exclude_from_sim no)
 		(at 69.342 180.086 0)
@@ -2283,6 +2293,12 @@
 		(uuid "54e50c5c-e024-4288-b37c-96135144ccf9")
 	)
 	(junction
+		(at 215.9 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "568d8309-d37d-445d-a77b-79e4ead9ae04")
+	)
+	(junction
 		(at 173.99 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2323,6 +2339,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7b5d3b92-b771-446e-bc94-101217ffee45")
+	)
+	(junction
+		(at 224.79 78.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7bedea48-ce43-4c35-be72-a2cf96a7f2fe")
 	)
 	(junction
 		(at 148.59 154.94)
@@ -2368,7 +2390,7 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 74.93) (xy 224.79 76.2)
+			(xy 224.79 74.93) (xy 224.79 78.74)
 		)
 		(stroke
 			(width 0)
@@ -2588,6 +2610,16 @@
 	)
 	(wire
 		(pts
+			(xy 215.9 74.93) (xy 215.9 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "41071ff7-cd5d-48fa-a80d-7026b99f97c3")
+	)
+	(wire
+		(pts
 			(xy 172.72 128.27) (xy 148.59 128.27)
 		)
 		(stroke
@@ -2728,6 +2760,16 @@
 	)
 	(wire
 		(pts
+			(xy 215.9 78.74) (xy 224.79 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "739fb743-6ccf-4849-8685-81e0e099e4ac")
+	)
+	(wire
+		(pts
 			(xy 52.07 33.02) (xy 52.07 35.56)
 		)
 		(stroke
@@ -2845,6 +2887,16 @@
 			(type default)
 		)
 		(uuid "8cc1f809-7e97-412c-a7df-b89c880591a0")
+	)
+	(wire
+		(pts
+			(xy 215.9 59.69) (xy 224.79 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8cd6c56d-76e8-4c21-bddb-8955bc2853c8")
 	)
 	(wire
 		(pts
@@ -2978,6 +3030,16 @@
 	)
 	(wire
 		(pts
+			(xy 224.79 78.74) (xy 224.79 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bfd9484d-3bdc-496c-91fa-f3d8db4039d2")
+	)
+	(wire
+		(pts
 			(xy 52.07 33.02) (xy 57.15 33.02)
 		)
 		(stroke
@@ -3008,13 +3070,23 @@
 	)
 	(wire
 		(pts
-			(xy 151.13 59.69) (xy 224.79 59.69)
+			(xy 151.13 59.69) (xy 215.9 59.69)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "ccfe6c68-6ce5-49ec-8c73-b2f66559577d")
+	)
+	(wire
+		(pts
+			(xy 215.9 59.69) (xy 215.9 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd65beae-a35f-464b-bba2-8440b7faddd8")
 	)
 	(wire
 		(pts
@@ -4591,6 +4663,84 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 215.9 71.12 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "bc696fdb-4fc2-408d-b216-fc68b67f405b")
+		(property "Reference" "C166"
+			(at 219.71 71.12 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "33nF"
+			(at 212.09 71.12 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+			(at 214.9348 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 215.9 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 215.9 71.12 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c144e8fe-2ab1-407b-99d1-9faad6fbe538")
+		)
+		(pin "2"
+			(uuid "147f3f5a-fa75-432a-8bbc-19628abd3090")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/4fa888af-703c-49ed-93bb-d56d2f02c470/26e0c845-9451-4c79-aef3-943c70af8ca9"
+					(reference "C166")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 124.46 109.22 0)
 		(unit 1)
@@ -4669,7 +4819,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 224.79 76.2 0)
+		(at 224.79 80.01 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4680,7 +4830,7 @@
 		(fields_autoplaced yes)
 		(uuid "c8a01c99-6309-4099-8ff0-42d2cd17b08a")
 		(property "Reference" "#PWR0239"
-			(at 224.79 82.55 0)
+			(at 224.79 86.36 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4691,7 +4841,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 224.79 81.28 0)
+			(at 224.79 85.09 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4701,7 +4851,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 224.79 76.2 0)
+			(at 224.79 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4712,7 +4862,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 224.79 76.2 0)
+			(at 224.79 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4723,7 +4873,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 224.79 76.2 0)
+			(at 224.79 80.01 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
