@@ -615,6 +615,10 @@ CAN\_A\_EN\_N and ANT\_SPI\_CS are swapped.
 The TX DAC is powered from +5V so it's not a latch up issue on the SPI
 bus.  It does need to be set to 0 when the PA is powered off.
 
+The enable for the antenna control power, ANT\_POWER\_EN, was changed
+from negative to positive logic for switching from a MOSFET to a power
+supervisor.
+
 # IO Connections on the PacSat AFSK processor
 
 These are the pins on the TMS570 processor, where they go, what they
@@ -901,7 +905,7 @@ read the antenna documentation for the exact requirements.
 |14		|PA18			|ADC\_SDA and PC104\_I2C\_SDA	|or PC104 SPI PICO
 |15		|PA19			|ANT\_JTAG\_SWDIO	|
 |16		|PA20			|ANT\_JTAG\_SWCLK	|
-|17		|PA21			|ANT\_POWER\_EN\_N	|Enable power to external antenna controller
+|17		|PA21			|ANT\_POWER\_EN		|Enable power to external antenna controller
 |18		|PA22			|I2CA\_SCL			|ANT pin 7
 |19		|PA23			|					|Optional line to ANT pin 10
 |20		|PA24			|I2CB\_SDA			|ANT pin 4

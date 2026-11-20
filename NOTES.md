@@ -4565,3 +4565,9 @@ USB is not powered.
 
 Rework the diplexer to use a trap version, which performs much better
 and has less loss.
+
+Rework the power control for the antenna device.  It was using an
+inductor and such for inrush control, but that really wasn't
+sufficient and the inductor wasn't big enough.  Use a power supervisor
+chip instead, which should do everything needed.  It also eliminates
+and inductor, which is nice for flight.
