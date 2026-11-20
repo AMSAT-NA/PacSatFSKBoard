@@ -2596,7 +2596,7 @@
 			)
 		)
 	)
-	(global_label "Power_Reset_N "
+	(global_label "Power_Reset_N"
 		(shape input)
 		(at 195.58 39.37 180)
 		(fields_autoplaced yes)

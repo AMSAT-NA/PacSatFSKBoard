@@ -4556,3 +4556,9 @@ Reworked the USB\_+5V power input some.  Simulations showed it would
 ring.  Increase the capacitor to 10uF 16V and add a 1 ohm series
 resistor to avoid that.  Also add a 1uF bypass on the input of U48
 because the other bypass capacitors are too far away.
+
+Remove the 330 ohm resistors between the USB chip and the serial on
+the TMS570 and use Power\_Reset\_N to enable the switches on those
+lines.  This way when the board is not powered but USB is, the
+switches will be turned off.  And the switches will always be off is
+USB is not powered.

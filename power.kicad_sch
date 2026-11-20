@@ -3962,7 +3962,7 @@
 			)
 		)
 	)
-	(global_label "Power_Reset_N "
+	(global_label "Power_Reset_N"
 		(shape input)
 		(at 134.62 142.24 180)
 		(fields_autoplaced yes)
@@ -4034,7 +4034,7 @@
 			)
 		)
 	)
-	(global_label "Power_Reset_N "
+	(global_label "Power_Reset_N"
 		(shape input)
 		(at 316.23 100.33 180)
 		(fields_autoplaced yes)

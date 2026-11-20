@@ -696,15 +696,18 @@ the PC104 and are using U4 to provide 3.3V, you should not populate
 U50.  In all cases the USB converter chip is powered by the USB +3.3V
 converter U48, so you cannot remove that and use USB.
 
-The board is configured to ask for 3A from the USB, though it
-generally only needs less than 1A.  Burning the antenna release can
-draw up to 2A; the 3.3V power converter for USB and the control
-transistors cannot supply that much power, so you cannot use that
-function with USB power.  It might work for a little bit, but it's
-risky.
+The board needs at least 1A for normal operation.  It's not configured
+to negotiate that or check it, so if using USB for power you must make
+sure the USB port it's plugged in to can supply that much power.
+Burning the antenna release can draw up to 2A; the 3.3V power
+converter for USB and the control transistors cannot supply that much
+power, so you cannot use that function with USB power.  It might work
+for a little bit, but it's risky.
 
 The USB provides two serial ports, the first for the main CPU and the
-second for the antenna control processor.
+second for the antenna control processor.  Note that the main CPU
+serial port also runs to the PC104 as discussed in the Serial section,
+you cannot use the PC104 serial connection if USB is plugged in.
 
 The main purpose of this connector is ease of development, though it
 could be used as an umbilical cord connection.  On version 4 and later
