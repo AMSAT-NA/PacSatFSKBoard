@@ -4562,3 +4562,6 @@ the TMS570 and use Power\_Reset\_N to enable the switches on those
 lines.  This way when the board is not powered but USB is, the
 switches will be turned off.  And the switches will always be off is
 USB is not powered.
+
+Rework the diplexer to use a trap version, which performs much better
+and has less loss.

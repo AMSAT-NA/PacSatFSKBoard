@@ -3627,16 +3627,6 @@
 		)
 		(uuid "ab2dfdfa-e50a-4d4b-93ee-4c473f99c5cd")
 	)
-	(text "This will result in about 3.4V output, to account\nfor some loss in the MOSFETs going to the main\npower rail."
-		(exclude_from_sim no)
-		(at 125.476 70.104 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-		)
-		(uuid "dda89cad-4377-4d5c-95f4-e2595b625d2b")
-	)
 	(text "The 1Ω resistor here limits the\nringing on the power bus.  Without\nit the ringing can go above 8V.\nThis limits it to 5.5V."
 		(exclude_from_sim no)
 		(at 70.104 214.376 0)
@@ -12361,8 +12351,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10uF"
-			(at 49.784 229.362 0)
+		(property "Value" "10uF 16V"
+			(at 44.704 229.87 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

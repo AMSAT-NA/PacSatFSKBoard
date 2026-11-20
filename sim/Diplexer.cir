@@ -15,6 +15,30 @@
 .SUBCKT Diplexer144x435 in  outlo outhi
 
 .if (1)
+* Trap version.  Each branch has a parallel trap tuned to the other
+* band, so it looks open at the other band no matter what impedance
+* the other port presents (the TX chain is about 9+j81 ohms at 146MHz
+* because of L38, and the RX chain is about 1+j12 ohms at 436MHz
+* because of C100; with board 2 active these get rotated by the
+* inter-board cables).  A series part then resonates each branch at
+* its own band.  Put the trap at the common-node end of each branch.
+
+* RX branch: 39nH || 3.4pF trap at ~437MHz, 27pF series to resonate
+* at 146MHz.  The 3.4pF includes nothing for parasitics; inductor
+* self capacitance and pads add to it, so expect to trim it.
+L1a	in	in1a	39n
+RL1a	in1a	in1b	0.8
+C1	in	in1b	3.4p
+C1b	in1b	outlo	27p
+
+L2a	in	in2a	100n
+Rl2a	in2a	in2b	1.5
+C2	in	in2b	12p
+L2b	in2b	in2c	12n
+RL2b	in2c	outhi	0.3
+.endif
+
+.if (0)
 * Narrow bandpass filters to allow 435 and 145 through
 L1	in	in1a	220n
 Rl1	in1a	in1b	3.36
