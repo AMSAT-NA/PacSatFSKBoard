@@ -12288,7 +12288,7 @@
 				)
 			)
 		)
-		(property "Footprint" "RPW0010A-MFG"
+		(property "Footprint" "PacSatDev_ti:RPW0010A-MFG"
 			(at 18.796 -29.464 0)
 			(show_name no)
 			(do_not_autoplace no)

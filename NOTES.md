@@ -4571,3 +4571,7 @@ inductor and such for inrush control, but that really wasn't
 sufficient and the inductor wasn't big enough.  Use a power supervisor
 chip instead, which should do everything needed.  It also eliminates
 and inductor, which is nice for flight.
+
+Power the external antenna device with REG\_3V3 instead of 3V3\_IN.
+If it's powered with 3V3\_IN, if the on-board regulator is used for
+3.3V it's going to see the unfiltered output of the regulator.

@@ -110,7 +110,7 @@ board.  These are:
   
 * There is a 2A capable 3.3V power supply over the antenna control
   connector switched by a MOSFET.  This is derived directly from
-  3.3V\_IN.  This is for powering the antenna device and for the burn
+  REG\_3V3.  This is for powering the antenna device and for the burn
   wire.
 
 In addition, each AX5043 has a separate power control line from the
@@ -379,7 +379,7 @@ control.  It has two I2C busses that come out of J7, along with power
 and ground.  The power for the external antenna board is powered from
 3.3V\_p to the power lines on J7 and may be turned on and off.
 
-Resistors (R147, R151, R152, and R152) are in place with pullups to
+Resistors (R147, R151, R152, and R153) are in place with pullups to
 the I2C lines.  See https://www.ti.com/lit/an/slva689/slva689.pdf for
 details on setting these resistors.  These can be modified or removed
 based upon what is required.

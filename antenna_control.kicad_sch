@@ -1649,7 +1649,7 @@
 					)
 				)
 			)
-			(property "Footprint" "RPW0010A-MFG"
+			(property "Footprint" "PacSatDev_ti:RPW0010A-MFG"
 				(at 18.796 -29.464 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4283,7 +4283,7 @@
 		)
 		(uuid "f953d47b-4c1b-451b-9ee4-27a5af71cd92")
 	)
-	(global_label "3.3V_IN"
+	(global_label "REG_3V3"
 		(shape input)
 		(at 266.7 69.85 0)
 		(fields_autoplaced yes)
@@ -4295,7 +4295,7 @@
 		)
 		(uuid "0c4f155c-9722-4f39-8d0d-bce22b09daf0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 277.915 69.85 0)
+			(at 279.2939 69.85 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5846,7 +5846,7 @@
 				)
 			)
 		)
-		(property "Footprint" "RPW0010A-MFG"
+		(property "Footprint" "PacSatDev_ti:RPW0010A-MFG"
 			(at 233.934 99.314 0)
 			(hide yes)
 			(show_name no)
