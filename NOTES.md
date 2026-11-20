@@ -4512,8 +4512,24 @@ of the PA), I measured -30dBm at that frequency.  At the second
 harmonic I got -70dBm.  At the third harmonic I couldn't measure
 anything down to -110dBm.  At 1m away the main frequency was -70dBm.
 
-## 2026-11-16
+## 2026-11-18
 
 U5 (AND gate in the power supply section) has been replaced with a -EP
 related part with the option for a -SEP rated part for radiation
 resistance.
+
+## 2026-11-19
+
+Some track cleanup and rework.
+
+Change the LNA to be powered by +5Vext instead of +5VAL.  This allows
+a much tighter limit on the +5VAL power to fix a possible lockup if it
+happens on that bus.
+
+Change the +5V limit to be 300ma.  Worst case on the CAN bus
+transceivers is ~140ma on a shorted bus, so make sure it can handle
+that.
+
+Change the LNA limit to 100ma.  It's max is supposed to be 50ma max.
+
+Change the +5VAL limit to be 50ma.

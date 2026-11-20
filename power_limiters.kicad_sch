@@ -1005,7 +1005,7 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "= 650mA limit"
+	(text "= 638mA limit"
 		(exclude_from_sim no)
 		(at 238.125 54.61 0)
 		(effects
@@ -1059,7 +1059,7 @@
 		)
 		(uuid "a2121cd0-ba7a-465d-8f22-ebb2c737aebb")
 	)
-	(text "= 200mA limit"
+	(text "= 50mA limit"
 		(exclude_from_sim no)
 		(at 118.745 184.15 0)
 		(effects
@@ -1092,7 +1092,7 @@
 		)
 		(uuid "c0bccf73-3db5-4bfe-91b1-7c75d8776950")
 	)
-	(text "= 200mA limit"
+	(text "= 297mA limit"
 		(exclude_from_sim no)
 		(at 111.125 53.34 0)
 		(effects
@@ -7145,7 +7145,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "143kΩ 1%"
+		(property "Value" "95.3kΩ 1%"
 			(at 113.03 50.165 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7459,7 +7459,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "143kΩ 1%"
+		(property "Value" "576kΩ 1%"
 			(at 120.65 180.975 0)
 			(show_name no)
 			(do_not_autoplace no)

@@ -2201,7 +2201,7 @@
 		)
 		(uuid "12c665d1-3bd8-4788-b311-c4fa93e8df59")
 	)
-	(text "= 200mA limit"
+	(text "= 100mA limit"
 		(exclude_from_sim no)
 		(at 167.005 232.41 0)
 		(effects
@@ -6303,7 +6303,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "143kΩ 1%"
+		(property "Value" "287kΩ 1%"
 			(at 165.1 229.235 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6536,7 +6536,7 @@
 				)
 			)
 		)
-		(property "Value" "+5VAL"
+		(property "Value" "+5Vext"
 			(at 254 200.6599 0)
 			(show_name no)
 			(do_not_autoplace no)
