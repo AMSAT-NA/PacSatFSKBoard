@@ -2234,7 +2234,7 @@
 		)
 		(uuid "19dbc172-0130-484e-8fc7-f95f67a824f8")
 	)
-	(text "Unless otherwise noted, all\nRF traces are 0.225mm with 0.508mm\nclearance on the ground around\nthe trace and 0.109mm above the\nground plane.  All RF traces are\ncoplanar.  This gives around\n48.5 ohm nominal impedance."
+	(text "Unless otherwise noted, all\nRF traces are 0.1725mm with 0.508mm\nclearance on the ground around\nthe trace and 0.109mm above the\nground plane.  All RF traces are\ncoplanar.  This gives around\n48.5 ohm nominal impedance."
 		(exclude_from_sim no)
 		(at 65.532 46.736 0)
 		(effects

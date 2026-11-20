@@ -12,7 +12,7 @@ L1	in	outp	75n
 C1	in	outn	15p
 C2	outp	0	15p
 L2	outn	0	75n
-L3	outp	0	1n
+L3	outp	0	1u
 
 .ENDS
 

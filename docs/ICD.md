@@ -175,6 +175,25 @@ timer. R161 can also be installed to disable the watchdog timer.
 The RF subsection consists of the section used for receiving signals.
 It can receive on 4 different frequencies simultaneously.
 
+### Frequency Spacing
+
+You must be careful to keep the receive frequencies sufficiently far
+apart.  Some LO power will leak out of the AX5043s receive port and
+into the splitter, which will leak that into the other AX5043 inputs.
+The leakage is small, but the receivers are very sensitive.  If this
+is in the passband of another receiver, it can negatively affect it.
+
+How far apart the frequencies need to be depends on the modulation
+type and modulation factor (MF).  The minimums are:
+
+| Modulation  | Spacing       |
+|------------ |-------------- |
+| FSK MF=2    | 10x data rate |
+| FSK MF=.5   | 5x data rate  |
+| AFSK (1200) | 100kHz        |
+
+More is better.
+
 ### LPF (RX)
 
 The Low Pass Filter on the antenna input keeps 440MHz from the

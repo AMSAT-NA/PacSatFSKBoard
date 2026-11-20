@@ -2184,7 +2184,7 @@
 		)
 		(uuid "201312da-a58e-40dc-89bf-762874ee7c10")
 	)
-	(text "The capacitor here slows the switching\ntime of the switch so that on a power\ndown the switch waits a bit before\nswitching.  If it switches while the\nPA is transmitting that would be bad\nfor the switch."
+	(text "The capacitor here slows the switching\ntime of the switch so that on a power\ndown the switch waits a bit before\nswitching.  If it switches while the\nPA is transmitting that would be bad\nfor the switch.  The switching time\nwith 33nF is ~1ms."
 		(exclude_from_sim no)
 		(at 188.976 70.866 0)
 		(effects
