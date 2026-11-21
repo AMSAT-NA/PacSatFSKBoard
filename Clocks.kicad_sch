@@ -2878,7 +2878,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10Ω"
+		(property "Value" "4.7Ω"
 			(at 185.166 82.042 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3489,10 +3489,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "707d6fa7-e5f7-4b64-9574-784aadb4e9ed")
 		(property "Reference" "R25"
 			(at 141.478 99.1616 0)
@@ -3742,7 +3742,7 @@
 				)
 			)
 		)
-		(property "Value" "16,0-JT22CT-A-P-3,3-LF"
+		(property "Value" "O 16,0-JT22CT-A-P-3,3-LF"
 			(at 172.466 100.33 0)
 			(show_name no)
 			(do_not_autoplace no)
