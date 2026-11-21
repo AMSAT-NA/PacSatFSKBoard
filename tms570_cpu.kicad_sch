@@ -4914,6 +4914,16 @@
 		)
 		(uuid "d699b372-0a6c-4368-9657-b8ce8b2e1c7e")
 	)
+	(text "There is some debate in the forums and the\ndatasheets and advice differ whether\nKELVIN_GND needs to be left unconnected or\ntied to ground.  Past boards and other AMSAT\ndesigns left it open, but R222 can be removed\nif necessary."
+		(exclude_from_sim no)
+		(at 214.122 259.842 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "e033fc4b-bcb3-4099-a654-cc764fa7a513")
+	)
 	(text "This chip will hold the Power_Reset_N line low for 10ms\nafter +3.3V goes above 2.93V, and will pull it low\nimmediately if +3.3V goes below 2.93V.  The nPORRST\nline into the TMS570 must be held low 1ms after power\nis good and during power down must be driven low\n1ms before the VCCIO voltage reaches 1.14V."
 		(exclude_from_sim no)
 		(at 374.396 227.838 0)
@@ -5340,10 +5350,6 @@
 		(at 219.71 204.47)
 		(uuid "695902df-c8f4-4b75-8e67-77b62550cd85")
 	)
-	(no_connect
-		(at 217.17 204.47)
-		(uuid "cf5ce3db-dea8-41e3-b08f-4b66074efb90")
-	)
 	(wire
 		(pts
 			(xy 71.12 165.1) (xy 81.28 165.1)
@@ -5493,6 +5499,16 @@
 			(type default)
 		)
 		(uuid "0f3aea4b-bf17-4730-83a4-ececee97b488")
+	)
+	(wire
+		(pts
+			(xy 217.17 204.47) (xy 217.17 209.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "10a98154-54b6-4a81-8b33-629f124766a2")
 	)
 	(wire
 		(pts
@@ -8393,6 +8409,16 @@
 			(type default)
 		)
 		(uuid "d5939d33-a502-4559-8c62-0442939b7ca2")
+	)
+	(wire
+		(pts
+			(xy 217.17 217.17) (xy 217.17 223.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d5a8f653-8ec3-4d2e-9a92-bbc311624201")
 	)
 	(wire
 		(pts
@@ -18172,6 +18198,83 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 217.17 223.52 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8e023ab8-d330-4ed4-8d33-84783f32dda1")
+		(property "Reference" "#PWR0137"
+			(at 217.17 229.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 217.297 227.9142 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 217.17 223.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 217.17 223.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 217.17 223.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a63bfc76-97cb-414a-9bbc-814571960f29")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
+					(reference "#PWR0137")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 228.6 24.13 0)
 		(unit 1)
@@ -20101,6 +20204,86 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
 					(reference "C136")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 217.17 213.36 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f8d603d3-f0a1-46fe-9269-88d74d5f852a")
+		(property "Reference" "R222"
+			(at 219.456 215.646 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0Ω"
+			(at 218.44 210.058 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 215.392 213.36 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 217.17 213.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 217.17 213.36 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7eeb19ed-0b9d-4ab9-97ff-40f7d1e32c9e")
+		)
+		(pin "2"
+			(uuid "e9bd312b-4a3b-4097-9ed6-502c7f8750a5")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
+					(reference "R222")
 					(unit 1)
 				)
 			)

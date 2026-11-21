@@ -4593,6 +4593,8 @@ most likely, violating TI's specs.  Having the reference at 3.0V means
 you loose a little range at the top, but that's generally not a big
 deal.
 
+## 2026-11-21
+
 Rework 3.3V, 5V, and SSPA\_VCC.  The inductors used were high value
 and didn't have a very low ESR.  Switch to better inductors for the
 3.3V and 5V inputs.  Also, the resistance of the MAX4995 parts is
@@ -4601,3 +4603,9 @@ on 3.3V and SSPA\_VCC which has Ron 28m ohm (45m max).  The TPS25947
 version on 3.3V works like the MAX4995, it will cycle power, though
 the cycle interval is a little lower.  The one on SSPA\_VCC latches
 off, so it will be disabled until the enable line cycles.
+
+There is some debate in the forums and the datasheets and advice
+differ whether KELVIN\_GND needs to be left unconnected or tied to
+ground.  Best advice seems to be to connect it.  Past boards and other
+AMSAT designs left it open.  Add a 0 ohm resistor R222, but it can be
+removed if necessary.
