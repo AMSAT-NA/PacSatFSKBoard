@@ -192,7 +192,7 @@ value_to_partnum_xlats_2 = {
     ('100pF',		'0402'): ('Murata',	'GCM1555C1H101JA16D'),
     ('1nF',		'0402'): ('Murata',	'GCM1555C1H102JA16D'),
     ('2.2nF',		'0603'): ('Murata',	'GCM1885C1H222JA16D'),
-    ('2.2nF',		'0603'): ('Murata',	'GCM1885C1H332JA16D'),
+    ('3.3nF',		'0603'): ('Murata',	'GCM1885C1H332JA16D'),
     ('4.7nF',		'0402'): ('Kyocera',	'04025C472J4T2A'),
     ('10nF',		'0402'): ('Murata',	'GCM155R71H103KA55D'),
     ('33nF',		'0402'): ('Murata',	'GCM155R71E333KA55D'),
@@ -241,6 +241,7 @@ value_to_partnum_xlats_2 = {
     ('2.2kΩ',   '0402'): ('Wurth Electronik', '560112110087'),
     ('4.7kΩ',	'0402'): ('Panasonic',	'ERA-2AED472X'),
     ('10kΩ',    '0402'): ('Panasonic',  'ERA-2AED103X'),
+    ('15kΩ 1%', '0402'): ('Panasonic',  'ERA-2AED153X'),
     ('18kΩ',	'0402'): ('Panasonic',	'ERA-2AED183X'),
     ('20kΩ 1%', '0402'): ('Panasonic', 'ERA-2AED203X'),
     ('43kΩ 1%', '0402'): ('Panasonic', 'ERA-2AED433X'),
@@ -253,9 +254,10 @@ value_to_partnum_xlats_2 = {
     ('2.4kΩ',	'0603'): ('Wurth Electronik',	'560112116061'),
     ('3kΩ',	'0603'): ('Panasonic',	'ERJ-UP3F3001V'),
 
-    ('277Ω 0.1%',	'0402'): ('KOA Speer ', 'RN73R1ETTP2770B25'),
+    ('277Ω 0.1%',	'0402'): ('KOA Speer', 'RN73R1ETTP2770B25'),
     ('3.32kΩ 1%',	'0402'): ('Panasonic', 'ERJ-2RKF3321X'),
-    ('5.1kΩ',           '0402'): ('Panasonic', 'ERJ-2RKF5101X'),
+    ('4.12kΩ 1%',       '0402'): ('Panasonic', 'ERJ-2RKF4121X'),
+    ('5.1kΩ 1%',        '0402'): ('Panasonic', 'ERJ-2RKF5101X'),
     ('10kΩ 1%', 	'0402'): ('Panasonic', 'ERJ-PA2F1002X'),
     ('45.3kΩ 1%',	'0402'): ('Panasonic', 'ERJ-2RKF4532X'),
     ('47kΩ 1%', 	'0402'): ('Panasonic', 'ERA-2AED473X'),
@@ -326,6 +328,9 @@ other_components = {
     ('LM73100RPWR', 'RPW0010A-MFG'): None,
     ('TPS22919DCK', 'SOT-363_SC-70-6'): None,
     ('TLV803EC29DCK', 'DCK0003A-IPC_A'): None,
+    ('TPS259474ARPW', 'RPW0010A-MFG'): None,
+    ('TPS259470LRPW', 'RPW0010A-MFG'): None,
+    ('REF3130AQDBZRQ1', 'SOT-23'): None,
 }
 
 used = {}

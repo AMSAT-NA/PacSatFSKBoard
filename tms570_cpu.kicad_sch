@@ -15556,7 +15556,7 @@
 				)
 			)
 		)
-		(property "Value" "10KΩ"
+		(property "Value" "10kΩ"
 			(at 333.756 109.22 90)
 			(show_name no)
 			(do_not_autoplace no)

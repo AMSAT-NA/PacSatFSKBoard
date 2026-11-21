@@ -5144,7 +5144,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "5.11kΩ 1%"
+		(property "Value" "5.1kΩ 1%"
 			(at 250.952 54.102 0)
 			(show_name no)
 			(do_not_autoplace no)
