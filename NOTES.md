@@ -4572,7 +4572,8 @@ sufficient and the inductor wasn't big enough.  Use a power supervisor
 chip instead, which should do everything needed.  It also eliminates
 and inductor, which is nice for flight.
 
-Power the external antenna device with REG\_3V3 instead of 3V3\_IN.
-If it's powered with 3V3\_IN, if the on-board regulator is used for
-3.3V it's going to see the unfiltered output of the regulator.
-Also add a 1uF cap on the power supervisor.
+Add a 1uF cap on the power supervisor.
+
+Add zero-ohm resistors so that 3.3V\_IN can be driven from the output
+of the 3.3V power circuit.  3.3V\_IN was being driven from the output
+of the regulator, not the output of the inductor, and that was wrong.

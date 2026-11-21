@@ -377,7 +377,7 @@ A small microprocessor, the antenna control processor (ACP), sits on a
 SPI bus connected to the main CPU.  It's primary purpose is antenna
 control.  It has two I2C busses that come out of J7, along with power
 and ground.  The power for the external antenna board is powered from
-3.3V\_p to the power lines on J7 and may be turned on and off.
+3.3V\_IN to the power lines on J7 and may be turned on and off.
 
 Resistors (R147, R151, R152, and R153) are in place with pullups to
 the I2C lines.  See https://www.ti.com/lit/an/slva689/slva689.pdf for
@@ -390,6 +390,9 @@ the ACP goes to this, and that I2C can optionally also go the PC104
 connector.
 
 Some GPIO/ADC lines and an I2C bus also go the PC104 from the ACP.
+
+Note that the on-board 3.3V regulator is not capable of powering the
+antenna control power output if it draws more than an amp or so.
 
 # System Interfaces Description
 
@@ -442,9 +445,12 @@ high on the board, so it does not have to be driven.  This is part of
 the dual-board controls, but in a simplex situation it can be used to
 externally control power on the board.
 
-If 3.3V is not supplied from the PC104 connector, then U4, R119, and
-R120 must be installed, and you should generally remove the 3.3V
-resistor R111 to the PC104.
+If 3.3V is not supplied from the PC104 connector, then U4, R119, R120,
+and R137 must be installed and you should remove R111 and R142.  If
+3.3V is coming externally, then do the opposite.
+
+Note that the on-board 3.3V regulator is not capable of powering the
+antenna control power output if it draws more than an amp or so.
 
 ### VBAT
 

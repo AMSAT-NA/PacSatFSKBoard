@@ -4339,7 +4339,7 @@
 		)
 		(uuid "f953d47b-4c1b-451b-9ee4-27a5af71cd92")
 	)
-	(global_label "REG_3V3"
+	(global_label "3.3V_IN"
 		(shape input)
 		(at 273.05 45.72 0)
 		(fields_autoplaced yes)
@@ -4351,7 +4351,7 @@
 		)
 		(uuid "0c4f155c-9722-4f39-8d0d-bce22b09daf0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 285.6439 45.72 0)
+			(at 284.265 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
