@@ -4914,7 +4914,7 @@
 		)
 		(uuid "d699b372-0a6c-4368-9657-b8ce8b2e1c7e")
 	)
-	(text "There is some debate in the forums and the\ndatasheets and advice differ whether\nKELVIN_GND needs to be left unconnected or\ntied to ground.  Past boards and other AMSAT\ndesigns left it open, but R222 can be removed\nif necessary."
+	(text "There is some debate in the forums and the\ndatasheets and advice differ whether\nKELVIN_GND needs to be left unconnected or\ntied to ground.  Past boards and other AMSAT\ndesigns left it open, but R222 can be added\nif necessary."
 		(exclude_from_sim no)
 		(at 214.122 259.842 0)
 		(effects
@@ -20215,10 +20215,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "f8d603d3-f0a1-46fe-9269-88d74d5f852a")
 		(property "Reference" "R222"
 			(at 219.456 215.646 90)
