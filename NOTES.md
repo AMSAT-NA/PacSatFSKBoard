@@ -4583,3 +4583,9 @@ capacitors to be closer to TI's recommendation.
 
 Ran the fault and ILM lines from the antenna power supervisor to the
 TMS570 so it can monitor that part.
+
+Switch the voltage reference to a 3.0 output and power it from 3.3V.
+The way it was the voltage reference would be above the 3.3V line,
+most likely, violating TI's specs.  Having the reference at 3.0V means
+you loose a little range at the top, but that's generally not a big
+deal.

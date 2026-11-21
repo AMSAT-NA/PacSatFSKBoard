@@ -622,6 +622,9 @@ supervisor.
 The measurement and fault output of the antenna control power
 supervisor are run to ADC1IN[0] and ADC1IN[19] respectively.
 
+The voltage reference for the TMS570 ADC is now at 3.0V.  This will
+require some software changes for things using the ADC.
+
 # IO Connections on the PacSat AFSK processor
 
 These are the pins on the TMS570 processor, where they go, what they
@@ -793,6 +796,14 @@ On the TMS570, most normal pins can also be used at GPIOs, but they
 are not capable of generating interrupts.  Only the GIOx[n] pins can
 generate interrupts, and they are all used for that purpose.
 
+
+## Notes on ADC pins
+
+The reference for the ADC is 3.0V.  This means values above 3.0V just
+read as full value.  It's complicated to make this work correctly with
+a voltage at 3.3V because the +3.3V power rail may be lower than 3.3V
+(maybe 3.15V or so) and you can't have the reference above the power
+rail per the TI specs.
 
 ## Notes on thermsistors
 

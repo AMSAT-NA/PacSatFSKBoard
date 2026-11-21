@@ -15480,7 +15480,7 @@
 				)
 			)
 		)
-		(property "Value" "+5V"
+		(property "Value" "+3.3V"
 			(at 336.042 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19118,7 +19118,7 @@
 				)
 			)
 		)
-		(property "Value" "REF3133AQDBZRQ1"
+		(property "Value" "REF3130AQDBZRQ1"
 			(at 325.12 73.66 90)
 			(show_name no)
 			(do_not_autoplace no)
