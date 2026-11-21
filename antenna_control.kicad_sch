@@ -2527,6 +2527,16 @@
 		)
 		(uuid "28ce8484-009d-4c0b-ad45-c514c932a242")
 	)
+	(text "2.6A power limit\ndV/dt is 1v/1.1ms"
+		(exclude_from_sim no)
+		(at 244.602 96.52 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "43bdf810-d05c-4945-974d-7486bbb5c86f")
+	)
 	(text "Pins PA0 and PA1 are open-drain only,\nso a pullup is required on outputs."
 		(exclude_from_sim no)
 		(at 118.11 36.068 0)

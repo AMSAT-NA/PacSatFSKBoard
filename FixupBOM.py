@@ -142,6 +142,7 @@ value_to_partnum_xlats_1 = {
     ('180nH 2%',	'0805'): ('Coilcraft',	'0805CS-181XGRC'),
     ('470nH 2%',        '0805'): ('Coilcraft',  '0805CS-471XGRC'),
     ('470nH',   	'0805'): ('Coilcraft',	'0805CS-471XGRC'),
+    ('1uH',  'IND_XAL4020_COC'): ('Coilcraft',  'XAL4020-102MEC'),
     ('1uH',  'IND_EPL2010_COC'): ('Coilcraft',	'EPL2010-102MLC'),
     ('3.3uH','IND_EPL2010_COC'): ('Coilcraft',	'EPL2010-332MLC'),
 
@@ -169,6 +170,7 @@ value_to_partnum_xlats_1a = {
     ('180nH 2%',	'0805'): ('Coilcraft',	'AR336RAA181GPZ'),
     ('470nH 2%',   	'0805'): ('Coilcraft',	'AR336RAA471JPZ'),
     ('470nH',   	'0805'): ('Coilcraft',	'AR336RAA471JPZ'),
+    ('1uH',  'IND_XAL4020_COC'): ('Coilcraft',  'AE465PYA102MSZ'),
     ('1uH',  'IND_EPL2010_COC'): ('Coilcraft',	'AE338PZA102MPZ'),
     ('3.3uH','IND_EPL2010_COC'): ('Coilcraft',	'AE338PZA332MPZ'),
 
@@ -190,6 +192,7 @@ value_to_partnum_xlats_2 = {
     ('100pF',		'0402'): ('Murata',	'GCM1555C1H101JA16D'),
     ('1nF',		'0402'): ('Murata',	'GCM1555C1H102JA16D'),
     ('2.2nF',		'0603'): ('Murata',	'GCM1885C1H222JA16D'),
+    ('2.2nF',		'0603'): ('Murata',	'GCM1885C1H332JA16D'),
     ('4.7nF',		'0402'): ('Kyocera',	'04025C472J4T2A'),
     ('10nF',		'0402'): ('Murata',	'GCM155R71H103KA55D'),
     ('33nF',		'0402'): ('Murata',	'GCM155R71E333KA55D'),
@@ -232,6 +235,7 @@ value_to_partnum_xlats_2 = {
     ('280Ω',	'0402'): ('Panasonic',	'ERA-2AEB2800X'),
     ('330Ω',    '0402'): ('Wurth Electronik', '560112110231'),
     ('470Ω',	'0402'): ('Panasonic',	'ERA-2AED471X'),
+    ('549Ω 1%',	'0402'): ('Panasonic',	'ERJ-3EKF5490V'),
     ('1kΩ',	'0402'): ('Panasonic',	'ERA-2AED102X'),
     ('1.3kΩ',	'0402'): ('Panasonic',	'ERA-2AED132X'),
     ('2.2kΩ',   '0402'): ('Wurth Electronik', '560112110087'),

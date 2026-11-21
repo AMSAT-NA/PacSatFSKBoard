@@ -12,6 +12,9 @@ some point.
 
 # TODO
 
+Check that L2 doesn't heat up too much at load.  Replace it with a
+larger device with a lower DCR if so.
+
 Need to apply whatever ABF/RBF design the other teams come up with.
 
 Look at doing a full magnesium shield for the board.  This would
@@ -4589,3 +4592,12 @@ The way it was the voltage reference would be above the 3.3V line,
 most likely, violating TI's specs.  Having the reference at 3.0V means
 you loose a little range at the top, but that's generally not a big
 deal.
+
+Rework 3.3V, 5V, and SSPA\_VCC.  The inductors used were high value
+and didn't have a very low ESR.  Switch to better inductors for the
+3.3V and 5V inputs.  Also, the resistance of the MAX4995 parts is
+pretty high, around 130m ohm typical, 350m max.  Switch to a TPS25947
+on 3.3V and SSPA\_VCC which has Ron 28m ohm (45m max).  The TPS25947
+version on 3.3V works like the MAX4995, it will cycle power, though
+the cycle interval is a little lower.  The one on SSPA\_VCC latches
+off, so it will be disabled until the enable line cycles.
