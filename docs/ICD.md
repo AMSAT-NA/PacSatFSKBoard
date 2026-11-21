@@ -20,6 +20,9 @@ This document describes how the PacSat AFSK board interfaces with
 other boards and system components of a satellite.  It describes both
 hardware and software interfaces.
 
+Note that this document mentions "latch up".  This generally means
+latch up and/or back power (signal latch up).
+
 # System Description
 
 The figure below show the block diagram of the PacSatAFSK board:
@@ -384,10 +387,17 @@ the I2C lines.  See https://www.ti.com/lit/an/slva689/slva689.pdf for
 details on setting these resistors.  These can be modified or removed
 based upon what is required.
 
+These I2C lines do not have any latch up protection.  If the antenna
+board is off, it is possible that power can flow into the inputs of
+the I2C device on the other end, depending on the capabilities of the
+device.  Current is limited to about 6ma, so it's not a huge problem.
+You can increase the I2C pull ups if the bus can handle it to reduce
+that current.
+
 There are also two ADC controllers connected to this processor that
 have a separate connector, J10, for those outputs.  Another I2C from
 the ACP goes to this, and that I2C can optionally also go the PC104
-connector.
+connector.  The J10 lines to not have any short circuit protection.
 
 Some GPIO/ADC lines and an I2C bus also go the PC104 from the ACP.
 

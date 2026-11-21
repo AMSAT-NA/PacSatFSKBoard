@@ -4580,3 +4580,6 @@ of the regulator, not the output of the inductor, and that was wrong.
 
 Added a capacitor on the NRST line of the ACP and changed the VDD
 capacitors to be closer to TI's recommendation.
+
+Ran the fault and ILM lines from the antenna power supervisor to the
+TMS570 so it can monitor that part.

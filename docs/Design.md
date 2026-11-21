@@ -619,6 +619,9 @@ The enable for the antenna control power, ANT\_POWER\_EN, was changed
 from negative to positive logic for switching from a MOSFET to a power
 supervisor.
 
+The measurement and fault output of the antenna control power
+supervisor are run to ADC1IN[0] and ADC1IN[19] respectively.
+
 # IO Connections on the PacSat AFSK processor
 
 These are the pins on the TMS570 processor, where they go, what they
@@ -693,10 +696,10 @@ used as a GPIO.
 |57		|VCC					|						|  | |
 |58		|AD1IN[16] / AD2IN[0]	|\*						|  |Thermsistor near the processor |
 |59		|AD1IN[17] / AD2IN[01]	|						|  |Board Number |
-|60		|AD1IN[0]				|PC104\_ADC2			|  |ADC to PC104 H2-08|
+|60		|AD1IN[0]				|ANT\_POW\_ILM			|  |Power reading from the antenna power supervisor |
 |61		|AD1IN[07]				|PWR\_FLAG\_AX5043		|  |Power flag from the AX5043 current limiter |
 |62		|AD1IN[18] / AD2IN[02]	|						|  |External Control |
-|63		|AD1IN[19] / AD2IN[03]	|PC104\_ADC1			|  |ADC to PC104 H2-07 |
+|63		|AD1IN[19] / AD2IN[03]	|ANT\_POW\_FLT\_N		|  |Fault line from the antenna power supervisor |
 |64		|AD1IN[20] / AD2IN[04]	|VER\_BIT0				|  |Board version number bit 0 |
 |65		|AD1IN[21] / AD2IN[05]	|VER\_BIT1				|  |Board version number bit 1 |
 |66		|ADREFHI				|						|  | |
