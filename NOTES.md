@@ -4612,3 +4612,8 @@ removed if necessary.
 
 Pull down FEED\_WATCHDOG to keep it from oscillating when the CPU is
 not powered.
+
+Move back to the original oscillator (O 16,0-JT22CT-A-P-3,3-LF).  The
+one that was there was a clipped sine wave, which the clock buffer
+wouldn't handle.  As part of this, move to a single ferrite, two
+are not necessary.
