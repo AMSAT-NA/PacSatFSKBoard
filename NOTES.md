@@ -4609,3 +4609,6 @@ differ whether KELVIN\_GND needs to be left unconnected or tied to
 ground.  Best advice seems to be to connect it.  Past boards and other
 AMSAT designs left it open.  Add a 0 ohm resistor R222, but it can be
 removed if necessary.
+
+Pull down FEED\_WATCHDOG to keep it from oscillating when the CPU is
+not powered.
