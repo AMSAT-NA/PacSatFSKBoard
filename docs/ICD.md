@@ -447,10 +447,10 @@ externally control power on the board.
 
 If 3.3V is not supplied from the PC104 connector, then U4, R119, R120,
 and R137 must be installed and you should remove R111 and R142.  If
-3.3V is coming externally, then do the opposite.
-
-Note that the on-board 3.3V regulator is not capable of powering the
-antenna control power output if it draws more than an amp or so.
+3.3V is coming externally, then do the opposite.  Also, when powering
+3.3V from the on-board regulator, you should modify R149 to reduce the
+latch current.  The on-board 3.3V regulator is not capable of powering
+the antenna control power output if it draws more than an amp or so.
 
 ### VBAT
 

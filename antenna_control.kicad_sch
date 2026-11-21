@@ -2588,6 +2588,12 @@
 		(uuid "2576158e-98e2-40cc-8ed5-1bea9ac73a76")
 	)
 	(junction
+		(at 57.15 62.23)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4663d568-a22a-44ee-8070-477b28fd6067")
+	)
+	(junction
 		(at 137.16 137.16)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3341,7 +3347,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 62.23) (xy 63.5 62.23)
+			(xy 45.72 62.23) (xy 57.15 62.23)
 		)
 		(stroke
 			(width 0)
@@ -3991,6 +3997,16 @@
 	)
 	(wire
 		(pts
+			(xy 57.15 62.23) (xy 57.15 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e29b7dcf-e2b7-4930-8d93-6b4282ffe361")
+	)
+	(wire
+		(pts
 			(xy 124.46 62.23) (xy 137.16 62.23)
 		)
 		(stroke
@@ -4018,6 +4034,16 @@
 			(type default)
 		)
 		(uuid "e9ffe83c-2243-4633-9c2c-ce177ae1142d")
+	)
+	(wire
+		(pts
+			(xy 57.15 82.55) (xy 57.15 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed29c5dd-1c5e-415c-b310-98047dd36a13")
 	)
 	(wire
 		(pts
@@ -4139,6 +4165,16 @@
 		)
 		(uuid "fa255981-a8d1-406e-81fc-78dfaa9d12ba")
 	)
+	(wire
+		(pts
+			(xy 57.15 62.23) (xy 63.5 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fb6f3b57-27ca-4e9d-a3e7-8664dba3d894")
+	)
 	(label "I2CB_SCL"
 		(at 137.16 80.01 180)
 		(effects
@@ -4210,7 +4246,7 @@
 		(uuid "571adf90-08e4-4cbd-8a61-847e0c024914")
 	)
 	(label "ANT_NRST"
-		(at 55.88 62.23 0)
+		(at 45.72 62.23 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -4844,6 +4880,82 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 57.15 85.09 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "05775493-23b4-4576-9294-2cee0f86f0f3")
+		(property "Reference" "#PWR0390"
+			(at 57.15 91.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 57.277 89.4842 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 57.15 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 57.15 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 57.15 85.09 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "5c64d75f-8923-4fb3-99f3-c3b052da5b6c")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/75b01062-9747-4556-85bc-485f2c3c99d3"
+					(reference "#PWR0390")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "PACSAT_DEV_misc:CONN_02X05")
 		(at 185.42 124.46 0)
 		(unit 1)
@@ -5281,7 +5393,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10kΩ"
+		(property "Value" "47kΩ"
 			(at 65.278 79.756 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5788,6 +5900,86 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/75b01062-9747-4556-85bc-485f2c3c99d3"
 					(reference "#PWR0387")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 57.15 78.74 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "5ba3f6f7-7df9-4850-a2f1-5c79dd385bca")
+		(property "Reference" "C140"
+			(at 49.276 77.724 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1nF"
+			(at 49.276 80.264 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+			(at 58.1152 82.55 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 57.15 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 57.15 78.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a74b3fb0-84e6-491e-a2a0-929b491aa3ed")
+		)
+		(pin "2"
+			(uuid "c7445939-8e7a-4049-9bd5-090b41648803")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/75b01062-9747-4556-85bc-485f2c3c99d3"
+					(reference "C140")
 					(unit 1)
 				)
 			)
@@ -7983,7 +8175,7 @@
 		(dnp no)
 		(uuid "f45d3c18-0f66-4c6e-ab18-7aa7528ae213")
 		(property "Reference" "C139"
-			(at 76.2 146.05 90)
+			(at 69.088 143.764 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7992,8 +8184,8 @@
 				)
 			)
 		)
-		(property "Value" "1uF"
-			(at 76.2 140.97 90)
+		(property "Value" "10uF"
+			(at 75.438 143.256 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8002,7 +8194,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 73.3552 147.32 0)
 			(hide yes)
 			(show_name no)

@@ -4577,3 +4577,6 @@ Add a 1uF cap on the power supervisor.
 Add zero-ohm resistors so that 3.3V\_IN can be driven from the output
 of the 3.3V power circuit.  3.3V\_IN was being driven from the output
 of the regulator, not the output of the inductor, and that was wrong.
+
+Added a capacitor on the NRST line of the ACP and changed the VDD
+capacitors to be closer to TI's recommendation.
