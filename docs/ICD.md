@@ -1,4 +1,4 @@
-acSat AFSK Board Interface Control Document
+PacSat AFSK Board Interface Control Document
 ============================================
 
 Copyright Corey Minyard, 2026
@@ -126,7 +126,7 @@ CPU.
 
 Four temperature sensors are on the board, one by the CPU, one in the
 power supply, one by the clock circuitry, and one near the PA.  These
-are thermsistors that feed into A/D converters on the CPU.
+are thermistors that feed into A/D converters on the CPU.
 
 ## CPU
 
@@ -356,13 +356,13 @@ However, there are some caveats here:
   
 So with the configuration where both boards are powered, you probably
 aren't doing much better than an MTTF improvement of 1.2 or 1.3.  Both
-board are getting radiation aging at the same time, so the random
-failure rate of 1.5 is reduced.  The main aging component is probably
-the PA.  It has the most power usage and the most thermal cycling.  In
-this configuration the PA is not used on both boards at the same time,
-so it benefits from being a cold standby and radiation aging doesn't
-add as much there.  So it helps there.  Without that the MTTF
-improvement would be even smaller.
+boards are getting radiation aging at the same time, so the MTTF is
+reduced from the random only case.  The main aging component is
+probably the PA.  It has the most power usage and the most thermal
+cycling.  In this configuration the PA is not used on both boards at
+the same time, so it benefits from being a cold standby and radiation
+aging doesn't add as much there.  Without that the MTTF improvement
+would be even smaller.
 
 You could solve the most critical non-passive single points of
 failure:
@@ -383,10 +383,11 @@ failure:
 
 That leaves Q2 (the MOSFET driving the HW\_POWER\_OFF line on the
 other board).  If it fails as a short (like due to radiation aging) it
-would hold the other board in reset continuously.  But it's still a
-double fault, Q2 would have to fail on a non-working board.  It also
-leave a few propagated faults, if a CAN device or an analog switch
-fails, but those should be low probability.
+would hold the other board powered off continuously.  But it's still a
+double fault, Q2 would have to fail on a board that was not working or
+became non-functional to cause both boards to fail.  It also leaves a
+few propagated faults, like if a CAN device or an analog switch fails,
+but those should be low probability.
 
 You could solve much of the aging issue by keeping the other board as
 a cold standby.  Something like when board 1 comes up it turns off
@@ -400,13 +401,13 @@ off.
 
 This strategy would increase MTTF closer to 2, since a powered off
 part generally ages much slower due to radiation compared to a powered
-part.  Though this is part dependent.  It wouldn't be a clean take
-over since the MRAM contents wouldn't be synced, and some single
-events could still take out both boards.
+part, though this is part dependent.  It wouldn't be a clean takeover
+since the MRAM contents wouldn't be synced, and some single events
+could still take out both boards.
 
-It is possible a corrupted FLASH or RAM on aboard could put it into a
+It is possible a corrupted FLASH or RAM on a board could put it into a
 reboot loop that would keep powering off the other board.  FLASH is
-parity protects and MRAM is checksummed, so the probability of this is
+parity protected and MRAM is checksummed, so the probability of this is
 low.
 
 ### TX Switch
@@ -882,9 +883,9 @@ connected to ground through individual zero ohm resistors.
 It's possible to solder a cable directly to the holes and not use a
 connector.  This is a through-hole connector for that reason.
 
-These ADCs can be used for any purpose, thermsistors for temperature
+These ADCs can be used for any purpose, thermistors for temperature
 measurement, external voltage measurements, etc.  It is designed for
-small value thermsistors.  Other uses may require adjusting the high
+small value thermistors.  Other uses may require adjusting the high
 side resistances or the ground side resistors.  See the Design
 document (ADC section) for details.
 
@@ -1101,7 +1102,7 @@ should be staked after torquing with a low-outgassing epoxy, since
 flight fasteners need a locking feature and lock nuts are hard to find
 at M1.6.
 
-There is one part, thermsistor TH4, that is located under the heat
+There is one part, thermistor TH4, that is located under the heat
 sink.  It is there to best measure the heat, but be careful not to
 short it with the heat sink.  Using the given instructions should be
 sufficient.
