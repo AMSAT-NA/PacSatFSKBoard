@@ -4641,3 +4641,6 @@ correctly.
 Add an extra decoupling capacitor to the TX AX5043.  Since it's
 transmitting, it needs more decoupling.  Not so important on RX as the
 current doesn't change drastically.
+
+Add an option to add a high-frequency shunt later at the LNA output.
+It's DNP for now, but if there's instability it's easy to fix later.
