@@ -78,8 +78,11 @@ board.  These are:
   antenna even if this power is powered off), the switches on the
   dual-board control lines (so the other board can control and access
   this board even when this board is powered off), and backup power
-  for the RTC.  This is current limited to 200ma.
-  
+  for the RTC.  This is current limited to 50ma.
+
+* +5V - This is a switched line that powers the CAN bus transceivers
+  and a few other things.  It is current limited to 300ma.
+
 * +3.3VAL - Supplies power to the RF switches, which run on +3.3V and
   must be powered when the board is disabled.  It derives from +5VAL
   so is current limited by that.
@@ -98,13 +101,13 @@ board.  These are:
   these through a GPIO.  This is current limited to 200ma and derived
   from REG\_3.3V.
   
-* SPPA\_VCC - This is +5V to the PA.  This is off by default and the
+* SSPA\_VCC - This is +5V to the PA.  This is off by default and the
   CPU must enable it with a GPIO before it can transmit.  This is
-  current limited to 640ma and derived from +5Vext.
+  current limited to 810ma and derived from +5Vext.
   
 * LNA\_VCC - This is +5V to the LNA.  This is off by default and the
   CPU must enable it with a GPIO before it can receive.  This is
-  supplied from +5VAL and current limited to 200ma.  There is a
+  supplied from +5VAL and current limited to 100ma.  There is a
   resistor option to always have this enabled if +5VAL is supplied.
   
 * ANT\_3.3V - This powers the antenna control processor and the ADC
@@ -282,7 +285,7 @@ details.
 
 ## Dual Board Fault Tolerance
 
-The board, as described in the design document, can operation in a
+The board, as described in the design document, can operate in a
 dual-board fault tolerant configuration.  Only one board can transmit
 and receive at a time.  These signals and switches allow two boards to
 control each other and communicate so they can decide that one board
@@ -300,7 +303,7 @@ R91, tells the CPU which board it is.  Absence of R91 makes it board 1,
 presence makes it board 2.
 
 With R94 installed, the boards expect that an external control system
-will decide which board is active and which is stanby.  This external
+will decide which board is active and which is standby.  This external
 control system must decide which board is active and which is standby
 by driving the ACTIVE1\_N or ACTIVE2\_N lines.
 
@@ -327,14 +330,15 @@ changes to the RF switch section.  See below for details.
 ### Fault Tolerance Improvement of MTTF
 
 The main point of the fault tolerance is to increase the time before
-the operation of the boards fail.  I'm using MTTF (Mean Time To
-Failure) as opposed to MTBF (Mean Time Between Failure) because you
-can't replace the boards so MTTR (Mean Time To Repair) is infinite,
-and MTBF doesn't really apply.
+both boards fail.  I'm using MTTF (Mean Time To Failure) as opposed to
+MTBF (Mean Time Between Failure) because you can't replace the boards
+so MTTR (Mean Time To Repair) is infinite, and MTBF doesn't really
+apply.
 
 Unfortunately, the improvement is not as great as you might imagine.
-In the best case with two boards running at the same time you would
-get an MTTF improvement of 1.5.  However, there are some caveats here:
+In the best case (no radiation aging, random failures) with two boards
+running at the same time you would get an MTTF improvement of 1.5.
+However, there are some caveats here:
 
 * The dual board configuration still has a few non-passive single
   points of failure: The TX and RX switches and the active/standby
@@ -342,33 +346,39 @@ get an MTTF improvement of 1.5.  However, there are some caveats here:
   they still hurt the MTTF.  Of course, the satellite may have other
   single points of failure in the power supply and such.
   
-* If both boards are running, both board are getting the same
+* If both boards are running, both boards are getting the same
   radiation aging, at least on the processor, MRAMs, and power system,
   and a few other components that are always running.
   
-* Some single events can take out both boards.
+* Some single events can take out both boards.  This can be radiation
+  events, but also fault propagation through shared lines like I2C or
+  CAN.
   
-So with this configuration, you probably aren't doing much better than
-an MTTF improvement of 1.2 or 1.3.  The main aging component is
-probably the PA.  It has the most power usage and the most thermal
-cycling.  In this configuration the PA is not used on both boards at
-the same time.  So it helps there.  Without that the MTTF improvement
-would be even smaller.
+So with the configuration where both boards are powered, you probably
+aren't doing much better than an MTTF improvement of 1.2 or 1.3.  Both
+board are getting radiation aging at the same time, so the random
+failure rate of 1.5 is reduced.  The main aging component is probably
+the PA.  It has the most power usage and the most thermal cycling.  In
+this configuration the PA is not used on both boards at the same time,
+so it benefits from being a cold standby and radiation aging doesn't
+add as much there.  So it helps there.  Without that the MTTF
+improvement would be even smaller.
 
-You could solve the single points of failure:
+You could solve the non-passive single points of failure:
 
 * You can replace the active/standby switches with something hard
   wired, like wires where the chips are or a bunch of zero-ohm
   resistors.
 
 * You could replace the RF switches with a splitter/combiner.  On
-  transmit the splitter/combiner wouldn't be too bad, you would lose
-  an extra 0.5dB or so.  On receive you would lose 3.5 dB, which is
-  pretty bad.  But both boards could then receive at the same time.
+  transmit and receive the splitter/combiner looses 3dB plus insertion
+  loss (0.5 to 1db usually) or so.  So it's pretty bad.  But both
+  boards could then transmit and receive at the same time.
 
 * You could have separate antennas for both boards.  This would really
   be best; you could eliminate the switches and the small loss from
   those and both boards could transmit and receive at the same time.
+  Plus a single failed antenna deployment would not fail the mission.
 
 You could solve much of the aging issue by keeping the other board as
 a cold standby.  Something like when board 1 comes up it turns off
@@ -378,11 +388,11 @@ board 1 is active.  You would want to power up the other board
 periodically to test it, of course.  And you would need ground
 commands to tell board 1 to let board 2 take over.
 
-This strategy would increase MTTF by close to 2, since a powered off
-part ages about 10 times slower due to radiation compared to a powered
-part.  It wouldn't be a clean take over since the MRAM contents
-wouldn't be synced, and some single events could still take out both
-boards.
+This strategy would increase MTTF closer to 2, since a powered off
+part generally ages much slower due to radiation compared to a powered
+part.  Though this is part dependent.  It wouldn't be a clean take
+over since the MRAM contents wouldn't be synced, and some single
+events could still take out both boards.
 
 ### TX Switch
 
