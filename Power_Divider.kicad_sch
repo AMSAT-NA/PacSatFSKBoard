@@ -6223,7 +6223,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "6.5pF ±.1"
+		(property "Value" "6.5pF ±0.1"
 			(at 146.05 153.6699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6613,7 +6613,7 @@
 				)
 			)
 		)
-		(property "Value" "6.5pF ±.1"
+		(property "Value" "6.5pF ±0.1"
 			(at 267.97 138.43 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8327,7 +8327,7 @@
 				)
 			)
 		)
-		(property "Value" "1pF ±.05"
+		(property "Value" "1pF ±0.05"
 			(at 86.36 129.54 90)
 			(show_name no)
 			(do_not_autoplace no)

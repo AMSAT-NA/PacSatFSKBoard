@@ -4629,3 +4629,8 @@ Fix the sizes and positions of the heat sink holes so the screws will
 fit and the washers won't be going outside of the rings.  Move the
 description of the heat sink to the ICD and update it with the new
 sizes.
+
+## 2026-11-21
+
+Review BOM to validate everything is correct.  Add the diplexer
+components to the BOM.

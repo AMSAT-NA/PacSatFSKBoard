@@ -7446,7 +7446,7 @@
 				)
 			)
 		)
-		(property "Value" "5.4pF ±.05 30V"
+		(property "Value" "5.4pF ±0.05 30V"
 			(at 286.512 169.926 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10911,7 +10911,7 @@
 				)
 			)
 		)
-		(property "Value" "0.6pF ±.05 30V"
+		(property "Value" "0.6pF ±0.05 30V"
 			(at 255.524 156.464 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12490,7 +12490,7 @@
 				)
 			)
 		)
-		(property "Value" "2.0pF ±.05 30V"
+		(property "Value" "2.0pF ±0.05 30V"
 			(at 274.574 156.464 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12720,7 +12720,7 @@
 				)
 			)
 		)
-		(property "Value" "6.4pF ±.1 30V"
+		(property "Value" "6.4pF ±0.1 30V"
 			(at 248.412 169.926 90)
 			(show_name no)
 			(do_not_autoplace no)

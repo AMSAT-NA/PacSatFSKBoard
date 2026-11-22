@@ -3750,8 +3750,8 @@
 				)
 			)
 		)
-		(property "Value" "4.3pF 1%"
-			(at 213.868 128.524 90)
+		(property "Value" "4.3pF ±0.05"
+			(at 211.328 128.27 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3903,8 +3903,8 @@
 				)
 			)
 		)
-		(property "Value" "4.3pF 1%"
-			(at 214.376 143.764 90)
+		(property "Value" "4.3pF ±0.05"
+			(at 211.582 144.018 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4438,7 +4438,7 @@
 				)
 			)
 		)
-		(property "Value" "5.6pF ±.1"
+		(property "Value" "5.6pF ±0.1"
 			(at 194.31 147.32 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4669,7 +4669,7 @@
 				)
 			)
 		)
-		(property "Value" "5.1pF ±.1"
+		(property "Value" "5.1pF ±0.1"
 			(at 173.482 143.764 90)
 			(show_name no)
 			(do_not_autoplace no)

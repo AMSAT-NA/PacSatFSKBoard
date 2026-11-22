@@ -125,12 +125,14 @@ def xlat_footprint(s):
 # Mostly Coilcraft parts.  All are automotive certified and have
 # somewhat higher Q values than the Murata parts.
 value_to_partnum_xlats_1 = {
-    ('1nH',     	'0402'): ('Coilcraft',	'0402DC-1N0XJRW '),
+    ('1nH',     	'0402'): ('Coilcraft',	'0402DC-1N0XJRW'),
     ('3.0nH 2%',	'0402'): ('Coilcraft',	'0402DC-3N0XGRW'),
-    ('6.2nH 2%',        '0402'): ('Coilcraft',  '0402DC-6N4XGRW'),
+    ('6.2nH 2%',        '0402'): ('Coilcraft',  '0402DC-6N2XGRW'),
+    ('12nH 2%', 	'0402'): ('Coilcraft',	'0402DC-12NXGRW'),
     ('16nH 2%', 	'0402'): ('Coilcraft',	'0402DC-16NXGRW'),
     ('20nH 2%', 	'0402'): ('Coilcraft',	'0402DC-20NXGRW'),
     ('27nH 2%', 	'0603'): ('Coilcraft',	'0603DC-27NXGRW'),
+    ('39nH 2%', 	'0603'): ('Coilcraft',	'0603DC-39NXGRW'),
     ('43nH 2%', 	'0603'): ('Coilcraft',	'0603DC-43NXGRW'),
     ('18nH 2%', 	'0603'): ('Coilcraft',	'0603DC-18NXGRW'),
     ('68nH',    	'0603'): ('Coilcraft',	'0603DC-68NXJRW'),
@@ -139,6 +141,7 @@ value_to_partnum_xlats_1 = {
     ('47nH 2%', 	'0805'): ('Coilcraft',	'0805HP-47NXGRC'),
     ('47nH I>1A',       '0805'): ('Coilcraft',	'0805HP-47NXGRC'),
     ('91nH 2%', 	'0805'): ('Coilcraft',	'0805CS-910XGRC'),
+    ('100nH 2%', 	'0805'): ('Coilcraft',	'0805CS-101XGRC'),
     ('180nH 2%',	'0805'): ('Coilcraft',	'0805CS-181XGRC'),
     ('470nH 2%',        '0805'): ('Coilcraft',  '0805CS-471XGRC'),
     ('470nH',   	'0805'): ('Coilcraft',	'0805CS-471XGRC'),
@@ -153,22 +156,26 @@ value_to_partnum_xlats_1 = {
 
 # Space rated inductors and other parts
 value_to_partnum_xlats_1a = {
+
     ('1nH',     	'0402'): ('Coilcraft',	'AR235RAG1N0JPZ'),
     ('3.0nH 2%',	'0402'): ('Coilcraft',	'AR235RAQ3N0GPZ'),
     ('6.2nH 2%',        '0402'): ('Coilcraft',  'AR235RAG6N2GPZ'),
+    ('12nH 2%', 	'0402'): ('Coilcraft',	'AR235RAG12NGPZ'),
     ('16nH 2%', 	'0402'): ('Coilcraft',	'AR235RAG16NGPZ'),
+    ('18nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG18NGPZ'),
     ('20nH 2%', 	'0402'): ('Coilcraft',	'AR235RAG20NGPZ'),
-    ('18nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG18NGPZ '),
     ('27nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG27NGPZ'),
+    ('39nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG39NGPZ'),
     ('43nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG43NGPZ'),
-    ('68nH',    	'0603'): ('Coilcraft',	'AR312RAG68NJPZ '),
-    ('75nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG75NGPZ '),
-    ('100nH',   	'0603'): ('Coilcraft',	'AR312RAGR10JPZ '),
+    ('68nH',    	'0603'): ('Coilcraft',	'AR312RAG68NJPZ'),
+    ('75nH 2%', 	'0603'): ('Coilcraft',	'AR312RAG75NGPZ'),
+    ('100nH 2%', 	'0805'): ('Coilcraft',	'AR336RAA101GPZ'),
+    ('100nH',   	'0603'): ('Coilcraft',	'AR312RAGR10JPZ'),
     ('47nH 2%', 	'0805'): ('Coilcraft',	'AR336RAA470GPZ'),
     ('47nH I>1A',       '0805'): ('Coilcraft',	'AR336RAA470GPZ'),
     ('91nH 2%', 	'0805'): ('Coilcraft',	'AR336RAA910GPZ'),
     ('180nH 2%',	'0805'): ('Coilcraft',	'AR336RAA181GPZ'),
-    ('470nH 2%',   	'0805'): ('Coilcraft',	'AR336RAA471JPZ'),
+    ('470nH 2%',   	'0805'): ('Coilcraft',	'AR336RAA471GPZ'),
     ('470nH',   	'0805'): ('Coilcraft',	'AR336RAA471JPZ'),
     ('1uH',  'IND_XAL4020_COC'): ('Coilcraft',  'AE465PYA102MSZ'),
     ('1uH',  'IND_EPL2010_COC'): ('Coilcraft',	'AE338PZA102MPZ'),
@@ -178,7 +185,7 @@ value_to_partnum_xlats_1a = {
     ('1kΩ@100MHz',	'0603'): ('Vanguard',	'RFB0603-102KS-4'),
     ('1kΩ@100MHz',	'0805'): ('Vanguard',	'RFB0805-102KS-4'),
 
-    ('SN74LVC1G08B-EP', 'SOT-23-5'): ('SN54SC1G08-SEP', 'SOT-23-5'),
+    ('SN74LVC1G08B-EP', 'SOT-23-5'): ('TI', 'SN54SC1G08-SEP'),
 }
 
 # General passive parts.
@@ -206,21 +213,25 @@ value_to_partnum_xlats_2 = {
     ('22uF 16V',	'1206'): ('Murata',	'GCM31CC71C226ME36K'),
     ('47uF 10V',	'1206'): ('Murata',	'GRT31CR61A476KE13L'),
 
-    ('0.6pF ±.05 30V',	'0402'): ('Murata',	'GCM1555C1HR60WA16D'),
-    ('1pF ±.05',  	'0402'): ('Murata',	'GCQ1555C1H1R0WB01D'),
-    ('2.0pF ±.05 30V',	'0402'): ('Murata',	'GCQ1555C1H2R0WB01D'),
-    ('4.3pF 1%',	'0402'): ('Murata',	'GCQ1555C1H4R3BB01D'),
-    ('5.1pF ±.1',	'0402'): ('Murata',	'GCQ1555C1H5R1BB01D'),
-    ('5.4pF ±.05 30V',	'0402'): ('Murata',	'GCQ1555C1H5R4BB01D'),
-    ('5.6pF ±.1',	'0402'): ('Murata',	'GCQ1555C1H5R6WB01D'),
-    ('6.4pF ±.1 30V',	'0402'): ('Murata',	'GCQ1555C1H6R4BB01D'),
-    ('6.5pF ±.1',	'0402'): ('Murata',	'GCQ1555C1H6R5BB01D'),
+    ('0.6pF ±0.05 30V',	'0402'): ('Murata',	'GCM1555C1HR60WA16D'),
+    ('1pF ±0.05',  	'0402'): ('Murata',	'GCQ1555C1H1R0WB01D'),
+    ('2.0pF ±0.05 30V',	'0402'): ('Murata',	'GCQ1555C1H2R0WB01D'),
+    ('3.4pF ±0.05',	'0402'): ('Murata',	'GCQ1555C1H3R4WB01D'),
+    ('4.3pF ±0.05',	'0402'): ('Murata',	'GCQ1555C1H4R3WB01D'),
+    ('5.1pF ±0.1',	'0402'): ('Murata',	'GCQ1555C1H5R1BB01D'),
+    ('5.4pF ±0.05 30V',	'0402'): ('Murata',	'GCQ1555C1H5R4WB01D'),
+
+    # Really  ±0.05
+    ('5.6pF ±0.1',	'0402'): ('Murata',	'GCQ1555C1H5R6WB01D'),
+    ('6.4pF ±0.1 30V',	'0402'): ('Murata',	'GCQ1555C1H6R4BB01D'),
+    ('6.5pF ±0.1',	'0402'): ('Murata',	'GCQ1555C1H6R5BB01D'),
     ('11pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H110FB01D'),
     ('11pF 1% 30V', 	'0402'): ('Murata',	'GCQ1555C1H110FB01D'),
     ('12pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H120FB01D'),
     ('15pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H150FB01D'),
     ('15pF 1% 30V', 	'0402'): ('Murata',	'GCQ1555C1H150FB01D'),
     ('22pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H220FB01D'),
+    ('27pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H270FB01D'),
     ('36pF 1%', 	'0402'): ('Murata',	'GRT1555C1H360FA02D'),
     ('68pF 1%', 	'0402'): ('Murata',	'GCM1555C1H680FA16D'),
 
@@ -251,7 +262,7 @@ value_to_partnum_xlats_2 = {
     ('330kΩ',	'0402'): ('Wurth Electronik', '560112110088'),
     ('1MΩ',	'0402'): ('Panasonic',	'ERJ-U02J105X'),
 
-    ('0Ω',	'0603'): ('Panasonic',	'AC0603FR-070RL'),
+    ('0Ω',	'0603'): ('Stackpole Electronics Inc', 'CSFA0603ZT0R00'),
     ('2.4kΩ',	'0603'): ('Wurth Electronik',	'560112116061'),
     ('3kΩ',	'0603'): ('Panasonic',	'ERJ-UP3F3001V'),
 
@@ -263,11 +274,11 @@ value_to_partnum_xlats_2 = {
     ('45.3kΩ 1%',	'0402'): ('Panasonic', 'ERJ-2RKF4532X'),
     ('47kΩ 1%', 	'0402'): ('Panasonic', 'ERA-2AED473X'),
     ('68kΩ 1%', 	'0402'): ('Panasonic', 'ERA-2AED683X'),
-    ('95.3kΩ 1%',       '0402'): ('Panasonic', 'ERJ-3EKF9532V'),
+    ('95.3kΩ 1%',       '0402'): ('Panasonic', 'ERJ-2RKF9532X'),
     ('100kΩ 1%',	'0402'): ('Panasonic', 'ERJ-2RKF1003X'),
     ('143kΩ 1%',	'0402'): ('Panasonic', 'ERJ-2RKF1433X'),
-    ('287kΩ 1%',        '0402'): ('Panasonic', 'ERJ-3EKF2873V'),
-    ('576kΩ 1%',        '0402'): ('Panasonic', 'ERJ-3EKF5763V'),
+    ('287kΩ 1%',        '0402'): ('Panasonic', 'ERJ-2RKF2873X'),
+    ('576kΩ 1%',        '0402'): ('Panasonic', 'ERJ-2RKF5763X'),
 
     # Zener diode
     ('1.8V',	'D_SOD-523'): ('onsemi',	'MM5Z4678T5G'),
