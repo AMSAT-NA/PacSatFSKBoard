@@ -4637,3 +4637,7 @@ components to the BOM.
 
 The clock divider for all the AX5043s was backwards.  Wire it
 correctly.
+
+Add an extra decoupling capacitor to the TX AX5043.  Since it's
+transmitting, it needs more decoupling.  Not so important on RX as the
+current doesn't change drastically.
