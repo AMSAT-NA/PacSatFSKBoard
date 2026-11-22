@@ -10223,7 +10223,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Loop_D2.60mm_Drill1.6mm_Beaded"
+		(property "Footprint" "PacSatDev_misc:TestPoint_Loop_D4.00mm_Drill1.85mm_Beaded"
 			(at 320.04 27.94 0)
 			(hide yes)
 			(show_name no)
@@ -10380,7 +10380,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Loop_D2.60mm_Drill1.6mm_Beaded"
+		(property "Footprint" "PacSatDev_misc:TestPoint_Loop_D4.00mm_Drill1.85mm_Beaded"
 			(at 309.88 38.1 0)
 			(hide yes)
 			(show_name no)
@@ -11630,7 +11630,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Loop_D2.60mm_Drill1.6mm_Beaded"
+		(property "Footprint" "PacSatDev_misc:TestPoint_Loop_D4.00mm_Drill1.85mm_Beaded"
 			(at 309.88 27.94 0)
 			(hide yes)
 			(show_name no)
@@ -13594,7 +13594,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Loop_D2.60mm_Drill1.6mm_Beaded"
+		(property "Footprint" "PacSatDev_misc:TestPoint_Loop_D4.00mm_Drill1.85mm_Beaded"
 			(at 320.04 38.1 0)
 			(hide yes)
 			(show_name no)

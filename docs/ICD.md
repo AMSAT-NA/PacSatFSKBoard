@@ -324,6 +324,66 @@ Board 2 - If another board is present and R91 is present.
 Boards by default are board 1.  Using a board as board 2 requires some
 changes to the RF switch section.  See below for details.
 
+### Fault Tolerance Improvement of MTTF
+
+The main point of the fault tolerance is to increase the time before
+the operation of the boards fail.  I'm using MTTF (Mean Time To
+Failure) as opposed to MTBF (Mean Time Between Failure) because you
+can't replace the boards so MTTR (Mean Time To Repair) is infinite,
+and MTBF doesn't really apply.
+
+Unfortunately, the improvement is not as great as you might imagine.
+In the best case with two boards running at the same time you would
+get an MTTF improvement of 1.5.  However, there are some caveats here:
+
+* The dual board configuration still has a few non-passive single
+  points of failure: The TX and RX switches and the active/standby
+  switches.  These should be higher reliability than other parts, but
+  they still hurt the MTTF.  Of course, the satellite may have other
+  single points of failure in the power supply and such.
+  
+* If both boards are running, both board are getting the same
+  radiation aging, at least on the processor, MRAMs, and power system,
+  and a few other components that are always running.
+  
+* Some single events can take out both boards.
+  
+So with this configuration, you probably aren't doing much better than
+an MTTF improvement of 1.2 or 1.3.  The main aging component is
+probably the PA.  It has the most power usage and the most thermal
+cycling.  In this configuration the PA is not used on both boards at
+the same time.  So it helps there.  Without that the MTTF improvement
+would be even smaller.
+
+You could solve the single points of failure:
+
+* You can replace the active/standby switches with something hard
+  wired, like wires where the chips are or a bunch of zero-ohm
+  resistors.
+
+* You could replace the RF switches with a splitter/combiner.  On
+  transmit the splitter/combiner wouldn't be too bad, you would lose
+  an extra 0.5dB or so.  On receive you would lose 3.5 dB, which is
+  pretty bad.  But both boards could then receive at the same time.
+
+* You could have separate antennas for both boards.  This would really
+  be best; you could eliminate the switches and the small loss from
+  those and both boards could transmit and receive at the same time.
+
+You could solve much of the aging issue by keeping the other board as
+a cold standby.  Something like when board 1 comes up it turns off
+board 2.  When board 2 comes up it listens for a while for board 1,
+trying to message it over CAN, and it won't take over if it finds
+board 1 is active.  You would want to power up the other board
+periodically to test it, of course.  And you would need ground
+commands to tell board 1 to let board 2 take over.
+
+This strategy would increase MTTF by close to 2, since a powered off
+part ages about 10 times slower due to radiation compared to a powered
+part.  It wouldn't be a clean take over since the MRAM contents
+wouldn't be synced, and some single events could still take out both
+boards.
+
 ### TX Switch
 
 The TX switch switches the TX antenna between board1 and board2.  It
@@ -931,3 +991,69 @@ done.  See "Board Configuration" in the design document
 # CAN Bus Messages
 
 TBD
+
+# Heat Sink for the Power Amplifier
+
+The power amplifier has heat sink (or spreader) mounting on the bottom
+of the board.  The PA is designed to transfer the heat that way,
+according to the data sheet.
+
+There is space and mounting holes for a 25.8mm by 11.6mm heat sink.
+Mounting holes are M1.6 sized PTH centered 2.25mm from each edge.  The
+idea is to have a flat copper plate of that size.
+
+The mounting hole centers are 21.3mm apart horizontally and 7.1mm
+apart vertically.
+
+Near the center of the plate mount a small block of copper as a
+pedestal to extend down from the plate to the circuit board under the
+PA.  The PA has an open copper area for this.  This area is 3.5mm x
+3.5mm.  It's right edge is located 13.835mm from the right side of the
+plate and the left edge is located 8.465mm from the left side of the
+plate.  The top of the area is 3.98mm from the top of the plate and
+4.12mm from the bottom of the plate.
+
+The copper plate will need standoffs or bosses that are slightly
+higher than the pedestal just mentioned so that there is no stress put
+on the board.  A low-outgassing thermal pad or thermal epoxy can fill
+up the space between the pedestal and the PA base.  It would be best
+to machine all of this out of a single piece of copper.  If that's not
+possible the pieces can be soldered together.
+
+The copper plate can be attached with a copper braid, foil, or a
+graphite strap to the edge of the spacecraft to transfer heat there
+for radiation.
+
+This heat sink is definitely required.  There is already a large
+ground area on the bottom and on all layers around the PA for cooling,
+but testing has shown it is not enough with air, in a vacuum there is
+no way.  Testing has shown that heat moves out of the PA through the
+vias faster than the PA generates it, so that is good.  At worst case
+it needs to dissipate around 2W of heat. (The PA is powered but no
+signal is transmitted.  When a signal is being transmitted at full
+power, most of the power is being sent and only around 0.5W is being
+dissipated by the PA.  It may also be possible to reduce the quiescent
+current drawn by the PA by modifying the Iref current using the DAC on
+a Version 3 or later board.
+
+It would also be possible to connect the top of the chip via some type
+of riser to the shield to provide additional radiation surfaces for
+the PA.  Experience has shown that most of the heat goes to the bottom
+of the chip and not to the top, but it could help a little.
+
+On Amazon you can search for "copper flat bar" to find suitable
+material.  The PA is 0.85mm tall, the shield is 2.54mm, leaving 1.69mm
+(.067") of space between the shield and the PA.  A 1/16" (.0625) will
+probably work for a connection from the PA to the shield, though it
+might be a tad too thick.  It could be sanded a bit.
+
+You would probably want a 1/8" thick bar for the heat sink on the
+bottom.  You could use a 2.75mm square piece of it to place on the PA
+pad then put a 12mm x 26mm (.47" x 1") piece on top of that, drill 2mm
+holes, and screw it down.  There's a little bit of slack on the large
+piece dimensions, 1/2" width would be fine, adding a bit to the length
+would be ok, too.
+
+The board is ~1.6mm thick, 1/4" is 6.32mm, so that's 7.92mm.  You can
+find M1.6 x 10mm stainless steel screws on Amazon along with nuts that
+should work to fasten down the heat sink.

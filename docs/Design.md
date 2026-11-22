@@ -306,60 +306,6 @@ main power bus has a current monitor on it.  This is connected to two
 of the extra ADCs in the ACP section, so you can measure the current
 there.  See the chip documents for details.
 
-# Heat Sink for the Power Amplifier
-
-The power amplifier has heat sink (or spreader) mounting on the bottom
-of the board.  The PA is designed to transfer the heat that way,
-according to the data sheet.
-
-There is space and mounting holes for a 26mm by 12mm heat sink.
-Mounting holes are M1.6 sized PTH centered 2.25mm from each edge.
-The idea is to have a flat copper plate of that size.
-
-The mounting hole centers are 21.5mm apart horizontally and 7.5mm
-apart vertically.
-
-Near the center of the plate mount a small block of copper to extend
-down from the plate to the circuit board under the PA.  The PA has an
-open copper area for this.  This area is 3.5mm x 3.5mm.  It's right
-edge is located 13.60mm from the right side of the plate and the left
-edge is located 8.7mm from the left side of the plate.  The top of the
-area is 4.35mm from the top of the plate and 4.15mm from the bottom of
-the plate.
-
-It is unknown if the heat sink is required or what duty cycle on the
-PA can be supported with and without it.  There is already a large
-ground area on the bottom of the board for cooling.  But the provision
-is there.  At worst case it needs to dissipate around 2W of heat. (The
-PA is powered but no signal is transmitted.  When a signal is being
-transmitted at full power, most of the power is being sent and only
-around 0.5W is being dissipated by the PA.  It may also be possible to
-reduce the quiescent current drawn by the PA by modifying the Iref
-current using the DAC on a Version 3 or later board.
-
-It would also be possible to connect the top of the chip via some type
-of riser to the shield to provide additional radiation surfaces for
-the PA.  Experience has shown that most of the heat goes to the bottom
-of the chip and not to the top, but it could help a little.
-
-On Amazon you can search for "copper flat bar" to find suitable
-material.  The PA is 0.85mm tall, the shield is 2.54mm, leaving 1.69mm
-(.067") of space between the shield and the PA.  A 1/16" (.0625) will
-probably work for a connection from the PA to the shield, though it
-might be a tad too thick.  It could be sanded a bit.
-
-You would probably want a 1/8" thick bar for the heat sink on the
-bottom.  You could use a 2.75mm square piece of it to place on the PA
-pad then put a 12mm x 26mm (.47" x 1") piece on top of that, drill 2mm
-holes, and screw it down.  There's a little bit of slack on the large
-piece dimensions, 1/2" width would be fine, adding a bit to the length
-would be ok, too.
-
-The board is ~1.6mm thick, 1/4" is 6.32mm, so that's 7.92mm.  You can
-find M1.6 x 10mm stainless steel screws on Amazon along with nuts that
-should work to fasten down the heat sink.  You would also need a space
-grade thermal adhesive or paste.
-
 # RF Connections
 
 See the ICD document.

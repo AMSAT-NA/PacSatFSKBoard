@@ -4624,3 +4624,8 @@ version, but the VIO version is required.
 Added notes in the schematics and ICD about the CAN bus termination.
 
 Add decoupling capacitors to the TMUX2821 parts.
+
+Fix the sizes and positions of the heat sink holes so the screws will
+fit and the washers won't be going outside of the rings.  Move the
+description of the heat sink to the ICD and update it with the new
+sizes.
