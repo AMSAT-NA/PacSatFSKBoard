@@ -213,7 +213,7 @@ this.
 The Low Pass Filter on the antenna input keeps 440MHz from the
 transmitter out of the receiver to avoid desensing during transmit so
 you can transmit and receive at the same time.  It has a relatively
-low loss (<1dB) to keep the sensitivity of the receiver high.  It's
+low loss (<1dB) to keep the sensitivity of the receiver high.  Its
 cutoff is 176MHz.
 
 ### LNA
@@ -270,7 +270,7 @@ installed.
 ### LPF (TX)
 
 The matching circuit and LPF on the output of the PA reduces output
-noise.  It's 3dB cutoff is 460MHz.  It introduces ~1dB of loss, giving
+noise.  Its 3dB cutoff is 460MHz.  It introduces ~1dB of loss, giving
 the maximum 32dBm power output.
 
 ### Power Measurement
@@ -372,8 +372,8 @@ failure:
   resistors.
 
 * You could replace the RF switches with a splitter/combiner.  On
-  transmit and receive the splitter/combiner looses 3dB plus insertion
-  loss (0.5 to 1db usually) or so.  So it's pretty bad.  But both
+  transmit and receive the splitter/combiner loses 3dB plus insertion
+  loss (0.5 to 1dB usually) or so.  So it's pretty bad.  But both
   boards could then transmit and receive at the same time.
 
 * You could have separate antennas for both boards.  This would really
@@ -407,7 +407,7 @@ could still take out both boards.
 
 It is possible a corrupted FLASH or RAM on a board could put it into a
 reboot loop that would keep powering off the other board.  FLASH is
-parity protected and MRAM is checksummed, so the probability of this is
+ECC protected and MRAM is checksummed, so the probability of this is
 low.
 
 ### TX Switch
