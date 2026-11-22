@@ -86,6 +86,8 @@ Add the following notes:
 * U5 has the option for a space-rated part.  It's a critical gate
   where the only latch up protection is in the external power supply.
   If you are paranoid, pick the space-rated part.
+  
+* Hole sizes do not include plating.
 
 # Setting up the USB chip
 

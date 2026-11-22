@@ -1011,7 +1011,7 @@ apart vertically.
 Near the center of the plate mount a small block of copper as a
 pedestal to extend down from the plate to the circuit board under the
 PA.  The PA has an open copper area for this.  This area is 3.5mm x
-3.5mm.  It's right edge is located 13.835mm from the right side of the
+3.5mm.  Its right edge is located 13.835mm from the right side of the
 plate and the left edge is located 8.465mm from the left side of the
 plate.  The top of the area is 3.98mm from the top of the plate and
 4.12mm from the bottom of the plate.
@@ -1023,9 +1023,8 @@ up the space between the pedestal and the PA base.  It would be best
 to machine all of this out of a single piece of copper.  If that's not
 possible the pieces can be soldered together.
 
-The copper plate can be attached with a copper braid, foil, or a
-graphite strap to the edge of the spacecraft to transfer heat there
-for radiation.
+The copper plate can be attached with a copper braid or foil to the
+edge of the spacecraft to transfer heat there for radiation.
 
 This heat sink is definitely required.  There is already a large
 ground area on the bottom and on all layers around the PA for cooling,
@@ -1051,19 +1050,24 @@ probably work for a connection from the PA to the shield, though it
 might be a tad too thick.  It could be sanded a bit, but you want
 to use thermal epoxy or a thermal pad just like on the bottom.
 
-You would probably want a 1/8" (3.178mm) thick bar for the heat sink
+You would probably want a 1/8" (3.175mm) thick bar for the heat sink
 on the bottom and 1/8" for the 3.5mm x 3.5mm pedestal.  You will need
 the standoffs or bosses slightly taller, 3.3mm, to not put any
 pressure on the pad of the PA.  Then the heat sink. 11.6mm x 25.8mm,
 with 2mm holes for the screws.  Note the size of the heat sink is a
 minimum size, it can be larger as long as it doesn't interfere with
-anything else.
+anything else.  Bar stock tolerance is probably around 0.1mm, so you
+might need to adjust things a bit.  Milling a custom design would be
+better for heat transfer and for tolerances.
 
-The board is ~1.6mm thick, you have 3.178mm for the plate, 3.3mm for
-the standoff, and 1.3mm for each top and bottom washer, and 1.3mm for
+The board is ~1.6mm thick, you have 3.175mm for the plate, 3.3mm for
+the standoff, and 0.3mm for each top and bottom washer, and 1.3mm for
 the nut.  That totals to about 10mm, but you want a little slack.  You
 can find M1.6 x 12mm stainless steel screws on Amazon along with nuts
-and washers that should work to fasten down the heat sink.
+and washers that should work to fasten down the heat sink.  Nuts
+should be staked after torquing with a low-outgassing epoxy, since
+flight fasteners need a locking feature and lock nuts are hard to find
+at M1.6.
 
 There is one part, thermsistor TH4, that is located under the heat
 sink.  It is there to best measure the heat, but be careful not to
