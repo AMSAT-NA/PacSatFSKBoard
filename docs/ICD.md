@@ -1,4 +1,4 @@
-PacSat AFSK Board Interface Control Document
+acSat AFSK Board Interface Control Document
 ============================================
 
 Copyright Corey Minyard, 2026
@@ -107,8 +107,8 @@ board.  These are:
   
 * LNA\_VCC - This is +5V to the LNA.  This is off by default and the
   CPU must enable it with a GPIO before it can receive.  This is
-  supplied from +5VAL and current limited to 100ma.  There is a
-  resistor option to always have this enabled if +5VAL is supplied.
+  supplied from +5Vext and current limited to 100ma.  There is a
+  resistor option to always have this enabled.
   
 * ANT\_3.3V - This powers the antenna control processor and the ADC
   devices it controls.  It is on a power switch hooked to +3.3V and
@@ -364,7 +364,8 @@ so it benefits from being a cold standby and radiation aging doesn't
 add as much there.  So it helps there.  Without that the MTTF
 improvement would be even smaller.
 
-You could solve the non-passive single points of failure:
+You could solve the most critical non-passive single points of
+failure:
 
 * You can replace the active/standby switches with something hard
   wired, like wires where the chips are or a bunch of zero-ohm
@@ -380,19 +381,33 @@ You could solve the non-passive single points of failure:
   those and both boards could transmit and receive at the same time.
   Plus a single failed antenna deployment would not fail the mission.
 
+That leaves Q2 (the MOSFET driving the HW\_POWER\_OFF line on the
+other board).  If it fails as a short (like due to radiation aging) it
+would hold the other board in reset continuously.  But it's still a
+double fault, Q2 would have to fail on a non-working board.  It also
+leave a few propagated faults, if a CAN device or an analog switch
+fails, but those should be low probability.
+
 You could solve much of the aging issue by keeping the other board as
 a cold standby.  Something like when board 1 comes up it turns off
 board 2.  When board 2 comes up it listens for a while for board 1,
 trying to message it over CAN, and it won't take over if it finds
 board 1 is active.  You would want to power up the other board
 periodically to test it, of course.  And you would need ground
-commands to tell board 1 to let board 2 take over.
+commands to tell board 1 to let board 2 take over.  You do want
+multiple ways to tell if the other board has failed before powering it
+off.
 
 This strategy would increase MTTF closer to 2, since a powered off
 part generally ages much slower due to radiation compared to a powered
 part.  Though this is part dependent.  It wouldn't be a clean take
 over since the MRAM contents wouldn't be synced, and some single
 events could still take out both boards.
+
+It is possible a corrupted FLASH or RAM on aboard could put it into a
+reboot loop that would keep powering off the other board.  FLASH is
+parity protects and MRAM is checksummed, so the probability of this is
+low.
 
 ### TX Switch
 
