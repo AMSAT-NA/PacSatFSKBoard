@@ -149,6 +149,11 @@ The CAN bus devices are only capable of CAN 2.0A and CAN 2.0B,
 generally they are used with CAN2.0B for the 29-bit address.  They
 cannot do CAN-FD, and are thus limited to 8-byte data messages.
 
+The CAN bus terminations are on the board by default; it is expected
+this board will be on the end of the bus.  If that's not the case, the
+ends of the bus will need terminations and the termination resistors
+(R50, R51, R89, R90) will need to be removed.
+
 ### MRAM
 
 8MB of MRAM is available on one of the SPI busses for storage of state
@@ -159,7 +164,7 @@ information.
 A real-time clock is available so the board has accurate time even
 when off.  The battery input comes from +5VAL, and this has a large
 diode-protected capacitor array so that even if external power is not
-available time can be kept over an hour This will always be powered
+available time can be kept over an hour. This will always be powered
 when power is available.
 
 ### Watchdog Timer

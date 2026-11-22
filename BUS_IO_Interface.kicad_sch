@@ -1254,7 +1254,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "PACSAT_ICs:TCAN1044ADDFRQ1"
+		(symbol "PACSAT_ICs:TCAN1044AVDDFRQ1"
 			(pin_names
 				(offset 0.254)
 			)
@@ -1273,7 +1273,7 @@
 					)
 				)
 			)
-			(property "Value" "TCAN1044ADDFRQ1"
+			(property "Value" "TCAN1044AVDDFRQ1"
 				(at 22.86 7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1295,7 +1295,7 @@
 					)
 				)
 			)
-			(property "Datasheet" "TCAN1044ADDFRQ1"
+			(property "Datasheet" "https://www.ti.com/lit/gpn/TCAN1044A-Q1"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1340,7 +1340,7 @@
 					)
 				)
 			)
-			(symbol "TCAN1044ADDFRQ1_0_1"
+			(symbol "TCAN1044AVDDFRQ1_0_1"
 				(polyline
 					(pts
 						(xy 7.62 5.08) (xy 7.62 -12.7)
@@ -1389,24 +1389,6 @@
 						(type none)
 					)
 				)
-				(pin power_in line
-					(at 45.72 -7.62 180)
-					(length 7.62)
-					(name "NC/VIO"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin bidirectional line
 					(at 45.72 -5.08 180)
 					(length 7.62)
@@ -1444,7 +1426,7 @@
 					)
 				)
 			)
-			(symbol "TCAN1044ADDFRQ1_1_1"
+			(symbol "TCAN1044AVDDFRQ1_1_1"
 				(pin input line
 					(at 0 0 0)
 					(length 7.62)
@@ -1510,6 +1492,24 @@
 						)
 					)
 					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 45.72 -7.62 180)
+					(length 7.62)
+					(name "VIO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2420,6 +2420,16 @@
 			(justify left bottom)
 		)
 		(uuid "703d0f88-6d57-4235-b934-421d75644cfa")
+	)
+	(text "Note that CAN bus terminations are only\non the ends of the bus.  Resistors here\nmay need to be removed if this board is\nnot on the end of the bus."
+		(exclude_from_sim no)
+		(at 369.824 121.158 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "95d6e17e-b454-4885-8258-48d22ad27083")
 	)
 	(text "MRAM 16 Mb 2Mx8"
 		(exclude_from_sim no)
@@ -6768,7 +6778,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PACSAT_ICs:TCAN1044ADDFRQ1")
+		(lib_id "PACSAT_ICs:TCAN1044AVDDFRQ1")
 		(at 290.83 156.21 0)
 		(unit 1)
 		(body_style 1)
@@ -6789,7 +6799,7 @@
 				)
 			)
 		)
-		(property "Value" "TCAN1044ADDFRQ1"
+		(property "Value" "TCAN1044AVDDFRQ1"
 			(at 313.69 148.59 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6799,7 +6809,7 @@
 				)
 			)
 		)
-		(property "Footprint" "PacSatDev_misc:TSOT-23-8"
+		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-8"
 			(at 290.83 156.21 0)
 			(hide yes)
 			(show_name no)
@@ -6811,7 +6821,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "TCAN1044ADDFRQ1"
+		(property "Datasheet" "https://www.ti.com/lit/gpn/TCAN1044A-Q1"
 			(at 290.83 156.21 0)
 			(hide yes)
 			(show_name no)
@@ -10805,7 +10815,7 @@
 		)
 	)
 	(symbol
-		(lib_id "PACSAT_ICs:TCAN1044ADDFRQ1")
+		(lib_id "PACSAT_ICs:TCAN1044AVDDFRQ1")
 		(at 290.83 88.9 0)
 		(unit 1)
 		(body_style 1)
@@ -10826,7 +10836,7 @@
 				)
 			)
 		)
-		(property "Value" "TCAN1044ADDFRQ1"
+		(property "Value" "TCAN1044AVDDFRQ1"
 			(at 313.69 81.28 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10836,7 +10846,7 @@
 				)
 			)
 		)
-		(property "Footprint" "PacSatDev_misc:TSOT-23-8"
+		(property "Footprint" "Package_TO_SOT_SMD:TSOT-23-8"
 			(at 290.83 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -10848,7 +10858,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "TCAN1044ADDFRQ1"
+		(property "Datasheet" "https://www.ti.com/lit/gpn/TCAN1044A-Q1"
 			(at 290.83 88.9 0)
 			(hide yes)
 			(show_name no)

@@ -4617,3 +4617,10 @@ Move back to the original oscillator (O 16,0-JT22CT-A-P-3,3-LF).  The
 one that was there was a clipped sine wave, which the clock buffer
 wouldn't handle.  As part of this, move to a single ferrite, two
 are not necessary.
+
+Fixed the values of the TCAN bus transceivers.  They were the non-VIO
+version, but the VIO version is required.
+
+Added notes in the schematics and ICD about the CAN bus termination.
+
+Add decoupling capacitors to the TMUX2821 parts.

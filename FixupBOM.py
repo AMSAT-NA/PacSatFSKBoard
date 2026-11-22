@@ -292,7 +292,7 @@ other_components = {
     ('TMS570LS0914APGEQQ1', 'TQFP-144_20x20mm_Pitch0.5mm'): None,
     ('2118714-2', 'TE_2118714-2'): None,
     ('SN3257QDYYRQ1', 'DYY0016A'): None,
-    ('TCAN1044ADDFRQ1', 'TSOT-23-8'): None,
+    ('TCAN1044AVDDFRQ1', 'TSOT-23-8'): None,
     ('FTSH-105-01-L-DV-K', 'FTSH-105-01-L-DV-K'): None,
     ('MAX4995AAUT+T', 'SOT-23-6_Handsoldering'): None,
     ('TQP7M9106', 'QFN24_TQP7M9104_QOR'): None,
