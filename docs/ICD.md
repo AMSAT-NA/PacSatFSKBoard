@@ -749,6 +749,13 @@ anything (see the Design.md document for details).  +3.3V will not be
 powered, though, which is the main goal.  This is fixed on later
 boards.
 
+On version 4 boards the USB port is raised and faces down instead of
+to the left of the board.  This is so the USB port can be used as an
+umbilical.  This is very tight with J7, though, so most normal USB-C
+cables won't fit.  You can get right-angle connectors that are not as
+long, or you could possible trim a standard USB-C cable to fit for
+bench use.
+
 Setting GPIO3 on the USB chip to 1 disables the hardware watchdog,
 which is useful when programming the board with JTAG.
 
