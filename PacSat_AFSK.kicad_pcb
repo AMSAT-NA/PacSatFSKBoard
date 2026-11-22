@@ -241717,7 +241717,7 @@
 		(net "SSPA_VCC")
 		(layer "F.Cu")
 		(hatch none 0.1)
-		(priority 30165)
+		(priority 30164)
 		(attr
 			(teardrop
 				(type padvia)
@@ -241757,7 +241757,7 @@
 		(net "SSPA_VCC")
 		(layer "F.Cu")
 		(hatch none 0.1)
-		(priority 30164)
+		(priority 30165)
 		(attr
 			(teardrop
 				(type padvia)
