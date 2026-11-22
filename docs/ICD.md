@@ -998,6 +998,9 @@ The power amplifier has heat sink (or spreader) mounting on the bottom
 of the board.  The PA is designed to transfer the heat that way,
 according to the data sheet.
 
+Note that all dimensions are given as viewed from the top side of the
+board with the PC104 connector facing up.
+
 There is space and mounting holes for a 25.8mm by 11.6mm heat sink.
 Mounting holes are M1.6 sized PTH centered 2.25mm from each edge.  The
 idea is to have a flat copper plate of that size.
@@ -1026,34 +1029,43 @@ for radiation.
 
 This heat sink is definitely required.  There is already a large
 ground area on the bottom and on all layers around the PA for cooling,
-but testing has shown it is not enough with air, in a vacuum there is
-no way.  Testing has shown that heat moves out of the PA through the
-vias faster than the PA generates it, so that is good.  At worst case
-it needs to dissipate around 2W of heat. (The PA is powered but no
-signal is transmitted.  When a signal is being transmitted at full
-power, most of the power is being sent and only around 0.5W is being
-dissipated by the PA.  It may also be possible to reduce the quiescent
-current drawn by the PA by modifying the Iref current using the DAC on
-a Version 3 or later board.
+but testing has shown it is not enough with air, so in vacuum it is
+not expected to be enough.  Testing has shown that heat moves out of
+the PA through the vias faster than the PA generates it, so that is
+good.  At worst case it needs to dissipate around 2W of heat. (The PA
+is powered but no signal is transmitted.  When a signal is being
+transmitted at full power, most of the power is being sent and only
+around 0.5W is being dissipated by the PA.  It may also be possible to
+reduce the quiescent current drawn by the PA by modifying the Iref
+current using the DAC on a Version 3 or later board.
 
 It would also be possible to connect the top of the chip via some type
 of riser to the shield to provide additional radiation surfaces for
 the PA.  Experience has shown that most of the heat goes to the bottom
-of the chip and not to the top, but it could help a little.
+of the chip and not to the top, but it could help a little.  
 
 On Amazon you can search for "copper flat bar" to find suitable
 material.  The PA is 0.85mm tall, the shield is 2.54mm, leaving 1.69mm
 (.067") of space between the shield and the PA.  A 1/16" (.0625) will
 probably work for a connection from the PA to the shield, though it
-might be a tad too thick.  It could be sanded a bit.
+might be a tad too thick.  It could be sanded a bit, but you want
+to use thermal epoxy or a thermal pad just like on the bottom.
 
-You would probably want a 1/8" thick bar for the heat sink on the
-bottom.  You could use a 2.75mm square piece of it to place on the PA
-pad then put a 12mm x 26mm (.47" x 1") piece on top of that, drill 2mm
-holes, and screw it down.  There's a little bit of slack on the large
-piece dimensions, 1/2" width would be fine, adding a bit to the length
-would be ok, too.
+You would probably want a 1/8" (3.178mm) thick bar for the heat sink
+on the bottom and 1/8" for the 3.5mm x 3.5mm pedestal.  You will need
+the standoffs or bosses slightly taller, 3.3mm, to not put any
+pressure on the pad of the PA.  Then the heat sink. 11.6mm x 25.8mm,
+with 2mm holes for the screws.  Note the size of the heat sink is a
+minimum size, it can be larger as long as it doesn't interfere with
+anything else.
 
-The board is ~1.6mm thick, 1/4" is 6.32mm, so that's 7.92mm.  You can
-find M1.6 x 10mm stainless steel screws on Amazon along with nuts that
-should work to fasten down the heat sink.
+The board is ~1.6mm thick, you have 3.178mm for the plate, 3.3mm for
+the standoff, and 1.3mm for each top and bottom washer, and 1.3mm for
+the nut.  That totals to about 10mm, but you want a little slack.  You
+can find M1.6 x 12mm stainless steel screws on Amazon along with nuts
+and washers that should work to fasten down the heat sink.
+
+There is one part, thermsistor TH4, that is located under the heat
+sink.  It is there to best measure the heat, but be careful not to
+short it with the heat sink.  Using the given instructions should be
+sufficient.
