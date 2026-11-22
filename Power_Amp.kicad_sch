@@ -9739,7 +9739,7 @@
 				)
 			)
 		)
-		(property "Value" "10uF"
+		(property "Value" "10uF 16V"
 			(at 218.44 110.49 0)
 			(show_name no)
 			(do_not_autoplace no)

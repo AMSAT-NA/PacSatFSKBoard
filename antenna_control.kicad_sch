@@ -8275,7 +8275,7 @@
 				)
 			)
 		)
-		(property "Value" "10uF"
+		(property "Value" "10uF 16V"
 			(at 75.438 143.256 90)
 			(show_name no)
 			(do_not_autoplace no)
