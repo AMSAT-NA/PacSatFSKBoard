@@ -1719,6 +1719,12 @@
 		(uuid "2b6cdabf-be1e-43ca-9518-8ed6d57cfa6a")
 	)
 	(junction
+		(at 213.36 97.79)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "36d4b966-d4b3-4d42-9626-505222f3c7e4")
+	)
+	(junction
 		(at 220.98 80.01)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1801,12 +1807,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "dc0ebb2a-ab8b-41b3-a42f-57d658d45759")
-	)
-	(junction
-		(at 194.31 81.28)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f140e229-69f5-4cb0-98b4-7dfd26605016")
 	)
 	(no_connect
 		(at 223.52 160.02)
@@ -2008,7 +2008,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 96.52) (xy 213.36 111.76)
+			(xy 213.36 96.52) (xy 213.36 97.79)
 		)
 		(stroke
 			(width 0)
@@ -2075,16 +2075,6 @@
 			(type default)
 		)
 		(uuid "4764be23-ba67-4fe1-9d9e-c714ee1ada54")
-	)
-	(wire
-		(pts
-			(xy 194.31 81.28) (xy 194.31 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4c9f0472-99f9-4df0-bb92-31b8f5e4b8d9")
 	)
 	(wire
 		(pts
@@ -2238,6 +2228,26 @@
 	)
 	(wire
 		(pts
+			(xy 205.74 107.95) (xy 205.74 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7cb37def-2060-4de3-846c-604bdfdc0de5")
+	)
+	(wire
+		(pts
+			(xy 205.74 100.33) (xy 205.74 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ebb946d-58fe-4490-aa78-1b2cf7dd01a6")
+	)
+	(wire
+		(pts
 			(xy 204.47 165.1) (xy 204.47 172.72)
 		)
 		(stroke
@@ -2345,6 +2355,16 @@
 			(type default)
 		)
 		(uuid "95273881-1513-4b2e-bc0e-03a467139585")
+	)
+	(wire
+		(pts
+			(xy 205.74 97.79) (xy 213.36 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97ca6b94-3b64-405d-b509-8bc6d98a8243")
 	)
 	(wire
 		(pts
@@ -2478,16 +2498,6 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 81.28) (xy 194.31 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bc13b7f9-8754-40c0-a686-063ee6d6ce7c")
-	)
-	(wire
-		(pts
 			(xy 213.36 81.28) (xy 213.36 88.9)
 		)
 		(stroke
@@ -2595,16 +2605,6 @@
 			(type default)
 		)
 		(uuid "cec725a7-ad5a-4f18-abc4-fb0c4c0b5b23")
-	)
-	(wire
-		(pts
-			(xy 194.31 92.71) (xy 194.31 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d2cb4b05-3964-4907-817d-9607c59fc914")
 	)
 	(wire
 		(pts
@@ -2738,13 +2738,23 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 81.28) (xy 213.36 81.28)
+			(xy 180.34 81.28) (xy 213.36 81.28)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "ea64f852-c683-4632-8d38-2175e9642f3c")
+	)
+	(wire
+		(pts
+			(xy 213.36 97.79) (xy 213.36 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed631679-0dcd-4419-acc4-0f93fcacf335")
 	)
 	(wire
 		(pts
@@ -3548,83 +3558,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 194.31 88.9 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "2bc69330-24de-4e57-a157-784d5d0127d9")
-		(property "Reference" "C81"
-			(at 198.12 91.44 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "6.8pF"
-			(at 198.12 86.36 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 195.2752 92.71 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 194.31 88.9 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 194.31 88.9 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "bb41b589-8fe8-433e-a2de-17071ac6551a")
-		)
-		(pin "2"
-			(uuid "95d49655-a46e-48e8-9ec1-1ec45bcc8df8")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/d9a83ee4-3280-49b9-88b8-54d26cbd8ed1/bc27fde3-8cca-4897-854d-674b6eeb65de"
-					(reference "C81")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:L")
 		(at 173.99 146.05 180)
 		(unit 1)
@@ -3849,82 +3782,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/d9a83ee4-3280-49b9-88b8-54d26cbd8ed1/bc27fde3-8cca-4897-854d-674b6eeb65de"
 					(reference "#PWR0176")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 194.31 97.79 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "39fc63c2-f391-4d09-a362-b3a3cbe74c49")
-		(property "Reference" "#PWR0175"
-			(at 194.31 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 194.437 102.1842 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 194.31 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 194.31 97.79 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 194.31 97.79 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "c1ab21c4-a61b-44d8-a067-1e27418a7087")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/d9a83ee4-3280-49b9-88b8-54d26cbd8ed1/bc27fde3-8cca-4897-854d-674b6eeb65de"
-					(reference "#PWR0175")
 					(unit 1)
 				)
 			)
@@ -4231,6 +4088,83 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/d9a83ee4-3280-49b9-88b8-54d26cbd8ed1/bc27fde3-8cca-4897-854d-674b6eeb65de"
 					(reference "C79")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 205.74 104.14 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "762c38ed-1c10-41a2-a81a-4bf5b1571457")
+		(property "Reference" "C81"
+			(at 209.55 106.68 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "6.8pF"
+			(at 209.55 101.6 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+			(at 206.7052 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 205.74 104.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 205.74 104.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f02a3e38-0cb4-4466-b93b-490befe2ba33")
+		)
+		(pin "2"
+			(uuid "181d58bd-3294-4108-bd43-a8552719ba04")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/d9a83ee4-3280-49b9-88b8-54d26cbd8ed1/bc27fde3-8cca-4897-854d-674b6eeb65de"
+					(reference "C81")
 					(unit 1)
 				)
 			)
@@ -5476,6 +5410,83 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/d9a83ee4-3280-49b9-88b8-54d26cbd8ed1/bc27fde3-8cca-4897-854d-674b6eeb65de"
 					(reference "#PWR0181")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 205.74 109.22 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "dba54254-7fb1-432e-987d-ffae0b645fac")
+		(property "Reference" "#PWR0175"
+			(at 205.74 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 205.867 113.6142 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 205.74 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 205.74 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 205.74 109.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "274e8097-e2a1-443f-b591-7b788e353311")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/d9a83ee4-3280-49b9-88b8-54d26cbd8ed1/bc27fde3-8cca-4897-854d-674b6eeb65de"
+					(reference "#PWR0175")
 					(unit 1)
 				)
 			)

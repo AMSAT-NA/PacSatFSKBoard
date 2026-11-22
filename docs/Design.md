@@ -60,6 +60,7 @@ Take a picture of the "Board Physical Stackup" under the Board Setup
 screen and send that with these files so the board stack is
 documented.  Note that the Er for the board needs to be 4.5 for the
 core and prepreg.  If it's different some things have to change.
+Use ENIG surface finish.
 
 Add the following notes:
 
@@ -88,6 +89,10 @@ Add the following notes:
   If you are paranoid, pick the space-rated part.
   
 * Hole sizes do not include plating.
+
+* Vias should be filled and capped.
+
+* All large inductors and the heat sink staked.
 
 # Setting up the USB chip
 

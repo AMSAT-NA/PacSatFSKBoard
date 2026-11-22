@@ -1686,6 +1686,12 @@
 		)
 	)
 	(junction
+		(at 261.62 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0145d4e2-d77c-4738-afd4-18842df8ad10")
+	)
+	(junction
 		(at 222.25 118.11)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1732,12 +1738,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "870c70d4-07f5-4f15-980b-20567cd07aa5")
-	)
-	(junction
-		(at 242.57 76.2)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8b973ded-919b-40a3-a7c4-c843ef996de3")
 	)
 	(junction
 		(at 269.24 72.39)
@@ -1847,7 +1847,7 @@
 	)
 	(wire
 		(pts
-			(xy 242.57 87.63) (xy 242.57 92.71)
+			(xy 255.27 97.79) (xy 255.27 99.06)
 		)
 		(stroke
 			(width 0)
@@ -1977,7 +1977,7 @@
 	)
 	(wire
 		(pts
-			(xy 261.62 91.44) (xy 261.62 100.33)
+			(xy 261.62 87.63) (xy 261.62 88.9)
 		)
 		(stroke
 			(width 0)
@@ -1987,7 +1987,7 @@
 	)
 	(wire
 		(pts
-			(xy 261.62 76.2) (xy 242.57 76.2)
+			(xy 234.95 76.2) (xy 261.62 76.2)
 		)
 		(stroke
 			(width 0)
@@ -2107,7 +2107,7 @@
 	)
 	(wire
 		(pts
-			(xy 261.62 76.2) (xy 261.62 83.82)
+			(xy 261.62 76.2) (xy 261.62 80.01)
 		)
 		(stroke
 			(width 0)
@@ -2377,6 +2377,16 @@
 	)
 	(wire
 		(pts
+			(xy 261.62 88.9) (xy 261.62 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8fb9ab6e-1f15-4aa3-bb79-38fa9f209ff2")
+	)
+	(wire
+		(pts
 			(xy 212.09 128.27) (xy 224.79 128.27)
 		)
 		(stroke
@@ -2437,13 +2447,13 @@
 	)
 	(wire
 		(pts
-			(xy 242.57 76.2) (xy 242.57 80.01)
+			(xy 255.27 90.17) (xy 255.27 88.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9e162353-79b0-44bb-ae9e-d719507584bb")
+		(uuid "9d539fc5-b5d7-4c63-ba73-2683b9dcacf7")
 	)
 	(wire
 		(pts
@@ -2514,16 +2524,6 @@
 			(type default)
 		)
 		(uuid "b726df83-8f50-477f-a9f1-65ce8e2d97b4")
-	)
-	(wire
-		(pts
-			(xy 234.95 76.2) (xy 242.57 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b9fc14f5-d1dc-421c-8743-128d0d7a8c6c")
 	)
 	(wire
 		(pts
@@ -2644,6 +2644,16 @@
 			(type default)
 		)
 		(uuid "ce6fadb2-1bb7-4773-966f-89d94db47430")
+	)
+	(wire
+		(pts
+			(xy 255.27 88.9) (xy 261.62 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cecd6423-a04c-4e29-8494-84534a7c900e")
 	)
 	(wire
 		(pts
@@ -3599,7 +3609,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 242.57 92.71 0)
+		(at 255.27 99.06 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3609,7 +3619,7 @@
 		(dnp no)
 		(uuid "54f551f5-ad51-49db-ba60-8fdbe024a381")
 		(property "Reference" "#PWR0145"
-			(at 242.57 99.06 0)
+			(at 255.27 105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3620,7 +3630,8 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 242.697 97.1042 0)
+			(at 255.397 103.4542 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3630,7 +3641,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 242.57 92.71 0)
+			(at 255.27 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3641,7 +3652,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 242.57 92.71 0)
+			(at 255.27 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3652,7 +3663,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 242.57 92.71 0)
+			(at 255.27 99.06 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4596,7 +4607,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 261.62 87.63 0)
+		(at 261.62 83.82 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4606,7 +4617,7 @@
 		(dnp no)
 		(uuid "bcbb5008-90ff-4bd3-a250-11c6982e4ca3")
 		(property "Reference" "C64"
-			(at 265.43 90.17 90)
+			(at 265.43 86.36 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4616,7 +4627,7 @@
 			)
 		)
 		(property "Value" "10pF"
-			(at 265.43 85.09 90)
+			(at 265.43 81.28 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4626,7 +4637,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 262.5852 91.44 0)
+			(at 262.5852 87.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4637,7 +4648,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 261.62 87.63 0)
+			(at 261.62 83.82 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4647,7 +4658,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 261.62 87.63 0)
+			(at 261.62 83.82 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5458,7 +5469,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 242.57 83.82 0)
+		(at 255.27 93.98 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5468,7 +5479,7 @@
 		(dnp no)
 		(uuid "f92ea18f-f431-407e-a346-90a441b74974")
 		(property "Reference" "C63"
-			(at 246.38 86.36 90)
+			(at 259.08 96.52 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5478,7 +5489,7 @@
 			)
 		)
 		(property "Value" "6.8pF"
-			(at 246.38 81.28 90)
+			(at 259.08 91.44 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5488,7 +5499,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 243.5352 87.63 0)
+			(at 256.2352 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5499,7 +5510,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 242.57 83.82 0)
+			(at 255.27 93.98 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5509,7 +5520,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 242.57 83.82 0)
+			(at 255.27 93.98 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

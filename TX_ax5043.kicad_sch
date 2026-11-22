@@ -1936,6 +1936,12 @@
 		(uuid "1d5659e4-f183-46d2-aa33-908b26bd2ed3")
 	)
 	(junction
+		(at 257.81 100.33)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1f209fb4-c7a9-4fa5-8a0e-2a688c156014")
+	)
+	(junction
 		(at 179.07 203.2)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2054,12 +2060,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d1b7d9ca-5df0-42bd-af27-4becdcfdac8a")
-	)
-	(junction
-		(at 238.76 83.82)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "deff4093-a4f6-4993-a8e5-312db3d2ec6e")
 	)
 	(no_connect
 		(at 260.35 113.03)
@@ -2351,7 +2351,7 @@
 	)
 	(wire
 		(pts
-			(xy 257.81 99.06) (xy 257.81 113.03)
+			(xy 257.81 99.06) (xy 257.81 100.33)
 		)
 		(stroke
 			(width 0)
@@ -2398,6 +2398,16 @@
 			(type default)
 		)
 		(uuid "3e8ea3ad-868a-4527-bb86-51f7f77f26cd")
+	)
+	(wire
+		(pts
+			(xy 251.46 101.6) (xy 251.46 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ecd5e47-861b-4821-b11b-ad664d096063")
 	)
 	(wire
 		(pts
@@ -2641,16 +2651,6 @@
 	)
 	(wire
 		(pts
-			(xy 257.81 83.82) (xy 238.76 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6ff4fa55-8f39-42dc-870c-0d5767c7d057")
-	)
-	(wire
-		(pts
 			(xy 226.06 107.95) (xy 226.06 115.57)
 		)
 		(stroke
@@ -2708,6 +2708,16 @@
 			(type default)
 		)
 		(uuid "7a42a2cd-e7d8-40e7-b2e1-ce80841feefd")
+	)
+	(wire
+		(pts
+			(xy 257.81 100.33) (xy 257.81 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ae3fc45-b62f-4b40-a473-33e4f835d272")
 	)
 	(wire
 		(pts
@@ -2981,16 +2991,6 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 83.82) (xy 238.76 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a6d248be-85d1-4827-aa24-6713a552dd68")
-	)
-	(wire
-		(pts
 			(xy 270.51 113.03) (xy 270.51 100.33)
 		)
 		(stroke
@@ -3161,6 +3161,16 @@
 	)
 	(wire
 		(pts
+			(xy 251.46 100.33) (xy 257.81 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce48ff12-b387-4bb1-b09d-4aebd644124f")
+	)
+	(wire
+		(pts
 			(xy 289.56 142.24) (xy 313.69 142.24)
 		)
 		(stroke
@@ -3241,7 +3251,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 83.82) (xy 231.14 83.82)
+			(xy 231.14 83.82) (xy 257.81 83.82)
 		)
 		(stroke
 			(width 0)
@@ -3371,7 +3381,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 95.25) (xy 238.76 100.33)
+			(xy 251.46 109.22) (xy 251.46 110.49)
 		)
 		(stroke
 			(width 0)
@@ -7221,7 +7231,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 238.76 100.33 0)
+		(at 251.46 110.49 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7231,7 +7241,7 @@
 		(dnp no)
 		(uuid "d4bfe44c-cf2d-4162-b362-c112b7f7e8f5")
 		(property "Reference" "#PWR0197"
-			(at 238.76 106.68 0)
+			(at 251.46 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7242,7 +7252,8 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 238.887 104.7242 0)
+			(at 251.587 114.8842 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7252,7 +7263,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 238.76 100.33 0)
+			(at 251.46 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7263,7 +7274,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 238.76 100.33 0)
+			(at 251.46 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7274,7 +7285,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 238.76 100.33 0)
+			(at 251.46 110.49 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7297,7 +7308,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 238.76 91.44 180)
+		(at 251.46 105.41 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7307,7 +7318,7 @@
 		(dnp no)
 		(uuid "dc1f584c-c1f1-488a-86cd-5f1a59612952")
 		(property "Reference" "C95"
-			(at 234.95 88.9 90)
+			(at 247.65 102.87 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7317,7 +7328,7 @@
 			)
 		)
 		(property "Value" "6.8pF"
-			(at 234.95 93.98 90)
+			(at 247.65 107.95 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7327,7 +7338,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
-			(at 237.7948 87.63 0)
+			(at 250.4948 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7338,7 +7349,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 238.76 91.44 0)
+			(at 251.46 105.41 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7348,7 +7359,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 238.76 91.44 0)
+			(at 251.46 105.41 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

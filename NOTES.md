@@ -4634,3 +4634,6 @@ sizes.
 
 Review BOM to validate everything is correct.  Add the diplexer
 components to the BOM.
+
+The clock divider for all the AX5043s was backwards.  Wire it
+correctly.
