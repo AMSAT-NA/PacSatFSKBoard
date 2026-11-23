@@ -26,7 +26,7 @@ it under the default name, `PacSat_AFSK.csv`.
 
 Under the same menu now choose "Component Placement" and use the
 defaults, except *IMPORTANT* click on "Exclude all components with the
-Do No Populate flag set" box.  For some reason that setting doesn't
+Do Not Populate flag set" box.  For some reason that setting doesn't
 get saved.  Then save it under the default name
 `PacSat_AFSK-all-pos.csv`.  This is placement for both sides of the
 board.  Then close this window.
@@ -49,9 +49,9 @@ Do the following:
 ```
 
 If building for flight, add the `--space` option to FixupBOM.py so it
-chooses low outgassing devices.  The RF splitter U52 must be
-special-ordered with lower-outgassing epoxy, inform the board shop
-about this.
+chooses low outgassing devices and a few space rated parts for
+critical places.  The RF splitter U52 must be special-ordered with
+lower-outgassing epoxy, inform the board shop about this.
 
 Send those three files (PacSat\_AFSK-bom.csv, PacSat\_AFSK-pos.csv, and
 PacSat\_AFSK-gerbers.zip) to your board manufacturer.
@@ -60,7 +60,7 @@ Take a picture of the "Board Physical Stackup" under the Board Setup
 screen and send that with these files so the board stack is
 documented.  Note that the Er for the board needs to be 4.5 for the
 core and prepreg.  If it's different some things have to change.
-Use ENIG surface finish.
+Use Tg ≥ 170°C and ENIG surface finish.
 
 Add the following notes:
 
@@ -75,7 +75,7 @@ Add the following notes:
   
 * Some power supplies have a partial PC104 that one board will plug in
   to.  If you have one of those, you don't want all the extra pins
-  hanging in space.  In this case, for each of J1 and J1, instead of
+  hanging in space.  In this case, for each of J1 and J2, instead of
   ordering an ESQ-126-38-G-D for J1 and J2, you would order a set of
   smaller connectors, an ESQ-1xx-38-G-D for the places that have power
   supply pins, and an ESQ-1xx-37-G-D for the places without pins,
@@ -88,11 +88,14 @@ Add the following notes:
   where the only latch up protection is in the external power supply.
   If you are paranoid, pick the space-rated part.
   
-* Hole sizes do not include plating.
+* Hole sizes are finished plated hole sizes.
 
-* Vias should be filled and capped.
+* Vias should be IPC-6012 Class 3 and filled and capped to IPC-4761
+  Type VII (filled and capped).
 
 * All large inductors and the heat sink staked.
+
+* For flight boards, complete flux removal and ionic cleaning.
 
 # Setting up the USB chip
 
