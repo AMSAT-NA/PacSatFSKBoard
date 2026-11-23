@@ -4644,3 +4644,5 @@ current doesn't change drastically.
 
 Add an option to add a high-frequency shunt later at the LNA output.
 It's DNP for now, but if there's instability it's easy to fix later.
+
+Fix some derating issues on some parts.

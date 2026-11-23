@@ -88,9 +88,7 @@ board.  These are:
   so is current limited by that.
   
 * +1.2V - Main power for the CPU.  HW\_POWER\_OFF[1-2]\_N will disable
-  this.  This is current limited to 700ma maximum.  Power comes from a
-  buck regulator, derived from either 5V or 3.3V depending on
-  configuration.
+  this.  This is current limited by the +3.3V limiter.
 
 * +3.3V - This is the main I/O supply for the CPU and power for the
   MRAMs and the RTC.  It is current limited to 640ma and derived from

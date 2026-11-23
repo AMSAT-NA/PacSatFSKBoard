@@ -244,7 +244,7 @@ value_to_partnum_xlats_2 = {
     ('50Ω',	'0402'): ('Panasonic',	'ERA-2AED49R9X'),
     ('61.9Ω',	'0402'): ('Panasonic',	'ERA-2AEB61R9X'),
     ('130Ω',	'0402'): ('Panasonic',	'ERA-2AED131X'),
-    ('280Ω',	'0402'): ('Panasonic',	'ERA-2AEB2800X'),
+    ('280Ω 0.2W','0603'): ('Panasonic',	'ERJ-PA3F2800V'),
     ('330Ω',    '0402'): ('Wurth Electronik', '560112110231'),
     ('470Ω',	'0402'): ('Panasonic',	'ERA-2AED471X'),
     ('549Ω 1%',	'0402'): ('Panasonic',	'ERJ-3EKF5490V'),
@@ -266,6 +266,7 @@ value_to_partnum_xlats_2 = {
     ('2.4kΩ',	'0603'): ('Wurth Electronik',	'560112116061'),
     ('3kΩ',	'0603'): ('Panasonic',	'ERJ-UP3F3001V'),
 
+    ('0Ω metal',        '0402'): ('Rohm',      'PMR01ZZPJ000'),
     ('277Ω 0.1%',	'0402'): ('KOA Speer', 'RN73R1ETTP2770B25'),
     ('3.32kΩ 1%',	'0402'): ('Panasonic', 'ERJ-2RKF3321X'),
     ('4.12kΩ 1%',       '0402'): ('Panasonic', 'ERJ-2RKF4121X'),
