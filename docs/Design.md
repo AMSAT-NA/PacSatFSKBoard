@@ -116,6 +116,16 @@ Add the following notes:
 
 * For flight boards, all LEDs and their resistors should be DNP.
 
+# Things to do after final programming
+
+After the final programming of the TMS570, some things need to be done
+to prepare for flight:
+
+* Remove R8, on the nTRST line to avoid going into debug in flight.
+  See
+  https://e2e.ti.com/support/microcontrollers/arm-based-microcontrollers-group/arm-based-microcontrollers/f/arm-based-microcontrollers-forum/1699851/tms570ls0914-how-to-pull-ntrst/6546042
+  for details on why.
+
 # Setting up the USB chip
 
 The first thing you must do is program the USB chip.  This is done

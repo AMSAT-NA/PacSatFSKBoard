@@ -12,10 +12,22 @@ some point.
 
 # TODO
 
-Adding a conformal coating will change inductor values; this needs to
-be thought through.
+For a more accurate clock than 2.5ppm, for quartz oscillators only
+clipped sine wave output is available, at least at the moment.  To use
+one, you would need a driver like the Microchip PL130-07.  The other
+possible option is to use a 3.2x2.5mm part.  SiTime is coming out with
+parts that are extremely accurate (down to 0.1ppm).  They are 8-pin
+parts, but they might be designed to work in a standard 4-pin
+footprint of that size, since their larger parts did that.  Or perhaps
+combine the advice of
+https://e2e.ti.com/support/logic-group/logic/f/logic-forum/1213554/sn74aup1g14-sine-wave-or-clipped-to-square-wave-for-fpga-clock
+and
+https://www.crystek.com/documents/appnotes/ClippedSinewaveToCMOSConversionCircuit.pdf
 
-Think about the default configuration of board1 and board 2 and the RF
+Adding a conformal coating will change values, primarily the
+capacitance of things; this needs to be thought through.
+
+Think about the default configuration of board 1 and board 2 and the RF
 switches.  It's currently a little inconsistent, P26 and P24 are DNP
 but the rest of the board is configured for board 1.
 
@@ -1353,6 +1365,13 @@ rated part.  The 1.2V power limiter has been removed.
 Check that L2 doesn't heat up too much at load.  Replace it with a
 larger device with a lower DCR if so. - Replaced with a large
 inductor.
+
+Figure out the nTRST line.  It need to be pulled high to be able to
+program it, but apparently that adds a risk that the part will go into
+debug mode during operation.  If pulled down it will not go into debug
+mode ever.  It has a weak pull down inside.  Perhaps remove it after
+final programming for flight. - Add a weak pull down and a stronger
+pull up and remove the stronger pull up after final programming.
 
 # Not going to do
 
@@ -4698,3 +4717,7 @@ Rework the power monitoring a bit.  Remove the power monitors from
 USB, since they aren't that useful.  Add them to the external antenna
 power, +3.3V, and SSPA\_VCC current limiters so the power going
 through those can be monitored.
+
+Add a weak pull down and a stronger pull up to the nTRST line into the
+TMS570.  Remove the stronger pull up after final programming.  The
+nTRST line is supposed to be held low for normal operation.
