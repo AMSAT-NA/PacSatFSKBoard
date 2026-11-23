@@ -4955,6 +4955,16 @@
 		)
 		(uuid "f10c8987-146b-4944-a6eb-14fc0e9a976c")
 	)
+	(text "Remove R8 after final\nprogramming.  See the\nDesign doc about nTRST\nfor details."
+		(exclude_from_sim no)
+		(at 144.018 55.88 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "fae54688-c4c0-45ca-b567-6c64f8275f4e")
+	)
 	(text "TMS"
 		(exclude_from_sim no)
 		(at 118.11 62.23 0)
