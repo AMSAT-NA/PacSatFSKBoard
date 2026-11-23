@@ -84,18 +84,21 @@ Add the following notes:
   ESQ-110-37-G-D (pins 1-20), ESQ-106-38-G-D (pins 21-32),
   ESQ-103-37-G-D (pins 33-38) and ESQ-107-38-G-D (pins 39-52).
 
-* U5 has the option for a space-rated part.  It's a critical gate
-  where the only latch up protection is in the external power supply.
-  If you are paranoid, pick the space-rated part.
+* For flight boards, U5 has the option for a space-rated part that's
+  chosen if you build the BOM for flight.  It's a critical gate where
+  the only latch up protection is in the external power supply.  If
+  you are paranoid, pick the space-rated part.
   
-* Hole sizes are finished plated hole sizes.
+* Hole sizes are finished plated hole sizes, ±0.075 mm.
 
-* Vias should be IPC-6012 Class 3 and filled and capped to IPC-4761
-  Type VII (filled and capped).
+* Board should be IPC-6012 Class 3.
+
+* Vias should be filled and capped to IPC-4761 Type VII.
 
 * All large inductors and the heat sink staked.
 
-* For flight boards, complete flux removal and ionic cleaning.
+* For flight boards, complete flux removal and ionic cleanliness
+  tested.
 
 # Setting up the USB chip
 
