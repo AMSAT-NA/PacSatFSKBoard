@@ -2326,6 +2326,16 @@
 		)
 		(uuid "81cdeab2-de19-44fe-994a-ce9b4a136fae")
 	)
+	(text "If you want to\nroute RX off the\nboard, use P12\nand remove C67."
+		(exclude_from_sim no)
+		(at 406.146 124.714 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+		)
+		(uuid "b9ee4ab6-acb6-44b0-b51b-8d37462768fc")
+	)
 	(text "+20 dB"
 		(exclude_from_sim no)
 		(at 171.704 153.924 0)

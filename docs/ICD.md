@@ -1123,18 +1123,19 @@ powered off so the CPU doesn’t see floating interrupts.
 
 Toggle FEED right at startup, before any long checks.
 
-After that, toggle it at least every 500 ms. This is now in the ICD.
+After that, toggle it at least every 500 ms.
 
 ## Power Supply
 
 SSPA\_VCC has a latch-off current limit. Monitor PWR\_FLAG\_SSPA, and
-toggle PA\_PWR\_EN to reset the limit after a fault. This is in the ICD.
+toggle PA\_PWR\_EN to reset the limit after a fault.
 
 Only power SSPA\_VCC while transmitting.
 
-The ILM ins from the current limiters on SSPA\_VCC, +3.3V, and the
+The ILM lines from the current limiters on SSPA\_VCC, +3.3V, and the
 antenna power go to various ADCs.  You should monitor those for power
-usage.
+usage.  +3.3V and antenna power go to an ADC on the antenna control
+processor, so it must be powered to read them.
 
 ## Active/Standby
 

@@ -5540,7 +5540,8 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 257.81 109.22 90)
+		(at 257.81 109.22 270)
+		(mirror x)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5550,7 +5551,7 @@
 		(dnp no)
 		(uuid "07c256fe-f05d-415f-a849-dfae394cd8e4")
 		(property "Reference" "R100"
-			(at 260.35 106.68 90)
+			(at 255.27 106.68 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5561,7 +5562,7 @@
 			)
 		)
 		(property "Value" "100kΩ"
-			(at 260.35 104.775 90)
+			(at 255.27 104.775 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

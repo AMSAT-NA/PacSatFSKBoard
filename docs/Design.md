@@ -660,7 +660,7 @@ used as a GPIO.
 |57		|VCC					|						|  | |
 |58		|AD1IN[16] / AD2IN[0]	|\*						|  |Thermsistor near the processor |
 |59		|AD1IN[17] / AD2IN[01]	|						|  |Board Number |
-|60		|AD1IN[0]				|SSPA\_VCC\_ILM			|  |Power reading from the antenna power supervisor |
+|60		|AD1IN[0]				|SSPA\_VCC\_ILM			|  |Power reading from the PA current limiter |
 |61		|AD1IN[07]				|PWR\_FLAG\_AX5043		|  |Power flag from the AX5043 current limiter |
 |62		|AD1IN[18] / AD2IN[02]	|						|  |External Control |
 |63		|AD1IN[19] / AD2IN[03]	|ANT\_POW\_FLT\_N		|  |Fault line from the antenna power supervisor |
