@@ -1655,7 +1655,7 @@
 		)
 		(uuid "2013409e-b7bd-4880-a11d-60fe7d4b18f4")
 	)
-	(text "= 600mA limit"
+	(text "= 654mA limit"
 		(exclude_from_sim no)
 		(at 257.302 59.436 0)
 		(effects
@@ -1665,17 +1665,6 @@
 			(justify right bottom)
 		)
 		(uuid "21b097d3-dfa9-4f99-8743-8a74afe56c16")
-	)
-	(text "FIXME: DETERMINE REAL-WORLD LOAD AND MARGIN"
-		(exclude_from_sim no)
-		(at 174.752 17.526 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify right bottom)
-		)
-		(uuid "29401c0c-7bdf-4b89-911e-de5c94d14029")
 	)
 	(text "Pull down so defalts to PA PWR off."
 		(exclude_from_sim no)
@@ -1720,7 +1709,7 @@
 		)
 		(uuid "b06c536e-36f9-4858-a826-a966eab81d46")
 	)
-	(text "= 638mA limit"
+	(text "= 810mA limit"
 		(exclude_from_sim no)
 		(at 255.27 127 0)
 		(effects

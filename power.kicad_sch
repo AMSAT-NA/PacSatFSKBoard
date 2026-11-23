@@ -6076,7 +6076,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2kΩ"
+		(property "Value" "470Ω"
 			(at 83.82 245.364 90)
 			(show_name no)
 			(do_not_autoplace no)

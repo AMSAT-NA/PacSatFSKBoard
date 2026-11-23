@@ -100,6 +100,8 @@ Add the following notes:
 * For flight boards, complete flux removal and ionic cleanliness
   tested.
 
+* For flight boards, all LEDs and their resistors should be DNP.
+
 # Setting up the USB chip
 
 The first thing you must do is program the USB chip.  This is done

@@ -12,8 +12,9 @@ some point.
 
 # TODO
 
-Check that L2 doesn't heat up too much at load.  Replace it with a
-larger device with a lower DCR if so.
+Think about the default configuration of board1 and board 2 and the RF
+switches.  It's currently a little inconsistent, P26 and P24 are DNP
+but the rest of the board is configured for board 1.
 
 Need to apply whatever ABF/RBF design the other teams come up with.
 
@@ -1315,6 +1316,10 @@ limiter U8.  Wire-OR won't work because if the 3.3V converter is used
 the watchdog would then power itself down when it fired. - This part
 has been replaced with a -EP related part with the option for a -SEP
 rated part.  The 1.2V power limiter has been removed.
+
+Check that L2 doesn't heat up too much at load.  Replace it with a
+larger device with a lower DCR if so. - Replaced with a large
+inductor.
 
 # Not going to do
 
@@ -4630,7 +4635,7 @@ fit and the washers won't be going outside of the rings.  Move the
 description of the heat sink to the ICD and update it with the new
 sizes.
 
-## 2026-11-21
+## 2026-11-22
 
 Review BOM to validate everything is correct.  Add the diplexer
 components to the BOM.
@@ -4646,3 +4651,12 @@ Add an option to add a high-frequency shunt later at the LNA output.
 It's DNP for now, but if there's instability it's easy to fix later.
 
 Fix some derating issues on some parts.
+
+## 2026-11-23
+
+Change the watchdog feed resistor to 470 ohms.  The 2.2k one was
+marginal on voltage.
+
+Added decoupling to ADREFHI per TI's recommendations.
+
+Lots of doc updates.

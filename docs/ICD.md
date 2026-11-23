@@ -91,7 +91,7 @@ board.  These are:
   this.  This is current limited by the +3.3V limiter.
 
 * +3.3V - This is the main I/O supply for the CPU and power for the
-  MRAMs and the RTC.  It is current limited to 640ma and derived from
+  MRAMs and the RTC.  It is current limited to 658ma and derived from
   REG\_3.3V.
   
 * AX5043\_3.3V - This is a separately switched power, off by default,
@@ -101,7 +101,11 @@ board.  These are:
   
 * SSPA\_VCC - This is +5V to the PA.  This is off by default and the
   CPU must enable it with a GPIO before it can transmit.  This is
-  current limited to 810ma and derived from +5Vext.
+  current limited to 810ma and derived from +5Vext.  This is a
+  latch-off limit, so if the limit is exceeded then software must
+  cycle the enable to reset it.  Software should monitor the
+  PWR\_FLAG\_SSPA fault line.  Normally software will only power this
+  when transmitting, anyway.
   
 * LNA\_VCC - This is +5V to the LNA.  This is off by default and the
   CPU must enable it with a GPIO before it can receive.  This is
@@ -110,7 +114,9 @@ board.  These are:
   
 * ANT\_3.3V - This powers the antenna control processor and the ADC
   devices it controls.  It is on a power switch hooked to +3.3V and
-  thus is current limited by that supply.
+  thus is current limited by that supply.  This is a latch-off limit,
+  so if the limit is exceeded then software must cycle the enable to
+  reset it.  Software should monitor the ANT\_POW\_FLT\_N fault line.
   
 * There is a 2A capable 3.3V power supply over the antenna control
   connector switched by a MOSFET.  This is derived directly from
@@ -172,9 +178,10 @@ when power is available.
 
 A watchdog timer on the board will power-cycle the CPU by disabling
 +1.2V, +3.3V, and +5V if the CPU does not toggle its FEED line once a
-second.  Powering off the CPU will cause all other power except
-REG_3.3V, +5VAL, and +3.3VAL to be returned to their default,
-disabled, so it effectively powers off the whole board.
+second.  Generally software should toggle it much more often, right at
+startup and at least every 500ms.  Powering off the CPU will cause all
+other power except REG_3.3V, +5VAL, and +3.3VAL to be returned to
+their default, disabled, so it effectively powers off the whole board.
 
 The USB interface GPIO\_3 can be set to 1 to disable the watchdog
 timer. R161 can also be installed to disable the watchdog timer.
