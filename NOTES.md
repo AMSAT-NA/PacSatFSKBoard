@@ -12,6 +12,9 @@ some point.
 
 # TODO
 
+Adding a conformal mask will change inductor values; this needs to be
+thought through.
+
 Think about the default configuration of board1 and board 2 and the RF
 switches.  It's currently a little inconsistent, P26 and P24 are DNP
 but the rest of the board is configured for board 1.
@@ -169,6 +172,36 @@ Is there a reason the ANTP1 output of the AX5043s are connected to a 50
 ohm resistor?  I can't find anything in the datasheet or errata about
 that, it always shows it disconnected when not used. - May or may not
 be necessary.
+
+Bench tests to perform:
+
+* EPS minimum supply: run at the EPS minimum supply voltage while
+  keying the PA, and watch for resets.
+
+* PA peak current: measure peak SSPA\_VCC current at full transmit
+  against U11's 810mA limit.  The limit accuracy isn't guaranteed
+  below 1A, so if the peak is within about 100mA of the limit, change
+  R39 to about 3.65k (910mA).
+
+* Antenna deploy current: draw 2.6A from the antenna power output on
+  J7 (from 3.3V\_IN, shared with REG\_3V3 and +3.3V) and watch
+  for resets.
+
+* I2C rise time: with only the TMS570 internal pull-ups (R154/R155
+  DNP) and the PC104 bus connected, measure SCL/SDA rise time and
+  compare to the I2C spec for the clock rate used.  Repeat at
+  temperature extremes if possible.  Install R154/R155 if marginal.
+  Do this with all I2C devices in place, including the external PC104
+  connection.
+
+* TH4 offset: measure the difference between the TH4 reading and the
+  PA case temperature.
+
+* J11 cable fit: measure USB-C plugs and strain reliefs against the
+  17mm/16mm limits in the ICD.
+
+* Thermal vacuum: confirm PA junction temperature with the heat sink,
+  and check the board temperature near R78 stays below about 115C.
 
 ## PA Options
 

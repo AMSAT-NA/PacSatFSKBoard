@@ -62,6 +62,9 @@ documented.  Note that the Er for the board needs to be 4.5 for the
 core and prepreg.  If it's different some things have to change.
 Use Tg ≥ 170°C and ENIG surface finish.
 
+Most of the parts on the board use tin.  A conformal coating will
+help, but we may want to re-tin parts.
+
 Add the following notes:
 
 * Apply solder normally to the pad under U3 (the clock chip) even
@@ -95,7 +98,18 @@ Add the following notes:
 
 * Vias should be filled and capped to IPC-4761 Type VII.
 
-* All large inductors and the heat sink staked.
+* For flight, large inductors and the heat sink staked.
+
+* For flight, after staking, add a space-rated conformal coat to the
+  board.  Mask:
+
+  * All the connectors: PC104, MMCX, U.FL, J7, J10, J11, and the JTAG
+    headers
+  * The bare-copper heat-sink contact area under U27, and its screw holes
+  * The mounting holes
+
+  Note that masking will change inductor values; this needs to be
+  thought through.
 
 * For flight boards, complete flux removal and ionic cleanliness
   tested.

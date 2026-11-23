@@ -1142,6 +1142,12 @@ processor, so it must be powered to read them.
 Periodically power up the other board to check it’s still working. The
 fault-tolerance section already describes this.
 
+The RF power switch has a delay to keep it from switching immediately
+when the power is shut off.  When powering off another board that
+might be transmitting, a 10ms delay is required before transmitting to
+avoid transmitting while the RF switch changes.  The RF switch cannot
+be switched while RF power above 20dBm is going through it.
+
 ## ACP
 
 The main CPU holds the ACP’s SPI chip-select high when the ACP powers
