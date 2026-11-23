@@ -12,8 +12,8 @@ some point.
 
 # TODO
 
-Adding a conformal mask will change inductor values; this needs to be
-thought through.
+Adding a conformal coating will change inductor values; this needs to
+be thought through.
 
 Think about the default configuration of board1 and board 2 and the RF
 switches.  It's currently a little inconsistent, P26 and P24 are DNP

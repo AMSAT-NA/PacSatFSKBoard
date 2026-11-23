@@ -108,8 +108,8 @@ Add the following notes:
   * The bare-copper heat-sink contact area under U27, and its screw holes
   * The mounting holes
 
-  Note that masking will change inductor values; this needs to be
-  thought through.
+  Note that conformal coating will change inductor values; this needs
+  to be thought through.
 
 * For flight boards, complete flux removal and ionic cleanliness
   tested.
