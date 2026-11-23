@@ -13117,8 +13117,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "130Ω"
-			(at 162.306 110.998 90)
+		(property "Value" "130Ω 0.2W"
+			(at 162.306 113.284 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
