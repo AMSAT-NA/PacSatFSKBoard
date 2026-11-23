@@ -1125,14 +1125,18 @@ Toggle FEED right at startup, before any long checks.
 
 After that, toggle it at least every 500 ms. This is now in the ICD.
 
-## PA supply
+## Power Supply
 
 SSPA\_VCC has a latch-off current limit. Monitor PWR\_FLAG\_SSPA, and
-toggle PA_PWR_EN to reset the limit after a fault. This is in the ICD.
+toggle PA\_PWR\_EN to reset the limit after a fault. This is in the ICD.
 
 Only power SSPA\_VCC while transmitting.
 
-## Active/standby
+The ILM ins from the current limiters on SSPA\_VCC, +3.3V, and the
+antenna power go to various ADCs.  You should monitor those for power
+usage.
+
+## Active/Standby
 
 Periodically power up the other board to check it’s still working. The
 fault-tolerance section already describes this.

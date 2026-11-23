@@ -660,7 +660,7 @@ used as a GPIO.
 |57		|VCC					|						|  | |
 |58		|AD1IN[16] / AD2IN[0]	|\*						|  |Thermsistor near the processor |
 |59		|AD1IN[17] / AD2IN[01]	|						|  |Board Number |
-|60		|AD1IN[0]				|ANT\_POW\_ILM			|  |Power reading from the antenna power supervisor |
+|60		|AD1IN[0]				|SSPA\_VCC\_ILM			|  |Power reading from the antenna power supervisor |
 |61		|AD1IN[07]				|PWR\_FLAG\_AX5043		|  |Power flag from the AX5043 current limiter |
 |62		|AD1IN[18] / AD2IN[02]	|						|  |External Control |
 |63		|AD1IN[19] / AD2IN[03]	|ANT\_POW\_FLT\_N		|  |Fault line from the antenna power supervisor |
@@ -945,9 +945,10 @@ resistors so that can be modified, too.
 The ADC has a separate power control, ADC\_EN\_N, to allow it to be
 powered off when not in use or to reset it.
 
-Two of the ADC lines run to the current monitor on the USB power
-supply.  You can use this to measure the current used on both power
-rails.
+Two of the ADC lines run to the current monitor (ILM lines) current
+limiters so current usage can be monitored.  One (U43 pin 5, AIN1)
+comes from the +3.3V current limiter U9.  The other (U43 pin 6, AIN2)
+comes from the antenna power limiter U26.
 
 ## PC104 Pins
 

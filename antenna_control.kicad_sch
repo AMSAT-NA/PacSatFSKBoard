@@ -3039,7 +3039,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 80.01) (xy 210.82 80.01)
+			(xy 190.5 80.01) (xy 196.85 80.01)
 		)
 		(stroke
 			(width 0)
@@ -3456,6 +3456,16 @@
 			(type default)
 		)
 		(uuid "7ba5796c-7d2b-47e7-8791-d57419f5034b")
+	)
+	(wire
+		(pts
+			(xy 204.47 80.01) (xy 210.82 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7f21f311-0fc4-4181-bd3e-629466170a11")
 	)
 	(wire
 		(pts
@@ -4851,7 +4861,7 @@
 	)
 	(global_label "ANT_POW_ILM"
 		(shape input)
-		(at 209.55 80.01 180)
+		(at 190.5 80.01 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4861,7 +4871,7 @@
 		)
 		(uuid "c9ca463b-8093-48c2-9c1e-211f72bf8ec1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 191.8036 80.01 0)
+			(at 172.7536 80.01 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7064,6 +7074,85 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/75b01062-9747-4556-85bc-485f2c3c99d3"
 					(reference "R147")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 200.66 80.01 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9699b20c-70fc-4095-a8a7-7ee1ac8d47c6")
+		(property "Reference" "R115"
+			(at 203.454 84.328 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100kΩ"
+			(at 203.454 82.423 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 200.66 81.788 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 200.66 80.01 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 200.66 80.01 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "85147cc0-bdd5-4d8c-b10a-215203744272")
+		)
+		(pin "2"
+			(uuid "f32901ba-946d-4db5-a55d-ea3ea3a84425")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/75b01062-9747-4556-85bc-485f2c3c99d3"
+					(reference "R115")
 					(unit 1)
 				)
 			)

@@ -4660,3 +4660,8 @@ marginal on voltage.
 Added decoupling to ADREFHI per TI's recommendations.
 
 Lots of doc updates.
+
+Rework the power monitoring a bit.  Remove the power monitors from
+USB, since they aren't that useful.  Add them to the external antenna
+power, +3.3V, and SSPA\_VCC current limiters so the power going
+through those can be monitored.
