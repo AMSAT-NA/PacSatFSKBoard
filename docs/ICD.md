@@ -91,7 +91,7 @@ board.  These are:
   this.  This is current limited by the +3.3V limiter.
 
 * +3.3V - This is the main I/O supply for the CPU and power for the
-  MRAMs and the RTC.  It is current limited to 658ma and derived from
+  MRAMs and the RTC.  It is current limited to 654ma and derived from
   REG\_3.3V.
   
 * AX5043\_3.3V - This is a separately switched power, off by default,
@@ -1111,3 +1111,42 @@ There is one part, thermistor TH4, that is located under the heat
 sink.  It is there to best measure the heat, but be careful not to
 short it with the heat sink.  Using the given instructions should be
 sufficient.
+
+# Various notes for software design
+
+## AX5043
+
+Use pull-downs in the TMS570 on the IRQ inputs for any AX5043 that is
+powered off so the CPU doesn’t see floating interrupts.
+
+## Watchdog
+
+Toggle FEED right at startup, before any long checks.
+
+After that, toggle it at least every 500 ms. This is now in the ICD.
+
+## PA supply
+
+SSPA\_VCC has a latch-off current limit. Monitor PWR\_FLAG\_SSPA, and
+toggle PA_PWR_EN to reset the limit after a fault. This is in the ICD.
+
+Only power SSPA\_VCC while transmitting.
+
+## Active/standby
+
+Periodically power up the other board to check it’s still working. The
+fault-tolerance section already describes this.
+
+## ACP
+
+The main CPU holds the ACP’s SPI chip-select high when the ACP powers
+up, so it boots normally rather than entering the bootloader.
+
+## Misc
+
+The RTC trickle charger should be off.
+
+The I2C bus is only connected to the external bus while the CPU is up,
+using the CPU’s internal pull-ups.
+
+MRAM should be checksummed.
