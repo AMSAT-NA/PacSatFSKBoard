@@ -208,7 +208,7 @@ value_to_partnum_xlats_2 = {
     ('1uF',		'0603'): ('Murata',	'GCM188R71C105KA64J'),
     ('1uF',		'0805'): ('Murata',	'GCM21BR71E105KA56L'),
     ('4.7uF',		'0805'): ('Murata',	'GCM21BR71C475KA73L'),
-    ('10uF 16V',	'0805'): ('Murata',	'GCM21BC71C106KE36L'),
+    ('10uF 16V',	'0805'): ('TDK',	'CGA4J1X7S1C106K125AE'),
     ('10uF 16V',	'1206'): ('Murata',	'GCM31CR71C106KA64L'),
     ('22uF 16V',	'1206'): ('Murata',	'GCM31CC71C226ME36K'),
     ('47uF 10V',	'1206'): ('Murata',	'GRT31CR61A476KE13L'),
@@ -218,11 +218,10 @@ value_to_partnum_xlats_2 = {
     ('2.0pF ±0.05 30V',	'0402'): ('Murata',	'GCQ1555C1H2R0WB01D'),
     ('3.4pF ±0.05',	'0402'): ('Murata',	'GCQ1555C1H3R4WB01D'),
     ('4.3pF ±0.05',	'0402'): ('Murata',	'GCQ1555C1H4R3WB01D'),
-    ('5.1pF ±0.1',	'0402'): ('Murata',	'GCQ1555C1H5R1BB01D'),
+    ('5.1pF ±0.05',	'0402'): ('Murata',	'GCQ1555C1H5R1WB01D'),
     ('5.4pF ±0.05 30V',	'0402'): ('Murata',	'GCQ1555C1H5R4WB01D'),
 
-    # Really  ±0.05
-    ('5.6pF ±0.1',	'0402'): ('Murata',	'GCQ1555C1H5R6WB01D'),
+    ('5.6pF ±0.05',	'0402'): ('Murata',	'GCQ1555C1H5R6WB01D'),
     ('6.4pF ±0.1 30V',	'0402'): ('Murata',	'GCQ1555C1H6R4BB01D'),
     ('6.5pF ±0.1',	'0402'): ('Murata',	'GCQ1555C1H6R5BB01D'),
     ('11pF 1%', 	'0402'): ('Murata',	'GCQ1555C1H110FB01D'),

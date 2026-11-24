@@ -4465,7 +4465,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005a015008")
 		(property "Reference" "C90"
-			(at 194.31 154.94 90)
+			(at 194.056 149.86 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4474,8 +4474,8 @@
 				)
 			)
 		)
-		(property "Value" "5.6pF ±0.1"
-			(at 194.31 147.32 90)
+		(property "Value" "5.6pF ±0.05"
+			(at 196.088 149.606 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4705,7 +4705,7 @@
 				)
 			)
 		)
-		(property "Value" "5.1pF ±0.1"
+		(property "Value" "5.1pF ±0.05"
 			(at 173.482 143.764 90)
 			(show_name no)
 			(do_not_autoplace no)
