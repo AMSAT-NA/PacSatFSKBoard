@@ -48,10 +48,9 @@ https://www.pumpkinspace.com/supporting-documents.html
 
 ## Power Supply
 
-The power supply takes 5V and optionally 3.3V and uses that to supply
-the rest of the board.  If 3.3V is not externally supplied, a buck
-regulator can convert 5V to 3.3V when installed.  Power inputs have
-inductors to control surge current on power up.
+The power supply takes 5V and 3.3V and uses that to supply the rest of
+the board.  Power inputs have inductors and capacitors to control
+surge current on power up.
 
 An external power disable line, HW\_POWER\_OFF[12]\_N, allows an
 external device to power down all parts of the board except for +5VAL
@@ -67,11 +66,10 @@ board.  These are:
 * +5Vext - The main power input for 5V, filtered from 5V\_IN.  This is
   only used as inputs to the power converters and limiters.
   
-* REG\_3.3V - Either the 3.3V externally, or the output of the 3.3V
-  buck regulator, depending on how the board is configured.  This is
-  used for some control and the watchdog timer so they are available
-  even when the board is powered off by the WDT.  This is not power
-  limited; anything on this bus must be unable to latch up.
+* REG\_3.3V - The 3.3V externally supplied power.  This is used for
+  some control and the watchdog timer so they are available even when
+  the board is powered off by the WDT.  This is not power limited;
+  anything on this bus must be unable to latch up.
   
 * +5VAL - This provides +5V whenever power is applied.  It is used to
   power the RX/TX switches (so the redundant board can access the
@@ -494,19 +492,10 @@ connector.  The J10 lines to not have any short circuit protection.
 
 Some GPIO/ADC lines and an I2C bus also go the PC104 from the ACP.
 
-Note that the on-board 3.3V regulator is not capable of powering the
-antenna control power output if it draws more than an amp or so.
-
 # Board Configurations
 
 The board has a large number of options for configuration depending on
 what parts are installed.
-
-## 3.3V Power
-
-If you only want to run on 5V external power, you can populate U4,
-R119, R120 and R137 and remove R142 and R111.  Note that the power
-output of U4 is marginal to power the burn wire.
 
 ## Diplexer
 
@@ -532,7 +521,7 @@ If you remove everything on this sheet and you have an external device
 that needs to control power on the board, you can populate R118 to
 provide that on the PC104.
 
-You also need antenna handling.
+You also need antenna handling as described below.
 
 ### Shared Antennas
 
@@ -547,23 +536,101 @@ If using separate antennas on a dual board configuration or not using
 a dual board configuration, remove P26, U31, C186, P24, U33, C185,
 R105, R106, C111, C141, and U34.  Populate R107 and R96.
 
-## GPIOs and I2C to the PC104
+## GPIOs and I2C and CAN to the PC104
 
+All GPIO connections to the PC104 have resistors connecting them to
+the bus and they are on analog switches.  This allow a user to choose
+which lines are connected.  These also facilitate moving the lines to
+a different pin.  The I2C connection from the ACP also has zero ohm
+resistors and a bus switch.
 
+The I2C connection from the main processor does not have resistors,
+but it does have an analog switch on the lines.
+
+Depending on what you need, the analog switches can be removed.  Even
+in single board configuration, though, they should generally be left
+in for latch up protection.
+
+The CAN bus transceivers do not have any of this; latch up protection
+is not required and the CAN transceivers are designed to not affect
+the bus when turned off.  They can be removed if CAN is not being
+used.  It does mean that each board in a dual board configuration
+needs a separate CAN address.
 
 ## Directional Coupler
 
+A directional coupler provides forward and reverse power measurement
+on the transmitted RF signal.  It is not terribly accurate, but good
+enough to know if something is wrong with the antenna.
+
+If you don't need this, it can be removed, but it required board
+rework.  It doesn't have a significant amount of loss.
+
+By default the coupler reads forward and reverse power.  It might be
+more accurate reading reverse power to read forward power directly
+from the line and provide a more accurate termination on the forward
+power out of the coupler.  (If the termination of the forward power
+measurement out of the coupler is not accurate, you get reflection
+from the forward power into the reverse power.  This affects the
+reverse power measurement and cannot be directly compensated for in
+software because the affect depends on the phase of the forward and
+reverse signals.)
+
+To read the power this way, change R199 to an accurate 50ohm resistor,
+add R134, and remove R141.
+
 ## Off Board Upconversion or PA
 
-## Off Board Backup Transmitter
+The transmit line out of the transmit AX5043 has a U.FL connector on
+it, you can remove R102 and add P6.  If you do this, you can remove
+the whole transmit section.  Then you can solder a cable on where P6
+is and run that to another board.  You can upconvert to a different
+frequency or provide a different power amplifier.
+
+The second single-ended transmit output from the AX5043 is also
+available for running to another board.  You could have a second PA or
+the ability to transmit on two different frequencies.  To do this,
+remove R72 and add P7 and C155.  The output may need to have the
+impedance adjusted, C155, L46, and a device where R72 sits are
+available for this.
+
+## Backup Transmitter
+
+The fourth receive AX5043 has it's single-ended output connected to an
+optional external connection to another board.  This can be used for a
+second transmitter for fault tolerance or transmitting as a second
+frequency.
+
+To use this, remove R62 and add P23 and C154.  If impedance matching
+is required, L47 and the location at R62 can be used for this.
 
 ## Off Board Receive Input
 
+Several places are available to inject a receive signal.  These are
+all U.FL connectors that can be populated or directly soldered on to.
+
+* P19 - This injects a signal into the LNA.  Remove C102, C103, and
+  L28 to use this.
+  
+* P20 - This injects into the filter after the LNA.  To use this,
+  remove R69.
+  
+* P8 - This injects straight into the RF splitter, bypassing the
+  filter.  To use this, remove C132, L43, and L42.
+
 ## Off Board Output To a Receiver
+
+The fourth receive AX5043 can also be disabled for receive and it's RX
+input routed to another board.  For this, add P12 and remove C67.
 
 ## USB
 
+The entire USB sheet can be removed if no support for USB is required.
+
 ## Other Parts
+
+Anything you don't need, MRAM, RTC, the ACP, etc. can be removed if
+you don't need it.
 
 # System Interfaces Description
 
@@ -591,9 +658,8 @@ connections.
 
 ### Power
 
-The board can run on just external +5V if configured with a 3.3V
-regulator, or it can run on external +5V and +3.3V.  External power
-interfaces have inductors to regulate surge at startup.
+The board requires external +5V and +3.3V.  External power interfaces
+have inductors and capacitors to regulate surge at startup.
 
 The default power pins are the ones defined by the CubeSat KitBus
 standard.
@@ -615,13 +681,6 @@ pulled low, all power zones but +5VAL will be off.  This is pulled
 high on the board, so it does not have to be driven.  This is part of
 the dual-board controls, but in a simplex situation it can be used to
 externally control power on the board.
-
-If 3.3V is not supplied from the PC104 connector, then U4, R119, R120,
-and R137 must be installed and you should remove R111 and R142.  If
-3.3V is coming externally, then do the opposite.  Also, when powering
-3.3V from the on-board regulator, you should modify R149 to reduce the
-latch current.  The on-board 3.3V regulator is not capable of powering
-the antenna control power output if it draws more than an amp or so.
 
 ### VBAT
 
@@ -875,10 +934,9 @@ If the proper resistors are attached, the ones from 5V\_IN and
 3.3V\_IN to the PC104, this can be used to power other boards through
 the PC104.
 
-Both 3.3V and 5V are provided from USB.  If you are only using 5V from
-the PC104 and are using U4 to provide 3.3V, you should not populate
-U50.  In all cases the USB converter chip is powered by the USB +3.3V
-converter U48, so you cannot remove that and use USB.
+Both 3.3V and 5V are provided from USB.  In all cases the USB
+converter chip is powered by the USB +3.3V converter U48, so you
+cannot remove that and use USB.
 
 The board needs at least 1A for normal operation.  It's not configured
 to negotiate that or check it, so if using USB for power you must make
