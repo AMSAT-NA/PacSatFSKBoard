@@ -4699,8 +4699,17 @@ Add an extra decoupling capacitor to the TX AX5043.  Since it's
 transmitting, it needs more decoupling.  Not so important on RX as the
 current doesn't change drastically.
 
-Add an option to add a high-frequency shunt later at the LNA output.
-It's DNP for now, but if there's instability it's easy to fix later.
+Looked for signs of LO feedback from the RX AX5043s.  I could not find
+any LO signal on the RX lines down to -125dBm, so the LNA in the
+AX5043 seems to be filtering properly.  So the AX5043s will not
+de-sense one another.
+
+Looked for instability in the LNA area, since it's a high gain
+wideband amplifier between two reflective filters.  I found some noise
+between 1.5 and 2.4GHz, but that turned out to be coming from the USB
+connection, probably host noise.  I couldn't find anything.  I added
+an option to add a high-frequency shunt later at the LNA output.  It's
+DNP for now, but if there's instability it's easy to fix later.
 
 Fix some derating issues on some parts.
 
@@ -4721,3 +4730,8 @@ through those can be monitored.
 Add a weak pull down and a stronger pull up to the nTRST line into the
 TMS570.  Remove the stronger pull up after final programming.  The
 nTRST line is supposed to be held low for normal operation.
+
+## 2026-11-25
+
+Remove the external control setting.  If you really want that, modify
+the software.

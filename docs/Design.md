@@ -107,13 +107,11 @@ Add the following notes:
     headers
   * The bare-copper heat-sink contact area under U27, and its screw holes
   * The mounting holes
-  * C125, C125, and C112.  These are small capacitors that are most
-    affected by the the increased capacitance caused by the coat.  If
-	these cannot be masked then they will need to have their values
-	reduced by 0.1pf.
-
-  Note that conformal coating will change inductor values; this needs
-  to be thought through.
+  * L30, C125, L33, C125, L35 and C112.  These are small capacitors
+    and inductors in parallel with those that are most affected by the
+    the increased capacitance caused by the coat.  If these cannot be
+    masked then the capacitors will need to have their values reduced
+    by 0.1pf.
 
 * For flight boards, complete flux removal and ionic cleanliness
   tested.

@@ -8540,7 +8540,7 @@
 	)
 	(wire
 		(pts
-			(xy 281.94 119.38) (xy 288.29 119.38)
+			(xy 281.94 119.38) (xy 369.57 119.38)
 		)
 		(stroke
 			(width 0)
@@ -8767,6 +8767,16 @@
 			(type default)
 		)
 		(uuid "e23e308f-7a1c-4d27-abe7-bedd406412fe")
+	)
+	(wire
+		(pts
+			(xy 369.57 140.97) (xy 369.57 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e23ffdd9-664d-4c32-a6da-5129a4c7c987")
 	)
 	(wire
 		(pts
@@ -9097,6 +9107,16 @@
 			(type default)
 		)
 		(uuid "f669b9ba-5e82-4f64-9b2a-dcfb98f7eaeb")
+	)
+	(wire
+		(pts
+			(xy 369.57 119.38) (xy 369.57 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6bee1f0-4136-4450-9439-c1825dfd001d")
 	)
 	(wire
 		(pts
@@ -11079,30 +11099,6 @@
 		(uuid "b0e2d421-5121-49b5-ba8a-22c62d1d05c5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 229.87 55.6461 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "EXTERN_CONTROL"
-		(shape input)
-		(at 288.29 119.38 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left)
-		)
-		(uuid "b455d553-fe5f-483d-bbed-9a9f142da908")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 310.9714 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15335,6 +15331,86 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 369.57 137.16 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "123038a8-3884-418d-b5d7-1973e36fcafc")
+		(property "Reference" "R95"
+			(at 371.348 135.9916 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0Ω"
+			(at 371.348 138.303 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 367.792 137.16 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 369.57 137.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 369.57 137.16 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b46966ba-d205-45bc-b34e-8efe238246e6")
+		)
+		(pin "2"
+			(uuid "699db538-eb4c-4c20-ae7f-2c9236d738a8")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
+					(reference "R95")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 289.56 240.03 0)
 		(unit 1)
@@ -18275,6 +18351,82 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
 					(reference "#PWR050")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 369.57 144.78 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "81365ae7-5329-467c-9d0c-8719f6aecdcd")
+		(property "Reference" "#PWR0236"
+			(at 369.57 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 369.697 149.1742 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 369.57 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 369.57 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 369.57 144.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "858fc3ea-8bf6-4c94-a046-63754236e58d")
+		)
+		(instances
+			(project "PacSat_AFSK"
+				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/adf61ae3-df77-4e04-8bda-b4049a36fcf4"
+					(reference "#PWR0236")
 					(unit 1)
 				)
 			)

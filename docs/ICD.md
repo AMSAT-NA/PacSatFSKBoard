@@ -307,11 +307,6 @@ The boards are called "board1" and "board2".  A resistor on the board,
 R91, tells the CPU which board it is.  Absence of R91 makes it board 1,
 presence makes it board 2.
 
-With R94 installed, the boards expect that an external control system
-will decide which board is active and which is standby.  This external
-control system must decide which board is active and which is standby
-by driving the ACTIVE1\_N or ACTIVE2\_N lines.
-
 This entire section is optional and may be removed.  Bypass zero-ohm
 resistors can connect the few lines required for operation.
 
@@ -385,6 +380,8 @@ failure:
   be best; you could eliminate the switches and the small loss from
   those and both boards could transmit and receive at the same time.
   Plus a single failed antenna deployment would not fail the mission.
+  If you can get a dual band antenna, you could use the diplexer on
+  the board to cut the number of antennas.
 
 That leaves Q2 (the MOSFET driving the HW\_POWER\_OFF line on the
 other board).  If it fails as a short (like due to radiation aging) it
@@ -499,6 +496,74 @@ Some GPIO/ADC lines and an I2C bus also go the PC104 from the ACP.
 
 Note that the on-board 3.3V regulator is not capable of powering the
 antenna control power output if it draws more than an amp or so.
+
+# Board Configurations
+
+The board has a large number of options for configuration depending on
+what parts are installed.
+
+## 3.3V Power
+
+If you only want to run on 5V external power, you can populate U4,
+R119, R120 and R137 and remove R142 and R111.  Note that the power
+output of U4 is marginal to power the burn wire.
+
+## Diplexer
+
+A diplexer is available that allows a dual band antenna to be used
+instead of two single band antennas.  The loss is small (about .1dB)
+and it works with dual-board fault tolerance and as a single board.
+
+To use it:
+* Populate R138, C172, C112, L35, C129, L49, L44, R124, l45, R123, and
+  P25.
+* Remove P17, R97, L40, P15, L39, and R98.
+
+## Dual Board Fault Tolerance
+
+To use two boards in a fault-tolerant configuration, both boards must
+have everything on the "Active Standby Config" installed except R133,
+R118, R185, and R191 installed.
+
+Note that if you are not using this feature, you can leave these in
+place to have extra latch-up resistant lines on the PC104.
+
+If you remove everything on this sheet and you have an external device
+that needs to control power on the board, you can populate R118 to
+provide that on the PC104.
+
+You also need antenna handling.
+
+### Shared Antennas
+
+If the two boards do not share an antenna, you use the switches on
+board 1 to choose which board can transmit.  To do this, populate P26,
+U31, C186, P24, U33, C185, R105, R106, C111, C141, and U34.  Remove
+R107 and R96.
+
+### Separate Antennas or Single Board
+
+If using separate antennas on a dual board configuration or not using
+a dual board configuration, remove P26, U31, C186, P24, U33, C185,
+R105, R106, C111, C141, and U34.  Populate R107 and R96.
+
+## GPIOs and I2C to the PC104
+
+
+
+## Directional Coupler
+
+## Off Board Upconversion or PA
+
+## Off Board Backup Transmitter
+
+## Off Board Receive Input
+
+## Off Board Output To a Receiver
+
+## USB
+
+## Other Parts
 
 # System Interfaces Description
 
@@ -925,7 +990,7 @@ components; they are not installed by default.  The receiver has
 sufficient filtering to avoid transmit at 440MHz from affecting
 reception.  The RF input and RF output connectors can be removed in
 that case as well as the bleed-off inductors on the RF input and
-output.  This option costs about 0.5dB on both transmit and receive.
+output.  This option has minimal loss on transmit and receive.
 
 Due to how close the MMCX connectors are to the board, you cannot use
 the diplexer on version3 boards; the traces had to be cut to keep them
