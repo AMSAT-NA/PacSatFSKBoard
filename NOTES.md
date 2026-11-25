@@ -4735,3 +4735,5 @@ nTRST line is supposed to be held low for normal operation.
 
 Remove the external control setting.  If you really want that, modify
 the software.
+
+Remove the 3.3V power option.  It's not going to be that useful.

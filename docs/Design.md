@@ -563,6 +563,8 @@ is accomplished from the USB chip now.
 The version 4 board no longer has plugs for +5V and +3.3V.  Use the
 PC104 or USB for power.
 
+The version 4 board no longer has U4, the 3.3V power converter.
+
 The version 4 board has UMBILICAL\_ATTACHED where OTHER\_HW\_POWER\_ST
 was.  This lets you know if the USB chip is powered.
 
@@ -802,10 +804,10 @@ linear, but does require compensation by software.
 
 ## Notes on Processor\_Reset
 
-The 3.3V and 1.2V power converts have power good output pins, and the
-1.2V current limiter has a power good pin, all open collector.  These
-are wire-or-ed to the processor reset pin.  When any of them senses
-there is a power issue, they will pull the reset pin.  After the 1.2V
+The 1.2V power converter has a power good output pin, and the 1.2V
+current limiter has a power good pin, all open collector.  These are
+wire-or-ed to the processor reset pin.  When any of them senses there
+is a power issue, they will pull the reset pin.  After the 1.2V
 current limiter turns on (which takes a little bit of time, it is
 inrush limited) it will wait 50us and before releasing the reset pin,
 so reset should happen automatically on any power up or power problem.
@@ -1156,14 +1158,6 @@ configuration.  These are:
     generally not be populated on a simplex board, it will always be
     active and some other entity controls its power signal.
 	
-  - 5V\_S[1-3], 5V\_p - One of these should be populated depending on
-    where the board should get its +5V power.
-
-  - 3V3\_S[1-3], 3V3\_p - One of these should be populated depending on
-    where the board should get its +3.3V power.  In addition, there is
-	an optional buck regulator that can be populated to derive 3.3V
-	from 5V.  In that case none of these should be populated.
-
   - RF\_SWITCH\_EN - Removing the resistor R105 to +3.3VAL will
     disable all the RF switches into high impedance mode.  Then the
     zero ohm resistors to bypass the switches, R107 and R96 must be
