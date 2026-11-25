@@ -512,7 +512,8 @@ To use it:
 
 To use two boards in a fault-tolerant configuration, both boards must
 have everything on the "Active Standby Config" installed except R133,
-R118, R185, and R191 installed.
+R118, R185, and R191 installed.  On board 2 you populate R91, on board
+1 you leave it off.
 
 Note that if you are not using this feature, you can leave these in
 place to have extra latch-up resistant lines on the PC104.
@@ -525,10 +526,10 @@ You also need antenna handling as described below.
 
 ### Shared Antennas
 
-If the two boards do not share an antenna, you use the switches on
-board 1 to choose which board can transmit.  To do this, populate P26,
-U31, C186, P24, U33, C185, R105, R106, C111, C141, and U34.  Remove
-R107 and R96.
+If the two boards share an antenna, you use the switches on board 1 to
+choose which board can transmit and receive.  To do this, populate
+P26, U31, C186, P24, U33, C185, R105, R106, C111, C141, and U34.
+Remove R107 and R96.
 
 ### Separate Antennas or Single Board
 
@@ -563,8 +564,10 @@ A directional coupler provides forward and reverse power measurement
 on the transmitted RF signal.  It is not terribly accurate, but good
 enough to know if something is wrong with the antenna.
 
-If you don't need this, it can be removed, but it required board
-rework.  It doesn't have a significant amount of loss.
+If you don't need this, it can be removed, but it requires board
+rework.  It doesn't have a significant amount of loss.  You could
+remove the ADL5501 power measurement devices, remove R141, and replace
+R198 and R199 with 50 ohm resistors.
 
 By default the coupler reads forward and reverse power.  It might be
 more accurate reading reverse power to read forward power directly
@@ -576,14 +579,14 @@ reverse power measurement and cannot be directly compensated for in
 software because the affect depends on the phase of the forward and
 reverse signals.)
 
-To read the power this way, change R199 to an accurate 50ohm resistor,
+To read the power this way, change R199 to an accurate 50 ohm resistor,
 add R134, and remove R141.
 
 ## Off Board Upconversion or PA
 
 The transmit line out of the transmit AX5043 has a U.FL connector on
-it, you can remove R102 and add P6.  If you do this, you can remove
-the whole transmit section.  Then you can solder a cable on where P6
+it, you can remove R102.  If you do this, you can remove the whole
+transmit section after that.  Then you can solder a cable on where P6
 is and run that to another board.  You can upconvert to a different
 frequency or provide a different power amplifier.
 
@@ -606,8 +609,10 @@ is required, L47 and the location at R62 can be used for this.
 
 ## Off Board Receive Input
 
-Several places are available to inject a receive signal.  These are
-all U.FL connectors that can be populated or directly soldered on to.
+Several places are available to inject a receive signal.  This could
+be used for an external shared antenna or downconversion from a higher
+frequency.  These are all U.FL connectors that can be populated or
+directly soldered on to.
 
 * P19 - This injects a signal into the LNA.  Remove C102, C103, and
   L28 to use this.
@@ -617,6 +622,10 @@ all U.FL connectors that can be populated or directly soldered on to.
   
 * P8 - This injects straight into the RF splitter, bypassing the
   filter.  To use this, remove C132, L43, and L42.
+
+In addition, each AX5043 has a coupling capacitor and a U.FL
+connector, so it's possible to inject receive into each individual
+AX5043 separately.
 
 ## Off Board Output To a Receiver
 
