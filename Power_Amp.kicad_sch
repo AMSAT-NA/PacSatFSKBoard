@@ -3195,7 +3195,7 @@
 		)
 		(uuid "79c5a306-d39f-41e6-94f9-40b9bb934a1a")
 	)
-	(text "The input impedance of the ADL5501 devices is\ndefined to be 63Ω||1.4pF at 450MHz.  This\nmakes the magnitude of the impedance around\n61Ω.  R198 and R198 bring the impedance to\n50Ω."
+	(text "The input impedance of the ADL5501 devices is\ndefined to be 63Ω||1.4pF at 450MHz.  This\nmakes the magnitude of the impedance around\n61Ω.  R198 and R199 bring the impedance to\n50Ω."
 		(exclude_from_sim no)
 		(at 387.096 123.444 0)
 		(effects
@@ -4117,16 +4117,6 @@
 			(type default)
 		)
 		(uuid "1d0d9c19-fea8-4867-9a50-c2be4299d02f")
-	)
-	(wire
-		(pts
-			(xy 203.2 160.02) (xy 212.09 160.02)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1d64a659-2def-486c-aa4d-260caab3ce2b")
 	)
 	(wire
 		(pts
@@ -5490,7 +5480,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 160.02) (xy 195.58 160.02)
+			(xy 194.31 160.02) (xy 212.09 160.02)
 		)
 		(stroke
 			(width 0)
@@ -10103,86 +10093,6 @@
 			(project "PacSat_AFSK"
 				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
 					(reference "C170")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 199.39 160.02 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "7d97df7d-0a56-4563-aa89-2ab3f25775c4")
-		(property "Reference" "R197"
-			(at 199.644 157.734 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0Ω metal"
-			(at 203.708 155.702 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 199.39 161.798 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 199.39 160.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 199.39 160.02 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "29cdb9df-e67c-4dac-a5c2-1daab3aa3481")
-		)
-		(pin "2"
-			(uuid "d235ef3e-babd-4ebe-a35e-a181743d6ca3")
-		)
-		(instances
-			(project "PacSat_AFSK"
-				(path "/cc9f42d2-6985-41ac-acab-5ab7b01c5b38/b85b88c3-87c5-49e2-804e-0759552ace3d"
-					(reference "R197")
 					(unit 1)
 				)
 			)

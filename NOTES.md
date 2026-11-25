@@ -4737,3 +4737,7 @@ Remove the external control setting.  If you really want that, modify
 the software.
 
 Remove the 3.3V power option.  It's not going to be that useful.
+
+Reworked the PA output filter layout a bit.  Get rid of the zero-ohm
+resistor on the PA output, it didn't really do anything.  This let
+things be spaced out a little better on the rest of the filter.
