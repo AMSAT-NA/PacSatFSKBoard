@@ -3246,7 +3246,7 @@
 		)
 		(uuid "d3602d58-4abf-44b7-9a95-14bf17ca573e")
 	)
-	(text "Output impedance of the PA per the\nS-parms is 4.63Ω - j.508Ω ohms at 435MHz\nHowever, PAs don't quite work that way,\nyou really ahve to test and measure.\nThe 10mm trace between the PA and the\nmatch is 0.5mm wide, which results in\n1.9nH with 2pF, converting the\nimpedance.  Experimenting gave the\nabove values.  That translates to 5.5Ω\n- j5Ω from simulation, which is pretty\nclose.  It's getting 32dBm out of the\nPA per measurement.\n\n6.4nH and 14pF would be better, but there's\nno space rated 6.4nH available."
+	(text "Output impedance of the PA per the\nS-parms is 4.63Ω - j.508Ω ohms at 435MHz\nHowever, PAs don't quite work that way,\nyou really ahve to test and measure.\nThe 6mm trace between the PA and the\nmatch is 0.762mm wide, which results in\n0.75nH with 2pF, converting the\nimpedance.  Experimenting gave the\nabove values.  That translates to 5.5Ω\n- j4.5Ω from simulation, which is pretty\nclose.  It's getting 32dBm out of the\nPA per measurement.\n\n6.4nH and 14pF would be better, but there's\nno space rated 6.4nH available."
 		(exclude_from_sim no)
 		(at 212.09 201.676 0)
 		(effects
@@ -9651,7 +9651,7 @@
 				)
 			)
 		)
-		(property "Value" "15pF 1% 30V"
+		(property "Value" "16pF 1% 30V"
 			(at 213.36 163.322 90)
 			(show_name no)
 			(do_not_autoplace no)
